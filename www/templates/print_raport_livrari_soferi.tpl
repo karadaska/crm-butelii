@@ -1,0 +1,201 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/conditionizr.min.js"></script>
+<script src="js/bootstrap/bootstrap.js"></script>
+<script src="js/plugins/core/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="js/plugins/core/jrespond/jRespond.min.js"></script>
+<script src="js/jquery.genyxAdmin.js"></script>
+<script src="js/plugins/forms/uniform/jquery.uniform.min.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+<script src="js/plugins/forms/autosize/jquery.autosize-min.js"></script>
+<script src="js/plugins/forms/inputlimit/jquery.inputlimiter.1.3.min.js"></script>
+<script src="js/plugins/forms/mask/jquery.mask.min.js"></script>
+<script src="js/plugins/forms/switch/bootstrapSwitch.js"></script>
+<script src="js/plugins/forms/globalize/globalize.js"></script>
+<script src="js/plugins/forms/spectrum/spectrum.js"></script><!--  Color picker -->
+<script src="js/plugins/forms/datepicker/bootstrap-datepicker.js"></script>
+<script src="js/plugins/forms/multiselect/ui.multiselect.js"></script>
+<script src="js/plugins/forms/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+<script src="js/plugins/forms/validation/jquery.validate.js"></script>
+<script src="js/plugins/forms/select2/select2.js"></script>
+<html>
+<head>
+    <style type='text/css' media="print">
+        body {
+            visibility: hidden;
+            font-family: Verdana;
+            font-size: 14px;
+        }
+
+        .print {
+            visibility: visible;
+        }
+
+        .ascuns {
+            visibility: hidden;
+        }
+
+        table {
+            font-size: 16px;
+        }
+
+        th {
+            font-weight: bold;
+            color: #000;
+        }
+
+        td {
+        }
+    </style>
+    <script type="text/javascript">
+        function setPrint() {
+            jQuery("#print_button").attr({
+                "class": "ascuns"
+            });
+        }
+    </script>
+</head>
+<body>
+<section id="content" class="print">
+    <div class="wrapper">
+        <input type="button" onclick="setPrint();window.print();return false;" id="print_button" name="print_button"
+               value="Print"/>
+        <a href="/raport_livrari_soferi.php?sofer_id={$id}&data_start={$data_start}&data_stop={$data_stop}"
+           class="ascuns">
+            <button type="button" class="btn btn-mini btn-warning ascuns">
+                Inapoi
+            </button>
+        </a>
+    </div>
+    <table style="width: 1800px;">
+        <tr>
+            <td style="text-align: left;" class="span3">
+                <h3>
+                    Raport livrare sofer: {strtoupper($nume_sofer['nume'])} <br/>
+                    Perioada: {$data_start} / {$data_stop}
+                </h3>
+            </td>
+        </tr>
+    </table>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="widget">
+                    <div class="widget-content">
+                        <table border="1">
+                            <thead>
+                            <tr>
+                                <th style="text-align: center;" rowspan="2">#</th>
+                                <th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>
+                                <th style="text-align: center;" rowspan="2">INDICATOR AUTO</th>
+                                <th style="text-align: center;" rowspan="2">Traseu</th>
+                                <th colspan="3">TOTAL BUTELII VANDUTE</th>
+                                <th colspan="3">TOTAL VALOARE INCASATA</th>
+                                <th colspan="3">TOTAL COMISION</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center">BG 11</td>
+                                <td style="text-align: center">AR 8</td>
+                                <td style="text-align: center">AR 9</td>
+                                <td style="text-align: center">BG 11</td>
+                                <td style="text-align: center">AR 8</td>
+                                <td style="text-align: center">AR 9</td>
+                                <td style="text-align: center;">BG 11</td>
+                                <td style="text-align: center;">AR 8</td>
+                                <td style="text-align: center;">AR 9</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {$nr = 1}
+                            {$total_bg_11 = 0}
+                            {$total_valoare_incasata_bg_11 = 0}
+                            {$total_valoare_comision_bg_11 = 0}
+
+                            {$total_ar_8 = 0}
+                            {$total_valoare_incasata_ar_8  = 0}
+                            {$total_valoare_comision_ar_8 = 0}
+
+                            {$total_ar_9 = 0}
+                            {$total_valoare_incasata_ar_9  = 0}
+                            {$total_valoare_comision_ar_9 = 0}
+
+                            {foreach from=$livrari_soferi item=sofer}
+                                <tr>
+                                    <td style="text-align: center" class="span1">{$nr++}</td>
+                                    <td style="text-align: left"
+                                        class="span3">{$sofer['nume_sofer']}
+                                    </td>
+                                    <td>
+                                        {$sofer['numar']}
+                                    </td>
+                                    <td>{$sofer['nume_traseu']}</td>
+                                    <td style="text-align: center;border-left:double">
+                                        {($sofer['total_produse']['bg_11']['total_bg_11'] !='') ? {$sofer['total_produse']['bg_11']['total_bg_11']} : '-'}
+                                    </td>
+                                    <td style="text-align: center;">
+                                        {($sofer['total_produse']['ar_8']['total_ar_8'] !='') ? {$sofer['total_produse']['ar_8']['total_ar_8']} : '-'}
+                                    </td>
+                                    <td style="text-align: center">
+                                        {($sofer['total_produse']['ar_9']['total_ar_9'] !='') ? {$sofer['total_produse']['ar_9']['total_ar_9']} : '-'}
+                                    </td>
+                                    <td style="text-align: center;border-left:double">
+                                        {($sofer['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? {$sofer['total_produse']['bg_11']['total_bg_11_cu_pret']} : '-'}
+                                    </td>
+                                    <td style="text-align: center">
+                                        {($sofer['total_produse']['ar_8']['total_ar_8_cu_pret'] !='') ? {$sofer['total_produse']['ar_8']['total_ar_8_cu_pret']} : '-'}
+                                    </td>
+                                    <td style="text-align: center;border-right:double">
+                                        {($sofer['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? {$sofer['total_produse']['ar_9']['total_ar_9_cu_pret']} : '-'}
+                                    </td>
+                                    <td style="text-align: center">
+                                        {($sofer['total_produse']['bg_11']['comision'] !='') ? {$sofer['total_produse']['bg_11']['comision']} : '-'}
+                                    </td>
+                                    <td style="text-align: center;">
+                                        {($sofer['total_produse']['ar_8']['comision'] !='') ? {$sofer['total_produse']['ar_8']['comision']} : '-'}
+                                    </td>
+                                    <td style="text-align: center;">
+                                        {($sofer['total_produse']['ar_9']['comision'] !='') ? {$sofer['total_produse']['ar_9']['comision']} : '-'}
+                                </tr>
+                                {$total_bg_11 = $total_bg_11 + $sofer['total_produse']['bg_11']['total_bg_11']}
+                                {$total_ar_8 = $total_ar_8 + $sofer['total_produse']['ar_8']['total_ar_8']}
+                                {$total_ar_9 = $total_ar_9 + $sofer['total_produse']['ar_9']['total_ar_9']}
+
+                                {$total_valoare_incasata_bg_11 = $total_valoare_incasata_bg_11 + $sofer['total_produse']['bg_11']['total_bg_11_cu_pret']}
+                                {$total_valoare_incasata_ar_8 = $total_valoare_incasata_ar_8 + $sofer['total_produse']['ar_8']['total_ar_8_cu_pret']}
+                                {$total_valoare_incasata_ar_9 = $total_valoare_incasata_ar_9 + $sofer['total_produse']['ar_9']['total_ar_9_cu_pret']}
+
+                                {$total_valoare_comision_bg_11 = $total_valoare_comision_bg_11 + $sofer['total_produse']['bg_11']['comision']}
+                                {$total_valoare_comision_ar_8 = $total_valoare_comision_ar_8 + $sofer['total_produse']['ar_8']['comision']}
+                                {$total_valoare_comision_ar_9 = $total_valoare_comision_ar_9 + $sofer['total_produse']['ar_9']['comision']}
+
+
+                            {/foreach}
+                            <tr>
+                                <th colspan="4" style="text-align: right;">TOTAL:</th>
+                                <th style="text-align: center;"><abbr title="Total bucati vandute BG 11">{$total_bg_11}</abbr></th>
+                                <th style="text-align: center;"><abbr title="Total bucati AR 8">{$total_ar_8}</abbr></th>
+                                <th style="text-align: center;"><abbr
+                                            title="Total bucati AR 9">{$total_ar_9}</abbr></th>
+                                <th>
+                                    <abbr title="Total valoare incasare BG 11">{$total_valoare_incasata_bg_11}</abbr>
+                                </th>
+                                <th>
+                                    <abbr title="Total valoare incasare AR 8">{$total_valoare_incasata_ar_8}</abbr>
+                                </th>
+                                <th>
+                                    <abbr title="Total valoare incasare AR 9">{$total_valoare_incasata_ar_9}</abbr>
+                                </th>
+                                <th><abbr title="Total comision BG 11">{$total_valoare_comision_bg_11}</abbr></th>
+                                <th><abbr title="Total comision AR 8">{$total_valoare_comision_ar_8}</abbr></th>
+                                <th><abbr
+                                            title="Total comision AR 9">{$total_valoare_comision_ar_9}</abbr></th>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

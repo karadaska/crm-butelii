@@ -1,0 +1,376 @@
+<?php
+
+class ParcAuto
+{
+    public static function getTipAlimentare()
+    {
+        $ret = array();
+        $query = "select *from 
+                    tip_alimentare
+                    where sters = 0
+                    ORDER BY tip ASC";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getMasini($opt = array())
+    {
+        $stare_id = isset($opt['stare_id']) ? $opt['stare_id'] : 0;
+
+        $ret = array();
+        $query = "SELECT a.*, b.nume as stare_masina from 
+        masini as a
+        left join masini_stari as b on a.stare_id = b.id
+        where a.sters = 0
+        ORDER BY a.numar
+        ";
+
+        if ($stare_id > 0) {
+            $query .= "and stare_id= '" . $stare_id . "'";
+        }
+        $result = myQuery($query);
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $item['asignari_masina'] = Trasee::getTraseeByMasinaId($item['id']);
+                $item['depozit_by_masina'] = Depozite::getDepozitByMasinaId($item['id']);
+                $item['sofer_by_masina'] = self::getSoferByMasinaId($item['id']);
+                $item['traseu_by_masina'] = Asignari::getAsignareTraseuIdByMasinaId($item['id']);
+                array_push($ret, $item);
+            }
+        }
+        return $ret;
+    }
+
+    public static function getSoferByMasinaId($masina_id)
+    {
+        $ret = array();
+        $query = "select a.*, b.nume, d.numar from 
+                    asignari_soferi_trasee as a
+                    LEFT JOIN soferi as b on a.sofer_id = b.id
+                    left join asignari_masini_trasee as c on a.traseu_id = c.traseu_id
+                    left join masini as d on c.masina_id = d.id
+                    where c.masina_id = '" . $masina_id . "'
+                    and c.sters = 0
+                    GROUP BY b.nume";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+//Lista de soferi si cu asignari
+    public static function getSoferi()
+    {
+        $ret = array();
+        $query = "SELECT * FROM soferi where sters = 0 ORDER BY nume ASC";
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $item['asignari_trasee'] = Asignari::getAsignareTraseuBySoferId($item['id']);
+                array_push($ret, $item);
+            }
+        }
+
+        return $ret;
+    }
+
+
+    public static function getListaSoferi()
+    {
+        $ret = array();
+        $query = "SELECT * FROM soferi 
+                  WHERE sters = 0 
+                  ORDER BY nume ASC";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $ret;
+    }
+
+    public static function getMasinaById($id = 0)
+    {
+        $ret = array();
+        $query = "SELECT * FROM masini WHERE id = '" . $id . "' LIMIT 1";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+
+//    Scoate starea masinii activa/desfiintata
+    public static function getStariMasini()
+    {
+        $ret = array();
+        $query = "SELECT * FROM masini_stari";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getStareByMasinaId($masina_id)
+    {
+        $ret = array();
+        $query = "select stare_id from masini where id = '" . $masina_id . "' LIMIT 1";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getSoferById($id = 0)
+    {
+        $ret = array();
+        $query = "SELECT * FROM soferi WHERE id = '" . $id . "' and sters = 0 LIMIT 1 ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
+    public static function getSoferByFisaGenerataId($id)
+    {
+        $ret = array();
+        $id_fisa = "SELECT a . sofer_id , b . nume as nume_sofer
+                      from fise_generate as a
+                      left join soferi as b on a . sofer_id = b . id
+                      where a . id = '" . $id . "'
+                      ORDER BY a . id
+                      desc LIMIT 1";
+
+        $result = myQuery($id_fisa);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getMasinaByFisaGenerataId($id)
+    {
+        $ret = array();
+        $id_fisa = "SELECT a . masina_id,b . numar as numar_masina 
+                    from fise_generate as a
+                    left join masini as b on a . masina_id = b . id
+                      where a . id = '" . $id . "' 
+                      ORDER BY a . id desc LIMIT 1";
+
+        $result = myQuery($id_fisa);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getTotalCantitatiBGBySoferIdAndTraseuId($sofer_id = 0, $traseu_id, $opts = array())
+    {
+        $ret = null;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $target_by_client_id = "SELECT SUM(a.cantitate) as total_bg_11, SUM(a.cantitate * a.pret) as total_bg_11_cu_pret,  SUM(a.comision) as comision
+                                FROM detalii_fisa_intoarcere_produse  as a
+                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                                WHERE b.sofer_id = '" . $sofer_id . "'                                
+                                AND b.traseu_id = '" . $traseu_id . "'                                
+                                AND a.tip_produs_id = 1                                
+                                AND a.data_intrare >= '" . $data_start . "'
+                                AND a.data_intrare <= '" . $data_stop . "'
+                                AND a.sters = 0";
+
+        $result = myQuery($target_by_client_id);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
+    public static function getTotalCantitatiAr8BySoferIdAndTraseuId($sofer_id = 0, $traseu_id, $opts = array())
+    {
+        $ret = null;
+
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $target_by_client_id = "SELECT SUM(a.cantitate) as total_ar_8, SUM(a.cantitate * a.pret) as total_ar_8_cu_pret, SUM(a.comision) as comision
+                                FROM detalii_fisa_intoarcere_produse  as a
+                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                                WHERE b.sofer_id = '" . $sofer_id . "'                                
+                                AND b.traseu_id = '" . $traseu_id . "'                                
+                                AND a.tip_produs_id = 3                                
+                                AND a.data_intrare >= '" . $data_start . "'
+                                AND a.data_intrare <= '" . $data_stop . "'
+                                AND a.sters = 0";
+
+        $result = myQuery($target_by_client_id);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getTotalCantitatiAr9BySoferIdAndTraseuId($sofer_id = 0, $traseu_id, $opts = array())
+    {
+        $ret = null;
+
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $target_by_client_id = "SELECT SUM(a.cantitate) as total_ar_9, SUM(a.cantitate * a.pret) as total_ar_9_cu_pret, SUM(a.comision) as comision
+                                FROM detalii_fisa_intoarcere_produse  as a
+                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                                WHERE b.sofer_id = '" . $sofer_id . "'                                
+                                AND b.traseu_id = '" . $traseu_id . "'                                      
+                                AND a.tip_produs_id = 4                                
+                                AND a.data_intrare >= '" . $data_start . "'
+                                AND a.data_intrare <= '" . $data_stop . "'
+                                AND a.sters = 0";
+
+        $result = myQuery($target_by_client_id);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getTotalCantitatiBG11CuComisionByClientId($sofer_id, $traseu_id, $opts = array())
+    {
+        $ret = array();
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $query = "SELECT SUM(a.cantitate * c.comision) as total_cant_comision
+                                FROM detalii_fisa_intoarcere_produse  as a
+                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+								LEFT JOIN clienti_target as c on a.client_id = c.client_id                                
+                                WHERE b.sofer_id = '" . $sofer_id . "'                          
+                                AND b.traseu_id = '" . $traseu_id . "'                              
+                                AND a.tip_produs_id = 1                                
+                                AND a.data_intrare >= '" . $data_start . "'
+                                AND a.data_intrare <= '" . $data_stop . "'     
+                                AND a.sters = 0
+								GROUP BY a.client_id ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getRaportLivrariSoferi($sofer_id, $opts = array())
+    {
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $ret = array();
+
+        $query = "SELECT a.*, b.nume as nume_sofer, c.nume as nume_traseu, d.numar, a.traseu_id 
+                  FROM fise_generate as a
+                  LEFT JOIN soferi as b on a.sofer_id = b.id
+                  LEFT JOIN trasee as c on a.traseu_id = c.id
+                  LEFT JOIN masini as d on a.masina_id = d.id
+                  WHERE a.sofer_id = '" . $sofer_id . "'
+                  AND a.data_intrare >= '" . $data_start . "'
+                  AND a.data_intrare <= '" . $data_stop . "'
+                  and a.sters = 0
+                  GROUP BY a.traseu_id
+                  ORDER BY c.nume ASC             
+                    ";
+
+
+        $result = myQuery($query);
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $r = array(
+                    'nume_sofer' => $item['nume_sofer'],
+                    'nume_traseu' => $item['nume_traseu'],
+                    'numar' => $item['numar'],
+                    'total_produse' => array(
+                        'bg_11' => self::getTotalCantitatiBGBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], $opts = array(
+                            'data_start' => $data_start,
+                            'data_stop' => $data_stop
+                        )),
+                        'ar_8' => self::getTotalCantitatiAr8BySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], $opts = array(
+                            'data_start' => $data_start,
+                            'data_stop' => $data_stop
+                        )),
+                        'ar_9' => self::getTotalCantitatiAr9BySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], $opts = array(
+                            'data_start' => $data_start,
+                            'data_stop' => $data_stop
+                        )),
+                    ),
+                );
+
+                array_push($ret, $r);
+            }
+        }
+        return $ret;
+    }
+
+}

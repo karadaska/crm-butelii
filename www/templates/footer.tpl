@@ -1,0 +1,1 @@
+<span style="margin-left: 230px;">{$totaltime}</span>
