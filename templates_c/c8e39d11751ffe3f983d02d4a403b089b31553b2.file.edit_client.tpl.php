@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-11 09:31:46
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-11 09:52:52
          compiled from "/var/www/html/fofoweb/www/templates/edit_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9248587256024dd62ec9005-45001616%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c8e39d11751ffe3f983d02d4a403b089b31553b2' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_client.tpl',
-      1 => 1612175500,
+      1 => 1613029970,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_6024dd63033d78_70108480',
   'variables' => 
   array (
     'title' => 0,
@@ -28,14 +30,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'localitate' => 0,
     'lista_stari' => 0,
     'stare' => 0,
+    'lista_rastel' => 0,
+    'rastel' => 0,
     'culori_butelii' => 0,
     'culoare' => 0,
     'observatii_by_client_id' => 0,
     'observatie' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_6024dd63033d78_70108480',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_6024dd63033d78_70108480')) {function content_6024dd63033d78_70108480($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -226,11 +228,20 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                             <tr style="text-align: left;">
                                                 <th style="width: 100px;vertical-align: middle;">Rastel</th>
                                                 <th style="text-align: left;">
-                                                    <input autocomplete="off" style="width: 100%" id="rastel"
-                                                           type="text"
-                                                           name="rastel"
-                                                           value="<?php echo $_smarty_tpl->tpl_vars['client']->value['rastel'];?>
-">
+                                                    <select name="rastel_id">
+                                                        <option value="0">Selecteaza rastel</option>
+                                                        <?php  $_smarty_tpl->tpl_vars['rastel'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rastel']->_loop = false;
+ $_smarty_tpl->tpl_vars['tmp'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['lista_rastel']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['rastel']->key => $_smarty_tpl->tpl_vars['rastel']->value) {
+$_smarty_tpl->tpl_vars['rastel']->_loop = true;
+ $_smarty_tpl->tpl_vars['tmp']->value = $_smarty_tpl->tpl_vars['rastel']->key;
+?>
+                                                            <option value=<?php echo $_smarty_tpl->tpl_vars['rastel']->value['id'];?>
+ <?php if ($_smarty_tpl->tpl_vars['rastel']->value['rastel']==$_smarty_tpl->tpl_vars['rastel']->value['rastel_id']) {?> selected="selected"<?php }?>><?php echo $_smarty_tpl->tpl_vars['rastel']->value['tip'];?>
+</option>
+                                                        <?php } ?>
+                                                    </select>
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">

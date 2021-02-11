@@ -35,6 +35,9 @@ $smarty->assign('lista_localitati', $lista_localitati);
 $lista_stari = Clienti::getStariClienti();
 $smarty->assign('lista_stari', $lista_stari);
 
+$lista_rastel = Produse::getRastel();
+$smarty->assign('lista_rastel', $lista_rastel);
+
 $lista_depozite = Depozite::getDepozite();
 $smarty->assign('lista_depozite', $lista_depozite);
 
@@ -58,13 +61,13 @@ if ($modifica) {
     $localitate_id = getRequestParameter('localitate_id', '');
     $adresa = getRequestParameter('adresa', '');
     $stare_id = getRequestParameter('stare_id', '');
+    $rastel_id = getRequestParameter('rastel_id', '');
     $telefon = getRequestParameter('telefon', '');
     $telefon_2 = getRequestParameter('telefon_2', '');
     $cnp = getRequestParameter('cnp', '');
     $ci = getRequestParameter('ci', '');
     $contract = getRequestParameter('contract', '');
     $titular = getRequestParameter('titular', '');
-    $rastel = getRequestParameter('rastel', '');
     $culoare_id = getRequestParameter('culoare_id', 0);
     $data_start = getRequestParameter('data_start', '');
     $data_stop = getRequestParameter('data_stop', '');
@@ -76,7 +79,7 @@ if ($modifica) {
         $query = "UPDATE clienti SET nume = '" . $nume . "', judet_id = '" . $judet_id . "',
         localitate_id = '" . $localitate_id . "',adresa = '" . $adresa . "', stare_id ='" . $stare_id . "',
         telefon = '" . $telefon . "',telefon_2 = '" . $telefon_2 . "',cnp = '" . $cnp . "',ci='" . $ci . "',contract = '" . $contract . "',
-        titular = '" . $titular . "',rastel = '" . $rastel . "', culoare_id = '" . $culoare_id . "', 
+        titular = '" . $titular . "',rastel = '" . $rastel_id . "', culoare_id = '" . $culoare_id . "', 
         data_start = '" . $data_start . "',data_stop = '" . $data_stop . "', latitudine = '" . $latitudine . "', longitudine = '" . $longitudine . "'
         where id='" . $id . "'";
 

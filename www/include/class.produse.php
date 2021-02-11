@@ -19,6 +19,19 @@ class Produse
         return $ret;
     }
 
+    public static function getRastel()
+    {
+        $ret = array();
+        $query = "SELECT * FROM tip_rastel where sters = 0";
+        $result = myQuery($query);
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
 
     public static function getCuloareById($id)
     {

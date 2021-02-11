@@ -12,7 +12,8 @@
                             value="inapoi" class="btn btn-small btn-info">
                         Lista clienti
                     </button>
-                    <button type="button" onclick="location.href='/observatii_apel_client.php?id={$client['id']}'" name="inapoi"
+                    <button type="button" onclick="location.href='/observatii_apel_client.php?id={$client['id']}'"
+                            name="inapoi"
                             value="inapoi" class="btn btn-small btn-info">
                         Observatii apel client
                     </button>
@@ -26,15 +27,17 @@
                                         <th colspan="4" style="color: red;"> Stoc client</th>
                                     </tr>
                                     {if count($target_by_client_id) > 0}
-
-                                    <tr>
-                                        {foreach from=$target_by_client_id item=target}
-                                            <th><a href="asigneaza_produse_client.php?id={$client['id']}">{$target['nume_produs']}: {$target['target']}</a><br/></th>
-                                        {/foreach}
-                                    </tr>
-                                        {else}
                                         <tr>
-                                            <th><a href="/asigneaza_produse_client.php?id={$client['id']}">Asigneaza produse la client</a></th>
+                                            {foreach from=$target_by_client_id item=target}
+                                                <th>
+                                                    <a href="asigneaza_produse_client.php?id={$client['id']}">{$target['nume_produs']}
+                                                        : {$target['target']}</a><br/></th>
+                                            {/foreach}
+                                        </tr>
+                                    {else}
+                                        <tr>
+                                            <th><a href="/asigneaza_produse_client.php?id={$client['id']}">Asigneaza
+                                                    produse la client</a></th>
                                         </tr>
                                     {/if}
                                 </table>
@@ -141,10 +144,12 @@
                                             <tr style="text-align: left;">
                                                 <th style="width: 100px;vertical-align: middle;">Rastel</th>
                                                 <th style="text-align: left;">
-                                                    <input autocomplete="off" style="width: 100%" id="rastel"
-                                                           type="text"
-                                                           name="rastel"
-                                                           value="{$client['rastel']}">
+                                                    <select name="rastel_id">
+                                                        <option value="0">Selecteaza rastel</option>
+                                                        {foreach from=$lista_rastel key=tmp item=rastel}
+                                                            <option value={$rastel['id']} {if $rastel['rastel'] == $rastel['rastel_id']} selected="selected"{/if}>{$rastel['tip']}</option>
+                                                        {/foreach}
+                                                    </select>
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
