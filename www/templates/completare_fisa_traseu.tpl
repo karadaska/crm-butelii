@@ -425,10 +425,10 @@
                                                         <th style="text-align: right;" colspan="3">
                                                             Total:
                                                         </th>
-                                                        <th style="text-align: right;">{$client['total_vandute']}</th>
-                                                        <th style="text-align: right;">{$client['total_defecte']}</th>
-                                                        <th style="text-align: right;">{$client['total_vandute']}</th>
-                                                        <th style="text-align: right;"></th>
+                                                        {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
+                                                        {*<th style="text-align: right;">{$client['total_defecte']}</th>*}
+                                                        {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
+                                                        {*<th style="text-align: right;"></th>*}
                                                     </tr>
                                                     {*{$calcul = ($realizat_produs['pret'] - $target_client['comision']) *$realizat_produs['cantitate'] }*}
                                                     {*<tr>*}
@@ -464,8 +464,10 @@
                                     {/foreach}
                                     <tr>
                                         <th style="text-align: right;color: red;">Total:</th>
-                                        <th style="text-align: right;">{$cantitati_produse_clienti_by_fisa_id['total_vandute']}</th>
-                                        <th style="text-align: right">{$cantitati_produse_clienti_by_fisa_id['total_defecte']}</th>
+                                        {*<th style="text-align: right;">{$cantitati_produse_clienti_by_fisa_id['total_vandute']}trebuie facut</th>*}
+                                        {*<th style="text-align: right">{$cantitati_produse_clienti_by_fisa_id['total_defecte']}trebuie facut</th>*}
+                                        <th style="text-align: right;">trebuie facut</th>
+                                        <th style="text-align: right">trebuie facut</th>
                                     </tr>
                                 </table>
                             {/if}

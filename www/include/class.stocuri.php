@@ -593,7 +593,7 @@ class Stocuri
     public static function getFisaGenerataById($id, $opt = array())
     {
         $ret = array();
-        $query = "SELECT a.*, b.nume as nume_depozit,
+        $query = "SELECT a.id,a.depozit_id,a.traseu_id,a.data_intrare, a.consum_sosire, a.consum_plecare, b.nume as nume_depozit,
                   c.nume as nume_traseu, d.nume as nume_sofer, e.numar
                   from fise_generate as a
                   left join depozite as b on a.depozit_id = b.id
@@ -603,27 +603,78 @@ class Stocuri
                   where a.id = '" . $id . "'
                   ";
 
+
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
-            $ret['total_vandute'] = 0;
-            $ret['total_defecte'] = 0;
-            $ret['grand_total'] = 0;
+            $ret['total_vandute_bg'] = 0;
+//            $ret['total_vandute_ar_8'] = 0;
+//            $ret['total_vandute_ar_9'] = 0;
+
+//            $ret['total_defecte_bg'] = 0;
+//            $ret['total_defecte_ar_8'] = 0;
+//            $ret['total_defecte_ar_9'] = 0;
+
+            $ret['grand_total_valoare_bg'] = 0;
+            $ret['total_valoare_bg'] = 0;
+
             $ret['grand_total_pret_plecare'] = 0;
-            $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
-            $ret['incarcatura_masina_intoarcere'] = self::getIntoarcereCantitateMarfaByFisaId($id);
-            $ret['miscari_fisa'] = self::getMiscariByFisaId($id);
-            $ret['clienti'] = Clienti::getAsignariClientiByFisaGenerataId($id, $opt =array());
+//            $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
+//            $ret['incarcatura_masina_intoarcere'] = self::getIntoarcereCantitateMarfaByFisaId($id);
+//            $ret['miscari_fisa'] = self::getMiscariByFisaId($id);
+            $ret['clienti'] = Clienti::getAsignariClientiByFisaGenerataId($id, $opt = array());
             foreach ($ret['clienti'] as $num => $client) {
                 $ret['clienti'][$num]['realizat'] = Stocuri::getRealizatClientByFisaId($id, $client['client_id']);
-                $ret['clienti'][$num]['total_vandute'] = 0;
-                $ret['clienti'][$num]['total_defecte'] = 0;
+
+                $ret['clienti'][$num]['total_vandute_bg'] = 0;
+//                $ret['clienti'][$num]['total_vandute_ar_8'] = 0;
+//                $ret['clienti'][$num]['total_vandute_ar_9'] = 0;
+
+//                $ret['clienti'][$num]['total_defecte_bg'] = 0;
+//                $ret['clienti'][$num]['total_defecte_ar_8'] = 0;
+//                $ret['clienti'][$num]['total_defecte_ar_9'] = 0;
+
+//                $ret['clienti'][$num]['total_valoare_bg'] = 0;
+
                 foreach ($ret['clienti'][$num]['realizat'] as $item_realizat) {
-                    $ret['clienti'][$num]['total_vandute'] += $item_realizat['cantitate'];
-                    $ret['clienti'][$num]['total_defecte'] += $item_realizat['defecte'];
-                    $ret['total_vandute'] += $item_realizat['cantitate'];
-                    $ret['total_defecte'] += $item_realizat['defecte'];
-                    $ret['grand_total'] = $ret['total_vandute'] + $ret['total_vandute'] + $ret['total_defecte'];
+
+//                    Total per client
+                    if ($item_realizat['tip_produs_id'] == 1) {
+                        $ret['clienti'][$num]['total_vandute_bg'] += $item_realizat['cantitate'];
+//                        $ret['clienti'][$num]['total_defecte_bg'] += $item_realizat['defecte'];
+//                        $ret['clienti'][$num]['total_valoare_bg'] += $item_realizat['cantitate'] * $item_realizat['pret'];
+
+                    }
+//                    elseif ($item_realizat['tip_produs_id'] == 3) {
+//                        $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'];
+//                        $ret['clienti'][$num]['total_defecte_ar_8'] += $item_realizat['defecte'];
+//
+//                    } elseif ($item_realizat['tip_produs_id'] == 4) {
+//                        $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'];
+//                        $ret['clienti'][$num]['total_defecte_ar_9'] += $item_realizat['defecte'];
+//
+//                    }
+
+
+//                    Grand total
+                    if ($item_realizat['tip_produs_id'] == 1) {
+                        $ret['total_vandute_bg'] += $item_realizat['cantitate'];
+//                        $ret['clienti'][$num]['total_defecte_bg'] += $item_realizat['defecte'];
+//                        $ret['total_defecte_bg'] += $item_realizat['defecte'];
+//                        $ret['grand_total_valoare_bg'] = $ret['total_vandute_bg'] * $item_realizat['pret'];
+
+                    }
+//                      elseif ($item_realizat['tip_produs_id'] == 3) {
+//                        $ret['total_vandute_ar_8'] += $item_realizat['cantitate'];
+//                        $ret['clienti'][$num]['total_defecte_ar_8'] += $item_realizat['defecte'];
+//                        $ret['total_defecte_ar_8'] += $item_realizat['defecte'];
+//
+//                    } elseif ($item_realizat['tip_produs_id'] == 4) {
+//                        $ret['total_vandute_ar_9'] += $item_realizat['cantitate'];
+//                        $ret['clienti'][$num]['total_defecte_ar_9'] += $item_realizat['defecte'];
+//                        $ret['total_defecte_ar_9'] += $item_realizat['defecte'];
+//
+//                    }
                 }
             }
         }
@@ -662,6 +713,7 @@ class Stocuri
         return $ret;
 
     }
+
     public static function getStocByDepozitId($depozit_id)
     {
         $ret = array();

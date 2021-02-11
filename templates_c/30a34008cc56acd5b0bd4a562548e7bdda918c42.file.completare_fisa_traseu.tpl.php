@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-09 21:25:28
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-11 13:15:26
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1612563830,
+      1 => 1613042122,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_6022e1a8be9f99_05262437',
   'variables' => 
   array (
     'title' => 0,
@@ -58,8 +60,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'totaltime' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_6022e1a8be9f99_05262437',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_6022e1a8be9f99_05262437')) {function content_6022e1a8be9f99_05262437($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -609,13 +609,10 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                         <th style="text-align: right;" colspan="3">
                                                             Total:
                                                         </th>
-                                                        <th style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_vandute'];?>
-</th>
-                                                        <th style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_defecte'];?>
-</th>
-                                                        <th style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_vandute'];?>
-</th>
-                                                        <th style="text-align: right;"></th>
+                                                        
+                                                        
+                                                        
+                                                        
                                                     </tr>
                                                     
                                                     
@@ -658,10 +655,10 @@ $_smarty_tpl->tpl_vars["cantitate"]->_loop = true;
                                     <?php } ?>
                                     <tr>
                                         <th style="text-align: right;color: red;">Total:</th>
-                                        <th style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['cantitati_produse_clienti_by_fisa_id']->value['total_vandute'];?>
-</th>
-                                        <th style="text-align: right"><?php echo $_smarty_tpl->tpl_vars['cantitati_produse_clienti_by_fisa_id']->value['total_defecte'];?>
-</th>
+                                        
+                                        
+                                        <th style="text-align: right;">trebuie facut</th>
+                                        <th style="text-align: right">trebuie facut</th>
                                     </tr>
                                 </table>
                             <?php }?>

@@ -56,7 +56,7 @@ $stare_id = 1;
 //    'stari' => array(3)
 //));
 
-//$b = Stocuri::getFisaGenerataById(356);
+$b = Stocuri::getFisaGenerataById(148);
 
 
 //$b = Clienti::getRaportLivrariClienti(2, array(
@@ -114,7 +114,7 @@ $stare_id = 1;
 //TRASEE----------------------------------------------------------
 
 //$b = Trasee::getNeconcordantaPreturiClientiByTraseuId(36);
-$b = Clienti::getDiferentePreturiByClientIdAndTraseuId(2433, 36, 1);
+//$b = Clienti::getDiferentePreturiByClientIdAndTraseuId(2433, 36, 1);
 //$b = Trasee::getTraseeAsignateLaClientByClientId(1899);
 //$b = Trasee::getTrasee();
 //$b = Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId(1593,146);
