@@ -332,7 +332,7 @@
                                                         </th>
                                                         <th class="span1"
                                                             style="text-align: center;font-weight: bolder;">
-                                                            Comision
+                                                            Com.
                                                         </th>
                                                         <th hidden>Pret contract</th>
                                                     </tr>
@@ -419,15 +419,15 @@
                                                             </td>
                                                         </tr>
                                                     {/foreach}
-                                                    <tr>
-                                                        <th style="text-align: right;" colspan="3">
-                                                            Total:
-                                                        </th>
+                                                    {*<tr>*}
+                                                        {*<th style="text-align: right;" colspan="3">*}
+                                                            {*Total:*}
+                                                        {*</th>*}
                                                         {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
                                                         {*<th style="text-align: right;">{$client['total_defecte']}</th>*}
                                                         {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
                                                         {*<th style="text-align: right;"></th>*}
-                                                    </tr>
+                                                    {*</tr>*}
                                                     {*{$calcul = ($realizat_produs['pret'] - $target_client['comision']) *$realizat_produs['cantitate'] }*}
                                                     {*<tr>*}
                                                     {*<th colspan="7" style="text-align: left;">{$target_client['nume_produs']} = ({$realizat_produs['pret']} - {$target_client['comision']}) * {$realizat_produs['cantitate']} = {$calcul}</th>*}
@@ -444,9 +444,9 @@
                             </form>
                             <div style="display: inline-flex">
                                 <div>
-                                    <table class="table table-bordered table-striped" style="width: 200px;">
+                                    <table class="table table-bordered table-striped" style="width: 160px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;" colspan="2">BG</td>
+                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG</td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total cantitati</td>
@@ -458,14 +458,14 @@
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total Comision</td>
-                                            <td style="text-align: center;font-weight: 900;"></td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_bg']}</td>
                                         </tr>
                                     </table>
                                 </div>
                                 <div style="margin-left: 10px;">
                                     <table class="table table-bordered table-striped" style="width: 160px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;" colspan="2">AR 8</td>
+                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">AR 8</td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total cantitati</td>
@@ -477,14 +477,14 @@
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total Comision</td>
-                                            <td style="text-align: center;font-weight: 900;"></td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_ar_8']}</td>
                                         </tr>
                                     </table>
                                 </div>
                                 <div style="margin-left: 10px;">
                                     <table class="table table-bordered table-striped" style="width: 160px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;" colspan="2">AR 9</td>
+                                            <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR 9</td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total cantitati</td>
@@ -496,26 +496,26 @@
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total Comision</td>
-                                            <td style="text-align: center;font-weight: 900;"></td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_ar_9']}</td>
                                         </tr>
                                     </table>
                                 </div>
                                 <div style="margin-left: 10px;">
                                     <table class="table table-bordered table-striped" style="width: 160px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;" colspan="2">TOTALURI</td>
+                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">TOTALURI</td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">BG + AR</td>
-                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_9']}</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_bg'] + $fisa['grand_total_vandute_ar_8'] + $fisa['grand_total_vandute_ar_9']}</td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
-                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_9']}</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg'] + $fisa['grand_valoare_ar_8'] + $fisa['grand_valoare_ar_9']}</td>
                                         </tr>
                                         <tr class="info">
                                             <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
-                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_ar_9']}</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_bg'] + $fisa['grand_comision_ar_8'] + $fisa['grand_comision_ar_9']}</td>
                                         </tr>
                                     </table>
                                 </div>
