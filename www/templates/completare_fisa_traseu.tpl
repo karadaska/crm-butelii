@@ -114,6 +114,20 @@
                                                     </th>
                                                 </tr>
                                                 <tr>
+                                                    <th style="text-align: left;vertical-align: middle;">Total Km:</th>
+                                                    {if $fisa['miscari_fisa'][0]['km'] != ''}
+                                                        {$km = $fisa['miscari_fisa'][0]['km']}
+                                                    {else}
+                                                        {$km = 0}
+                                                    {/if}
+                                                    <th>
+                                                        <input type="text" autocomplete="off"
+                                                               style="width: 80px; line-height: 16px;min-height: 16px !important;"
+                                                               name="km"
+                                                               value="{$km}">
+                                                    </th>
+                                                </tr>
+                                                <tr>
                                                     <th style="text-align: left;">
                                                         <select name="tip_alimentare" style="width: 120px;">
                                                             <option value="0">Tip alimentare</option>
@@ -136,18 +150,39 @@
                                                                value="{$valoare_alimentare}">
                                                     </th>
                                                 </tr>
+
                                                 <tr>
-                                                    <th style="text-align: left;vertical-align: middle;">Total Km:</th>
-                                                    {if $fisa['miscari_fisa'][0]['km'] != ''}
-                                                        {$km = $fisa['miscari_fisa'][0]['km']}
-                                                    {else}
-                                                        {$km = 0}
-                                                    {/if}
-                                                    <th><input type="text" autocomplete="off"
-                                                               style="width: 80px; line-height: 16px;min-height: 16px !important;"
-                                                               name="km"
-                                                               value="{$km}">
+                                                    <th style="text-align: left;vertical-align: middle;">
+                                                        <input type="text" autocomplete="off" placeholder="Numar"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        <br/>
+                                                         <input type="text" autocomplete="off" placeholder="AR 8"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        <br/>
+                                                        <input type="text" autocomplete="off" placeholder="AR 9"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        </label>
+
                                                     </th>
+                                                    <th><textarea rows="3" cols="1"></textarea></th>
                                                 </tr>
                                                 <tr>
                                                     <th colspan="2" style="text-align: right">
@@ -420,13 +455,13 @@
                                                         </tr>
                                                     {/foreach}
                                                     {*<tr>*}
-                                                        {*<th style="text-align: right;" colspan="3">*}
-                                                            {*Total:*}
-                                                        {*</th>*}
-                                                        {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
-                                                        {*<th style="text-align: right;">{$client['total_defecte']}</th>*}
-                                                        {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
-                                                        {*<th style="text-align: right;"></th>*}
+                                                    {*<th style="text-align: right;" colspan="3">*}
+                                                    {*Total:*}
+                                                    {*</th>*}
+                                                    {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
+                                                    {*<th style="text-align: right;">{$client['total_defecte']}</th>*}
+                                                    {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
+                                                    {*<th style="text-align: right;"></th>*}
                                                     {*</tr>*}
                                                     {*{$calcul = ($realizat_produs['pret'] - $target_client['comision']) *$realizat_produs['cantitate'] }*}
                                                     {*<tr>*}
@@ -446,7 +481,8 @@
                                 <div>
                                     <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG</td>
+                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total cantitati</td>
@@ -465,7 +501,9 @@
                                 <div style="margin-left: 10px;">
                                     <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">AR 8</td>
+                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">AR
+                                                8
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total cantitati</td>
@@ -484,7 +522,9 @@
                                 <div style="margin-left: 10px;">
                                     <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR 9</td>
+                                            <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR
+                                                9
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total cantitati</td>
@@ -503,7 +543,9 @@
                                 <div style="margin-left: 10px;">
                                     <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">TOTALURI</td>
+                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">
+                                                TOTALURI
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">BG + AR</td>

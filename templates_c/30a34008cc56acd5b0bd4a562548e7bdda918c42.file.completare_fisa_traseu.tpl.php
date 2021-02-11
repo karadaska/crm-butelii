@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-11 22:50:04
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-11 23:27:09
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1613076604,
+      1 => 1613078827,
       2 => 'file',
     ),
   ),
@@ -25,10 +25,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'valoare_casa_marcat' => 0,
     'valoare_raport_z' => 0,
     'valoare_valoare_z' => 0,
+    'km' => 0,
     'get_tip_alimentare' => 0,
     'alimentare_tip' => 0,
     'valoare_alimentare' => 0,
-    'km' => 0,
     'lista_produse' => 0,
     'plecare_marfa_by_fisa_id' => 0,
     'produs' => 0,
@@ -200,6 +200,21 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
                                                     </th>
                                                 </tr>
                                                 <tr>
+                                                    <th style="text-align: left;vertical-align: middle;">Total Km:</th>
+                                                    <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['km']!='') {?>
+                                                        <?php $_smarty_tpl->tpl_vars['km'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['km'], null, 0);?>
+                                                    <?php } else { ?>
+                                                        <?php $_smarty_tpl->tpl_vars['km'] = new Smarty_variable(0, null, 0);?>
+                                                    <?php }?>
+                                                    <th>
+                                                        <input type="text" autocomplete="off"
+                                                               style="width: 80px; line-height: 16px;min-height: 16px !important;"
+                                                               name="km"
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['km']->value;?>
+">
+                                                    </th>
+                                                </tr>
+                                                <tr>
                                                     <th style="text-align: left;">
                                                         <select name="tip_alimentare" style="width: 120px;">
                                                             <option value="0">Tip alimentare</option>
@@ -230,19 +245,39 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
 ">
                                                     </th>
                                                 </tr>
+
                                                 <tr>
-                                                    <th style="text-align: left;vertical-align: middle;">Total Km:</th>
-                                                    <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['km']!='') {?>
-                                                        <?php $_smarty_tpl->tpl_vars['km'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['km'], null, 0);?>
-                                                    <?php } else { ?>
-                                                        <?php $_smarty_tpl->tpl_vars['km'] = new Smarty_variable(0, null, 0);?>
-                                                    <?php }?>
-                                                    <th><input type="text" autocomplete="off"
-                                                               style="width: 80px; line-height: 16px;min-height: 16px !important;"
-                                                               name="km"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['km']->value;?>
-">
+                                                    <th style="text-align: left;vertical-align: middle;">
+                                                        <input type="text" autocomplete="off" placeholder="Numar"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        <br/>
+                                                         <input type="text" autocomplete="off" placeholder="AR 8"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        <br/>
+                                                        <input type="text" autocomplete="off" placeholder="AR 9"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                               name="nr_bg"
+                                                               value=""/>
+                                                        </label>
+
                                                     </th>
+                                                    <th><textarea rows="3" cols="1"></textarea></th>
                                                 </tr>
                                                 <tr>
                                                     <th colspan="2" style="text-align: right">
@@ -602,13 +637,13 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                         </tr>
                                                     <?php } ?>
                                                     
-                                                        
-                                                            
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
                                                     
                                                     
                                                     
@@ -626,9 +661,10 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                             </form>
                             <div style="display: inline-flex">
                                 <div>
-                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                    <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG</td>
+                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total cantitati</td>
@@ -648,9 +684,11 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                     </table>
                                 </div>
                                 <div style="margin-left: 10px;">
-                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                    <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">AR 8</td>
+                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">AR
+                                                8
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total cantitati</td>
@@ -670,9 +708,11 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                     </table>
                                 </div>
                                 <div style="margin-left: 10px;">
-                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                    <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR 9</td>
+                                            <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR
+                                                9
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">Total cantitati</td>
@@ -692,9 +732,11 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                     </table>
                                 </div>
                                 <div style="margin-left: 10px;">
-                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                    <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
-                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">TOTALURI</td>
+                                            <td style="text-align: center;font-weight: 900;color: red;" colspan="2">
+                                                TOTALURI
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td style="text-align: left;font-weight: 900;">BG + AR</td>
