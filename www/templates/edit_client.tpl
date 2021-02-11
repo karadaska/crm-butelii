@@ -147,7 +147,7 @@
                                                     <select name="rastel_id">
                                                         <option value="0">Selecteaza rastel</option>
                                                         {foreach from=$lista_rastel key=tmp item=rastel}
-                                                            <option value={$rastel['id']} {if $rastel['rastel'] == $rastel['rastel_id']} selected="selected"{/if}>{$rastel['tip']}</option>
+                                                            <option value={$rastel['id']} {if $rastel['id'] == $client['rastel']} selected="selected" {/if}>{$rastel['tip']}</option>
                                                         {/foreach}
                                                     </select>
                                                 </th>
