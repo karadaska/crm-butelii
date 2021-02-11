@@ -355,7 +355,6 @@
                                                                 {else}
                                                                     {$title_pret = 'PRET MAI MIC DECAT CEL DIN CONTRACT'}
                                                                 {/if}
-
                                                                 <td title="{$title_pret}">
                                                                     <input style="text-align: right;width: 100px;border-color: red"
                                                                            value="{$valoare_cantitate}"
@@ -369,7 +368,6 @@
                                                                            type="text" autocomplete="off"
                                                                            name="pret_{$fisa['depozit_id']}_{$client['client_id']}_{$target_client['tip_produs_id']}">
                                                                 </td>
-
                                                             {/if}
 
                                                             {if $realizat_produs['cantitate'] != ''}
@@ -432,7 +430,7 @@
                                                     </tr>
                                                     {*{$calcul = ($realizat_produs['pret'] - $target_client['comision']) *$realizat_produs['cantitate'] }*}
                                                     {*<tr>*}
-                                                        {*<th colspan="7" style="text-align: left;">{$target_client['nume_produs']} = ({$realizat_produs['pret']} - {$target_client['comision']}) * {$realizat_produs['cantitate']} = {$calcul}</th>*}
+                                                    {*<th colspan="7" style="text-align: left;">{$target_client['nume_produs']} = ({$realizat_produs['pret']} - {$target_client['comision']}) * {$realizat_produs['cantitate']} = {$calcul}</th>*}
                                                     {*</tr>*}
                                                 </table>
                                             </td>
@@ -444,33 +442,84 @@
                                     Adauga cantitate client
                                 </button>
                             </form>
-                            {if count($cantitati_produse_clienti_by_fisa_id) > 0}
-                                <table class="table table-bordered table-striped" style="width: 490px;">
-                                    <tr class="info">
-                                        <td style="text-align: center;font-weight: 900;">Produs</td>
-                                        <td style="text-align: center;font-weight: 900;">Vandute</td>
-                                        <td style="text-align: center;font-weight: 900;">Defecte</td>
-                                    </tr>
-                                    {foreach from=$cantitati_produse_clienti_by_fisa_id item="cantitate"}
-                                        {if $cantitate['pline'] > 0 || $cantitate['defecte'] > 0}
-                                            <tr>
-                                                <td>
-                                                    <span style="color: red;font-weight: 900">{$cantitate['nume_produs']}</span>
-                                                </td>
-                                                <td style="text-align: right;">{$cantitate['pline']}</td>
-                                                <td style="text-align: right;">{$cantitate['defecte']}</td>
-                                            </tr>
-                                        {/if}
-                                    {/foreach}
-                                    <tr>
-                                        <th style="text-align: right;color: red;">Total:</th>
-                                        {*<th style="text-align: right;">{$cantitati_produse_clienti_by_fisa_id['total_vandute']}trebuie facut</th>*}
-                                        {*<th style="text-align: right">{$cantitati_produse_clienti_by_fisa_id['total_defecte']}trebuie facut</th>*}
-                                        <th style="text-align: right;">trebuie facut</th>
-                                        <th style="text-align: right">trebuie facut</th>
-                                    </tr>
-                                </table>
-                            {/if}
+                            <div style="display: inline-flex">
+                                <div>
+                                    <table class="table table-bordered table-striped" style="width: 200px;">
+                                        <tr class="info">
+                                            <td style="text-align: center;font-weight: 900;" colspan="2">BG</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_bg']}</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                                            <td style="text-align: left;font-weight: 900;">{$fisa['grand_valoare_bg']}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                                            <td style="text-align: center;font-weight: 900;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="margin-left: 10px;">
+                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                        <tr class="info">
+                                            <td style="text-align: center;font-weight: 900;" colspan="2">AR 8</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_8']}</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_ar_8']}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                                            <td style="text-align: center;font-weight: 900;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="margin-left: 10px;">
+                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                        <tr class="info">
+                                            <td style="text-align: center;font-weight: 900;" colspan="2">AR 9</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_9']}</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_ar_9']}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                                            <td style="text-align: center;font-weight: 900;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="margin-left: 10px;">
+                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                        <tr class="info">
+                                            <td style="text-align: center;font-weight: 900;" colspan="2">TOTALURI</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;font-weight: 900;">BG + AR</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_9']}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_9']}</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
+                                            <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_ar_9']}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                             <div style="margin-top: 100px;"></div>
                             {*<form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post"*}
                             {*style="margin-bottom: 0">*}
