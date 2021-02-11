@@ -607,7 +607,7 @@ class Stocuri
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
-            $ret['total_vandute_bg'] = 0;
+            $ret['grand_total_vandute_bg'] = 0;
 //            $ret['total_vandute_ar_8'] = 0;
 //            $ret['total_vandute_ar_9'] = 0;
 
@@ -616,7 +616,7 @@ class Stocuri
 //            $ret['total_defecte_ar_9'] = 0;
 
             $ret['grand_total_valoare_bg'] = 0;
-            $ret['total_valoare_bg'] = 0;
+//            $ret['total_valoare_bg'] = 0;
 
             $ret['grand_total_pret_plecare'] = 0;
 //            $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
@@ -634,7 +634,7 @@ class Stocuri
 //                $ret['clienti'][$num]['total_defecte_ar_8'] = 0;
 //                $ret['clienti'][$num]['total_defecte_ar_9'] = 0;
 
-//                $ret['clienti'][$num]['total_valoare_bg'] = 0;
+                $ret['clienti'][$num]['total_valoare_bg'] = 0;
 
                 foreach ($ret['clienti'][$num]['realizat'] as $item_realizat) {
 
@@ -642,8 +642,7 @@ class Stocuri
                     if ($item_realizat['tip_produs_id'] == 1) {
                         $ret['clienti'][$num]['total_vandute_bg'] += $item_realizat['cantitate'];
 //                        $ret['clienti'][$num]['total_defecte_bg'] += $item_realizat['defecte'];
-//                        $ret['clienti'][$num]['total_valoare_bg'] += $item_realizat['cantitate'] * $item_realizat['pret'];
-
+                        $ret['clienti'][$num]['total_valoare_bg'] += $item_realizat['cantitate'] * $item_realizat['pret'];
                     }
 //                    elseif ($item_realizat['tip_produs_id'] == 3) {
 //                        $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'];
@@ -658,7 +657,8 @@ class Stocuri
 
 //                    Grand total
                     if ($item_realizat['tip_produs_id'] == 1) {
-                        $ret['total_vandute_bg'] += $item_realizat['cantitate'];
+                        $ret['grand_total_vandute_bg'] += $item_realizat['cantitate'];
+                        $ret['grand_total_valoare_bg'] += $ret['clienti'][$num]['total_valoare_bg'];
 //                        $ret['clienti'][$num]['total_defecte_bg'] += $item_realizat['defecte'];
 //                        $ret['total_defecte_bg'] += $item_realizat['defecte'];
 //                        $ret['grand_total_valoare_bg'] = $ret['total_vandute_bg'] * $item_realizat['pret'];
