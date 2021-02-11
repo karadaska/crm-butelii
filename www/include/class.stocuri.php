@@ -608,17 +608,15 @@ class Stocuri
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
             $ret['grand_total_vandute_bg'] = 0;
-//            $ret['total_vandute_ar_8'] = 0;
-//            $ret['total_vandute_ar_9'] = 0;
+            $ret['grand_total_vandute_ar_8'] = 0;
+            $ret['grand_total_vandute_ar_9'] = 0;
 
-//            $ret['total_defecte_bg'] = 0;
-//            $ret['total_defecte_ar_8'] = 0;
-//            $ret['total_defecte_ar_9'] = 0;
+            $ret['grand_valoare_bg'] = 0;
+            $ret['grand_valoare_ar_8'] = 0;
+            $ret['grand_valoare_ar_9'] = 0;
 
-            $ret['grand_total_valoare_bg'] = 0;
-//            $ret['total_valoare_bg'] = 0;
 
-            $ret['grand_total_pret_plecare'] = 0;
+//            $ret['grand_total_pret_plecare'] = 0;
 //            $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
 //            $ret['incarcatura_masina_intoarcere'] = self::getIntoarcereCantitateMarfaByFisaId($id);
 //            $ret['miscari_fisa'] = self::getMiscariByFisaId($id);
@@ -627,54 +625,58 @@ class Stocuri
                 $ret['clienti'][$num]['realizat'] = Stocuri::getRealizatClientByFisaId($id, $client['client_id']);
 
                 $ret['clienti'][$num]['total_vandute_bg'] = 0;
-//                $ret['clienti'][$num]['total_vandute_ar_8'] = 0;
-//                $ret['clienti'][$num]['total_vandute_ar_9'] = 0;
-
-//                $ret['clienti'][$num]['total_defecte_bg'] = 0;
-//                $ret['clienti'][$num]['total_defecte_ar_8'] = 0;
-//                $ret['clienti'][$num]['total_defecte_ar_9'] = 0;
-
+                $ret['clienti'][$num]['total_defecte_bg'] = 0;
                 $ret['clienti'][$num]['total_valoare_bg'] = 0;
+
+                $ret['clienti'][$num]['total_vandute_ar_8'] = 0;
+                $ret['clienti'][$num]['total_defecte_ar_8'] = 0;
+                $ret['clienti'][$num]['total_valoare_ar_8'] = 0;
+
+
+                $ret['clienti'][$num]['total_vandute_ar_9'] = 0;
+                $ret['clienti'][$num]['total_defecte_ar_9'] = 0;
+                $ret['clienti'][$num]['total_valoare_ar_9'] = 0;
 
                 foreach ($ret['clienti'][$num]['realizat'] as $item_realizat) {
 
 //                    Total per client
                     if ($item_realizat['tip_produs_id'] == 1) {
                         $ret['clienti'][$num]['total_vandute_bg'] += $item_realizat['cantitate'];
-//                        $ret['clienti'][$num]['total_defecte_bg'] += $item_realizat['defecte'];
                         $ret['clienti'][$num]['total_valoare_bg'] += $item_realizat['cantitate'] * $item_realizat['pret'];
+                        $ret['clienti'][$num]['total_defecte_bg'] += $item_realizat['defecte'];
                     }
-//                    elseif ($item_realizat['tip_produs_id'] == 3) {
-//                        $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'];
-//                        $ret['clienti'][$num]['total_defecte_ar_8'] += $item_realizat['defecte'];
-//
-//                    } elseif ($item_realizat['tip_produs_id'] == 4) {
-//                        $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'];
-//                        $ret['clienti'][$num]['total_defecte_ar_9'] += $item_realizat['defecte'];
-//
-//                    }
+                    elseif ($item_realizat['tip_produs_id'] == 3) {
+                        $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'];
+                        $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'] * $item_realizat['pret'];
+                        $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['defecte'];
+
+                    }
+                     elseif ($item_realizat['tip_produs_id'] == 4) {
+                         $ret['clienti'][$num]['total_vandute_ar_9'] += $item_realizat['cantitate'];
+                         $ret['clienti'][$num]['total_vandute_ar_9'] += $item_realizat['cantitate'] * $item_realizat['pret'];
+                         $ret['clienti'][$num]['total_vandute_ar_9'] += $item_realizat['defecte'];
+
+                    }
 
 
 //                    Grand total
                     if ($item_realizat['tip_produs_id'] == 1) {
                         $ret['grand_total_vandute_bg'] += $item_realizat['cantitate'];
-                        $ret['grand_total_valoare_bg'] += $ret['clienti'][$num]['total_valoare_bg'];
+                        $ret['grand_valoare_bg'] += $ret['clienti'][$num]['total_valoare_bg'];
+
 //                        $ret['clienti'][$num]['total_defecte_bg'] += $item_realizat['defecte'];
 //                        $ret['total_defecte_bg'] += $item_realizat['defecte'];
-//                        $ret['grand_total_valoare_bg'] = $ret['total_vandute_bg'] * $item_realizat['pret'];
 
-                    }
-//                      elseif ($item_realizat['tip_produs_id'] == 3) {
-//                        $ret['total_vandute_ar_8'] += $item_realizat['cantitate'];
+                    }elseif ($item_realizat['tip_produs_id'] == 3) {
+                          $ret['grand_total_vandute_ar_8'] += $item_realizat['cantitate'];
+//                          $ret['grand_total_vandute_ar_8'] += $ret['clienti'][$num]['total_valoare_ar_8'];
 //                        $ret['clienti'][$num]['total_defecte_ar_8'] += $item_realizat['defecte'];
 //                        $ret['total_defecte_ar_8'] += $item_realizat['defecte'];
-//
-//                    } elseif ($item_realizat['tip_produs_id'] == 4) {
-//                        $ret['total_vandute_ar_9'] += $item_realizat['cantitate'];
-//                        $ret['clienti'][$num]['total_defecte_ar_9'] += $item_realizat['defecte'];
-//                        $ret['total_defecte_ar_9'] += $item_realizat['defecte'];
-//
-//                    }
+
+                    }elseif ($item_realizat['tip_produs_id'] == 4) {
+                        $ret['grand_total_vandute_ar_9'] += $item_realizat['cantitate'];
+//                        $ret['grand_total_vandute_ar_9'] += $ret['clienti'][$num]['total_valoare_ar_9'];
+                    }
                 }
             }
         }
