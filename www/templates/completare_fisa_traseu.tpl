@@ -444,7 +444,7 @@
                             </form>
                             <div style="display: inline-flex">
                                 <div>
-                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                    <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
                                             <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG</td>
                                         </tr>
@@ -463,7 +463,7 @@
                                     </table>
                                 </div>
                                 <div style="margin-left: 10px;">
-                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                    <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
                                             <td style="text-align: center;font-weight: 900;color: red;" colspan="2">AR 8</td>
                                         </tr>
@@ -482,7 +482,7 @@
                                     </table>
                                 </div>
                                 <div style="margin-left: 10px;">
-                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                    <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
                                             <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR 9</td>
                                         </tr>
@@ -501,7 +501,7 @@
                                     </table>
                                 </div>
                                 <div style="margin-left: 10px;">
-                                    <table class="table table-bordered table-striped" style="width: 160px;">
+                                    <table class="table table-bordered table-striped" style="width: 180px;">
                                         <tr class="info">
                                             <td style="text-align: center;font-weight: 900;color: red;" colspan="2">TOTALURI</td>
                                         </tr>
