@@ -655,7 +655,7 @@ class Stocuri
                     } elseif ($item_realizat['tip_produs_id'] == 4) {
                         $ret['clienti'][$num]['total_vandute_ar_9'] += $item_realizat['cantitate'];
                         $ret['clienti'][$num]['total_valoare_ar_9'] += $item_realizat['cantitate'] * $item_realizat['pret'];
-                         $ret['clienti'][$num]['total_defecte_ar_9'] += $item_realizat['defecte'];
+                        $ret['clienti'][$num]['total_defecte_ar_9'] += $item_realizat['defecte'];
 
                     }
 
