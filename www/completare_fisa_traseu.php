@@ -342,15 +342,25 @@ if (isset($_POST['adauga_miscari_fisa'])) {
                                   valoare_z = '" . $valoare_z . "',
                                   tip_alimentare = '" . $tip_alimentare . "',
                                   valoare_alimentare = '" . $valoare_alimentare . "',
-                                  km = '" . $km . "'
+                                  km = '" . $km . "',
+                                  nr_bg = '" . $nr_bg . "',
+                                  nr_ar_8 = '" . $nr_ar_8 . "',
+                                  nr_ar_9 = '" . $nr_ar_9 . "',
+                                  valoare_bg = '" . $valoare_bg . "',
+                                  valoare_ar_8 = '" . $valoare_ar_8 . "',
+                                  valoare_ar_9 = '" . $valoare_ar_9 . "',
+                                  nota_explicativa = '" . $nota_explicativa . "'
                                   where fisa_id = '" . $id . "'
                                                 ";
         myExec($update_miscari);
     } else {
 
-        $insert_miscari_fisa = "INSERT INTO miscari_fise(fisa_id, casa_marcat, raport_z, valoare_z, tip_alimentare, valoare_alimentare, km, data_intrare)
+        $insert_miscari_fisa = "INSERT INTO miscari_fise(fisa_id, casa_marcat, raport_z, valoare_z, tip_alimentare, valoare_alimentare, 
+                                km, data_intrare, nr_bg, nr_ar_8, nr_ar_9, valoare_bg, valoare_ar_8, valoare_ar_9, nota_explicativa)
                      values
-                    ('" . $id . "','" . $casa_marcat . "','" . $raport_z . "','" . $valoare_z . "','" . $tip_alimentare . "','" . $valoare_alimentare . "','" . $km . "','" . $data_intrare . "')";
+                    ('" . $id . "','" . $casa_marcat . "','" . $raport_z . "','" . $valoare_z . "','" . $tip_alimentare . "',
+                    '" . $valoare_alimentare . "','" . $km . "','" . $data_intrare . "',
+                    '" . $nr_bg . "','" . $nr_ar_8 . "','" . $nr_ar_9 . "','" . $valoare_bg . "','" . $valoare_ar_8 . "','" . $valoare_ar_9 . "','" . $nota_explicativa . "')";
 
         myExec($insert_miscari_fisa);
 

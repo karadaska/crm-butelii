@@ -102,7 +102,6 @@
 
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">Valoare Z:</th>
-                                                    {$fisa['miscari_fisa']['valoare_z']}
                                                     {if $fisa['miscari_fisa']['valoare_z'] != ''}
                                                         {$valoare_valoare_z = $fisa['miscari_fisa']['valoare_z']}
                                                     {else}
@@ -158,31 +157,34 @@
                                                                title="NUMAR BG"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_bg"
-                                                               value="{$fisa['miscari_fisa']['casa_marcat']}"/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE BG"
+                                                               value="{$fisa['miscari_fisa']['nr_bg']}"/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               title="VALOARE BG"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="valoare_bg"
-                                                               value=""/>
+                                                               value="{$fisa['miscari_fisa']['valoare_bg']}"/>
                                                         <br/>
                                                         <input type="text" autocomplete="off" placeholder="AR 8"
                                                                title="NUMAR AR 8"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_ar_8"
-                                                               value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE AR 8"
+                                                               value="{$fisa['miscari_fisa']['nr_ar_8']}"/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               title="VALOARE AR 8"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="valoare_ar_8"
-                                                               value=""/>
+                                                               value="{$fisa['miscari_fisa']['valoare_ar_8']}"/>
                                                         <br/>
                                                         <input type="text" autocomplete="off" placeholder="AR 9"
                                                                title="NUMAR AR 9"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_ar_9"
-                                                               value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE AR 9"
+                                                               value="{$fisa['miscari_fisa']['ar_9']}"/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               title="VALOARE AR 9"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="valoare_ar_9"
-                                                               value=""/>
+                                                               value="{$fisa['miscari_fisa']['valoare_ar_9']}"/>
 
                                                     </th>
                                                     <th><textarea rows="3" name="nota_explicativa"></textarea></th>

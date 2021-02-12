@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-12 13:17:49
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-12 13:30:59
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1613128666,
+      1 => 1613129458,
       2 => 'file',
     ),
   ),
@@ -187,8 +187,6 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
 
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">Valoare Z:</th>
-                                                    <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_z'];?>
-
                                                     <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_z']!='') {?>
                                                         <?php $_smarty_tpl->tpl_vars['valoare_valoare_z'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_z'], null, 0);?>
                                                     <?php } else { ?>
@@ -254,31 +252,36 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                                                title="NUMAR BG"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_bg"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['casa_marcat'];?>
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['nr_bg'];?>
 "/>
                                                         <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE BG"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="valoare_bg"
+                                                               name="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_bg'];?>
+"
                                                                value=""/>
                                                         <br/>
                                                         <input type="text" autocomplete="off" placeholder="AR 8"
                                                                title="NUMAR AR 8"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="nr_ar_8"
+                                                               name="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['nr_ar_8'];?>
+"
                                                                value=""/>
                                                         <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE AR 8"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="valoare_ar_8"
+                                                               name="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_ar_8'];?>
+"
                                                                value=""/>
                                                         <br/>
                                                         <input type="text" autocomplete="off" placeholder="AR 9"
                                                                title="NUMAR AR 9"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="nr_ar_9"
+                                                               name="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['ar_9'];?>
+"
                                                                value=""/>
                                                         <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE AR 9"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="valoare_ar_9"
+                                                               name="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_ar_9'];?>
+"
                                                                value=""/>
 
                                                     </th>
