@@ -19,6 +19,13 @@ $km = getRequestParameter('km', 0);
 $valoare_z = getRequestParameter('valoare_z', '');
 $plata = getRequestParameter('plata', '');
 $tip_alimentare = getRequestParameter('tip_alimentare', '');
+$nr_bg = getRequestParameter('nr_bg', '');
+$nr_ar_8 = getRequestParameter('nr_ar_8', '');
+$nr_ar_9 = getRequestParameter('nr_ar_9', '');
+$valoare_bg = getRequestParameter('valoare_bg', '');
+$valoare_ar_8 = getRequestParameter('valoare_ar_8', '');
+$valoare_ar_9 = getRequestParameter('valoare_ar_9', '');
+$nota_explicativa = getRequestParameter('nota_explicativa', '');
 $valoare_alimentare = getRequestParameter('valoare_alimentare', '');
 $adauga_miscari_fisa = getRequestParameter('adauga_miscari_fisa', '');
 
