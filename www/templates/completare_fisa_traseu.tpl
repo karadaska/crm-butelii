@@ -134,8 +134,9 @@
                                                             <option value="0">Tip alimentare</option>
                                                             {foreach from=$get_tip_alimentare item=alimentare_tip}
                                                                 <option value={$alimentare_tip['id']}
-                                                                        {if $alimentare_tip['id'] == {$fisa['miscari_fisa']['tip_alimentare']}}selected="selected"{/if}>
-                                                                    {$alimentare_tip['tip']}</option>
+                                                                        {if $alimentare_tip['id'] == {$fisa['miscari_fisa']['tip_alimentare_id']}} selected="selected" {/if}>
+                                                                    {$alimentare_tip['tip']}
+                                                                </option>
                                                             {/foreach}
                                                         </select>
                                                     </th>

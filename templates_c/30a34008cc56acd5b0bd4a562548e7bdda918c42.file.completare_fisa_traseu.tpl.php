@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-12 13:02:52
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-12 13:17:49
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1613127770,
+      1 => 1613128666,
       2 => 'file',
     ),
   ),
@@ -227,10 +227,11 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
 ?>
                                                                 <option value=<?php echo $_smarty_tpl->tpl_vars['alimentare_tip']->value['id'];?>
 
-                                                                        <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['tip_alimentare'];?>
-<?php $_tmp1=ob_get_clean();?><?php if ($_smarty_tpl->tpl_vars['alimentare_tip']->value['id']==$_tmp1) {?>selected="selected"<?php }?>>
+                                                                        <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['tip_alimentare_id'];?>
+<?php $_tmp1=ob_get_clean();?><?php if ($_smarty_tpl->tpl_vars['alimentare_tip']->value['id']==$_tmp1) {?> selected="selected" <?php }?>>
                                                                     <?php echo $_smarty_tpl->tpl_vars['alimentare_tip']->value['tip'];?>
-</option>
+
+                                                                </option>
                                                             <?php } ?>
                                                         </select>
                                                     </th>
