@@ -593,7 +593,8 @@ class Stocuri
     public static function getFisaGenerataById($id, $opt = array())
     {
         $ret = array();
-        $query = "SELECT a.id,a.depozit_id,a.traseu_id,a.data_intrare, a.consum_sosire, a.consum_plecare, b.nume as nume_depozit,
+        $query = "SELECT a.id,a.depozit_id,a.traseu_id,a.data_intrare, a.consum_sosire,
+                  a.consum_plecare, b.nume as nume_depozit,a.sofer_id,a.masina_id,
                   c.nume as nume_traseu, d.nume as nume_sofer, e.numar
                   from fise_generate as a
                   left join depozite as b on a.depozit_id = b.id
@@ -623,9 +624,9 @@ class Stocuri
             $ret['grand_comision_ar_8'] = 0;
             $ret['grand_comision_ar_9'] = 0;
 
-//            $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
-//            $ret['incarcatura_masina_intoarcere'] = self::getIntoarcereCantitateMarfaByFisaId($id);
-//            $ret['miscari_fisa'] = self::getMiscariByFisaId($id);
+            $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
+            $ret['incarcatura_masina_intoarcere'] = self::getIntoarcereCantitateMarfaByFisaId($id);
+            $ret['miscari_fisa'] = self::getMiscariByFisaId($id);
             $ret['clienti'] = Clienti::getAsignariClientiByFisaGenerataId($id, $opt = array());
             foreach ($ret['clienti'] as $num => $client) {
                 $ret['clienti'][$num]['realizat'] = Stocuri::getRealizatClientByFisaId($id, $client['client_id']);

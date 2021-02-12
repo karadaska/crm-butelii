@@ -150,38 +150,41 @@
                                                                value="{$valoare_alimentare}">
                                                     </th>
                                                 </tr>
-                                                <tr>
-                                                    <th style="text-align: left;vertical-align: middle;">
-                                                        <input type="text" autocomplete="off" placeholder="BG" title="NUMAR BG"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="nr_bg"
-                                                               value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
-                                                               name="valoare_bg"
-                                                               value=""/>
-                                                        <br/>
-                                                        <input type="text" autocomplete="off" placeholder="AR 8"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
-                                                               name="nr_ar_8"
-                                                               value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
-                                                               name="valoare_ar_8"
-                                                               value=""/>
-                                                        <br/>
-                                                        <input type="text" autocomplete="off" placeholder="AR 9"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
-                                                               name="nr_ar_9"
-                                                               value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
-                                                               name="valoare_ar_9"
-                                                               value=""/>
+                                                {*<tr>*}
+                                                    {*<th style="text-align: left;vertical-align: middle;">*}
+                                                        {*<input type="text" autocomplete="off" placeholder="BG"*}
+                                                               {*title="NUMAR BG"*}
+                                                               {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                                                               {*name="nr_bg"*}
+                                                               {*value=""/>*}
+                                                        {*<input type="text" autocomplete="off" placeholder="valoare"*}
+                                                               {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                                                               {*name="valoare_bg"*}
+                                                               {*value=""/>*}
+                                                        {*<br/>*}
+                                                        {*<input type="text" autocomplete="off" placeholder="AR 8"*}
+                                                               {*title="NUMAR AR 8"*}
+                                                               {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                                                               {*name="nr_ar_8"*}
+                                                               {*value=""/>*}
+                                                        {*<input type="text" autocomplete="off" placeholder="valoare"*}
+                                                               {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                                                               {*name="valoare_ar_8"*}
+                                                               {*value=""/>*}
+                                                        {*<br/>*}
+                                                        {*<input type="text" autocomplete="off" placeholder="AR 9"*}
+                                                               {*title="NUMAR AR 9"*}
+                                                               {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                                                               {*name="nr_ar_9"*}
+                                                               {*value=""/>*}
+                                                        {*<input type="text" autocomplete="off" placeholder="valoare"*}
+                                                               {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                                                               {*name="valoare_ar_9"*}
+                                                               {*value=""/>*}
 
-                                                    </th>
-                                                    <th><textarea rows="3" name="nota_explicativa"></textarea></th>
-                                                </tr>
+                                                    {*</th>*}
+                                                    {*<th><textarea rows="3" name="nota_explicativa"></textarea></th>*}
+                                                {*</tr>*}
                                                 <tr>
                                                     <th colspan="2" style="text-align: right">
                                                         <button style="margin-bottom: 11px;" type="submit"
