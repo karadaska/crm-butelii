@@ -68,7 +68,7 @@
                                             </ul>
                                         </td>
                                         <th>
-                                            <table class="table table-bordered">
+                                            <table class="table table-bordered" style="height: 20%;!important">
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">Nr. casa
                                                         marcat:
@@ -150,11 +150,10 @@
                                                                value="{$valoare_alimentare}">
                                                     </th>
                                                 </tr>
-
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">
-                                                        <input type="text" autocomplete="off" placeholder="Numar"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                        <input type="text" autocomplete="off" placeholder="BG" title="NUMAR BG"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_bg"
                                                                value=""/>
                                                         <input type="text" autocomplete="off" placeholder="valoare"
@@ -162,7 +161,7 @@
                                                                name="nr_bg"
                                                                value=""/>
                                                         <br/>
-                                                         <input type="text" autocomplete="off" placeholder="AR 8"
+                                                        <input type="text" autocomplete="off" placeholder="AR 8"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;"
                                                                name="nr_bg"
                                                                value=""/>
@@ -179,7 +178,6 @@
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;"
                                                                name="nr_bg"
                                                                value=""/>
-                                                        </label>
 
                                                     </th>
                                                     <th><textarea rows="3" cols="1"></textarea></th>

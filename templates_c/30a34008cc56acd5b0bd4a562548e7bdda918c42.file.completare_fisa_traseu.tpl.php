@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-11 23:27:09
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-12 09:43:59
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1613078827,
+      1 => 1613115837,
       2 => 'file',
     ),
   ),
@@ -151,7 +151,7 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
                                             </ul>
                                         </td>
                                         <th>
-                                            <table class="table table-bordered">
+                                            <table class="table table-bordered" style="height: 20%;!important">
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">Nr. casa
                                                         marcat:
@@ -245,11 +245,10 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
 ">
                                                     </th>
                                                 </tr>
-
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">
-                                                        <input type="text" autocomplete="off" placeholder="Numar"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;"
+                                                        <input type="text" autocomplete="off" placeholder="BG" title="NUMAR BG"
+                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_bg"
                                                                value=""/>
                                                         <input type="text" autocomplete="off" placeholder="valoare"
@@ -257,7 +256,7 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                                                name="nr_bg"
                                                                value=""/>
                                                         <br/>
-                                                         <input type="text" autocomplete="off" placeholder="AR 8"
+                                                        <input type="text" autocomplete="off" placeholder="AR 8"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;"
                                                                name="nr_bg"
                                                                value=""/>
@@ -274,7 +273,6 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;"
                                                                name="nr_bg"
                                                                value=""/>
-                                                        </label>
 
                                                     </th>
                                                     <th><textarea rows="3" cols="1"></textarea></th>
