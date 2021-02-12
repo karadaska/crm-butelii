@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-12 09:43:59
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-12 10:24:02
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1613115837,
+      1 => 1613118241,
       2 => 'file',
     ),
   ),
@@ -253,29 +253,29 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                                                value=""/>
                                                         <input type="text" autocomplete="off" placeholder="valoare"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;"
-                                                               name="nr_bg"
+                                                               name="valoare_bg"
                                                                value=""/>
                                                         <br/>
                                                         <input type="text" autocomplete="off" placeholder="AR 8"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;"
-                                                               name="nr_bg"
+                                                               name="nr_ar_8"
                                                                value=""/>
                                                         <input type="text" autocomplete="off" placeholder="valoare"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;"
-                                                               name="nr_bg"
+                                                               name="valoare_ar_8"
                                                                value=""/>
                                                         <br/>
                                                         <input type="text" autocomplete="off" placeholder="AR 9"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;"
-                                                               name="nr_bg"
+                                                               name="nr_ar_9"
                                                                value=""/>
                                                         <input type="text" autocomplete="off" placeholder="valoare"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;"
-                                                               name="nr_bg"
+                                                               name="valoare_ar_9"
                                                                value=""/>
 
                                                     </th>
-                                                    <th><textarea rows="3" cols="1"></textarea></th>
+                                                    <th><textarea rows="3" name="nota_explicativa"></textarea></th>
                                                 </tr>
                                                 <tr>
                                                     <th colspan="2" style="text-align: right">
