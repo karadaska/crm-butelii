@@ -703,23 +703,29 @@ class Stocuri
 
         $result = myQuery($query);
         if ($result) {
-            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($a as $item) {
-                $r = array(
-                    'fisa_id' => $item['fisa_id'],
-                    'casa_marcat' => $item['casa_marcat'],
-                    'raport_z' => $item['raport_z'],
-                    'valoare_z' => $item['valoare_z'],
-                    'valoare_alimentare' => $item['valoare_alimentare'],
-                    'tip_alimentare' => $item['tip_alimentare_id'],
-                    'tip_plata' => $item['tip_plata'],
-                    'km' => $item['km']
-                );
-
-                array_push($ret, $r);
-            }
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
         }
         return $ret;
+
+//        $result = myQuery($query);
+//        if ($result) {
+//            $a = $result->fetch(PDO::FETCH_ASSOC);
+//            foreach ($a as $item) {
+//                $r = array(
+//                    'fisa_id' => $item['fisa_id'],
+//                    'casa_marcat' => $item['casa_marcat'],
+//                    'raport_z' => $item['raport_z'],
+//                    'valoare_z' => $item['valoare_z'],
+//                    'valoare_alimentare' => $item['valoare_alimentare'],
+//                    'tip_alimentare' => $item['tip_alimentare_id'],
+//                    'tip_plata' => $item['tip_plata'],
+//                    'km' => $item['km']
+//                );
+//
+//                array_push($ret, $r);
+//            }
+//        }
+//        return $ret;
 
     }
 

@@ -45,24 +45,24 @@
                                         <td style="text-align: left;">
                                             <ul>
                                                 <li>
-                                                      <span style="font-weight: 500;color: red;">Nr. casa marcat: {$fisa['miscari_fisa'][0]['casa_marcat']}
+                                                      <span style="font-weight: 500;color: red;">Nr. casa marcat: {$fisa['miscari_fisa']['casa_marcat']}
                                                           </span>
                                                 </li>
                                                 <li>
-                                                      <span style="font-weight: 500;color: red;">Nr. raport Z: {$fisa['miscari_fisa'][0]['raport_z']}
+                                                      <span style="font-weight: 500;color: red;">Nr. raport Z: {$fisa['miscari_fisa']['raport_z']}
                                                           </span>
                                                 </li>
                                                 <li>
-                                                    <span style="font-weight: 500;color: red;">Valoare Z: {$fisa['miscari_fisa'][0]['valoare_z']}
+                                                    <span style="font-weight: 500;color: red;">Valoare Z: {$fisa['miscari_fisa']['valoare_z']}
                                                           </span>
                                                 </li>
                                                 <li>
-                                                    <span style="font-weight: 500;color: red;">Tip alimentare: {$fisa['miscari_fisa'][0]['tip_plata']}
-                                                        [{$fisa['miscari_fisa'][0]['valoare_alimentare']}]
+                                                    <span style="font-weight: 500;color: red;">Alimentare: {$fisa['miscari_fisa']['tip_plata']}
+                                                        [{$fisa['miscari_fisa']['valoare_alimentare']}]
                                                           </span>
                                                 </li>
                                                 <li>
-                                                      <span style="font-weight: 500;color: red;">Total km: {$fisa['miscari_fisa'][0]['km']}
+                                                      <span style="font-weight: 500;color: red;">Total km: {$fisa['miscari_fisa']['km']}
                                                           </span>
                                                 </li>
                                             </ul>
@@ -74,8 +74,8 @@
                                                         marcat:
                                                     </th>
                                                     <th>
-                                                        {if $fisa['miscari_fisa'][0]['casa_marcat'] != ''}
-                                                            {$valoare_casa_marcat = $fisa['miscari_fisa'][0]['casa_marcat']}
+                                                        {if $fisa['miscari_fisa']['casa_marcat'] != ''}
+                                                            {$valoare_casa_marcat = $fisa['miscari_fisa']['casa_marcat']}
                                                         {else}
                                                             {$valoare_casa_marcat = 0}
                                                         {/if}
@@ -88,8 +88,8 @@
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">Nr. raport Z:
                                                     </th>
-                                                    {if $fisa['miscari_fisa'][0]['raport_z'] != ''}
-                                                        {$valoare_raport_z = $fisa['miscari_fisa'][0]['raport_z']}
+                                                    {if $fisa['miscari_fisa']['raport_z'] != ''}
+                                                        {$valoare_raport_z = $fisa['miscari_fisa']['raport_z']}
                                                     {else}
                                                         {$valoare_raport_z = 0}
                                                     {/if}
@@ -102,8 +102,9 @@
 
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">Valoare Z:</th>
-                                                    {if $fisa['miscari_fisa'][0]['valoare_z'] != ''}
-                                                        {$valoare_valoare_z = $fisa['miscari_fisa'][0]['valoare_z']}
+                                                    {$fisa['miscari_fisa']['valoare_z']}
+                                                    {if $fisa['miscari_fisa']['valoare_z'] != ''}
+                                                        {$valoare_valoare_z = $fisa['miscari_fisa']['valoare_z']}
                                                     {else}
                                                         {$valoare_valoare_z = 0}
                                                     {/if}
@@ -115,8 +116,8 @@
                                                 </tr>
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">Total Km:</th>
-                                                    {if $fisa['miscari_fisa'][0]['km'] != ''}
-                                                        {$km = $fisa['miscari_fisa'][0]['km']}
+                                                    {if $fisa['miscari_fisa']['km'] != ''}
+                                                        {$km = $fisa['miscari_fisa']['km']}
                                                     {else}
                                                         {$km = 0}
                                                     {/if}
@@ -133,14 +134,14 @@
                                                             <option value="0">Tip alimentare</option>
                                                             {foreach from=$get_tip_alimentare item=alimentare_tip}
                                                                 <option value={$alimentare_tip['id']}
-                                                                        {if $alimentare_tip['id'] == {$fisa['miscari_fisa'][0]['tip_alimentare']}}selected="selected"{/if}>
+                                                                        {if $alimentare_tip['id'] == {$fisa['miscari_fisa']['tip_alimentare']}}selected="selected"{/if}>
                                                                     {$alimentare_tip['tip']}</option>
                                                             {/foreach}
                                                         </select>
                                                     </th>
                                                     <th style="vertical-align: middle;">
-                                                        {if $fisa['miscari_fisa'][0]['valoare_alimentare'] != ''}
-                                                            {$valoare_alimentare = $fisa['miscari_fisa'][0]['valoare_alimentare']}
+                                                        {if $fisa['miscari_fisa']['valoare_alimentare'] != ''}
+                                                            {$valoare_alimentare = $fisa['miscari_fisa']['valoare_alimentare']}
                                                         {else}
                                                             {$valoare_alimentare = 0}
                                                         {/if}
@@ -156,8 +157,8 @@
                                                                title="NUMAR BG"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_bg"
-                                                               value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               value="{$fisa['miscari_fisa']['casa_marcat']}"/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE BG"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="valoare_bg"
                                                                value=""/>
@@ -167,7 +168,7 @@
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_ar_8"
                                                                value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                        <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE AR 8"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="valoare_ar_8"
                                                                value=""/>
@@ -177,7 +178,7 @@
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_ar_9"
                                                                value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                        <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE AR 9"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="valoare_ar_9"
                                                                value=""/>

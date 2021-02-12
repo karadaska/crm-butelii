@@ -137,6 +137,7 @@ $b = Stocuri::getFisaGenerataById(148);
 //    'luna_id' => $luna_id
 //));
 
+$b = Stocuri::getMiscariByFisaId(148);
 //$b = Stocuri::getIncarcaturaMasinaPlecareByFisaId(148);
 //$b = Stocuri::getIncarcaturaMasinaSosireByFisaId(157);
 

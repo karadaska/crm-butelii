@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-12 12:32:48
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-12 13:02:52
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1613125964,
+      1 => 1613127770,
       2 => 'file',
     ),
   ),
@@ -122,29 +122,29 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
                                         <td style="text-align: left;">
                                             <ul>
                                                 <li>
-                                                      <span style="font-weight: 500;color: red;">Nr. casa marcat: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['casa_marcat'];?>
+                                                      <span style="font-weight: 500;color: red;">Nr. casa marcat: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['casa_marcat'];?>
 
                                                           </span>
                                                 </li>
                                                 <li>
-                                                      <span style="font-weight: 500;color: red;">Nr. raport Z: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['raport_z'];?>
+                                                      <span style="font-weight: 500;color: red;">Nr. raport Z: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['raport_z'];?>
 
                                                           </span>
                                                 </li>
                                                 <li>
-                                                    <span style="font-weight: 500;color: red;">Valoare Z: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['valoare_z'];?>
+                                                    <span style="font-weight: 500;color: red;">Valoare Z: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_z'];?>
 
                                                           </span>
                                                 </li>
                                                 <li>
-                                                    <span style="font-weight: 500;color: red;">Tip alimentare: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['tip_plata'];?>
+                                                    <span style="font-weight: 500;color: red;">Alimentare: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['tip_plata'];?>
 
-                                                        [<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['valoare_alimentare'];?>
+                                                        [<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_alimentare'];?>
 ]
                                                           </span>
                                                 </li>
                                                 <li>
-                                                      <span style="font-weight: 500;color: red;">Total km: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['km'];?>
+                                                      <span style="font-weight: 500;color: red;">Total km: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km'];?>
 
                                                           </span>
                                                 </li>
@@ -157,8 +157,8 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
                                                         marcat:
                                                     </th>
                                                     <th>
-                                                        <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['casa_marcat']!='') {?>
-                                                            <?php $_smarty_tpl->tpl_vars['valoare_casa_marcat'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['casa_marcat'], null, 0);?>
+                                                        <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['casa_marcat']!='') {?>
+                                                            <?php $_smarty_tpl->tpl_vars['valoare_casa_marcat'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['casa_marcat'], null, 0);?>
                                                         <?php } else { ?>
                                                             <?php $_smarty_tpl->tpl_vars['valoare_casa_marcat'] = new Smarty_variable(0, null, 0);?>
                                                         <?php }?>
@@ -172,8 +172,8 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">Nr. raport Z:
                                                     </th>
-                                                    <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['raport_z']!='') {?>
-                                                        <?php $_smarty_tpl->tpl_vars['valoare_raport_z'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['raport_z'], null, 0);?>
+                                                    <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['raport_z']!='') {?>
+                                                        <?php $_smarty_tpl->tpl_vars['valoare_raport_z'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['raport_z'], null, 0);?>
                                                     <?php } else { ?>
                                                         <?php $_smarty_tpl->tpl_vars['valoare_raport_z'] = new Smarty_variable(0, null, 0);?>
                                                     <?php }?>
@@ -187,8 +187,10 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
 
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">Valoare Z:</th>
-                                                    <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['valoare_z']!='') {?>
-                                                        <?php $_smarty_tpl->tpl_vars['valoare_valoare_z'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['valoare_z'], null, 0);?>
+                                                    <?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_z'];?>
+
+                                                    <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_z']!='') {?>
+                                                        <?php $_smarty_tpl->tpl_vars['valoare_valoare_z'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_z'], null, 0);?>
                                                     <?php } else { ?>
                                                         <?php $_smarty_tpl->tpl_vars['valoare_valoare_z'] = new Smarty_variable(0, null, 0);?>
                                                     <?php }?>
@@ -201,8 +203,8 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
                                                 </tr>
                                                 <tr>
                                                     <th style="text-align: left;vertical-align: middle;">Total Km:</th>
-                                                    <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['km']!='') {?>
-                                                        <?php $_smarty_tpl->tpl_vars['km'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['km'], null, 0);?>
+                                                    <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km']!='') {?>
+                                                        <?php $_smarty_tpl->tpl_vars['km'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km'], null, 0);?>
                                                     <?php } else { ?>
                                                         <?php $_smarty_tpl->tpl_vars['km'] = new Smarty_variable(0, null, 0);?>
                                                     <?php }?>
@@ -225,7 +227,7 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
 ?>
                                                                 <option value=<?php echo $_smarty_tpl->tpl_vars['alimentare_tip']->value['id'];?>
 
-                                                                        <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['tip_alimentare'];?>
+                                                                        <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['tip_alimentare'];?>
 <?php $_tmp1=ob_get_clean();?><?php if ($_smarty_tpl->tpl_vars['alimentare_tip']->value['id']==$_tmp1) {?>selected="selected"<?php }?>>
                                                                     <?php echo $_smarty_tpl->tpl_vars['alimentare_tip']->value['tip'];?>
 </option>
@@ -233,8 +235,8 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                                         </select>
                                                     </th>
                                                     <th style="vertical-align: middle;">
-                                                        <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['valoare_alimentare']!='') {?>
-                                                            <?php $_smarty_tpl->tpl_vars['valoare_alimentare'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa'][0]['valoare_alimentare'], null, 0);?>
+                                                        <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_alimentare']!='') {?>
+                                                            <?php $_smarty_tpl->tpl_vars['valoare_alimentare'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_alimentare'], null, 0);?>
                                                         <?php } else { ?>
                                                             <?php $_smarty_tpl->tpl_vars['valoare_alimentare'] = new Smarty_variable(0, null, 0);?>
                                                         <?php }?>
@@ -251,8 +253,9 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                                                title="NUMAR BG"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_bg"
-                                                               value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['casa_marcat'];?>
+"/>
+                                                        <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE BG"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="valoare_bg"
                                                                value=""/>
@@ -262,7 +265,7 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_ar_8"
                                                                value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                        <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE AR 8"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="valoare_ar_8"
                                                                value=""/>
@@ -272,7 +275,7 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="nr_ar_9"
                                                                value=""/>
-                                                        <input type="text" autocomplete="off" placeholder="valoare"
+                                                        <input type="text" autocomplete="off" placeholder="valoare" title="VALOARE AR 9"
                                                                style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
                                                                name="valoare_ar_9"
                                                                value=""/>
