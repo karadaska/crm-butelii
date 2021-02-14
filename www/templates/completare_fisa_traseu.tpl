@@ -11,205 +11,359 @@
                             <form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post">
                                 <table class="table tab-content table-bordered" style="width: 800px;">
                                     <tr>
-                                        <th style="text-align: center;">Info fisa {$fisa['data_intrare']}</th>
-                                        <th>Detalii incarcatura</th>
                                         <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;color: red">DEPOZIT</label>
+                                                    <h5>{$fisa['nume_depozit']}</h5>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">Nr. casa marcat</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['casa_marcat']}"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">Nr. BG</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['nr_bg']}"
+                                                    />
+                                                </div>
+                                            </div>
                                             <a href="/print_fisa_sosire.php?id={$fisa['id']}" class="i-print"></a>
+
                                         </th>
                                     </tr>
                                     <tr>
-                                        <td style="text-align: left;">
-                                            <ul>
-                                                <li>
-                                                    <span style="font-weight: 500;color: red;">Depozit: {$fisa['nume_depozit']}</span>
-                                                </li>
-                                                <li>
-                                                    <span style="font-weight: 500;color: red;">Traseu: {$fisa['nume_traseu']}</span>
-                                                </li>
-                                                <li>
-                                                    <span style="font-weight: 500;color: red;">Masina: {$fisa['numar']}</span>
-                                                </li>
-                                                <li>
-                                                    <span style="font-weight: 500;color: red;">Sofer: {$fisa['nume_sofer']}</span>
-                                                </li>
-                                                <span style="text-align: center;margin-bottom: 10px;">CANTITATI PLECARE</span>
-                                                <br/>
-                                                {foreach from = $fisa['incarcatura_masina_plecare'] item = incarcatura}
-                                                    <li>
-                                                        <span style="color: red;"> {$incarcatura['nume_produs']}
-                                                            : {$incarcatura['cantitate']} bucati</span> <br/>
-                                                    </li>
-                                                {/foreach}
-                                            </ul>
-                                        </td>
-                                        <td style="text-align: left;">
-                                            <ul>
-                                                <li>
-                                                      <span style="font-weight: 500;color: red;">Nr. casa marcat: {$fisa['miscari_fisa']['casa_marcat']}
-                                                          </span>
-                                                </li>
-                                                <li>
-                                                      <span style="font-weight: 500;color: red;">Nr. raport Z: {$fisa['miscari_fisa']['raport_z']}
-                                                          </span>
-                                                </li>
-                                                <li>
-                                                    <span style="font-weight: 500;color: red;">Valoare Z: {$fisa['miscari_fisa']['valoare_z']}
-                                                          </span>
-                                                </li>
-                                                <li>
-                                                    <span style="font-weight: 500;color: red;">Alimentare: {$fisa['miscari_fisa']['tip_plata']}
-                                                        [{$fisa['miscari_fisa']['valoare_alimentare']}]
-                                                          </span>
-                                                </li>
-                                                <li>
-                                                      <span style="font-weight: 500;color: red;">Total km: {$fisa['miscari_fisa']['km']}
-                                                          </span>
-                                                </li>
-                                            </ul>
-                                        </td>
                                         <th>
-                                            <table class="table table-bordered" style="height: 20%;!important">
-                                                <tr>
-                                                    <th style="text-align: left;vertical-align: middle;">Nr. casa
-                                                        marcat:
-                                                    </th>
-                                                    <th>
-                                                        {if $fisa['miscari_fisa']['casa_marcat'] != ''}
-                                                            {$valoare_casa_marcat = $fisa['miscari_fisa']['casa_marcat']}
-                                                        {else}
-                                                            {$valoare_casa_marcat = 0}
-                                                        {/if}
-                                                        <input type="text" autocomplete="off"
-                                                               style="width: 80px; line-height: 16px;min-height: 16px !important;"
-                                                               name="casa_marcat"
-                                                               value="{$valoare_casa_marcat}">
-                                                    </th>
-                                                </tr>
-                                                <tr>
-                                                    <th style="text-align: left;vertical-align: middle;">Nr. raport Z:
-                                                    </th>
-                                                    {if $fisa['miscari_fisa']['raport_z'] != ''}
-                                                        {$valoare_raport_z = $fisa['miscari_fisa']['raport_z']}
-                                                    {else}
-                                                        {$valoare_raport_z = 0}
-                                                    {/if}
-                                                    <th><input type="text" autocomplete="off"
-                                                               style="width: 80px; line-height: 16px;min-height: 16px !important;"
-                                                               name="raport_z"
-                                                               value="{$valoare_raport_z}">
-                                                    </th>
-                                                </tr>
-
-                                                <tr>
-                                                    <th style="text-align: left;vertical-align: middle;">Valoare Z:</th>
-                                                    {if $fisa['miscari_fisa']['valoare_z'] != ''}
-                                                        {$valoare_valoare_z = $fisa['miscari_fisa']['valoare_z']}
-                                                    {else}
-                                                        {$valoare_valoare_z = 0}
-                                                    {/if}
-                                                    <th><input autocomplete="off" class="index_input_sosire" type="text"
-                                                               style="width: 80px; line-height: 16px;min-height: 16px !important;"
-                                                               name="valoare_z"
-                                                               value="{$valoare_valoare_z}">
-                                                    </th>
-                                                </tr>
-                                                <tr>
-                                                    <th style="text-align: left;vertical-align: middle;">Total Km:</th>
-                                                    {if $fisa['miscari_fisa']['km'] != ''}
-                                                        {$km = $fisa['miscari_fisa']['km']}
-                                                    {else}
-                                                        {$km = 0}
-                                                    {/if}
-                                                    <th>
-                                                        <input type="text" autocomplete="off"
-                                                               style="width: 80px; line-height: 16px;min-height: 16px !important;"
-                                                               name="km"
-                                                               value="{$km}">
-                                                    </th>
-                                                </tr>
-                                                <tr>
-                                                    <th style="text-align: left;">
-                                                        <select name="tip_alimentare" style="width: 120px;">
-                                                            <option value="0">Tip alimentare</option>
-                                                            {foreach from=$get_tip_alimentare item=alimentare_tip}
-                                                                <option value={$alimentare_tip['id']}
-                                                                        {if $alimentare_tip['id'] == {$fisa['miscari_fisa']['tip_alimentare_id']}} selected="selected" {/if}>
-                                                                    {$alimentare_tip['tip']}
-                                                                </option>
-                                                            {/foreach}
-                                                        </select>
-                                                    </th>
-                                                    <th style="vertical-align: middle;">
-                                                        {if $fisa['miscari_fisa']['valoare_alimentare'] != ''}
-                                                            {$valoare_alimentare = $fisa['miscari_fisa']['valoare_alimentare']}
-                                                        {else}
-                                                            {$valoare_alimentare = 0}
-                                                        {/if}
-                                                        <input type="text" autocomplete="off"
-                                                               style="width: 80px; line-height: 16px;min-height: 16px !important;"
-                                                               name="valoare_alimentare"
-                                                               value="{$valoare_alimentare}">
-                                                    </th>
-                                                </tr>
-                                                <tr>
-                                                    <th style="text-align: left;vertical-align: middle;">
-                                                        <input type="text" autocomplete="off"
-                                                               title="NUMAR BG"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="nr_bg"
-                                                               value="{$fisa['miscari_fisa']['nr_bg']}"/>
-
-                                                        <input type="text" autocomplete="off"
-                                                               title="VALOARE BG"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="valoare_bg"
-                                                               value="{$fisa['miscari_fisa']['valoare_bg']}"/>
-                                                        <br/>
-                                                        <input type="text" autocomplete="off"
-                                                               title="NUMAR AR 8"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="nr_ar_8"
-                                                               value="{$fisa['miscari_fisa']['nr_ar_8']}"/>
-
-                                                        <input type="text" autocomplete="off"
-                                                               title="VALOARE AR 8"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="valoare_ar_8"
-                                                               value="{$fisa['miscari_fisa']['valoare_ar_8']}"/>
-                                                        <br/>
-                                                        <input type="text" autocomplete="off"
-                                                               title="NUMAR AR 9"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="nr_ar_9"
-                                                               value="{$fisa['miscari_fisa']['nr_ar_9']}"/>
-
-                                                        <input type="text" autocomplete="off"
-                                                               title="VALOARE AR 9"
-                                                               style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"
-                                                               name="valoare_ar_9"
-                                                               value="{$fisa['miscari_fisa']['valoare_ar_9']}"/>
-
-                                                    </th>
-                                                    <th style="vertical-align: top;"><textarea rows="3" name="nota_explicativa">
-                                                          {$fisa['miscari_fisa']['nota_explicativa']}
-                                                        </textarea>
-                                                    </th>
-                                                </tr>
-                                                <tr>
-                                                    <th colspan="2" style="text-align: right">
-                                                        <button style="margin-bottom: 11px;" type="submit"
-                                                                name="adauga_miscari_fisa"
-                                                                class="btn btn-mini btn-primary">
-                                                            Adauga detalii
-                                                        </button>
-                                                    </th>
-                                                </tr>
-                                            </table>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;color: red">TRASEU</label>
+                                                    <h5>{$fisa['nume_traseu']}</h5>
+                                                </div>
+                                            </div>
                                         </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">Nr. raport Z</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['raport_z']}"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">Valoare BG</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['valoare_bg']}"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;color: red">MASINA</label>
+                                                    <h5>{$fisa['numar']}</h5>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">Valoare Z:</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['valoare_z']}"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">NR. AR</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['nr_ar_8']}"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;color: red">SOFER</label>
+                                                    <h5>{$fisa['nume_sofer']}</h5>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">Total Km</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['km']}"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">Valoare AR 8</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['valoare_ar_8']}"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;color: red">DATA</label>
+                                                    <h5>{$fisa['data_intrare']}</h5>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">Tip plata</label>
+                                                    <select style="width: 100px;">
+                                                        <option value="0">Alege...</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">NR. AR 9</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['nr_ar_9']}"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;color: red">Produse</label>
+                                                    <h5> {foreach from = $fisa['incarcatura_masina_plecare'] item = incarcatura}
+                                                            <span style="color: red;"> {$incarcatura['nume_produs']}
+                                                                : {$incarcatura['cantitate']} bucati</span>
+                                                            <br/>
+                                                        {/foreach}</h5>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">Valoare plata</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['valoare_alimentare']}"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="form-row" style="display: inline-flex;float: left">
+                                                <div class="form-group col-md-6" style="text-align: left;">
+                                                    <label for="inputEmail4" style="margin-bottom: 0;">Valoare AR 9</label>
+                                                    <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                           type="text" class="form-control"
+                                                           value="{$fisa['miscari_fisa']['valoare_ar_9']}"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="3" style="text-align: right;">
+                                            <button style="margin-bottom: 11px;" type="submit"
+                                                    name="adauga_miscari_fisa"
+                                                    class="btn btn-mini btn-primary">
+                                                Adauga detalii
+                                            </button>
+                                        </th>
+                                    </tr>
+                                </table>
                             </form>
-                            <form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post"
-                                  style="margin-bottom: 0;">
-                            </form>
+                            {*</td>*}
+                            {*<th>*}
+                            {*<table class="table table-bordered" style="height: 20%;!important">*}
+                            {*<tr>*}
+                            {*<th style="text-align: left;vertical-align: middle;">Nr. casa*}
+                            {*marcat:*}
+                            {*</th>*}
+                            {*<th>*}
+                            {*{if $fisa['miscari_fisa']['casa_marcat'] != ''}*}
+                            {*{$valoare_casa_marcat = $fisa['miscari_fisa']['casa_marcat']}*}
+                            {*{else}*}
+                            {*{$valoare_casa_marcat = 0}*}
+                            {*{/if}*}
+                            {*<input type="text" autocomplete="off"*}
+                            {*style="width: 80px; line-height: 16px;min-height: 16px !important;"*}
+                            {*name="casa_marcat"*}
+                            {*value="{$valoare_casa_marcat}">*}
+                            {*</th>*}
+                            {*</tr>*}
+                            {*<tr>*}
+                            {*<th style="text-align: left;vertical-align: middle;">Nr. raport Z:*}
+                            {*</th>*}
+                            {*{if $fisa['miscari_fisa']['raport_z'] != ''}*}
+                            {*{$valoare_raport_z = $fisa['miscari_fisa']['raport_z']}*}
+                            {*{else}*}
+                            {*{$valoare_raport_z = 0}*}
+                            {*{/if}*}
+                            {*<th><input type="text" autocomplete="off"*}
+                            {*style="width: 80px; line-height: 16px;min-height: 16px !important;"*}
+                            {*name="raport_z"*}
+                            {*value="{$valoare_raport_z}">*}
+                            {*</th>*}
+                            {*</tr>*}
+
+                            {*<tr>*}
+                            {*<th style="text-align: left;vertical-align: middle;">Valoare Z:</th>*}
+                            {*{if $fisa['miscari_fisa']['valoare_z'] != ''}*}
+                            {*{$valoare_valoare_z = $fisa['miscari_fisa']['valoare_z']}*}
+                            {*{else}*}
+                            {*{$valoare_valoare_z = 0}*}
+                            {*{/if}*}
+                            {*<th><input autocomplete="off" class="index_input_sosire" type="text"*}
+                            {*style="width: 80px; line-height: 16px;min-height: 16px !important;"*}
+                            {*name="valoare_z"*}
+                            {*value="{$valoare_valoare_z}">*}
+                            {*</th>*}
+                            {*</tr>*}
+                            {*<tr>*}
+                            {*<th style="text-align: left;vertical-align: middle;">Total Km:</th>*}
+                            {*{if $fisa['miscari_fisa']['km'] != ''}*}
+                            {*{$km = $fisa['miscari_fisa']['km']}*}
+                            {*{else}*}
+                            {*{$km = 0}*}
+                            {*{/if}*}
+                            {*<th>*}
+                            {*<input type="text" autocomplete="off"*}
+                            {*style="width: 80px; line-height: 16px;min-height: 16px !important;"*}
+                            {*name="km"*}
+                            {*value="{$km}">*}
+                            {*</th>*}
+                            {*</tr>*}
+                            {*<tr>*}
+                            {*<th style="text-align: left;">*}
+                            {*<select name="tip_alimentare" style="width: 120px;">*}
+                            {*<option value="0">Tip alimentare</option>*}
+                            {*{foreach from=$get_tip_alimentare item=alimentare_tip}*}
+                            {*<option value={$alimentare_tip['id']}*}
+                            {*{if $alimentare_tip['id'] == {$fisa['miscari_fisa']['tip_alimentare_id']}} selected="selected" {/if}>*}
+                            {*{$alimentare_tip['tip']}*}
+                            {*</option>*}
+                            {*{/foreach}*}
+                            {*</select>*}
+                            {*</th>*}
+                            {*<th style="vertical-align: middle;">*}
+                            {*{if $fisa['miscari_fisa']['valoare_alimentare'] != ''}*}
+                            {*{$valoare_alimentare = $fisa['miscari_fisa']['valoare_alimentare']}*}
+                            {*{else}*}
+                            {*{$valoare_alimentare = 0}*}
+                            {*{/if}*}
+                            {*<input type="text" autocomplete="off"*}
+                            {*style="width: 80px; line-height: 16px;min-height: 16px !important;"*}
+                            {*name="valoare_alimentare"*}
+                            {*value="{$valoare_alimentare}">*}
+                            {*</th>*}
+                            {*</tr>*}
+                            {*<tr>*}
+                            {*<th style="text-align: left;vertical-align: middle;">*}
+                            {*<label for="exampleInputEmail1">Email address</label>*}
+                            {*<input type="text" autocomplete="off"*}
+                            {*title="NUMAR BG"*}
+                            {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                            {*name="nr_bg"*}
+                            {*value="{$fisa['miscari_fisa']['nr_bg']}"/>*}
+
+                            {*<input type="text" autocomplete="off"*}
+                            {*title="VALOARE BG"*}
+                            {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                            {*name="valoare_bg"*}
+                            {*value="{$fisa['miscari_fisa']['valoare_bg']}"/>*}
+                            {*<br/>*}
+                            {*<input type="text" autocomplete="off"*}
+                            {*title="NUMAR AR 8"*}
+                            {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                            {*name="nr_ar_8"*}
+                            {*value="{$fisa['miscari_fisa']['nr_ar_8']}"/>*}
+
+                            {*<input type="text" autocomplete="off"*}
+                            {*title="VALOARE AR 8"*}
+                            {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                            {*name="valoare_ar_8"*}
+                            {*value="{$fisa['miscari_fisa']['valoare_ar_8']}"/>*}
+                            {*<br/>*}
+                            {*<input type="text" autocomplete="off"*}
+                            {*title="NUMAR AR 9"*}
+                            {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                            {*name="nr_ar_9"*}
+                            {*value="{$fisa['miscari_fisa']['nr_ar_9']}"/>*}
+
+                            {*<input type="text" autocomplete="off"*}
+                            {*title="VALOARE AR 9"*}
+                            {*style="width: 60px; line-height: 16px;min-height: 16px !important;cursor: pointer;"*}
+                            {*name="valoare_ar_9"*}
+                            {*value="{$fisa['miscari_fisa']['valoare_ar_9']}"/>*}
+
+                            {*</th>*}
+                            {*<th style="vertical-align: top;"><textarea rows="3"*}
+                            {*name="nota_explicativa">*}
+                            {*{$fisa['miscari_fisa']['nota_explicativa']}*}
+                            {*</textarea>*}
+                            {*</th>*}
+                            {*</tr>*}
+                            {*<tr>*}
+                            {*<th colspan="2" style="text-align: right">*}
+                            {*<button style="margin-bottom: 11px;" type="submit"*}
+                            {*name="adauga_miscari_fisa"*}
+                            {*class="btn btn-mini btn-primary">*}
+                            {*Adauga detalii*}
+                            {*</button>*}
+                            {*</th>*}
+                            {*</tr>*}
+                            {*</table>*}
+                            {*</th>*}
+                            {*</form>*}
+                            {*<form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post"*}
+                            {*style="margin-bottom: 0;">*}
+                            {*</form>*}
                             {if ($fisa['consum_sosire'] == 0)}
                                 <table class="table table-bordered"
                                        style="width: 800px;margin-top: 10px;">
@@ -291,7 +445,8 @@
                                         {if ($fisa['consum_sosire'] == 0)}
                                             <tr>
                                                 <td colspan="4">
-                                                    <button type="submit" class="btn btn-success" name="consuma_stoc"
+                                                    <button type="submit" class="btn btn-success"
+                                                            name="consuma_stoc"
                                                             style="float: right;">Consuma
                                                         stoc
                                                     </button>
