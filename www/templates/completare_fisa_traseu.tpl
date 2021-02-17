@@ -9,7 +9,7 @@
                     <form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post">
                         <div class="span12">
                             <div style="float: left;">
-                                <table class="table tab-content table-bordered" style="width: 800px;">
+                                <table class="table tab-content table-bordered" style="width: 800px;margin-bottom: 1px;" cellpadding="0" cellspacing="0">
                                     <tr>
                                         <th>
                                             <div class="form-row" style="display: inline-flex;float: left;">
@@ -240,8 +240,9 @@
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th colspan="3"><textarea style="width: 100%" name="nota_explicativa"
-                                                                  placeholder="Adauga observatii"></textarea></th>
+                                        <th colspan="3">
+                                            <textarea style="width: 100%" type="text" rows="2" name="nota_explicativa">{$fisa['miscari_fisa']['nota_explicativa']}</textarea>
+                                        </th>
                                     </tr>
                                     <tr>
                                         <th colspan="3" style="text-align: right;">
@@ -441,10 +442,7 @@
                                 Adauga cantitate client
                             </button>
                         </form>
-
-
                     {/if}
-
                     <div style="display: inline-flex">
                         <div>
                             <table class="table table-bordered table-striped" style="width: 180px;">
