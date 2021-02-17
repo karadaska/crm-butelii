@@ -872,7 +872,6 @@ class Stocuri
 
             }
 
-
         }
         return $ret;
     }
