@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-17 14:50:27
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-17 15:10:04
          compiled from "/var/www/html/fofoweb/www/templates/numar_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:495425026602d10d6174c08-69449296%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '57b56bf07a71a9e83d973dcba67dda2f7a95082c' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/numar_clienti.tpl',
-      1 => 1613566225,
+      1 => 1613567401,
       2 => 'file',
     ),
   ),
@@ -44,7 +44,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/ordine_clienti.php" method="post" id="form_actualizeaza_stoc"
+                <form action="/numar_clienti.php" method="post" id="form_actualizeaza_stoc"
                       style="margin-bottom: 0">
                     <div style="float: left;margin-right: 10px;">
                         <select name="traseu_id" style="width: 180px;">
@@ -77,8 +77,7 @@ $_smarty_tpl->tpl_vars['depozit']->_loop = true;
 " method="post"
                               style="margin-bottom: 0">
                             <div class="widget-content">
-                                <table cellpadding="0" cellspacing="0" border="0"
-                                       class="table table-striped table-bordered table-hover" id="dataTable">
+                                <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
                                         <th style="text-align: center;">#</th>
@@ -88,7 +87,7 @@ $_smarty_tpl->tpl_vars['depozit']->_loop = true;
                                     <tbody>
                                     <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
                                     <tr>
-                                        <th> <?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
+                                        <th style="text-align: left"> <?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </th>
                                     </tr>
                                     </tbody>

@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/ordine_clienti.php" method="post" id="form_actualizeaza_stoc"
+                <form action="/numar_clienti.php" method="post" id="form_actualizeaza_stoc"
                       style="margin-bottom: 0">
                     <div style="float: left;margin-right: 10px;">
                         <select name="traseu_id" style="width: 180px;">
@@ -36,8 +36,7 @@
                         <form action="/numar_clienti.php?depozit_id={$depozit_id}" method="post"
                               style="margin-bottom: 0">
                             <div class="widget-content">
-                                <table cellpadding="0" cellspacing="0" border="0"
-                                       class="table table-striped table-bordered table-hover" id="dataTable">
+                                <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
                                         <th style="text-align: center;">#</th>
@@ -47,7 +46,7 @@
                                     <tbody>
                                     {$nr = 1}
                                     <tr>
-                                        <th> {$nr++}</th>
+                                        <th style="text-align: left"> {$nr++}</th>
                                     </tr>
                                     </tbody>
                                 </table>
