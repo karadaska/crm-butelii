@@ -56,7 +56,7 @@ $stare_id = 1;
 //    'stari' => array(3)
 //));
 
-$b = Stocuri::getFisaGenerataById(148);
+//$b = Stocuri::getFisaGenerataById(148);
 
 
 //$b = Clienti::getRaportLivrariClienti(2, array(
@@ -137,10 +137,11 @@ $b = Stocuri::getFisaGenerataById(148);
 //    'luna_id' => $luna_id
 //));
 
-$b = Stocuri::getMiscariByFisaId(148);
+//$b = Stocuri::getMiscariByFisaId(148);
 //$b = Stocuri::getIncarcaturaMasinaPlecareByFisaId(148);
 //$b = Stocuri::getIncarcaturaMasinaSosireByFisaId(157);
 
+$b = Stocuri::getCountClientiByPret();
 
 echo json_encode($b);
 

@@ -849,6 +849,34 @@ class Stocuri
         return $ret;
     }
 
+    public static function getCountClientiByPret()
+    {
+        $ret = array();
+        $query = "SELECT a.*, pret from clienti_target as a
+                LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
+                LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
+                where a.sters = 0
+                and c.depozit_id = 2
+                GROUP BY pret";
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                if (!isset($ret[$item['pret']])) {
+                    $ret[$item['pret']] = array(
+                        'pret' => 4
+
+                    );
+                }
+
+            }
+
+
+        }
+        return $ret;
+    }
+
 }
 
 
