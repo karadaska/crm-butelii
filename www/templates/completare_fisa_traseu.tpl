@@ -21,8 +21,8 @@
                                         <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th style="text-align: left;width: 80px;">NR. casa</th>
-                                                    <th style="text-align: left;width: 100px;">
+                                                    <th style="text-align: left;width: 100px;">NR. casa</th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                name="casa_marcat"
                                                                type="text" class="form-control"
@@ -36,7 +36,7 @@
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Nr. BG:</th>
-                                                    <th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="nr_bg"
                                                                value="{$fisa['miscari_fisa']['nr_bg']}"
@@ -59,7 +59,7 @@
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;"> Nr. raport Z</th>
-                                                    <th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="raport_z"
                                                                value="{$fisa['miscari_fisa']['raport_z']}"
@@ -74,7 +74,7 @@
                                                     <th style="text-align: left;width: 100px;">Valoare
                                                         BG:
                                                     </th>
-                                                    <th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="valoare_bg"
                                                                value="{$fisa['miscari_fisa']['valoare_bg']}"
@@ -98,7 +98,7 @@
                                                     <th style="text-align: left;width: 100px;">Valoare
                                                         Z:
                                                     </th>
-                                                    <th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="valoare_z"
                                                                value="{$fisa['miscari_fisa']['valoare_z']}"
@@ -111,7 +111,7 @@
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">NR. AR 8</th>
-                                                    <th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="nr_ar_8"
                                                                value="{$fisa['miscari_fisa']['nr_ar_8']}"
@@ -133,7 +133,7 @@
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Total Km:</th>
-                                                    <th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="km"
                                                                value="{$fisa['miscari_fisa']['km']}"
@@ -146,7 +146,7 @@
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Valoare AR 8</th>
-                                                    <th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="valoare_ar_8"
                                                                value="{$fisa['miscari_fisa']['valoare_ar_8']}"
@@ -168,9 +168,14 @@
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Tip plata</th>
-                                                    <th>
-                                                        <select style="width: 100px;">
-                                                            <option value="0">Alege...</option>
+                                                    <th style="text-align: left;">
+                                                        <select name="tip_alimentare" style="width: 120px;">
+                                                            <option value="0">Tip alimentare</option>
+                                                            {foreach from=$get_tip_alimentare item=alimentare_tip}
+                                                                <option value={$alimentare_tip['id']}
+                                                                        {if $alimentare_tip['id'] == {$fisa['miscari_fisa']['tip_alimentare_id']}}selected="selected"{/if}>
+                                                                    {$alimentare_tip['tip']}</option>
+                                                            {/foreach}
                                                         </select>
                                                     </th>
                                                 </tr>
@@ -180,7 +185,7 @@
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">NR. AR 9</th>
-                                                    <th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="nr_ar_9"
                                                                value="{$fisa['miscari_fisa']['nr_ar_9']}"
@@ -210,7 +215,7 @@
                                                     <th style="text-align: left;width: 100px;">Valoare
                                                         plata
                                                     </th>
-                                                    <th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control"
                                                                name="valoare_alimentare"
@@ -224,7 +229,7 @@
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Valoare AR 9</th>
-                                                    <th>
+                                                    <th style="text-align: left;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="valoare_ar_9"
                                                                value="{$fisa['miscari_fisa']['valoare_ar_9']}"
