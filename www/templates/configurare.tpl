@@ -70,6 +70,15 @@
                                                 </div>
                                             </a>
                                         </li>
+                                        <li>
+                                            <a href="/numar_clienti.php">
+                                                <div class="item">
+                                                    <div class="icon"><i class="i-cool"></i></div>
+                                                    <span class="percent"></span>
+                                                    <span class="txt">Nr.clienti </span>
+                                                </div>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

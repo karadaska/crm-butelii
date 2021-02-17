@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-09 14:10:22
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-17 14:49:24
          compiled from "/var/www/html/fofoweb/www/templates/configurare.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:155416866860227bae5a03f4-39826954%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e440f6cbe16190260c85689ed40ab2c2aa2ac499' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/configurare.tpl',
-      1 => 1610622648,
+      1 => 1613566030,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60227bae5e8de1_62438200',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60227bae5e8de1_62438200',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60227bae5e8de1_62438200')) {function content_60227bae5e8de1_62438200($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -95,6 +95,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                     <div class="icon"><i class="i-cool"></i></div>
                                                     <span class="percent"></span>
                                                     <span class="txt">Ordine clienti</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/numar_clienti.php">
+                                                <div class="item">
+                                                    <div class="icon"><i class="i-cool"></i></div>
+                                                    <span class="percent"></span>
+                                                    <span class="txt">Nr.clienti </span>
                                                 </div>
                                             </a>
                                         </li>
