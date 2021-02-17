@@ -18,11 +18,11 @@
                                                 </div>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>NR. casa</th>
-                                                    <th>
+                                                    <th style="text-align: left;width: 80px;">NR. casa</th>
+                                                    <th style="text-align: left;width: 100px;">
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                name="casa_marcat"
                                                                type="text" class="form-control"
@@ -32,10 +32,10 @@
                                                 </tr>
                                             </table>
                                         </th>
-                                        <th>
+                                        <th  class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>Nr. BG:</th>
+                                                    <th style="text-align: left;width: 100px;">Nr. BG:</th>
                                                     <th>
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="nr_bg"
@@ -48,17 +48,17 @@
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th>
+                                        <th  class="table_miscari">
                                             <div class="form-row" style="display: inline-flex;float: left">
                                                 <div class="form-group col-md-6" style="text-align: left;">
                                                     <h5>{$fisa['nume_traseu']}</h5>
                                                 </div>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th  class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th> Nr. raport Z</th>
+                                                    <th style="text-align: left;width: 100px;"> Nr. raport Z</th>
                                                     <th>
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="raport_z"
@@ -68,10 +68,10 @@
                                                 </tr>
                                             </table>
                                         </th>
-                                        <th>
+                                        <th  class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>Valoare
+                                                    <th style="text-align: left;width: 100px;">Valoare
                                                         BG:
                                                     </th>
                                                     <th>
@@ -92,10 +92,10 @@
                                                 </div>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>Valoare
+                                                    <th style="text-align: left;width: 100px;">Valoare
                                                         Z:
                                                     </th>
                                                     <th>
@@ -107,10 +107,10 @@
                                                 </tr>
                                             </table>
                                         </th>
-                                        <th>
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>NR. AR 8</th>
+                                                    <th style="text-align: left;width: 100px;">NR. AR 8</th>
                                                     <th>
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="nr_ar_8"
@@ -129,10 +129,10 @@
                                                 </div>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>Total Km:</th>
+                                                    <th style="text-align: left;width: 100px;">Total Km:</th>
                                                     <th>
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="km"
@@ -142,10 +142,10 @@
                                                 </tr>
                                             </table>
                                         </th>
-                                        <th>
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>Valoare AR 8</th>
+                                                    <th style="text-align: left;width: 100px;">Valoare AR 8</th>
                                                     <th>
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="valoare_ar_8"
@@ -164,10 +164,10 @@
                                                 </div>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>Tip plata</th>
+                                                    <th style="text-align: left;width: 100px;">Tip plata</th>
                                                     <th>
                                                         <select style="width: 100px;">
                                                             <option value="0">Alege...</option>
@@ -176,10 +176,10 @@
                                                 </tr>
                                             </table>
                                         </th>
-                                        <th>
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>NR. AR 9</th>
+                                                    <th style="text-align: left;width: 100px;">NR. AR 9</th>
                                                     <th>
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="nr_ar_9"
@@ -191,7 +191,7 @@
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th>
+                                        <th class="table_miscari">
                                             <div class="form-row" style="display: inline-flex;float: left">
                                                 <div class="form-group col-md-6" style="text-align: left;">
                                                     <label for="inputEmail4"
@@ -204,10 +204,10 @@
                                                 </div>
                                             </div>
                                         </th>
-                                        <th>
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>Valoare
+                                                    <th style="text-align: left;width: 100px;">Valoare
                                                         plata
                                                     </th>
                                                     <th>
@@ -220,10 +220,10 @@
                                                 </tr>
                                             </table>
                                         </th>
-                                        <th>
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th>Valoare AR 9</th>
+                                                    <th style="text-align: left;width: 100px;">Valoare AR 9</th>
                                                     <th>
                                                         <input style="width: 100px; line-height: 10px;min-height: 10px !important;cursor: pointer;"
                                                                type="text" class="form-control" name="valoare_ar_9"
