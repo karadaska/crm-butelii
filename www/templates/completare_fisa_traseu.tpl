@@ -9,7 +9,7 @@
                     <form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post">
                         <div class="span12">
                             <div style="float: left;">
-                                <table class="table tab-content table-bordered" style="width: 800px;margin-bottom: 1px;" cellpadding="0" cellspacing="0">
+                                <table class="table tab-content table-bordered" style="width: 800px;margin-bottom: 1px;">
                                     <tr>
                                         <th>
                                             <div class="form-row" style="display: inline-flex;float: left;">
@@ -23,9 +23,9 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">NR. casa</th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                name="casa_marcat"
-                                                               type="text" class="form-control"
+                                                               type="text" class="form-control" autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['casa_marcat']}"
                                                         />
                                                     </th>
@@ -37,8 +37,8 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Nr. BG:</th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
-                                                               type="text" class="form-control" name="nr_bg"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="nr_bg" autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['nr_bg']}"
                                                         />
                                                     </th>
@@ -60,8 +60,8 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;"> Nr. raport Z</th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
-                                                               type="text" class="form-control" name="raport_z"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="raport_z" autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['raport_z']}"
                                                         />
                                                     </th>
@@ -75,7 +75,7 @@
                                                         BG:
                                                     </th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="valoare_bg"
                                                                value="{$fisa['miscari_fisa']['valoare_bg']}"
                                                         />
@@ -99,8 +99,8 @@
                                                         Z:
                                                     </th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
-                                                               type="text" class="form-control" name="valoare_z"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="valoare_z" autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['valoare_z']}"
                                                         />
                                                     </th>
@@ -112,8 +112,8 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">NR. AR 8</th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
-                                                               type="text" class="form-control" name="nr_ar_8"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="nr_ar_8" autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['nr_ar_8']}"
                                                         />
                                                     </th>
@@ -134,8 +134,8 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Total Km:</th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
-                                                               type="text" class="form-control" name="km"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="km" autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['km']}"
                                                         />
                                                     </th>
@@ -147,8 +147,8 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Valoare AR 8</th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
-                                                               type="text" class="form-control" name="valoare_ar_8"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="valoare_ar_8" autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['valoare_ar_8']}"
                                                         />
                                                     </th>
@@ -186,8 +186,8 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">NR. AR 9</th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
-                                                               type="text" class="form-control" name="nr_ar_9"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="nr_ar_9" autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['nr_ar_9']}"
                                                         />
                                                     </th>
@@ -216,8 +216,8 @@
                                                         plata
                                                     </th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
-                                                               type="text" class="form-control"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" autocomplete="off"
                                                                name="valoare_alimentare"
                                                                value="{$fisa['miscari_fisa']['valoare_alimentare']}"
                                                         />
@@ -230,8 +230,8 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Valoare AR 9</th>
                                                     <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;cursor: pointer;"
-                                                               type="text" class="form-control" name="valoare_ar_9"
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="valoare_ar_9" autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['valoare_ar_9']}"
                                                         />
                                                     </th>
