@@ -15,8 +15,6 @@ $smarty->assign('traseu_id', $traseu_id);
 $lista_depozite = Depozite::getDepozite();
 $smarty->assign('lista_depozite', $lista_depozite);
 
-$lista_clienti = Trasee::getAsignareClientiTraseuByClientid($traseu_id);
-$smarty->assign('lista_clienti', $lista_clienti);
 
 $smarty->display($template_page);
 
