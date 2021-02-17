@@ -865,7 +865,7 @@ class Stocuri
             foreach ($a as $item) {
                 if (!isset($ret[$item['pret']])) {
                     $ret[$item['pret']] = array(
-                        'pret' => 4
+                        'pret2' => 4
 
                     );
                 }
