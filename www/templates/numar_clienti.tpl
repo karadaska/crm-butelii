@@ -32,7 +32,9 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr>
-                                                    <th>333</th>
+                                                    {foreach from=$depozit['produse'] item=produs}
+                                                        <th>{$produs['nume_produs']}</th>
+                                                    {/foreach}
                                                 </tr>
                                                 </tbody>
                                                 <tr class="success">

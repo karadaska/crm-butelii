@@ -45,9 +45,9 @@ class Clienti
                     FROM
                         detalii_fisa_intoarcere_produse AS a
                     LEFT JOIN fise_generate AS b ON a.fisa_id = b.id
-                    WHERE a.client_id = '".$client_id."'
-                    AND b.traseu_id = '".$traseu_id."'
-                    AND a.tip_produs_id = '".$tip_produs_id."'
+                    WHERE a.client_id = '" . $client_id . "'
+                    AND b.traseu_id = '" . $traseu_id . "'
+                    AND a.tip_produs_id = '" . $tip_produs_id . "'
                     AND (a.cantitate > 0 AND a.pret != a.pret_contract)
                     AND a.sters = 0
                     AND b.sters = 0
@@ -1609,7 +1609,7 @@ class Clienti
 
         if ($result) {
             $a = $result->fetch(PDO::FETCH_ASSOC);
-        $ret = $a['numar_clienti'];
+            $ret = $a['numar_clienti'];
         }
         return $ret;
     }
@@ -1621,15 +1621,15 @@ class Clienti
         $query = "SELECT * from depozite";
         $result = myQuery($query);
 
-            $ret['depozite'] = array();
-            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($a as $item) {
-                $ret['depozite'][$item['id']] = array(
-                    'depozit_id'=>$item['id'],
-                    'nume'=>$item['nume'],
-                    'produse' => Depozite::getTipProduseByDepozitId($item['id'])
-                );
-            }
+        $ret['depozite'] = array();
+        $a = $result->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($a as $item) {
+            $ret['depozite'][$item['id']] = array(
+                'depozit_id' => $item['id'],
+                'nume' => $item['nume'],
+                'produse' => Depozite::getTipProduseByDepozitId($item['id'])
+            );
+        }
 
         return $ret;
     }
