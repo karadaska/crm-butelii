@@ -19,13 +19,29 @@ class Depozite
         return $ret;
     }
 
-    public static function getDepozite2()
+    public static function getTipProduseByDepozitId($depozit_id)
     {
         $ret = array();
-        $query = "SELECT * FROM depozite";
+        $query = "SELECT tip_produs_id, d.tip, c.depozit_id from clienti_target as a
+                    LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
+                    LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
+                    LEFT JOIN tip_produs as d on a.tip_produs_id = d.id
+                    WHERE a.sters = 0
+                    AND c.depozit_id = '" . $depozit_id . "'
+                    AND b.sters = 0
+                    AND c.sters = 0
+                    GROUP BY tip_produs_id";
         $result = myQuery($query);
         if ($result) {
-            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $r = array(
+                    $item['tip'] => array(
+                        'lista_preturi' => Stocuri::getListaPreturiByDepozitId($item['depozit_id'])
+                    ),
+                );
+                array_push($ret, $r);
+            }
         }
         return $ret;
 

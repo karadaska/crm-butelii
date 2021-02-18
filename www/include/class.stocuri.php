@@ -852,26 +852,64 @@ class Stocuri
     public static function getCountClientiByPret()
     {
         $ret = array();
-        $query = "SELECT a.*, pret from clienti_target as a
-                LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
-                LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
-                where a.sters = 0
-                and c.depozit_id = 2
-                GROUP BY pret";
+        $query = "SELECT * from depozite";
         $result = myQuery($query);
 
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-                if (!isset($ret[$item['pret']])) {
-                    $ret[$item['pret']] = array(
-                        'pret2' => 4
-
-                    );
-                }
-
+                $ret[$item['nume']] = array(
+                    'produse' => Depozite::getTipProduseByDepozitId($item['id'])
+                );
             }
 
+        }
+        return $ret;
+    }
+
+    public static function getListaPreturiByDepozitId($depozit_id)
+    {
+        $ret = array();
+        $query = "SELECT a.pret, c.depozit_id from clienti_target as a
+                    LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
+                    LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
+                    LEFT JOIN tip_produs as d on a.tip_produs_id = d.id
+                    WHERE a.sters = 0
+                    AND c.depozit_id = '".$depozit_id."'
+                    AND b.sters = 0
+                    AND c.sters = 0
+                    GROUP BY pret";
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['pret']] = array(
+                    'preturi' => self::getClientiByPret($item['pret'],$item['depozit_id'])
+                );
+            }
+
+        }
+        return $ret;
+    }
+
+    public static function getClientiByPret($pret, $depozit_id)
+    {
+        $ret = array();
+        $query = "SELECT  COUNT(a.client_id) as numar_clienti from clienti_target as a
+                  LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
+                  LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
+                  LEFT JOIN tip_produs as d on a.tip_produs_id = d.id
+                 WHERE a.pret = '".$pret."'
+                  AND c.depozit_id = '".$depozit_id."'
+                  AND b.sters = 0
+                  AND c.sters = 0
+                  AND a.sters = 0                  
+                 ";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }
         return $ret;
     }

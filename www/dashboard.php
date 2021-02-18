@@ -9,8 +9,8 @@ $smarty->assign('stoc_produse', $stoc_produse);
 $template_page = "dashboard.tpl";
 $smarty->display($template_page);
 
-$fisa_generata = Stocuri::getFisaGenerataById(3);
-$smarty->assign('fisa_generata', $fisa_generata);
+//$fisa_generata = Stocuri::getFisaGenerataById(3);
+//$smarty->assign('fisa_generata', $fisa_generata);
 
 
 $stoc = Stocuri::getStoc();

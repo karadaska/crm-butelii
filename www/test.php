@@ -141,7 +141,8 @@ $stare_id = 1;
 //$b = Stocuri::getIncarcaturaMasinaPlecareByFisaId(148);
 //$b = Stocuri::getIncarcaturaMasinaSosireByFisaId(157);
 
-$b = Stocuri::getCountClientiByPret();
+//$b = Stocuri::getCountClientiByPret();
+//$b = Stocuri::getStoc();
 
 echo json_encode($b);
 
