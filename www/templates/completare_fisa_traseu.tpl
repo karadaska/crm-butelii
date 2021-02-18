@@ -567,6 +567,10 @@
                                     <td style="text-align: left;font-weight: 900;">Total Comision</td>
                                     <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_bg']}</td>
                                 </tr>
+                                <tr>
+                                    <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                                    <td style="text-align: center;font-weight: 900;">{$fisa['grand_defecte_bg']}</td>
+                                </tr>
                             </table>
                         </div>
                         <div style="margin-left: 10px;">
@@ -587,6 +591,10 @@
                                 <tr>
                                     <td style="text-align: left;font-weight: 900;">Total Comision</td>
                                     <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_ar_8']}</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                                    <td style="text-align: center;font-weight: 900;">{$fisa['grand_defecte_ar_8']}</td>
                                 </tr>
                             </table>
                         </div>
@@ -609,6 +617,10 @@
                                     <td style="text-align: left;font-weight: 900;">Total Comision</td>
                                     <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_ar_9']}</td>
                                 </tr>
+                                <tr>
+                                    <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                                    <td style="text-align: center;font-weight: 900;">{$fisa['grand_defecte_ar_9']}</td>
+                                </tr>
                             </table>
                         </div>
                         <div style="margin-left: 10px;">
@@ -629,6 +641,10 @@
                                 <tr class="info">
                                     <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
                                     <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_bg'] + $fisa['grand_comision_ar_8'] + $fisa['grand_comision_ar_9']}</td>
+                                </tr>
+                                <tr class="info">
+                                    <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
+                                    <td style="text-align: center;font-weight: 900;">{$fisa['grand_defecte_bg'] + $fisa['grand_defecte_ar_8'] + $fisa['grand_defecte_ar_9']}</td>
                                 </tr>
                             </table>
                         </div>

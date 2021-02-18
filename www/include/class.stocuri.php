@@ -624,6 +624,11 @@ class Stocuri
             $ret['grand_comision_ar_8'] = 0;
             $ret['grand_comision_ar_9'] = 0;
 
+
+            $ret['grand_defecte_bg'] = 0;
+            $ret['grand_defecte_ar_8'] = 0;
+            $ret['grand_defecte_ar_9'] = 0;
+
             $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
             $ret['incarcatura_masina_intoarcere'] = self::getIntoarcereCantitateMarfaByFisaId($id);
             $ret['miscari_fisa'] = self::getMiscariByFisaId($id);

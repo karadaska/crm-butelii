@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-18 09:22:38
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-18 09:39:11
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1613632957,
+      1 => 1613633865,
       2 => 'file',
     ),
   ),
@@ -749,6 +749,11 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                     <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['grand_comision_bg'];?>
 </td>
                                 </tr>
+                                <tr>
+                                    <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['grand_defecte_bg'];?>
+</td>
+                                </tr>
                             </table>
                         </div>
                         <div style="margin-left: 10px;">
@@ -771,6 +776,11 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                 <tr>
                                     <td style="text-align: left;font-weight: 900;">Total Comision</td>
                                     <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['grand_comision_ar_8'];?>
+</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['grand_defecte_ar_8'];?>
 </td>
                                 </tr>
                             </table>
@@ -797,6 +807,11 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                     <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['grand_comision_ar_9'];?>
 </td>
                                 </tr>
+                                <tr>
+                                    <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['grand_defecte_ar_9'];?>
+</td>
+                                </tr>
                             </table>
                         </div>
                         <div style="margin-left: 10px;">
@@ -819,6 +834,11 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                 <tr class="info">
                                     <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
                                     <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['grand_comision_bg']+$_smarty_tpl->tpl_vars['fisa']->value['grand_comision_ar_8']+$_smarty_tpl->tpl_vars['fisa']->value['grand_comision_ar_9'];?>
+</td>
+                                </tr>
+                                <tr class="info">
+                                    <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
+                                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['grand_defecte_bg']+$_smarty_tpl->tpl_vars['fisa']->value['grand_defecte_ar_8']+$_smarty_tpl->tpl_vars['fisa']->value['grand_defecte_ar_9'];?>
 </td>
                                 </tr>
                             </table>
