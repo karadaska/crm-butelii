@@ -7,9 +7,10 @@
             <div class="container-fluid">
                 <div class="row-fluid">
                     <form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post">
-                        <div class="span12">
+                        <div class="span12" style="display: inline-flex">
                             <div style="float: left;">
-                                <table class="table tab-content table-bordered" style="width: 800px;margin-bottom: 1px;">
+                                <table class="table tab-content table-bordered"
+                                       style="width: 500px;margin-bottom: 1px;">
                                     <tr>
                                         <th>
                                             <div class="form-row" style="display: inline-flex;float: left;">
@@ -32,13 +33,14 @@
                                                 </tr>
                                             </table>
                                         </th>
-                                        <th  class="table_miscari">
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Nr. BG:</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="nr_bg" autocomplete="off"
+                                                               type="text" class="form-control" name="nr_bg"
+                                                               autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['nr_bg']}"
                                                         />
                                                     </th>
@@ -48,27 +50,28 @@
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th  class="table_miscari">
+                                        <th class="table_miscari">
                                             <div class="form-row" style="display: inline-flex;float: left">
                                                 <div class="form-group col-md-6" style="text-align: left;">
                                                     <h5 style="color: red;">{$fisa['nume_traseu']}</h5>
                                                 </div>
                                             </div>
                                         </th>
-                                        <th  class="table_miscari">
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;"> Nr. raport Z</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="raport_z" autocomplete="off"
+                                                               type="text" class="form-control" name="raport_z"
+                                                               autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['raport_z']}"
                                                         />
                                                     </th>
                                                 </tr>
                                             </table>
                                         </th>
-                                        <th  class="table_miscari">
+                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Valoare
@@ -100,7 +103,8 @@
                                                     </th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="valoare_z" autocomplete="off"
+                                                               type="text" class="form-control" name="valoare_z"
+                                                               autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['valoare_z']}"
                                                         />
                                                     </th>
@@ -113,7 +117,8 @@
                                                     <th style="text-align: left;width: 100px;">NR. AR 8</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="nr_ar_8" autocomplete="off"
+                                                               type="text" class="form-control" name="nr_ar_8"
+                                                               autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['nr_ar_8']}"
                                                         />
                                                     </th>
@@ -135,7 +140,8 @@
                                                     <th style="text-align: left;width: 100px;">Total Km:</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="km" autocomplete="off"
+                                                               type="text" class="form-control" name="km"
+                                                               autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['km']}"
                                                         />
                                                     </th>
@@ -148,7 +154,8 @@
                                                     <th style="text-align: left;width: 100px;">Valoare AR 8</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="valoare_ar_8" autocomplete="off"
+                                                               type="text" class="form-control" name="valoare_ar_8"
+                                                               autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['valoare_ar_8']}"
                                                         />
                                                     </th>
@@ -187,7 +194,8 @@
                                                     <th style="text-align: left;width: 100px;">NR. AR 9</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="nr_ar_9" autocomplete="off"
+                                                               type="text" class="form-control" name="nr_ar_9"
+                                                               autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['nr_ar_9']}"
                                                         />
                                                     </th>
@@ -231,7 +239,8 @@
                                                     <th style="text-align: left;width: 100px;">Valoare AR 9</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="valoare_ar_9" autocomplete="off"
+                                                               type="text" class="form-control" name="valoare_ar_9"
+                                                               autocomplete="off"
                                                                value="{$fisa['miscari_fisa']['valoare_ar_9']}"
                                                         />
                                                     </th>
@@ -241,7 +250,8 @@
                                     </tr>
                                     <tr>
                                         <th colspan="3">
-                                            <textarea style="width: 100%" type="text" rows="2" name="nota_explicativa">{$fisa['miscari_fisa']['nota_explicativa']}</textarea>
+                                            <textarea style="width: 100%" type="text" rows="2"
+                                                      name="nota_explicativa">{$fisa['miscari_fisa']['nota_explicativa']}</textarea>
                                         </th>
                                     </tr>
                                     <tr>
@@ -254,6 +264,101 @@
                                         </th>
                                     </tr>
                                 </table>
+                            </div>
+                            <div style="float: right;margin-top: 10px;">
+                                {if ($fisa['consum_sosire'] == 0)}
+                                    <table class="table table-bordered"
+                                           style="width: 500px;margin-top: 10px;">
+                                        <tr>
+                                            <td>
+                                                <select name="tip_produs_id" style="width: 120px;">
+                                                    <option>Alege produs</option>
+                                                    {foreach from=$lista_produse item=produs}
+                                                        {$gasit = 0}
+                                                        {foreach from=$plecare_marfa_by_fisa_id item=marfa}
+                                                            {if $produs['id'] == $marfa['tip_produs_id']}
+                                                                {if $gasit == 0}
+                                                                    <option value="{$produs['id']}"> {$produs['tip']}</option>
+                                                                {/if}
+                                                            {/if}
+                                                        {/foreach}
+                                                    {/foreach}
+                                                </select>
+                                                <select name="stare_produs" style="width: 100px;">
+                                                    <option>Alege stare</option>
+                                                    {foreach from=$lista_stari_produse item=stare}
+                                                        {if ($stare['id'] !=2 and $stare['id'] !=4)}
+                                                            <option value={$stare['id']}
+                                                                    {if $stare['id'] == $stare_produs['id']} selected={$stare['id']}{/if}>
+                                                                {$stare['nume']}
+                                                            </option>
+                                                        {/if}
+                                                    {/foreach}
+                                                </select>
+                                                <input autocomplete="off" placeholder="Cantitate"
+                                                       style="margin-top: 10px;width: 100px;" type="text" name="cantitate">
+                                                <button style="margin-top: 2px;" type="submit"
+                                                        name="adauga_cantitate_intoarcere_traseu"
+                                                        class="btn btn-primary">
+                                                    Adauga
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                {/if}
+                                {if count($cantitate_sosire_by_fisa_id) > 0}
+                                    <table class="table table-bordered"
+                                           style="width: 500px;margin-right: 100px;margin-top: 10px;">
+                                        <tr>
+                                            <th class="span2">Produs</th>
+                                            <th>Pline</th>
+                                            <th>Def.</th>
+                                            <th>Goale</th>
+                                        </tr>
+                                        {$total_pline = 0}
+                                        {$total_defecte = 0}
+                                        {$total_goale= 0}
+                                        {foreach from=$cantitate_sosire_by_fisa_id item=marfa_sosire}
+                                            <tr>
+                                                <td>{$marfa_sosire['nume_produs']}</td>
+                                                <td style="text-align: right;">
+                                                    {$marfa_sosire['pline']}
+                                                </td>
+                                                <td style="text-align: right;">
+                                                    {$marfa_sosire['defecte']}
+                                                </td>
+                                                <td style="text-align: right;">
+                                                    {$marfa_sosire['goale']}
+                                                </td>
+                                            </tr>
+                                            {$total_pline = $total_pline + $marfa_sosire['pline']}
+                                            {$total_defecte = $total_defecte + $marfa_sosire['defecte']}
+                                            {$total_goale = $total_goale + $marfa_sosire['goale']}
+                                        {/foreach}
+                                        <tfoot>
+                                        <tr>
+                                            <td style="text-align: left;">Total:</td>
+                                            <td style="text-align: right;">{$total_pline}</td>
+                                            <td style="text-align: right;">{$total_defecte}</td>
+                                            <td style="text-align: right;">{$total_goale} </td>
+                                        </tr>
+                                        <form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post"
+                                              style="margin-bottom: 0;">
+                                            {if ($fisa['consum_sosire'] == 0)}
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <button type="submit" class="btn btn-mini btn-success"
+                                                                name="consuma_stoc"
+                                                                style="float: right;">Consuma
+                                                            stoc
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            {/if}
+                                        </form>
+                                        </tfoot>
+                                    </table>
+                                {/if}
                             </div>
                         </div>
                     </form>
@@ -529,7 +634,6 @@
                         </div>
                     </div>
                     <div style="margin-top: 100px;"></div>
-
                 </div>
             </div>
         </div>
