@@ -19,15 +19,16 @@ class Depozite
         return $ret;
     }
 
-    public static function getListaPreturiByDepozitId($depozit_id)
+    public static function getListaPreturiByProdusIdAndDepozitId($produs_id,$depozit_id)
     {
         $ret = array();
-        $query = "SELECT a.pret, c.depozit_id from clienti_target as a
+        $query = "SELECT a.pret, c.depozit_id, a.tip_produs_id from clienti_target as a
                     LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
                     LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
                     LEFT JOIN tip_produs as d on a.tip_produs_id = d.id
                     WHERE a.sters = 0
-                    AND c.depozit_id = '".$depozit_id."'
+                    AND a.tip_produs_id = '" . $produs_id . "'
+                    AND c.depozit_id = '" . $depozit_id . "'
                     AND b.sters = 0
                     AND c.sters = 0
                     GROUP BY pret";
@@ -37,8 +38,7 @@ class Depozite
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
                 $ret[$item['pret']] = array(
-                    'preturi' => 'to do'
-//                'preturi' => self::getClientiByPret($item['pret'],$item['depozit_id'])
+                    'numar_clienti' => Clienti::getCountClientiByPret($item['pret'],$item['depozit_id'],$item['tip_produs_id'])
                 );
             }
 
@@ -60,17 +60,15 @@ class Depozite
                     AND d.sters = 0
                     GROUP BY tip_produs_id";
         $result = myQuery($query);
-        if ($result) {
-            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($a as $item) {
-                $r = array(
-                    $item['tip'] => array(
-                        'lista_preturi' => Depozite::getListaPreturiByDepozitId($item['depozit_id'])
-                    ),
-                );
-                array_push($ret, $a);
+
+            if ($result) {
+                $a = $result->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($a as $item) {
+                    $ret[$item['tip']] = array(
+                        'preturi_by_produs' =>self::getListaPreturiByProdusIdAndDepozitId($item['tip_produs_id'],$item['depozit_id'])
+                    );
+                }
             }
-        }
         return $ret;
 
     }

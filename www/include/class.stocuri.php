@@ -872,26 +872,7 @@ class Stocuri
 
 
 
-    public static function getClientiByPret($pret, $depozit_id)
-    {
-        $ret = array();
-        $query = "SELECT  COUNT(a.client_id) as numar_clienti from clienti_target as a
-                  LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
-                  LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
-                  LEFT JOIN tip_produs as d on a.tip_produs_id = d.id
-                 WHERE a.pret = '".$pret."'
-                  AND c.depozit_id = '".$depozit_id."'
-                  AND b.sters = 0
-                  AND c.sters = 0
-                  AND a.sters = 0                  
-                 ";
-        $result = myQuery($query);
 
-        if ($result) {
-            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
-        }
-        return $ret;
-    }
 
 
 
@@ -907,15 +888,16 @@ class Stocuri
 
         $result = myQuery($query);
         if ($result) {
-            $ret['depozite'] = array();
+
             $items = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($items as $item) {
-                $ret['depozite'][$item['id']] =
+                $ret['depozite'][$item['nume']] =
                     array(
-                    'tip_produs_by_depozit' =>array(
-//                        'Produse'=>Depozite::getTipProduseByDepozitId($item['id'])
-
-                    )
+                        'produs_depozit' => Depozite::getTipProduseByDepozitId($item['id'])
+//                    'produs_depozit' =>array(
+////                        'Produse'=>Depozite::getTipProduseByDepozitId($item['id'])
+//
+//                    )
                 );
             }
         }

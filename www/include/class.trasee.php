@@ -3,7 +3,6 @@
 class Trasee
 {
 
-
     public static function getObservatieDinFisaTraseuByClientIdAndFisaId($client_id, $fisa_id)
     {
         $ret = array();
