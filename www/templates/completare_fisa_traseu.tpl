@@ -643,7 +643,7 @@
                                     <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_bg'] + $fisa['grand_comision_ar_8'] + $fisa['grand_comision_ar_9']}</td>
                                 </tr>
                                 <tr class="info">
-                                    <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
+                                    <td style="text-align: left;font-weight: 900;">Def. BG + AR</td>
                                     <td style="text-align: center;font-weight: 900;">{$fisa['grand_defecte_bg'] + $fisa['grand_defecte_ar_8'] + $fisa['grand_defecte_ar_9']}</td>
                                 </tr>
                             </table>
