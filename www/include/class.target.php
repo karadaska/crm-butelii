@@ -26,6 +26,29 @@ class Target
         return $ret;
     }
 
+    public static function getProduseByClientIdNeconcordantaPreturi($client_id)
+    {
+        $ret = array();
+        $target_by_client_id = "SELECT a.*, b.tip as nume_produs
+        from clienti_target as a
+        left join tip_produs as b on a.tip_produs_id = b.id
+        where a.client_id = '" . $client_id . "'
+        and a.sters = 0
+        and b.sters = 0
+        ORDER BY b.id
+        ";
+
+        $result = myQuery($target_by_client_id);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['nume_produs']] = Clienti::getDiferentePreturiByClientIdAndTraseuId($item['tip_produs_id'],36,$item['tip_produs_id']);
+            }
+        }
+        return $ret;
+    }
+
 
     public static function getTargetClient($client_id = 0)
     {

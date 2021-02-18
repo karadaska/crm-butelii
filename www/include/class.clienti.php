@@ -38,32 +38,7 @@ class Clienti
 
     }
 
-    public static function getDiferentePreturiByClientIdAndTraseuId($client_id, $traseu_id, $tip_produs_id)
-    {
-        $ret = array();
-        $query = "   SELECT a.tip_produs_id, a.cantitate, a.pret, a.pret_contract
-                    FROM
-                        detalii_fisa_intoarcere_produse AS a
-                    LEFT JOIN fise_generate AS b ON a.fisa_id = b.id
-                    WHERE a.client_id = '" . $client_id . "'
-                    AND b.traseu_id = '" . $traseu_id . "'
-                    AND a.tip_produs_id = '" . $tip_produs_id . "'
-                    AND (a.cantitate > 0 AND a.pret != a.pret_contract)
-                    AND a.sters = 0
-                    AND b.sters = 0
-                  ";
 
-        $result = myQuery($query);
-
-        if ($result) {
-            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($a as $item) {
-                $ret[$item['tip_produs_id']] = $item;
-            }
-        }
-        return $ret;
-
-    }
 
     public static function getApelTraseuNew($opts = array())
     {
@@ -1634,37 +1609,61 @@ class Clienti
         return $ret;
     }
 
-}
-//public static function getDiferentePreturiByClientIdAndTraseuId($client_id, $traseu_id)
-//{
-//
-//    $ret = array();
-//    $query = "   SELECT a.fisa_id, c.tip as nume_produs, a.cantitate, a.pret as pret_sofer,
-//                    a.pret_contract, a.comision,a.data_intrare, a.tip_produs_id
-//                    FROM detalii_fisa_intoarcere_produse as a
-//                    LEFT JOIN fise_generate as b on a.fisa_id = b.id
-//                    LEFT JOIN tip_produs as c on a.tip_produs_id = c.id
-//                    WHERE a.client_id = '".$client_id."'
-//                    AND b.traseu_id = '".$traseu_id."'
-//                    AND (a.cantitate > 0 and a.pret != a.pret_contract)
-//                    AND a.sters = 0
-//                    AND b.sters = 0
-//                    order by a.tip_produs_id ASC
-//                  ";
-//
-//
-//
-//    $result = myQuery($query);
-//
-//    if ($result) {
-//        $a = $result->fetchAll(PDO::FETCH_ASSOC);
-//        foreach ($a as $item) {
-//            $ret[$item['nume_produs']] = 3;
-//        }
-//    }
-//    return $ret;
-//
-//}
+public static function getDiferentePreturiByClientIdAndTraseuId2($client_id, $traseu_id)
+{
 
+    $ret = array();
+    $query = "   SELECT a.fisa_id, c.tip as nume_produs, a.cantitate, a.pret as pret_sofer,
+                    a.pret_contract, a.comision,a.data_intrare, a.tip_produs_id
+                    FROM detalii_fisa_intoarcere_produse as a
+                    LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                    LEFT JOIN tip_produs as c on a.tip_produs_id = c.id
+                    WHERE a.client_id = '".$client_id."'
+                    AND b.traseu_id = '".$traseu_id."'
+                    AND (a.cantitate > 0 and a.pret != a.pret_contract)
+                    AND a.sters = 0
+                    AND b.sters = 0
+                    order by a.tip_produs_id ASC
+                  ";
+
+
+
+    $result = myQuery($query);
+
+    if ($result) {
+        $a = $result->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($a as $item) {
+            $ret[$item['nume_produs']] = 3;
+        }
+    }
+    return $ret;
+
+}
+
+    public static function getDiferentePreturiByClientIdAndTraseuId($client_id, $traseu_id, $tip_produs_id)
+    {
+        $ret = array();
+        $query = "   SELECT a.tip_produs_id, a.cantitate, a.pret, a.pret_contract, a.fisa_id
+                    FROM
+                        detalii_fisa_intoarcere_produse AS a
+                    LEFT JOIN fise_generate AS b ON a.fisa_id = b.id
+                    WHERE a.client_id = '" . $client_id . "'
+                    AND b.traseu_id = '" . $traseu_id . "'
+                    AND a.tip_produs_id = '" . $tip_produs_id . "'
+                    AND (a.cantitate > 0 AND a.pret != a.pret_contract)
+                    AND a.sters = 0
+                    AND b.sters = 0
+                  ";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
+}
 
 

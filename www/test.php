@@ -69,7 +69,7 @@ $stare_id = 1;
 //    'data_stop' => $data_stop,
 //));
 
-//$b = Clienti::getFiseByClientId(1396);
+//$b = Clienti::getDiferentePreturiByClientIdAndTraseuId(2433, 36, 1);
 //$b = Clienti::getFiseByClientId(1397);
 //$b = Clienti::getPretByClientIdAndProdusId(1397, 2);
 //$b = Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId(1396, 213);
@@ -113,7 +113,7 @@ $stare_id = 1;
 
 //TRASEE----------------------------------------------------------
 
-//$b = Trasee::getNeconcordantaPreturiClientiByTraseuId(36);
+$b = Trasee::getNeconcordantaPreturiClientiByTraseuId(36);
 //$b = Clienti::getDiferentePreturiByClientIdAndTraseuId(2433, 36, 1);
 //$b = Trasee::getTraseeAsignateLaClientByClientId(1899);
 //$b = Trasee::getTrasee();
@@ -142,7 +142,6 @@ $stare_id = 1;
 //$b = Stocuri::getIncarcaturaMasinaSosireByFisaId(157);
 
 //$b = Stocuri::getCountClientiByPret();
-$b = Clienti::getCountClientiByPret();
 //$b = Stocuri::getStoc();
 
 echo json_encode($b);

@@ -50,44 +50,35 @@
                                     </thead>
                                     <tbody>
                                     {$nr = 1}
-                                    {foreach from=$lista_clienti item=client}
+                                    {foreach from=$lista_clienti['neconcordanta'] item=client}
                                         <tr>
                                             <th style="text-align: center;vertical-align: middle;"> {$nr++}</th>
                                             <th style="text-align: center;vertical-align: middle;"> {$client['nume_localitate']}</th>
-                                            <th style="text-align: left;vertical-align: middle;"> {$client['nume_client']}</th>
+                                            <th style="text-align: left;vertical-align: middle;"> {$client['nume']}</th>
                                             <th style="text-align: center;vertical-align: middle;"> {$client['telefon']}</th>
                                             <th>
                                                 <table class="table table-bordered">
-                                                    {foreach from=$client['dif_pret'] item=dif}
-                                                        <tr>
-                                                            <th>
-                                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <th>
+                                                            {foreach from=$client['produse_client'] item=clienti key=dif}
+                                                                <table class="table-bordered table">
                                                                     <tr>
-                                                                        <td style="text-align: center;">Produs</td>
-                                                                        <td style="text-align: center;">Pret sofer</td>
-                                                                        <td style="text-align: center;">Pret Contract
-                                                                        </td>
-                                                                        <td style="text-align: center;">Comision</td>
-                                                                        <td style="text-align: center;">Cantitate</td>
-                                                                        <td style="text-align: center;">Data</td>
-                                                                        <td style="text-align: center;">Fisa_id</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td style="text-align: center;">{$dif['nume_produs']}</td>
-                                                                        <td style="text-align: center;color: red;">{$dif['pret_sofer']}</td>
-                                                                        <td style="text-align: center;color: red;">{$dif['pret_contract']}</td>
-                                                                        <td style="text-align: center;">{$dif['comision']}</td>
-                                                                        <td style="text-align: center;">{$dif['cantitate']}</td>
-                                                                        <td style="text-align: center;">{$dif['data_intrare']}</td>
-                                                                        <td style="text-align: center;">
-                                                                            <a href="completare_fisa_traseu.php?id={$dif['fisa_id']}"> {$dif['fisa_id']}</a>
-
-                                                                        </td>
+                                                                        <th style="vertical-align: middle;width: 100px;">{$dif}</th>
+                                                                        <th>
+                                                                            <table class="table-bordered table">
+                                                                                <tr>
+                                                                                    <th></th>
+                                                                                    <th>1</th>
+                                                                                    <th>1</th>
+                                                                                    <th>1</th>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </th>
                                                                     </tr>
                                                                 </table>
-                                                            </th>
-                                                        </tr>
-                                                    {/foreach}
+                                                            {/foreach}
+                                                        </th>
+                                                    </tr>
                                                 </table>
                                             </th>
                                         </tr>

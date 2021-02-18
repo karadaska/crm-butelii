@@ -274,22 +274,30 @@ class Trasee
                   ";
 
         $result = myQuery($query);
+        $ret['neconcordanta'] = array();
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-                $r = array(
-                    'client_id' => $item['client_id'],
-                    'nume_client' => $item['nume_client'],
-                    'telefon' => $item['telefon'],
-                    'telefon_2' => $item['telefon_2'],
+                $ret['neconcordanta'][$item['client_id']] = array(
+                    'nume' => $item['nume_client'],
                     'nume_localitate' => $item['nume_localitate'],
-                    'dif_pret' => Clienti::getDiferentePreturiByClientIdAndTraseuId($item['client_id'], $item['traseu_id'], $item['tip_produs_id'])
+                    'telefon' => $item['telefon'],
+                    'produse_client' => Target::getProduseByClientIdNeconcordantaPreturi($item['client_id'])
                 );
-                array_push($ret, $r);
             }
         }
-
         return $ret;
     }
 }
 
+
+
+//                $r = array(
+//                    'client_id' => $item['client_id'],
+//                    'nume_client' => $item['nume_client'],
+//                    'telefon' => $item['telefon'],
+//                    'telefon_2' => $item['telefon_2'],
+//                    'nume_localitate' => $item['nume_localitate'],
+//                    'dif_pret' => Clienti::getDiferentePreturiByClientIdAndTraseuId($item['client_id'], $item['traseu_id'], $item['tip_produs_id'])
+//                );
+//                array_push($ret, $r);

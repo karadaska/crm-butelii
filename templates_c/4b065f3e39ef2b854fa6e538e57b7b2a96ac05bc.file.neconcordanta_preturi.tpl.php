@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-09 14:42:55
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-18 22:53:56
          compiled from "/var/www/html/fofoweb/www/templates/neconcordanta_preturi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15636048576022834fda05e0-72628903%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4b065f3e39ef2b854fa6e538e57b7b2a96ac05bc' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/neconcordanta_preturi.tpl',
-      1 => 1612816494,
+      1 => 1613681634,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_6022834fe0ae67_70395146',
   'variables' => 
   array (
     'title' => 0,
@@ -27,8 +29,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dif' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_6022834fe0ae67_70395146',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_6022834fe0ae67_70395146')) {function content_6022834fe0ae67_70395146($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -93,7 +93,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                     <tbody>
                                     <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
                                     <?php  $_smarty_tpl->tpl_vars['client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['client']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['lista_clienti']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['lista_clienti']->value['neconcordanta']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['client']->key => $_smarty_tpl->tpl_vars['client']->value) {
 $_smarty_tpl->tpl_vars['client']->_loop = true;
 ?>
@@ -102,54 +102,40 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 </th>
                                             <th style="text-align: center;vertical-align: middle;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
 </th>
-                                            <th style="text-align: left;vertical-align: middle;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_client'];?>
+                                            <th style="text-align: left;vertical-align: middle;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['nume'];?>
 </th>
                                             <th style="text-align: center;vertical-align: middle;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
 </th>
                                             <th>
                                                 <table class="table table-bordered">
-                                                    <?php  $_smarty_tpl->tpl_vars['dif'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['dif']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['client']->value['dif_pret']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['dif']->key => $_smarty_tpl->tpl_vars['dif']->value) {
-$_smarty_tpl->tpl_vars['dif']->_loop = true;
+                                                    <tr>
+                                                        <th>
+                                                            <?php  $_smarty_tpl->tpl_vars['clienti'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['clienti']->_loop = false;
+ $_smarty_tpl->tpl_vars['dif'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['client']->value['produse_client']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['clienti']->key => $_smarty_tpl->tpl_vars['clienti']->value) {
+$_smarty_tpl->tpl_vars['clienti']->_loop = true;
+ $_smarty_tpl->tpl_vars['dif']->value = $_smarty_tpl->tpl_vars['clienti']->key;
 ?>
-                                                        <tr>
-                                                            <th>
-                                                                <table class="table table-bordered">
+                                                                <table class="table-bordered table">
                                                                     <tr>
-                                                                        <td style="text-align: center;">Produs</td>
-                                                                        <td style="text-align: center;">Pret sofer</td>
-                                                                        <td style="text-align: center;">Pret Contract
-                                                                        </td>
-                                                                        <td style="text-align: center;">Comision</td>
-                                                                        <td style="text-align: center;">Cantitate</td>
-                                                                        <td style="text-align: center;">Data</td>
-                                                                        <td style="text-align: center;">Fisa_id</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['dif']->value['nume_produs'];?>
-</td>
-                                                                        <td style="text-align: center;color: red;"><?php echo $_smarty_tpl->tpl_vars['dif']->value['pret_sofer'];?>
-</td>
-                                                                        <td style="text-align: center;color: red;"><?php echo $_smarty_tpl->tpl_vars['dif']->value['pret_contract'];?>
-</td>
-                                                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['dif']->value['comision'];?>
-</td>
-                                                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['dif']->value['cantitate'];?>
-</td>
-                                                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['dif']->value['data_intrare'];?>
-</td>
-                                                                        <td style="text-align: center;">
-                                                                            <a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['dif']->value['fisa_id'];?>
-"> <?php echo $_smarty_tpl->tpl_vars['dif']->value['fisa_id'];?>
-</a>
-
-                                                                        </td>
+                                                                        <th style="vertical-align: middle;width: 100px;"><?php echo $_smarty_tpl->tpl_vars['dif']->value;?>
+</th>
+                                                                        <th>
+                                                                            <table class="table-bordered table">
+                                                                                <tr>
+                                                                                    <th></th>
+                                                                                    <th>1</th>
+                                                                                    <th>1</th>
+                                                                                    <th>1</th>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </th>
                                                                     </tr>
                                                                 </table>
-                                                            </th>
-                                                        </tr>
-                                                    <?php } ?>
+                                                            <?php } ?>
+                                                        </th>
+                                                    </tr>
                                                 </table>
                                             </th>
                                         </tr>
