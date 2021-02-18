@@ -14,7 +14,7 @@
                     <div class="widget">
                         <div class="widget-title">
                             <div class="icon"><i class="icon20 i-table"></i></div>
-                            <h4>Numa clienti by pret:</h4>
+                            <h4>Numar clienti by pret:</h4>
                         </div>
                         <div class="widget-content">
                             <table class="table table-bordered table-striped table-hover">
@@ -24,21 +24,24 @@
                                             <table class="table table-bordered table-striped table-hover">
                                                 <thead>
                                                 <tr>
-                                                    <th colspan="6">{$depozit['nume']}</th>
+                                                    <th colspan="3">{$depozit['nume']}</th>
                                                 </tr>
                                                 <tr>
-                                                    <th style="text-align: left;">Nume produs</th>
+                                                    <th style="text-align: left;" colspan="3">Nume produs</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <tr>
                                                     {foreach from=$depozit['produse'] item=produs}
-                                                        <th>{$produs['nume_produs']}</th>
+                                                        <th>{$produs['nume_produs']}<br/>
+                                                            {foreach from=$produs['pret'] item=pret}
+                                                                {$pret}
+                                                                <br/>
+                                                            {/foreach}
+                                                        </th>
                                                     {/foreach}
                                                 </tr>
                                                 </tbody>
-                                                <tr class="success">
-                                                </tr>
                                             </table>
                                         </td>
                                     {/foreach}

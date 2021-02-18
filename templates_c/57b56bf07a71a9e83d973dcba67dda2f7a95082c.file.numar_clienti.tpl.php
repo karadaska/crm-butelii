@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-18 13:58:37
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-18 15:34:47
          compiled from "/var/www/html/fofoweb/www/templates/numar_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:495425026602d10d6174c08-69449296%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '57b56bf07a71a9e83d973dcba67dda2f7a95082c' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/numar_clienti.tpl',
-      1 => 1613649385,
+      1 => 1613655287,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_clienti' => 0,
     'depozit' => 0,
     'produs' => 0,
+    'pret' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -45,7 +46,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <div class="widget">
                         <div class="widget-title">
                             <div class="icon"><i class="icon20 i-table"></i></div>
-                            <h4>Numa clienti by pret:</h4>
+                            <h4>Numar clienti by pret:</h4>
                         </div>
                         <div class="widget-content">
                             <table class="table table-bordered table-striped table-hover">
@@ -59,11 +60,11 @@ $_smarty_tpl->tpl_vars['depozit']->_loop = true;
                                             <table class="table table-bordered table-striped table-hover">
                                                 <thead>
                                                 <tr>
-                                                    <th colspan="6"><?php echo $_smarty_tpl->tpl_vars['depozit']->value['nume'];?>
+                                                    <th colspan="3"><?php echo $_smarty_tpl->tpl_vars['depozit']->value['nume'];?>
 </th>
                                                 </tr>
                                                 <tr>
-                                                    <th style="text-align: left;">Nume produs</th>
+                                                    <th style="text-align: left;" colspan="3">Nume produs</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -74,12 +75,20 @@ foreach ($_from as $_smarty_tpl->tpl_vars['produs']->key => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['produs']->_loop = true;
 ?>
                                                         <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
-</th>
+<br/>
+                                                            <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['produs']->value['pret']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars['pret']->value) {
+$_smarty_tpl->tpl_vars['pret']->_loop = true;
+?>
+                                                                <?php echo $_smarty_tpl->tpl_vars['pret']->value;?>
+
+                                                                <br/>
+                                                            <?php } ?>
+                                                        </th>
                                                     <?php } ?>
                                                 </tr>
                                                 </tbody>
-                                                <tr class="success">
-                                                </tr>
                                             </table>
                                         </td>
                                     <?php } ?>
