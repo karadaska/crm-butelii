@@ -524,7 +524,6 @@ class Stocuri
         return $ret;
     }
 
-
     public static function getFise($opt = array())
     {
         $depozit_id = isset($opt['depozit_id']) ? $opt['depozit_id'] : 0;
@@ -695,7 +694,6 @@ class Stocuri
 
         return $ret;
     }
-
 
     public static function getMiscariByFisaId($id)
     {
@@ -872,31 +870,7 @@ class Stocuri
         return $ret;
     }
 
-    public static function getListaPreturiByDepozitId($depozit_id)
-    {
-        $ret = array();
-        $query = "SELECT a.pret, c.depozit_id from clienti_target as a
-                    LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
-                    LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
-                    LEFT JOIN tip_produs as d on a.tip_produs_id = d.id
-                    WHERE a.sters = 0
-                    AND c.depozit_id = '".$depozit_id."'
-                    AND b.sters = 0
-                    AND c.sters = 0
-                    GROUP BY pret";
-        $result = myQuery($query);
 
-        if ($result) {
-            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($a as $item) {
-                $ret[$item['pret']] = array(
-                    'preturi' => self::getClientiByPret($item['pret'],$item['depozit_id'])
-                );
-            }
-
-        }
-        return $ret;
-    }
 
     public static function getClientiByPret($pret, $depozit_id)
     {
@@ -918,6 +892,37 @@ class Stocuri
         }
         return $ret;
     }
+
+
+
+    public static function getClientiByPretNew($opt = array())
+    {
+
+        $ret = array();
+        $query = "SELECT a .*
+                  from 
+                  depozite as a                
+                  where 1 = 1
+                  ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret['depozite'] = array();
+            $items = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($items as $item) {
+                $ret['depozite'][$item['id']] =
+                    array(
+                    'tip_produs_by_depozit' =>array(
+//                        'Produse'=>Depozite::getTipProduseByDepozitId($item['id'])
+
+                    )
+                );
+            }
+        }
+        return $ret;
+    }
+
+
 
 }
 

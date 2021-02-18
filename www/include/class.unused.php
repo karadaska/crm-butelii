@@ -109,9 +109,6 @@ public static function getCantitatiIntoarcereByFisaId($fisa_id)
 
     }
 
-
-
-
     public static function getCantitatiProduseFisaSosireByClientId($client_id, $fisa_id)
     {
         $ret = array();
@@ -221,6 +218,4 @@ public static function getRaportLivrariClientiOld($traseu_id, $opts = array())
         }
         return $ret;
     }
-
-
 }

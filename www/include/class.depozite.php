@@ -19,6 +19,33 @@ class Depozite
         return $ret;
     }
 
+    public static function getListaPreturiByDepozitId($depozit_id)
+    {
+        $ret = array();
+        $query = "SELECT a.pret, c.depozit_id from clienti_target as a
+                    LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
+                    LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
+                    LEFT JOIN tip_produs as d on a.tip_produs_id = d.id
+                    WHERE a.sters = 0
+                    AND c.depozit_id = '".$depozit_id."'
+                    AND b.sters = 0
+                    AND c.sters = 0
+                    GROUP BY pret";
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['pret']] = array(
+                    'preturi' => 'to do'
+//                'preturi' => self::getClientiByPret($item['pret'],$item['depozit_id'])
+                );
+            }
+
+        }
+        return $ret;
+    }
+
     public static function getTipProduseByDepozitId($depozit_id)
     {
         $ret = array();
@@ -30,6 +57,7 @@ class Depozite
                     AND c.depozit_id = '" . $depozit_id . "'
                     AND b.sters = 0
                     AND c.sters = 0
+                    AND d.sters = 0
                     GROUP BY tip_produs_id";
         $result = myQuery($query);
         if ($result) {
@@ -37,10 +65,10 @@ class Depozite
             foreach ($a as $item) {
                 $r = array(
                     $item['tip'] => array(
-                        'lista_preturi' => Stocuri::getListaPreturiByDepozitId($item['depozit_id'])
+                        'lista_preturi' => Depozite::getListaPreturiByDepozitId($item['depozit_id'])
                     ),
                 );
-                array_push($ret, $r);
+                array_push($ret, $a);
             }
         }
         return $ret;
