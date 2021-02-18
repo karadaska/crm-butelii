@@ -69,47 +69,4 @@ class Produse
         }
         return $ret;
     }
-
-    public static function getPreturiByProdusIdAndDepozitId($id, $depozit_id)
-    {
-        $ret = array();
-
-        $query = "";
-
-        $result = myQuery($query);
-        if ($result) {
-            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($a as $item) {
-                $r = array(
-                    'pret_bg_11' => array(
-                        'pret' => $item['pret'],
-                        'cantitate' => self::getTotalCantitatiByPret(1, $item['traseu_id'], $item['pret'],
-                            array(
-                                'data_start' => $data_start,
-                                'data_stop' => $data_stop
-                            )),
-                    ),
-                    'pret_ar_8' => array(
-                        'pret' => $item['pret'],
-                        'cantitate' => self::getTotalCantitatiByPret(3, $item['traseu_id'], $item['pret'], array(
-                            'data_start' => $data_start,
-                            'data_stop' => $data_stop
-                        )),
-                    ),
-                    'pret_ar_9' => array(
-                        'pret' => $item['pret'],
-                        'cantitate' => self::getTotalCantitatiByPret(4, $item['traseu_id'], $item['pret'], array(
-                            'data_start' => $data_start,
-                            'data_stop' => $data_stop
-                        )),
-                    ),
-                );
-
-                array_push($ret, $r);
-            }
-        }
-        return $ret;
-
-    }
-
 }

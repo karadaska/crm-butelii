@@ -19,7 +19,7 @@ class Depozite
         return $ret;
     }
 
-    public static function getListaPreturiByProdusIdAndDepozitId($produs_id,$depozit_id)
+    public static function getListaPreturiByProdusIdAndDepozitId($produs_id, $depozit_id)
     {
         $ret = array();
         $query = "SELECT a.pret, c.depozit_id, a.tip_produs_id from clienti_target as a
@@ -37,9 +37,7 @@ class Depozite
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-                $ret[$item['pret']] = array(
-                    'numar_clienti' => Clienti::getCountClientiByPret($item['pret'],$item['depozit_id'],$item['tip_produs_id'])
-                );
+                $ret[$item['pret']] = Clienti::getNumarClientiByPret($item['pret'], $item['depozit_id'], $item['tip_produs_id']);
             }
 
         }
@@ -61,14 +59,14 @@ class Depozite
                     GROUP BY tip_produs_id";
         $result = myQuery($query);
 
-            if ($result) {
-                $a = $result->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($a as $item) {
-                    $ret[$item['tip']] = array(
-                        'preturi_by_produs' =>self::getListaPreturiByProdusIdAndDepozitId($item['tip_produs_id'],$item['depozit_id'])
-                    );
-                }
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['tip']] = array(
+                    'preturi_by_produs' => self::getListaPreturiByProdusIdAndDepozitId($item['tip_produs_id'], $item['depozit_id'])
+                );
             }
+        }
         return $ret;
 
     }

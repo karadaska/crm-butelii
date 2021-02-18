@@ -1591,7 +1591,7 @@ class Clienti
         return $ret;
     }
 
-    public static function getCountClientiByPret($pret, $depozit_id, $produs_id)
+    public static function getNumarClientiByPret($pret, $depozit_id, $produs_id)
     {
         $ret = array();
         $query = "SELECT  COUNT(a.client_id) as numar_clienti from clienti_target as a
@@ -1608,8 +1608,29 @@ class Clienti
         $result = myQuery($query);
 
         if ($result) {
-            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+            $a = $result->fetch(PDO::FETCH_ASSOC);
+        $ret = $a['numar_clienti'];
         }
+        return $ret;
+    }
+
+
+    public static function getCountClientiByPret()
+    {
+        $ret = array();
+        $query = "SELECT * from depozite";
+        $result = myQuery($query);
+
+            $ret['depozite'] = array();
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret['depozite'][$item['id']] = array(
+                    'depozit_id'=>$item['id'],
+                    'nume'=>$item['nume'],
+                    'produse' => Depozite::getTipProduseByDepozitId($item['id'])
+                );
+            }
+
         return $ret;
     }
 

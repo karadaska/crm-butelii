@@ -852,60 +852,6 @@ class Stocuri
         return $ret;
     }
 
-    public static function getCountClientiByPret()
-    {
-        $ret = array();
-        $query = "SELECT * from depozite";
-        $result = myQuery($query);
-
-        if ($result) {
-            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($a as $item) {
-                $ret[$item['nume']] = array(
-                    'produse' => Depozite::getTipProduseByDepozitId($item['id'])
-                );
-            }
-
-        }
-        return $ret;
-    }
-
-
-
-
-
-
-
-    public static function getClientiByPretNew($opt = array())
-    {
-
-        $ret = array();
-        $query = "SELECT a .*
-                  from 
-                  depozite as a                
-                  where 1 = 1
-                  ";
-
-        $result = myQuery($query);
-        if ($result) {
-
-            $items = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($items as $item) {
-                $ret['depozite'][$item['nume']] =
-                    array(
-                        'produs_depozit' => Depozite::getTipProduseByDepozitId($item['id'])
-//                    'produs_depozit' =>array(
-////                        'Produse'=>Depozite::getTipProduseByDepozitId($item['id'])
-//
-//                    )
-                );
-            }
-        }
-        return $ret;
-    }
-
-
-
 }
 
 
