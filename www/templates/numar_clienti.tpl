@@ -34,8 +34,13 @@
                                                 <tr>
                                                     {foreach from=$depozit['produse'] item=produs}
                                                         <th>{$produs['nume_produs']}<br/>
-                                                            {foreach from=$produs['pret'] item=pret}
-                                                                {$pret}
+                                                            {foreach from=$produs['pret'] item=clienti key=pret}
+                                                                <table class="table table-bordered">
+                                                                    <tr>
+                                                                        <th style="text-align: center;width: 50%">Pret: {$pret} </th>
+                                                                        <th style="text-align: center;width: 50%">{$clienti}</th>
+                                                                    </tr>
+                                                                </table>
                                                                 <br/>
                                                             {/foreach}
                                                         </th>

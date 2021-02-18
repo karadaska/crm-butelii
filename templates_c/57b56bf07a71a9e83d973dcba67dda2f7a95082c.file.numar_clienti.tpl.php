@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-18 15:34:47
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-18 15:56:50
          compiled from "/var/www/html/fofoweb/www/templates/numar_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:495425026602d10d6174c08-69449296%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '57b56bf07a71a9e83d973dcba67dda2f7a95082c' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/numar_clienti.tpl',
-      1 => 1613655287,
+      1 => 1613656610,
       2 => 'file',
     ),
   ),
@@ -24,6 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'depozit' => 0,
     'produs' => 0,
     'pret' => 0,
+    'clienti' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -76,13 +77,21 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
 ?>
                                                         <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
 <br/>
-                                                            <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
+                                                            <?php  $_smarty_tpl->tpl_vars['clienti'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['clienti']->_loop = false;
+ $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable;
  $_from = $_smarty_tpl->tpl_vars['produs']->value['pret']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars['pret']->value) {
-$_smarty_tpl->tpl_vars['pret']->_loop = true;
+foreach ($_from as $_smarty_tpl->tpl_vars['clienti']->key => $_smarty_tpl->tpl_vars['clienti']->value) {
+$_smarty_tpl->tpl_vars['clienti']->_loop = true;
+ $_smarty_tpl->tpl_vars['pret']->value = $_smarty_tpl->tpl_vars['clienti']->key;
 ?>
-                                                                <?php echo $_smarty_tpl->tpl_vars['pret']->value;?>
-
+                                                                <table class="table table-bordered">
+                                                                    <tr>
+                                                                        <th style="text-align: center;width: 50%">Pret: <?php echo $_smarty_tpl->tpl_vars['pret']->value;?>
+ </th>
+                                                                        <th style="text-align: center;width: 50%"><?php echo $_smarty_tpl->tpl_vars['clienti']->value;?>
+</th>
+                                                                    </tr>
+                                                                </table>
                                                                 <br/>
                                                             <?php } ?>
                                                         </th>
