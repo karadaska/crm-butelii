@@ -26,18 +26,22 @@ class Target
         return $ret;
     }
 
-    public static function getProduseByClientIdNeconcordantaPreturi($client_id)
+    public static function getProduseByClientIdNeconcordantaPreturi($client_id, $opts = array())
     {
+        $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
+
         $ret = array();
-        $target_by_client_id = "SELECT a.*, b.tip as nume_produs
-        from clienti_target as a
-        left join tip_produs as b on a.tip_produs_id = b.id
-        left join asignari_clienti_trasee as c on a.client_id = c.client_id
-        where a.client_id = '" . $client_id . "'
-        and a.sters = 0
-        and b.sters = 0
-        ORDER BY b.id
-        ";
+
+        $target_by_client_id = "SELECT a.*, b.tip as nume_produs, c.traseu_id
+                                FROM clienti_target as a
+                                LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                                LEFT JOIN asignari_clienti_trasee as c on a.client_id = c.client_id
+                                WHERE a.client_id = '" . $client_id . "'
+                                AND c.traseu_id = '" . $traseu_id . "'
+                                AND a.sters = 0
+                                AND b.sters = 0
+                                ORDER BY b.id
+                                ";
 
         $result = myQuery($target_by_client_id);
 
@@ -45,8 +49,8 @@ class Target
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
                 $ret[$item['tip_produs_id']] = array(
-                    'nume_produs'=>$item['nume_produs'],
-                    'produse_pret'=>Clienti::getDiferentePreturiByClientIdAndTraseuId($item['client_id'],36,$item['tip_produs_id'])
+                    'nume_produs' => $item['nume_produs'],
+                    'produse_pret' => Clienti::getDiferentePreturiByClientIdAndTraseuId($item['client_id'], $traseu_id, $item['tip_produs_id'])
                 );
             }
         }
@@ -77,7 +81,6 @@ class Target
     }
 
 
-
     public static function getTargetClientPentruRaportLivrari($client_id = 0)
     {
         $ret = array();
@@ -102,7 +105,6 @@ class Target
         }
         return $ret;
     }
-
 
 
 }

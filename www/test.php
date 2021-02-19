@@ -113,7 +113,7 @@ $stare_id = 1;
 
 //TRASEE----------------------------------------------------------
 
-$b = Trasee::getNeconcordantaPreturiClientiByTraseuId(36);
+$b = Trasee::getNeconcordantaPreturiClientiByTraseuId(28);
 //$b = Clienti::getDiferentePreturiByClientIdAndTraseuId(2433, 36, 1);
 //$b = Trasee::getTraseeAsignateLaClientByClientId(1899);
 //$b = Trasee::getTrasee();

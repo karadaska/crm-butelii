@@ -282,7 +282,9 @@ class Trasee
                     'nume' => $item['nume_client'],
                     'nume_localitate' => $item['nume_localitate'],
                     'telefon' => $item['telefon'],
-                    'produse_client' => Target::getProduseByClientIdNeconcordantaPreturi($item['client_id'])
+                    'produse_client' => Target::getProduseByClientIdNeconcordantaPreturi($item['client_id'], array(
+                        'traseu_id' => $traseu_id
+                    ))
                 );
             }
         }
