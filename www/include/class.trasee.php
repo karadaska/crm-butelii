@@ -280,6 +280,7 @@ class Trasee
             foreach ($a as $item) {
                 $ret['neconcordanta'][$item['client_id']] = array(
                     'nume' => $item['nume_client'],
+                    'client_id' => $item['client_id'],
                     'nume_localitate' => $item['nume_localitate'],
                     'telefon' => $item['telefon'],
                     'produse_client' => Target::getProduseByClientIdNeconcordantaPreturi($item['client_id'], array(

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-19 14:12:28
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-19 14:59:32
          compiled from "/var/www/html/fofoweb/www/templates/neconcordanta_preturi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15636048576022834fda05e0-72628903%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4b065f3e39ef2b854fa6e538e57b7b2a96ac05bc' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/neconcordanta_preturi.tpl',
-      1 => 1613736745,
+      1 => 1613739567,
       2 => 'file',
     ),
   ),
@@ -76,9 +76,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                             <div class="icon"><i class="icon20 i-table"></i></div>
                             <h4>List&#259; clien&#355i</h4>
                         </div>
-                        <form action="/neconcordanta_preturi.php" method="post"
-
-                              style="margin-bottom: 0">
+                        <form action="/neconcordanta_preturi.php" method="post" style="margin-bottom: 0">
                             <div class="widget-content">
                                 <table cellpadding="0" cellspacing="0" border="0"
                                        class="table table-striped table-bordered table-hover" id="dataTable">
@@ -88,7 +86,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                         <th style="text-align: left;">Localitate</th>
                                         <th style="text-align: left;">Client</th>
                                         <th style="text-align: left;">Telefon</th>
-                                        <th style="text-align: center;">Diferente</th>
+                                        <th style="text-align: left;">Diferente Pret</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -103,8 +101,9 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 </th>
                                             <th style="text-align: center;vertical-align: middle;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
 </th>
-                                            <th style="text-align: left;vertical-align: middle;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['nume'];?>
-</th>
+                                            <th style="text-align: left;vertical-align: middle;"> <a href="asigneaza_produse_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume'];?>
+</a></th>
                                             <th style="text-align: center;vertical-align: middle;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
 </th>
                                             <th>
@@ -134,15 +133,17 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
 
                                                                                             <br/><?php echo $_smarty_tpl->tpl_vars['produs']->value['numar'];?>
 </th>
-                                                                                        <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['pret'];?>
+                                                                                        <th><abbr title="PRET CONTRACT" style="cursor: pointer;color: red;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['pret_contract'];?>
+</abbr></th>
+                                                                                        <th><abbr title="PRET SOFER" style="cursor: pointer;color: red;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['pret'];?>
+</abbr></th>
+                                                                                        <th title="CANTITATE"><?php echo $_smarty_tpl->tpl_vars['produs']->value['cantitate'];?>
 </th>
-                                                                                        <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['pret_contract'];?>
-</th>
-                                                                                        <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['cantitate'];?>
-</th>
-                                                                                        <th><a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['produs']->value['fisa_id'];?>
+                                                                                        <th>
+                                                                                            <a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['produs']->value['fisa_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['produs']->value['fisa_id'];?>
-</a></th>
+</a>
+                                                                                        </th>
                                                                                     </tr>
                                                                                 </table>
                                                                             </th>
@@ -163,6 +164,5 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
             </div>
     </section>
 </div>
-<div style="margin-top: 100px;"></div>
 <script src="/js/pagini/neconcordanta_preturi.js"></script>
 <?php }} ?>

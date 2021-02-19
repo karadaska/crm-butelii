@@ -33,9 +33,7 @@
                             <div class="icon"><i class="icon20 i-table"></i></div>
                             <h4>List&#259; clien&#355i</h4>
                         </div>
-                        <form action="/neconcordanta_preturi.php" method="post"
-
-                              style="margin-bottom: 0">
+                        <form action="/neconcordanta_preturi.php" method="post" style="margin-bottom: 0">
                             <div class="widget-content">
                                 <table cellpadding="0" cellspacing="0" border="0"
                                        class="table table-striped table-bordered table-hover" id="dataTable">
@@ -45,7 +43,7 @@
                                         <th style="text-align: left;">Localitate</th>
                                         <th style="text-align: left;">Client</th>
                                         <th style="text-align: left;">Telefon</th>
-                                        <th style="text-align: center;">Diferente</th>
+                                        <th style="text-align: left;">Diferente Pret</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -54,7 +52,7 @@
                                         <tr>
                                             <th style="text-align: center;vertical-align: middle;"> {$nr++}</th>
                                             <th style="text-align: center;vertical-align: middle;"> {$client['nume_localitate']}</th>
-                                            <th style="text-align: left;vertical-align: middle;"> {$client['nume']}</th>
+                                            <th style="text-align: left;vertical-align: middle;"> <a href="asigneaza_produse_client.php?id={$client['client_id']}">{$client['nume']}</a></th>
                                             <th style="text-align: center;vertical-align: middle;"> {$client['telefon']}</th>
                                             <th>
                                                 <table class="table table-bordered">
@@ -72,10 +70,12 @@
                                                                                     <tr>
                                                                                         <th style="text-align: left;width: 200px;">{$produs['nume_sofer']}
                                                                                             <br/>{$produs['numar']}</th>
-                                                                                        <th>{$produs['pret']}</th>
-                                                                                        <th>{$produs['pret_contract']}</th>
-                                                                                        <th>{$produs['cantitate']}</th>
-                                                                                        <th><a href="completare_fisa_traseu.php?id={$produs['fisa_id']}">{$produs['fisa_id']}</a></th>
+                                                                                        <th><abbr title="PRET CONTRACT" style="cursor: pointer;color: red;">{$produs['pret_contract']}</abbr></th>
+                                                                                        <th><abbr title="PRET SOFER" style="cursor: pointer;color: red;">{$produs['pret']}</abbr></th>
+                                                                                        <th title="CANTITATE">{$produs['cantitate']}</th>
+                                                                                        <th>
+                                                                                            <a href="completare_fisa_traseu.php?id={$produs['fisa_id']}">{$produs['fisa_id']}</a>
+                                                                                        </th>
                                                                                     </tr>
                                                                                 </table>
                                                                             </th>
@@ -96,5 +96,4 @@
             </div>
     </section>
 </div>
-<div style="margin-top: 100px;"></div>
 <script src="/js/pagini/neconcordanta_preturi.js"></script>
