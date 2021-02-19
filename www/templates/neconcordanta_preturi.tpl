@@ -59,30 +59,6 @@
                                             <th>
                                                 <table class="table table-bordered">
                                                     <tr>
-                                                        {*<th>*}
-                                                        {*{foreach from=$client['produse_client'] item=clienti}*}
-                                                        {*<table class="table-bordered table">*}
-                                                        {*<tr>*}
-                                                        {*<th style="vertical-align: middle;width: 80px;">{$clienti['nume_produs']}<br/>*}
-                                                        {*</th>*}
-                                                        {*<th>*}
-                                                        {*<table class="table-bordered table">*}
-                                                        {*{foreach from=$clienti['produse_pret'] item=produs}*}
-                                                        {*<tr>*}
-                                                        {*<th style="text-align: left;width: 200px;">{$produs['nume_sofer']}*}
-                                                        {*<br/>{$produs['numar']}</th>*}
-                                                        {*<th>{$produs['pret']}</th>*}
-                                                        {*<th>{$produs['pret_contract']}</th>*}
-                                                        {*<th>{$produs['cantitate']}</th>*}
-                                                        {*<th>{$produs['fisa_id']}</th>*}
-                                                        {*</tr>*}
-                                                        {*{/foreach}*}
-                                                        {*</table>*}
-                                                        {*</th>*}
-                                                        {*</tr>*}
-                                                        {*</table>*}
-                                                        {*{/foreach}*}
-                                                        {*</th>*}
                                                         <th>
                                                             {foreach from=$client['produse_client'] item=clienti}
                                                                 {foreach from=$clienti['produse_pret'] item=produs}
@@ -99,7 +75,7 @@
                                                                                         <th>{$produs['pret']}</th>
                                                                                         <th>{$produs['pret_contract']}</th>
                                                                                         <th>{$produs['cantitate']}</th>
-                                                                                        <th>{$produs['fisa_id']}</th>
+                                                                                        <th><a href="completare_fisa_traseu.php?id={$produs['fisa_id']}">{$produs['fisa_id']}</a></th>
                                                                                     </tr>
                                                                                 </table>
                                                                             </th>

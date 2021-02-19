@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-19 11:50:21
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-19 14:12:28
          compiled from "/var/www/html/fofoweb/www/templates/neconcordanta_preturi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15636048576022834fda05e0-72628903%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4b065f3e39ef2b854fa6e538e57b7b2a96ac05bc' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/neconcordanta_preturi.tpl',
-      1 => 1613727264,
+      1 => 1613736745,
       2 => 'file',
     ),
   ),
@@ -110,30 +110,6 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                             <th>
                                                 <table class="table table-bordered">
                                                     <tr>
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
-                                                        
                                                         <th>
                                                             <?php  $_smarty_tpl->tpl_vars['clienti'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['clienti']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['produse_client']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -164,8 +140,9 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
 </th>
                                                                                         <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['cantitate'];?>
 </th>
-                                                                                        <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['fisa_id'];?>
-</th>
+                                                                                        <th><a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['produs']->value['fisa_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['produs']->value['fisa_id'];?>
+</a></th>
                                                                                     </tr>
                                                                                 </table>
                                                                             </th>

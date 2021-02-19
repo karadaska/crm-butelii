@@ -263,7 +263,7 @@ class Trasee
                   LEFT JOIN tip_produs as c on a.tip_produs_id = c.id
                   LEFT JOIN clienti as d on a.client_id = d.id
                   LEFT JOIN localitati as e on d.localitate_id = e.id
-                  LEFT JOIN ordine_clienti as f on a.client_id = f.ordine
+                  LEFT JOIN ordine_clienti as f on a.client_id = f.client_id
                   WHERE b.traseu_id = '" . $traseu_id . "'
                   AND (a.pret != a.pret_contract)
                   AND a.cantitate > 0
