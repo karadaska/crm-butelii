@@ -32,6 +32,7 @@ class Target
         $target_by_client_id = "SELECT a.*, b.tip as nume_produs
         from clienti_target as a
         left join tip_produs as b on a.tip_produs_id = b.id
+        left join asignari_clienti_trasee as c on a.client_id = c.client_id
         where a.client_id = '" . $client_id . "'
         and a.sters = 0
         and b.sters = 0
