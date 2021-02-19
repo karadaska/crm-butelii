@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-18 22:53:56
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-19 10:00:56
          compiled from "/var/www/html/fofoweb/www/templates/neconcordanta_preturi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15636048576022834fda05e0-72628903%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4b065f3e39ef2b854fa6e538e57b7b2a96ac05bc' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/neconcordanta_preturi.tpl',
-      1 => 1613681634,
+      1 => 1613721654,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_clienti' => 0,
     'nr' => 0,
     'client' => 0,
-    'dif' => 0,
+    'clienti' => 0,
+    'produs' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -111,24 +112,32 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                     <tr>
                                                         <th>
                                                             <?php  $_smarty_tpl->tpl_vars['clienti'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['clienti']->_loop = false;
- $_smarty_tpl->tpl_vars['dif'] = new Smarty_Variable;
  $_from = $_smarty_tpl->tpl_vars['client']->value['produse_client']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['clienti']->key => $_smarty_tpl->tpl_vars['clienti']->value) {
 $_smarty_tpl->tpl_vars['clienti']->_loop = true;
- $_smarty_tpl->tpl_vars['dif']->value = $_smarty_tpl->tpl_vars['clienti']->key;
 ?>
                                                                 <table class="table-bordered table">
                                                                     <tr>
-                                                                        <th style="vertical-align: middle;width: 100px;"><?php echo $_smarty_tpl->tpl_vars['dif']->value;?>
+                                                                        <th style="vertical-align: middle;width: 100px;"><?php echo $_smarty_tpl->tpl_vars['clienti']->value['nume_produs'];?>
 </th>
                                                                         <th>
                                                                             <table class="table-bordered table">
+                                                                                <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['clienti']->value['produse_pret']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['produs']->key => $_smarty_tpl->tpl_vars['produs']->value) {
+$_smarty_tpl->tpl_vars['produs']->_loop = true;
+?>
                                                                                 <tr>
-                                                                                    <th></th>
-                                                                                    <th>1</th>
-                                                                                    <th>1</th>
-                                                                                    <th>1</th>
+                                                                                    <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['pret'];?>
+</th>
+                                                                                    <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['pret_contract'];?>
+</th>
+                                                                                    <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['cantitate'];?>
+</th>
+                                                                                    <th><?php echo $_smarty_tpl->tpl_vars['produs']->value['fisa_id'];?>
+</th>
                                                                                 </tr>
+                                                                                <?php } ?>
                                                                             </table>
                                                                         </th>
                                                                     </tr>

@@ -1645,10 +1645,12 @@ public static function getDiferentePreturiByClientIdAndTraseuId2($client_id, $tr
     public static function getDiferentePreturiByClientIdAndTraseuId($client_id, $traseu_id, $tip_produs_id)
     {
         $ret = array();
-        $query = "   SELECT a.tip_produs_id, a.cantitate, a.pret, a.pret_contract, a.fisa_id
+        $query = "   SELECT a.cantitate, a.pret, a.pret_contract, a.fisa_id, c.nume as nume_sofer, d.numar
                     FROM
                         detalii_fisa_intoarcere_produse AS a
                     LEFT JOIN fise_generate AS b ON a.fisa_id = b.id
+                    LEFT JOIN soferi AS c ON b.sofer_id = c.id
+                    LEFT JOIN masini AS d ON b.masina_id = d.id
                     WHERE a.client_id = '" . $client_id . "'
                     AND b.traseu_id = '" . $traseu_id . "'
                     AND a.tip_produs_id = '" . $tip_produs_id . "'
@@ -1662,6 +1664,7 @@ public static function getDiferentePreturiByClientIdAndTraseuId2($client_id, $tr
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }
+
         return $ret;
 
     }

@@ -43,7 +43,10 @@ class Target
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-                $ret[$item['nume_produs']] = Clienti::getDiferentePreturiByClientIdAndTraseuId($item['client_id'],36,$item['tip_produs_id']);
+                $ret[$item['tip_produs_id']] = array(
+                    'nume_produs'=>$item['nume_produs'],
+                    'produse_pret'=>Clienti::getDiferentePreturiByClientIdAndTraseuId($item['client_id'],36,$item['tip_produs_id'])
+                );
             }
         }
         return $ret;

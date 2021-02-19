@@ -60,18 +60,20 @@
                                                 <table class="table table-bordered">
                                                     <tr>
                                                         <th>
-                                                            {foreach from=$client['produse_client'] item=clienti key=dif}
+                                                            {foreach from=$client['produse_client'] item=clienti}
                                                                 <table class="table-bordered table">
                                                                     <tr>
-                                                                        <th style="vertical-align: middle;width: 100px;">{$dif}</th>
+                                                                        <th style="vertical-align: middle;width: 100px;">{$clienti['nume_produs']}</th>
                                                                         <th>
                                                                             <table class="table-bordered table">
+                                                                                {foreach from=$clienti['produse_pret'] item=produs}
                                                                                 <tr>
-                                                                                    <th></th>
-                                                                                    <th>1</th>
-                                                                                    <th>1</th>
-                                                                                    <th>1</th>
+                                                                                    <th>{$produs['pret']}</th>
+                                                                                    <th>{$produs['pret_contract']}</th>
+                                                                                    <th>{$produs['cantitate']}</th>
+                                                                                    <th>{$produs['fisa_id']}</th>
                                                                                 </tr>
+                                                                                {/foreach}
                                                                             </table>
                                                                         </th>
                                                                     </tr>
