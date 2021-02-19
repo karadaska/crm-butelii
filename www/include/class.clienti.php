@@ -1573,12 +1573,14 @@ class Clienti
                   LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
                   LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
                   LEFT JOIN tip_produs as d on a.tip_produs_id = d.id
+                  LEFT JOIN clienti as e on a.client_id = e.id                  
                   WHERE a.pret = '" . $pret . "'
-                  AND c.depozit_id = '" . $depozit_id . "'
-                  AND a.tip_produs_id = '" . $produs_id . "'
-                  AND b.sters = 0
-                  AND c.sters = 0
-                  AND a.sters = 0                  
+                  AND a.sters = 0
+                  AND a.tip_produs_id = '" . $produs_id . "'                 
+				  AND c.depozit_id = '" . $depozit_id . "'
+				  AND e.sters = 0
+				  AND e.stare_id = 1
+								                
                  ";
         $result = myQuery($query);
 
