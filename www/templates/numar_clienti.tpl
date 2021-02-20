@@ -40,7 +40,7 @@
                                                                         <th style="text-align: center;width: 50%">
                                                                             Pret: {$pret}</th>
                                                                         <th style="text-align: center;width: 50%"><a
-                                                                                    href="clienti_by_pret.php?pret={$pret}&depozit_id=1&tip_produs_id=1">{$clienti}</a>
+                                                                                    href="clienti_by_pret.php?pret={$pret}&depozit_id={$depozit['depozit_id']}&tip_produs_id={$produs['tip_produs_id']}">{$clienti}</a>
                                                                         </th>
                                                                         <input type="hidden" value="{$pret}" name="pret_input"/>
                                                                     </tr>

@@ -68,7 +68,8 @@ $b = Clienti::getListaClientiByPret(12,1,1);
 //    'data_start' => $data_start,
 //    'data_stop' => $data_stop,
 //));
-
+//$b = Clienti::getNumarClientiByPret(55, 2 ,3);
+$b = Clienti::getCountClientiByPret();
 //$b = Clienti::getDiferentePreturiByClientIdAndTraseuId(2433, 36, 1);
 //$b = Clienti::getFiseByClientId(1397);
 //$b = Clienti::getPretByClientIdAndProdusId(1397, 2);

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-20 22:51:35
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 00:55:57
          compiled from "/var/www/html/fofoweb/www/templates/numar_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:495425026602d10d6174c08-69449296%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '57b56bf07a71a9e83d973dcba67dda2f7a95082c' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/numar_clienti.tpl',
-      1 => 1613854293,
+      1 => 1613861751,
       2 => 'file',
     ),
   ),
@@ -91,7 +91,9 @@ $_smarty_tpl->tpl_vars['clienti']->_loop = true;
 </th>
                                                                         <th style="text-align: center;width: 50%"><a
                                                                                     href="clienti_by_pret.php?pret=<?php echo $_smarty_tpl->tpl_vars['pret']->value;?>
-&depozit_id=1&tip_produs_id=1"><?php echo $_smarty_tpl->tpl_vars['clienti']->value;?>
+&depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+&tip_produs_id=<?php echo $_smarty_tpl->tpl_vars['produs']->value['tip_produs_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['clienti']->value;?>
 </a>
                                                                         </th>
                                                                         <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['pret']->value;?>

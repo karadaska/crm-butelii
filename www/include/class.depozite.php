@@ -64,6 +64,7 @@ class Depozite
             foreach ($a as $item) {
                 $ret[$item['tip']] = array(
                     'nume_produs' => $item['tip'],
+                    'tip_produs_id' => $item['tip_produs_id'],
                     'pret' => self::getListaPreturiByProdusIdAndDepozitId($item['tip_produs_id'], $item['depozit_id'])
                 );
             }
