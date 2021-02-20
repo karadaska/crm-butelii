@@ -23,11 +23,10 @@ $smarty->assign('lista_observatii',$lista_observatii);
 
 
 if ($adauga) {
-
     $sql = "SELECT id FROM observatii 
             WHERE `nume`='" . $observatie . "' 
             and  tip_observatie = '" . $tip_observatie . "'
-            LIMIT 1";
+            and sters = 0 LIMIT 1";
     $result = myQuery($sql);
 
     $ret = $result->fetch(PDO::FETCH_ASSOC);
