@@ -19,19 +19,20 @@
                                 <thead>
                                 <tr>
                                     <th style="text-align: center;" class="span1">Nr.</th>
-                                    <th style="text-align: left;" class="span3">Nume Client</th>
-                                    <th style="text-align: left;">Localitate</th>
-                                    <th style="text-align: left;">Pret</th>
-                                    <th style="text-align: left;">Comision</th>
+                                    <th style="text-align: center;" class="span3">Nume Client</th>
+                                    <th style="text-align: center;">Localitate</th>
+                                    <th style="text-align: center;">Pret</th>
+                                    <th style="text-align: center;">Comision</th>
 
                                 </tr>
                                 </thead>
+                                {$nr = 1}
                                 {foreach from=$lista_clienti item=client}
                                     <tr>
-                                        <td style="text-align: center;">{$client['nume_client']}</td>
-                                        <td style="text-align: center;">{$client['nume_client']}</td>
+                                        <td style="text-align: center;">{$nr++}</td>
+                                        <td style="text-align: center;"><a href="edit_client.php?id={$client['id']}">{$client['nume_client']}</td>
                                         <td style="text-align: center;">{$client['nume_localitate']}</td>
-                                        <td style="text-align: center;">{$client['pret']}</td>
+                                        <td style="text-align: center;"><a href="asigneaza_produse_client.php?id={$client['id']}">{$client['pret']}</a></td>
                                         <td style="text-align: center;">{$client['comision']}</td>
                                     </tr>
                                 {/foreach}

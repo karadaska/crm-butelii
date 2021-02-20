@@ -17,10 +17,6 @@ $depozit_id = getRequestParameter('depozit_id', 0);
 
 $tip_produs_id = getRequestParameter('tip_produs_id', 0);
 
-
-
-
-//$lista_clienti= Clienti::getListaClientiByPret($pret, $depozit_id,$tip_produs_id);
 $lista_clienti= Clienti::getListaClientiByPret($pret, $depozit_id,$tip_produs_id);
 $smarty->assign('lista_clienti', $lista_clienti);
 

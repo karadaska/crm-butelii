@@ -5,7 +5,8 @@ class Clienti
     public static function getListaClientiByPret($pret, $depozit_id, $tip_produs_id)
     {
         $ret = array();
-        $query = "SELECT d.nume as nume_client, e.nume as nume_localitate, a.pret, a.comision from clienti_target as  a
+        $query = "SELECT d.id, d.nume as nume_client, e.nume as nume_localitate, a.pret, a.comision 
+                  from clienti_target as  a
                   LEFT JOIN asignari_clienti_trasee as b on a.client_id = b.client_id
                   LEFT JOIN asignari_trasee_depozite as c on b.traseu_id = c.traseu_id
                   LEFT JOIN clienti as d on a.client_id = d.id
@@ -14,6 +15,7 @@ class Clienti
                   AND c.depozit_id = '" . $depozit_id . "'
                   AND a.tip_produs_id = '" . $tip_produs_id . "'
                   AND a.sters = 0
+                  AND d.stare_id =1
                   ";
         $result = myQuery($query);
         if ($result) {
