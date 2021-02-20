@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 00:43:43
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 00:46:32
          compiled from "/var/www/html/fofoweb/www/templates/clienti_by_pret.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23217971860300ea02696c9-08986798%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd0e9550ce227dcb50673abd7c8bfcc3770ec71ad' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_by_pret.tpl',
-      1 => 1613861019,
+      1 => 1613861189,
       2 => 'file',
     ),
   ),
@@ -74,7 +74,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                         <td style="text-align: center;"><a href="asigneaza_produse_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['client']->value['pret'];?>
 </a></td>
-                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['comision'];?>
+                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['comision'] : '-';?>
 </td>
                                     </tr>
                                 <?php } ?>

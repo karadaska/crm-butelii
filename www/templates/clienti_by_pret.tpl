@@ -33,7 +33,7 @@
                                         <td style="text-align: center;"><a href="edit_client.php?id={$client['id']}">{$client['nume_client']}</td>
                                         <td style="text-align: center;">{$client['nume_localitate']}</td>
                                         <td style="text-align: center;"><a href="asigneaza_produse_client.php?id={$client['id']}">{$client['pret']}</a></td>
-                                        <td style="text-align: center;">{$client['comision']}</td>
+                                        <td style="text-align: center;">{($client['comision'] !='') ? $client['comision'] : '-'}</td>
                                     </tr>
                                 {/foreach}
                             </table>
