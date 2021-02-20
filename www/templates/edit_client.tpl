@@ -141,15 +141,24 @@
                                                            value="{$client['titular']}">
                                                 </th>
                                             </tr>
+                                            {*<tr style="text-align: left;">*}
+                                                {*<th style="width: 100px;vertical-align: middle;">Rastel</th>*}
+                                                {*<th style="text-align: left;">*}
+                                                    {*<select name="rastel_id">*}
+                                                        {*<option value="0">Selecteaza rastel</option>*}
+                                                        {*{foreach from=$lista_rastel key=tmp item=rastel}*}
+                                                            {*<option value={$rastel['id']} {if $rastel['id'] == $client['rastel']} selected="selected" {/if}>{$rastel['tip']}</option>*}
+                                                        {*{/foreach}*}
+                                                    {*</select>*}
+                                                {*</th>*}
+                                            {*</tr>*}
                                             <tr style="text-align: left;">
                                                 <th style="width: 100px;vertical-align: middle;">Rastel</th>
                                                 <th style="text-align: left;">
-                                                    <select name="rastel_id">
-                                                        <option value="0">Selecteaza rastel</option>
-                                                        {foreach from=$lista_rastel key=tmp item=rastel}
-                                                            <option value={$rastel['id']} {if $rastel['id'] == $client['rastel']} selected="selected" {/if}>{$rastel['tip']}</option>
-                                                        {/foreach}
-                                                    </select>
+                                                    <input autocomplete="off" style="width: 100%" id="rastel"
+                                                           type="text"
+                                                           name="rastel_id"
+                                                           value="{$client['rastel']}">
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
