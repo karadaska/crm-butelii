@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-17 11:50:16
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 01:48:13
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1609799676,
+      1 => 1613864890,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_602ce6d8bd0032_16652255',
   'variables' => 
   array (
     'title' => 0,
@@ -30,8 +32,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'client' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_602ce6d8bd0032_16652255',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_602ce6d8bd0032_16652255')) {function content_602ce6d8bd0032_16652255($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/var/www/html/fofoweb/Smarty-3.1.15/libs/plugins/modifier.date_format.php';
 ?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
@@ -162,7 +162,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                 <?php echo $_smarty_tpl->tpl_vars['client']->value['telefon_2'];?>
 
                                             </td>
-                                            <td style="text-align: left;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_observatie'];?>
+                                            <td style="text-align: left;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_observatie']!='' ? $_smarty_tpl->tpl_vars['client']->value['nume_observatie'] : '-';?>
 </td>
                                         </tr>
                                     <?php } ?>

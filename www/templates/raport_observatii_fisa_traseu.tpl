@@ -93,7 +93,7 @@
                                                 {$client['telefon']}<br/>
                                                 {$client['telefon_2']}
                                             </td>
-                                            <td style="text-align: left;">{$client['nume_observatie']}</td>
+                                            <td style="text-align: left;">{($client['nume_observatie'] !='') ? $client['nume_observatie'] : '-'}</td>
                                         </tr>
                                     {/foreach}
                                     </tbody>
