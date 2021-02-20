@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 01:13:48
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 01:16:04
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1613862826,
+      1 => 1613862963,
       2 => 'file',
     ),
   ),
@@ -254,7 +254,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                     <th style="text-align: left;width: 100px;">Tip plata</th>
                                                     <th style="text-align: left;">
                                                         <select name="tip_alimentare" style="width: 100%;">
-                                                            <option value="0">Tip alimentare</option>
+                                                            <option value="0">Alege..</option>
                                                             <?php  $_smarty_tpl->tpl_vars['alimentare_tip'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['get_tip_alimentare']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['alimentare_tip']->key => $_smarty_tpl->tpl_vars['alimentare_tip']->value) {

@@ -180,7 +180,7 @@
                                                     <th style="text-align: left;width: 100px;">Tip plata</th>
                                                     <th style="text-align: left;">
                                                         <select name="tip_alimentare" style="width: 100%;">
-                                                            <option value="0">Tip alimentare</option>
+                                                            <option value="0">Alege..</option>
                                                             {foreach from=$get_tip_alimentare item=alimentare_tip}
                                                                 <option value={$alimentare_tip['id']}
                                                                         {if $alimentare_tip['id'] == {$fisa['miscari_fisa']['tip_alimentare_id']}}selected="selected"{/if}>
