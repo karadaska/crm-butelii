@@ -13,7 +13,7 @@ $luna_id = 0;
 $stare_id = 1;
 
 //CLIENTI -----------------------------------------------------------
-//$b = Clienti::getClientiByTraseuId(36);
+$b = Clienti::getListaClientiByPret(12,1,1);
 //$b = Clienti::getAsignariClientiByFisaGenerataId(138);
 //$b = Asignari::getAsignariClientiByTraseuId(36);
 //$b = Clienti::getObservatieApelClientiByClientId(2538);
@@ -113,8 +113,7 @@ $stare_id = 1;
 
 //TRASEE----------------------------------------------------------
 
-$b = Trasee::getNeconcordantaPreturiClientiByTraseuId(28);
-//$b = Clienti::getDiferentePreturiByClientIdAndTraseuId(2433, 36, 1);
+//$b = Trasee::getNeconcordantaPreturiClientiByTraseuId(28);
 //$b = Trasee::getTraseeAsignateLaClientByClientId(1899);
 //$b = Trasee::getTrasee();
 //$b = Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId(1593,146);

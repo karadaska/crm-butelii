@@ -37,8 +37,12 @@
                                                             {foreach from=$produs['pret'] item=clienti key=pret}
                                                                 <table class="table table-bordered">
                                                                     <tr>
-                                                                        <th style="text-align: center;width: 50%">Pret: {$pret} </th>
-                                                                        <th style="text-align: center;width: 50%">{$clienti}</th>
+                                                                        <th style="text-align: center;width: 50%">
+                                                                            Pret: {$pret}</th>
+                                                                        <th style="text-align: center;width: 50%"><a
+                                                                                    href="clienti_by_pret.php?pret={$pret}&depozit_id=1&tip_produs_id=1">{$clienti}</a>
+                                                                        </th>
+                                                                        <input type="hidden" value="{$pret}" name="pret_input"/>
                                                                     </tr>
                                                                 </table>
                                                                 <br/>

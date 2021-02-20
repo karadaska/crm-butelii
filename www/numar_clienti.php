@@ -9,6 +9,9 @@ $data_start = date('Y-m-d');
 $smarty->assign('name', 'Numar Clienti By Pret');
 $template_page = "numar_clienti.tpl";
 
+$pret_input= getRequestParameter('pret_input', $pret_input);
+$smarty->assign('pret_input', $pret_input);
+
 $depozit_id= getRequestParameter('depozit_id', 1);
 $smarty->assign('traseu_id', $traseu_id);
 
