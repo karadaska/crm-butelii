@@ -5,6 +5,10 @@
     <section id="content">
         <div class="wrapper">
             <div class="container-fluid">
+                <div id="heading" class="page-header">
+                    <h1><i class="icon20 i-people"></i>Completare fisa</h1>
+                    <a href="/print_fisa_sosire.php?id={$fisa['id']}" class="i-print"></a>
+                </div>
                 <div class="row-fluid">
                     <form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post">
                         <div class="span12" style="display: inline-flex">
@@ -46,7 +50,6 @@
                                                     </th>
                                                 </tr>
                                             </table>
-                                            {*<a href="/print_fisa_sosire.php?id={$fisa['id']}" class="i-print"></a>*}
                                         </th>
                                     </tr>
                                     <tr>
@@ -265,7 +268,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            <div style="float: right;margin-top: 10px;">
+                            <div style="float: right;margin-top: -10px;">
                                 {if ($fisa['consum_sosire'] == 0)}
                                     <table class="table table-bordered"
                                            style="width: 500px;margin-top: 10px;">

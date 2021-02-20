@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-18 09:41:10
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 01:13:48
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1613634069,
+      1 => 1613862826,
       2 => 'file',
     ),
   ),
@@ -64,6 +64,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <section id="content">
         <div class="wrapper">
             <div class="container-fluid">
+                <div id="heading" class="page-header">
+                    <h1><i class="icon20 i-people"></i>Completare fisa</h1>
+                    <a href="/print_fisa_sosire.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
+" class="i-print"></a>
+                </div>
                 <div class="row-fluid">
                     <form action="/completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
 " method="post">
@@ -109,7 +114,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                     </th>
                                                 </tr>
                                             </table>
-                                            
                                         </th>
                                     </tr>
                                     <tr>
@@ -355,7 +359,7 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
                                     </tr>
                                 </table>
                             </div>
-                            <div style="float: right;margin-top: 10px;">
+                            <div style="float: right;margin-top: -10px;">
                                 <?php if (($_smarty_tpl->tpl_vars['fisa']->value['consum_sosire']==0)) {?>
                                     <table class="table table-bordered"
                                            style="width: 500px;margin-top: 10px;">
