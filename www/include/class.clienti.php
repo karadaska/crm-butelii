@@ -174,6 +174,7 @@ class Clienti
 
         $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
         $observatie_id = isset($opts['observatie_id']) ? $opts['observatie_id'] : 0;
+        $observatie_input = isset($opts['observatie_input']) ? $opts['observatie_input'] : 0;
 
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
@@ -204,6 +205,10 @@ class Clienti
 
         if ($observatie_id > 0) {
             $query .= " and a.observatie_id = " . $observatie_id;
+        }
+
+        if ($observatie_input > 0) {
+            $query .= " and a.observatie_id IN " . $observatie_input;
         }
 
         $result = myQuery($query);

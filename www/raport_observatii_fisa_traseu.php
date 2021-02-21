@@ -9,6 +9,10 @@ $template_page = "raport_observatii_fisa_traseu.tpl";
 $form_submit = getRequestParameter('form_submit', 0);
 
 $valoare_client_id = getRequestParameter('valoare_client_id', 0);
+
+$observatie_input = getRequestParameter('observatie_input', '');
+$smarty->assign('observatie_input', $observatie_input);
+
 $aplica = getRequestParameter('aplica', 0);
 
 $data_start = getRequestParameter('data_start', date('Y-m-d'));
@@ -38,6 +42,7 @@ $smarty->assign('data_stop_interval', $data_stop_interval);
 $lista_clienti = Clienti::getObservatiiClientiDinFiseGenerate(array(
     'traseu_id' => $traseu_id,
     'observatie_id' => $observatie_id,
+    'observatie_input' => $observatie_input,
     'data_start' => $data_start,
     'data_stop' => $data_stop
 ));

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-17 14:49:24
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 02:13:17
          compiled from "/var/www/html/fofoweb/www/templates/configurare.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:155416866860227bae5a03f4-39826954%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e440f6cbe16190260c85689ed40ab2c2aa2ac499' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/configurare.tpl',
-      1 => 1613566030,
+      1 => 1613866393,
       2 => 'file',
     ),
   ),
@@ -104,6 +104,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                     <div class="icon"><i class="i-cool"></i></div>
                                                     <span class="percent"></span>
                                                     <span class="txt">Nr.clienti </span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/filtreaza_observatii.php">
+                                                <div class="item">
+                                                    <div class="icon"><i class="i-cool"></i></div>
+                                                    <span class="percent"></span>
+                                                    <span class="txt">Filtrare Obs. </span>
                                                 </div>
                                             </a>
                                         </li>

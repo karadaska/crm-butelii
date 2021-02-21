@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 01:48:13
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 02:09:23
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1613864890,
+      1 => 1613866160,
       2 => 'file',
     ),
   ),
@@ -53,6 +53,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">
                             <button class="i-print"></button>
                         </a>
+                        <a href="filtreza_observatii"><button class="btn btn-mini btn-success">Filtreaza observatii</button></a>
                     </h1>
                 </div>
             </div>
@@ -113,9 +114,14 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                 <input type="hidden" name="data_stop_interval" value="<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
 "/>
                             </th>
-                            <th style="text-align: left;">
-                                <input type="submit" class="btn btn-primary" value="Aplica" name="aplica">
-                            </th>
+                            <th><input type="submit" class="btn btn-primary" value="Aplica" name="aplica"></th>
+                        </tr>
+                        <tr>
+                            <th style="text-align: left;" colspan="5">
+                            
+                               
+                                
+                            
                         </tr>
                         </thead>
                     </table>
@@ -134,7 +140,6 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                               method="post"
                               style="margin-bottom: 0">
                             <div class="widget-content">
-
                                 <table cellpadding="0" cellspacing="0" border="0"
                                        class="table table-striped table-bordered table-hover" id="dataTable">
                                     <thead>
