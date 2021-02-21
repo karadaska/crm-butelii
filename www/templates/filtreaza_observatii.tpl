@@ -30,7 +30,8 @@
                                     {/foreach}
                                 </select>
                             </th>
-                            <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Adauga" name="adauga_observatie"></th>
+                            <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Adauga"
+                                                                 name="adauga_observatie"></th>
                         </tr>
                         </thead>
                     </table>
@@ -55,15 +56,12 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    {$nr=1}
                                     {foreach from=$lista_observatii_filtrate item=observatie}
                                         <tr>
-                                            <td style="text-align: left">{$client['nume_localitate']}</td>
-                                            <td style="text-align: left;">{$client['nume_client']}</td>
-                                            <td style="text-align: left;">
-                                                {$client['telefon']}<br/>
-                                                {$client['telefon_2']}
-                                            </td>
-                                            <td style="text-align: left;">{($client['nume_observatie'] !='') ? $client['nume_observatie'] : '-'}</td>
+                                            <td>{$nr++}</td>
+                                            <td style="text-align: left">{$observatie['nume']}</td>
+                                            <td></td>
                                         </tr>
                                     {/foreach}
                                     </tbody>

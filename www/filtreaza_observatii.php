@@ -15,16 +15,9 @@ $adauga_observatie = getRequestParameter('adauga_observatie', 0);
 
 $lista_observatii = Clienti::getObservatiiClienti();
 $smarty->assign('lista_observatii', $lista_observatii);
-//
-//$lista_observatii2_filtrate = Clienti::getObservatiiClientiDinFiseGenerate(array(
-//    'traseu_id' => $traseu_id,
-//    'observatie_id' => $observatie_id,
-//    'observatie_input' => $observatie_input,
-//    'data_start' => $data_start,
-//    'data_stop' => $data_stop
-//));
-//
-//$smarty->assign('lista_observatii', $lista_observatii_filtrate);
+
+$lista_observatii_filtrate = Clienti::getListaObservatiiPentruFiltrare();
+$smarty->assign('lista_observatii_filtrate', $lista_observatii_filtrate);
 
 
 

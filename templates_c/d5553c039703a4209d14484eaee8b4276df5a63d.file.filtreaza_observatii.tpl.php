@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 02:44:52
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 09:41:42
          compiled from "/var/www/html/fofoweb/www/templates/filtreaza_observatii.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13983569276031a59f9316f8-98830529%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd5553c039703a4209d14484eaee8b4276df5a63d' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/filtreaza_observatii.tpl',
-      1 => 1613868234,
+      1 => 1613893232,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'observatie' => 0,
     'observatie_id' => 0,
     'lista_observatii_filtrate' => 0,
-    'client' => 0,
+    'nr' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -69,7 +69,8 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                     <?php } ?>
                                 </select>
                             </th>
-                            <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Adauga" name="adauga_observatie"></th>
+                            <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Adauga"
+                                                                 name="adauga_observatie"></th>
                         </tr>
                         </thead>
                     </table>
@@ -94,24 +95,18 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
                                     <?php  $_smarty_tpl->tpl_vars['observatie'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['observatie']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_observatii_filtrate']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['observatie']->key => $_smarty_tpl->tpl_vars['observatie']->value) {
 $_smarty_tpl->tpl_vars['observatie']->_loop = true;
 ?>
                                         <tr>
-                                            <td style="text-align: left"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
+                                            <td><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
-                                            <td style="text-align: left;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_client'];?>
+                                            <td style="text-align: left"><?php echo $_smarty_tpl->tpl_vars['observatie']->value['nume'];?>
 </td>
-                                            <td style="text-align: left;">
-                                                <?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
-<br/>
-                                                <?php echo $_smarty_tpl->tpl_vars['client']->value['telefon_2'];?>
-
-                                            </td>
-                                            <td style="text-align: left;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_observatie']!='' ? $_smarty_tpl->tpl_vars['client']->value['nume_observatie'] : '-';?>
-</td>
+                                            <td></td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>

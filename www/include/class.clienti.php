@@ -713,6 +713,24 @@ class Clienti
         return $ret;
     }
 
+    public static function getListaObservatiiPentruFiltrare()
+    {
+        $ret = array();
+        $query = "SELECT a.* , b.nume 
+                  from observatii_filtrate as a
+                  left join observatii as b on a.obs_id = b.id
+                  where a.sters = 0
+                  ORDER BY b.nume ASC
+                  ";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+
     public static function getObservatieById($id = 0)
     {
         $ret = array();
