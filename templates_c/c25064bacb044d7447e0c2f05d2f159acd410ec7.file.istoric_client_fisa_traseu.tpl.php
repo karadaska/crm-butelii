@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-09 21:38:04
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-22 14:46:53
          compiled from "/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18422813406022e19d8704d1-73136330%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c25064bacb044d7447e0c2f05d2f159acd410ec7' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl',
-      1 => 1612899482,
+      1 => 1613998012,
       2 => 'file',
     ),
   ),
@@ -24,9 +24,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cantitati_produse_fisa_intoarcere' => 0,
     'cantitate' => 0,
     'x' => 0,
-    'pret_unitar_contract' => 0,
-    'comision_contract' => 0,
     'valoare_sofer_incasata' => 0,
+    'comision_contract' => 0,
+    'pret_unitar_contract' => 0,
     'valoare_comision_sofer' => 0,
   ),
   'has_nocache_code' => false,
@@ -108,17 +108,18 @@ $_smarty_tpl->tpl_vars['x']->_loop = true;
                                                     <br/>
                                                 <?php } ?>
                                             </td>
-                                            <td style="border-left: double;text-align: center">
-                                                <?php  $_smarty_tpl->tpl_vars['pret_unitar_contract'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret_unitar_contract']->_loop = false;
+                                            <td style="border-left: double;text-align: center;">
+                                                <?php  $_smarty_tpl->tpl_vars['valoare_sofer_incasata'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['valoare_sofer_incasata']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['cantitate']->value['produse']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['pret_unitar_contract']->key => $_smarty_tpl->tpl_vars['pret_unitar_contract']->value) {
-$_smarty_tpl->tpl_vars['pret_unitar_contract']->_loop = true;
+foreach ($_from as $_smarty_tpl->tpl_vars['valoare_sofer_incasata']->key => $_smarty_tpl->tpl_vars['valoare_sofer_incasata']->value) {
+$_smarty_tpl->tpl_vars['valoare_sofer_incasata']->_loop = true;
 ?>
-                                                        <?php echo $_smarty_tpl->tpl_vars['pret_unitar_contract']->value['pret_contract'];?>
+                                                    <?php echo $_smarty_tpl->tpl_vars['valoare_sofer_incasata']->value['valoare_sofer_pret_fisa']-$_smarty_tpl->tpl_vars['valoare_sofer_incasata']->value['valoare_sofer_comision_fisa'];?>
 
-                                                        <br/>
+                                                    <br/>
                                                 <?php } ?>
                                             </td>
+
                                             <td style="text-align: center;">
                                                 <?php  $_smarty_tpl->tpl_vars['comision_contract'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['comision_contract']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['cantitate']->value['produse']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -130,16 +131,17 @@ $_smarty_tpl->tpl_vars['comision_contract']->_loop = true;
                                                         <br/>
                                                 <?php } ?>
                                             </td>
-                                            <td style="border-left: double;text-align: center;">
-                                                <?php  $_smarty_tpl->tpl_vars['valoare_sofer_incasata'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['valoare_sofer_incasata']->_loop = false;
+                                            <td style="border-left: double;text-align: center">
+                                                <?php  $_smarty_tpl->tpl_vars['pret_unitar_contract'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret_unitar_contract']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['cantitate']->value['produse']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['valoare_sofer_incasata']->key => $_smarty_tpl->tpl_vars['valoare_sofer_incasata']->value) {
-$_smarty_tpl->tpl_vars['valoare_sofer_incasata']->_loop = true;
+foreach ($_from as $_smarty_tpl->tpl_vars['pret_unitar_contract']->key => $_smarty_tpl->tpl_vars['pret_unitar_contract']->value) {
+$_smarty_tpl->tpl_vars['pret_unitar_contract']->_loop = true;
 ?>
-                                                        <?php echo $_smarty_tpl->tpl_vars['valoare_sofer_incasata']->value['valoare_sofer_pret_fisa']-$_smarty_tpl->tpl_vars['valoare_sofer_incasata']->value['valoare_sofer_comision_fisa'];?>
+                                                    <?php echo $_smarty_tpl->tpl_vars['pret_unitar_contract']->value['pret_contract'];?>
 
-                                                        <br/>
+                                                    <br/>
                                                 <?php } ?>
+                                            </td>
                                             <td style="border-right: double;text-align: center;">
                                                 <?php echo $_smarty_tpl->tpl_vars['cantitate']->value['comision'];?>
 
