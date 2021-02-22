@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-22 15:39:58
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-22 22:15:49
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1614001197,
+      1 => 1614024948,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'title' => 0,
     'fisa' => 0,
+    'incarcatura' => 0,
     'get_tip_alimentare' => 0,
     'alimentare_tip' => 0,
-    'incarcatura' => 0,
     'lista_produse' => 0,
     'plecare_marfa_by_fisa_id' => 0,
     'produs' => 0,
@@ -65,9 +65,31 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-people"></i>Completare fisa</h1>
-                    <a href="/print_fisa_sosire.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
+                    <h1><i class="icon20 i-people"></i>Completare fisa
+                        <table class="table-bordered table">
+                            <tr>
+                                <th style="text-align: left;vertical-align: middle;"><h6
+                                            style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_depozit'];?>
+</h6></th>
+                                <th style="text-align: left;vertical-align: middle;"><h6
+                                            style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_traseu'];?>
+</h6></th>
+                                <th style="text-align: left;vertical-align: middle;"><h6
+                                            style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['numar'];?>
+</h6></th>
+                                <th style="text-align: left;vertical-align: middle;"><h6
+                                            style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_sofer'];?>
+</h6></th>
+                                <th style="text-align: left;vertical-align: middle;"><h6
+                                            style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['data_intrare'];?>
+</h6></th>
+                                <th>
+                                    <a href="/print_fisa_sosire.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
 " class="i-print"></a>
+                                </th>
+                            </tr>
+                        </table>
+                    </h1>
                 </div>
                 <div class="row-fluid">
                     <form action="/completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
@@ -77,14 +99,39 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 <table class="table tab-content table-bordered"
                                        style="width: 500px;margin-bottom: 1px;">
                                     <tr>
-                                        <th>
-                                            <div class="form-row" style="display: inline-flex;float: left;">
-                                                <div class="form-group col-md-6" style="text-align: left;">
-                                                    <h5 style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_depozit'];?>
-</h5>
-                                                </div>
-                                            </div>
+                                        <th class="table_miscari">
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th style="text-align: left;width: 100px;">Valoare
+                                                        Z:
+                                                    </th>
+                                                    <th style="text-align: left;">
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="valoare_z"
+                                                               autocomplete="off"
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_z'];?>
+"
+                                                        />
+                                                    </th>
+                                                </tr>
+                                            </table>
                                         </th>
+                                        <th class="table_miscari" style="text-align: center;">
+                                            <h6> <?php  $_smarty_tpl->tpl_vars['incarcatura'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['incarcatura']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['fisa']->value['incarcatura_masina_plecare']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['incarcatura']->key => $_smarty_tpl->tpl_vars['incarcatura']->value) {
+$_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
+?>
+                                                    <span style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['incarcatura']->value['nume_produs'];?>
+
+                                                        : <?php echo $_smarty_tpl->tpl_vars['incarcatura']->value['cantitate'];?>
+ bucati</span>
+                                                    <br/>
+                                                <?php } ?>
+                                            </h6>
+                                        </th>
+                                    </tr>
+                                    <tr>
                                         <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
@@ -103,12 +150,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                         <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th style="text-align: left;width: 100px;">Nr. BG:</th>
+                                                    <th style="text-align: left;width: 100px;"> Nr. raport Z</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="nr_bg"
+                                                               type="text" class="form-control" name="raport_z"
                                                                autocomplete="off"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['nr_bg'];?>
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['raport_z'];?>
 "
                                                         />
                                                     </th>
@@ -118,22 +165,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     </tr>
                                     <tr>
                                         <th class="table_miscari">
-                                            <div class="form-row" style="display: inline-flex;float: left">
-                                                <div class="form-group col-md-6" style="text-align: left;">
-                                                    <h5 style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_traseu'];?>
-</h5>
-                                                </div>
-                                            </div>
-                                        </th>
-                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th style="text-align: left;width: 100px;"> Nr. raport Z</th>
+                                                    <th style="text-align: left;width: 100px;">Nr. BG:</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="raport_z"
+                                                               type="text" class="form-control" name="nr_bg"
                                                                autocomplete="off"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['raport_z'];?>
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['nr_bg'];?>
 "
                                                         />
                                                     </th>
@@ -158,31 +197,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th>
-                                            <div class="form-row" style="display: inline-flex;float: left">
-                                                <div class="form-group col-md-6" style="text-align: left;">
-                                                    <h5 style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['numar'];?>
-</h5>
-                                                </div>
-                                            </div>
-                                        </th>
-                                        <th class="table_miscari">
-                                            <table class="table table-bordered">
-                                                <tr>
-                                                    <th style="text-align: left;width: 100px;">Valoare
-                                                        Z:
-                                                    </th>
-                                                    <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="valoare_z"
-                                                               autocomplete="off"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_z'];?>
-"
-                                                        />
-                                                    </th>
-                                                </tr>
-                                            </table>
-                                        </th>
                                         <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
@@ -192,45 +206,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                                type="text" class="form-control" name="nr_ar_8"
                                                                autocomplete="off"
                                                                value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['nr_ar_8'];?>
-"
-                                                        />
-                                                    </th>
-                                                </tr>
-                                            </table>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>
-                                            <div class="form-row" style="display: inline-flex;float: left">
-                                                <div class="form-group col-md-6" style="text-align: left;">
-                                                    <h5 style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_sofer'];?>
-</h5>
-                                                </div>
-                                            </div>
-                                        </th>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        <th class="table_miscari">
-                                            <table class="table table-bordered">
-                                                <tr>
-                                                    <th style="text-align: left;width: 100px;">Km Plecare:</th>
-                                                    <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="km_plecare"
-                                                               autocomplete="off"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km_plecare'];?>
 "
                                                         />
                                                     </th>
@@ -254,14 +229,40 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                         </th>
                                     </tr>
                                     <tr>
-                                        <th>
-                                            <div class="form-row" style="display: inline-flex;float: left">
-                                                <div class="form-group col-md-6" style="text-align: left;">
-                                                    <h5 style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['data_intrare'];?>
-</h5>
-                                                </div>
-                                            </div>
+
+                                        <th class="table_miscari">
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th style="text-align: left;width: 100px;">NR. AR 9</th>
+                                                    <th style="text-align: left;">
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="nr_ar_9"
+                                                               autocomplete="off"
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['nr_ar_9'];?>
+"
+                                                        />
+                                                    </th>
+                                                </tr>
+                                            </table>
                                         </th>
+                                        <th class="table_miscari">
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th style="text-align: left;width: 100px;">Valoare AR 9</th>
+                                                    <th style="text-align: left;">
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="valoare_ar_9"
+                                                               autocomplete="off"
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_ar_9'];?>
+"
+                                                        />
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                        </th>
+
+                                    </tr>
+                                    <tr>
                                         <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
@@ -289,42 +290,6 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                         <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th style="text-align: left;width: 100px;">NR. AR 9</th>
-                                                    <th style="text-align: left;">
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="nr_ar_9"
-                                                               autocomplete="off"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['nr_ar_9'];?>
-"
-                                                        />
-                                                    </th>
-                                                </tr>
-                                            </table>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th class="table_miscari">
-                                            <div class="form-row" style="display: inline-flex;float: left">
-                                                <div class="form-group col-md-6" style="text-align: left;">
-                                                    <label for="inputEmail4"
-                                                           style="margin-bottom: 0;color: red">Produse</label>
-                                                    <h5> <?php  $_smarty_tpl->tpl_vars['incarcatura'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['incarcatura']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['fisa']->value['incarcatura_masina_plecare']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['incarcatura']->key => $_smarty_tpl->tpl_vars['incarcatura']->value) {
-$_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
-?>
-                                                            <span style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['incarcatura']->value['nume_produs'];?>
-
-                                                                : <?php echo $_smarty_tpl->tpl_vars['incarcatura']->value['cantitate'];?>
- bucati</span>
-                                                            <br/>
-                                                        <?php } ?></h5>
-                                                </div>
-                                            </div>
-                                        </th>
-                                        <th class="table_miscari">
-                                            <table class="table table-bordered">
-                                                <tr>
                                                     <th style="text-align: left;width: 100px;">Valoare
                                                         plata
                                                     </th>
@@ -339,15 +304,32 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
                                                 </tr>
                                             </table>
                                         </th>
+                                    </tr>
+                                    <tr>
                                         <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th style="text-align: left;width: 100px;">Valoare AR 9</th>
+                                                    <th style="text-align: left;width: 100px;">Km Plecare:</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="valoare_ar_9"
+                                                               type="text" class="form-control" name="km_plecare"
                                                                autocomplete="off"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['valoare_ar_9'];?>
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km_plecare'];?>
+"
+                                                        />
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                        <th class="table_miscari">
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th style="text-align: left;width: 100px;">Km Sosire:</th>
+                                                    <th style="text-align: left;">
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="km_sosire"
+                                                               autocomplete="off"
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km_sosire'];?>
 "
                                                         />
                                                     </th>
