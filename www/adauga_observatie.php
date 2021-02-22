@@ -7,7 +7,6 @@ $template_page = "adauga_observatie.tpl";
 $adauga = getRequestParameter('adauga', '');
 $smarty->assign('adaugat', 0);
 
-
 if ($adauga) {
     $nume = getRequestParameter('nume', '');
 

@@ -171,13 +171,11 @@ class Clienti
 
     public static function getObservatiiClientiDinFiseGenerate($opts = array())
     {
-
         $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
         $observatie_id = isset($opts['observatie_id']) ? $opts['observatie_id'] : 0;
-        $observatie_input = isset($opts['observatie_input']) ? $opts['observatie_input'] : 0;
+//        $observatie_checkbox = isset($opts['observatie_checkbox']) ? $opts['observatie_checkbox'] : 0;
 
-//        $filter_obs = ($observatie_input > 0) ? ' AND a.observatie_id IN (' . join(', ', $observatie_input) . ') ' : '';
-
+        $txt = array($observatie_id);
 
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
@@ -199,20 +197,16 @@ class Clienti
                   LEFT JOIN observatii as c on a.observatie_id = c.id
                   LEFT JOIN localitati as d on b.localitate_id = d.id
                   WHERE a.data >= ('" . $data_start . "')
-                  AND a.data <= ('" . $data_stop . "')  
+                  AND a.data <= ('" . $data_stop . "')
                   ";
-        debug($query);
         if ($traseu_id > 0) {
             $query .= " and a.traseu_id = " . $traseu_id;
         }
 
         if ($observatie_id > 0) {
-            $query .= " and a.observatie_id = " . $observatie_id;
-        }
+            $query .= " and a.observatie_id IN (" . implode(',', $txt) . ')';
 
-//        if ($observatie_input > 0) {
-//            $query .= " and a.observatie_id IN (" . $observatie_input .')';
-//        }
+        }
 
         $result = myQuery($query);
         if ($result) {

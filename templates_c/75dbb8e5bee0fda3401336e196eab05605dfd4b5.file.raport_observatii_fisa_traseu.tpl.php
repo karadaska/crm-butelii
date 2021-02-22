@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-22 09:55:45
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-22 14:39:37
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1613980541,
+      1 => 1613997574,
       2 => 'file',
     ),
   ),
@@ -28,8 +28,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_observatii' => 0,
     'observatie' => 0,
     'observatie_id' => 0,
-    'lista_observatii_filtrate' => 0,
-    'lista' => 0,
     'lista_clienti' => 0,
     'client' => 0,
   ),
@@ -55,7 +53,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">
                             <button class="i-print"></button>
                         </a>
-                        <a href="/filtreaza_observatii.php"><button class="btn btn-mini btn-success">Filtreaza observatii</button></a>
+                        <a href="/filtreaza_observatii.php">
+                            <button class="btn btn-mini btn-success">Filtreaza observatii</button>
+                        </a>
                     </h1>
                 </div>
             </div>
@@ -104,34 +104,27 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                             </th>
                             <th style="text-align: left;width: 500px;">
                                 Interval <input placeholder="<?php echo smarty_modifier_date_format(time());?>
-" autocomplete="off" type="date" name="data_start"
+" autocomplete="off" type="date"
+                                                name="data_start"
                                                 value="<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
-" />
+"/>
                                 <input autocomplete="off" type="date" name="data_stop"
                                        value="<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
-" />
-
+"/>
                                 <input type="hidden" placeholder="" name="data_start_interval" value="<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 "/>
                                 <input type="hidden" name="data_stop_interval" value="<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
 "/>
                             </th>
-                            <th><input type="submit" class="btn btn-primary" value="Aplica" name="aplica"></th>
+                            <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Aplica" name="aplica"></th>
                         </tr>
-                        <tr>
-                            <th style="text-align: left;font-size: 10px;" colspan="5">
-                            <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['lista_observatii_filtrate']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
-$_smarty_tpl->tpl_vars['lista']->_loop = true;
-?>
-                               <?php echo $_smarty_tpl->tpl_vars['lista']->value['nume'];?>
-: <input type="checkbox" name="observatie_input" value="<?php echo $_smarty_tpl->tpl_vars['lista']->value['obs_id'];?>
-">
-                                <?php } ?>
-                                TO DO:
-                            </th>
-                        </tr>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         </thead>
                     </table>
                 </form>

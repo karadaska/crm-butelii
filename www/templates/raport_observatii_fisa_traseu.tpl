@@ -11,7 +11,9 @@
                         <a href="/print_observatii_fisa_traseu.php?id={$traseu_id}&observatie_id=0&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
-                        <a href="/filtreaza_observatii.php"><button class="btn btn-mini btn-success">Filtreaza observatii</button></a>
+                        <a href="/filtreaza_observatii.php">
+                            <button class="btn btn-mini btn-success">Filtreaza observatii</button>
+                        </a>
                     </h1>
                 </div>
             </div>
@@ -47,24 +49,23 @@
                                 </select>
                             </th>
                             <th style="text-align: left;width: 500px;">
-                                Interval <input placeholder="{$smarty.now|date_format}" autocomplete="off" type="date" name="data_start"
-                                                value="{$data_start}" />
+                                Interval <input placeholder="{$smarty.now|date_format}" autocomplete="off" type="date"
+                                                name="data_start"
+                                                value="{$data_start}"/>
                                 <input autocomplete="off" type="date" name="data_stop"
-                                       value="{$data_stop}" />
-
+                                       value="{$data_stop}"/>
                                 <input type="hidden" placeholder="" name="data_start_interval" value="{$data_start}"/>
                                 <input type="hidden" name="data_stop_interval" value="{$data_stop}"/>
                             </th>
-                            <th><input type="submit" class="btn btn-primary" value="Aplica" name="aplica"></th>
+                            <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Aplica" name="aplica"></th>
                         </tr>
-                        <tr>
-                            <th style="text-align: left;font-size: 10px;" colspan="5">
-                            {foreach from=$lista_observatii_filtrate item=lista}
-                               {$lista['nume']}: <input type="checkbox" name="observatie_input" value="{$lista['obs_id']}">
-                                {/foreach}
-                                TO DO:
-                            </th>
-                        </tr>
+                        {*<tr>*}
+                        {*<th style="text-align: left;font-size: 10px;" colspan="5">*}
+                        {*{foreach from=$lista_observatii_filtrate item=lista}*}
+                        {*{$lista['nume']}: <input type="checkbox" name="obs_{$lista['obs_id']}">*}
+                        {*{/foreach}*}
+                        {*</th>*}
+                        {*</tr>*}
                         </thead>
                     </table>
                 </form>
