@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 01:16:04
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-22 15:39:58
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1613862963,
+      1 => 1614001197,
       2 => 'file',
     ),
   ),
@@ -208,15 +208,29 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                 </div>
                                             </div>
                                         </th>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
                                         <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th style="text-align: left;width: 100px;">Total Km:</th>
+                                                    <th style="text-align: left;width: 100px;">Km Plecare:</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="km"
+                                                               type="text" class="form-control" name="km_plecare"
                                                                autocomplete="off"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km'];?>
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km_plecare'];?>
 "
                                                         />
                                                     </th>
@@ -407,7 +421,8 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                                     <?php } ?>
                                                 </select>
                                                 <input autocomplete="off" placeholder="Cantitate"
-                                                       style="margin-top: 10px;width: 100px;" type="text" name="cantitate">
+                                                       style="margin-top: 10px;width: 100px;" type="text"
+                                                       name="cantitate">
                                                 <button style="margin-top: 2px;" type="submit"
                                                         name="adauga_cantitate_intoarcere_traseu"
                                                         class="btn btn-primary">
@@ -566,7 +581,7 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                                     </th>
                                                     <th class="span1"
                                                         style="text-align: center;font-weight: bolder;width: 100px;">
-                                                        Pret + Comision
+                                                        Pret Sofer (Unitar)
                                                     </th>
                                                     <th class="span1"
                                                         style="text-align: center;font-weight: bolder;width: 100px;">

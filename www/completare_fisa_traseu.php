@@ -15,7 +15,8 @@ $adauga = getRequestParameter('adauga', '');
 $casa_marcat = getRequestParameter('casa_marcat', '');
 $id_fisa_adauga_produse = getRequestParameter('id_fisa_adauga_produse', '');
 $raport_z = getRequestParameter('raport_z', '');
-$km = getRequestParameter('km', 0);
+$km_sosire = getRequestParameter('km_sosire', 0);
+$km_plecare = getRequestParameter('km_plecare', 0);
 $valoare_z = getRequestParameter('valoare_z', '');
 $plata = getRequestParameter('plata', '');
 $tip_alimentare = getRequestParameter('tip_alimentare', '');
@@ -95,7 +96,7 @@ $to_add = array();
 $to_add_obs = array();
 if (isset($_POST['adauga'])) {
     foreach ($_POST as $key => $value) {
-        if (preg_match('/^cantitate_/', $key) || preg_match('/^defecte_/', $key ) || preg_match('/^pret_/', $key ) || preg_match('/^comision_/', $key ) || preg_match('/^pretcontract_/', $key )) {
+        if (preg_match('/^cantitate_/', $key) || preg_match('/^defecte_/', $key) || preg_match('/^pret_/', $key) || preg_match('/^comision_/', $key) || preg_match('/^pretcontract_/', $key)) {
             $splits = explode("_", $key);
             $depozit_id = $splits[1];
             $client_id = $splits[2];
@@ -114,7 +115,7 @@ if (isset($_POST['adauga'])) {
                     'defecte' => 0,
                     'pret' => 0,
                     'pretcontract' => 0,
-                    'comision' =>0
+                    'comision' => 0
                 );
             }
             $to_add[$client_id][$depozit_id][$tip_produs_id][$splits[0]] = $value;
@@ -153,7 +154,7 @@ if (isset($_POST['adauga'])) {
                                                                 SET cantitate = '" . $item_client['cantitate'] . "',
                                                                 defecte = '" . $item_client['defecte'] . "',
                                                                 pret = '" . $item_client['pret'] . "',                                                            
-                                                                pret_contract = '" . $item_client['pretcontract'] . "',                                                            
+                                                                pret_contract = '" . ($item_client['pretcontract'] - $item_client['comision']). "',                                                            
                                                                 comision = '" . $item_client['comision'] . "'                                                           
                                                                 WHERE fisa_id = '" . $id . "'
                                                                 AND client_id = '" . $asignare['client_id'] . "'
@@ -164,7 +165,7 @@ if (isset($_POST['adauga'])) {
                 } else {
 //                    debug('nu am gasit valoare in tabela produse');
 
-                    if($item_client['cantitate'] > 0 ||$item_client['defecte']){
+                    if ($item_client['cantitate'] > 0 || $item_client['defecte']) {
                         $insert_raport_fisa_iesire = "INSERT INTO detalii_fisa_intoarcere_produse 
                 (fisa_id, client_id,tip_produs_id,cantitate,defecte, pret, comision, pret_contract, data_intrare) 
                values ('" . $id . "','" . $asignare['client_id'] . "','" . $tip_produs_id . "',
@@ -327,7 +328,6 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
 }
 
 if (isset($_POST['adauga_miscari_fisa'])) {
-//    $data_intrare = date('Y-m-d');
     $data_intrare = $fisa['data_intrare'];
     $query = "SELECT id FROM miscari_fise WHERE fisa_id = '" . $id . "'                 
                     and data_intrare = '" . $data_intrare . "'
@@ -343,7 +343,8 @@ if (isset($_POST['adauga_miscari_fisa'])) {
                                   valoare_z = '" . $valoare_z . "',
                                   tip_alimentare = '" . $tip_alimentare . "',
                                   valoare_alimentare = '" . $valoare_alimentare . "',
-                                  km = '" . $km . "',
+                                  km_sosire = '" . $km_sosire . "',
+                                  km_plecare = '" . $km_plecare . "',
                                   nr_bg = '" . $nr_bg . "',
                                   nr_ar_8 = '" . $nr_ar_8 . "',
                                   nr_ar_9 = '" . $nr_ar_9 . "',
@@ -354,15 +355,15 @@ if (isset($_POST['adauga_miscari_fisa'])) {
                                   where fisa_id = '" . $id . "'
                                                 ";
         myExec($update_miscari);
-        debug($update_miscari);
+//        debug($update_miscari);
     } else {
         debug('2. fac insert de date');
 
         $insert_miscari_fisa = "INSERT INTO miscari_fise(fisa_id, casa_marcat, raport_z, valoare_z, tip_alimentare, valoare_alimentare, 
-                                km, data_intrare, nr_bg, nr_ar_8, nr_ar_9, valoare_bg, valoare_ar_8, valoare_ar_9, nota_explicativa)
+                                km_sosire, km_plecare, data_intrare, nr_bg, nr_ar_8, nr_ar_9, valoare_bg, valoare_ar_8, valoare_ar_9, nota_explicativa)
                      values
                     ('" . $id . "','" . $casa_marcat . "','" . $raport_z . "','" . $valoare_z . "','" . $tip_alimentare . "',
-                    '" . $valoare_alimentare . "','" . $km . "','" . $data_intrare . "',
+                    '" . $valoare_alimentare . "','" . $km_sosire . "','" . $km_plecare . "','" . $data_intrare . "',
                     '" . $nr_bg . "','" . $nr_ar_8 . "','" . $nr_ar_9 . "','" . $valoare_bg . "','" . $valoare_ar_8 . "','" . $valoare_ar_9 . "','" . $nota_explicativa . "')";
 
         myExec($insert_miscari_fisa);
@@ -379,7 +380,7 @@ if (isset($_POST['consuma_stoc'])) {
 if (isset($_POST['adauga_cantitate_extra'])) {
     $data_intrare = $fisa['data_intrare'];
 
-    if($cantitate_extra > 0){
+    if ($cantitate_extra > 0) {
         debug('cantitate');
     }
 
@@ -387,11 +388,11 @@ if (isset($_POST['adauga_cantitate_extra'])) {
 }
 
 $mtime = microtime();
-$mtime = explode(" ",$mtime);
+$mtime = explode(" ", $mtime);
 $mtime = $mtime[1] + $mtime[0];
 $tend = $mtime;
 $totaltime = ($tend - $tstart);
 
-$smarty->assign('mtime',$mtime);
-$smarty->assign('totaltime',$totaltime);
+$smarty->assign('mtime', $mtime);
+$smarty->assign('totaltime', $totaltime);
 $smarty->display($template);

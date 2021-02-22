@@ -137,15 +137,29 @@
                                                 </div>
                                             </div>
                                         </th>
+                                        {*<th class="table_miscari">*}
+                                        {*<table class="table table-bordered">*}
+                                        {*<tr>*}
+                                        {*<th style="text-align: left;width: 100px;">Km Sosire:</th>*}
+                                        {*<th style="text-align: left;">*}
+                                        {*<input style="width: 100%; line-height: 10px;min-height: 10px !important;"*}
+                                        {*type="text" class="form-control" name="km_sosire"*}
+                                        {*autocomplete="off"*}
+                                        {*value="{$fisa['miscari_fisa']['km_sosire']}"*}
+                                        {*/>*}
+                                        {*</th>*}
+                                        {*</tr>*}
+                                        {*</table>*}
+                                        {*</th>*}
                                         <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <th style="text-align: left;width: 100px;">Total Km:</th>
+                                                    <th style="text-align: left;width: 100px;">Km Plecare:</th>
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="km"
+                                                               type="text" class="form-control" name="km_plecare"
                                                                autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['km']}"
+                                                               value="{$fisa['miscari_fisa']['km_plecare']}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -299,7 +313,8 @@
                                                     {/foreach}
                                                 </select>
                                                 <input autocomplete="off" placeholder="Cantitate"
-                                                       style="margin-top: 10px;width: 100px;" type="text" name="cantitate">
+                                                       style="margin-top: 10px;width: 100px;" type="text"
+                                                       name="cantitate">
                                                 <button style="margin-top: 2px;" type="submit"
                                                         name="adauga_cantitate_intoarcere_traseu"
                                                         class="btn btn-primary">
@@ -424,7 +439,7 @@
                                                     </th>
                                                     <th class="span1"
                                                         style="text-align: center;font-weight: bolder;width: 100px;">
-                                                        Pret + Comision
+                                                        Pret Sofer (Unitar)
                                                     </th>
                                                     <th class="span1"
                                                         style="text-align: center;font-weight: bolder;width: 100px;">

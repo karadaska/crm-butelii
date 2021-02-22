@@ -34,22 +34,22 @@ $smarty->assign('data_start_interval', $data_start_interval);
 
 $data_stop_interval = getRequestParameter('data_stop_interval', '');
 $smarty->assign('data_stop_interval', $data_stop_interval);
-
-$to_add = array();
-if (isset($_POST['aplica'])) {
-    foreach ($_POST as $key => $value) {
-        if (preg_match('/^obs/', $key)) {
-            $splits = explode("_", $key);
-            $observatie_id = $splits[1];
-
-            if (!isset($to_add[$observatie_id])) {
-                $to_add[$observatie_id] = array();
-            }
-
-            $to_add[$observatie_id][$splits[0]] = $value;
-        }
-    }
-}
+//
+//$to_add = array();
+//if (isset($_POST['aplica'])) {
+//    foreach ($_POST as $key => $value) {
+//        if (preg_match('/^obs/', $key)) {
+//            $splits = explode("_", $key);
+//            $observatie_id = $splits[1];
+//
+//            if (!isset($to_add[$observatie_id])) {
+//                $to_add[$observatie_id] = array();
+//            }
+//
+//            $to_add[$observatie_id][$splits[0]] = $value;
+//        }
+//    }
+//}
 
 $lista_clienti = Clienti::getObservatiiClientiDinFiseGenerate(array(
     'traseu_id' => $traseu_id,
