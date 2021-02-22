@@ -40,6 +40,11 @@
                                                         Z:
                                                     </th>
                                                     <th style="text-align: left;">
+                                                        {*{if $fisa['miscari_fisa'][0]['valoare_z'] != ''}*}
+                                                            {*{$valoare_z = $fisa['miscari_fisa'][0]['valoare_z']}*}
+                                                        {*{else}*}
+                                                            {*{$valoare_z = 0}*}
+                                                        {*{/if}*}
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="valoare_z"
                                                                autocomplete="off"

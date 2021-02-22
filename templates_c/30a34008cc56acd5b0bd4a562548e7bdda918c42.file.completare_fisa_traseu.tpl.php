@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-22 22:15:49
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-22 22:38:43
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1614024948,
+      1 => 1614026323,
       2 => 'file',
     ),
   ),
@@ -106,6 +106,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                         Z:
                                                     </th>
                                                     <th style="text-align: left;">
+                                                        
+                                                            
+                                                        
+                                                            
+                                                        
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="valoare_z"
                                                                autocomplete="off"

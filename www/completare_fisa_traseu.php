@@ -355,9 +355,7 @@ if (isset($_POST['adauga_miscari_fisa'])) {
                                   where fisa_id = '" . $id . "'
                                                 ";
         myExec($update_miscari);
-//        debug($update_miscari);
     } else {
-        debug('2. fac insert de date');
 
         $insert_miscari_fisa = "INSERT INTO miscari_fise(fisa_id, casa_marcat, raport_z, valoare_z, tip_alimentare, valoare_alimentare, 
                                 km_sosire, km_plecare, data_intrare, nr_bg, nr_ar_8, nr_ar_9, valoare_bg, valoare_ar_8, valoare_ar_9, nota_explicativa)

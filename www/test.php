@@ -56,7 +56,7 @@ $b = Clienti::getListaClientiByPret(12,1,1);
 //    'stari' => array(3)
 //));
 
-//$b = Stocuri::getFisaGenerataById(148);
+$b = Stocuri::getFisaGenerataById(149);
 
 
 //$b = Clienti::getRaportLivrariClienti(2, array(
@@ -69,7 +69,7 @@ $b = Clienti::getListaClientiByPret(12,1,1);
 //    'data_stop' => $data_stop,
 //));
 //$b = Clienti::getNumarClientiByPret(55, 2 ,3);
-$b = Clienti::getCountClientiByPret();
+//$b = Clienti::getCountClientiByPret();
 //$b = Clienti::getDiferentePreturiByClientIdAndTraseuId(2433, 36, 1);
 //$b = Clienti::getFiseByClientId(1397);
 //$b = Clienti::getPretByClientIdAndProdusId(1397, 2);
