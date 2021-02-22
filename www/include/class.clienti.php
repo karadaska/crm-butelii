@@ -173,8 +173,11 @@ class Clienti
     {
 
         $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
-        $observatie_id = isset($opts['observatie_id']) ? $opts['observatie_id'] : 0;
+//        $observatie_id = isset($opts['observatie_id']) ? $opts['observatie_id'] : 0;
         $observatie_input = isset($opts['observatie_input']) ? $opts['observatie_input'] : 0;
+
+        $filter_obs = ($observatie_input > 0) ? ' AND a.observatie_id IN (' . join(', ', $observatie_input) . ') ' : '';
+
 
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
@@ -197,19 +200,20 @@ class Clienti
                   LEFT JOIN localitati as d on b.localitate_id = d.id
                   WHERE a.data >= ('" . $data_start . "')
                   AND a.data <= ('" . $data_stop . "')  
+                  AND a.observatie_id IN ('".$observatie_input."')
                   ";
-
+        print_r($query);
         if ($traseu_id > 0) {
             $query .= " and a.traseu_id = " . $traseu_id;
         }
 
-        if ($observatie_id > 0) {
-            $query .= " and a.observatie_id = " . $observatie_id;
-        }
+//        if ($observatie_id > 0) {
+//            $query .= " and a.observatie_id = " . $observatie_id;
+//        }
 
-        if ($observatie_input > 0) {
-            $query .= " and a.observatie_id IN " . $observatie_input;
-        }
+//        if ($observatie_input > 0) {
+//            $query .= " and a.observatie_id IN (" . $observatie_input .')';
+//        }
 
         $result = myQuery($query);
         if ($result) {
@@ -1635,9 +1639,9 @@ class Clienti
                   LEFT JOIN clienti AS d ON a.client_id = d.id
                   LEFT JOIN localitati AS e ON d.localitate_id = e.id
                   WHERE
-                  a.pret = '".$pret."'
-                  AND c.depozit_id = '".$depozit_id."'
-                  AND a.tip_produs_id = '".$produs_id."'
+                  a.pret = '" . $pret . "'
+                  AND c.depozit_id = '" . $depozit_id . "'
+                  AND a.tip_produs_id = '" . $produs_id . "'
                   AND a.sters = 0
                   AND d.sters = 0
                   AND c.sters = 0

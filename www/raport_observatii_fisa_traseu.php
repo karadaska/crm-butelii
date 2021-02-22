@@ -11,7 +11,7 @@ $form_submit = getRequestParameter('form_submit', 0);
 $valoare_client_id = getRequestParameter('valoare_client_id', 0);
 
 $observatie_input = getRequestParameter('observatie_input', '');
-$smarty->assign('observatie_input', $observatie_input);
+//$smarty->assign('observatie_input', $observatie_input);
 
 $aplica = getRequestParameter('aplica', 0);
 
@@ -24,7 +24,7 @@ $smarty->assign('data_stop', $data_stop);
 $traseu_id = getRequestParameter('traseu_id', 0);
 $smarty->assign('traseu_id', $traseu_id);
 
-$observatie_id = getRequestParameter('observatie_id', '');
+$observatie_id = getRequestParameter('observatie_id', 0);
 $smarty->assign('observatie_id', $observatie_id);
 
 $lista_trasee = Trasee::getTrasee();

@@ -59,7 +59,7 @@
                                     {$nr=1}
                                     {foreach from=$lista_observatii_filtrate item=observatie}
                                         <tr>
-                                            <td>{$nr++}</td>
+                                            <td style="text-align: center;">{$nr++}</td>
                                             <td style="text-align: left">{$observatie['nume']}</td>
                                             <td></td>
                                         </tr>

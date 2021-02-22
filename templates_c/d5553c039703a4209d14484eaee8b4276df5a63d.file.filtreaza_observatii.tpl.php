@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 09:41:42
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 09:45:10
          compiled from "/var/www/html/fofoweb/www/templates/filtreaza_observatii.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:13983569276031a59f9316f8-98830529%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd5553c039703a4209d14484eaee8b4276df5a63d' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/filtreaza_observatii.tpl',
-      1 => 1613893232,
+      1 => 1613893506,
       2 => 'file',
     ),
   ),
@@ -102,7 +102,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['observatie']->key => $_smarty_tpl->tp
 $_smarty_tpl->tpl_vars['observatie']->_loop = true;
 ?>
                                         <tr>
-                                            <td><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
+                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
                                             <td style="text-align: left"><?php echo $_smarty_tpl->tpl_vars['observatie']->value['nume'];?>
 </td>
