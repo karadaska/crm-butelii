@@ -62,6 +62,7 @@
                             {foreach from=$lista_observatii_filtrate item=lista}
                                {$lista['nume']}: <input type="checkbox" name="observatie_input" value="{$lista['obs_id']}">
                                 {/foreach}
+                                TO DO:
                             </th>
                         </tr>
                         </thead>
