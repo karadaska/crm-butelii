@@ -52,4 +52,6 @@ $smarty->assign('lista_clienti', $lista_clienti);
 $lista_observatii_filtrate = Clienti::getListaObservatiiPentruFiltrare();
 $smarty->assign('lista_observatii_filtrate', $lista_observatii_filtrate);
 
+//pre($observatie_input);
+
 $smarty->display($template_page);
