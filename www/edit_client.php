@@ -64,7 +64,7 @@ if ($modifica) {
     $adresa = getRequestParameter('adresa', '');
     $stare_id = getRequestParameter('stare_id', '');
     $rastel_id = getRequestParameter('rastel_id', '');
-    $tip_rastel= getRequestParameter('tip_rastel', '');
+    $tip_rastel = getRequestParameter('tip_rastel', '');
     $telefon = getRequestParameter('telefon', '');
     $telefon_2 = getRequestParameter('telefon_2', '');
     $cnp = getRequestParameter('cnp', '');
@@ -88,7 +88,35 @@ if ($modifica) {
 
         myExec($query);
 
+        $sql = "SELECT id FROM tip_rastel_clienti 
+                WHERE `client_id`='" . $id . "' 
+                and `tip_rastel_id`='" . $tip_rastel . "'                
+                and sters = 0 
+                LIMIT 1";
+        $result = myQuery($sql);
 
+        if ($result->rowCount() == 1) {
+            $update_tip_rastel_clienti = "UPDATE tip_rastel_clienti SET                                      
+                                          nr_rastel = '" . $rastel_id . "'
+                                          WHERE client_id = '" . $id . "'
+                                          AND tip_rastel_id = '" . $tip_rastel . "'                                                                           
+                                        ";
+            myExec($update_tip_rastel_clienti);
+
+        } else {
+
+            $update_tip_rastel_clienti = "UPDATE tip_rastel_clienti SET
+                                          sters = 1,                                        
+                                          data_stop = '" . $data_intrare . "'
+                                          WHERE client_id = '" . $id . "'
+                                          and sters = 0                                          
+                                        ";
+            myExec($update_tip_rastel_clienti);
+
+            $insert_tip_rastel = "insert into tip_rastel_clienti (client_id, tip_rastel_id, nr_rastel, data_start)
+        values ('" . $id . "','" . $tip_rastel . "','" . $rastel_id . "','" . $data_intrare . "');";
+            myExec($insert_tip_rastel);
+        }
 
         header('Location: /edit_client.php?id=' . $id);
     }

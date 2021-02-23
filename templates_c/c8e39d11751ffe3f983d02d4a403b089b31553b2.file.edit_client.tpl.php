@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-23 11:00:35
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-23 12:03:29
          compiled from "/var/www/html/fofoweb/www/templates/edit_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9248587256024dd62ec9005-45001616%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c8e39d11751ffe3f983d02d4a403b089b31553b2' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_client.tpl',
-      1 => 1614070833,
+      1 => 1614074602,
       2 => 'file',
     ),
   ),
@@ -241,8 +241,8 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                             <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;">Tip Rastel</th>
                                                 <th style="text-align: left;">
-                                                    <select name="rastel_id">
-                                                        <option value="0">Selecteaza rastel</option>
+                                                    <select name="tip_rastel">
+                                                        <option value="0">Alege...</option>
                                                         <?php  $_smarty_tpl->tpl_vars['tip_rastel'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['tip_rastel']->_loop = false;
  $_smarty_tpl->tpl_vars['tmp'] = new Smarty_Variable;
  $_from = $_smarty_tpl->tpl_vars['lista_tip_rastel']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

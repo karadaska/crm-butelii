@@ -153,8 +153,8 @@
                                             <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;">Tip Rastel</th>
                                                 <th style="text-align: left;">
-                                                    <select name="rastel_id">
-                                                        <option value="0">Selecteaza rastel</option>
+                                                    <select name="tip_rastel">
+                                                        <option value="0">Alege...</option>
                                                         {foreach from=$lista_tip_rastel key=tmp item=tip_rastel}
                                                             <option value={$tip_rastel['id']}>{$tip_rastel['tip']}</option>
                                                         {/foreach}
