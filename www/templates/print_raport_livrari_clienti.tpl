@@ -71,9 +71,13 @@
     <table style="width: 1800px;">
         <tr>
             <td style="text-align: left;" class="span3">
-                <h3>
+                <h2 style="text-align: center;">
+                    RAPORT LUNAR <br/>
+                    {$data_start} - {$data_stop}
+                </h2>
+                <h2>
                     Traseu: {strtoupper($nume_traseu['nume'])} <br/>
-                </h3>
+                </h2>
             </td>
         </tr>
     </table>
