@@ -190,12 +190,15 @@ class Clienti
 
         $ret = array();
 
-        $query = "SELECT a.*, b.nume as nume_client,b.telefon, 
-                  b.telefon_2, c.nume as nume_observatie, d.nume as nume_localitate  
+        $query = "SELECT a.traseu_id, a.fisa_id, a.`data`, b.nume as nume_client,b.telefon, 
+                  b.telefon_2, c.nume as nume_observatie, d.nume as nume_localitate, f.nume as nume_sofer, g.numar   
                   FROM observatii_clienti_fisa_traseu as a
                   LEFT JOIN clienti as b on a.client_id = b.id
                   LEFT JOIN observatii as c on a.observatie_id = c.id
                   LEFT JOIN localitati as d on b.localitate_id = d.id
+                  LEFT JOIN fise_generate as e on a.fisa_id = e.id
+                  LEFT JOIN soferi as f on e.sofer_id = f.id
+                  LEFT JOIN masini as g on e.masina_id = g.id
                   WHERE a.data >= ('" . $data_start . "')
                   AND a.data <= ('" . $data_stop . "')
                   ";

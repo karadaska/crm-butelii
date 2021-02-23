@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-22 14:39:37
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-23 15:39:32
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1613997574,
+      1 => 1614087568,
       2 => 'file',
     ),
   ),
@@ -149,7 +149,11 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                         <th style="text-align: left;">Localitate</th>
                                         <th style="text-align: left;">Client</th>
                                         <th style="text-align: left;">Telefon</th>
+                                        <th style="text-align: center;">Masina</th>
+                                        <th style="text-align: center;">Sofer</th>
+                                        <th style="text-align: center;">Data</th>
                                         <th style="text-align: left;">Observatie</th>
+                                        <th style="text-align: center;" class="span1">Fisa</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -169,8 +173,17 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                 <?php echo $_smarty_tpl->tpl_vars['client']->value['telefon_2'];?>
 
                                             </td>
+                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['numar'];?>
+</td>
+                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_sofer'];?>
+</td>
+                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['data'];?>
+</td>
                                             <td style="text-align: left;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_observatie']!='' ? $_smarty_tpl->tpl_vars['client']->value['nume_observatie'] : '-';?>
 </td>
+                                            <td style="text-align: center;"><a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['fisa_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['client']->value['fisa_id'];?>
+</a></td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
