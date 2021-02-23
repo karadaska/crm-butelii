@@ -6,6 +6,10 @@ if (!Utilizatori::hasRights(1, 6)) {
     web_redirect('/eroare_faradrept.php');
 }
 
+$smarty->assign('name', 'Edit clienti');
+$template = 'edit_client.tpl';
+
+
 $modifica = getRequestParameter('modifica', '');
 $adauga = getRequestParameter('adauga', '');
 $id = getRequestParameter('id', 0);
@@ -35,8 +39,8 @@ $smarty->assign('lista_localitati', $lista_localitati);
 $lista_stari = Clienti::getStariClienti();
 $smarty->assign('lista_stari', $lista_stari);
 
-$lista_rastel = Produse::getRastel();
-$smarty->assign('lista_rastel', $lista_rastel);
+$lista_tip_rastel = Produse::getRastel();
+$smarty->assign('lista_tip_rastel', $lista_tip_rastel);
 
 $lista_depozite = Depozite::getDepozite();
 $smarty->assign('lista_depozite', $lista_depozite);
@@ -47,8 +51,6 @@ $smarty->assign('culori_butelii', $culori_butelii);
 $lista_trasee = Trasee::getTrasee();
 $smarty->assign('lista_trasee', $lista_trasee);
 
-$smarty->assign('name', 'Edit clienti');
-$template = 'edit_client.tpl';
 
 $observatii_by_client_id = Clienti::getObservatiiByClientById($id);
 $smarty->assign('observatii_by_client_id', $observatii_by_client_id);
@@ -62,6 +64,7 @@ if ($modifica) {
     $adresa = getRequestParameter('adresa', '');
     $stare_id = getRequestParameter('stare_id', '');
     $rastel_id = getRequestParameter('rastel_id', '');
+    $tip_rastel= getRequestParameter('tip_rastel', '');
     $telefon = getRequestParameter('telefon', '');
     $telefon_2 = getRequestParameter('telefon_2', '');
     $cnp = getRequestParameter('cnp', '');
@@ -84,6 +87,8 @@ if ($modifica) {
         where id='" . $id . "'";
 
         myExec($query);
+
+
 
         header('Location: /edit_client.php?id=' . $id);
     }
