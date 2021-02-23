@@ -25,9 +25,16 @@ if ($adauga) {
 
     $data_start = date("y-m-d");
     if ($traseu_id > 0) {
+
         $query = "INSERT INTO asignari_trasee_depozite(depozit_id, traseu_id, data_start) 
         values 
         ('" . $id . "','" . $traseu_id . "','" . $data_start . "')";
+
+        myExec($query);
+
+        $query = "UPDATE trasee set depozit_id = '" . $id . "' 
+                  WHERE id = '" . $traseu_id . "'
+                  and sters = 0";
 
         myExec($query);
         header('Location: /asignari_trasee_depozite.php?id=' . $id);
