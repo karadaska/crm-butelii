@@ -104,7 +104,6 @@ if ($modifica) {
             myExec($update_tip_rastel_clienti);
 
         } else {
-
             $update_tip_rastel_clienti = "UPDATE tip_rastel_clienti SET
                                           sters = 1,                                        
                                           data_stop = '" . $data_intrare . "'
@@ -116,6 +115,7 @@ if ($modifica) {
             $insert_tip_rastel = "insert into tip_rastel_clienti (client_id, tip_rastel_id, nr_rastel, data_start)
         values ('" . $id . "','" . $tip_rastel . "','" . $rastel_id . "','" . $data_intrare . "');";
             myExec($insert_tip_rastel);
+
         }
 
         header('Location: /edit_client.php?id=' . $id);

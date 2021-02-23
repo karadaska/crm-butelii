@@ -154,9 +154,13 @@
                                                 <th style="vertical-align: middle;">Tip Rastel</th>
                                                 <th style="text-align: left;">
                                                     <select name="tip_rastel">
+                                                        {assign var=rastel_by_client_id value=Clienti::getTipRastelByClientId($client['id'])}
                                                         <option value="0">Alege...</option>
                                                         {foreach from=$lista_tip_rastel key=tmp item=tip_rastel}
-                                                            <option value={$tip_rastel['id']}>{$tip_rastel['tip']}</option>
+                                                            <option value={$tip_rastel['id']}
+                                                                    {if $tip_rastel['id'] == $rastel_by_client_id['tip_rastel_id']} selected="selected"{/if}>
+                                                                {$tip_rastel['tip']}
+                                                            </option>
                                                         {/foreach}
                                                     </select>
                                                 </th>

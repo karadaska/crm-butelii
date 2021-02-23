@@ -13,7 +13,8 @@ $luna_id = 0;
 $stare_id = 1;
 
 //CLIENTI -----------------------------------------------------------
-$b = Clienti::getListaClientiByPret(12,1,1);
+//$b = Clienti::getListaClientiByPret(12,1,1);
+$b = Clienti::getTipRastelByClientId(1802);
 //$b = Clienti::getAsignariClientiByFisaGenerataId(138);
 //$b = Asignari::getAsignariClientiByTraseuId(36);
 //$b = Clienti::getObservatieApelClientiByClientId(2538);
@@ -56,7 +57,7 @@ $b = Clienti::getListaClientiByPret(12,1,1);
 //    'stari' => array(3)
 //));
 
-$b = Stocuri::getFisaGenerataById(149);
+//$b = Stocuri::getFisaGenerataById(149);
 
 
 //$b = Clienti::getRaportLivrariClienti(2, array(
