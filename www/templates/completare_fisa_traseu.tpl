@@ -30,8 +30,8 @@
                     <form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post">
                         <div class="span12" style="display: inline-flex">
                             <div style="float: left;">
-                                <table class="table tab-content table-bordered"
-                                       style="width: 500px;margin-bottom: 1px;">
+                                <table class="table table-bordered"
+                                       style="width: 500px;margin-bottom: 14px;">
                                     <tr>
                                         <th class="table_miscari">
                                             <table class="table table-bordered">
@@ -40,15 +40,15 @@
                                                         Z:
                                                     </th>
                                                     <th style="text-align: left;">
-                                                        {*{if $fisa['miscari_fisa'][0]['valoare_z'] != ''}*}
-                                                            {*{$valoare_z = $fisa['miscari_fisa'][0]['valoare_z']}*}
-                                                        {*{else}*}
-                                                            {*{$valoare_z = 0}*}
-                                                        {*{/if}*}
+                                                        {if $fisa['miscari_fisa']['valoare_z'] != ''}
+                                                            {$valoare_z = $fisa['miscari_fisa']['valoare_z']}
+                                                        {else}
+                                                            {$valoare_z = 0}
+                                                        {/if}
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="valoare_z"
                                                                autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['valoare_z']}"
+                                                               value="{$valoare_z}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -69,10 +69,15 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">NR. casa</th>
                                                     <th style="text-align: left;">
+                                                        {if $fisa['miscari_fisa']['casa_marcat'] != ''}
+                                                            {$valoare_casa_marcat = $fisa['miscari_fisa']['casa_marcat']}
+                                                        {else}
+                                                            {$valoare_casa_marcat = 0}
+                                                        {/if}
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                name="casa_marcat"
                                                                type="text" class="form-control" autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['casa_marcat']}"
+                                                               value="{$valoare_casa_marcat}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -83,10 +88,15 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;"> Nr. raport Z</th>
                                                     <th style="text-align: left;">
+                                                        {if $fisa['miscari_fisa']['raport_z'] != ''}
+                                                            {$valoare_raport_z = $fisa['miscari_fisa']['raport_z']}
+                                                        {else}
+                                                            {$valoare_raport_z = 0}
+                                                        {/if}
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="raport_z"
                                                                autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['raport_z']}"
+                                                               value="{$valoare_raport_z}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -184,7 +194,6 @@
                                                 </tr>
                                             </table>
                                         </th>
-
                                     </tr>
                                     <tr>
                                         <th class="table_miscari">
@@ -211,10 +220,15 @@
                                                         plata
                                                     </th>
                                                     <th style="text-align: left;">
+                                                        {if $fisa['miscari_fisa']['valoare_alimentare'] != ''}
+                                                            {$valoare_alimentare = $fisa['miscari_fisa']['valoare_alimentare']}
+                                                        {else}
+                                                            {$valoare_alimentare = 0}
+                                                        {/if}
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" autocomplete="off"
                                                                name="valoare_alimentare"
-                                                               value="{$fisa['miscari_fisa']['valoare_alimentare']}"
+                                                               value="{$valoare_alimentare}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -227,10 +241,15 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Km Plecare:</th>
                                                     <th style="text-align: left;">
+                                                        {if $fisa['miscari_fisa']['km_plecare'] != ''}
+                                                            {$km_plecare = $fisa['miscari_fisa']['km_plecare']}
+                                                        {else}
+                                                            {$km_plecare = 0}
+                                                        {/if}
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="km_plecare"
                                                                autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['km_plecare']}"
+                                                               value="{$km_plecare}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -241,10 +260,15 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Km Sosire:</th>
                                                     <th style="text-align: left;">
+                                                        {if $fisa['miscari_fisa']['km_sosire'] != ''}
+                                                            {$km_sosire = $fisa['miscari_fisa']['km_sosire']}
+                                                        {else}
+                                                            {$km_sosire = 0}
+                                                        {/if}
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="km_sosire"
                                                                autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['km_sosire']}"
+                                                               value="{$km_sosire}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -271,7 +295,7 @@
                             <div style="float: right;margin-top: -10px;">
                                 {if ($fisa['consum_sosire'] == 0)}
                                     <table class="table table-bordered"
-                                           style="width: 500px;margin-top: 10px;">
+                                           style="width: 500px;margin-top: 10px;margin-left: 10px;">
                                         <tr>
                                             <td>
                                                 <select name="tip_produs_id" style="width: 120px;">
@@ -312,7 +336,7 @@
                                 {/if}
                                 {if count($cantitate_sosire_by_fisa_id) > 0}
                                     <table class="table table-bordered"
-                                           style="width: 500px;margin-right: 100px;margin-top: 10px;">
+                                           style="width: 500px;margin-right: 100px;margin-top: 10px;margin-left: 10px;">
                                         <tr>
                                             <th class="span2">Produs</th>
                                             <th>Pline</th>
