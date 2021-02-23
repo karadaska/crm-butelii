@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-09 14:27:54
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-23 14:36:26
          compiled from "/var/www/html/fofoweb/www/templates/fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:41291163760227fca5e0d02-36086469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6a816e77c26a3e44e8901f8e5bf303b562bf874' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/fisa_traseu.tpl',
-      1 => 1611996734,
+      1 => 1614083785,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60227fca682125_73564757',
   'variables' => 
   array (
     'title' => 0,
@@ -38,8 +40,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'marfa_plecare' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60227fca682125_73564757',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60227fca682125_73564757')) {function content_60227fca682125_73564757($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -130,90 +130,109 @@ $_smarty_tpl->tpl_vars['luna']->_loop = true;
                                         onclick="location.href='/adauga_fisa_traseu.php'">Adauga fisa
                                 </button>
                                 <?php if (count($_smarty_tpl->tpl_vars['lista_fise']->value)>0) {?>
-                                <form action="/completare_fisa_traseu.php" method="post"
-                                      name="form_fisa_traseu" id="form_fisa_traseu" style="margin-bottom: 0">
-                                    <div class="row-fluid">
-                                        <div class="span12">
-                                            <div class="widget">
-                                                <div class="widget-content">
-                                                    <table cellpadding="0" cellspacing="0" border="0"
-                                                           class="table table-bordered table-hover" id="dataTable">
-                                                        <thead>
-                                                        <tr>
-                                                            <td class="span1">Id_fisa</td>
-                                                            <td>Depozit</td>
-                                                            <td>Traseu</td>
-                                                            <th>Sofer</th>
-                                                            <th>Masina</th>
-                                                            <th>Incarcatura plecare</th>
-                                                            <th>Incarcatura sosire</th>
-                                                            <th>Data</th>
-                                                            <th>&nbsp;</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <?php  $_smarty_tpl->tpl_vars['fisa'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['fisa']->_loop = false;
+                                    <form action="/completare_fisa_traseu.php" method="post"
+                                          name="form_fisa_traseu" id="form_fisa_traseu" style="margin-bottom: 0">
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <div class="widget">
+                                                    <div class="widget-content">
+                                                        <table cellpadding="0" cellspacing="0" border="0"
+                                                               class="table table-bordered table-hover" id="dataTable">
+                                                            <thead>
+                                                            <tr>
+                                                                <td class="span1">Id_fisa</td>
+                                                                <td>Depozit</td>
+                                                                <td>Traseu</td>
+                                                                <th>Sofer</th>
+                                                                <th>Masina</th>
+                                                                <th>Incarcatura plecare</th>
+                                                                <th>Incarcatura sosire</th>
+                                                                <th>Detalii Km</th>
+                                                                <th>Data</th>
+                                                                <th>&nbsp;</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <?php  $_smarty_tpl->tpl_vars['fisa'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['fisa']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_fise']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['fisa']->key => $_smarty_tpl->tpl_vars['fisa']->value) {
 $_smarty_tpl->tpl_vars['fisa']->_loop = true;
 ?>
-                                                            <input type="hidden" name="fisa_id" value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
+                                                                <input type="hidden" name="fisa_id"
+                                                                       value="<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
 ">
-                                                            <tr>
-                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
+                                                                <tr>
+                                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
 </td>
-                                                                <td><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_depozit'];?>
+                                                                    <td><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_depozit'];?>
 </td>
-                                                                <td><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_traseu'];?>
+                                                                    <td><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_traseu'];?>
 </td>
-                                                                <td><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_sofer'];?>
+                                                                    <td><?php echo $_smarty_tpl->tpl_vars['fisa']->value['nume_sofer'];?>
 </td>
-                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['numar_masina'];?>
+                                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['numar_masina'];?>
 </td>
-                                                                <td style="text-align: left;">
-                                                                    <?php  $_smarty_tpl->tpl_vars['marfa_plecare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = false;
+                                                                    <td style="text-align: left;">
+                                                                        <?php  $_smarty_tpl->tpl_vars['marfa_plecare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['fisa']->value['incarcatura_masina_plecare']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['marfa_plecare']->key => $_smarty_tpl->tpl_vars['marfa_plecare']->value) {
 $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = true;
 ?>
-                                                                        <?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['nume_produs'];?>
+                                                                            <?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['nume_produs'];?>
  : [Pline:<?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['cantitate'];?>
-] <br/>
-                                                                    <?php } ?>
-                                                                </td>
-                                                                <td>
-                                                                    <?php  $_smarty_tpl->tpl_vars['marfa_plecare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = false;
+]
+                                                                            <br/>
+                                                                        <?php } ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        <?php  $_smarty_tpl->tpl_vars['marfa_plecare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['fisa']->value['incarcatura_masina_sosire']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['marfa_plecare']->key => $_smarty_tpl->tpl_vars['marfa_plecare']->value) {
 $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = true;
 ?>
-                                                                        <?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['nume_produs'];?>
+                                                                            <?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['nume_produs'];?>
  : [Pline:<?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['pline'];?>
 , Goale: <?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['goale'];?>
-] <br/>
-                                                                    <?php } ?>
-                                                                </td>
-                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['data_intrare'];?>
+]
+                                                                            <br/>
+                                                                        <?php } ?>
+                                                                    </td>
+                                                                    <td>
+                                                                        Plecare: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_plecare']!='' ? $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_plecare'] : '0';?>
+
+                                                                        km
+                                                                        <br/>
+                                                                        Sosire: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_sosire']!='' ? $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_sosire'] : '0';?>
+
+                                                                        km <br/>
+                                                                        Total
+                                                                        : <?php echo $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_plecare']+$_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_sosire'];?>
+
+                                                                        km
+                                                                    </td>
+                                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['data_intrare'];?>
 </td>
-                                                                <td style="text-align: center;vertical-align: top;"
-                                                                    class="span3">
-                                                                    <a href="edit_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
+                                                                    <td style="text-align: center;vertical-align: top;"
+                                                                        class="span3">
+                                                                        <a href="edit_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
 "
-                                                                       class="btn btn-mini btn-success">Editeaza fisa
-                                                                    </a>
-                                                                    <a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
-" class="btn btn-mini btn-inverse">Completeaza
-                                                                        fisa
-                                                                    </a>
-                                                                </td>
-                                                            </tr>
-                                                        <?php } ?>
-                                                    </table>
+                                                                           class="btn btn-mini btn-success">Editeaza
+                                                                            fisa
+                                                                        </a>
+                                                                        <a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
+"
+                                                                           class="btn btn-mini btn-inverse">Completeaza
+                                                                            fisa
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            <?php } ?>
+                                                        </table>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
-                            <?php }?>
+                                    </form>
+                                <?php }?>
                             </div>
                         </div>
                     </div>

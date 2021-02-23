@@ -14,7 +14,7 @@ $stare_id = 1;
 
 //CLIENTI -----------------------------------------------------------
 //$b = Clienti::getListaClientiByPret(12,1,1);
-$b = Clienti::getTipRastelByClientId(1802);
+//$b = Clienti::getTipRastelByClientId(1802);
 //$b = Clienti::getAsignariClientiByFisaGenerataId(138);
 //$b = Asignari::getAsignariClientiByTraseuId(36);
 //$b = Clienti::getObservatieApelClientiByClientId(2538);
@@ -103,7 +103,7 @@ $b = Clienti::getTipRastelByClientId(1802);
 //$b = Clienti::getCantitatiByPretClient(2544, 55);
 //Stocuri -----------------------------------------------------------
 //Stocuri -----------------------------------------------------------
-//$b = Stocuri::getFisaGenerataById(253);
+$b = Stocuri::getFise();
 //$b = Stocuri::getCantitatiProduseClientiByFisaId(183);
 
 

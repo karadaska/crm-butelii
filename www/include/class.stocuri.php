@@ -579,6 +579,7 @@ class Stocuri
                     'data_intrare' => $item['data_intrare'],
                     'incarcatura_masina_plecare' => Stocuri::getIncarcaturaMasinaPlecareByFisaId($item['id']),
                     'incarcatura_masina_sosire' => Stocuri::getIncarcaturaMasinaSosireByFisaId($item['id']),
+                    'km_fisa' => self::getKmByFisaId($item['id']),
                 );
 
                 array_push($ret, $r);
@@ -731,6 +732,20 @@ class Stocuri
 //        }
 //        return $ret;
 
+    }
+
+    public static function getKmByFisaId($id)
+    {
+        $ret = array();
+        $query = "SELECT a.fisa_id, a.km_plecare, a.km_sosire               
+                  from miscari_fise as a                 
+                  where a.fisa_id = '" . $id . "'";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
     }
 
     public static function getStocByDepozitId($depozit_id)

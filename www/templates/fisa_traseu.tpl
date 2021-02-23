@@ -54,64 +54,80 @@
                                         onclick="location.href='/adauga_fisa_traseu.php'">Adauga fisa
                                 </button>
                                 {if count($lista_fise) > 0}
-                                <form action="/completare_fisa_traseu.php" method="post"
-                                      name="form_fisa_traseu" id="form_fisa_traseu" style="margin-bottom: 0">
-                                    <div class="row-fluid">
-                                        <div class="span12">
-                                            <div class="widget">
-                                                <div class="widget-content">
-                                                    <table cellpadding="0" cellspacing="0" border="0"
-                                                           class="table table-bordered table-hover" id="dataTable">
-                                                        <thead>
-                                                        <tr>
-                                                            <td class="span1">Id_fisa</td>
-                                                            <td>Depozit</td>
-                                                            <td>Traseu</td>
-                                                            <th>Sofer</th>
-                                                            <th>Masina</th>
-                                                            <th>Incarcatura plecare</th>
-                                                            <th>Incarcatura sosire</th>
-                                                            <th>Data</th>
-                                                            <th>&nbsp;</th>
-                                                        </tr>
-                                                        </thead>
-                                                        {foreach from = $lista_fise item =fisa}
-                                                            <input type="hidden" name="fisa_id" value="{$fisa['id']}">
+                                    <form action="/completare_fisa_traseu.php" method="post"
+                                          name="form_fisa_traseu" id="form_fisa_traseu" style="margin-bottom: 0">
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <div class="widget">
+                                                    <div class="widget-content">
+                                                        <table cellpadding="0" cellspacing="0" border="0"
+                                                               class="table table-bordered table-hover" id="dataTable">
+                                                            <thead>
                                                             <tr>
-                                                                <td style="text-align: center;">{$fisa['id']}</td>
-                                                                <td>{$fisa['nume_depozit']}</td>
-                                                                <td>{$fisa['nume_traseu']}</td>
-                                                                <td>{$fisa['nume_sofer']}</td>
-                                                                <td style="text-align: center;">{$fisa['numar_masina']}</td>
-                                                                <td style="text-align: left;">
-                                                                    {foreach from=$fisa['incarcatura_masina_plecare'] item=marfa_plecare}
-                                                                        {$marfa_plecare['nume_produs']} : [Pline:{$marfa_plecare['cantitate']}] <br/>
-                                                                    {/foreach}
-                                                                </td>
-                                                                <td>
-                                                                    {foreach from=$fisa['incarcatura_masina_sosire'] item=marfa_plecare}
-                                                                        {$marfa_plecare['nume_produs']} : [Pline:{$marfa_plecare['pline']}, Goale: {$marfa_plecare['goale']}] <br/>
-                                                                    {/foreach}
-                                                                </td>
-                                                                <td style="text-align: center;">{$fisa['data_intrare']}</td>
-                                                                <td style="text-align: center;vertical-align: top;"
-                                                                    class="span3">
-                                                                    <a href="edit_fisa_traseu.php?id={$fisa['id']}"
-                                                                       class="btn btn-mini btn-success">Editeaza fisa
-                                                                    </a>
-                                                                    <a href="completare_fisa_traseu.php?id={$fisa['id']}" class="btn btn-mini btn-inverse">Completeaza
-                                                                        fisa
-                                                                    </a>
-                                                                </td>
+                                                                <td class="span1">Id_fisa</td>
+                                                                <td>Depozit</td>
+                                                                <td>Traseu</td>
+                                                                <th>Sofer</th>
+                                                                <th>Masina</th>
+                                                                <th>Incarcatura plecare</th>
+                                                                <th>Incarcatura sosire</th>
+                                                                <th>Detalii Km</th>
+                                                                <th>Data</th>
+                                                                <th>&nbsp;</th>
                                                             </tr>
-                                                        {/foreach}
-                                                    </table>
+                                                            </thead>
+                                                            {foreach from = $lista_fise item =fisa}
+                                                                <input type="hidden" name="fisa_id"
+                                                                       value="{$fisa['id']}">
+                                                                <tr>
+                                                                    <td style="text-align: center;">{$fisa['id']}</td>
+                                                                    <td>{$fisa['nume_depozit']}</td>
+                                                                    <td>{$fisa['nume_traseu']}</td>
+                                                                    <td>{$fisa['nume_sofer']}</td>
+                                                                    <td style="text-align: center;">{$fisa['numar_masina']}</td>
+                                                                    <td style="text-align: left;">
+                                                                        {foreach from=$fisa['incarcatura_masina_plecare'] item=marfa_plecare}
+                                                                            {$marfa_plecare['nume_produs']} : [Pline:{$marfa_plecare['cantitate']}]
+                                                                            <br/>
+                                                                        {/foreach}
+                                                                    </td>
+                                                                    <td>
+                                                                        {foreach from=$fisa['incarcatura_masina_sosire'] item=marfa_plecare}
+                                                                            {$marfa_plecare['nume_produs']} : [Pline:{$marfa_plecare['pline']}, Goale: {$marfa_plecare['goale']}]
+                                                                            <br/>
+                                                                        {/foreach}
+                                                                    </td>
+                                                                    <td>
+                                                                        Plecare: {($fisa['km_fisa']['km_plecare'] != '') ? $fisa['km_fisa']['km_plecare'] :'0'}
+                                                                        km
+                                                                        <br/>
+                                                                        Sosire: {($fisa['km_fisa']['km_sosire'] !='') ? $fisa['km_fisa']['km_sosire'] : '0'}
+                                                                        km <br/>
+                                                                        Total
+                                                                        : {$fisa['km_fisa']['km_plecare'] + $fisa['km_fisa']['km_sosire']}
+                                                                        km
+                                                                    </td>
+                                                                    <td style="text-align: center;">{$fisa['data_intrare']}</td>
+                                                                    <td style="text-align: center;vertical-align: top;"
+                                                                        class="span3">
+                                                                        <a href="edit_fisa_traseu.php?id={$fisa['id']}"
+                                                                           class="btn btn-mini btn-success">Editeaza
+                                                                            fisa
+                                                                        </a>
+                                                                        <a href="completare_fisa_traseu.php?id={$fisa['id']}"
+                                                                           class="btn btn-mini btn-inverse">Completeaza
+                                                                            fisa
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            {/foreach}
+                                                        </table>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
-                            {/if}
+                                    </form>
+                                {/if}
                             </div>
                         </div>
                     </div>
