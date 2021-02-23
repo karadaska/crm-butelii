@@ -98,13 +98,13 @@
                                                                         {/foreach}
                                                                     </td>
                                                                     <td>
-                                                                        Plecare: {($fisa['km_fisa']['km_plecare'] != '') ? $fisa['km_fisa']['km_plecare'] :'0'}
+                                                                        <span style="font-weight: 900">Plecare:</span> {($fisa['km_fisa']['km_plecare'] != '') ? $fisa['km_fisa']['km_plecare'] :'0'}
                                                                         km
                                                                         <br/>
-                                                                        Sosire: {($fisa['km_fisa']['km_sosire'] !='') ? $fisa['km_fisa']['km_sosire'] : '0'}
+                                                                        <span style="font-weight: 900">Sosire:</span> {($fisa['km_fisa']['km_sosire'] !='') ? $fisa['km_fisa']['km_sosire'] : '0'}
                                                                         km <br/>
-                                                                        Total
-                                                                        : {$fisa['km_fisa']['km_plecare'] + $fisa['km_fisa']['km_sosire']}
+                                                                        <span style="font-weight: 900">Total
+                                                                            :</span> {$fisa['km_fisa']['km_plecare'] + $fisa['km_fisa']['km_sosire']}
                                                                         km
                                                                     </td>
                                                                     <td style="text-align: center;">{$fisa['data_intrare']}</td>
