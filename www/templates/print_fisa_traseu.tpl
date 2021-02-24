@@ -335,7 +335,9 @@
     </div>
     <br/>
     <div style="font-weight: 900;margin-top: 20px;">
-        <span style="font-weight: 900;margin-top: 20px;"> Data: {$print_fisa['data_intrare']}</span>
+        {$data = $print_fisa['data_intrare']}
+        {$newDate = date("m-d-Y", strtotime($data))}
+        <span style="font-weight: 900;margin-top: 20px;"> DATA: {$newDate}</span>
     </div>
 </section>
 </body>

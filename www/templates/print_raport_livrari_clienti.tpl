@@ -68,12 +68,21 @@
             </button>
         </a>
     </div>
+    {$org_date_start = $data_start}
+    {$date_start = str_replace('-"', '.', $org_date_start)}
+    {$newDateStart = date("d.m.Y", strtotime($date_start))}
+
+    {$org_date_stop = $data_stop}
+    {$date_stop = str_replace('-"', '.', $org_date_stop)}
+    {$newDateSop = date("d.m.Y", strtotime($date_stop))}
+
     <table style="width: 1800px;">
+
         <tr>
             <td style="text-align: left;" class="span3">
                 <h2 style="text-align: center;">
                     RAPORT LUNAR <br/>
-                    {$data_start} - {$data_stop}
+                    {$newDateStart} - {$newDateSop}
                 </h2>
                 <h2>
                     Traseu: {strtoupper($nume_traseu['nume'])} <br/>

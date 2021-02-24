@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 13:56:13
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 14:24:08
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1614167722,
+      1 => 1614169447,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'id' => 0,
     'data_start' => 0,
     'data_stop' => 0,
+    'org_date_start' => 0,
+    'date_start' => 0,
+    'org_date_stop' => 0,
+    'date_stop' => 0,
+    'newDateStart' => 0,
+    'newDateSop' => 0,
     'nume_traseu' => 0,
     'depozit_by_traseu' => 0,
     'lista_clienti' => 0,
@@ -116,13 +122,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             </button>
         </a>
     </div>
+    <?php $_smarty_tpl->tpl_vars['org_date_start'] = new Smarty_variable($_smarty_tpl->tpl_vars['data_start']->value, null, 0);?>
+    <?php $_smarty_tpl->tpl_vars['date_start'] = new Smarty_variable(str_replace('-"','.',$_smarty_tpl->tpl_vars['org_date_start']->value), null, 0);?>
+    <?php $_smarty_tpl->tpl_vars['newDateStart'] = new Smarty_variable(date("d.m.Y",strtotime($_smarty_tpl->tpl_vars['date_start']->value)), null, 0);?>
+
+    <?php $_smarty_tpl->tpl_vars['org_date_stop'] = new Smarty_variable($_smarty_tpl->tpl_vars['data_stop']->value, null, 0);?>
+    <?php $_smarty_tpl->tpl_vars['date_stop'] = new Smarty_variable(str_replace('-"','.',$_smarty_tpl->tpl_vars['org_date_stop']->value), null, 0);?>
+    <?php $_smarty_tpl->tpl_vars['newDateSop'] = new Smarty_variable(date("d.m.Y",strtotime($_smarty_tpl->tpl_vars['date_stop']->value)), null, 0);?>
+
     <table style="width: 1800px;">
+
         <tr>
             <td style="text-align: left;" class="span3">
                 <h2 style="text-align: center;">
                     RAPORT LUNAR <br/>
-                    <?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
- - <?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
+                    <?php echo $_smarty_tpl->tpl_vars['newDateStart']->value;?>
+ - <?php echo $_smarty_tpl->tpl_vars['newDateSop']->value;?>
 
                 </h2>
                 <h2>
