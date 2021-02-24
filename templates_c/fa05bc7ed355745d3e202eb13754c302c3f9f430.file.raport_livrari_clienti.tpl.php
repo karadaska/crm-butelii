@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 09:54:22
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 12:23:42
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1614153259,
+      1 => 1614162220,
       2 => 'file',
     ),
   ),
@@ -171,15 +171,15 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                 <td style="text-align: center" class="span1"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
                                                 <td style="text-align: left"
-                                                    class="span3"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
+                                                    class="span3"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
 </td>
                                                 <td>
                                                     <?php if (($_smarty_tpl->tpl_vars['client']->value['sters']==0)) {?>
-                                                        <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_client'];?>
+                                                        <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 
                                                     <?php } else { ?>
                                                         <abbr title="Client sters de pe acest traseu"
-                                                              style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_client'];?>
+                                                              style="color: red;"> <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 </abbr>
                                                     <?php }?>
                                                 </td>
@@ -458,15 +458,15 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                 <td style="text-align: center" class="span1"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
                                                 <td style="text-align: left"
-                                                    class="span3"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
+                                                    class="span3"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
 </td>
                                                 <td>
                                                     <?php if (($_smarty_tpl->tpl_vars['client']->value['sters']==0)) {?>
-                                                        <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_client'];?>
+                                                        <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 
                                                     <?php } else { ?>
                                                         <abbr title="Client sters de pe acest traseu"
-                                                              style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_client'];?>
+                                                              style="color: red;"> <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 </abbr>
                                                     <?php }?>
                                                 </td>

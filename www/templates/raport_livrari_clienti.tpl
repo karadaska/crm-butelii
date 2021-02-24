@@ -104,13 +104,13 @@
                                             <tr>
                                                 <td style="text-align: center" class="span1">{$nr++}</td>
                                                 <td style="text-align: left"
-                                                    class="span3">{$client['nume_localitate']}</td>
+                                                    class="span3">{strtoupper($client['nume_localitate'])}</td>
                                                 <td>
                                                     {if ($client['sters'] == 0)}
-                                                        {$client['nume_client']}
+                                                        {strtoupper($client['nume_client'])}
                                                     {else}
                                                         <abbr title="Client sters de pe acest traseu"
-                                                              style="color: red;"> {$client['nume_client']}</abbr>
+                                                              style="color: red;"> {strtoupper($client['nume_client'])}</abbr>
                                                     {/if}
                                                 </td>
                                                 <td>{$client['telefon']}<br/>{$client['telefon2']}</td>
@@ -335,13 +335,13 @@
                                             <tr>
                                                 <td style="text-align: center" class="span1">{$nr++}</td>
                                                 <td style="text-align: left"
-                                                    class="span3">{$client['nume_localitate']}</td>
+                                                    class="span3">{strtoupper($client['nume_localitate'])}</td>
                                                 <td>
                                                     {if ($client['sters'] == 0)}
-                                                        {$client['nume_client']}
+                                                        {strtoupper($client['nume_client'])}
                                                     {else}
                                                         <abbr title="Client sters de pe acest traseu"
-                                                              style="color: red;"> {$client['nume_client']}</abbr>
+                                                              style="color: red;"> {strtoupper($client['nume_client'])}</abbr>
                                                     {/if}
                                                 </td>
                                                 <td>{$client['telefon']}<br/>{$client['telefon2']}</td>
