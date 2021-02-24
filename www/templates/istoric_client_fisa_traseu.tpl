@@ -21,7 +21,7 @@
                                        id="dataTable">
                                     <thead>
                                     <tr>
-                                        <th rowspan="2">FISA ID</th>
+                                        <th rowspan="2" class="span1">FISA</th>
                                         <th rowspan="2">TRASEU</th>
                                         <th rowspan="2">MASINA</th>
                                         <th rowspan="2">SOFER</th>
@@ -56,28 +56,28 @@
                                                 {/foreach}
                                             </td>
                                             <td style="border-left: double;text-align: center;">
-                                                {foreach from=$cantitate['produse'] item = valoare_sofer_incasata}
-                                                    {$valoare_sofer_incasata['valoare_sofer_pret_fisa'] - $valoare_sofer_incasata['valoare_sofer_comision_fisa']}
+                                                {foreach from=$cantitate['produse'] item = pret_unitar_client}
+                                                    {$pret_unitar_client['pret_contract'] - $valoare_sofer_incasata['comision']}
                                                     <br/>
                                                 {/foreach}
                                             </td>
 
                                             <td style="text-align: center;">
                                                 {foreach from=$cantitate['produse'] item = comision_contract}
-                                                    {$comision_contract['valoare_sofer_comision_fisa']}
+                                                    {$comision_contract['comision']}
                                                         <br/>
                                                 {/foreach}
                                             </td>
                                             <td style="border-left: double;text-align: center">
-                                                {foreach from=$cantitate['produse'] item = pret_unitar_contract}
-                                                    {$pret_unitar_contract['pret_contract']}
+                                                {foreach from=$cantitate['produse'] item = pret_sofer}
+                                                    {$pret_sofer['pret_fisa_sofer']}
                                                     <br/>
                                                 {/foreach}
                                             </td>
                                             <td style="border-right: double;text-align: center;">
                                                 {$cantitate['comision']}
                                                 {foreach from=$cantitate['produse'] item = valoare_comision_sofer}
-                                                    {$valoare_comision_sofer['valoare_sofer_comision_fisa']}
+                                                    {$valoare_comision_sofer['comision']}
                                                     <br/>
                                                 {/foreach}
                                             </td>

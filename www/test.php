@@ -57,8 +57,8 @@ $stare_id = 1;
 //    'stari' => array(3)
 //));
 
-$b = Stocuri::getFisaGenerataById(148);
-
+//$b = Stocuri::getFisaGenerataById(148);
+$b = Clienti::getFiseByClientId(1802);
 
 //$b = Clienti::getRaportLivrariClienti(2, array(
 //    'data_start' => $data_start,

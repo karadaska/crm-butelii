@@ -314,9 +314,9 @@ class Stocuri
                         'nume_produs' => $item['nume_produs'],
                         'vandute' => $item['cantitate'],
                         'defecte' => $item['defecte'],
-                        'valoare_sofer_pret_fisa' => $item['pret'],
-                        'valoare_sofer_comision_fisa' => $item['comision'],
-                        'pret_contract' => $item['pret']
+                        'pret_fisa_sofer' => ($item['pret'] - $item['comision']) ,
+                        'comision' => $item['comision'],
+                        'pret_contract' => $item['pret_contract']
                     );
 
                 }
