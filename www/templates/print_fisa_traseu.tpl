@@ -221,17 +221,129 @@
             <td style="text-align: center;"></td>
         </tr>
     </table>
-    <table border="1">
-        <tr>
-            <td>TOTAL BUC. VANDUTE (BG + AR) = {$total_bg_11 + $total_ar_9 + $total_ar_8} </td>
-        </tr>
-        <tr>
-            <td>TOTAL VAL. INCASATA (BG + AR) = {$total_bg_11_unitar + $total_ar_9_unitar + $total_ar_8_unitar}</td>
-        </tr>
-        <tr>
-            <td>TOTAL COMISION (BG + AR) = {$total_bg_11_comision + $total_ar_9_comision + $total_ar_8_comision}</td>
-        </tr>
-    </table>
+    {*<table border="1">*}
+        {*<tr>*}
+            {*<td>TOTAL BUC. VANDUTE (BG + AR) = {$total_bg_11 + $total_ar_9 + $total_ar_8} </td>*}
+        {*</tr>*}
+        {*<tr>*}
+            {*<td>TOTAL VAL. INCASATA (BG + AR) = {$total_bg_11_unitar + $total_ar_9_unitar + $total_ar_8_unitar}</td>*}
+        {*</tr>*}
+        {*<tr>*}
+            {*<td>TOTAL COMISION (BG + AR) = {$total_bg_11_comision + $total_ar_9_comision + $total_ar_8_comision}</td>*}
+        {*</tr>*}
+    {*</table>*}
+
+    <div style="display: inline-flex;margin-top: 20px;">
+        {if ($print_fisa['grand_total_vandute_bg'] != 0 || $print_fisa['grand_defecte_bg'] != 0)}
+            <div>
+                <table border="1" style="width: 180px;">
+                    <tr>
+                        <td style="text-align: center;font-weight: 900;" colspan="2">BG
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_bg']}</td>
+                    </tr>
+                    <tr class="info">
+                        <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_bg']}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_comision_bg']}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_defecte_bg']}</td>
+                    </tr>
+                </table>
+            </div>
+        {/if}
+        {if ($print_fisa['grand_total_vandute_ar_8'] != 0 || $print_fisa['grand_defecte_ar_8'] != 0)}
+            <div style="margin-left: 10px;">
+                <table border="1" style="width: 180px;">
+                    <tr>
+                        <td style="text-align: center;font-weight: 900;" colspan="2">AR
+                            8
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_ar_8']}</td>
+                    </tr>
+                    <tr class="info">
+                        <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_ar_8']}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_comision_ar_8']}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_defecte_ar_8']}</td>
+                    </tr>
+                </table>
+            </div>
+        {/if}
+        {if ($print_fisa['grand_total_vandute_ar_9'] != 0 || $print_fisa['grand_defecte_ar_9'] != 0)}
+            <div style="margin-left: 10px;">
+                <table border="1" style="width: 180px;">
+                    <tr>
+                        <td style="text-align: center;font-weight: 900;" colspan="2">AR
+                            9
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_ar_9']}</td>
+                    </tr>
+                    <tr class="info">
+                        <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_ar_9']}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_comision_ar_9']}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_defecte_ar_9']}</td>
+                    </tr>
+                </table>
+            </div>
+        {/if}
+        {$total_afisare = $print_fisa['grand_total_vandute_bg'] + $print_fisa['grand_total_vandute_ar_9'] + $print_fisa['grand_total_vandute_ar_9'] +  $print_fisa['grand_defecte_bg'] + $print_fisa['grand_defecte_ar_8'] + $print_fisa['grand_defecte_ar_9']}
+        {if ($total_afisare != 0)}
+            <div style="margin-left: 10px;">
+                <table border="1" style="width: 180px;">
+                    <tr>
+                        <td style="text-align: center;font-weight: 900;" colspan="2">
+                            TOTALURI
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">BG + AR</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_bg'] + $print_fisa['grand_total_vandute_ar_8'] + $print_fisa['grand_total_vandute_ar_9']}</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_bg'] + $print_fisa['grand_valoare_ar_8'] + $print_fisa['grand_valoare_ar_9']}</td>
+                    </tr>
+                    <tr class="info">
+                        <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_comision_bg'] + $print_fisa['grand_comision_ar_8'] + $print_fisa['grand_comision_ar_9']}</td>
+                    </tr>
+                    <tr class="info">
+                        <td style="text-align: left;font-weight: 900;">Def. BG + AR</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_defecte_bg'] + $print_fisa['grand_defecte_ar_8'] + $print_fisa['grand_defecte_ar_9']}</td>
+                    </tr>
+                </table>
+            </div>
+        {/if}
+    </div>
+
 </section>
 </body>
 </html>
