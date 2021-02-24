@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 13:55:07
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 13:56:13
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1614167627,
+      1 => 1614167722,
       2 => 'file',
     ),
   ),
@@ -404,7 +404,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                 <th colspan="3" style="text-align: center;">PRET UNITAR</th>
                 <th colspan="3" style="text-align: center;">COMISION</th>
                 <th colspan="3" style="text-align: center;">TOTAL BUCATI</th>
-                <th colspan="3" style="text-align: center;">TOTAL VAL. INCASARE</th>
+                <th colspan="3" style="text-align: center;">TOTAL VAL. INCASATA</th>
                 <th colspan="3" style="text-align: center;">TOTAL COMISION</th>
                 <th colspan="3" style="text-align: center;">VALOARE BUCATI BG/AR</th>
             </tr>

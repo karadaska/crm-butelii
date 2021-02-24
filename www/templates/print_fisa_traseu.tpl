@@ -78,11 +78,12 @@
                     Km plecare:<br/>
                     Km sosire:<br/>
                     Nr. clienti: {count($print_fisa['clienti'])}<br/>
-                    Data: {$print_fisa['data_intrare']}<br/>
                 </h5>
             </td>
+
         </tr>
     </table>
+    <span style="text-align: center;"><h1>RAPORT ZILNIC</h1></span>
     <table border="1" class="print" style="width: 1800px;">
         <thead>
         <tr>
@@ -332,7 +333,10 @@
             </div>
         {/if}
     </div>
-
+    <br/>
+    <div style="font-weight: 900;margin-top: 20px;">
+        <span style="font-weight: 900;margin-top: 20px;"> Data: {$print_fisa['data_intrare']}</span>
+    </div>
 </section>
 </body>
 </html>
