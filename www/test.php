@@ -57,7 +57,7 @@ $stare_id = 1;
 //    'stari' => array(3)
 //));
 
-//$b = Stocuri::getFisaGenerataById(149);
+$b = Stocuri::getFisaGenerataById(148);
 
 
 //$b = Clienti::getRaportLivrariClienti(2, array(
@@ -103,7 +103,7 @@ $stare_id = 1;
 //$b = Clienti::getCantitatiByPretClient(2544, 55);
 //Stocuri -----------------------------------------------------------
 //Stocuri -----------------------------------------------------------
-$b = Stocuri::getFise();
+//$b = Stocuri::getFise();
 //$b = Stocuri::getCantitatiProduseClientiByFisaId(183);
 
 
