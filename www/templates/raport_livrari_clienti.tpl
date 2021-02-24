@@ -62,9 +62,9 @@
                                         <thead>
                                         <tr>
                                             <th style="text-align: center;" rowspan="2">#</th>
-                                            <th style="text-align: left;" rowspan="2">Localitate</th>
-                                            <th style="text-align: left;" rowspan="2">Client</th>
-                                            <th style="text-align: left;" rowspan="2">Telefon</th>
+                                            <th style="text-align: center;" rowspan="2">LOCALITATE</th>
+                                            <th style="text-align: center;" rowspan="2">CLIENT</th>
+                                            <th style="text-align: center;" rowspan="2">TELEFON</th>
                                             <th colspan="2">BG/AR</th>
                                             <th colspan="2">PRET UNITAR</th>
                                             <th colspan="2">COMISION</th>
@@ -108,8 +108,6 @@
                                                 <td>
                                                     {if ($client['sters'] == 0)}
                                                         {$client['nume_client']}
-                                                        <br/>
-                                                        {$client['client_id']}
                                                     {else}
                                                         <abbr title="Client sters de pe acest traseu"
                                                               style="color: red;"> {$client['nume_client']}</abbr>
@@ -284,9 +282,9 @@
                                         <thead>
                                         <tr>
                                             <th style="text-align: center;" rowspan="2">#</th>
-                                            <th style="text-align: left;" rowspan="2">Localitate</th>
-                                            <th style="text-align: left;" rowspan="2">Client</th>
-                                            <th style="text-align: left;" rowspan="2">Telefon</th>
+                                            <th style="text-align: center;" rowspan="2">LOCALITATE</th>
+                                            <th style="text-align: center;" rowspan="2">CLIENT</th>
+                                            <th style="text-align: center;" rowspan="2">TELEFON</th>
                                             <th colspan="3">BG/AR</th>
                                             <th colspan="3">PRET UNITAR</th>
                                             <th colspan="3">COMISION</th>
@@ -341,8 +339,6 @@
                                                 <td>
                                                     {if ($client['sters'] == 0)}
                                                         {$client['nume_client']}
-                                                        <br/>
-                                                        {$client['id']}
                                                     {else}
                                                         <abbr title="Client sters de pe acest traseu"
                                                               style="color: red;"> {$client['nume_client']}</abbr>
@@ -356,8 +352,8 @@
                                                 <td style="text-align: center;border-left:double">{($client['target']['1']['pret'] !='') ? $client['target']['1']['pret'] - $client['target']['1']['comision']  : '-'}</td>
                                                 <td style="text-align: center">{($client['target']['3']['pret'] !='') ? $client['target']['3']['pret'] - $client['target']['3']['comision'] : '-'}</td>
                                                 <td style="text-align: center;border-right:double">{($client['target']['4']['pret'] !='') ? $client['target']['4']['pret'] - $client['target']['4']['comision'] : '-'}</td>
-                                                <td>{($client['target']['1']['comision'] !='') ? $client['target']['1']['comision'] : '-'}</td>
-                                                <td style=>{($client['target']['3']['comision'] !='') ? $client['target']['3']['comision'] : '-' }</td>
+                                                <td style="text-align: center">{($client['target']['1']['comision'] !='') ? $client['target']['1']['comision'] : '-'}</td>
+                                                <td style="text-align: center;">{($client['target']['3']['comision'] !='') ? $client['target']['3']['comision'] : '-' }</td>
                                                 <td style="text-align: center;border-right:double">{($client['target']['4']['comision'] !='') ? $client['target']['4']['comision'] : '-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] :'-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8'] !='') ? $client['total_produse']['ar_8']['total_ar_8'] : '-'}</td>
