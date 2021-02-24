@@ -107,10 +107,14 @@
                                                     class="span3">{strtoupper($client['nume_localitate'])}</td>
                                                 <td>
                                                     {if ($client['sters'] == 0)}
-                                                        {strtoupper($client['nume_client'])}
+                                                        <a href="edit_client.php?id={$client['id']}">
+                                                            {strtoupper($client['nume_client'])}
+                                                        </a>
                                                     {else}
-                                                        <abbr title="Client sters de pe acest traseu"
-                                                              style="color: red;"> {strtoupper($client['nume_client'])}</abbr>
+                                                        <a href="edit_client.php?id={$client['id']}">
+                                                            <abbr title="Client sters de pe acest traseu"
+                                                                  style="color: red;"> {strtoupper($client['nume_client'])}</abbr>
+                                                        </a>
                                                     {/if}
                                                 </td>
                                                 <td>{$client['telefon']}<br/>{$client['telefon2']}</td>
@@ -338,10 +342,16 @@
                                                     class="span3">{strtoupper($client['nume_localitate'])}</td>
                                                 <td>
                                                     {if ($client['sters'] == 0)}
-                                                        {strtoupper($client['nume_client'])}
+                                                        <a href="edit_client.php?id={$client['id']}">
+
+                                                            {strtoupper($client['nume_client'])}
+                                                        </a>
                                                     {else}
-                                                        <abbr title="Client sters de pe acest traseu"
-                                                              style="color: red;"> {strtoupper($client['nume_client'])}</abbr>
+                                                        <a href="edit_client.php?id={$client['id']}">
+
+                                                            <abbr title="Client sters de pe acest traseu"
+                                                                  style="color: red;"> {strtoupper($client['nume_client'])}</abbr>
+                                                        </a>
                                                     {/if}
                                                 </td>
                                                 <td>{$client['telefon']}<br/>{$client['telefon2']}</td>
