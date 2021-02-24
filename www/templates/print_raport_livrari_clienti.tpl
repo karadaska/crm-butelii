@@ -407,7 +407,7 @@
                             <span style="text-align: center;">-</span>
                         {/if}
                     </td>
-                    <td style="text-align: ce">
+                    <td style="text-align: center;">
                         {if count($client['lista_preturi_ar_9']) >0}
                             <table border="1">
                                 <tr>

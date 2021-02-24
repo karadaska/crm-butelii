@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 09:44:39
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 09:48:06
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1614152653,
+      1 => 1614152859,
       2 => 'file',
     ),
   ),
@@ -552,7 +552,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                             <span style="text-align: center;">-</span>
                         <?php }?>
                     </td>
-                    <td style="text-align: ce">
+                    <td style="text-align: center;">
                         <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9'])>0) {?>
                             <table border="1">
                                 <tr>
