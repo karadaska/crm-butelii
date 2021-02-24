@@ -6,7 +6,9 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-people"></i>Completare fisa
+                    <h1><i class="icon20 i-people"></i>Completare fisa <a href="edit_fisa_traseu.php?id={$fisa['id']}">
+                            <button class="btn btn-mini btn-primary">Edit fisa</button>
+                        </a>
                         <table class="table-bordered table">
                             <tr>
                                 <th style="text-align: left;vertical-align: middle;"><h6
@@ -659,31 +661,31 @@
                         {/if}
                         {$total_afisare = $fisa['grand_total_vandute_bg'] + $fisa['grand_total_vandute_ar_9'] + $fisa['grand_total_vandute_ar_9'] +  $fisa['grand_defecte_bg'] + $fisa['grand_defecte_ar_8'] + $fisa['grand_defecte_ar_9']}
                         {if ($total_afisare != 0)}
-                        <div style="margin-left: 10px;">
-                            <table class="table table-bordered table-striped" style="width: 180px;">
-                                <tr class="info">
-                                    <td style="text-align: center;font-weight: 900;color: red;" colspan="2">
-                                        TOTALURI
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: left;font-weight: 900;">BG + AR</td>
-                                    <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_bg'] + $fisa['grand_total_vandute_ar_8'] + $fisa['grand_total_vandute_ar_9']}</td>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
-                                    <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg'] + $fisa['grand_valoare_ar_8'] + $fisa['grand_valoare_ar_9']}</td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
-                                    <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_bg'] + $fisa['grand_comision_ar_8'] + $fisa['grand_comision_ar_9']}</td>
-                                </tr>
-                                <tr class="info">
-                                    <td style="text-align: left;font-weight: 900;">Def. BG + AR</td>
-                                    <td style="text-align: center;font-weight: 900;">{$fisa['grand_defecte_bg'] + $fisa['grand_defecte_ar_8'] + $fisa['grand_defecte_ar_9']}</td>
-                                </tr>
-                            </table>
-                        </div>
+                            <div style="margin-left: 10px;">
+                                <table class="table table-bordered table-striped" style="width: 180px;">
+                                    <tr class="info">
+                                        <td style="text-align: center;font-weight: 900;color: red;" colspan="2">
+                                            TOTALURI
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">BG + AR</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_bg'] + $fisa['grand_total_vandute_ar_8'] + $fisa['grand_total_vandute_ar_9']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg'] + $fisa['grand_valoare_ar_8'] + $fisa['grand_valoare_ar_9']}</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_comision_bg'] + $fisa['grand_comision_ar_8'] + $fisa['grand_comision_ar_9']}</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td style="text-align: left;font-weight: 900;">Def. BG + AR</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_defecte_bg'] + $fisa['grand_defecte_ar_8'] + $fisa['grand_defecte_ar_9']}</td>
+                                    </tr>
+                                </table>
+                            </div>
                         {/if}
                     </div>
                     <div style="margin-top: 100px;"></div>
