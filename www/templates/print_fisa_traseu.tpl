@@ -221,17 +221,6 @@
             <td style="text-align: center;"></td>
         </tr>
     </table>
-    {*<table border="1">*}
-        {*<tr>*}
-            {*<td>TOTAL BUC. VANDUTE (BG + AR) = {$total_bg_11 + $total_ar_9 + $total_ar_8} </td>*}
-        {*</tr>*}
-        {*<tr>*}
-            {*<td>TOTAL VAL. INCASATA (BG + AR) = {$total_bg_11_unitar + $total_ar_9_unitar + $total_ar_8_unitar}</td>*}
-        {*</tr>*}
-        {*<tr>*}
-            {*<td>TOTAL COMISION (BG + AR) = {$total_bg_11_comision + $total_ar_9_comision + $total_ar_8_comision}</td>*}
-        {*</tr>*}
-    {*</table>*}
 
     <div style="display: inline-flex;margin-top: 20px;">
         {if ($print_fisa['grand_total_vandute_bg'] != 0 || $print_fisa['grand_defecte_bg'] != 0)}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 13:46:17
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 13:51:43
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:93953769760363ba43e8b40-06532767%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '28466ecbac126ded8271f40af77df08dc0861b8e' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl',
-      1 => 1614167176,
+      1 => 1614167500,
       2 => 'file',
     ),
   ),
@@ -309,17 +309,6 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
             <td style="text-align: center;"></td>
         </tr>
     </table>
-    
-        
-            
-        
-        
-            
-        
-        
-            
-        
-    
 
     <div style="display: inline-flex;margin-top: 20px;">
         <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']!=0)) {?>

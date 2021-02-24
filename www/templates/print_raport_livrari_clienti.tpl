@@ -93,7 +93,7 @@
                 <th colspan="2" style="text-align: center;">PRET UNITAR</th>
                 <th colspan="2" style="text-align: center;">COMISION</th>
                 <th colspan="2" style="text-align: center;">TOTAL BUCATI</th>
-                <th colspan="2" style="text-align: center;">TOTAL VAL. INCASARE</th>
+                <th colspan="2" style="text-align: center;">TOTAL VAL. INCASATA</th>
                 <th colspan="2" style="text-align: center;">TOTAL COMISION</th>
                 <th colspan="2" style="text-align: center;">VALOARE BUCATI BG/AR</th>
             </tr>
@@ -299,7 +299,7 @@
                 <th colspan="3" style="text-align: center;">PRET UNITAR</th>
                 <th colspan="3" style="text-align: center;">COMISION</th>
                 <th colspan="3" style="text-align: center;">TOTAL BUCATI</th>
-                <th colspan="3" style="text-align: center;">TOTAL VAL. INCASARE</th>
+                <th colspan="3" style="text-align: center;">TOTAL VAL. INCASATA</th>
                 <th colspan="3" style="text-align: center;">TOTAL COMISION</th>
                 <th colspan="3" style="text-align: center;">VALOARE BUCATI BG/AR</th>
             </tr>
@@ -345,13 +345,13 @@
                 <tr>
                     <td style="text-align: center" class="span1">{$nr++}</td>
                     <td style="text-align: left"
-                        class="span3">{strtoupper($client['nume_localitate'])}</td>
+                        class="span3">{$client['nume_localitate']}</td>
                     <td>
                         {if ($client['sters'] == 0)}
-                            {strtoupper($client['nume_client'])}
+                            {$client['nume_client']}
                         {else}
                             <abbr title="Client sters de pe acest traseu"
-                                  style="color: red;"> {strtoupper($client['nume_client'])}</abbr>
+                                  style="color: red;"> {$client['nume_client']}</abbr>
                         {/if}
                     </td>
                     <td>{$client['telefon']}<br/>{$client['telefon2']}</td>
