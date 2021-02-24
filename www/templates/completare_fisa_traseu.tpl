@@ -590,7 +590,7 @@
                                     </tr>
                                     <tr class="info">
                                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                                        <td style="text-align: left;font-weight: 900;">{$fisa['grand_valoare_bg']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg']}</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total Comision</td>
