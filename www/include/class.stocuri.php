@@ -316,7 +316,7 @@ class Stocuri
                         'defecte' => $item['defecte'],
                         'pret_fisa_sofer' => ($item['pret'] - $item['comision']) ,
                         'comision' => $item['comision'],
-                        'pret_contract' => $item['pret_contract']
+                        'pret_contract' => ($item['pret_contract'] - $item['comision'])
                     );
 
                 }
