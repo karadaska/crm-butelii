@@ -449,7 +449,7 @@
                                                     </th>
                                                     <th class="span1"
                                                         style="text-align: center;font-weight: bolder;width: 100px;">
-                                                        Pret Sofer (Unitar)
+                                                        Pret + comision
                                                     </th>
                                                     <th class="span1"
                                                         style="text-align: center;font-weight: bolder;width: 100px;">

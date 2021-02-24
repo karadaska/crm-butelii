@@ -24,4 +24,5 @@ if ($adauga) {
     header('Location: /culori_butelii.php');
 
 }
+
 $smarty->display($template_page);

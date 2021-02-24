@@ -133,7 +133,8 @@
                         {if ($client['sters'] == 0)}
                             {$client['nume_client']}
                         {else}
-                            <abbr title="Client sters de pe acest traseu" style="color: red;"> {$client['nume_client']}</abbr>
+                            <abbr title="Client sters de pe acest traseu"
+                                  style="color: red;"> {$client['nume_client']}</abbr>
                         {/if}
                     </td>
                     <td>{$client['telefon']}<br/>{$client['telefon2']}</td>
@@ -235,30 +236,30 @@
                 {/if}
             </div>
             {*<div style="margin-left: 10px;">*}
-                {*{if count($preturi_by_ar_8) > 0}*}
-                    {*<table class="table table-bordered"*}
-                           {*style="margin-top: 20px;width: 400px;">*}
-                        {*<tr>*}
-                            {*<th colspan="{count($preturi_by_ar_8)}">Preturi AR 8</th>*}
-                        {*</tr>*}
-                        {*<tr>*}
-                            {*{foreach from=$preturi_by_ar_8 item=pret}*}
-                                {*<td>*}
-                                    {*<table class="table table-bordered">*}
-                                        {*<tr>*}
-                                            {*<th style="text-align: center;">{$pret['pret_ar_8']['pret']}*}
-                                                {*<br/>*}
-                                            {*</th>*}
-                                        {*</tr>*}
-                                        {*<tr>*}
-                                            {*<td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>*}
-                                        {*</tr>*}
-                                    {*</table>*}
-                                {*</td>*}
-                            {*{/foreach}*}
-                        {*</tr>*}
-                    {*</table>*}
-                {*{/if}*}
+            {*{if count($preturi_by_ar_8) > 0}*}
+            {*<table class="table table-bordered"*}
+            {*style="margin-top: 20px;width: 400px;">*}
+            {*<tr>*}
+            {*<th colspan="{count($preturi_by_ar_8)}">Preturi AR 8</th>*}
+            {*</tr>*}
+            {*<tr>*}
+            {*{foreach from=$preturi_by_ar_8 item=pret}*}
+            {*<td>*}
+            {*<table class="table table-bordered">*}
+            {*<tr>*}
+            {*<th style="text-align: center;">{$pret['pret_ar_8']['pret']}*}
+            {*<br/>*}
+            {*</th>*}
+            {*</tr>*}
+            {*<tr>*}
+            {*<td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>*}
+            {*</tr>*}
+            {*</table>*}
+            {*</td>*}
+            {*{/foreach}*}
+            {*</tr>*}
+            {*</table>*}
+            {*{/if}*}
             {*</div>*}
             <div style="margin-left: 10px;w">
                 {if count($preturi_by_ar_9) > 0}
@@ -287,7 +288,7 @@
                 {/if}
             </div>
         </div>
-        {else}
+    {else}
         <table border="1">
             <thead>
             <tr>
@@ -350,7 +351,8 @@
                         {if ($client['sters'] == 0)}
                             {$client['nume_client']}
                         {else}
-                            <abbr title="Client sters de pe acest traseu" style="color: red;"> {$client['nume_client']}</abbr>
+                            <abbr title="Client sters de pe acest traseu"
+                                  style="color: red;"> {$client['nume_client']}</abbr>
                         {/if}
                     </td>
                     <td>{$client['telefon']}<br/>{$client['telefon2']}</td>
@@ -482,30 +484,30 @@
                 {/if}
             </div>
             {*<div style="margin-left: 10px;">*}
-                {*{if count($preturi_by_ar_8) > 0}*}
-                    {*<table border="1"*}
-                           {*style="margin-top: 20px;width: 400px;">*}
-                        {*<tr>*}
-                            {*<th colspan="{count($preturi_by_ar_8)}">Preturi AR 8</th>*}
-                        {*</tr>*}
-                        {*<tr>*}
-                            {*{foreach from=$preturi_by_ar_8 item=pret}*}
-                                {*<td>*}
-                                    {*<table border="1">*}
-                                        {*<tr>*}
-                                            {*<th style="text-align: center;">{$pret['pret_ar_8']['pret']}*}
-                                                {*<br/>*}
-                                            {*</th>*}
-                                        {*</tr>*}
-                                        {*<tr>*}
-                                            {*<td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>*}
-                                        {*</tr>*}
-                                    {*</table>*}
-                                {*</td>*}
-                            {*{/foreach}*}
-                        {*</tr>*}
-                    {*</table>*}
-                {*{/if}*}
+            {*{if count($preturi_by_ar_8) > 0}*}
+            {*<table border="1"*}
+            {*style="margin-top: 20px;width: 400px;">*}
+            {*<tr>*}
+            {*<th colspan="{count($preturi_by_ar_8)}">Preturi AR 8</th>*}
+            {*</tr>*}
+            {*<tr>*}
+            {*{foreach from=$preturi_by_ar_8 item=pret}*}
+            {*<td>*}
+            {*<table border="1">*}
+            {*<tr>*}
+            {*<th style="text-align: center;">{$pret['pret_ar_8']['pret']}*}
+            {*<br/>*}
+            {*</th>*}
+            {*</tr>*}
+            {*<tr>*}
+            {*<td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>*}
+            {*</tr>*}
+            {*</table>*}
+            {*</td>*}
+            {*{/foreach}*}
+            {*</tr>*}
+            {*</table>*}
+            {*{/if}*}
             {*</div>*}
             <div style="margin-left: 10px;w">
                 {if count($preturi_by_ar_9) > 0}
