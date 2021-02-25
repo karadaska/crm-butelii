@@ -71,8 +71,16 @@
                                                 </select>
                                             </th>
                                             <th>
+                                                {*{$date = date('d-m-Y', strtotime($fisa_id['data_intrare']))}*}
+                                                {*<div id="data_start_datepicker" class="input-append date"*}
+                                                     {*data-date="{date("Y-m-d")}"*}
+                                                     {*data-date-format="yyyy-mm-dd">*}
+                                                    {*<input style="margin-bottom: 0;" type="text" name="data_start"*}
+                                                           {*value="{$date}"/>*}
+                                                    {*<span class="add-on"><i class="icon16 i-calendar-4"></i></span>*}
+                                                {*</div>*}
                                                 <input style="width: 120px;" type="date" name="data_start"
-                                                       value="{$fisa_id['data_intrare']}">
+                                                value="{$fisa_id['data_intrare']}">
                                             </th>
                                             <th>
                                                 <button type="submit" name="modifica"
@@ -204,7 +212,7 @@
                                                         {/foreach}
                                                         {if $gasit == 0 }
                                                             <option value={$client['id']}>
-                                                                        {strtoupper($client['nume'])} {if strlen($client['nume_localitate'])>0}[{$client['nume_localitate']}]{/if}
+                                                                {strtoupper($client['nume'])} {if strlen($client['nume_localitate'])>0}[{$client['nume_localitate']}]{/if}
                                                             </option>
                                                         {/if}
                                                     {/foreach}

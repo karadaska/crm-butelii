@@ -28,8 +28,6 @@ $adauga = getRequestParameter('adauga', '');
 $salveaza = getRequestParameter('salveaza', '');
 $smarty->assign('adaugat', 0);
 
-$data_fisa = getRequestParameter('data_fisa', '');
-
 $data_start = getRequestParameter('data_start', '');
 $data_fisa = getRequestParameter('data_fisa', '');
 

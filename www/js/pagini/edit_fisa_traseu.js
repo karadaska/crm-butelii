@@ -1,3 +1,9 @@
+$(document).ready(function () {
+    $('#data_start_datepicker').datepicker({
+        autoclose: true
+    });
+});
+
 function ConsumaStoc() {
     confirm("Esti sigur ca vrei sa scazi din stoc?");
 }

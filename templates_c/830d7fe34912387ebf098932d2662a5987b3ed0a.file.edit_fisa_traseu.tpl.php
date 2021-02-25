@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 11:26:23
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 14:02:18
          compiled from "/var/www/html/fofoweb/www/templates/edit_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:784229793602ce6e8234e61-17225753%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '830d7fe34912387ebf098932d2662a5987b3ed0a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_fisa_traseu.tpl',
-      1 => 1614245180,
+      1 => 1614254533,
       2 => 'file',
     ),
   ),
@@ -152,8 +152,16 @@ $_smarty_tpl->tpl_vars['masina']->_loop = true;
                                                 </select>
                                             </th>
                                             <th>
+                                                
+                                                
+                                                     
+                                                     
+                                                    
+                                                           
+                                                    
+                                                
                                                 <input style="width: 120px;" type="date" name="data_start"
-                                                       value="<?php echo $_smarty_tpl->tpl_vars['fisa_id']->value['data_intrare'];?>
+                                                value="<?php echo $_smarty_tpl->tpl_vars['fisa_id']->value['data_intrare'];?>
 ">
                                             </th>
                                             <th>
@@ -331,7 +339,7 @@ $_smarty_tpl->tpl_vars['asignare']->_loop = true;
                                                         <?php if ($_smarty_tpl->tpl_vars['gasit']->value==0) {?>
                                                             <option value=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
 >
-                                                                        <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume']);?>
+                                                                <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume']);?>
  <?php if (strlen($_smarty_tpl->tpl_vars['client']->value['nume_localitate'])>0) {?>[<?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
 ]<?php }?>
                                                             </option>
