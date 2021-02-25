@@ -78,6 +78,9 @@
                     Km plecare:<br/>
                     Km sosire:<br/>
                     Nr. clienti: {count($print_fisa['clienti'])}<br/>
+                    {$data = $print_fisa['data_intrare']}
+                    {$newDate = date("d-m-Y", strtotime($data))}
+                    <span style="font-weight: 900;margin-top: 20px;"> Data: {$newDate}</span>
                 </h5>
             </td>
 
@@ -335,8 +338,8 @@
     </div>
     <br/>
     <div style="font-weight: 900;margin-top: 20px;">
-        {$data = $print_fisa['data_intrare']}
-        {$newDate = date("m-d-Y", strtotime($data))}
+        {$data = date('Y-m-d')}
+        {$newDate = date("d-m-Y", strtotime($data))}
         <span style="font-weight: 900;margin-top: 20px;"> DATA: {$newDate}</span>
     </div>
 </section>
