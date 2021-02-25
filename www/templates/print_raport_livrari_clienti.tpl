@@ -60,11 +60,11 @@
 <section id="content" class="print">
     <div class="wrapper">
         <input type="button" onclick="setPrint();window.print();return false;" id="print_button" name="print_button"
-               value="Print"/>
+               value="PRINT"/>
         <a href="/raport_livrari_clienti.php?traseu_id={$id}&data_start={$data_start}&data_stop={$data_stop}"
            class="ascuns">
             <button type="button" class="btn btn-mini btn-warning ascuns">
-                Inapoi
+                INAPOI
             </button>
         </a>
     </div>
@@ -85,7 +85,7 @@
                     {$newDateStart} - {$newDateSop}
                 </h2>
                 <h2>
-                    Traseu: {strtoupper($nume_traseu['nume'])} <br/>
+                    TRASEU: {strtoupper($nume_traseu['nume'])} <br/>
                 </h2>
             </td>
         </tr>
@@ -248,7 +248,7 @@
                     <table border="1"
                            style="margin-top: 20px;width: 400px;">
                         <tr>
-                            <th colspan="{count($preturi_by_ar_9)}">Preturi AR 9</th>
+                            <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
                         </tr>
                         <tr>
                             {foreach from=$preturi_by_ar_9 item=pret}
@@ -443,7 +443,7 @@
             <div>{if count($preturi_by_bg_11) > 0}
                     <table border="1" style="margin-top: 20px;width: 400px;">
                         <tr>
-                            <th colspan="{count($preturi_by_bg_11)}">Preturi BG 11</th>
+                            <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
                         </tr>
                         <tr>
                             {foreach from=$preturi_by_bg_11 item=pret}
@@ -469,7 +469,7 @@
                     <table border="1"
                            style="margin-top: 20px;width: 400px;">
                         <tr>
-                            <th colspan="{count($preturi_by_ar_9)}">Preturi AR 9</th>
+                            <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
                         </tr>
                         <tr>
                             {foreach from=$preturi_by_ar_9 item=pret}

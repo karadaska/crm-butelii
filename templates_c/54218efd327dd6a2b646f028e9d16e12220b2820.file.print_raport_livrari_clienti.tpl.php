@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 14:15:13
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 14:29:28
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1614255290,
+      1 => 1614256151,
       2 => 'file',
     ),
   ),
@@ -111,14 +111,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <section id="content" class="print">
     <div class="wrapper">
         <input type="button" onclick="setPrint();window.print();return false;" id="print_button" name="print_button"
-               value="Print"/>
+               value="PRINT"/>
         <a href="/raport_livrari_clienti.php?traseu_id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
 &data_start=<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 &data_stop=<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
 "
            class="ascuns">
             <button type="button" class="btn btn-mini btn-warning ascuns">
-                Inapoi
+                INAPOI
             </button>
         </a>
     </div>
@@ -141,7 +141,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
                 </h2>
                 <h2>
-                    Traseu: <?php echo strtoupper($_smarty_tpl->tpl_vars['nume_traseu']->value['nume']);?>
+                    TRASEU: <?php echo strtoupper($_smarty_tpl->tpl_vars['nume_traseu']->value['nume']);?>
  <br/>
                 </h2>
             </td>
@@ -353,7 +353,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                            style="margin-top: 20px;width: 400px;">
                         <tr>
                             <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value);?>
-">Preturi AR 9</th>
+">PRETURI AR 9</th>
                         </tr>
                         <tr>
                             <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
@@ -610,7 +610,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                     <table border="1" style="margin-top: 20px;width: 400px;">
                         <tr>
                             <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value);?>
-">Preturi BG 11</th>
+">PRETURI BG 11</th>
                         </tr>
                         <tr>
                             <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
@@ -643,7 +643,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                            style="margin-top: 20px;width: 400px;">
                         <tr>
                             <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value);?>
-">Preturi AR 9</th>
+">PRETURI AR 9</th>
                         </tr>
                         <tr>
                             <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;

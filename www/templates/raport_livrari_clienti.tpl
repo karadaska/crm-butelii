@@ -207,7 +207,7 @@
                                                 <table class="table table-bordered"
                                                        style="margin-top: 20px;width: 400px;">
                                                     <tr>
-                                                        <th colspan="{count($preturi_by_bg_11)}">Preturi BG 11</th>
+                                                        <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
                                                     </tr>
                                                     <tr>
                                                         {foreach from=$preturi_by_bg_11 item=pret}
@@ -233,7 +233,7 @@
                                                 <table class="table table-bordered"
                                                        style="margin-top: 20px;width: 400px;">
                                                     <tr>
-                                                        <th colspan="{count($preturi_by_ar_9)}">Preturi AR 9</th>
+                                                        <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
                                                     </tr>
                                                     <tr>
                                                         {foreach from=$preturi_by_ar_9 item=pret}
@@ -446,7 +446,7 @@
                                                 <table class="table table-bordered"
                                                        style="margin-top: 20px;width: 400px;">
                                                     <tr>
-                                                        <th colspan="{count($preturi_by_bg_11)}">Preturi BG</th>
+                                                        <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
                                                     </tr>
                                                     <tr>
                                                         {foreach from=$preturi_by_bg_11 item=pret}
@@ -472,7 +472,7 @@
                                                 <table class="table table-bordered"
                                                        style="margin-top: 20px;width: 400px;">
                                                     <tr>
-                                                        <th colspan="{count($preturi_by_ar_8)}">Preturi AR 8</th>
+                                                        <th colspan="{count($preturi_by_ar_8)}">PRETURI AR 8</th>
                                                     </tr>
                                                     <tr>
                                                         {foreach from=$preturi_by_ar_8 item=pret}
@@ -498,7 +498,7 @@
                                                 <table class="table table-bordered"
                                                        style="margin-top: 20px;width: 400px;">
                                                     <tr>
-                                                        <th colspan="{count($preturi_by_ar_9)}">Preturi AR 9</th>
+                                                        <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
                                                     </tr>
                                                     <tr>
                                                         {foreach from=$preturi_by_ar_9 item=pret}
