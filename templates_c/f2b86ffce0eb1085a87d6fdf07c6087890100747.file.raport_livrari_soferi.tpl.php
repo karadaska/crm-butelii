@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-09 14:27:50
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 15:30:37
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:181507985860227fc6e3c330-67745625%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f2b86ffce0eb1085a87d6fdf07c6087890100747' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl',
-      1 => 1612261266,
+      1 => 1614259823,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60227fc700f067_94239260',
   'variables' => 
   array (
     'title' => 0,
@@ -38,8 +40,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'total_valoare_comision_ar_9' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60227fc700f067_94239260',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60227fc700f067_94239260')) {function content_60227fc700f067_94239260($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -124,7 +124,7 @@ $_smarty_tpl->tpl_vars['sofer']->_loop = true;
                                             <th style="text-align: center;" rowspan="2">#</th>
                                             <th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>
                                             <th style="text-align: center;" rowspan="2">INDICATOR AUTO</th>
-                                            <th style="text-align: center;" rowspan="2">Traseu</th>
+                                            <th style="text-align: center;" rowspan="2">TRASEU</th>
                                             <th colspan="3">TOTAL BUTELII VANDUTE</th>
                                             <th colspan="3">TOTAL VALOARE INCASATA</th>
                                             <th colspan="3">TOTAL COMISION</th>

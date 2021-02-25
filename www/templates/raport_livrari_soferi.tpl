@@ -63,7 +63,7 @@
                                             <th style="text-align: center;" rowspan="2">#</th>
                                             <th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>
                                             <th style="text-align: center;" rowspan="2">INDICATOR AUTO</th>
-                                            <th style="text-align: center;" rowspan="2">Traseu</th>
+                                            <th style="text-align: center;" rowspan="2">TRASEU</th>
                                             <th colspan="3">TOTAL BUTELII VANDUTE</th>
                                             <th colspan="3">TOTAL VALOARE INCASATA</th>
                                             <th colspan="3">TOTAL COMISION</th>
