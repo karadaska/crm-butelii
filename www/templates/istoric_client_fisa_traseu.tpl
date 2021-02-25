@@ -61,7 +61,6 @@
                                                     <br/>
                                                 {/foreach}
                                             </td>
-
                                             <td style="text-align: center;">
                                                 {foreach from=$cantitate['produse'] item = comision_contract}
                                                     {$comision_contract['comision']}

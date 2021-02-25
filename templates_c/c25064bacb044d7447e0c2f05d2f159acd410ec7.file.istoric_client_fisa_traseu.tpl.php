@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 15:33:59
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 11:44:46
          compiled from "/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18422813406022e19d8704d1-73136330%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c25064bacb044d7447e0c2f05d2f159acd410ec7' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl',
-      1 => 1614173636,
+      1 => 1614246258,
       2 => 'file',
     ),
   ),
@@ -120,7 +120,6 @@ $_smarty_tpl->tpl_vars['pret_unitar_client']->_loop = true;
                                                     <br/>
                                                 <?php } ?>
                                             </td>
-
                                             <td style="text-align: center;">
                                                 <?php  $_smarty_tpl->tpl_vars['comision_contract'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['comision_contract']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['cantitate']->value['produse']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
