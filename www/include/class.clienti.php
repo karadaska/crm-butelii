@@ -1201,7 +1201,10 @@ class Clienti
                 $r = array(
                     'pret' => $item['pret'],
                     'client_id' => $item['client_id'],
-                    'total_cantitati_ar_8' => self::getCantitatiAr8ByPretClient($item['client_id'], $traseu_id, $item['pret']),
+                    'total_cantitati_ar_8' => self::getCantitatiAr8ByPretClient($item['client_id'], $traseu_id, $item['pret'], array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop,
+                    )),
                 );
                 array_push($ret, $r);
             }
@@ -1384,13 +1387,13 @@ class Clienti
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
 
-//        if ($data_start == 0) {
-//            $data_start = date('Y-m-01');
-//        }
-//
-//        if ($data_stop == 0) {
-//            $data_stop = date('Y-m-t');
-//        }
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
 
         $ret = array();
         $query = "SELECT  d.nume as nume_localitate, a.client_id, c.nume as nume_client,c.telefon, c.telefon_2 

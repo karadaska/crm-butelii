@@ -34,7 +34,7 @@ $lista_trasee = Trasee::getTrasee();
 $smarty->assign('lista_trasee', $lista_trasee);
 
 $lista_clienti = Clienti::getRaportLivrariClienti($id,
-    $opts = array(
+    array(
         'data_start' => $data_start,
         'data_stop' => $data_stop
     ));

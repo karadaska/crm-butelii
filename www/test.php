@@ -4,7 +4,7 @@ header('content-type: application/json');
 
 $zi_curenta = date('Y-m-d');
 $traseu_id = 36;
-$data_start = '2021-01-02';
+$data_start = '2021-01-01';
 $data_stop = '2021-02-28';
 $depozit_id = 0;
 $sofer_id = 0;
@@ -98,10 +98,20 @@ $stare_id = 1;
 //    'traseu_id' => $traseu_id,
 //    'stare_id' => $stare_id,
 //));
-$b = Clienti::getRaportLivrariClienti(28, array(
-    'data_start' => $data_start,
-    'data_stop' => $data_stop
+//$b = Clienti::getRaportLivrariClienti(28, array(
+//    'data_start' => $data_start,
+//    'data_stop' => $data_stop
+//));
+//$b = Clienti::getPreturiAR8CuComisionByClientId(2376, 28, array(
+//    'data_start' => $data_start,
+//    'data_stop' => $data_stop
+//));
+
+$b = Clienti::getCantitatiAr8ByPretClient(2376, 28,33, array(
+//    'data_start' => $data_start,
+//    'data_stop' => $data_stop
 ));
+
 //$b = Clienti::getPreturiCuComisionByClientId(2456);
 //$b = Clienti::getCantitatiByPretClient(2544, 55);
 //Stocuri -----------------------------------------------------------

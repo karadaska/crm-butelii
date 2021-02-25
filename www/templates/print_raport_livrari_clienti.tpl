@@ -441,7 +441,7 @@
         </table>
         <div style="display: inline-flex">
             <div>{if count($preturi_by_bg_11) > 0}
-                    <table border="1" style="margin-top: 20px;width: 400px;">
+                    <table border="1" style="margin-top: 20px;">
                         <tr>
                             <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
                         </tr>
@@ -464,10 +464,34 @@
                     </table>
                 {/if}
             </div>
+            <div>
+                {if count($preturi_by_ar_8) > 0}
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="{count($preturi_by_ar_8)}">PRETURI AR 8</th>
+                        </tr>
+                        <tr>
+                            {foreach from=$preturi_by_ar_8 item=pret}
+                                <td>
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th style="text-align: center;">{$pret['pret_ar_8']['pret']}
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            {/foreach}
+                        </tr>
+                    </table>
+                {/if}
+            </div>
             <div style="margin-left: 10px;w">
                 {if count($preturi_by_ar_9) > 0}
-                    <table border="1"
-                           style="margin-top: 20px;width: 400px;">
+                    <table border="1" style="margin-top: 20px;">
                         <tr>
                             <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
                         </tr>
