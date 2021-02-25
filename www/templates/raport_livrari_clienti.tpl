@@ -20,7 +20,7 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th style="text-align: left">Traseu
+                            <th style="text-align: left;">Traseu
                                 <select name="traseu_id">
                                     {foreach from=$lista_trasee item=traseu}
                                         <option value={$traseu['id']}
