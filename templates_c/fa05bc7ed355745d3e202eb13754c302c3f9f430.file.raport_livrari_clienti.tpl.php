@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 09:29:15
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 09:42:03
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1614238153,
+      1 => 1614238866,
       2 => 'file',
     ),
   ),
@@ -25,10 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'data_stop' => 0,
     'lista_trasee' => 0,
     'traseu' => 0,
-    'org_date_start' => 0,
-    'date_start' => 0,
-    'org_date_stop' => 0,
-    'date_stop' => 0,
     'depozit_by_traseu' => 0,
     'lista_clienti' => 0,
     'nr' => 0,
@@ -78,7 +74,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th style="text-align: left" width="300px;">Traseu
+                            <th style="text-align: left">Traseu
                                 <select name="traseu_id">
                                     <?php  $_smarty_tpl->tpl_vars['traseu'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['traseu']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_trasee']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -94,39 +90,39 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                         </option>
                                     <?php } ?>
                                 </select>
-                            </th>
-                            <?php $_smarty_tpl->tpl_vars['org_date_start'] = new Smarty_variable($_smarty_tpl->tpl_vars['data_start']->value, null, 0);?>
-                            <?php $_smarty_tpl->tpl_vars['date_start'] = new Smarty_variable(str_replace('-"','.',$_smarty_tpl->tpl_vars['org_date_start']->value), null, 0);?>
-                            <?php $_smarty_tpl->tpl_vars['newDateStart'] = new Smarty_variable(date("d.m.Y",strtotime($_smarty_tpl->tpl_vars['date_start']->value)), null, 0);?>
-
-                            <?php $_smarty_tpl->tpl_vars['org_date_stop'] = new Smarty_variable($_smarty_tpl->tpl_vars['data_stop']->value, null, 0);?>
-                            <?php $_smarty_tpl->tpl_vars['date_stop'] = new Smarty_variable(str_replace('-"','.',$_smarty_tpl->tpl_vars['org_date_stop']->value), null, 0);?>
-                            <?php $_smarty_tpl->tpl_vars['newDateSop'] = new Smarty_variable(date("d.m.Y",strtotime($_smarty_tpl->tpl_vars['date_stop']->value)), null, 0);?>
-
-                            <th>
                                 <div id="data_start_datepicker" class="input-append date" data-date="<?php echo date("Y-m-d");?>
-" data-date-format="yyyy-mm-dd">
-                                    <input style="margin-bottom: 0;" type="text" id="data_start" name="data_start" value="<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
+"
+                                     data-date-format="yyyy-mm-dd">
+                                    <input style="margin-bottom: 0;" type="text" id="data_start" name="data_start"
+                                           value="<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 "/>
                                     <span class="add-on"><i class="icon16 i-calendar-4"></i></span>
                                 </div>
                                 <div id="data_stop_datepicker" class="input-append date" data-date="<?php echo date("Y-m-d");?>
-" data-date-format="yyyy-mm-dd">
-                                    <input style="margin-bottom: 0;" type="text" id="data_stop" name="data_stop" value="<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
+"
+                                     data-date-format="yyyy-mm-dd">
+                                    <input style="margin-bottom: 0;" type="text" id="data_stop" name="data_stop"
+                                           value="<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
 "/>
                                     <span class="add-on"><i class="icon16 i-calendar-4"></i></span>
                                 </div>
-                            <td style="vertical-align: middle">
-
-                            
-                                
-                                                
-                                
-                                       
-                            
-                            <th style="text-align: left;">
                                 <input type="submit" class="btn btn-primary" value="Aplica" name="aplica">
                             </th>
+                            
+                            
+                            
+
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                         </tr>
                         </thead>
                     </table>
@@ -161,7 +157,6 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                             <th colspan="2">VALOARE BUCATI BG/AR</th>
                                         </tr>
                                         <tr>
-
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
@@ -176,7 +171,6 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
-
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -217,7 +211,6 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                 <td><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
 <br/><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon2'];?>
 </td>
-
                                                 <td style="text-align: center;border-left:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['1']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['1']['target'] : '-';?>
 </td>
                                                 <td style="text-align: center"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['4']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['4']['target'] : '-';?>
@@ -443,7 +436,6 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                             <th colspan="3">VALOARE BUCATI BG/AR</th>
                                         </tr>
                                         <tr>
-
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
@@ -456,7 +448,6 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
-
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
@@ -512,7 +503,6 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                 <td><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
 <br/><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon2'];?>
 </td>
-
                                                 <td style="text-align: center;border-left:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['1']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['1']['target'] : '-';?>
 </td>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['3']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['3']['target'] : '-';?>
@@ -531,16 +521,12 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 </td>
                                                 <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['4']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['4']['comision'] : '-';?>
 </td>
-                                                <td style="text-align: center;">
-                                                    <?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'] : '-';?>
-
-                                                    dasds
-                                                </td>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'] : '-';?>
+</td>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8'] : '-';?>
 </td>
                                                 <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'] : '-';?>
 </td>
-
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-';?>
 </td>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8_cu_pret'] : '-';?>

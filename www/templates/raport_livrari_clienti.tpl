@@ -20,7 +20,7 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th style="text-align: left" width="300px;">Traseu
+                            <th style="text-align: left">Traseu
                                 <select name="traseu_id">
                                     {foreach from=$lista_trasee item=traseu}
                                         <option value={$traseu['id']}
@@ -30,6 +30,19 @@
                                         </option>
                                     {/foreach}
                                 </select>
+                                <div id="data_start_datepicker" class="input-append date" data-date="{date("Y-m-d")}"
+                                     data-date-format="yyyy-mm-dd">
+                                    <input style="margin-bottom: 0;" type="text" id="data_start" name="data_start"
+                                           value="{$data_start}"/>
+                                    <span class="add-on"><i class="icon16 i-calendar-4"></i></span>
+                                </div>
+                                <div id="data_stop_datepicker" class="input-append date" data-date="{date("Y-m-d")}"
+                                     data-date-format="yyyy-mm-dd">
+                                    <input style="margin-bottom: 0;" type="text" id="data_stop" name="data_stop"
+                                           value="{$data_stop}"/>
+                                    <span class="add-on"><i class="icon16 i-calendar-4"></i></span>
+                                </div>
+                                <input type="submit" class="btn btn-primary" value="Aplica" name="aplica">
                             </th>
                             {*{$org_date_start = $data_start}*}
                             {*{$date_start = str_replace('-"', '.', $org_date_start)}*}
@@ -38,27 +51,14 @@
                             {*{$org_date_stop = $data_stop}*}
                             {*{$date_stop = str_replace('-"', '.', $org_date_stop)}*}
                             {*{$newDateSop = date("d.m.Y", strtotime($date_stop))}*}
-
-                            <th>
-                                <div id="data_start_datepicker" class="input-append date" data-date="{date("Y-m-d")}" data-date-format="yyyy-mm-dd">
-                                    <input style="margin-bottom: 0;" type="text" id="data_start" name="data_start" value="{$data_start}"/>
-                                    <span class="add-on"><i class="icon16 i-calendar-4"></i></span>
-                                </div>
-                                <div id="data_stop_datepicker" class="input-append date" data-date="{date("Y-m-d")}" data-date-format="yyyy-mm-dd">
-                                    <input style="margin-bottom: 0;" type="text" id="data_stop" name="data_stop" value="{$data_stop}"/>
-                                    <span class="add-on"><i class="icon16 i-calendar-4"></i></span>
-                                </div>
-                            <td style="vertical-align: middle">
-
                             {*<th style="text-align: left;width: 500px;">*}
-                                {*Interval <input autocomplete="off" type="date" name="data_start"*}
-                                                {*value="{date("d-m-Y")}">*}
-                                {*<input autocomplete="off" type="date" name="data_stop"*}
-                                       {*value="{$data_stop}">*}
+                            {*Interval <input autocomplete="off" type="date" name="data_start"*}
+                            {*value="{date("d-m-Y")}">*}
+                            {*<input autocomplete="off" type="date" name="data_stop"*}
+                            {*value="{$data_stop}">*}
                             {*</th>*}
-                            <th style="text-align: left;">
-                                <input type="submit" class="btn btn-primary" value="Aplica" name="aplica">
-                            </th>
+                            {*<th style="text-align: left;">*}
+                            {*</th>*}
                         </tr>
                         </thead>
                     </table>
@@ -93,7 +93,6 @@
                                             <th colspan="2">VALOARE BUCATI BG/AR</th>
                                         </tr>
                                         <tr>
-
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
@@ -108,7 +107,6 @@
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
-
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -137,7 +135,6 @@
                                                     {/if}
                                                 </td>
                                                 <td>{$client['telefon']}<br/>{$client['telefon2']}</td>
-
                                                 <td style="text-align: center;border-left:double">{($client['target']['1']['target'] !='') ? $client['target']['1']['target'] : '-'}</td>
                                                 <td style="text-align: center">{($client['target']['4']['target'] !='') ? $client['target']['4']['target'] : '-'}</td>
                                                 <td style="text-align: center;border-left:double">{($client['target']['1']['pret'] !='') ? $client['target']['1']['pret'] - $client['target']['1']['comision']  : '-'}</td>
@@ -317,7 +314,6 @@
                                             <th colspan="3">VALOARE BUCATI BG/AR</th>
                                         </tr>
                                         <tr>
-
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
@@ -330,7 +326,6 @@
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
-
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
@@ -374,7 +369,6 @@
                                                     {/if}
                                                 </td>
                                                 <td>{$client['telefon']}<br/>{$client['telefon2']}</td>
-
                                                 <td style="text-align: center;border-left:double">{($client['target']['1']['target'] !='') ? $client['target']['1']['target'] : '-'}</td>
                                                 <td style="text-align: center;">{($client['target']['3']['target'] !='') ? $client['target']['3']['target'] : '-'}</td>
                                                 <td style="text-align: center">{($client['target']['4']['target'] !='') ? $client['target']['4']['target'] : '-'}</td>
@@ -384,13 +378,9 @@
                                                 <td style="text-align: center">{($client['target']['1']['comision'] !='') ? $client['target']['1']['comision'] : '-'}</td>
                                                 <td style="text-align: center;">{($client['target']['3']['comision'] !='') ? $client['target']['3']['comision'] : '-' }</td>
                                                 <td style="text-align: center;border-right:double">{($client['target']['4']['comision'] !='') ? $client['target']['4']['comision'] : '-'}</td>
-                                                <td style="text-align: center;">
-                                                    {($client['total_produse']['bg_11']['total_bg_11'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] :'-'}
-                                                    dasds
-                                                </td>
+                                                <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] :'-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8'] !='') ? $client['total_produse']['ar_8']['total_ar_8'] : '-'}</td>
                                                 <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] !='') ? $client['total_produse']['ar_9']['total_ar_9']: '-'}</td>
-
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? $client['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8_cu_pret'] != '') ? $client['total_produse']['ar_8']['total_ar_8_cu_pret'] :'-'}</td>
                                                 <td style="text-align: center;border-right:double;">{($client['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? $client['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-'}</td>

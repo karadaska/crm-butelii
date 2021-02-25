@@ -1383,7 +1383,7 @@ class Clienti
     {
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-//
+
 //        if ($data_start == 0) {
 //            $data_start = date('Y-m-01');
 //        }
@@ -1435,8 +1435,8 @@ class Clienti
                         )),
                     ),
                     'lista_preturi_bg_11' => self::getPreturiBG11CuComisionByClientId($item['client_id'], $traseu_id, array(
-                        'data_start' => '2021-01-01',
-                        'data_stop' => '2021-02-28'
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
                     )),
                     'lista_preturi_ar_9' => self::getPreturiAR9CuComisionByClientId($item['client_id'], $traseu_id, array(
                         'data_start' => $data_start,
