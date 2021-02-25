@@ -18,6 +18,9 @@ $smarty->assign('id',$id);
 $nume_traseu = Trasee::getTraseuById($id);
 $smarty->assign('nume_traseu',$nume_traseu);
 
+$depozit_by_traseu = Depozite::getDepozitByTraseuId($id);
+$smarty->assign('depozit_by_traseu',$depozit_by_traseu);
+
 $data_start = getRequestParameter('data_start',date('Y-m-01'));
 $smarty->assign('data_start', $data_start);
 
@@ -36,7 +39,6 @@ $lista_clienti = Clienti::getRaportLivrariClienti($id,
         'data_stop' => $data_stop
     ));
 $smarty->assign('lista_clienti', $lista_clienti);
-
 
 $preturi_by_bg_11 = Clienti::getPreturiByProdusId(1, $id,
     $opts = array(

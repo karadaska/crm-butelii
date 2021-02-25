@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 11:28:13
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 14:14:53
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1614240870,
+      1 => 1614254987,
       2 => 'file',
     ),
   ),
@@ -108,21 +108,6 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="Aplica" name="aplica">
                             </th>
-                            
-                            
-                            
-
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                            
                         </tr>
                         </thead>
                     </table>
@@ -358,32 +343,6 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                                 </table>
                                             <?php }?>
                                         </div>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
                                         <div style="margin-left: 10px;w">
                                             <?php if (count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value)>0) {?>
                                                 <table class="table table-bordered"
