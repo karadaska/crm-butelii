@@ -1383,14 +1383,14 @@ class Clienti
     {
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-
-        if ($data_start == 0) {
-            $data_start = date('Y-m-01');
-        }
-
-        if ($data_stop == 0) {
-            $data_stop = date('Y-m-t');
-        }
+//
+//        if ($data_start == 0) {
+//            $data_start = date('Y-m-01');
+//        }
+//
+//        if ($data_stop == 0) {
+//            $data_stop = date('Y-m-t');
+//        }
 
         $ret = array();
         $query = "SELECT  d.nume as nume_localitate, a.client_id, c.nume as nume_client,c.telefon, c.telefon_2 
@@ -1421,28 +1421,28 @@ class Clienti
                     'telefon_2' => $item['telefon_2'],
                     'target' => Target::getTargetClientPentruRaportLivrari($item['client_id']),
                     'total_produse' => array(
-                        'bg_11' => self::getTotalCantitatiBGDinFise($item['client_id'], $traseu_id, $opts = array(
+                        'bg_11' => self::getTotalCantitatiBGDinFise($item['client_id'], $traseu_id, array(
                             'data_start' => $data_start,
                             'data_stop' => $data_stop
                         )),
-                        'ar_8' => self::getTotalCantitatiAr8DinFise($item['client_id'], $traseu_id, $opts = array(
+                        'ar_8' => self::getTotalCantitatiAr8DinFise($item['client_id'], $traseu_id, array(
                             'data_start' => $data_start,
                             'data_stop' => $data_stop
                         )),
-                        'ar_9' => self::getTotalCantitatiAr9DinFise($item['client_id'], $traseu_id, $opts = array(
+                        'ar_9' => self::getTotalCantitatiAr9DinFise($item['client_id'], $traseu_id, array(
                             'data_start' => $data_start,
                             'data_stop' => $data_stop
                         )),
                     ),
-                    'lista_preturi_bg_11' => self::getPreturiBG11CuComisionByClientId($item['client_id'], $traseu_id, $opts = array(
+                    'lista_preturi_bg_11' => self::getPreturiBG11CuComisionByClientId($item['client_id'], $traseu_id, array(
                         'data_start' => '2021-01-01',
                         'data_stop' => '2021-02-28'
                     )),
-                    'lista_preturi_ar_9' => self::getPreturiAR9CuComisionByClientId($item['client_id'], $traseu_id, $opts = array(
+                    'lista_preturi_ar_9' => self::getPreturiAR9CuComisionByClientId($item['client_id'], $traseu_id, array(
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     )),
-                    'lista_preturi_ar_8' => self::getPreturiAR8CuComisionByClientId($item['client_id'], $traseu_id, $opts = array(
+                    'lista_preturi_ar_8' => self::getPreturiAR8CuComisionByClientId($item['client_id'], $traseu_id, array(
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ))
