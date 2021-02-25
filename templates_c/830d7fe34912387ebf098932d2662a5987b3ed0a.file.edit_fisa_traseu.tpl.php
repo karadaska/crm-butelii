@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-17 11:50:32
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 11:26:23
          compiled from "/var/www/html/fofoweb/www/templates/edit_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:784229793602ce6e8234e61-17225753%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '830d7fe34912387ebf098932d2662a5987b3ed0a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_fisa_traseu.tpl',
-      1 => 1612168696,
+      1 => 1614245180,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_602ce6e835c580_86934116',
   'variables' => 
   array (
     'title' => 0,
@@ -46,8 +48,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'totaltime' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_602ce6e835c580_86934116',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_602ce6e835c580_86934116')) {function content_602ce6e835c580_86934116($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
