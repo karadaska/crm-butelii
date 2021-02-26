@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-17 14:07:39
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 22:46:36
          compiled from "/var/www/html/fofoweb/www/templates/asigneaza_produse_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:285660358602591153273a3-72985693%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'afbc5c4cca390f86e7496a78f220b24649f60711' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/asigneaza_produse_client.tpl',
-      1 => 1613555861,
+      1 => 1614372395,
       2 => 'file',
     ),
   ),
@@ -59,9 +59,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 "/>
                         <input type="hidden" name="form_asignari_clienti_trasee" value="1"
                                id="form_asignari_clienti_trasee"/>
-                        <div style="float: left;margin-right: 10px;">
-                            <table cellpadding="0" cellspacing="0" border="0"
-                                   class="table table-bordered table-hover" style="width: 680px;">
+                        <div style="float: left;margin-right: 10px;margin-bottom: -20px;">
+                            <table class="table table-bordered table-hover" style="width: 680px;">
                                 <tr>
                                     <th style="text-align: left;">
                                         <select name="tip_produs_id" style="width: 150px;">
@@ -92,13 +91,15 @@ $_smarty_tpl->tpl_vars['target']->_loop = true;
                                             <?php } ?>
                                         </select>
                                     </th>
-                                    <th><input style="width: 160px;" name="target_produs" type="text" placeholder="stoc produs"
+                                    <th><input style="width: 160px;" name="target_produs" type="text"
+                                               placeholder="stoc produs"
                                                autocomplete="off">
                                     </th>
                                     <th><input style="width: 160px;" name="pret_produs" type="text" placeholder="pret"
                                                autocomplete="off">
                                     </th>
-                                    <th><input style="width: 160px;" name="comision_produs" type="text" placeholder="comision"
+                                    <th><input style="width: 160px;" name="comision_produs" type="text"
+                                               placeholder="comision"
                                                autocomplete="off">
                                     </th>
                                     <th>
@@ -113,75 +114,78 @@ $_smarty_tpl->tpl_vars['target']->_loop = true;
                     </form>
                 </div>
                 <?php if (count($_smarty_tpl->tpl_vars['target_by_client_id']->value)>0) {?>
-                <form action="/asigneaza_produse_client.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+                    <form action="/asigneaza_produse_client.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
 " method="post"
-                      id="form_edit_traseu"
-                      name="form_clienti" style="margin-bottom: 0">
-                    <table cellpadding="0" cellspacing="0" border="0"
-                           class="table table-bordered table-hover" style="width: 792px;margin-left: 30px;">
-                        <thead>
-                        <tr>
-                            <td>Produs</td>
-                            <td>Stoc</td>
-                            <td>Pret + comision</td>
-                            <td>Comision</td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php  $_smarty_tpl->tpl_vars['target'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target']->_loop = false;
+                          id="form_edit_traseu"
+                          name="form_clienti">
+                        <table class="table table-bordered table-hover" style="width: 720px;margin-left: 30px;">
+                            <thead>
+                            <tr>
+                                <th style="text-align: center;">Produs</th>
+                                <th style="text-align: center;">Stoc</th>
+                                <th style="text-align: center;">Pret + comision</th>
+                                <th style="text-align: center;">Comision</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php  $_smarty_tpl->tpl_vars['target'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['target_by_client_id']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['target']->key => $_smarty_tpl->tpl_vars['target']->value) {
 $_smarty_tpl->tpl_vars['target']->_loop = true;
 ?>
-                            <tr>
-                                <td style="vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['target']->value['nume_produs'];?>
+                                <tr>
+                                    <td style="vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['target']->value['nume_produs'];?>
 </td>
-                                <td><input type="text" name="target_<?php echo $_smarty_tpl->tpl_vars['target']->value['tip_produs_id'];?>
-" value="<?php echo $_smarty_tpl->tpl_vars['target']->value['target'];?>
+                                    <td style="text-align: right;">
+                                        <input type="text" name="target_<?php echo $_smarty_tpl->tpl_vars['target']->value['tip_produs_id'];?>
 "
-                                           autocomplete="off"/></td>
-                                <td style="text-align: left;"><input name="pret_<?php echo $_smarty_tpl->tpl_vars['target']->value['tip_produs_id'];?>
-" type="text"
-                                                                     value="<?php echo $_smarty_tpl->tpl_vars['target']->value['pret'];?>
+                                               value="<?php echo $_smarty_tpl->tpl_vars['target']->value['target'];?>
+" style="width: 100%"
+                                               autocomplete="off"/>
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <input name="pret_<?php echo $_smarty_tpl->tpl_vars['target']->value['tip_produs_id'];?>
+" type="text" style="width: 100%"
+                                               value="<?php echo $_smarty_tpl->tpl_vars['target']->value['pret'];?>
 " autocomplete="off"/>
-                                </td>
-                                <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['target']->value['comision'];?>
+                                    </td>
+                                    <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['target']->value['comision'];?>
 <?php $_tmp2=ob_get_clean();?><?php if ($_tmp2!='') {?>
-                                    <?php $_smarty_tpl->tpl_vars['valoare_comision'] = new Smarty_variable($_smarty_tpl->tpl_vars['target']->value['comision'], null, 0);?>
+                                        <?php $_smarty_tpl->tpl_vars['valoare_comision'] = new Smarty_variable($_smarty_tpl->tpl_vars['target']->value['comision'], null, 0);?>
                                     <?php } else { ?>
-                                    <?php $_smarty_tpl->tpl_vars['valoare_comision'] = new Smarty_variable(0, null, 0);?>
-                                <?php }?>
-                                <td style="text-align: left;">
-                                    <input name="comision_<?php echo $_smarty_tpl->tpl_vars['target']->value['tip_produs_id'];?>
-" type="text" value="<?php echo $_smarty_tpl->tpl_vars['valoare_comision']->value;?>
+                                        <?php $_smarty_tpl->tpl_vars['valoare_comision'] = new Smarty_variable(0, null, 0);?>
+                                    <?php }?>
+                                    <td style="text-align: right;">
+                                        <input style="width: 100%" name="comision_<?php echo $_smarty_tpl->tpl_vars['target']->value['tip_produs_id'];?>
+" type="text"
+                                               value="<?php echo $_smarty_tpl->tpl_vars['valoare_comision']->value;?>
 "
-                                           autocomplete="off"/>
-                                </td>
-                                <td class="span1" style="text-align: center;">
-                                    <img title="Sterge target produs" src="../images/delete.png"
-                                         style="cursor: pointer"
-                                         onclick="clickOnStergeTargetClient(<?php echo $_smarty_tpl->tpl_vars['target']->value['client_id'];?>
+                                               autocomplete="off"/>
+                                    </td>
+                                    <td class="span1" style="text-align: center;">
+                                        <img title="Sterge target produs" src="../images/delete.png"
+                                             style="cursor: pointer"
+                                             onclick="clickOnStergeTargetClient(<?php echo $_smarty_tpl->tpl_vars['target']->value['client_id'];?>
 ,<?php echo $_smarty_tpl->tpl_vars['target']->value['tip_produs_id'];?>
 )">
-                                </td>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                            <tr>
+                                <th colspan="5">
+                                    <input style="float: right;" class="btn btn-mini btn-info" type="submit"
+                                           name="update"
+                                           value="update"/>
+                                </th>
                             </tr>
-                        <?php } ?>
-                        </tbody>
-                        <tr>
-                            <th colspan="5">
-                                <input style="float: right;" class="btn btn-mini btn-info" type="submit" name="update"
-                                       value="update"/>
-                            </th>
-                        </tr>
-                    </table>
-                </form>
+                        </table>
+                    </form>
                 <?php }?>
             </div>
         </div>
     </section>
 </div>
 <script src="js/pagini/edit_client.js"></script>
-<?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
-;
 <?php }} ?>

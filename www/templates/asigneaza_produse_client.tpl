@@ -17,9 +17,8 @@
                         <input type="hidden" name="id" id="id" value="{$traseu_id['id']}"/>
                         <input type="hidden" name="form_asignari_clienti_trasee" value="1"
                                id="form_asignari_clienti_trasee"/>
-                        <div style="float: left;margin-right: 10px;">
-                            <table cellpadding="0" cellspacing="0" border="0"
-                                   class="table table-bordered table-hover" style="width: 680px;">
+                        <div style="float: left;margin-right: 10px;margin-bottom: -20px;">
+                            <table class="table table-bordered table-hover" style="width: 680px;">
                                 <tr>
                                     <th style="text-align: left;">
                                         <select name="tip_produs_id" style="width: 150px;">
@@ -39,13 +38,15 @@
                                             {/foreach}
                                         </select>
                                     </th>
-                                    <th><input style="width: 160px;" name="target_produs" type="text" placeholder="stoc produs"
+                                    <th><input style="width: 160px;" name="target_produs" type="text"
+                                               placeholder="stoc produs"
                                                autocomplete="off">
                                     </th>
                                     <th><input style="width: 160px;" name="pret_produs" type="text" placeholder="pret"
                                                autocomplete="off">
                                     </th>
-                                    <th><input style="width: 160px;" name="comision_produs" type="text" placeholder="comision"
+                                    <th><input style="width: 160px;" name="comision_produs" type="text"
+                                               placeholder="comision"
                                                autocomplete="off">
                                     </th>
                                     <th>
@@ -60,58 +61,62 @@
                     </form>
                 </div>
                 {if count($target_by_client_id) > 0}
-                <form action="/asigneaza_produse_client.php?id={$id}" method="post"
-                      id="form_edit_traseu"
-                      name="form_clienti" style="margin-bottom: 0">
-                    <table cellpadding="0" cellspacing="0" border="0"
-                           class="table table-bordered table-hover" style="width: 792px;margin-left: 30px;">
-                        <thead>
-                        <tr>
-                            <td>Produs</td>
-                            <td>Stoc</td>
-                            <td>Pret + comision</td>
-                            <td>Comision</td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {foreach from=$target_by_client_id item=target}
+                    <form action="/asigneaza_produse_client.php?id={$id}" method="post"
+                          id="form_edit_traseu"
+                          name="form_clienti">
+                        <table class="table table-bordered table-hover" style="width: 720px;margin-left: 30px;">
+                            <thead>
                             <tr>
-                                <td style="vertical-align: middle;">{$target['nume_produs']}</td>
-                                <td><input type="text" name="target_{$target['tip_produs_id']}" value="{$target['target']}"
-                                           autocomplete="off"/></td>
-                                <td style="text-align: left;"><input name="pret_{$target['tip_produs_id']}" type="text"
-                                                                     value="{$target['pret']}" autocomplete="off"/>
-                                </td>
-                                {if {$target['comision']} !=''}
-                                    {$valoare_comision = $target['comision']}
-                                    {else}
-                                    {$valoare_comision = 0}
-                                {/if}
-                                <td style="text-align: left;">
-                                    <input name="comision_{$target['tip_produs_id']}" type="text" value="{$valoare_comision}"
-                                           autocomplete="off"/>
-                                </td>
-                                <td class="span1" style="text-align: center;">
-                                    <img title="Sterge target produs" src="../images/delete.png"
-                                         style="cursor: pointer"
-                                         onclick="clickOnStergeTargetClient({$target['client_id']},{$target['tip_produs_id']})">
-                                </td>
+                                <th style="text-align: center;">Produs</th>
+                                <th style="text-align: center;">Stoc</th>
+                                <th style="text-align: center;">Pret + comision</th>
+                                <th style="text-align: center;">Comision</th>
+                                <th>&nbsp;</th>
                             </tr>
-                        {/foreach}
-                        </tbody>
-                        <tr>
-                            <th colspan="5">
-                                <input style="float: right;" class="btn btn-mini btn-info" type="submit" name="update"
-                                       value="update"/>
-                            </th>
-                        </tr>
-                    </table>
-                </form>
+                            </thead>
+                            <tbody>
+                            {foreach from=$target_by_client_id item=target}
+                                <tr>
+                                    <td style="vertical-align: middle;">{$target['nume_produs']}</td>
+                                    <td style="text-align: right;">
+                                        <input type="text" name="target_{$target['tip_produs_id']}"
+                                               value="{$target['target']}" style="width: 100%"
+                                               autocomplete="off"/>
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <input name="pret_{$target['tip_produs_id']}" type="text" style="width: 100%"
+                                               value="{$target['pret']}" autocomplete="off"/>
+                                    </td>
+                                    {if {$target['comision']} !=''}
+                                        {$valoare_comision = $target['comision']}
+                                    {else}
+                                        {$valoare_comision = 0}
+                                    {/if}
+                                    <td style="text-align: right;">
+                                        <input style="width: 100%" name="comision_{$target['tip_produs_id']}" type="text"
+                                               value="{$valoare_comision}"
+                                               autocomplete="off"/>
+                                    </td>
+                                    <td class="span1" style="text-align: center;">
+                                        <img title="Sterge target produs" src="../images/delete.png"
+                                             style="cursor: pointer"
+                                             onclick="clickOnStergeTargetClient({$target['client_id']},{$target['tip_produs_id']})">
+                                    </td>
+                                </tr>
+                            {/foreach}
+                            </tbody>
+                            <tr>
+                                <th colspan="5">
+                                    <input style="float: right;" class="btn btn-mini btn-info" type="submit"
+                                           name="update"
+                                           value="update"/>
+                                </th>
+                            </tr>
+                        </table>
+                    </form>
                 {/if}
             </div>
         </div>
     </section>
 </div>
 <script src="js/pagini/edit_client.js"></script>
-{include file="footer.tpl"};
