@@ -216,60 +216,177 @@
         </tr>
         </tbody>
     </table>
-    <div style="display: inline-flex">
-        <div>
-            {if count($preturi_by_bg_11) > 0}
-                <table border="1"
-                       style="margin-top: 20px;width: 400px;">
-                    <tr>
-                        <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
-                    </tr>
-                    <tr>
-                        {foreach from=$preturi_by_bg_11 item=pret}
-                            <td>
-                                <table border="1">
-                                    <tr>
-                                        <th style="text-align: center;">{$pret['pret_bg_11']['pret']}
-                                            <br/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center;">{$pret['pret_bg_11']['cantitate']['0']['total_cantitate']}</td>
-                                    </tr>
-                                </table>
+        <div style="display: inline-flex">
+            {if ($total_bg_11 != 0)}
+                <div>
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">BG
                             </td>
-                        {/foreach}
-                    </tr>
-                </table>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_bg_11}</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_valoare_incasare_bg_11}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_comision_bg_11}</td>
+                        </tr>
+                    </table>
+                </div>
+            {/if}
+            {if ($total_ar_8 != 0)}
+                <div style="margin-left: 10px;">
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">AR
+                                8
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_ar_8}</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_valoare_incasare_ar_8}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_comision_ar_8}</td>
+                        </tr>
+                    </table>
+                </div>
+            {/if}
+            {if ($total_ar_9)}
+                <div style="margin-left: 10px;">
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">AR
+                                9
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_ar_9}</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_valoare_incasare_ar_9}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_comision_ar_9}</td>
+                        </tr>
+                    </table>
+                </div>
+            {/if}
+            {$total_afisare = $total_bg_11 + $total_ar_8  + $total_ar_9}
+            {if ($total_afisare != 0)}
+                <div style="margin-left: 10px;">
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">
+                                TOTALURI
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">BG + AR</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_bg_11 + $total_ar_8 + $total_ar_9}</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_valoare_incasare_bg_11 + $total_valoare_incasare_ar_8 + $total_valoare_incasare_ar_9}</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
+                            <td style="text-align: center;font-weight: 900;">{$total_comision_bg_11 + $total_comision_ar_8 + $total_comision_ar_9}</td>
+                        </tr>
+                    </table>
+                </div>
             {/if}
         </div>
-        <div style="margin-left: 10px;w">
-            {if count($preturi_by_ar_9) > 0}
-                <table border="1"
-                       style="margin-top: 20px;width: 400px;">
-                    <tr>
-                        <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
-                    </tr>
-                    <tr>
-                        {foreach from=$preturi_by_ar_9 item=pret}
-                            <td>
-                                <table border="1">
-                                    <tr>
-                                        <th style="text-align: center;">{$pret['pret_ar_9']['pret']}
-                                            <br/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center;">{$pret['pret_ar_9']['cantitate']['0']['total_cantitate']}</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        {/foreach}
-                    </tr>
-                </table>
-            {/if}
+        <div style="display: inline-flex;margin-left: 20px;">
+            <div>{if count($preturi_by_bg_11) > 0}
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
+                        </tr>
+                        <tr>
+                            {foreach from=$preturi_by_bg_11 item=pret}
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;">{$pret['pret_bg_11']['pret']}
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">{$pret['pret_bg_11']['cantitate']['0']['total_cantitate']}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            {/foreach}
+                        </tr>
+                    </table>
+                {/if}
+            </div>
+            <div style="margin-left: 10px;">
+                {if count($preturi_by_ar_8) > 0}
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="{count($preturi_by_ar_8)}">PRETURI AR 8</th>
+                        </tr>
+                        <tr>
+                            {foreach from=$preturi_by_ar_8 item=pret}
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;">{$pret['pret_ar_8']['pret']}
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            {/foreach}
+                        </tr>
+                    </table>
+                {/if}
+            </div>
+            <div style="margin-left: 10px;w">
+                {if count($preturi_by_ar_9) > 0}
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
+                        </tr>
+                        <tr>
+                            {foreach from=$preturi_by_ar_9 item=pret}
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;">{$pret['pret_ar_9']['pret']}
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">{$pret['pret_ar_9']['cantitate']['0']['total_cantitate']}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            {/foreach}
+                        </tr>
+                    </table>
+                {/if}
+            </div>
         </div>
-    </div>
     {else}
     <table border="1">
         <thead>
@@ -532,83 +649,84 @@
             </div>
         {/if}
     </div>
+        <div style="display: inline-flex;margin-left: 20px;">
+            <div>{if count($preturi_by_bg_11) > 0}
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
+                        </tr>
+                        <tr>
+                            {foreach from=$preturi_by_bg_11 item=pret}
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;">{$pret['pret_bg_11']['pret']}
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">{$pret['pret_bg_11']['cantitate']['0']['total_cantitate']}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            {/foreach}
+                        </tr>
+                    </table>
+                {/if}
+            </div>
+            <div style="margin-left: 10px;">
+                {if count($preturi_by_ar_8) > 0}
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="{count($preturi_by_ar_8)}">PRETURI AR 8</th>
+                        </tr>
+                        <tr>
+                            {foreach from=$preturi_by_ar_8 item=pret}
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;">{$pret['pret_ar_8']['pret']}
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            {/foreach}
+                        </tr>
+                    </table>
+                {/if}
+            </div>
+            <div style="margin-left: 10px;w">
+                {if count($preturi_by_ar_9) > 0}
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
+                        </tr>
+                        <tr>
+                            {foreach from=$preturi_by_ar_9 item=pret}
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;">{$pret['pret_ar_9']['pret']}
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">{$pret['pret_ar_9']['cantitate']['0']['total_cantitate']}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            {/foreach}
+                        </tr>
+                    </table>
+                {/if}
+            </div>
+        </div>
     {/if}
-    <div style="display: inline-flex;margin-left: 20px;">
-        <div>{if count($preturi_by_bg_11) > 0}
-                <table border="1" style="margin-top: 20px;">
-                    <tr>
-                        <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
-                    </tr>
-                    <tr>
-                        {foreach from=$preturi_by_bg_11 item=pret}
-                            <td>
-                                <table border="1">
-                                    <tr>
-                                        <th style="text-align: center;">{$pret['pret_bg_11']['pret']}
-                                            <br/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center;">{$pret['pret_bg_11']['cantitate']['0']['total_cantitate']}</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        {/foreach}
-                    </tr>
-                </table>
-            {/if}
-        </div>
-        <div style="margin-left: 10px;">
-            {if count($preturi_by_ar_8) > 0}
-                <table border="1" style="margin-top: 20px;">
-                    <tr>
-                        <th colspan="{count($preturi_by_ar_8)}">PRETURI AR 8</th>
-                    </tr>
-                    <tr>
-                        {foreach from=$preturi_by_ar_8 item=pret}
-                            <td>
-                                <table border="1">
-                                    <tr>
-                                        <th style="text-align: center;">{$pret['pret_ar_8']['pret']}
-                                            <br/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        {/foreach}
-                    </tr>
-                </table>
-            {/if}
-        </div>
-        <div style="margin-left: 10px;w">
-            {if count($preturi_by_ar_9) > 0}
-                <table border="1" style="margin-top: 20px;">
-                    <tr>
-                        <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
-                    </tr>
-                    <tr>
-                        {foreach from=$preturi_by_ar_9 item=pret}
-                            <td>
-                                <table border="1">
-                                    <tr>
-                                        <th style="text-align: center;">{$pret['pret_ar_9']['pret']}
-                                            <br/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center;">{$pret['pret_ar_9']['cantitate']['0']['total_cantitate']}</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        {/foreach}
-                    </tr>
-                </table>
-            {/if}
-        </div>
-    </div>
 </section>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 13:40:03
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 23:27:30
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1614339600,
+      1 => 1614374846,
       2 => 'file',
     ),
   ),
@@ -40,14 +40,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'total_valoare_incasare_ar_9' => 0,
     'total_comision_bg_11' => 0,
     'total_comision_ar_9' => 0,
-    'preturi_by_bg_11' => 0,
-    'pret' => 0,
-    'preturi_by_ar_9' => 0,
     'total_ar_8' => 0,
     'total_valoare_incasare_ar_8' => 0,
     'total_comision_ar_8' => 0,
     'total_afisare' => 0,
+    'preturi_by_bg_11' => 0,
+    'pret' => 0,
     'preturi_by_ar_8' => 0,
+    'preturi_by_ar_9' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -315,74 +315,210 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
         </tr>
         </tbody>
     </table>
-    <div style="display: inline-flex">
-        <div>
-            <?php if (count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value)>0) {?>
-                <table border="1"
-                       style="margin-top: 20px;width: 400px;">
-                    <tr>
-                        <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value);?>
+        <div style="display: inline-flex">
+            <?php if (($_smarty_tpl->tpl_vars['total_bg_11']->value!=0)) {?>
+                <div>
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">BG
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
+</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value;?>
+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
+</td>
+                        </tr>
+                    </table>
+                </div>
+            <?php }?>
+            <?php if (($_smarty_tpl->tpl_vars['total_ar_8']->value!=0)) {?>
+                <div style="margin-left: 10px;">
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">AR
+                                8
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
+</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value;?>
+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_8']->value;?>
+</td>
+                        </tr>
+                    </table>
+                </div>
+            <?php }?>
+            <?php if (($_smarty_tpl->tpl_vars['total_ar_9']->value)) {?>
+                <div style="margin-left: 10px;">
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">AR
+                                9
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
+</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
+</td>
+                        </tr>
+                    </table>
+                </div>
+            <?php }?>
+            <?php $_smarty_tpl->tpl_vars['total_afisare'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['total_ar_8']->value+$_smarty_tpl->tpl_vars['total_ar_9']->value, null, 0);?>
+            <?php if (($_smarty_tpl->tpl_vars['total_afisare']->value!=0)) {?>
+                <div style="margin-left: 10px;">
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">
+                                TOTALURI
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">BG + AR</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['total_ar_8']->value+$_smarty_tpl->tpl_vars['total_ar_9']->value;?>
+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value+$_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value+$_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
+</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value+$_smarty_tpl->tpl_vars['total_comision_ar_8']->value+$_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
+</td>
+                        </tr>
+                    </table>
+                </div>
+            <?php }?>
+        </div>
+        <div style="display: inline-flex;margin-left: 20px;">
+            <div><?php if (count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value)>0) {?>
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value);?>
 ">PRETURI BG 11</th>
-                    </tr>
-                    <tr>
-                        <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
+                        </tr>
+                        <tr>
+                            <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['preturi_by_bg_11']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars['pret']->value) {
 $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
-                            <td>
-                                <table border="1">
-                                    <tr>
-                                        <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['pret'];?>
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['pret'];?>
 
-                                            <br/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['cantitate']['0']['total_cantitate'];?>
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['cantitate']['0']['total_cantitate'];?>
 </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        <?php } ?>
-                    </tr>
-                </table>
-            <?php }?>
-        </div>
-        <div style="margin-left: 10px;w">
-            <?php if (count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value)>0) {?>
-                <table border="1"
-                       style="margin-top: 20px;width: 400px;">
-                    <tr>
-                        <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value);?>
+                                        </tr>
+                                    </table>
+                                </td>
+                            <?php } ?>
+                        </tr>
+                    </table>
+                <?php }?>
+            </div>
+            <div style="margin-left: 10px;">
+                <?php if (count($_smarty_tpl->tpl_vars['preturi_by_ar_8']->value)>0) {?>
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_ar_8']->value);?>
+">PRETURI AR 8</th>
+                        </tr>
+                        <tr>
+                            <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['preturi_by_ar_8']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars['pret']->value) {
+$_smarty_tpl->tpl_vars['pret']->_loop = true;
+?>
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['pret'];?>
+
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['cantitate']['0']['total_cantitate'];?>
+</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            <?php } ?>
+                        </tr>
+                    </table>
+                <?php }?>
+            </div>
+            <div style="margin-left: 10px;w">
+                <?php if (count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value)>0) {?>
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value);?>
 ">PRETURI AR 9</th>
-                    </tr>
-                    <tr>
-                        <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
+                        </tr>
+                        <tr>
+                            <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['preturi_by_ar_9']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars['pret']->value) {
 $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
-                            <td>
-                                <table border="1">
-                                    <tr>
-                                        <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['pret'];?>
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['pret'];?>
 
-                                            <br/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['cantitate']['0']['total_cantitate'];?>
-</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        <?php } ?>
-                    </tr>
-                </table>
-            <?php }?>
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['cantitate']['0']['total_cantitate'];?>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            <?php } ?>
+                        </tr>
+                    </table>
+                <?php }?>
+            </div>
         </div>
-    </div>
     <?php } else { ?>
     <table border="1">
         <thead>
@@ -712,104 +848,105 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
             </div>
         <?php }?>
     </div>
-    <?php }?>
-    <div style="display: inline-flex;margin-left: 20px;">
-        <div><?php if (count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value)>0) {?>
-                <table border="1" style="margin-top: 20px;">
-                    <tr>
-                        <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value);?>
+        <div style="display: inline-flex;margin-left: 20px;">
+            <div><?php if (count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value)>0) {?>
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value);?>
 ">PRETURI BG 11</th>
-                    </tr>
-                    <tr>
-                        <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
+                        </tr>
+                        <tr>
+                            <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['preturi_by_bg_11']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars['pret']->value) {
 $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
-                            <td>
-                                <table border="1">
-                                    <tr>
-                                        <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['pret'];?>
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['pret'];?>
 
-                                            <br/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['cantitate']['0']['total_cantitate'];?>
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['cantitate']['0']['total_cantitate'];?>
 </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        <?php } ?>
-                    </tr>
-                </table>
-            <?php }?>
-        </div>
-        <div style="margin-left: 10px;">
-            <?php if (count($_smarty_tpl->tpl_vars['preturi_by_ar_8']->value)>0) {?>
-                <table border="1" style="margin-top: 20px;">
-                    <tr>
-                        <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_ar_8']->value);?>
+                                        </tr>
+                                    </table>
+                                </td>
+                            <?php } ?>
+                        </tr>
+                    </table>
+                <?php }?>
+            </div>
+            <div style="margin-left: 10px;">
+                <?php if (count($_smarty_tpl->tpl_vars['preturi_by_ar_8']->value)>0) {?>
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_ar_8']->value);?>
 ">PRETURI AR 8</th>
-                    </tr>
-                    <tr>
-                        <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
+                        </tr>
+                        <tr>
+                            <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['preturi_by_ar_8']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars['pret']->value) {
 $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
-                            <td>
-                                <table border="1">
-                                    <tr>
-                                        <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['pret'];?>
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['pret'];?>
 
-                                            <br/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['cantitate']['0']['total_cantitate'];?>
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['cantitate']['0']['total_cantitate'];?>
 </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        <?php } ?>
-                    </tr>
-                </table>
-            <?php }?>
-        </div>
-        <div style="margin-left: 10px;w">
-            <?php if (count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value)>0) {?>
-                <table border="1" style="margin-top: 20px;">
-                    <tr>
-                        <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value);?>
+                                        </tr>
+                                    </table>
+                                </td>
+                            <?php } ?>
+                        </tr>
+                    </table>
+                <?php }?>
+            </div>
+            <div style="margin-left: 10px;w">
+                <?php if (count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value)>0) {?>
+                    <table border="1" style="margin-top: 20px;">
+                        <tr>
+                            <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value);?>
 ">PRETURI AR 9</th>
-                    </tr>
-                    <tr>
-                        <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
+                        </tr>
+                        <tr>
+                            <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['preturi_by_ar_9']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars['pret']->value) {
 $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
-                            <td>
-                                <table border="1">
-                                    <tr>
-                                        <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['pret'];?>
+                                <td>
+                                    <table border="1">
+                                        <tr>
+                                            <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['pret'];?>
 
-                                            <br/>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['cantitate']['0']['total_cantitate'];?>
-</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        <?php } ?>
-                    </tr>
-                </table>
-            <?php }?>
+                                                <br/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['cantitate']['0']['total_cantitate'];?>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            <?php } ?>
+                        </tr>
+                    </table>
+                <?php }?>
+            </div>
         </div>
-    </div>
+    <?php }?>
 </section>
 </body>
 </html>
