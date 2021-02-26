@@ -449,9 +449,9 @@
                                                         style="text-align: center;font-weight: bolder;">
                                                         Stoc
                                                     </th>
-                                                    <th class="span1"
+                                                    <th class="span2"
                                                         style="text-align: center;font-weight: bolder;">
-                                                        Contract
+                                                        Pret Contract
                                                     </th>
                                                     <th class="span1"
                                                         style="text-align: center;font-weight: bolder;width: 100px;">
@@ -484,7 +484,7 @@
                                                             {$target_client['target']}
                                                         </td>
                                                         <td style="text-align: center;vertical-align: middle;">
-                                                            {$target_client['pret']}
+                                                            <abbr title="PRET + COMISION DIN CONTRACT">{$target_client['pret']}</abbr>
                                                         </td>
                                                         {if $realizat_produs['pret'] == 0}
                                                             {$valoare_cantitate = $target_client['pret']}
@@ -497,14 +497,14 @@
                                                             {else}
                                                                 {$title_pret = 'PRET MAI MIC DECAT CEL DIN CONTRACT'}
                                                             {/if}
-                                                            <td title="{$title_pret}">
+                                                            <td title="{$title_pret}" style="text-align: right;">
                                                                 <input style="text-align: right;width: 100px;border-color: red"
                                                                        value="{$valoare_cantitate}"
                                                                        type="text" autocomplete="off"
                                                                        name="pret_{$fisa['depozit_id']}_{$client['client_id']}_{$target_client['tip_produs_id']}">
                                                             </td>
                                                         {else}
-                                                            <td>
+                                                            <td style="text-align: right;">
                                                                 <input style="text-align: right;width: 100px;"
                                                                        value="{$valoare_cantitate}"
                                                                        type="text" autocomplete="off"
