@@ -43,12 +43,12 @@
                                     <tbody>
                                     {foreach from=$cantitati_produse_fisa_intoarcere item=cantitate}
                                         <tr>
-                                            <td style="text-align: center"><a target="_blank"
+                                            <td style="text-align: center;vertical-align: middle;"><a target="_blank"
                                                                               href="completare_fisa_traseu.php?id={$cantitate['fisa_id']}">{$cantitate['fisa_id']}</a>
                                             </td>
-                                            <td style="text-align: center">{$cantitate['nume_traseu']}</td>
-                                            <td style="text-align: center">{$cantitate['numar']}</td>
-                                            <td style="text-align: left">{$cantitate['nume_sofer']}</td>
+                                            <td style="text-align: center;vertical-align: middle;">{$cantitate['nume_traseu']}</td>
+                                            <td style="text-align: center;vertical-align: middle;">{$cantitate['numar']}</td>
+                                            <td style="text-align: left;vertical-align: middle;">{$cantitate['nume_sofer']}</td>
                                             <td>
                                                 {foreach from=$cantitate['produse'] item = x}
                                                         {$x['nume_produs']} => [Vandute: {$x['vandute']}, Defecte: {$x['defecte']}]
@@ -83,7 +83,7 @@
                                             <td style="text-align: center;vertical-align: middle;">
                                                 {($cantitate['observatie']['nume_observatie'] !='') ? $cantitate['observatie']['nume_observatie'] : '-'}
                                             </td>
-                                            <td style="text-align: center;">{$cantitate['data_intrare']}</td>
+                                            <td style="text-align: center;vertical-align: middle;">{$cantitate['data_intrare']}</td>
                                         </tr>
                                     {/foreach}
                                     </tbody>

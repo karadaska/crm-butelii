@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 22:30:36
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 22:34:48
          compiled from "/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18422813406022e19d8704d1-73136330%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c25064bacb044d7447e0c2f05d2f159acd410ec7' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl',
-      1 => 1614371434,
+      1 => 1614371687,
       2 => 'file',
     ),
   ),
@@ -84,16 +84,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars['cantitate']->key => $_smarty_tpl->tpl
 $_smarty_tpl->tpl_vars['cantitate']->_loop = true;
 ?>
                                         <tr>
-                                            <td style="text-align: center"><a target="_blank"
+                                            <td style="text-align: center;vertical-align: middle;"><a target="_blank"
                                                                               href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['cantitate']->value['fisa_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['fisa_id'];?>
 </a>
                                             </td>
-                                            <td style="text-align: center"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['nume_traseu'];?>
+                                            <td style="text-align: center;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['nume_traseu'];?>
 </td>
-                                            <td style="text-align: center"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['numar'];?>
+                                            <td style="text-align: center;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['numar'];?>
 </td>
-                                            <td style="text-align: left"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['nume_sofer'];?>
+                                            <td style="text-align: left;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['nume_sofer'];?>
 </td>
                                             <td>
                                                 <?php  $_smarty_tpl->tpl_vars['x'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['x']->_loop = false;
@@ -158,7 +158,7 @@ $_smarty_tpl->tpl_vars['valoare_comision_sofer']->_loop = true;
                                                 <?php echo $_smarty_tpl->tpl_vars['cantitate']->value['observatie']['nume_observatie']!='' ? $_smarty_tpl->tpl_vars['cantitate']->value['observatie']['nume_observatie'] : '-';?>
 
                                             </td>
-                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['data_intrare'];?>
+                                            <td style="text-align: center;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['data_intrare'];?>
 </td>
                                         </tr>
                                     <?php } ?>
