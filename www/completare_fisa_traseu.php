@@ -11,7 +11,6 @@ $template = 'completare_fisa_traseu.tpl';
 
 $id = getRequestParameter('id', 0);
 $adauga = getRequestParameter('adauga', '');
-
 $casa_marcat = getRequestParameter('casa_marcat', '');
 $id_fisa_adauga_produse = getRequestParameter('id_fisa_adauga_produse', '');
 $raport_z = getRequestParameter('raport_z', '');
