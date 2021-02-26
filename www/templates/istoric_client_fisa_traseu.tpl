@@ -51,8 +51,8 @@
                                             <td style="text-align: left">{$cantitate['nume_sofer']}</td>
                                             <td>
                                                 {foreach from=$cantitate['produse'] item = x}
-                                                    {$x['nume_produs']} => [Vandute: {$x['vandute']}, Defecte: {$x['defecte']}]
-                                                    <br/>
+                                                        {$x['nume_produs']} => [Vandute: {$x['vandute']}, Defecte: {$x['defecte']}]
+                                                        <br/>
                                                 {/foreach}
                                             </td>
                                             <td style="border-left: double;text-align: center;">
@@ -64,7 +64,7 @@
                                             <td style="text-align: center;">
                                                 {foreach from=$cantitate['produse'] item = comision_contract}
                                                     {$comision_contract['comision']}
-                                                        <br/>
+                                                    <br/>
                                                 {/foreach}
                                             </td>
                                             <td style="border-left: double;text-align: center">
