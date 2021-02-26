@@ -222,12 +222,12 @@
                     <table border="1"
                            style="margin-top: 20px;width: 400px;">
                         <tr>
-                            <th colspan="{count($preturi_by_bg_11)}">Preturi BG 11</th>
+                            <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
                         </tr>
                         <tr>
                             {foreach from=$preturi_by_bg_11 item=pret}
                                 <td>
-                                    <table class="table table-bordered">
+                                    <table border="1">
                                         <tr>
                                             <th style="text-align: center;">{$pret['pret_bg_11']['pret']}
                                                 <br/>
@@ -253,7 +253,7 @@
                         <tr>
                             {foreach from=$preturi_by_ar_9 item=pret}
                                 <td>
-                                    <table class="table table-bordered">
+                                    <table border="1">
                                         <tr>
                                             <th style="text-align: center;">{$pret['pret_ar_9']['pret']}
                                                 <br/>
