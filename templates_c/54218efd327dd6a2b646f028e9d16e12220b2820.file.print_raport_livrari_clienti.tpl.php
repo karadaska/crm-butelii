@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 10:16:28
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 10:49:38
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1614327387,
+      1 => 1614329291,
       2 => 'file',
     ),
   ),
@@ -321,7 +321,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                            style="margin-top: 20px;width: 400px;">
                         <tr>
                             <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value);?>
-">Preturi BG 11</th>
+">PRETURI BG 11</th>
                         </tr>
                         <tr>
                             <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
@@ -330,7 +330,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars
 $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
                                 <td>
-                                    <table class="table table-bordered">
+                                    <table border="1">
                                         <tr>
                                             <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['pret'];?>
 
@@ -363,7 +363,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars
 $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
                                 <td>
-                                    <table class="table table-bordered">
+                                    <table border="1">
                                         <tr>
                                             <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['pret'];?>
 
@@ -445,15 +445,15 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                     <td style="text-align: center" class="span1"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
                     <td style="text-align: left"
-                        class="span3"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
+                        class="span3"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
 </td>
                     <td>
                         <?php if (($_smarty_tpl->tpl_vars['client']->value['sters']==0)) {?>
-                            <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_client'];?>
+                            <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 
                         <?php } else { ?>
                             <abbr title="Client sters de pe acest traseu"
-                                  style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_client'];?>
+                                  style="color: red;"> <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 </abbr>
                         <?php }?>
                     </td>
@@ -484,7 +484,6 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 </td>
                     <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'] : '-';?>
 </td>
-
                     <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-';?>
 </td>
                     <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8_cu_pret'] : '-';?>

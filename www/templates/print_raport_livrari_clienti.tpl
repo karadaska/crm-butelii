@@ -328,13 +328,13 @@
                 <tr>
                     <td style="text-align: center" class="span1">{$nr++}</td>
                     <td style="text-align: left"
-                        class="span3">{$client['nume_localitate']}</td>
+                        class="span3">{strtoupper($client['nume_localitate'])}</td>
                     <td>
                         {if ($client['sters'] == 0)}
-                            {$client['nume_client']}
+                            {strtoupper($client['nume_client'])}
                         {else}
                             <abbr title="Client sters de pe acest traseu"
-                                  style="color: red;"> {$client['nume_client']}</abbr>
+                                  style="color: red;"> {strtoupper($client['nume_client'])}</abbr>
                         {/if}
                     </td>
                     <td>{$client['telefon']}<br/>{$client['telefon2']}</td>
@@ -350,7 +350,6 @@
                     <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] :'-'}</td>
                     <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8'] !='') ? $client['total_produse']['ar_8']['total_ar_8'] : '-'}</td>
                     <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] !='') ? $client['total_produse']['ar_9']['total_ar_9']: '-'}</td>
-
                     <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? $client['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-'}</td>
                     <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8_cu_pret'] != '') ? $client['total_produse']['ar_8']['total_ar_8_cu_pret'] :'-'}</td>
                     <td style="text-align: center;border-right:double;">{($client['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? $client['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-'}</td>
