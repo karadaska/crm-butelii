@@ -473,7 +473,7 @@
                         <tr>
                             {foreach from=$preturi_by_ar_8 item=pret}
                                 <td>
-                                    <table class="table table-bordered">
+                                    <table border="1">
                                         <tr>
                                             <th style="text-align: center;">{$pret['pret_ar_8']['pret']}
                                                 <br/>
