@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 13:07:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 13:40:03
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1614337636,
+      1 => 1614339600,
       2 => 'file',
     ),
   ),
@@ -607,7 +607,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
         </tbody>
     </table>
     <div style="display: inline-flex">
-        
+        <?php if (($_smarty_tpl->tpl_vars['total_bg_11']->value!=0)) {?>
         <div>
             <table border="1" style="width: 180px;">
                 <tr>
@@ -631,8 +631,8 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                 </tr>
             </table>
         </div>
-        
-        
+        <?php }?>
+        <?php if (($_smarty_tpl->tpl_vars['total_ar_8']->value!=0)) {?>
         <div style="margin-left: 10px;">
             <table border="1" style="width: 180px;">
                 <tr>
@@ -657,8 +657,8 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                 </tr>
             </table>
         </div>
-        
-        
+        <?php }?>
+        <?php if (($_smarty_tpl->tpl_vars['total_ar_9']->value)) {?>
         <div style="margin-left: 10px;">
             <table border="1" style="width: 180px;">
                 <tr>
@@ -712,7 +712,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
             </div>
         <?php }?>
     </div>
-    
+    <?php }?>
     <div style="display: inline-flex;margin-left: 20px;">
         <div><?php if (count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value)>0) {?>
                 <table border="1" style="margin-top: 20px;">

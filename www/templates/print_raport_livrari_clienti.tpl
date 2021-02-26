@@ -439,7 +439,7 @@
         </tbody>
     </table>
     <div style="display: inline-flex">
-        {*{if ($fisa['grand_total_vandute_bg'] != 0 || $fisa['grand_defecte_bg'] != 0)}*}
+        {if ($total_bg_11 != 0)}
         <div>
             <table border="1" style="width: 180px;">
                 <tr>
@@ -460,8 +460,8 @@
                 </tr>
             </table>
         </div>
-        {*{/if}*}
-        {*{if ($fisa['grand_total_vandute_ar_8'] != 0 || $fisa['grand_defecte_ar_8'] != 0)}*}
+        {/if}
+        {if ($total_ar_8 != 0)}
         <div style="margin-left: 10px;">
             <table border="1" style="width: 180px;">
                 <tr>
@@ -483,8 +483,8 @@
                 </tr>
             </table>
         </div>
-        {*{/if}*}
-        {*{if ($fisa['grand_total_vandute_ar_9'] != 0 || $fisa['grand_defecte_ar_9'] != 0)}*}
+        {/if}
+        {if ($total_ar_9)}
         <div style="margin-left: 10px;">
             <table border="1" style="width: 180px;">
                 <tr>
@@ -532,7 +532,7 @@
             </div>
         {/if}
     </div>
-    {*{/if}*}
+    {/if}
     <div style="display: inline-flex;margin-left: 20px;">
         <div>{if count($preturi_by_bg_11) > 0}
                 <table border="1" style="margin-top: 20px;">
