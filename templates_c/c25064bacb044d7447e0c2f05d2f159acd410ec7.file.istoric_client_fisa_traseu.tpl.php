@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 11:44:46
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 21:36:34
          compiled from "/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18422813406022e19d8704d1-73136330%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c25064bacb044d7447e0c2f05d2f159acd410ec7' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl',
-      1 => 1614246258,
+      1 => 1614368193,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cantitate' => 0,
     'x' => 0,
     'pret_unitar_client' => 0,
-    'valoare_sofer_incasata' => 0,
     'comision_contract' => 0,
     'pret_sofer' => 0,
     'valoare_comision_sofer' => 0,
@@ -69,7 +68,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                             VALOARE INCASATA SOFER
                                         </th>
                                         <th rowspan="2">Observatii</th>
-                                        <th rowspan="2">Data adaugarii</th>
+                                        <th rowspan="2">Data</th>
                                     </tr>
                                     <tr>
                                         <th style="border-left: double;">PRET UNITAR</th>
@@ -115,7 +114,7 @@ $_smarty_tpl->tpl_vars['x']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['pret_unitar_client']->key => $_smarty_tpl->tpl_vars['pret_unitar_client']->value) {
 $_smarty_tpl->tpl_vars['pret_unitar_client']->_loop = true;
 ?>
-                                                    <?php echo $_smarty_tpl->tpl_vars['pret_unitar_client']->value['pret_contract']-$_smarty_tpl->tpl_vars['valoare_sofer_incasata']->value['comision'];?>
+                                                    <?php echo $_smarty_tpl->tpl_vars['pret_unitar_client']->value['pret_contract']-$_smarty_tpl->tpl_vars['pret_unitar_client']->value['comision'];?>
 
                                                     <br/>
                                                 <?php } ?>

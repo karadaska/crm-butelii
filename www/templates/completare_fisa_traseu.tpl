@@ -419,7 +419,7 @@
                                                 <br/>
                                             {/foreach}
                                         </td>
-                                        <td class="span3">{$client['nume_localitate']}</td>
+                                        <td class="span3">{strtoupper($client['nume_localitate'])}</td>
                                         <td>
                                             <table class="table table-bordered">
                                                 <tr class="info">
@@ -448,6 +448,10 @@
                                                     <th class="span1"
                                                         style="text-align: center;font-weight: bolder;">
                                                         Stoc
+                                                    </th>
+                                                    <th class="span1"
+                                                        style="text-align: center;font-weight: bolder;">
+                                                        Contract
                                                     </th>
                                                     <th class="span1"
                                                         style="text-align: center;font-weight: bolder;width: 100px;">
@@ -479,6 +483,9 @@
                                                         <td style="text-align: center;vertical-align: middle;">
                                                             {$target_client['target']}
                                                         </td>
+                                                        <td style="text-align: center;vertical-align: middle;">
+                                                            {$target_client['pret']}
+                                                        </td>
                                                         {if $realizat_produs['pret'] == 0}
                                                             {$valoare_cantitate = $target_client['pret']}
                                                         {else}
@@ -504,7 +511,6 @@
                                                                        name="pret_{$fisa['depozit_id']}_{$client['client_id']}_{$target_client['tip_produs_id']}">
                                                             </td>
                                                         {/if}
-
                                                         {if $realizat_produs['cantitate'] != ''}
                                                             {$valoare_cantitate = $realizat_produs['cantitate']}
                                                         {else}
@@ -555,7 +561,7 @@
                                                     </tr>
                                                 {/foreach}
                                                 <tr>
-                                                    <th style="text-align: right;" colspan="3">
+                                                    <th style="text-align: right;" colspan="4">
                                                         Total:
                                                     </th>
                                                     <th style="text-align: right;">{$client['total_vandute']}</th>

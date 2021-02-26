@@ -153,16 +153,15 @@ if (isset($_POST['adauga'])) {
                                                                 SET cantitate = '" . $item_client['cantitate'] . "',
                                                                 defecte = '" . $item_client['defecte'] . "',
                                                                 pret = '" . $item_client['pret'] . "',                                                            
-                                                                pret_contract = '" . ($item_client['pretcontract'] - $item_client['comision']). "',                                                            
+                                                                pret_contract = '" . ($item_client['pretcontract']). "',                                                            
                                                                 comision = '" . $item_client['comision'] . "'                                                           
                                                                 WHERE fisa_id = '" . $id . "'
                                                                 AND client_id = '" . $asignare['client_id'] . "'
                                                                 AND tip_produs_id = '" . $tip_produs_id . "'
                                                                 ";
+//                    pretul contract este adaugat cu tot cu comision
                     myExec($update_detalii_fisa_intoarcere_produse_);
-
                 } else {
-//                    debug('nu am gasit valoare in tabela produse');
 
                     if ($item_client['cantitate'] > 0 || $item_client['defecte']) {
                         $insert_raport_fisa_iesire = "INSERT INTO detalii_fisa_intoarcere_produse 
@@ -374,15 +373,15 @@ if (isset($_POST['consuma_stoc'])) {
     header('Location: /completare_fisa_traseu.php?id=' . $id);
 }
 
-if (isset($_POST['adauga_cantitate_extra'])) {
-    $data_intrare = $fisa['data_intrare'];
-
-    if ($cantitate_extra > 0) {
-        debug('cantitate');
-    }
-
-    header('Location: /completare_fisa_traseu.php?id=' . $id);
-}
+//if (isset($_POST['adauga_cantitate_extra'])) {
+//    $data_intrare = $fisa['data_intrare'];
+//
+//    if ($cantitate_extra > 0) {
+//        debug('cantitate');
+//    }
+//
+//    header('Location: /completare_fisa_traseu.php?id=' . $id);
+//}
 
 $mtime = microtime();
 $mtime = explode(" ", $mtime);

@@ -31,7 +31,7 @@
                                             VALOARE INCASATA SOFER
                                         </th>
                                         <th rowspan="2">Observatii</th>
-                                        <th rowspan="2">Data adaugarii</th>
+                                        <th rowspan="2">Data</th>
                                     </tr>
                                     <tr>
                                         <th style="border-left: double;">PRET UNITAR</th>
@@ -57,7 +57,7 @@
                                             </td>
                                             <td style="border-left: double;text-align: center;">
                                                 {foreach from=$cantitate['produse'] item = pret_unitar_client}
-                                                    {$pret_unitar_client['pret_contract'] - $valoare_sofer_incasata['comision']}
+                                                    {$pret_unitar_client['pret_contract'] - $pret_unitar_client['comision']}
                                                     <br/>
                                                 {/foreach}
                                             </td>
