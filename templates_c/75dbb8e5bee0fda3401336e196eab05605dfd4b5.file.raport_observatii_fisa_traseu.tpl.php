@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-23 15:39:32
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 09:02:00
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1614087568,
+      1 => 1614322919,
       2 => 'file',
     ),
   ),
@@ -53,9 +53,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">
                             <button class="i-print"></button>
                         </a>
-                        <a href="/filtreaza_observatii.php">
-                            <button class="btn btn-mini btn-success">Filtreaza observatii</button>
-                        </a>
+                        
+                            
+                        
                     </h1>
                 </div>
             </div>

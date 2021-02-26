@@ -11,9 +11,9 @@
                         <a href="/print_observatii_fisa_traseu.php?id={$traseu_id}&observatie_id=0&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
-                        <a href="/filtreaza_observatii.php">
-                            <button class="btn btn-mini btn-success">Filtreaza observatii</button>
-                        </a>
+                        {*<a href="/filtreaza_observatii.php">*}
+                            {*<button class="btn btn-mini btn-success">Filtreaza observatii</button>*}
+                        {*</a>*}
                     </h1>
                 </div>
             </div>
