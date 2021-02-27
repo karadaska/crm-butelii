@@ -128,6 +128,16 @@ if (isset($_POST['adauga'])) {
                 $to_add_obs[$client_id] = $value;
             }
         }
+
+        if (preg_match('/^obssecond_/', $key)) {
+            $splits = explode("_", $key);
+            $client_id = $splits[1];
+
+            if (!isset($to_add_obs[$client_id])) {
+                $to_add_obs[$client_id] = $value;
+            }
+        }
+
     }
 
     $data_intrare = $fisa['data_intrare'];

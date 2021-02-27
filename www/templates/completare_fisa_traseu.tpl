@@ -425,7 +425,7 @@
                                                 <tr class="info">
                                                     <td colspan="8"
                                                         style="text-align: center;font-weight: 900;color: red">
-                                                        Observatie client:
+                                                        Observatie I:
                                                         <select name="obs_{$client['client_id']}">
                                                             <option value="0">Alege obs.</option>
                                                             {foreach from=$lista_observatii item=observatie}
@@ -433,6 +433,17 @@
                                                                 {if $observatie['tip_observatie'] == 2}
                                                                     <option value="{$observatie['id']}"
                                                                             {if $observatie['id'] == $client_observatie['observatie_id']}selected="selected"{/if}>
+                                                                        {$observatie['nume']}
+                                                                    </option>
+                                                                {/if}
+                                                            {/foreach}
+                                                        </select>
+                                                        Observatie II:
+                                                        <select name="obssecond_{$client['client_id']}">
+                                                            <option value="0">Alege obs.</option>
+                                                            {foreach from=$lista_observatii item=observatie}
+                                                                {if $observatie['tip_observatie'] == 2}
+                                                                    <option value="{$observatie['id']}">
                                                                         {$observatie['nume']}
                                                                     </option>
                                                                 {/if}
