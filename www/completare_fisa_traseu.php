@@ -93,6 +93,7 @@ $smarty->assign('cantitati_produse_clienti_by_fisa_id', $cantitati_produse_clien
 
 $to_add = array();
 $to_add_obs = array();
+$to_add_obs_second = array();
 if (isset($_POST['adauga'])) {
     foreach ($_POST as $key => $value) {
         if (preg_match('/^cantitate_/', $key) || preg_match('/^defecte_/', $key) || preg_match('/^pret_/', $key) || preg_match('/^comision_/', $key) || preg_match('/^pretcontract_/', $key)) {
@@ -133,8 +134,8 @@ if (isset($_POST['adauga'])) {
             $splits = explode("_", $key);
             $client_id = $splits[1];
 
-            if (!isset($to_add_obs[$client_id])) {
-                $to_add_obs[$client_id] = $value;
+            if (!isset($to_add_obs_second[$client_id])) {
+                $to_add_obs_second[$client_id] = $value;
             }
         }
 
@@ -163,7 +164,7 @@ if (isset($_POST['adauga'])) {
                                                                 SET cantitate = '" . $item_client['cantitate'] . "',
                                                                 defecte = '" . $item_client['defecte'] . "',
                                                                 pret = '" . $item_client['pret'] . "',                                                            
-                                                                pret_contract = '" . ($item_client['pretcontract']). "',                                                            
+                                                                pret_contract = '" . ($item_client['pretcontract']) . "',                                                            
                                                                 comision = '" . $item_client['comision'] . "'                                                           
                                                                 WHERE fisa_id = '" . $id . "'
                                                                 AND client_id = '" . $asignare['client_id'] . "'
@@ -172,7 +173,6 @@ if (isset($_POST['adauga'])) {
 //                    pretul contract este adaugat cu tot cu comision
                     myExec($update_detalii_fisa_intoarcere_produse_);
                 } else {
-
                     if ($item_client['cantitate'] > 0 || $item_client['defecte']) {
                         $insert_raport_fisa_iesire = "INSERT INTO detalii_fisa_intoarcere_produse 
                 (fisa_id, client_id,tip_produs_id,cantitate,defecte, pret, comision, pret_contract, data_intrare) 
@@ -197,13 +197,45 @@ if (isset($_POST['adauga'])) {
                values ('" . $traseu_by_fisa_generata_id['traseu_id'] . "','" . $asignare['client_id'] . "','" . $id . "',
                '" . $to_add_obs[$asignare['client_id']] . "','" . $data_intrare . "')";
                         myExec($insert_observatii_clienti);
-                    }
-                } else {
-                    $update_obs_clienti = "UPDATE observatii_clienti_fisa_traseu set
+                    } else {
+                        $update_obs_clienti = "UPDATE observatii_clienti_fisa_traseu set
                                   observatie_id = '" . $to_add_obs[$asignare['client_id']] . "'
                                   where fisa_id = '" . $id . "'
                                   and client_id = '" . $asignare['client_id'] . "'";
-                    myExec($update_obs_clienti);
+                        myExec($update_obs_clienti);
+                    }
+                }
+
+                $query_obs_clienti = "SELECT observatie_id from observatii_clienti_fisa_traseu
+                                          where fisa_id = '" . $id . "'
+                                          and client_id = '" . $asignare['client_id'] . "'";
+
+                $id_gasit_obs = myQuery($query_obs_clienti);
+                $ret = $id_gasit_obs->fetch(PDO::FETCH_ASSOC);
+                $id_gasit_obs_clienti = $ret['observatie_id'];
+
+                if ($id_gasit_obs->rowCount() == 1 && $to_add_obs_second[$asignare['client_id']] > 0) {
+
+                    $query_second_obs_clienti = "SELECT second_obs from observatii_secundare_fisa
+                                                 WHERE fisa_id = '" . $id . "'
+                                                 AND client_id = '" . $asignare['client_id'] . "'";
+
+                    $obs_second_gasit = myQuery($query_second_obs_clienti);
+                    $ret = $obs_second_gasit->fetch(PDO::FETCH_ASSOC);
+                    $id_gasit_second_obs_clienti = $ret['second_obs'];
+
+                    if ($obs_second_gasit->rowCount() == 0) {
+                        $insert_second_observatii_clienti = "INSERT INTO observatii_secundare_fisa
+               (fisa_id, client_id, parent_obs, second_obs)
+               values ('" . $id . "','" . $asignare['client_id'] . "','" . $to_add_obs[$asignare['client_id']] . "', '" . $to_add_obs_second[$asignare['client_id']] . "')";
+                        myExec($insert_second_observatii_clienti);
+                    } else {
+                        $update_obs_clienti = "UPDATE observatii_secundare_fisa set
+                                  second_obs = '" . $to_add_obs_second[$asignare['client_id']] . "'
+                                  where fisa_id = '" . $id . "'
+                                  and client_id = '" . $asignare['client_id'] . "'";
+                        myExec($update_obs_clienti);
+                    }
                 }
             }
         }
