@@ -64,7 +64,7 @@
                                                                class="table table-bordered table-hover" id="dataTable">
                                                             <thead>
                                                             <tr>
-                                                                <td class="span1">Id_fisa</td>
+                                                                <td class="span1">Id</td>
                                                                 <td>Depozit</td>
                                                                 <td>Traseu</td>
                                                                 <th>Sofer</th>
@@ -111,7 +111,7 @@
                                                                     <td style="text-align: center;vertical-align: top;"
                                                                         class="span3">
                                                                         <a href="edit_fisa_traseu.php?id={$fisa['id']}"
-                                                                           class="btn btn-mini btn-success">Editeaza
+                                                                           class="btn btn-mini btn-success">Edit
                                                                             fisa
                                                                         </a>
                                                                         <a href="completare_fisa_traseu.php?id={$fisa['id']}"

@@ -41,11 +41,11 @@ $stare_id = 1;
 //$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(298,2433);
 
 
-//$b = ParcAuto::getRaportLivrariSoferi(23,
-//    $opts = array(
-//        'data_start' => $data_start,
-//        'data_stop' => $data_stop
-//    ));
+$b = ParcAuto::getRaportLivrariSoferi(23,
+    $opts = array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+    ));
 
 
 //$b = ParcAuto::getTotalCantitatiBGBySoferIdAndTraseuId(23, 29, array(
@@ -107,10 +107,10 @@ $stare_id = 1;
 //    'data_stop' => $data_stop
 //));
 
-$b = Clienti::getCantitatiAr8ByPretClient(2376, 28,33, array(
-//    'data_start' => $data_start,
-//    'data_stop' => $data_stop
-));
+//$b = Clienti::getCantitatiAr8ByPretClient(2376, 28,33, array(
+////    'data_start' => $data_start,
+////    'data_stop' => $data_stop
+//));
 
 //$b = Clienti::getPreturiCuComisionByClientId(2456);
 //$b = Clienti::getCantitatiByPretClient(2544, 55);

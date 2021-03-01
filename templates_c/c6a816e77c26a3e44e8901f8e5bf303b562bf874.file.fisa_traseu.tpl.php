@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-23 14:38:19
+<?php /* Smarty version Smarty-3.1.15, created on 2021-02-28 11:03:41
          compiled from "/var/www/html/fofoweb/www/templates/fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:41291163760227fca5e0d02-36086469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6a816e77c26a3e44e8901f8e5bf303b562bf874' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/fisa_traseu.tpl',
-      1 => 1614083895,
+      1 => 1614503019,
       2 => 'file',
     ),
   ),
@@ -140,7 +140,7 @@ $_smarty_tpl->tpl_vars['luna']->_loop = true;
                                                                class="table table-bordered table-hover" id="dataTable">
                                                             <thead>
                                                             <tr>
-                                                                <td class="span1">Id_fisa</td>
+                                                                <td class="span1">Id</td>
                                                                 <td>Depozit</td>
                                                                 <td>Traseu</td>
                                                                 <th>Sofer</th>
@@ -215,7 +215,7 @@ $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = true;
                                                                         class="span3">
                                                                         <a href="edit_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
 "
-                                                                           class="btn btn-mini btn-success">Editeaza
+                                                                           class="btn btn-mini btn-success">Edit
                                                                             fisa
                                                                         </a>
                                                                         <a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
