@@ -22,10 +22,10 @@ $stare_id = 1;
 //    'data_start' => $zi_curenta
 //));
 
-//$b = Clienti::getRaportLivrariClienti($traseu_id, $opts = array(
-//    'data_start' => $data_start,
-//    'data_stop' => $data_stop
-//));
+$b = Clienti::getRaportLivrariClienti(28, $opts = array(
+    'data_start' => $data_start,
+    'data_stop' => $data_stop
+));
 //$b =Clienti::getPreturiLivrariClienti($traseu_id, $opts = array(
 //        'data_start' => $data_start,
 //    'data_stop' => $data_stop
@@ -40,12 +40,12 @@ $stare_id = 1;
 //$b = Clienti::getFiseByClientId(2433);
 //$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(298,2433);
 
-
-$b = ParcAuto::getRaportLivrariSoferi(23,
-    $opts = array(
-        'data_start' => $data_start,
-        'data_stop' => $data_stop
-    ));
+//
+//$b = ParcAuto::getRaportLivrariSoferi(23,
+//    $opts = array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//    ));
 
 
 //$b = ParcAuto::getTotalCantitatiBGBySoferIdAndTraseuId(23, 29, array(
@@ -159,6 +159,6 @@ $b = ParcAuto::getRaportLivrariSoferi(23,
 //$b = Stocuri::getStoc();
 
 
-$b = Stocuri::getFisaGenerataById(188);
+//$b = Stocuri::getFisaGenerataById(188);
 echo json_encode($b);
 
