@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-01 12:36:11
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-01 12:48:32
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1614594955,
+      1 => 1614595702,
       2 => 'file',
     ),
   ),
@@ -589,25 +589,18 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                                                 <?php }?>
                                                             <?php } ?>
                                                         </select>
-                                                        Observatie II:
-                                                        <select name="obssecond_<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
-">
-                                                            <option value="0">Alege obs.</option>
-                                                            <?php  $_smarty_tpl->tpl_vars['observatie'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['observatie']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['lista_observatii']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['observatie']->key => $_smarty_tpl->tpl_vars['observatie']->value) {
-$_smarty_tpl->tpl_vars['observatie']->_loop = true;
-?>
-                                                                <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Fise::getObservatieSecundaraDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['fisa']->value['id']), null, 0);?>
-                                                                <?php if ($_smarty_tpl->tpl_vars['observatie']->value['tip_observatie']==2) {?>
-                                                                    <option value="<?php echo $_smarty_tpl->tpl_vars['observatie']->value['id'];?>
-" <?php if ($_smarty_tpl->tpl_vars['observatie']->value['id']==$_smarty_tpl->tpl_vars['client_observatie']->value['second_obs']) {?> selected="selected" <?php }?>>
-                                                                        <?php echo $_smarty_tpl->tpl_vars['observatie']->value['nume'];?>
-
-                                                                    </option>
-                                                                <?php }?>
-                                                            <?php } ?>
-                                                        </select>
+                                                        
+                                                        
+                                                            
+                                                            
+                                                                
+                                                                
+                                                                    
+                                                                        
+                                                                    
+                                                                
+                                                            
+                                                        
                                                     </td>
                                                 </tr>
                                                 <tr>

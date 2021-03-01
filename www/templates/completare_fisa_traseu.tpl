@@ -438,18 +438,18 @@
                                                                 {/if}
                                                             {/foreach}
                                                         </select>
-                                                        Observatie II:
-                                                        <select name="obssecond_{$client['client_id']}">
-                                                            <option value="0">Alege obs.</option>
-                                                            {foreach from=$lista_observatii item=observatie}
-                                                                {assign var=client_observatie value=Fise::getObservatieSecundaraDinFisaTraseuByClientIdAndFisaId($client['client_id'],$fisa['id'])}
-                                                                {if $observatie['tip_observatie'] == 2}
-                                                                    <option value="{$observatie['id']}" {if $observatie['id'] == $client_observatie['second_obs']} selected="selected" {/if}>
-                                                                        {$observatie['nume']}
-                                                                    </option>
-                                                                {/if}
-                                                            {/foreach}
-                                                        </select>
+                                                        {*Observatie II:*}
+                                                        {*<select name="obssecond_{$client['client_id']}">*}
+                                                            {*<option value="0">Alege obs.</option>*}
+                                                            {*{foreach from=$lista_observatii item=observatie}*}
+                                                                {*{assign var=client_observatie value=Fise::getObservatieSecundaraDinFisaTraseuByClientIdAndFisaId($client['client_id'],$fisa['id'])}*}
+                                                                {*{if $observatie['tip_observatie'] == 2}*}
+                                                                    {*<option value="{$observatie['id']}" {if $observatie['id'] == $client_observatie['second_obs']} selected="selected" {/if}>*}
+                                                                        {*{$observatie['nume']}*}
+                                                                    {*</option>*}
+                                                                {*{/if}*}
+                                                            {*{/foreach}*}
+                                                        {*</select>*}
                                                     </td>
                                                 </tr>
                                                 <tr>
