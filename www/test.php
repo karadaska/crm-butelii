@@ -158,5 +158,7 @@ $b = ParcAuto::getRaportLivrariSoferi(23,
 //$b = Stocuri::getCountClientiByPret();
 //$b = Stocuri::getStoc();
 
+
+$b = Stocuri::getFisaGenerataById(188);
 echo json_encode($b);
 
