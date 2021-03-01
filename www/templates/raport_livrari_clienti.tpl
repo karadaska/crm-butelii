@@ -73,7 +73,7 @@
                                             <th colspan="2">PRET UNITAR</th>
                                             <th colspan="2">COMISION</th>
                                             <th colspan="2">TOTAL BUCATI</th>
-                                            <th colspan="2">TOTAL VAL. INCASARE</th>
+                                            <th colspan="2">TOTAL VAL. INCASATA</th>
                                             <th colspan="2">TOTAL COMISION</th>
                                             <th colspan="2">VALOARE BUCATI BG/AR</th>
                                         </tr>
@@ -267,7 +267,7 @@
                                             <th colspan="3">PRET UNITAR</th>
                                             <th colspan="3">COMISION</th>
                                             <th colspan="3">TOTAL BUCATI</th>
-                                            <th colspan="3">TOTAL VAL. INCASARE</th>
+                                            <th colspan="3">TOTAL VAL. INCASATA</th>
                                             <th colspan="3">TOTAL COMISION</th>
                                             <th colspan="3">VALOARE BUCATI BG/AR</th>
                                         </tr>

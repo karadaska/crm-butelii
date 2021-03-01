@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 23:21:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-01 13:52:01
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1614374400,
+      1 => 1614599519,
       2 => 'file',
     ),
   ),
@@ -137,7 +137,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                             <th colspan="2">PRET UNITAR</th>
                                             <th colspan="2">COMISION</th>
                                             <th colspan="2">TOTAL BUCATI</th>
-                                            <th colspan="2">TOTAL VAL. INCASARE</th>
+                                            <th colspan="2">TOTAL VAL. INCASATA</th>
                                             <th colspan="2">TOTAL COMISION</th>
                                             <th colspan="2">VALOARE BUCATI BG/AR</th>
                                         </tr>
@@ -389,7 +389,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                             <th colspan="3">PRET UNITAR</th>
                                             <th colspan="3">COMISION</th>
                                             <th colspan="3">TOTAL BUCATI</th>
-                                            <th colspan="3">TOTAL VAL. INCASARE</th>
+                                            <th colspan="3">TOTAL VAL. INCASATA</th>
                                             <th colspan="3">TOTAL COMISION</th>
                                             <th colspan="3">VALOARE BUCATI BG/AR</th>
                                         </tr>
