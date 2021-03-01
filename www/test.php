@@ -49,6 +49,7 @@ $b = Clienti::getRaportLivrariClienti(28, $opts = array(
 
 
 //$b = ParcAuto::getTotalCantitatiBGBySoferIdAndTraseuId(23, 29, array(
+//$b = ParcAuto::getTotalCantitatiBGBySoferIdAndTraseuId(23, 29, array(
 //    'data_start' =>$data_start,
 //    'data_stop' =>$data_stop,
 //));
