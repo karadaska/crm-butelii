@@ -59,13 +59,6 @@
                             </th>
                             <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Aplica" name="aplica"></th>
                         </tr>
-                        {*<tr>*}
-                        {*<th style="text-align: left;font-size: 10px;" colspan="5">*}
-                        {*{foreach from=$lista_observatii_filtrate item=lista}*}
-                        {*{$lista['nume']}: <input type="checkbox" name="obs_{$lista['obs_id']}">*}
-                        {*{/foreach}*}
-                        {*</th>*}
-                        {*</tr>*}
                         </thead>
                     </table>
                 </form>
