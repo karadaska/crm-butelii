@@ -206,39 +206,34 @@ if (isset($_POST['adauga'])) {
                     myExec($update_obs_clienti);
                 }
 
-//                $query_obs_clienti = "SELECT observatie_id from observatii_clienti_fisa_traseu
-//                                          where fisa_id = '" . $id . "'
-//                                          and client_id = '" . $asignare['client_id'] . "'";
-//
-//                $id_gasit_obs = myQuery($query_obs_clienti);
-//                $ret = $id_gasit_obs->fetch(PDO::FETCH_ASSOC);
-//                $id_gasit_obs_clienti = $ret['observatie_id'];
-
-//                if ($to_add_obs[$asignare['client_id']] > 0) {
-                    $query_second_obs_clienti = "SELECT second_obs from observatii_secundare_fisa
+                $query_second_obs_clienti = "SELECT second_obs from observatii_secundare_fisa
                                                  WHERE fisa_id = '" . $id . "'
                                                  AND client_id = '" . $asignare['client_id'] . "'";
 
-                    $obs_second_gasit = myQuery($query_second_obs_clienti);
-                    $ret = $obs_second_gasit->fetch(PDO::FETCH_ASSOC);
-                    $id_gasit_second_obs_clienti = $ret['second_obs'];
+                $obs_second_gasit = myQuery($query_second_obs_clienti);
+                $ret = $obs_second_gasit->fetch(PDO::FETCH_ASSOC);
+                $id_gasit_second_obs_clienti = $ret['second_obs'];
 
-                    if ($obs_second_gasit->rowCount() == 0 && $to_add_obs[$asignare['client_id']] > 0 && $to_add_obssecond[$asignare['client_id']] > 0) {
-                        $insert_second_observatii_clienti = "INSERT INTO observatii_secundare_fisa
+                if ($obs_second_gasit->rowCount() == 0 && $to_add_obs[$asignare['client_id']] > 0 && $to_add_obssecond[$asignare['client_id']] > 0) {
+                    $insert_second_observatii_clienti = "INSERT INTO observatii_secundare_fisa
                (fisa_id, client_id, parent_obs, second_obs)
                values ('" . $id . "','" . $asignare['client_id'] . "','" . $to_add_obs[$asignare['client_id']] . "', '" . $to_add_obssecond[$asignare['client_id']] . "')";
-                        myExec($insert_second_observatii_clienti);
-                    } else {
-                        if (($to_add_obs[$asignare['client_id']] == 0 && $to_add_obssecond[$asignare['client_id']] == 0) ||($to_add_obs[$asignare['client_id']] > 0 && $to_add_obssecond[$asignare['client_id']] > 0) ||($to_add_obs[$asignare['client_id']] > 0 && $to_add_obssecond[$asignare['client_id']] == 0)) {
-                            $update_obs_clienti = "UPDATE observatii_secundare_fisa set
+                    myExec($insert_second_observatii_clienti);
+                } else {
+                    if (($to_add_obs[$asignare['client_id']] == 0
+                            && $to_add_obssecond[$asignare['client_id']] == 0)
+                        || ($to_add_obs[$asignare['client_id']] > 0
+                            && $to_add_obssecond[$asignare['client_id']] > 0)
+                        || ($to_add_obs[$asignare['client_id']] > 0 && $to_add_obssecond[$asignare['client_id']] == 0)
+                    ) {
+                        $update_obs_clienti = "UPDATE observatii_secundare_fisa set
                                   parent_obs ='" . $to_add_obs[$asignare['client_id']] . "',
                                   second_obs = '" . $to_add_obssecond[$asignare['client_id']] . "'
                                   where fisa_id = '" . $id . "'
                                   and client_id = '" . $asignare['client_id'] . "'";
-                            myExec($update_obs_clienti);
-                        }
+                        myExec($update_obs_clienti);
                     }
-//                }
+                }
             }
         }
     }
