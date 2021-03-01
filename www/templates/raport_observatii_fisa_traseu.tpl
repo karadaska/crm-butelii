@@ -84,7 +84,8 @@
                                         <th style="text-align: center;">Masina</th>
                                         <th style="text-align: center;">Sofer</th>
                                         <th style="text-align: center;">Data</th>
-                                        <th style="text-align: left;">Observatie</th>
+                                        <th style="text-align: center;">Observatie I</th>
+                                        <th style="text-align: center;">Observatie Extra</th>
                                         <th style="text-align: center;" class="span1">Fisa</th>
                                     </tr>
                                     </thead>
@@ -101,6 +102,7 @@
                                             <td style="text-align: center;">{$client['nume_sofer']}</td>
                                             <td style="text-align: center;">{$client['data']}</td>
                                             <td style="text-align: left;">{($client['nume_observatie'] !='') ? $client['nume_observatie'] : '-'}</td>
+                                            <td style="text-align: left;">{($client['observatie_extra'] !='') ? $client['observatie_extra'] : '-'}</td>
                                             <td style="text-align: center;"><a href="completare_fisa_traseu.php?id={$client['fisa_id']}">{$client['fisa_id']}</a></td>
                                         </tr>
                                     {/foreach}

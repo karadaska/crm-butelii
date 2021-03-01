@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 09:02:00
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-01 13:31:05
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1614322919,
+      1 => 1614598263,
       2 => 'file',
     ),
   ),
@@ -118,13 +118,6 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                             </th>
                             <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Aplica" name="aplica"></th>
                         </tr>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                         </thead>
                     </table>
                 </form>
@@ -152,7 +145,8 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                         <th style="text-align: center;">Masina</th>
                                         <th style="text-align: center;">Sofer</th>
                                         <th style="text-align: center;">Data</th>
-                                        <th style="text-align: left;">Observatie</th>
+                                        <th style="text-align: center;">Observatie I</th>
+                                        <th style="text-align: center;">Observatie Extra</th>
                                         <th style="text-align: center;" class="span1">Fisa</th>
                                     </tr>
                                     </thead>
@@ -180,6 +174,8 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                             <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['data'];?>
 </td>
                                             <td style="text-align: left;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_observatie']!='' ? $_smarty_tpl->tpl_vars['client']->value['nume_observatie'] : '-';?>
+</td>
+                                            <td style="text-align: left;"><?php echo $_smarty_tpl->tpl_vars['client']->value['observatie_extra']!='' ? $_smarty_tpl->tpl_vars['client']->value['observatie_extra'] : '-';?>
 </td>
                                             <td style="text-align: center;"><a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['fisa_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['client']->value['fisa_id'];?>
