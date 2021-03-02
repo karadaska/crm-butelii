@@ -171,15 +171,16 @@
                                     </tbody>
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza produse"
-                                       class="btn btn-info" name="update">
+                                       class="btn btn-info" name="update"/>
                             </div>
                         </form>
                     </div>
-                    <table class="table table-bordered" style="width:67%;margin-left: 15px;">
+                    <table class="table table-bordered" style="width:68%;margin-left: 15px;">
                         <tr>
                             {if $total_bg_11 > 0}
                                 <th style="text-align: left;color: red;">
-                                    <span style="font-weight: bolder;margin-left: 20px;">BG 11: {$total_bg_11} buc</span><br/>
+                                    <span style="font-weight: bolder;margin-left: 20px;">BG 11: {$total_bg_11}
+                                        buc</span><br/>
                                 </th>
                             {/if}
                             {if $total_ar_8 > 0}
@@ -204,73 +205,75 @@
                             </th>
                         </tr>
                     </table>
-                    {if count($clienti_cu_observatii) > 0 || count($clienti_cu_urgente) > 0}
-                        <div>
-                            <table class="table" style="width: 100%;margin-top: 10px;">
-                                <tr>
-                                    <td>
-                                        {if count($clienti_cu_observatii) > 0}
-                                            <table class="table table-bordered table-hover" style="width: 70%;margin-left: 5px;">
-                                                <thead>
-                                                <tr>
-                                                    <th>Localitate</th>
-                                                    <th>Client</th>
-                                                    <th>Observatii</th>
-                                                </tr>
-                                                </thead>
-                                                {foreach from=$clienti_cu_observatii item=observatie}
-                                                    <tr>
-                                                        <td>{$observatie['nume_localitate']}</td>
-                                                        <td>{$observatie['nume_client']}</td>
-                                                        <td>{$observatie['nume_observatie']}</td>
-                                                    </tr>
+                    <div style="display: inline-flex">
+                        {if count($clienti_cu_observatii) > 0}
+                            <div style="margin-left: 10px;">
+                                <table class="table table-bordered table-hover"
+                                       style="width: 560px;margin-left: 5px;">
+                                    <thead>
+                                    <tr>
+                                        <th>Localitate</th>
+                                        <th>Client</th>
+                                        <th>Observatii</th>
+                                    </tr>
+                                    </thead>
+                                    {foreach from=$clienti_cu_observatii item=observatie}
+                                        <tr>
+                                            <td>{$observatie['nume_localitate']}</td>
+                                            <td>
+                                                <a href="edit_client.php?id={$observatie['id']}">{$observatie['nume_client']}</a>
+                                            </td>
+                                            <td>{$observatie['nume_observatie']}</td>
+                                        </tr>
+                                    {/foreach}
+                                    <tr>
+                                        <th colspan="3" style="text-align: left;">Total clienti cu
+                                            observatii: {count($clienti_cu_observatii)}
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+                        {/if}
+                        {if count($clienti_cu_urgente) > 0}
+                            <div style="margin-left: 10px;">
+                                <table class="table table-bordered table-hover" style="width: 570px;">
+                                    <thead>
+                                    <tr>
+                                        <th>Localitate</th>
+                                        <th>Client</th>
+                                        <th>Urgent</th>
+                                        <th>Cantitati</th>
+                                    </tr>
+                                    </thead>
+                                    {foreach from=$clienti_cu_urgente item=client}
+                                        <tr>
+                                            <td>{$client['nume_localitate']}</td>
+                                            <td>
+                                                <a href="edit_client.php?id={$client['client_id']}">{$client['nume_client']}</a>
+                                            </td>
+                                            <td style="text-align: center;" class="span1">
+                                                {$client['urgent']}
+                                            </td>
+                                            <td style="text-align: left;" class="span2">
+                                                {foreach from=$client['raspuns'] item=raspuns}
+                                                    <span style="color: red;"> {$raspuns['nume_produs']}</span>
+                                                    :
+                                                    <span style="font-weight: 600;">{$raspuns['goale']}</span>
+                                                    <br/>
                                                 {/foreach}
-                                                <tr>
-                                                    <th colspan="3" style="text-align: left;">Total clienti cu
-                                                        observatii: {count($clienti_cu_observatii)}
-                                                    </th>
-                                                </tr>
-                                            </table>
-                                        {/if}
-                                    </td>
-                                    <td>
-                                        {if count($clienti_cu_urgente) > 0}
-                                            <table class="table table-bordered table-hover" style="width: 80%;">
-                                                <thead>
-                                                <tr>
-                                                    <th>Localitate</th>
-                                                    <th>Client</th>
-                                                    <th>Urgent</th>
-                                                    <th>Cantitati</th>
+                                            </td>
+                                        </tr>
+                                    {/foreach}
+                                    <tr>
+                                        <th colspan="4" style="text-align: left;">Total clienti cu
+                                            urgente: {count($clienti_cu_urgente)}
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+                        {/if}
+                    </div>
 
-                                                </tr>
-                                                </thead>
-                                                {foreach from=$clienti_cu_urgente item=client}
-                                                    <tr>
-                                                        <td>{$client['nume_localitate']}</td>
-                                                        <td>{$client['nume_client']}</td>
-                                                        <td style="text-align: center;" class="span1">
-                                                            {$client['urgent']}
-                                                        </td>
-                                                        <td style="text-align: left;" class="span2">
-                                                            {foreach from=$client['raspuns'] item=raspuns}
-                                                                <span style="color: red;"> {$raspuns['nume_produs']}</span> : <span style="font-weight: 600;">{$raspuns['goale']}</span><br/>
-                                                            {/foreach}
-                                                        </td>
-                                                    </tr>
-                                                {/foreach}
-                                                <tr>
-                                                    <th colspan="4" style="text-align: left;">Total clienti cu
-                                                        urgente: {count($clienti_cu_urgente)}
-                                                    </th>
-                                                </tr>
-                                            </table>
-                                        {/if}
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    {/if}
                 </div>
             </div>
     </section>
@@ -278,3 +281,79 @@
 <div style="margin-top: 100px;"></div>
 <script src="/js/pagini/apeluri_clienti.js"></script>
 <span style="margin-left: 230px;">{$totaltime}</span>
+
+{*{if count($clienti_cu_observatii) > 0 || count($clienti_cu_urgente) > 0}*}
+    {*<div>*}
+        {*<table class="table" style="width: 100%;margin-top: 10px;">*}
+            {*<tr>*}
+                {*<td>*}
+                    {*{if count($clienti_cu_observatii) > 0}*}
+                        {*<table class="table table-bordered table-hover"*}
+                               {*style="width: 70%;margin-left: 5px;">*}
+                            {*<thead>*}
+                            {*<tr>*}
+                                {*<th>Localitate</th>*}
+                                {*<th>Client</th>*}
+                                {*<th>Observatii</th>*}
+                            {*</tr>*}
+                            {*</thead>*}
+                            {*{foreach from=$clienti_cu_observatii item=observatie}*}
+                                {*<tr>*}
+                                    {*<td>{$observatie['nume_localitate']}</td>*}
+                                    {*<td>*}
+                                        {*<a href="edit_client.php?id={$client['client_id']}">{$observatie['nume_client']}</a>*}
+                                    {*</td>*}
+                                    {*<td>{$observatie['nume_observatie']}</td>*}
+                                {*</tr>*}
+                            {*{/foreach}*}
+                            {*<tr>*}
+                                {*<th colspan="3" style="text-align: left;">Total clienti cu*}
+                                    {*observatii: {count($clienti_cu_observatii)}*}
+                                {*</th>*}
+                            {*</tr>*}
+                        {*</table>*}
+                    {*{/if}*}
+                {*</td>*}
+                {*<td>*}
+                    {*{if count($clienti_cu_urgente) > 0}*}
+                        {*<table class="table table-bordered table-hover" style="width: 80%;">*}
+                            {*<thead>*}
+                            {*<tr>*}
+                                {*<th>Localitate</th>*}
+                                {*<th>Client</th>*}
+                                {*<th>Urgent</th>*}
+                                {*<th>Cantitati</th>*}
+
+                            {*</tr>*}
+                            {*</thead>*}
+                            {*{foreach from=$clienti_cu_urgente item=client}*}
+                                {*<tr>*}
+                                    {*<td>{$client['nume_localitate']}</td>*}
+                                    {*<td>*}
+                                        {*<a href="edit_client.php?id={$client['client_id']}">{$client['nume_client']}</a>*}
+                                    {*</td>*}
+                                    {*<td style="text-align: center;" class="span1">*}
+                                        {*{$client['urgent']}*}
+                                    {*</td>*}
+                                    {*<td style="text-align: left;" class="span2">*}
+                                        {*{foreach from=$client['raspuns'] item=raspuns}*}
+                                            {*<span style="color: red;"> {$raspuns['nume_produs']}</span>*}
+                                            {*:*}
+                                            {*<span style="font-weight: 600;">{$raspuns['goale']}</span>*}
+                                            {*<br/>*}
+                                        {*{/foreach}*}
+                                    {*</td>*}
+                                {*</tr>*}
+                            {*{/foreach}*}
+                            {*<tr>*}
+                                {*<th colspan="4" style="text-align: left;">Total clienti cu*}
+                                    {*urgente: {count($clienti_cu_urgente)}*}
+                                {*</th>*}
+                            {*</tr>*}
+                        {*</table>*}
+                    {*{/if}*}
+                {*</td>*}
+            {*</tr>*}
+        {*</table>*}
+    {*</div>*}
+{*{/if}*}

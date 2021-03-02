@@ -847,7 +847,7 @@ class Clienti
         }
 
         $ret = array();
-        $query = "SELECT b.nume as nume_client, c.nume as nume_observatie, d.nume as nume_localitate 
+        $query = "SELECT b.id, b.nume as nume_client, c.nume as nume_observatie, d.nume as nume_localitate 
                     FROM apeluri_clienti as a
                     LEFT JOIN clienti as b on a.client_id = b.id
                     LEFT JOIN observatii as c on a.observatie_id = c.id
