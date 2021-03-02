@@ -235,7 +235,7 @@
                             </div>
                         {/if}
                         {if count($clienti_cu_urgente) > 0}
-                            <div style="margin-left: 10px;">
+                            <div style="margin-left: 15px;">
                                 <table class="table table-bordered table-hover" style="width: 570px;">
                                     <thead>
                                     <tr>
