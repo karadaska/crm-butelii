@@ -140,9 +140,9 @@
                                                        class="btn btn-mini btn-inverse">Asigneaza</a>
                                                 </td>
                                             {/if}
-                                            <th style="vertical-align: middle;width: 200px;">
+                                            <th style="vertical-align: middle;width: 300px;padding-bottom: 10px;padding-top: 10px;">
                                                 {assign var=observatie_client value=Clienti::getObservatieApelClientiByClientId($client['id'],$traseu_id)}
-                                                <select style="text-align: left;"
+                                                <select style="text-align: left;width: 250px;"
                                                         name="obs_{$target_client['client_id']}_{$target_client['tip_produs_id']}">
                                                     <option value="0">Obs</option>
                                                     {foreach from=$lista_observatii item=observatie}
@@ -154,8 +154,9 @@
                                                         {/if}
                                                     {/foreach}
                                                 </select>
+                                                <div style="margin-top: 5px;"></div>
                                                 {assign var=urgenta_client value=Clienti::getUrgentaApelClientiByClientId($client['id'],$traseu_id)}
-                                                <select name="urgent_{$target_client['client_id']}_{$target_client['tip_produs_id']}">
+                                                <select name="urgent_{$target_client['client_id']}_{$target_client['tip_produs_id']}" style="width: 250px;">
                                                     <option value="0"
                                                             {if $urgenta_client['urgent'] == 0}selected="selected"{/if}>
                                                         NU
