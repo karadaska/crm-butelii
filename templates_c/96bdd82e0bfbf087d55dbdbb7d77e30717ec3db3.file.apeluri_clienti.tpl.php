@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-17 11:19:19
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-02 09:13:35
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1611745072,
+      1 => 1614669209,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_602cdf97a36a43_74273043',
   'variables' => 
   array (
     'title' => 0,
@@ -48,8 +50,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'totaltime' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_602cdf97a36a43_74273043',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_602cdf97a36a43_74273043')) {function content_602cdf97a36a43_74273043($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -70,8 +70,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">
                             <button class="i-print"></button>
                         </a>
-                        
-
                     </h1>
                 </div>
 
@@ -79,7 +77,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="row-fluid span12">
                 <form action="/apeluri_clienti.php" method="post" id="form_actualizeaza_stoc"
                       style="margin-bottom: 0">
-                    
                     <div style="float: left;margin-right: 10px;">
                         <select name="traseu_id" style="width: 180px;">
                             <?php  $_smarty_tpl->tpl_vars['traseu'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['traseu']->_loop = false;
@@ -198,6 +195,9 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                                                 <?php } ?>
                                             </th>
                                             <?php if ($_smarty_tpl->tpl_vars['target_client']->value['target']>0) {?>
+                                                <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable(0, null, 0);?>
+                                                <?php $_smarty_tpl->tpl_vars['total_ar_8'] = new Smarty_variable(0, null, 0);?>
+                                                <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable(0, null, 0);?>
                                                 <td style="vertical-align: middle;text-align: right;color: red;background-color: gainsboro;"
                                                     class="span4">
                                                     <?php  $_smarty_tpl->tpl_vars['target_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target_client']->_loop = false;
@@ -281,17 +281,6 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                             </th>
                                         </tr>
                                     <?php } ?>
-                                    <div style="display: inline-flex">
-                                        <div>Total:</div>
-                                        <div>Total:</div>
-                                    </div>
-                                    
-                                        
-                                        
-                                        
-                                        
-                                        
-                                    
                                     </tbody>
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza produse"

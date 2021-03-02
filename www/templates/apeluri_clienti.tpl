@@ -12,8 +12,6 @@
                         <a href="/print_apeluri_clienti.php?id={$traseu_id}&stare_id={$stare_id}">
                             <button class="i-print"></button>
                         </a>
-                        {*<button class="btn btn-navbar btn-small" type="button" data-export_fisa="{$traseu_id}" id="export_fisa"><i class="icon20 i-file"></i>Export</button>*}
-
                     </h1>
                 </div>
 
@@ -21,7 +19,6 @@
             <div class="row-fluid span12">
                 <form action="/apeluri_clienti.php" method="post" id="form_actualizeaza_stoc"
                       style="margin-bottom: 0">
-                    {*<input type="hidden" name="form_submit" value="1" id="form_submit"/>*}
                     <div style="float: left;margin-right: 10px;">
                         <select name="traseu_id" style="width: 180px;">
                             {foreach from=$lista_trasee item=traseu}
@@ -104,6 +101,9 @@
                                                 {/foreach}
                                             </th>
                                             {if $target_client['target'] > 0}
+                                                {$total_ar_9 = 0}
+                                                {$total_ar_8 = 0}
+                                                {$total_bg_11 = 0}
                                                 <td style="vertical-align: middle;text-align: right;color: red;background-color: gainsboro;"
                                                     class="span4">
                                                     {foreach from=$client['target'] item = target_client}
@@ -168,17 +168,6 @@
                                             </th>
                                         </tr>
                                     {/foreach}
-                                    <div style="display: inline-flex">
-                                        <div>Total:</div>
-                                        <div>Total:</div>
-                                    </div>
-                                    {*<tr>*}
-                                        {*<th style="color: red;">Totaluri</th>*}
-                                        {*<th style="color: red;">33</th>*}
-                                        {*<th>33</th>*}
-                                        {*<th>33</th>*}
-                                        {*<th colspan="3" style="text-align: left">33</th>*}
-                                    {*</tr>*}
                                     </tbody>
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza produse"
