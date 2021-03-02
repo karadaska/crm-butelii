@@ -5,7 +5,7 @@ header('content-type: application/json');
 $zi_curenta = date('Y-m-d');
 $traseu_id = 36;
 $data_start = '2021-01-01';
-$data_stop = '2021-02-28';
+$data_stop = '2021-03-31';
 $depozit_id = 0;
 $sofer_id = 0;
 $masina_id = 0;
@@ -22,10 +22,10 @@ $stare_id = 1;
 //    'data_start' => $zi_curenta
 //));
 
-$b = Clienti::getRaportLivrariClienti(28, $opts = array(
-    'data_start' => $data_start,
-    'data_stop' => $data_stop
-));
+//$b = Clienti::getRaportLivrariClienti(28, $opts = array(
+//    'data_start' => $data_start,
+//    'data_stop' => $data_stop
+//));
 //$b =Clienti::getPreturiLivrariClienti($traseu_id, $opts = array(
 //        'data_start' => $data_start,
 //    'data_stop' => $data_stop
@@ -41,12 +41,16 @@ $b = Clienti::getRaportLivrariClienti(28, $opts = array(
 //$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(298,2433);
 
 //
-//$b = ParcAuto::getRaportLivrariSoferi(23,
-//    $opts = array(
+$b = ParcAuto::getRaportLivrariSoferi(23,
+    $opts = array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+    ));
+
+//$b = Produse::getProduseVanduteBySoferId(23, array(
 //        'data_start' => $data_start,
 //        'data_stop' => $data_stop
-//    ));
-
+//   ));
 
 //$b = ParcAuto::getTotalCantitatiBGBySoferIdAndTraseuId(23, 29, array(
 //$b = ParcAuto::getTotalCantitatiBGBySoferIdAndTraseuId(23, 29, array(

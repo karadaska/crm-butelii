@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-02 09:03:06
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-02 14:24:21
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:181507985860227fc6e3c330-67745625%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f2b86ffce0eb1085a87d6fdf07c6087890100747' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl',
-      1 => 1614607287,
+      1 => 1614687858,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'traseu_id' => 0,
     'observatie_id' => 0,
     'nr' => 0,
+    'produse_client' => 0,
     'total_bg_11' => 0,
     'total_ar_8' => 0,
     'total_ar_9' => 0,
@@ -53,7 +54,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Raport livrari sofer2
+                    <h1><i class="icon20 i-menu-6"></i> Raport livrari sofer
                         <a href="/print_raport_livrari_soferi.php?id=<?php echo $_smarty_tpl->tpl_vars['sofer_id']->value;?>
 &data_start=<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 &data_stop=<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
@@ -130,7 +131,6 @@ $_smarty_tpl->tpl_vars['sofer']->_loop = true;
                                             <th colspan="3">TOTAL COMISION</th>
                                         </tr>
                                         <tr>
-
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
@@ -155,7 +155,6 @@ $_smarty_tpl->tpl_vars['sofer']->_loop = true;
                                         <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable(0, null, 0);?>
                                         <?php $_smarty_tpl->tpl_vars['total_valoare_incasata_ar_9'] = new Smarty_variable(0, null, 0);?>
                                         <?php $_smarty_tpl->tpl_vars['total_valoare_comision_ar_9'] = new Smarty_variable(0, null, 0);?>
-
                                         <?php  $_smarty_tpl->tpl_vars['sofer'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['sofer']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['livrari_soferi']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['sofer']->key => $_smarty_tpl->tpl_vars['sofer']->value) {
@@ -174,6 +173,14 @@ $_smarty_tpl->tpl_vars['sofer']->_loop = true;
                                                 </td>
                                                 <td><?php echo $_smarty_tpl->tpl_vars['sofer']->value['nume_traseu'];?>
 </td>
+                                                <?php  $_smarty_tpl->tpl_vars['produse_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produse_client']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['livrari_soferi']->value['total_produse']['bg_11']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['produse_client']->key => $_smarty_tpl->tpl_vars['produse_client']->value) {
+$_smarty_tpl->tpl_vars['produse_client']->_loop = true;
+?>
+                                                    <td><?php echo $_smarty_tpl->tpl_vars['produse_client']->value;?>
+</td>
+                                                <?php } ?>
                                                 <td style="text-align: center;border-left:double">
                                                 <?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['sofer']->value['total_produse']['bg_11']['total_bg_11'];?>
 <?php $_tmp1=ob_get_clean();?><?php echo $_smarty_tpl->tpl_vars['sofer']->value['total_produse']['bg_11']['total_bg_11']!='' ? $_tmp1 : '-';?>

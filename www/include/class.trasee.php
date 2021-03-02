@@ -292,15 +292,3 @@ class Trasee
         return $ret;
     }
 }
-
-
-
-//                $r = array(
-//                    'client_id' => $item['client_id'],
-//                    'nume_client' => $item['nume_client'],
-//                    'telefon' => $item['telefon'],
-//                    'telefon_2' => $item['telefon_2'],
-//                    'nume_localitate' => $item['nume_localitate'],
-//                    'dif_pret' => Clienti::getDiferentePreturiByClientIdAndTraseuId($item['client_id'], $item['traseu_id'], $item['tip_produs_id'])
-//                );
-//                array_push($ret, $r);

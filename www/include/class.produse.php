@@ -3,6 +3,29 @@
 class Produse
 {
 
+    public static function getProduseVanduteBySoferId($sofer_id, $opts = array())
+    {
+        $data_start = isset($opt['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        $ret = array();
+        $query = " SELECT c.tip as nume_produse from detalii_fisa_intoarcere_produse as a
+                    LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                    LEFT JOIN tip_produs as c on a.tip_produs_id = c.id
+                    WHERE b.sofer_id = '" . $sofer_id . "'
+                    AND a.data_intrare >= '" . $data_start . "'
+                    AND a.data_intrare <= '" . $data_stop . "'
+                    AND a.sters = 0
+                    GROUP BY a.tip_produs_id
+        ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
     public static function getCuloriButelii()
     {
         $ret = array();

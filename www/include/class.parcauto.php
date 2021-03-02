@@ -240,7 +240,8 @@ class ParcAuto
                                 AND a.tip_produs_id = 3                                
                                 AND a.data_intrare >= '" . $data_start . "'
                                 AND a.data_intrare <= '" . $data_stop . "'
-                                AND a.sters = 0";
+                                AND a.sters = 0
+                                ";
 
         $result = myQuery($target_by_client_id);
         if ($result) {
@@ -342,8 +343,12 @@ class ParcAuto
                   ORDER BY c.nume ASC             
                     ";
 
-
         $result = myQuery($query);
+//        $ret['lista_produse'] = Produse::getProduseVanduteBySoferId($sofer_id, array(
+//            'data_start' => $data_start,
+//            'data_stop' => $data_stop
+//        ));
+
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
@@ -351,6 +356,11 @@ class ParcAuto
                     'nume_sofer' => $item['nume_sofer'],
                     'nume_traseu' => $item['nume_traseu'],
                     'numar' => $item['numar'],
+//                    'produse_by_sofer' => Produse::getProduseVanduteBySoferId($item['sofer_id'],
+//                        array(
+//                            'data_start' => $data_start,
+//                            'data_stop' => $data_stop
+//                        )),
                     'total_produse' => array(
                         'bg_11' => self::getTotalCantitatiBGBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], $opts = array(
                             'data_start' => $data_start,
@@ -366,7 +376,6 @@ class ParcAuto
                         )),
                     ),
                 );
-
                 array_push($ret, $r);
             }
         }

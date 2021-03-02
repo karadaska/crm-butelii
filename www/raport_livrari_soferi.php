@@ -22,11 +22,12 @@ $lista_soferi = ParcAuto::getListaSoferi();
 $smarty->assign('lista_soferi', $lista_soferi);
 
 $livrari_soferi = ParcAuto::getRaportLivrariSoferi($sofer_id,
-    $opts = array(
+    array(
         'data_start' => $data_start,
         'data_stop' => $data_stop
     ));
 $smarty->assign('livrari_soferi', $livrari_soferi);
+
 
 $smarty->display($template_page);
 

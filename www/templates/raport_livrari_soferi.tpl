@@ -7,7 +7,7 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Raport livrari sofer2
+                    <h1><i class="icon20 i-menu-6"></i> Raport livrari sofer
                         <a href="/print_raport_livrari_soferi.php?id={$sofer_id}&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
@@ -69,7 +69,6 @@
                                             <th colspan="3">TOTAL COMISION</th>
                                         </tr>
                                         <tr>
-
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
@@ -94,7 +93,6 @@
                                         {$total_ar_9 = 0}
                                         {$total_valoare_incasata_ar_9  = 0}
                                         {$total_valoare_comision_ar_9 = 0}
-
                                         {foreach from=$livrari_soferi item=sofer}
                                             <tr>
                                                 <td style="text-align: center" class="span1">{$nr++}</td>
@@ -105,6 +103,9 @@
                                                     {$sofer['numar']}
                                                 </td>
                                                 <td>{$sofer['nume_traseu']}</td>
+                                                {foreach from = $livrari_soferi['total_produse']['bg_11'] item=produse_client}
+                                                    <td>{$produse_client}</td>
+                                                {/foreach}
                                                 <td style="text-align: center;border-left:double">
                                                 {($sofer['total_produse']['bg_11']['total_bg_11'] !='') ? {$sofer['total_produse']['bg_11']['total_bg_11']} : '-'}
                                                 </td>
