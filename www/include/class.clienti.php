@@ -799,11 +799,12 @@ class Clienti
         }
 
         $ret = array();
-        $query = "SELECT observatie_id 
-                  FROM apeluri_clienti
-                  WHERE	client_id = '" . $client_id . "'
-                  AND data_start = '" . $data . "'
-                  AND traseu_id = '" . $traseu_id . "'
+        $query = "SELECT a.observatie_id, b.nume as nume_observatie 
+                  FROM apeluri_clienti as a
+                  LEFT JOIN observatii as b on a.observatie_id = b.id
+                  WHERE	a.client_id = '" . $client_id . "'
+                  AND a.data_start = '" . $data . "'
+                  AND a.traseu_id = '" . $traseu_id . "'
                   LIMIT 1";
 
         $result = myQuery($query);

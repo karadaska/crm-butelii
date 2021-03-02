@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-02 11:08:57
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-02 12:06:43
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1929950229603df39e482f18-35501088%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1614676135,
+      1 => 1614679602,
       2 => 'file',
     ),
   ),
@@ -32,8 +32,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'total_ar_8' => 0,
     'total_ar_9' => 0,
     'client_observatie' => 0,
-    'observatie_id' => 0,
-    'nume_observatie' => 0,
     'client_urgenta' => 0,
     'total_obs' => 0,
     'numar_obs' => 0,
@@ -216,17 +214,14 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                         <?php }?>
                     <?php } ?>
                 </th>
-                <th>
+                <th style="width: 300px;">
                     <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Clienti::getObservatieApelClientiByClientId($_smarty_tpl->tpl_vars['target_client']->value['client_id'],$_smarty_tpl->tpl_vars['id']->value), null, 0);?>
-                    <?php  $_smarty_tpl->tpl_vars['observatie_id'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['observatie_id']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['client_observatie']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['observatie_id']->key => $_smarty_tpl->tpl_vars['observatie_id']->value) {
-$_smarty_tpl->tpl_vars['observatie_id']->_loop = true;
-?>
-                        <?php $_smarty_tpl->tpl_vars['nume_observatie'] = new Smarty_variable(Clienti::getNumeObservatieByObservatieId($_smarty_tpl->tpl_vars['observatie_id']->value), null, 0);?>
-                        <?php echo $_smarty_tpl->tpl_vars['nume_observatie']->value['nume_observatie'];?>
+                    <?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['nume_observatie'];?>
 
-                    <?php } ?>
+                    
+                        
+                        
+                    
                 </th>
                 <th>
                     <?php $_smarty_tpl->tpl_vars['client_urgenta'] = new Smarty_variable(Clienti::getNumeUrgentaApelClientiByClientId($_smarty_tpl->tpl_vars['target_client']->value['client_id'],$_smarty_tpl->tpl_vars['id']->value), null, 0);?>

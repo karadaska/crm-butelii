@@ -29,6 +29,9 @@ $apel_traseu = Clienti::getApelTraseuNew(array(
     'traseu_id' => $id,
     'stare_id' => $stare_id
 ));
+
+
+
 $lista_clienti = $apel_traseu['list'];
 $smarty->assign('lista_clienti', $lista_clienti);
 

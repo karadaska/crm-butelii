@@ -142,12 +142,13 @@
                         {/if}
                     {/foreach}
                 </th>
-                <th>
+                <th style="width: 300px;">
                     {assign var=client_observatie value=Clienti::getObservatieApelClientiByClientId($target_client['client_id'], $id)}
-                    {foreach from=$client_observatie item=observatie_id}
-                        {assign var=nume_observatie value=Clienti::getNumeObservatieByObservatieId($observatie_id)}
-                        {$nume_observatie['nume_observatie']}
-                    {/foreach}
+                    {$client_observatie['nume_observatie']}
+                    {*{foreach from=$client_observatie item=observatie_id}*}
+                        {*{assign var=nume_observatie value=Clienti::getNumeObservatieByObservatieId($observatie_id)}*}
+                        {*{$nume_observatie['nume_observatie']}*}
+                    {*{/foreach}*}
                 </th>
                 <th>
                     {assign var=client_urgenta value=Clienti::getNumeUrgentaApelClientiByClientId($target_client['client_id'],$id)}
