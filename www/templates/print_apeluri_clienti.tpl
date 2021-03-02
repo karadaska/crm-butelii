@@ -150,14 +150,8 @@
                     {/foreach}
                 </th>
                 <th>
-                    {assign var=client_urgenta value=Clienti::getUrgentaApelClientiByClientId($target_client['client_id'],$id)}
-                    {foreach from=$client_urgenta item=urgenta}
-                        {if $urgenta['urgenta'] == 0}
-                            NU
-                        {else}
-                            DA
-                        {/if}
-                    {/foreach}
+                    {assign var=client_urgenta value=Clienti::getNumeUrgentaApelClientiByClientId($target_client['client_id'],$id)}
+                    {$client_urgenta['urgent']}
                 </th>
             </tr>
         {/foreach}
@@ -244,7 +238,7 @@
                                     </th>
                                     <th style="text-align: left;width: 100px;">
                                         {foreach from=$client['raspuns'] item=raspuns}
-                                            <span style="color: red;"> {$raspuns['nume_produs']}</span>
+                                            <span> {$raspuns['nume_produs']}</span>
                                             :
                                             <span style="font-weight: 600;">{$raspuns['goale']}</span>
                                             <br/>

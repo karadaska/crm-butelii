@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-02 10:13:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-02 11:08:57
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1929950229603df39e482f18-35501088%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1611667946,
+      1 => 1614676135,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_603df39e599e77_70442939',
   'variables' => 
   array (
     'id' => 0,
@@ -33,7 +35,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'observatie_id' => 0,
     'nume_observatie' => 0,
     'client_urgenta' => 0,
-    'urgenta' => 0,
     'total_obs' => 0,
     'numar_obs' => 0,
     'total_urgente' => 0,
@@ -44,8 +45,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'raspuns' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_603df39e599e77_70442939',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_603df39e599e77_70442939')) {function content_603df39e599e77_70442939($_smarty_tpl) {?><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/jquery.js"></script>
@@ -230,18 +229,9 @@ $_smarty_tpl->tpl_vars['observatie_id']->_loop = true;
                     <?php } ?>
                 </th>
                 <th>
-                    <?php $_smarty_tpl->tpl_vars['client_urgenta'] = new Smarty_variable(Clienti::getUrgentaApelClientiByClientId($_smarty_tpl->tpl_vars['target_client']->value['client_id'],$_smarty_tpl->tpl_vars['id']->value), null, 0);?>
-                    <?php  $_smarty_tpl->tpl_vars['urgenta'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['urgenta']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['client_urgenta']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['urgenta']->key => $_smarty_tpl->tpl_vars['urgenta']->value) {
-$_smarty_tpl->tpl_vars['urgenta']->_loop = true;
-?>
-                        <?php if ($_smarty_tpl->tpl_vars['urgenta']->value['urgenta']==0) {?>
-                            NU
-                        <?php } else { ?>
-                            DA
-                        <?php }?>
-                    <?php } ?>
+                    <?php $_smarty_tpl->tpl_vars['client_urgenta'] = new Smarty_variable(Clienti::getNumeUrgentaApelClientiByClientId($_smarty_tpl->tpl_vars['target_client']->value['client_id'],$_smarty_tpl->tpl_vars['id']->value), null, 0);?>
+                    <?php echo $_smarty_tpl->tpl_vars['client_urgenta']->value['urgent'];?>
+
                 </th>
             </tr>
         <?php } ?>
@@ -360,7 +350,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['raspuns']->key => $_smarty_tpl->tpl_vars['raspuns']->value) {
 $_smarty_tpl->tpl_vars['raspuns']->_loop = true;
 ?>
-                                            <span style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['nume_produs'];?>
+                                            <span> <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['nume_produs'];?>
 </span>
                                             :
                                             <span style="font-weight: 600;"><?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale'];?>

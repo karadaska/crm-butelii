@@ -25,11 +25,6 @@ $smarty->assign('data_traseu',$data_traseu);
 $stare_id = getRequestParameter('stare_id', 0);
 $smarty->assign('stare_id', $stare_id);
 
-//$lista_clienti = Trasee::getApelTraseu(array(
-//    'traseu_id' => $id,
-//    'stare_id' => $stare_id
-//));
-
 $apel_traseu = Clienti::getApelTraseuNew(array(
     'traseu_id' => $id,
     'stare_id' => $stare_id

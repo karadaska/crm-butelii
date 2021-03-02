@@ -838,6 +838,30 @@ class Clienti
         return $ret;
     }
 
+    public static function getNumeUrgentaApelClientiByClientId($client_id, $traseu_id, $opts = array())
+    {
+        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
+
+        if ($data == 0) {
+            $data = date('Y-m-d');
+        }
+
+        $ret = array();
+        $query = "SELECT  if (urgent = 1, 'DA','NU')as urgent
+                  FROM apeluri_clienti
+                  WHERE	client_id = '" . $client_id . "'
+                  AND data_start = '" . $data . "'
+                  AND traseu_id = '" . $traseu_id . "'
+                  LIMIT 1";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
     public static function getClientiCuNumarGresitSauNumarLipsaApelClientiByTraseuId($traseu_id, $opts = array())
     {
         $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
