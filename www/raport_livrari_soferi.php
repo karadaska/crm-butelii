@@ -21,7 +21,13 @@ $smarty->assign('data_stop', $data_stop);
 $lista_soferi = ParcAuto::getListaSoferi();
 $smarty->assign('lista_soferi', $lista_soferi);
 
-$livrari_soferi = ParcAuto::getRaportLivrariSoferi($sofer_id,
+//$livrari_soferi = ParcAuto::getRaportLivrariSoferi($sofer_id,
+//    array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//    ));
+
+$livrari_soferi = ParcAuto::getRaportLivrariSoferiTest($sofer_id,
     array(
         'data_start' => $data_start,
         'data_stop' => $data_stop
