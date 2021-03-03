@@ -42,7 +42,7 @@
                             <th style="text-align: left;">
                                 <input type="submit" class="btn btn-primary" value="Aplica" name="aplica">
                                 <button class="btn btn-success" type="button" data-export_livrari="{$sofer_id}"
-                                        id="export_livrari_soferi">Export
+                                        id="export_livrari_soferi">Export TO DO:
                                 </button>
                             </th>
                         </tr>

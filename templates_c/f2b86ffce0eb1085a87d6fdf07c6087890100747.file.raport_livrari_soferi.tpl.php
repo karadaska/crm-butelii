@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-03 09:41:43
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-03 09:44:09
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:181507985860227fc6e3c330-67745625%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f2b86ffce0eb1085a87d6fdf07c6087890100747' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl',
-      1 => 1614757300,
+      1 => 1614757447,
       2 => 'file',
     ),
   ),
@@ -94,7 +94,7 @@ $_smarty_tpl->tpl_vars['sofer']->_loop = true;
                                 <input type="submit" class="btn btn-primary" value="Aplica" name="aplica">
                                 <button class="btn btn-success" type="button" data-export_livrari="<?php echo $_smarty_tpl->tpl_vars['sofer_id']->value;?>
 "
-                                        id="export_livrari_soferi">Export
+                                        id="export_livrari_soferi">Export TO DO:
                                 </button>
                             </th>
                         </tr>

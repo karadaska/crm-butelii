@@ -254,37 +254,6 @@ class ParcAuto
         return $ret;
     }
 
-    public static function getTotalCantitatiAr9BySoferIdAndTraseuId($sofer_id = 0, $traseu_id, $opts = array())
-    {
-        $ret = null;
-
-        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
-        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-
-        if ($data_start == 0) {
-            $data_start = date('Y-m-01');
-        }
-
-        if ($data_stop == 0) {
-            $data_stop = date('Y-m-t');
-        }
-
-        $target_by_client_id = "SELECT SUM(a.cantitate) as total_ar_9, SUM(a.cantitate * a.pret) as total_ar_9_cu_pret, SUM(a.comision) as comision
-                                FROM detalii_fisa_intoarcere_produse  as a
-                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
-                                WHERE b.sofer_id = '" . $sofer_id . "'                                
-                                AND b.traseu_id = '" . $traseu_id . "'                                      
-                                AND a.tip_produs_id = 4                                
-                                AND a.data_intrare >= '" . $data_start . "'
-                                AND a.data_intrare <= '" . $data_stop . "'
-                                AND a.sters = 0";
-
-        $result = myQuery($target_by_client_id);
-        if ($result) {
-            $ret = $result->fetch(PDO::FETCH_ASSOC);
-        }
-        return $ret;
-    }
 
     public static function getTotalCantitatiBG11CuComisionByClientId($sofer_id, $traseu_id, $opts = array())
     {
@@ -320,64 +289,6 @@ class ParcAuto
     }
 
     public static function getRaportLivrariSoferi($sofer_id, $opts = array())
-    {
-        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
-        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-
-        if ($data_start == 0) {
-            $data_start = date('Y-m-01');
-        }
-
-        if ($data_stop == 0) {
-            $data_stop = date('Y-m-t');
-        }
-
-        $ret = array();
-
-        $query = "SELECT a.*, b.nume as nume_sofer, c.nume as nume_traseu, d.numar, a.traseu_id 
-                  FROM fise_generate as a
-                  LEFT JOIN soferi as b on a.sofer_id = b.id
-                  LEFT JOIN trasee as c on a.traseu_id = c.id
-                  LEFT JOIN masini as d on a.masina_id = d.id
-                  WHERE a.sofer_id = '" . $sofer_id . "'
-                  AND a.data_intrare >= '" . $data_start . "'
-                  AND a.data_intrare <= '" . $data_stop . "'
-                  and a.sters = 0
-                  GROUP BY a.traseu_id
-                  ORDER BY c.nume ASC             
-                    ";
-
-        $result = myQuery($query);
-
-        if ($result) {
-            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($a as $item) {
-                $r = array(
-                    'nume_sofer' => $item['nume_sofer'],
-                    'nume_traseu' => $item['nume_traseu'],
-                    'numar' => $item['numar'],
-                    'total_produse' => array(
-                        'bg_11' => self::getTotalCantitatiBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
-                            'data_start' => $data_start,
-                            'data_stop' => $data_stop
-                        )),
-                        'ar_8' => self::getTotalCantitatiAr8BySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
-                            'data_start' => $data_start,
-                            'data_stop' => $data_stop
-                        )),
-                        'ar_9' => self::getTotalCantitatiAr9BySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
-                            'data_start' => $data_start,
-                            'data_stop' => $data_stop
-                        )),
-                    ),
-                );
-                array_push($ret, $r);
-            }
-        }
-        return $ret;
-    }
-
-    public static function getRaportLivrariSoferiTest($sofer_id, $opts = array())
     {
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
@@ -449,36 +360,5 @@ class ParcAuto
         return $ret;
     }
 
-//    public static function getTotalCantitatiBySoferIdAndTraseuId($sofer_id = 0, $traseu_id, $opts = array())
-//    {
-//        $ret = null;
-//        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
-//        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-//
-//        if ($data_start == 0) {
-//            $data_start = date('Y-m-01');
-//        }
-//
-//        if ($data_stop == 0) {
-//            $data_stop = date('Y-m-t');
-//        }
-//
-//        $target_by_client_id = "SELECT SUM(a.cantitate) as total_bg_11, SUM(a.cantitate * a.pret) as total_bg_11_cu_pret,  SUM(a.comision) as comision
-//                                FROM detalii_fisa_intoarcere_produse  as a
-//                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
-//                                WHERE b.sofer_id = '" . $sofer_id . "'
-//                                AND b.traseu_id = '" . $traseu_id . "'
-//                                AND a.tip_produs_id = 1
-//                                AND a.data_intrare >= '" . $data_start . "'
-//                                AND a.data_intrare <= '" . $data_stop . "'
-//                                AND a.sters = 0";
-//
-//        $result = myQuery($target_by_client_id);
-//        if ($result) {
-//            $ret = $result->fetch(PDO::FETCH_ASSOC);
-//        }
-//        return $ret;
-//
-//    }
 
 }
