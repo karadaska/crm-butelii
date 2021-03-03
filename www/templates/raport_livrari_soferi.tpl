@@ -67,7 +67,7 @@
                                             <th style="text-align: center;" rowspan="2">INDICATOR AUTO</th>
                                             <th style="text-align: center;" rowspan="2">TRASEU</th>
                                             {foreach from = $livrari_soferi['produse_sofer'] item= produse}
-                                                <th colspan="3">{$produse['nume_produs']}</th>
+                                                <th colspan="3" style="border: double;">{$produse['nume_produs']}</th>
                                             {/foreach}
                                         </tr>
                                         <tr>
