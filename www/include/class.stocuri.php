@@ -674,20 +674,20 @@ class Stocuri
                         $ret['grand_total_vandute_bg'] += $item_realizat['cantitate'];
                         $ret['grand_valoare_bg'] += $ret['clienti'][$num]['total_valoare_bg'];
                         $ret['grand_defecte_bg'] += $item_realizat['defecte'];
-                        $ret['grand_comision_bg'] += $item_realizat['comision'];
+                        $ret['grand_comision_bg'] += $item_realizat['cantitate'] * $item_realizat['comision'];
 
                     } elseif ($item_realizat['tip_produs_id'] == 3) {
                         $ret['grand_total_vandute_ar_8'] += $item_realizat['cantitate'];
                         $ret['grand_valoare_ar_8'] += $ret['clienti'][$num]['total_valoare_ar_8'];
                         $ret['grand_defecte_ar_8'] += $item_realizat['defecte'];
-                        $ret['grand_comision_ar_8'] += $item_realizat['comision'];
+                        $ret['grand_comision_ar_8'] += $item_realizat['cantitate'] * $item_realizat['comision'];
 
 
                     } elseif ($item_realizat['tip_produs_id'] == 4) {
                         $ret['grand_total_vandute_ar_9'] += $item_realizat['cantitate'];
                         $ret['grand_valoare_ar_9'] += $ret['clienti'][$num]['total_valoare_ar_9'];
                         $ret['grand_defecte_ar_9'] += $item_realizat['defecte'];
-                        $ret['grand_comision_ar_9'] += $item_realizat['comision'];
+                        $ret['grand_comision_ar_9'] += $item_realizat['cantitate'] * $item_realizat['comision'];
                     }
                 }
             }
