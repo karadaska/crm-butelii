@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-03 09:36:54
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-03 09:41:43
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:181507985860227fc6e3c330-67745625%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f2b86ffce0eb1085a87d6fdf07c6087890100747' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl',
-      1 => 1614757008,
+      1 => 1614757300,
       2 => 'file',
     ),
   ),
@@ -162,12 +162,18 @@ $_smarty_tpl->tpl_vars['livrare']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['produse']->key => $_smarty_tpl->tpl_vars['produse']->value) {
 $_smarty_tpl->tpl_vars['produse']->_loop = true;
 ?>
-                                                        <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['livrare']->value['total_produse'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['cantitate'];?>
-</td>
-                                                        <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['livrare']->value['total_produse'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['valoare'];?>
-</td>
-                                                        <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['livrare']->value['total_produse'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['comision'];?>
-</td>
+                                                        <td style="text-align: right;">
+                                                         <?php echo $_smarty_tpl->tpl_vars['livrare']->value['total_produse'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['cantitate']!='' ? $_smarty_tpl->tpl_vars['livrare']->value['total_produse'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['cantitate'] : '-';?>
+
+                                                        </td>
+                                                        <td style="text-align: right;">
+                                                            <?php echo $_smarty_tpl->tpl_vars['livrare']->value['total_produse'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['valoare']!='' ? $_smarty_tpl->tpl_vars['livrare']->value['total_produse'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['valoare'] : '-';?>
+
+                                                        </td>
+                                                        <td style="text-align: right;">
+                                                            <?php echo $_smarty_tpl->tpl_vars['livrare']->value['total_produse'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['comision']!='' ? $_smarty_tpl->tpl_vars['livrare']->value['total_produse'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['comision'] : '-';?>
+
+                                                        </td>
                                                 <?php } ?>
                                             </tr>
                                         <?php } ?>

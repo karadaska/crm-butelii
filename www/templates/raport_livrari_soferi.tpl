@@ -87,9 +87,15 @@
                                                 <td>{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
                                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
-                                                        <td style="text-align: right;">{$livrare['total_produse'][$produse['tip_produs_id']]['cantitate']}</td>
-                                                        <td style="text-align: right;">{$livrare['total_produse'][$produse['tip_produs_id']]['valoare']}</td>
-                                                        <td style="text-align: right;">{$livrare['total_produse'][$produse['tip_produs_id']]['comision']}</td>
+                                                        <td style="text-align: right;">
+                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
+                                                        </td>
+                                                        <td style="text-align: right;">
+                                                            {($livrare['total_produse'][$produse['tip_produs_id']]['valoare'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['valoare'] : '-'}
+                                                        </td>
+                                                        <td style="text-align: right;">
+                                                            {($livrare['total_produse'][$produse['tip_produs_id']]['comision'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['comision'] : '-'}
+                                                        </td>
                                                 {/foreach}
                                             </tr>
                                         {/foreach}
