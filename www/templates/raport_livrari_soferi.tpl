@@ -50,11 +50,11 @@
                     </table>
                 </form>
             </div>
-            {if count($livrari_soferi) > 0}
+            {if ($sofer_id > 0)}
                 <div class="row-fluid">
                     <div class="span12">
                         <div class="widget">
-                            <form action="/raport_livrari_soferi.php?traseu_id={$traseu_id}&observatie_id={$observatie_id}"
+                            <form action="/raport_livrari_soferi.php"
                                   method="post" id="form_actualizeaza_stoc"
                                   style="margin-bottom: 0">
                                 <div class="widget-content">
@@ -64,7 +64,7 @@
                                         <tr>
                                             <th style="text-align: center;" rowspan="2">#</th>
                                             <th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>
-                                            <th style="text-align: center;" rowspan="2">INDICATOR AUTO</th>
+                                            <th style="text-align: center;" rowspan="2">Nr. auto</th>
                                             <th style="text-align: center;" rowspan="2">TRASEU</th>
                                             {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                                 <th colspan="3" style="border: double;">{$produse['nume_produs']}</th>
@@ -80,14 +80,12 @@
                                         </thead>
                                         <tbody>
                                         {$nr = 1}
-                                        {$total_cantitate = 0}
                                         {foreach from = $livrari_soferi['trasee'] item= livrare}
                                             <tr>
                                                 <td style="text-align: center;" class="span1">{$nr++}</td>
                                                 <td>{$livrare['nume_sofer']}</td>
-                                                <td>{$livrare['numar']}</td>
+                                                <td style="text-align: center;">{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
-                                                {$total_cantitate = 0}
                                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                                     <td style="text-align: right;">
                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
@@ -102,11 +100,11 @@
                                             </tr>
                                         {/foreach}
                                         <tr>
-                                            <th colspan="4" style="text-align: right;">TOTAL:</th>
+                                            <th colspan="4" style="text-align: right;">TOTAL: </th>
                                             {foreach from = $livrari_soferi['produse_sofer'] item= produse}
-                                                <th style="text-align: right;color: red;">To do</th>
-                                                <th style="text-align: right;color: red;">To do</th>
-                                                <th style="text-align: right;color: red;">To do</th>
+                                                <th style="text-align: right;color: red;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['cantitate']}</th>
+                                                <th style="text-align: right;color: red;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['valoare']}</th>
+                                                <th style="text-align: right;color: red;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['comision']}</th>
                                             {/foreach}
                                         </tr>
                                         </tbody>
