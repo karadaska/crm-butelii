@@ -305,6 +305,7 @@ class ParcAuto
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ));
+
                 }
                 array_push($ret['trasee'], $r);
             }

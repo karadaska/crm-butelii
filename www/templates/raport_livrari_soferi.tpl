@@ -80,12 +80,14 @@
                                         </thead>
                                         <tbody>
                                         {$nr = 1}
+                                        {$total_cantitate = 0}
                                         {foreach from = $livrari_soferi['trasee'] item= livrare}
                                             <tr>
                                                 <td style="text-align: center;" class="span1">{$nr++}</td>
                                                 <td>{$livrare['nume_sofer']}</td>
                                                 <td>{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
+                                                {$total_cantitate = 0}
                                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                                     <td style="text-align: right;">
                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
@@ -99,6 +101,14 @@
                                                 {/foreach}
                                             </tr>
                                         {/foreach}
+                                        <tr>
+                                            <th colspan="4" style="text-align: right;">TOTAL:</th>
+                                            {foreach from = $livrari_soferi['produse_sofer'] item= produse}
+                                                <th style="text-align: right;color: red;">To do</th>
+                                                <th style="text-align: right;color: red;">To do</th>
+                                                <th style="text-align: right;color: red;">To do</th>
+                                            {/foreach}
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -108,24 +118,24 @@
                 </div>
             {/if}
             {*<div style="margin-left: 10px;">*}
-                {*<table class="table table-bordered table-striped" style="width: 280px;">*}
-                    {*<tr class="info">*}
-                        {*<td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG*}
-                        {*</td>*}
-                    {*</tr>*}
-                    {*<tr>*}
-                        {*<td style="text-align: left;font-weight: 900;">Total cantitati</td>*}
-                        {*<td style="text-align: center;font-weight: 900;">cantitate</td>*}
-                    {*</tr>*}
-                    {*<tr class="info">*}
-                        {*<td style="text-align: left;font-weight: 900;">Total Valoare</td>*}
-                        {*<td style="text-align: center;font-weight: 900;">total valoare</td>*}
-                    {*</tr>*}
-                    {*<tr>*}
-                        {*<td style="text-align: left;font-weight: 900;">Total Comision</td>*}
-                        {*<td style="text-align: center;font-weight: 900;">comison</td>*}
-                    {*</tr>*}
-                {*</table>*}
+            {*<table class="table table-bordered table-striped" style="width: 280px;">*}
+            {*<tr class="info">*}
+            {*<td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG*}
+            {*</td>*}
+            {*</tr>*}
+            {*<tr>*}
+            {*<td style="text-align: left;font-weight: 900;">Total cantitati</td>*}
+            {*<td style="text-align: center;font-weight: 900;">cantitate</td>*}
+            {*</tr>*}
+            {*<tr class="info">*}
+            {*<td style="text-align: left;font-weight: 900;">Total Valoare</td>*}
+            {*<td style="text-align: center;font-weight: 900;">total valoare</td>*}
+            {*</tr>*}
+            {*<tr>*}
+            {*<td style="text-align: left;font-weight: 900;">Total Comision</td>*}
+            {*<td style="text-align: center;font-weight: 900;">comison</td>*}
+            {*</tr>*}
+            {*</table>*}
             {*</div>*}
     </section>
 </div>
