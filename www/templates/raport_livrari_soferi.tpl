@@ -7,7 +7,7 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Raport livrari sofer
+                    <h1><i class="icon20 i-menu-6"></i> Raport livrari sofer (de verificat cantitatile + print TO DO)
                         <a href="/print_raport_livrari_soferi.php?id={$sofer_id}&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
@@ -87,15 +87,15 @@
                                                 <td>{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
                                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
-                                                        <td style="text-align: right;">
-                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
-                                                        </td>
-                                                        <td style="text-align: right;">
-                                                            {($livrare['total_produse'][$produse['tip_produs_id']]['valoare'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['valoare'] : '-'}
-                                                        </td>
-                                                        <td style="text-align: right;">
-                                                            {($livrare['total_produse'][$produse['tip_produs_id']]['comision'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['comision'] : '-'}
-                                                        </td>
+                                                    <td style="text-align: right;">
+                                                        {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
+                                                    </td>
+                                                    <td style="text-align: right;">
+                                                        {($livrare['total_produse'][$produse['tip_produs_id']]['valoare'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['valoare'] : '-'}
+                                                    </td>
+                                                    <td style="text-align: right;">
+                                                        {($livrare['total_produse'][$produse['tip_produs_id']]['comision'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['comision'] : '-'}
+                                                    </td>
                                                 {/foreach}
                                             </tr>
                                         {/foreach}
@@ -107,8 +107,29 @@
                     </div>
                 </div>
             {/if}
+            {*<div style="margin-left: 10px;">*}
+                {*<table class="table table-bordered table-striped" style="width: 280px;">*}
+                    {*<tr class="info">*}
+                        {*<td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG*}
+                        {*</td>*}
+                    {*</tr>*}
+                    {*<tr>*}
+                        {*<td style="text-align: left;font-weight: 900;">Total cantitati</td>*}
+                        {*<td style="text-align: center;font-weight: 900;">cantitate</td>*}
+                    {*</tr>*}
+                    {*<tr class="info">*}
+                        {*<td style="text-align: left;font-weight: 900;">Total Valoare</td>*}
+                        {*<td style="text-align: center;font-weight: 900;">total valoare</td>*}
+                    {*</tr>*}
+                    {*<tr>*}
+                        {*<td style="text-align: left;font-weight: 900;">Total Comision</td>*}
+                        {*<td style="text-align: center;font-weight: 900;">comison</td>*}
+                    {*</tr>*}
+                {*</table>*}
+            {*</div>*}
     </section>
 </div>
 <div style="margin-top: 100px;"></div>
+
 <script src="/js/pagini/raport_livrari_soferi.js"></script>
 
