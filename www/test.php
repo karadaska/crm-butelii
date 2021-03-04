@@ -41,11 +41,11 @@ $stare_id = 1;
 //$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(298,2433);
 
 //
-$b = ParcAuto::getRaportLivrariSoferi(23,
-    $opts = array(
-        'data_start' => $data_start,
-        'data_stop' => $data_stop
-    ));
+//$b = ParcAuto::getRaportLivrariSoferi(23,
+//    $opts = array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//    ));
 
 //$b = Produse::getProduseVanduteBySoferId(23, array(
 //        'data_start' => $data_start,

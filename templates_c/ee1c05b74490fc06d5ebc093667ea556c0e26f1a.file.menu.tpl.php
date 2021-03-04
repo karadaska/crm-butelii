@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-09 14:10:12
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 10:01:42
          compiled from "/var/www/html/fofoweb/www/templates/menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9616245660227ba4d27c14-20917452%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee1c05b74490fc06d5ebc093667ea556c0e26f1a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/menu.tpl',
-      1 => 1612299430,
+      1 => 1614844589,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60227ba4d76290_11464050',
   'variables' => 
   array (
     'menu_curent' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60227ba4d76290_11464050',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60227ba4d76290_11464050')) {function content_60227ba4d76290_11464050($_smarty_tpl) {?><aside id="sidebar">
     <div class="side-options">
@@ -160,6 +160,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <a href="/raport_livrari_soferi.php">
                                 <span class="icon"><i class="icon20 i-stack-list"></i></span>
                                 <span class="txt">Raport livrari soferi</span>
+                            </a>
+                        </li>
+                        <li <?php if ($_smarty_tpl->tpl_vars['menu_curent']->value==9) {?>class="current"<?php }?>>
+                            <a href="/livrari_masini.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Raport livrari masini</span>
                             </a>
                         </li>
                     </ul>
