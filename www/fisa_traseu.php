@@ -21,7 +21,7 @@ $smarty->assign('sofer_id', $sofer_id);
 $masina_id = getRequestParameter('masina_id', 0 );
 $smarty->assign('masina_id', $masina_id);
 
-$luna_id = getRequestParameter('luna_id', 0);
+$luna_id = getRequestParameter('luna_id', date('m'));
 $smarty->assign('luna_id', $luna_id);
 
 $lista_fise = Stocuri::getFise(array(

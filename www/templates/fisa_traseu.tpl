@@ -71,7 +71,7 @@
                                                                 <th>Masina</th>
                                                                 <th>Incarcatura plecare</th>
                                                                 <th>Incarcatura sosire</th>
-                                                                <th>Detalii Km</th>
+                                                                {*<th>Detalii Km</th>*}
                                                                 <th>Data</th>
                                                                 <th>&nbsp;</th>
                                                             </tr>
@@ -97,16 +97,16 @@
                                                                             <br/>
                                                                         {/foreach}
                                                                     </td>
-                                                                    <td>
-                                                                        <span style="font-weight: 900">Plecare:</span> {($fisa['km_fisa']['km_plecare'] != '') ? $fisa['km_fisa']['km_plecare'] :'0'}
-                                                                        km
-                                                                        <br/>
-                                                                        <span style="font-weight: 900">Sosire:</span> {($fisa['km_fisa']['km_sosire'] !='') ? $fisa['km_fisa']['km_sosire'] : '0'}
-                                                                        km <br/>
-                                                                        <span style="font-weight: 900">Total
-                                                                            :</span> {$fisa['km_fisa']['km_plecare'] + $fisa['km_fisa']['km_sosire']}
-                                                                        km
-                                                                    </td>
+                                                                    {*<td>*}
+                                                                        {*<span style="font-weight: 900">Plecare:</span> {($fisa['km_fisa']['km_plecare'] != '') ? $fisa['km_fisa']['km_plecare'] :'0'}*}
+                                                                        {*km*}
+                                                                        {*<br/>*}
+                                                                        {*<span style="font-weight: 900">Sosire:</span> {($fisa['km_fisa']['km_sosire'] !='') ? $fisa['km_fisa']['km_sosire'] : '0'}*}
+                                                                        {*km <br/>*}
+                                                                        {*<span style="font-weight: 900">Total*}
+                                                                            {*:</span> {$fisa['km_fisa']['km_plecare'] + $fisa['km_fisa']['km_sosire']}*}
+                                                                        {*km*}
+                                                                    {*</td>*}
                                                                     <td style="text-align: center;">{$fisa['data_intrare']}</td>
                                                                     <td style="text-align: center;vertical-align: top;"
                                                                         class="span3">
