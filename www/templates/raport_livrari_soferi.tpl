@@ -66,6 +66,7 @@
                                             <th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>
                                             <th style="text-align: center;" rowspan="2">Nr. auto</th>
                                             <th style="text-align: center;" rowspan="2">TRASEU</th>
+                                            <th style="text-align: center;" rowspan="2">Km parcursi</th>
                                             {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                                 <th colspan="3" style="border: double;">{$produse['nume_produs']}</th>
                                             {/foreach}
@@ -86,6 +87,7 @@
                                                 <td>{$livrare['nume_sofer']}</td>
                                                 <td style="text-align: center;">{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
+                                                <td></td>
                                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                                     <td style="text-align: right;">
                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
@@ -100,7 +102,7 @@
                                             </tr>
                                         {/foreach}
                                         <tr>
-                                            <th colspan="4" style="text-align: right;">TOTAL: </th>
+                                            <th colspan="5" style="text-align: right;"></th>
                                             {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                                 <th style="text-align: right;color: red;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['cantitate']}</th>
                                                 <th style="text-align: right;color: red;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['valoare']}</th>
