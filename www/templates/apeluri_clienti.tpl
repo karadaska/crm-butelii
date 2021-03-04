@@ -214,16 +214,16 @@
                                     <thead>
                                     <tr>
                                         <th style="text-align: center;" class="span1">#</th>
-                                        <th>Localitate</th>
-                                        <th>Client</th>
-                                        <th>Observatii</th>
+                                        <th>LOCALITATE</th>
+                                        <th>CLIENT</th>
+                                        <th>OBSERVATII</th>
                                     </tr>
                                     </thead>
                                     {$nr = 1}
                                     {foreach from=$clienti_cu_observatii item=observatie}
                                         <tr>
                                             <td>{$nr++}</td>
-                                            <td>{$observatie['nume_localitate']}</td>
+                                            <td>{strtoupper($observatie['nume_localitate'])}</td>
                                             <td>
                                                 <a href="edit_client.php?id={$observatie['id']}">{$observatie['nume_client']}</a>
                                             </td>
@@ -249,7 +249,7 @@
                                     {foreach from=$clienti_cu_urgente item=client}
                                         <tr>
                                             <td style="text-align: center;">{$nr++}</td>
-                                            <td>{$client['nume_localitate']}</td>
+                                            <td>{strtoupper($client['nume_localitate'])}</td>
                                             <td>
                                                 <a href="edit_client.php?id={$client['client_id']}">{$client['nume_client']}</a>
                                             </td>

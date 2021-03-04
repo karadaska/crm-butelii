@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 15:31:05
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 15:34:30
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1614864658,
+      1 => 1614864867,
       2 => 'file',
     ),
   ),
@@ -340,9 +340,9 @@ $_smarty_tpl->tpl_vars['numar_urgente']->_loop = true;
                                     <thead>
                                     <tr>
                                         <th style="text-align: center;" class="span1">#</th>
-                                        <th>Localitate</th>
-                                        <th>Client</th>
-                                        <th>Observatii</th>
+                                        <th>LOCALITATE</th>
+                                        <th>CLIENT</th>
+                                        <th>OBSERVATII</th>
                                     </tr>
                                     </thead>
                                     <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
@@ -354,7 +354,7 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                         <tr>
                                             <td><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
-                                            <td><?php echo $_smarty_tpl->tpl_vars['observatie']->value['nume_localitate'];?>
+                                            <td><?php echo strtoupper($_smarty_tpl->tpl_vars['observatie']->value['nume_localitate']);?>
 </td>
                                             <td>
                                                 <a href="edit_client.php?id=<?php echo $_smarty_tpl->tpl_vars['observatie']->value['id'];?>
@@ -389,7 +389,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                         <tr>
                                             <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
-                                            <td><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
+                                            <td><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
 </td>
                                             <td>
                                                 <a href="edit_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
