@@ -15,7 +15,6 @@ $casa_marcat = getRequestParameter('casa_marcat', '');
 $id_fisa_adauga_produse = getRequestParameter('id_fisa_adauga_produse', '');
 $raport_z = getRequestParameter('raport_z', '');
 $km_parcursi = getRequestParameter('km_parcursi', 0);
-$km_parcursi = getRequestParameter('km_parcursi', 0);
 $valoare_z = getRequestParameter('valoare_z', '');
 $plata = getRequestParameter('plata', '');
 $tip_alimentare = getRequestParameter('tip_alimentare', '');
