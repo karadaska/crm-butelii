@@ -154,99 +154,79 @@
                 </th>
             </tr>
         {/foreach}
+        <tr>
+            <th colspan="5" style="text-align: right;">TOTAL:</th>
+            <th style="text-align: center;">
+                {if $total_bg_11 > 0}
+                    <span style="font-weight: bolder;">BG 11: {$total_bg_11}</span>
+                    <br/>
+                {/if}
+                {if $total_ar_8 > 0}
+                    <span style="font-weight: bolder;text-align: left;">AR 8: {$total_ar_8}</span>
+                {/if}
+                {if $total_ar_9 > 0}
+                    <span style="font-weight: bolder;text-align: left;">AR 9: {$total_ar_9}</span>
+                {/if}
+            </th>
+            <th></th>
+            <th>
+                {foreach from = $total_urgente item=numar_urgente}
+                    <span style="font-weight: bolder;">TOTAL Urgente : {$numar_urgente}</span>
+                {/foreach}
+            </th>
+        </tr>
         </tbody>
     </table>
 
     {if (count($clienti_cu_observatii) > 0  || count($clienti_cu_urgente) > 0)}
-        <div style="margin-top: 50px;margin-bottom: 100px;">
-            <table border="1" width="100%">
-                <tr>
-                    <td>
-                        <table border="1" style="width: 100%;margin-top: 10px;">
+        <div style="margin-top: 30px;margin-bottom: 100px;display: inline-flex">
+            <div style="margin-left: 10px;">
+                {if count($clienti_cu_observatii) > 0}
+                    <table border="1" style="margin-top: 10px;width: 90%;">
+                        <tr>
+                            <th>LOCALITATE</th>
+                            <th>CLIENT</th>
+                            <th>OBSERVATII</th>
+                        </tr>
+                        {foreach from=$clienti_cu_observatii item=observatie}
                             <tr>
-                                {if $total_bg_11 > 0}
-                                    <th style="text-align: left;">
-                                        <span style="font-weight: bolder;">TOTAL BG 11: {$total_bg_11}</span><br/>
-                                    </th>
-                                {/if}
+                                <th>{$observatie['nume_localitate']}</th>
+                                <th>{$observatie['nume_client']}</th>
+                                <th>{$observatie['nume_observatie']}</th>
                             </tr>
+                        {/foreach}
+                    </table>
+                {/if}
+            </div>
+            <div>
+                {if count($clienti_cu_urgente) > 0}
+                    <table border="1" style="margin-top: 10px;width: 90%;">
+                        <tr>
+                            <th>LOCALITATE</th>
+                            <th>CLIENT</th>
+                            <th>URGENT</th>
+                            <th>CANTITATI</th>
+                        </tr>
+                        {foreach from=$clienti_cu_urgente item=client}
                             <tr>
-                                {if $total_bg_9 > 0}
-                                    <th style="text-align: left;">
-                                        <span style="font-weight: bolder;text-align: left;">TOTAL BG 9: {$total_bg_9}</span>
-                                    </th>
-                                {/if}
-                            </tr>
-                            <tr>
-                                {if $total_ar_8 > 0}
-                                    <th style="text-align: left;">
-                                        <span style="font-weight: bolder;text-align: left;">TOTAL AR 8: {$total_ar_8}</span>
-                                    </th>
-                                {/if}
-                            </tr>
-                            <tr>
-                                {if $total_ar_9 > 0}
-                                    <th style="text-align: left;">
-                                        <span style="font-weight: bolder;text-align: left;">TOTAL AR 9: {$total_ar_9}</span>
-                                    </th>
-                                {/if}
-                            </tr>
-                            <tr>
-                                <th style="text-align: left;">
-                                    {foreach from = $total_urgente item=numar_urgente}
-                                        <span style="font-weight: bolder;">TOTAL Urgente : {$numar_urgente}</span>
+                                <th>{$client['nume_localitate']}</th>
+                                <th>{$client['nume_client']}</th>
+                                <th>
+                                    {$client['urgent']}
+                                </th>
+                                <th style="text-align: left;width: 100px;">
+                                    {foreach from=$client['raspuns'] item=raspuns}
+                                        <span> {$raspuns['nume_produs']}</span>
+                                        :
+                                        <span style="font-weight: 600;">{$raspuns['goale']}</span>
+                                        <br/>
                                     {/foreach}
                                 </th>
                             </tr>
-                        </table>
-                    </td>
-                    <td> {if count($clienti_cu_observatii) > 0}
-                            <table border="1" style="margin-top: 10px;width: 90%;">
-                                <tr>
-                                    <th>LOCALITATE</th>
-                                    <th>CLIENT</th>
-                                    <th>OBSERVATII</th>
-                                </tr>
-                                {foreach from=$clienti_cu_observatii item=observatie}
-                                    <tr>
-                                        <th>{$observatie['nume_localitate']}</th>
-                                        <th>{$observatie['nume_client']}</th>
-                                        <th>{$observatie['nume_observatie']}</th>
-                                    </tr>
-                                {/foreach}
-                            </table>
-                        {/if}</td>
-                    <td>
-                        {if count($clienti_cu_urgente) > 0}
-                            <table border="1" style="margin-top: 10px;width: 90%;">
-                                <tr>
-                                    <th>LOCALITATE</th>
-                                    <th>CLIENT</th>
-                                    <th>URGENT</th>
-                                    <th>CANTITATI</th>
-                                </tr>
-                                {foreach from=$clienti_cu_urgente item=client}
-                                    <tr>
-                                        <th>{$client['nume_localitate']}</th>
-                                        <th>{$client['nume_client']}</th>
-                                        <th>
-                                            {$client['urgent']}
-                                        </th>
-                                        <th style="text-align: left;width: 100px;">
-                                            {foreach from=$client['raspuns'] item=raspuns}
-                                                <span> {$raspuns['nume_produs']}</span>
-                                                :
-                                                <span style="font-weight: 600;">{$raspuns['goale']}</span>
-                                                <br/>
-                                            {/foreach}
-                                        </th>
-                                    </tr>
-                                {/foreach}
-                            </table>
-                        {/if}
-                    </td>
-                </tr>
-            </table>
+                        {/foreach}
+                    </table>
+                {/if}
+            </div>
         </div>
     {/if}
 </section>
