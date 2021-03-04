@@ -4,7 +4,7 @@ header('content-type: application/json');
 
 $zi_curenta = date('Y-m-d');
 $traseu_id = 36;
-$data_start = '2021-01-01';
+$data_start = '2021-02-01';
 $data_stop = '2021-03-31';
 $depozit_id = 0;
 $sofer_id = 0;
@@ -165,4 +165,8 @@ $stare_id = 1;
 
 
 //$b = Stocuri::getFisaGenerataById(188);
+$b = ParcAuto::getRaportLivrariMasini(2, array(
+    'data_start' => $data_start,
+    'data_stop' => $data_stop
+));
 echo json_encode($b);

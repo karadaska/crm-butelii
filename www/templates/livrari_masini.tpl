@@ -22,14 +22,14 @@
                         <thead>
                         <tr>
                             <th style="text-align: left" width="300px;">Masina
-                                <select name="sofer_id">
+                                <select name="masina_id">
                                     <option value="0">Alege masina</option>
                                     {foreach from=$lista_masini item=masina}
-                                        <option value={$masina['id']}
-                                                {if $masina['id'] == $masina} selected="selected"{/if}>
+                                        <option value={$masina['id']} {if $masina['id'] == $masina_id} selected="selected"{/if}>
                                             {$masina['numar']}
                                         </option>
                                     {/foreach}
+
                                 </select>
                                 <input type="hidden" name="id" id="id" value="{$masina_id}">
                             </th>
@@ -50,7 +50,7 @@
                     </table>
                 </form>
             </div>
-            {if ($sofer_id > 0)}
+            {if ($masina_id > 0)}
                 <div class="row-fluid">
                     <div class="span12">
                         <div class="widget">
@@ -67,12 +67,12 @@
                                             <th style="text-align: center;" rowspan="2">Nr. auto</th>
                                             <th style="text-align: center;" rowspan="2">TRASEU</th>
                                             <th style="text-align: center;" rowspan="2">Km parcursi</th>
-                                            {foreach from = $livrari_soferi['produse_sofer'] item= produse}
+                                            {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                 <th colspan="3" style="border: double;">{$produse['nume_produs']}</th>
                                             {/foreach}
                                         </tr>
                                         <tr>
-                                            {foreach from = $livrari_soferi['produse_sofer'] item= produse}
+                                            {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                 <th>Cantitate</th>
                                                 <th>Valoare</th>
                                                 <th>Comision</th>
@@ -81,14 +81,14 @@
                                         </thead>
                                         <tbody>
                                         {$nr = 1}
-                                        {foreach from = $livrari_soferi['trasee'] item= livrare}
+                                        {foreach from = $livrari_masini['trasee'] item= livrare}
                                             <tr>
                                                 <td style="text-align: center;" class="span1">{$nr++}</td>
                                                 <td>{$livrare['nume_sofer']}</td>
                                                 <td style="text-align: center;">{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
                                                 <td></td>
-                                                {foreach from = $livrari_soferi['produse_sofer'] item= produse}
+                                                {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                     <td style="text-align: right;">
                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
                                                     </td>
@@ -103,10 +103,10 @@
                                         {/foreach}
                                         <tr>
                                             <th colspan="5" style="text-align: right;"></th>
-                                            {foreach from = $livrari_soferi['produse_sofer'] item= produse}
-                                                <th style="text-align: right;color: red;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['cantitate']}</th>
-                                                <th style="text-align: right;color: red;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['valoare']}</th>
-                                                <th style="text-align: right;color: red;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['comision']}</th>
+                                            {foreach from = $livrari_masini['produse_masina'] item= produse}
+                                                <th style="text-align: right;color: red;">{$livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}</th>
+                                                <th style="text-align: right;color: red;">{$livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}</th>
+                                                <th style="text-align: right;color: red;">{$livrari_masini['grand'][$produse['tip_produs_id']]['comision']}</th>
                                             {/foreach}
                                         </tr>
                                         </tbody>
@@ -117,26 +117,6 @@
                     </div>
                 </div>
             {/if}
-            {*<div style="margin-left: 10px;">*}
-            {*<table class="table table-bordered table-striped" style="width: 280px;">*}
-            {*<tr class="info">*}
-            {*<td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG*}
-            {*</td>*}
-            {*</tr>*}
-            {*<tr>*}
-            {*<td style="text-align: left;font-weight: 900;">Total cantitati</td>*}
-            {*<td style="text-align: center;font-weight: 900;">cantitate</td>*}
-            {*</tr>*}
-            {*<tr class="info">*}
-            {*<td style="text-align: left;font-weight: 900;">Total Valoare</td>*}
-            {*<td style="text-align: center;font-weight: 900;">total valoare</td>*}
-            {*</tr>*}
-            {*<tr>*}
-            {*<td style="text-align: left;font-weight: 900;">Total Comision</td>*}
-            {*<td style="text-align: center;font-weight: 900;">comison</td>*}
-            {*</tr>*}
-            {*</table>*}
-            {*</div>*}
     </section>
 </div>
 <div style="margin-top: 100px;"></div>
