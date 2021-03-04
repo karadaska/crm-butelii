@@ -45,7 +45,9 @@
             /*color: #000;*/
         }
 
-        td {
+        @page {
+            size: auto;
+            margin: 0;
         }
     </style>
     <script type="text/javascript">
