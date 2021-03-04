@@ -180,9 +180,9 @@
 
     {if (count($clienti_cu_observatii) > 0  || count($clienti_cu_urgente) > 0)}
         <div style="margin-top: 30px;margin-bottom: 100px;display: inline-flex">
-            <div style="margin-left: 10px;">
+            <div style="margin-left: 2px;">
                 {if count($clienti_cu_observatii) > 0}
-                    <table border="1" style="margin-top: 10px;width: 90%;">
+                    <table border="1" style="margin-top: 10px;width: 100%;">
                         <tr>
                             <th>LOCALITATE</th>
                             <th>CLIENT</th>
@@ -190,9 +190,9 @@
                         </tr>
                         {foreach from=$clienti_cu_observatii item=observatie}
                             <tr>
-                                <th>{$observatie['nume_localitate']}</th>
-                                <th>{$observatie['nume_client']}</th>
-                                <th>{$observatie['nume_observatie']}</th>
+                                <th style="text-align: left;">{strtoupper($observatie['nume_localitate'])}</th>
+                                <th style="text-align: left;">{strtoupper($observatie['nume_client'])}</th>
+                                <th style="text-align: left;">{strtoupper($observatie['nume_observatie'])}</th>
                             </tr>
                         {/foreach}
                     </table>
@@ -200,7 +200,7 @@
             </div>
             <div>
                 {if count($clienti_cu_urgente) > 0}
-                    <table border="1" style="margin-top: 10px;width: 90%;">
+                    <table border="1" style="margin-top: 10px;width: 100%;margin-left: 30px;">
                         <tr>
                             <th>LOCALITATE</th>
                             <th>CLIENT</th>

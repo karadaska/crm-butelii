@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 15:03:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 15:09:58
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1929950229603df39e482f18-35501088%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1614862997,
+      1 => 1614863397,
       2 => 'file',
     ),
   ),
@@ -260,9 +260,9 @@ $_smarty_tpl->tpl_vars['numar_urgente']->_loop = true;
 
     <?php if ((count($_smarty_tpl->tpl_vars['clienti_cu_observatii']->value)>0||count($_smarty_tpl->tpl_vars['clienti_cu_urgente']->value)>0)) {?>
         <div style="margin-top: 30px;margin-bottom: 100px;display: inline-flex">
-            <div style="margin-left: 10px;">
+            <div style="margin-left: 2px;">
                 <?php if (count($_smarty_tpl->tpl_vars['clienti_cu_observatii']->value)>0) {?>
-                    <table border="1" style="margin-top: 10px;width: 90%;">
+                    <table border="1" style="margin-top: 10px;width: 100%;">
                         <tr>
                             <th>LOCALITATE</th>
                             <th>CLIENT</th>
@@ -274,11 +274,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['observatie']->key => $_smarty_tpl->tp
 $_smarty_tpl->tpl_vars['observatie']->_loop = true;
 ?>
                             <tr>
-                                <th><?php echo $_smarty_tpl->tpl_vars['observatie']->value['nume_localitate'];?>
+                                <th style="text-align: left;"><?php echo strtoupper($_smarty_tpl->tpl_vars['observatie']->value['nume_localitate']);?>
 </th>
-                                <th><?php echo $_smarty_tpl->tpl_vars['observatie']->value['nume_client'];?>
+                                <th style="text-align: left;"><?php echo strtoupper($_smarty_tpl->tpl_vars['observatie']->value['nume_client']);?>
 </th>
-                                <th><?php echo $_smarty_tpl->tpl_vars['observatie']->value['nume_observatie'];?>
+                                <th style="text-align: left;"><?php echo strtoupper($_smarty_tpl->tpl_vars['observatie']->value['nume_observatie']);?>
 </th>
                             </tr>
                         <?php } ?>
@@ -287,7 +287,7 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
             </div>
             <div>
                 <?php if (count($_smarty_tpl->tpl_vars['clienti_cu_urgente']->value)>0) {?>
-                    <table border="1" style="margin-top: 10px;width: 90%;">
+                    <table border="1" style="margin-top: 10px;width: 100%;margin-left: 30px;">
                         <tr>
                             <th>LOCALITATE</th>
                             <th>CLIENT</th>
