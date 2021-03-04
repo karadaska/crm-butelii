@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 12:26:02
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 12:33:49
          compiled from "/var/www/html/fofoweb/www/templates/livrari_masini.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11988036646040940f14d4e2-58340311%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '666aa7fa2f44ec5dd79cfa9b208b853ba28bbe27' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_masini.tpl',
-      1 => 1614853559,
+      1 => 1614854027,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'title' => 0,
-    'sofer_id' => 0,
-    'data_start' => 0,
-    'data_stop' => 0,
     'lista_masini' => 0,
     'masina' => 0,
     'masina_id' => 0,
+    'data_start' => 0,
+    'data_stop' => 0,
     'livrari_masini' => 0,
     'produse' => 0,
     'nr' => 0,
@@ -45,13 +44,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Raport livrari masini (de verificat cantitatile + print TO DO)
-                        <a href="/print_raport_livrari_soferi.php?id=<?php echo $_smarty_tpl->tpl_vars['sofer_id']->value;?>
-&data_start=<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
-&data_stop=<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
-">
-                            <button class="i-print"></button>
-                        </a>
+                    <h1>
+                        <i class="icon20 i-menu-6"></i> Raport livrari masini (de verificat cantitatile + print TO DO)
+                        
+                            
+                        
                     </h1>
                 </div>
             </div>

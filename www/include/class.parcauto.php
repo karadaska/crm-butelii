@@ -129,7 +129,6 @@ class ParcAuto
         return $ret;
     }
 
-
 //    Scoate starea masinii activa/desfiintata
     public static function getStariMasini()
     {
