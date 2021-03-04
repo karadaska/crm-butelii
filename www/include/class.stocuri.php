@@ -700,7 +700,7 @@ class Stocuri
     {
         $ret = array();
         $query = "SELECT a.fisa_id, a.casa_marcat,raport_z,a.valoare_z,
-                  a.valoare_alimentare, a.km_plecare, a.km_sosire, a.tip_alimentare as tip_alimentare_id, b.tip as tip_plata,
+                  a.valoare_alimentare, a.km_parcursi, a.tip_alimentare as tip_alimentare_id, b.tip as tip_plata,
                   a.nr_bg, a.nr_ar_8, a.nr_ar_9, a.valoare_bg, a.valoare_ar_8, a.valoare_ar_9, a.nota_explicativa
                   from miscari_fise as a
                   left join tip_alimentare as b on a.tip_alimentare = b.id
@@ -711,33 +711,12 @@ class Stocuri
             $ret = $result->fetch(PDO::FETCH_ASSOC);
         }
         return $ret;
-
-//        $result = myQuery($query);
-//        if ($result) {
-//            $a = $result->fetch(PDO::FETCH_ASSOC);
-//            foreach ($a as $item) {
-//                $r = array(
-//                    'fisa_id' => $item['fisa_id'],
-//                    'casa_marcat' => $item['casa_marcat'],
-//                    'raport_z' => $item['raport_z'],
-//                    'valoare_z' => $item['valoare_z'],
-//                    'valoare_alimentare' => $item['valoare_alimentare'],
-//                    'tip_alimentare' => $item['tip_alimentare_id'],
-//                    'tip_plata' => $item['tip_plata'],
-//                    'km' => $item['km']
-//                );
-//
-//                array_push($ret, $r);
-//            }
-//        }
-//        return $ret;
-
     }
 
     public static function getKmByFisaId($id)
     {
         $ret = array();
-        $query = "SELECT a.fisa_id, a.km_plecare, a.km_sosire               
+        $query = "SELECT a.fisa_id, a.parcursi              
                   from miscari_fise as a                 
                   where a.fisa_id = '" . $id . "'";
 

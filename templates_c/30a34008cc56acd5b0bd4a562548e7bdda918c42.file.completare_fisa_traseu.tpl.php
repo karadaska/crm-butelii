@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-01 13:21:07
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 13:05:49
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1614596391,
+      1 => 1614855948,
       2 => 'file',
     ),
   ),
@@ -22,14 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'title' => 0,
     'fisa' => 0,
     'valoare_z' => 0,
-    'incarcatura' => 0,
     'valoare_casa_marcat' => 0,
+    'km_parcursi' => 0,
     'valoare_raport_z' => 0,
     'get_tip_alimentare' => 0,
     'alimentare_tip' => 0,
     'valoare_alimentare' => 0,
-    'km_plecare' => 0,
-    'km_sosire' => 0,
+    'incarcatura' => 0,
     'lista_produse' => 0,
     'plecare_marfa_by_fisa_id' => 0,
     'produs' => 0,
@@ -132,22 +131,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                             </table>
                                         </th>
                                         <th class="table_miscari" style="text-align: center;">
-                                            <h6> <?php  $_smarty_tpl->tpl_vars['incarcatura'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['incarcatura']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['fisa']->value['incarcatura_masina_plecare']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['incarcatura']->key => $_smarty_tpl->tpl_vars['incarcatura']->value) {
-$_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
-?>
-                                                    <span style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['incarcatura']->value['nume_produs'];?>
-
-                                                        : <?php echo $_smarty_tpl->tpl_vars['incarcatura']->value['cantitate'];?>
- bucati</span>
-                                                    <br/>
-                                                <?php } ?>
-                                            </h6>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">NR. casa</th>
@@ -161,6 +144,28 @@ $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
                                                                name="casa_marcat"
                                                                type="text" class="form-control" autocomplete="off"
                                                                value="<?php echo $_smarty_tpl->tpl_vars['valoare_casa_marcat']->value;?>
+"
+                                                        />
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="table_miscari">
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th style="text-align: left;width: 100px;">Km parcursi:</th>
+                                                    <th style="text-align: left;">
+                                                        <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km_parcursi']!='') {?>
+                                                            <?php $_smarty_tpl->tpl_vars['km_parcursi'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km_parcursi'], null, 0);?>
+                                                        <?php } else { ?>
+                                                            <?php $_smarty_tpl->tpl_vars['km_parcursi'] = new Smarty_variable(0, null, 0);?>
+                                                        <?php }?>
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="km_parcursi"
+                                                               autocomplete="off"
+                                                               value="<?php echo $_smarty_tpl->tpl_vars['km_parcursi']->value;?>
 "
                                                         />
                                                     </th>
@@ -336,53 +341,32 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                     </tr>
                                     <tr>
                                         <th class="table_miscari">
-                                            <table class="table table-bordered">
-                                                <tr>
-                                                    <th style="text-align: left;width: 100px;">Km Plecare:</th>
-                                                    <th style="text-align: left;">
-                                                        <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km_plecare']!='') {?>
-                                                            <?php $_smarty_tpl->tpl_vars['km_plecare'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km_plecare'], null, 0);?>
-                                                        <?php } else { ?>
-                                                            <?php $_smarty_tpl->tpl_vars['km_plecare'] = new Smarty_variable(0, null, 0);?>
-                                                        <?php }?>
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="km_plecare"
-                                                               autocomplete="off"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['km_plecare']->value;?>
-"
-                                                        />
-                                                    </th>
-                                                </tr>
-                                            </table>
+                                            <h6> <?php  $_smarty_tpl->tpl_vars['incarcatura'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['incarcatura']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['fisa']->value['incarcatura_masina_plecare']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['incarcatura']->key => $_smarty_tpl->tpl_vars['incarcatura']->value) {
+$_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
+?>
+                                                    <span style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['incarcatura']->value['nume_produs'];?>
+
+                                                        : <?php echo $_smarty_tpl->tpl_vars['incarcatura']->value['cantitate'];?>
+ bucati</span>
+                                                    <br/>
+                                                <?php } ?>
+                                            </h6>
+
                                         </th>
                                         <th class="table_miscari">
-                                            <table class="table table-bordered">
-                                                <tr>
-                                                    <th style="text-align: left;width: 100px;">Km Sosire:</th>
-                                                    <th style="text-align: left;">
-                                                        <?php if ($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km_sosire']!='') {?>
-                                                            <?php $_smarty_tpl->tpl_vars['km_sosire'] = new Smarty_variable($_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['km_sosire'], null, 0);?>
-                                                        <?php } else { ?>
-                                                            <?php $_smarty_tpl->tpl_vars['km_sosire'] = new Smarty_variable(0, null, 0);?>
-                                                        <?php }?>
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="km_sosire"
-                                                               autocomplete="off"
-                                                               value="<?php echo $_smarty_tpl->tpl_vars['km_sosire']->value;?>
-"
-                                                        />
-                                                    </th>
-                                                </tr>
-                                            </table>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="3">
                                             <textarea style="width: 100%" type="text" rows="2"
                                                       name="nota_explicativa"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['miscari_fisa']['nota_explicativa'];?>
 </textarea>
                                         </th>
                                     </tr>
+                                    
+                                        
+                                            
+                                                      
+                                        
+                                    
                                     <tr>
                                         <th colspan="3" style="text-align: right;">
                                             <button style="margin-bottom: 11px;" type="submit"

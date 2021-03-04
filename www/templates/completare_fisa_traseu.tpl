@@ -57,16 +57,6 @@
                                             </table>
                                         </th>
                                         <th class="table_miscari" style="text-align: center;">
-                                            <h6> {foreach from = $fisa['incarcatura_masina_plecare'] item = incarcatura}
-                                                    <span style="color: red;"> {$incarcatura['nume_produs']}
-                                                        : {$incarcatura['cantitate']} bucati</span>
-                                                    <br/>
-                                                {/foreach}
-                                            </h6>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th class="table_miscari">
                                             <table class="table table-bordered">
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">NR. casa</th>
@@ -80,6 +70,27 @@
                                                                name="casa_marcat"
                                                                type="text" class="form-control" autocomplete="off"
                                                                value="{$valoare_casa_marcat}"
+                                                        />
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th class="table_miscari">
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th style="text-align: left;width: 100px;">Km parcursi:</th>
+                                                    <th style="text-align: left;">
+                                                        {if $fisa['miscari_fisa']['km_parcursi'] != ''}
+                                                            {$km_parcursi = $fisa['miscari_fisa']['km_parcursi']}
+                                                        {else}
+                                                            {$km_parcursi = 0}
+                                                        {/if}
+                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
+                                                               type="text" class="form-control" name="km_parcursi"
+                                                               autocomplete="off"
+                                                               value="{$km_parcursi}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -239,50 +250,25 @@
                                     </tr>
                                     <tr>
                                         <th class="table_miscari">
-                                            <table class="table table-bordered">
-                                                <tr>
-                                                    <th style="text-align: left;width: 100px;">Km Plecare:</th>
-                                                    <th style="text-align: left;">
-                                                        {if $fisa['miscari_fisa']['km_plecare'] != ''}
-                                                            {$km_plecare = $fisa['miscari_fisa']['km_plecare']}
-                                                        {else}
-                                                            {$km_plecare = 0}
-                                                        {/if}
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="km_plecare"
-                                                               autocomplete="off"
-                                                               value="{$km_plecare}"
-                                                        />
-                                                    </th>
-                                                </tr>
-                                            </table>
+                                            <h6> {foreach from = $fisa['incarcatura_masina_plecare'] item = incarcatura}
+                                                    <span style="color: red;"> {$incarcatura['nume_produs']}
+                                                        : {$incarcatura['cantitate']} bucati</span>
+                                                    <br/>
+                                                {/foreach}
+                                            </h6>
+
                                         </th>
                                         <th class="table_miscari">
-                                            <table class="table table-bordered">
-                                                <tr>
-                                                    <th style="text-align: left;width: 100px;">Km Sosire:</th>
-                                                    <th style="text-align: left;">
-                                                        {if $fisa['miscari_fisa']['km_sosire'] != ''}
-                                                            {$km_sosire = $fisa['miscari_fisa']['km_sosire']}
-                                                        {else}
-                                                            {$km_sosire = 0}
-                                                        {/if}
-                                                        <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
-                                                               type="text" class="form-control" name="km_sosire"
-                                                               autocomplete="off"
-                                                               value="{$km_sosire}"
-                                                        />
-                                                    </th>
-                                                </tr>
-                                            </table>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="3">
                                             <textarea style="width: 100%" type="text" rows="2"
                                                       name="nota_explicativa">{$fisa['miscari_fisa']['nota_explicativa']}</textarea>
                                         </th>
                                     </tr>
+                                    {*<tr>*}
+                                        {*<th colspan="3">*}
+                                            {*<textarea style="width: 100%" type="text" rows="2"*}
+                                                      {*name="nota_explicativa">{$fisa['miscari_fisa']['nota_explicativa']}</textarea>*}
+                                        {*</th>*}
+                                    {*</tr>*}
                                     <tr>
                                         <th colspan="3" style="text-align: right;">
                                             <button style="margin-bottom: 11px;" type="submit"
