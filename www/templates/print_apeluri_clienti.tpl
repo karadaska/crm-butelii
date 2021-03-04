@@ -215,12 +215,12 @@
                                     {$client['urgent']}
                                 </th>
                                 <th style="text-align: left;width: 100px;">
-                                    {foreach from=$client['raspuns'] item=raspuns}
-                                        <span> {$raspuns['nume_produs']}</span>
-                                        :
-                                        <span style="font-weight: 600;">{$raspuns['goale']}</span>
-                                        <br/>
-                                    {/foreach}
+                                        {foreach from=$client['raspuns'] item=raspuns}
+                                            <span> {$raspuns['nume_produs']}</span>
+                                            :
+                                            <span style="font-weight: 600;">{$raspuns['goale']}</span>
+                                            <br/>
+                                        {/foreach}
                                 </th>
                             </tr>
                         {/foreach}
