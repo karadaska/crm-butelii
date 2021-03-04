@@ -41,8 +41,8 @@
         }
 
         th {
-            font-weight: bold;
-            color: #000;
+            /*font-weight: bold;*/
+            /*color: #000;*/
         }
 
         td {
@@ -71,8 +71,8 @@
         <tr>
             <td style="text-align: left;" class="span3">
                 <h3>
-                    Traseu: {strtoupper($nume_traseu['nume'])} <br/>
-                    Data: {date('Y-m-d')}
+                    TRASEU: {strtoupper($nume_traseu['nume'])} <br/>
+                    DATA: {date('Y-m-d')}
                 </h3>
             </td>
         </tr>
@@ -81,13 +81,13 @@
         <thead>
         <tr>
             <th style="text-align: center;">#</th>
-            <th style="text-align: left;">Localitate</th>
-            <th style="text-align: left;">Client</th>
-            <th style="text-align: left;">Telefon</th>
-            <th style="text-align: left;">Produs</th>
-            <th style="text-align: left;">Goale la client</th>
-            <th style="text-align: center;">Obs</th>
-            <th style="text-align: center;">Urgent</th>
+            <th style="text-align: left;">LOCALITATE</th>
+            <th style="text-align: left;">CLIENT</th>
+            <th style="text-align: center;">TELEFON</th>
+            <th style="text-align: center;">PRODUS</th>
+            <th style="text-align: center;">GOALE</th>
+            <th style="text-align: center;">OBS</th>
+            <th style="text-align: center;">URGENT</th>
         </tr>
         </thead>
         <tbody>
@@ -109,7 +109,7 @@
                 <th style="text-align: left;vertical-align: middle;">
                     {strtoupper($client['nume_client'])}
                 </th>
-                <th style="text-align: left;vertical-align: middle;">
+                <th style="text-align: center;vertical-align: middle;">
                     {if strlen($client['telefon']) >1}
                         {strtoupper($client['telefon'])}
                     {/if}
@@ -118,7 +118,7 @@
                         {strtoupper($client['telefon_2'])}
                     {/if}
                 </th>
-                <th>
+                <th style="text-align: left;">
                     {foreach from=$client['target'] item = target_client}
                         {$target_client['nume_produs']}: {$target_client['target']}
                         <br/>
@@ -145,10 +145,6 @@
                 <th style="width: 300px;">
                     {assign var=client_observatie value=Clienti::getObservatieApelClientiByClientId($target_client['client_id'], $id)}
                     {$client_observatie['nume_observatie']}
-                    {*{foreach from=$client_observatie item=observatie_id}*}
-                        {*{assign var=nume_observatie value=Clienti::getNumeObservatieByObservatieId($observatie_id)}*}
-                        {*{$nume_observatie['nume_observatie']}*}
-                    {*{/foreach}*}
                 </th>
                 <th>
                     {assign var=client_urgenta value=Clienti::getNumeUrgentaApelClientiByClientId($target_client['client_id'],$id)}
@@ -208,9 +204,9 @@
                 <td> {if count($clienti_cu_observatii) > 0}
                         <table border="1" style="margin-top: 10px;width: 90%;">
                             <tr>
-                                <th>Localitate</th>
-                                <th>Client</th>
-                                <th>Observatii</th>
+                                <th>LOCALITATE</th>
+                                <th>CLIENT</th>
+                                <th>OBSERVATII</th>
                             </tr>
                             {foreach from=$clienti_cu_observatii item=observatie}
                                 <tr>
@@ -225,10 +221,10 @@
                     {if count($clienti_cu_urgente) > 0}
                         <table border="1" style="margin-top: 10px;width: 90%;">
                             <tr>
-                                <th>Localitate</th>
-                                <th>Client</th>
-                                <th>Urgent</th>
-                                <th>Cantitati</th>
+                                <th>LOCALITATE</th>
+                                <th>CLIENT</th>
+                                <th>URGENT</th>
+                                <th>CANTITATI</th>
                             </tr>
                             {foreach from=$clienti_cu_urgente item=client}
                                 <tr>
