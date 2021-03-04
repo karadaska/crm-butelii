@@ -156,7 +156,8 @@
                                                 </select>
                                                 <div style="margin-top: 5px;"></div>
                                                 {assign var=urgenta_client value=Clienti::getUrgentaApelClientiByClientId($client['id'],$traseu_id)}
-                                                <select name="urgent_{$target_client['client_id']}_{$target_client['tip_produs_id']}" style="width: 250px;">
+                                                <select name="urgent_{$target_client['client_id']}_{$target_client['tip_produs_id']}"
+                                                        style="width: 250px;">
                                                     <option value="0"
                                                             {if $urgenta_client['urgent'] == 0}selected="selected"{/if}>
                                                         NU
@@ -194,16 +195,6 @@
                                     <span style="font-weight: bolder;margin-left: 20px;">AR 9: {$total_ar_9} buc</span>
                                 </th>
                             {/if}
-                            <th style="text-align: left;">
-                                {foreach from = $total_obs item=numar_obs}
-                                    <span style="font-weight: bolder;margin-left: 20px;color: red">Observatii : {$numar_obs}</span>
-                                {/foreach}
-                            </th>
-                            <th style="text-align: left;">
-                                {foreach from = $total_urgente item=numar_urgente}
-                                    <span style="font-weight: bolder;margin-left: 20px;color: red">Urgente : {$numar_urgente}</span>
-                                {/foreach}
-                            </th>
                         </tr>
                     </table>
                     <div style="display: inline-flex">
@@ -213,13 +204,16 @@
                                        style="width: 560px;margin-left: 5px;">
                                     <thead>
                                     <tr>
+                                        <th style="text-align: center;" class="span1">#</th>
                                         <th>Localitate</th>
                                         <th>Client</th>
                                         <th>Observatii</th>
                                     </tr>
                                     </thead>
+                                    {$nr = 1}
                                     {foreach from=$clienti_cu_observatii item=observatie}
                                         <tr>
+                                            <td>{$nr++}</td>
                                             <td>{$observatie['nume_localitate']}</td>
                                             <td>
                                                 <a href="edit_client.php?id={$observatie['id']}">{$observatie['nume_client']}</a>
@@ -227,11 +221,6 @@
                                             <td>{$observatie['nume_observatie']}</td>
                                         </tr>
                                     {/foreach}
-                                    <tr>
-                                        <th colspan="3" style="text-align: left;">Total clienti cu
-                                            observatii: {count($clienti_cu_observatii)}
-                                        </th>
-                                    </tr>
                                 </table>
                             </div>
                         {/if}
@@ -240,14 +229,17 @@
                                 <table class="table table-bordered table-hover" style="width: 570px;">
                                     <thead>
                                     <tr>
+                                        <th style="text-align: center" class="span1">#</th>
                                         <th>Localitate</th>
                                         <th>Client</th>
                                         <th>Urgent</th>
                                         <th>Cantitati</th>
                                     </tr>
                                     </thead>
+                                    {$nr = 1}
                                     {foreach from=$clienti_cu_urgente item=client}
                                         <tr>
+                                            <td style="text-align: center;">{$nr++}</td>
                                             <td>{$client['nume_localitate']}</td>
                                             <td>
                                                 <a href="edit_client.php?id={$client['client_id']}">{$client['nume_client']}</a>
@@ -265,11 +257,6 @@
                                             </td>
                                         </tr>
                                     {/foreach}
-                                    <tr>
-                                        <th colspan="4" style="text-align: left;">Total clienti cu
-                                            urgente: {count($clienti_cu_urgente)}
-                                        </th>
-                                    </tr>
                                 </table>
                             </div>
                         {/if}

@@ -156,47 +156,50 @@
         {/foreach}
         </tbody>
     </table>
-    <table border="1" style="width: 47%;margin-top: 10px;">
-        <tr>
-            {if $total_bg_11 > 0}
-                <th style="text-align: left;">
-                    <span style="font-weight: bolder;">TOTAL BG 11: {$total_bg_11}</span><br/>
-                </th>
-            {/if}
-        </tr>
-        <tr>
-            {if $total_bg_9 > 0}
-                <th style="text-align: left;">
-                    <span style="font-weight: bolder;text-align: left;">TOTAL BG 9: {$total_bg_9}</span>
-                </th>
-            {/if}
-        </tr>
-        <tr>
-            {if $total_ar_8 > 0}
-                <th style="text-align: left;">
-                    <span style="font-weight: bolder;text-align: left;">TOTAL AR 8: {$total_ar_8}</span>
-                </th>
-            {/if}
-        </tr>
-        <tr>
-            {if $total_ar_9 > 0}
-                <th style="text-align: left;">
-                    <span style="font-weight: bolder;text-align: left;">TOTAL AR 9: {$total_ar_9}</span>
-                </th>
-            {/if}
-        </tr>
-        <tr>
-            <th style="text-align: left;">
-                {foreach from = $total_urgente item=numar_urgente}
-                    <span style="font-weight: bolder;">TOTAL Urgente : {$numar_urgente}</span>
-                {/foreach}
-            </th>
-        </tr>
-    </table>
+
     {if (count($clienti_cu_observatii) > 0  || count($clienti_cu_urgente) > 0)}
-        <div>
+        <div style="margin-top: 50px;margin-bottom: 100px;">
             <table border="1" width="100%">
                 <tr>
+                    <td>
+                        <table border="1" style="width: 100%;margin-top: 10px;">
+                            <tr>
+                                {if $total_bg_11 > 0}
+                                    <th style="text-align: left;">
+                                        <span style="font-weight: bolder;">TOTAL BG 11: {$total_bg_11}</span><br/>
+                                    </th>
+                                {/if}
+                            </tr>
+                            <tr>
+                                {if $total_bg_9 > 0}
+                                    <th style="text-align: left;">
+                                        <span style="font-weight: bolder;text-align: left;">TOTAL BG 9: {$total_bg_9}</span>
+                                    </th>
+                                {/if}
+                            </tr>
+                            <tr>
+                                {if $total_ar_8 > 0}
+                                    <th style="text-align: left;">
+                                        <span style="font-weight: bolder;text-align: left;">TOTAL AR 8: {$total_ar_8}</span>
+                                    </th>
+                                {/if}
+                            </tr>
+                            <tr>
+                                {if $total_ar_9 > 0}
+                                    <th style="text-align: left;">
+                                        <span style="font-weight: bolder;text-align: left;">TOTAL AR 9: {$total_ar_9}</span>
+                                    </th>
+                                {/if}
+                            </tr>
+                            <tr>
+                                <th style="text-align: left;">
+                                    {foreach from = $total_urgente item=numar_urgente}
+                                        <span style="font-weight: bolder;">TOTAL Urgente : {$numar_urgente}</span>
+                                    {/foreach}
+                                </th>
+                            </tr>
+                        </table>
+                    </td>
                     <td> {if count($clienti_cu_observatii) > 0}
                             <table border="1" style="margin-top: 10px;width: 90%;">
                                 <tr>
