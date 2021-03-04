@@ -62,12 +62,12 @@
                                     <thead>
                                     <tr>
                                         <th style="text-align: center;">#</th>
-                                        <th style="text-align: left;">Localitate</th>
-                                        <th style="text-align: left;">Client</th>
-                                        <th style="text-align: left;">Telefon</th>
-                                        <th style="text-align: left;">Stoc client</th>
-                                        <th style="text-align: left;">Cantitati</th>
-                                        <th style="text-align: center;" colspan="2">Observatii</th>
+                                        <th style="text-align: left;">LOCALITATE</th>
+                                        <th style="text-align: left;">CLIENT</th>
+                                        <th style="text-align: center;">TELEFON</th>
+                                        <th style="text-align: center;">STOC CLIENT</th>
+                                        <th style="text-align: center;">CANTITATI</th>
+                                        <th style="text-align: center;" colspan="2">OBSERVATII</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -85,7 +85,7 @@
                                                 <a target="_blank"
                                                    href="edit_client.php?id={$client['id']}">{strtoupper($client['nume_client'])}</a>
                                             </th>
-                                            <th style="text-align: left;vertical-align: middle;">
+                                            <th style="text-align: center;vertical-align: middle;">
                                                 {if strlen($client['telefon']) >1}
                                                     {strtoupper($client['telefon'])}
                                                 {/if}
@@ -239,10 +239,10 @@
                                     <thead>
                                     <tr>
                                         <th style="text-align: center" class="span1">#</th>
-                                        <th>Localitate</th>
-                                        <th>Client</th>
-                                        <th>Urgent</th>
-                                        <th>Cantitati</th>
+                                        <th>LOCALITATE</th>
+                                        <th>CLIENT</th>
+                                        <th>URGENT</th>
+                                        <th>CANTITATI</th>
                                     </tr>
                                     </thead>
                                     {$nr = 1}
