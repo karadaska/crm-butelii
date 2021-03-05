@@ -4,7 +4,7 @@ header('content-type: application/json');
 
 $zi_curenta = date('Y-m-d');
 $traseu_id = 36;
-$data_start = '2021-02-01';
+$data_start = '2021-01-01';
 $data_stop = '2021-03-31';
 $depozit_id = 0;
 $sofer_id = 0;
@@ -41,11 +41,11 @@ $stare_id = 1;
 //$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(298,2433);
 
 //
-//$b = ParcAuto::getRaportLivrariSoferi(23,
-//    $opts = array(
-//        'data_start' => $data_start,
-//        'data_stop' => $data_stop
-//    ));
+$b = ParcAuto::getRaportLivrariSoferi(26,
+    $opts = array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+    ));
 
 //$b = Produse::getProduseVanduteBySoferId(23, array(
 //        'data_start' => $data_start,
@@ -165,13 +165,5 @@ $stare_id = 1;
 
 
 //$b = Stocuri::getFisaGenerataById(188);
-$b = Clienti::getListaClientiIndex(array(
-        'depozit_id' => 1,
-        'localitate_id' => $localitate_id,
-        'zona_id' => $zona_id,
-        'traseu_id' => $traseu_id,
-        'stare_id' => $stare_id
-    )
 
-);
 echo json_encode($b);

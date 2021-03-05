@@ -202,7 +202,7 @@ class ParcAuto
         return $ret;
     }
 
-    public static function getTotalCantitatiBySoferIdAndTraseuId($sofer_id = 0, $traseu_id, $opts = array())
+    public static function getTotalCantitatiBySoferIdAndTraseuId($sofer_id, $traseu_id, $opts = array())
     {
         $ret = null;
         $tip_produs_id = isset($opts['tip_produs_id']) ? $opts['tip_produs_id'] : 0;
@@ -274,6 +274,38 @@ class ParcAuto
         return $ret;
 
     }
+
+    public static function getTotalKmBySoferIdAndTraseuId($sofer_id = 0, $traseu_id, $opts = array())
+    {
+        $ret = null;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $target_by_client_id = "SELECT SUM(a.km_parcursi) as km_traseu FROM miscari_fise as a
+                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                                WHERE b.sofer_id = '" . $sofer_id . "'
+                                AND b.traseu_id = '" . $traseu_id . "'
+                                AND a.data_intrare >= '" . $data_start . "'
+                                AND a.data_intrare <= '" . $data_stop . "'
+                                ";
+
+
+        $result = myQuery($target_by_client_id);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
 
     public static function getTotalCantitatiBySoferIdProdusId($sofer_id = 0, $tip_produs_id, $opts = array())
     {
@@ -388,7 +420,7 @@ class ParcAuto
             'trasee' => array()
         );
 
-        $query = "SELECT a.*, b.nume as nume_sofer, c.nume as nume_traseu, d.numar, a.traseu_id 
+        $query = "SELECT a.id, a.depozit_id,a.traseu_id, a.sofer_id, b.nume as nume_sofer, c.nume as nume_traseu, d.numar 
                   FROM fise_generate as a
                   LEFT JOIN soferi as b on a.sofer_id = b.id
                   LEFT JOIN trasee as c on a.traseu_id = c.id
@@ -414,11 +446,17 @@ class ParcAuto
                     'nume_sofer' => $item['nume_sofer'],
                     'nume_traseu' => $item['nume_traseu'],
                     'numar' => $item['numar'],
-                    'total_produse' => array()
+                    'total_produse' => array(),
+                    'km' => array()
                 );
                 foreach ($ret['produse_sofer'] as $tip_produs_id => $item_tip_produs) {
                     $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
                         'tip_produs_id' => $tip_produs_id,
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ));
+
+                    $r['km'] = self::getTotalKmBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ));

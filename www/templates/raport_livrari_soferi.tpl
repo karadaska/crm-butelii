@@ -87,7 +87,11 @@
                                                 <td>{$livrare['nume_sofer']}</td>
                                                 <td style="text-align: center;">{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
-                                                <td></td>
+                                                <td>
+                                                    {foreach from = $livrare['km'] item= mumu}
+                                                        {$mumu['km_traseu']}
+                                                    {/foreach}
+                                                </td>
                                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                                     <td style="text-align: right;">
                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
