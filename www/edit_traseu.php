@@ -50,6 +50,8 @@ $smarty->assign('lista_depozite', $lista_depozite);
 
 //$smarty->assign('lista_masini', $lista_masini);
 
+debug('dsadsa');
+
 $smarty->assign('adaugat', 0);
 
 if ($modifica and $nume != '') {
