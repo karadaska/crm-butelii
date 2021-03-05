@@ -48,7 +48,6 @@ require_once WWW_DIR . '/include/class.asignari.php';
 require_once WWW_DIR . '/include/class.depozite.php';
 require_once WWW_DIR . '/include/class.zone.php';
 require_once WWW_DIR . '/include/class.produse.php';
-require_once WWW_DIR . '/include/class.function.php';
 require_once WWW_DIR . '/include/class.test.php';
 
 
