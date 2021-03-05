@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-11 09:13:51
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-05 14:40:36
          compiled from "/var/www/html/fofoweb/www/templates/clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2258838906024d92f57e424-09898508%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fcf125a056747d97b14571d9c3951de0a101d95f' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti.tpl',
-      1 => 1611828580,
+      1 => 1614948033,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_6024d92f6064f3_61411080',
   'variables' => 
   array (
     'title' => 0,
@@ -36,12 +38,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_clienti' => 0,
     'client' => 0,
     'asignare_traseu' => 0,
-    'observatie_client' => 0,
     'totaltime' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_6024d92f6064f3_61411080',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_6024d92f6064f3_61411080')) {function content_6024d92f6064f3_61411080($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -73,7 +72,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/clienti.php" method="get" id="form_clienti" name="form_clienti" style="margin-bottom: 0">
+                <form action="/clienti.php" method="POST" id="form_clienti" name="form_clienti" style="margin-bottom: 0">
                     <input type="hidden" name="form_submit" value="1" id="form_submit"/>
                     <div style="float: left;margin-right: 10px;">
                         <select name="depozit_id" style="width: 150px;" data-schimba="1">
@@ -252,14 +251,11 @@ $_smarty_tpl->tpl_vars['asignare_traseu']->_loop = true;
                                             
                                         
                                         <td>
-                                            <?php  $_smarty_tpl->tpl_vars['observatie_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['observatie_client']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['client']->value['observatii_client']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['observatie_client']->key => $_smarty_tpl->tpl_vars['observatie_client']->value) {
-$_smarty_tpl->tpl_vars['observatie_client']->_loop = true;
-?>
-                                                <?php echo $_smarty_tpl->tpl_vars['observatie_client']->value['nume'];?>
+                                            <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_observatie'];?>
 
-                                            <?php } ?>
+                                            
+                                                
+                                            
                                         </td>
                                     </tr>
                                 <?php } ?>

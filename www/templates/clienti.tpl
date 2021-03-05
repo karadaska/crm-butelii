@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/clienti.php" method="get" id="form_clienti" name="form_clienti" style="margin-bottom: 0">
+                <form action="/clienti.php" method="POST" id="form_clienti" name="form_clienti" style="margin-bottom: 0">
                     <input type="hidden" name="form_submit" value="1" id="form_submit"/>
                     <div style="float: left;margin-right: 10px;">
                         <select name="depozit_id" style="width: 150px;" data-schimba="1">
@@ -149,9 +149,10 @@
                                             {*{/foreach}*}
                                         {*</td>*}
                                         <td>
-                                            {foreach from=$client['observatii_client'] item = observatie_client}
-                                                {$observatie_client['nume']}
-                                            {/foreach}
+                                            {$client['nume_observatie']}
+                                            {*{foreach from=$client['observatii_client'] item = observatie_client}*}
+                                                {*{$observatie_client['nume']}*}
+                                            {*{/foreach}*}
                                         </td>
                                     </tr>
                                 {/foreach}

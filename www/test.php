@@ -165,8 +165,13 @@ $stare_id = 1;
 
 
 //$b = Stocuri::getFisaGenerataById(188);
-$b = ParcAuto::getRaportLivrariMasini(2, array(
-    'data_start' => $data_start,
-    'data_stop' => $data_stop
-));
+$b = Clienti::getListaClientiIndex(array(
+        'depozit_id' => 1,
+        'localitate_id' => $localitate_id,
+        'zona_id' => $zona_id,
+        'traseu_id' => $traseu_id,
+        'stare_id' => $stare_id
+    )
+
+);
 echo json_encode($b);

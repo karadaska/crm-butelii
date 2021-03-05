@@ -13,22 +13,22 @@ $form_submit = getRequestParameter('form_submit', 0);
 $targetByClientId = Target::getTargetClient($id);
 $smarty->assign('targetByClientId',$targetByClientId);
 
-$depozit_id = getRequestParameter('depozit_id', 0);
+$depozit_id = getRequestParameter('depozit_id', '');
 $smarty->assign('depozit_id', $depozit_id);
 
 $localitate_id = getRequestParameter('localitate_id', '');
 $smarty->assign('localitate_id', $localitate_id);
 
-$traseu_id = getRequestParameter('traseu_id', 0);
+$traseu_id = getRequestParameter('traseu_id', '');
 $smarty->assign('traseu_id', $traseu_id);
 
-$stare_id = getRequestParameter('stare_id', 0);
+$stare_id = getRequestParameter('stare_id', '');
 $smarty->assign('stare_id', $stare_id);
 
-$zona_id = getRequestParameter('zona_id', 0);
+$zona_id = getRequestParameter('zona_id', '');
 $smarty->assign('zona_id', $zona_id);
 
-$lista_clienti = Clienti::getListaClienti(array(
+$lista_clienti = Clienti::getListaClientiIndex(array(
     'depozit_id' => $depozit_id,
     'localitate_id' => $localitate_id,
     'zona_id' => $zona_id,
