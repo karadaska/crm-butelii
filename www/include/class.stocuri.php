@@ -716,7 +716,7 @@ class Stocuri
     public static function getKmByFisaId($id)
     {
         $ret = array();
-        $query = "SELECT a.fisa_id, a.parcursi              
+        $query = "SELECT a.fisa_id, a.km_parcursi              
                   from miscari_fise as a                 
                   where a.fisa_id = '" . $id . "'";
 
