@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 15:22:56
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 15:37:28
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1929950229603df39e482f18-35501088%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1614864171,
+      1 => 1614865046,
       2 => 'file',
     ),
   ),
@@ -250,7 +250,7 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['numar_urgente']->key => $_smarty_tpl->tpl_vars['numar_urgente']->value) {
 $_smarty_tpl->tpl_vars['numar_urgente']->_loop = true;
 ?>
-                    <span style="font-weight: bolder;">TOTAL Urgente : <?php echo $_smarty_tpl->tpl_vars['numar_urgente']->value;?>
+                    <span style="font-weight: bolder;">TOTAL URGENTE : <?php echo $_smarty_tpl->tpl_vars['numar_urgente']->value;?>
 </span>
                 <?php } ?>
             </th>

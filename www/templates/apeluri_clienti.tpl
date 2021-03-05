@@ -170,43 +170,59 @@
                                         </tr>
                                     {/foreach}
                                     </tbody>
+                                    <tr>
+                                        <th colspan="5" style="text-align: right;color: red;"> TOTAL: </th>
+                                        <th style="color: red;">
+                                            {if $total_bg_11 > 0}
+                                                <span style="font-weight: bolder;">BG 11: {$total_bg_11}</span>
+                                                <br/>
+                                            {/if}
+                                            {if $total_ar_8 > 0}
+                                                <span style="font-weight: bolder;text-align: left;">AR 8: {$total_ar_8}</span>
+                                            {/if}
+                                            {if $total_ar_9 > 0}
+                                                <span style="font-weight: bolder;text-align: left;">AR 9: {$total_ar_9}</span>
+                                            {/if}
+                                            trebuie testat
+                                        </th>
+                                    </tr>
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza produse"
                                        class="btn btn-info" name="update"/>
                             </div>
                         </form>
                     </div>
-                    <table class="table table-bordered" style="width:68%;margin-left: 15px;">
-                        <tr>
-                            {if $total_bg_11 > 0}
-                                <th style="text-align: left;color: red;">
-                                    <span style="font-weight: bolder;margin-left: 20px;">BG 11: {$total_bg_11}
-                                        buc</span><br/>
-                                </th>
-                            {/if}
-                            {if $total_ar_8 > 0}
-                                <th style="text-align: left;color: red">
-                                    <span style="font-weight: bolder;margin-left: 20px;">AR 8: {$total_ar_8} buc</span>
-                                </th>
-                            {/if}
-                            {if $total_ar_9 > 0}
-                                <th style="text-align: left;color: red">
-                                    <span style="font-weight: bolder;margin-left: 20px;">AR 9: {$total_ar_9} buc</span>
-                                </th>
-                            {/if}
-                            <th style="text-align: left;">
-                                {foreach from = $total_obs item=numar_obs}
-                                    <span style="font-weight: bolder;margin-left: 20px;color: red">Observatii : {$numar_obs}</span>
-                                {/foreach}
-                            </th>
-                            <th style="text-align: left;">
-                                {foreach from = $total_urgente item=numar_urgente}
-                                    <span style="font-weight: bolder;margin-left: 20px;color: red">Urgente : {$numar_urgente}</span>
-                                {/foreach}
-                            </th>
-                        </tr>
-                    </table>
-                    <div style="display: inline-flex">
+                    {*<table class="table table-bordered" style="width:68%;margin-left: 15px;">*}
+                        {*<tr>*}
+                            {*{if $total_bg_11 > 0}*}
+                                {*<th style="text-align: left;color: red;">*}
+                                    {*<span style="font-weight: bolder;margin-left: 20px;">BG 11: {$total_bg_11}*}
+                                        {*buc</span><br/>*}
+                                {*</th>*}
+                            {*{/if}*}
+                            {*{if $total_ar_8 > 0}*}
+                                {*<th style="text-align: left;color: red">*}
+                                    {*<span style="font-weight: bolder;margin-left: 20px;">AR 8: {$total_ar_8} buc</span>*}
+                                {*</th>*}
+                            {*{/if}*}
+                            {*{if $total_ar_9 > 0}*}
+                                {*<th style="text-align: left;color: red">*}
+                                    {*<span style="font-weight: bolder;margin-left: 20px;">AR 9: {$total_ar_9} buc</span>*}
+                                {*</th>*}
+                            {*{/if}*}
+                            {*<th style="text-align: left;">*}
+                                {*{foreach from = $total_obs item=numar_obs}*}
+                                    {*<span style="font-weight: bolder;margin-left: 20px;color: red">OBSERVATII : {$numar_obs}</span>*}
+                                {*{/foreach}*}
+                            {*</th>*}
+                            {*<th style="text-align: left;">*}
+                                {*{foreach from = $total_urgente item=numar_urgente}*}
+                                    {*<span style="font-weight: bolder;margin-left: 20px;color: red">URGENTE : {$numar_urgente}</span>*}
+                                {*{/foreach}*}
+                            {*</th>*}
+                        {*</tr>*}
+                    {*</table>*}
+                    <div style="display: inline-flex;margin-top: 20px;">
                         {if count($clienti_cu_observatii) > 0}
                             <div style="margin-left: 10px;">
                                 <table class="table table-bordered table-hover"
@@ -259,7 +275,7 @@
                                             <td style="text-align: left;" class="span2">
                                                 {foreach from=$client['raspuns'] item=raspuns}
                                                     <span style="color: red;"> {$raspuns['nume_produs']}</span>
-                                                    :
+                                                    {*{($raspuns != '') ? ':' : ''}*} :
                                                     <span style="font-weight: 600;">{$raspuns['goale']}</span>
                                                     <br/>
                                                 {/foreach}

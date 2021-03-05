@@ -171,7 +171,7 @@
             <th></th>
             <th>
                 {foreach from = $total_urgente item=numar_urgente}
-                    <span style="font-weight: bolder;">TOTAL Urgente : {$numar_urgente}</span>
+                    <span style="font-weight: bolder;">TOTAL URGENTE : {$numar_urgente}</span>
                 {/foreach}
             </th>
         </tr>
