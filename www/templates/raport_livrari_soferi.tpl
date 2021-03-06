@@ -87,7 +87,7 @@
                                                 <td>{$livrare['nume_sofer']}</td>
                                                 <td style="text-align: center;">{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
-                                                <td>
+                                                <td style="text-align: right;">
                                                     {$livrare['km']['km_traseu']}
                                                 </td>
                                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
