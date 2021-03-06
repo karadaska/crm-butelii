@@ -209,18 +209,18 @@
                         </tr>
                         {foreach from=$clienti_cu_urgente item=client}
                             <tr>
-                                <th>{$client['nume_localitate']}</th>
-                                <th>{$client['nume_client']}</th>
+                                <td>{strtoupper($client['nume_localitate'])}</td>
+                                <th>{strtoupper($client['nume_client'])}</th>
                                 <th>
                                     {$client['urgent']}
                                 </th>
                                 <th style="text-align: left;width: 100px;">
-                                        {foreach from=$client['raspuns'] item=raspuns}
-                                            <span> {$raspuns['nume_produs']}</span>
-                                            :
-                                            <span style="font-weight: 600;">{$raspuns['goale']}</span>
-                                            <br/>
-                                        {/foreach}
+                                    {foreach from=$client['raspuns'] item=raspuns}
+                                        <span> {$raspuns['nume_produs']}</span>
+                                        {($raspuns['goale']  > 0) ? ':' : '-'}
+                                        <span style="font-weight: 600;">{$raspuns['goale']}</span>
+                                        <br/>
+                                    {/foreach}
                                 </th>
                             </tr>
                         {/foreach}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-06 15:16:34
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-06 15:26:15
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1615036588,
+      1 => 1615036882,
       2 => 'file',
     ),
   ),
@@ -410,7 +410,7 @@ $_smarty_tpl->tpl_vars['raspuns']->_loop = true;
 ?>
                                                         <span style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['nume_produs'];?>
 </span>
-                                                        <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale']>0 ? ':' : '';?>
+                                                        <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale']>0 ? ':' : '-';?>
 
                                                         <span style="font-weight: 600;"><?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale'];?>
 </span>

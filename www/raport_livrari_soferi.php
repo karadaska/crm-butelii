@@ -12,7 +12,7 @@ $form_submit = getRequestParameter('form_submit', 0);
 $sofer_id = getRequestParameter('sofer_id', 0);
 $smarty->assign('sofer_id', $sofer_id);
 
-$data_start = getRequestParameter('data_start',date('Y-m-01'));
+$data_start = getRequestParameter('data_start', date('Y-m-01'));
 $smarty->assign('data_start', $data_start);
 
 $data_stop = getRequestParameter('data_stop', date('Y-m-t'));
@@ -28,6 +28,10 @@ $livrari_soferi = ParcAuto::getRaportLivrariSoferi($sofer_id,
     ));
 $smarty->assign('livrari_soferi', $livrari_soferi);
 
-
+//foreach ($livrari_soferi['trasee'] as $item) {
+// foreach ($item['km'] as $unu){
+//     pre($unu);
+// }
+//}
 $smarty->display($template_page);
 

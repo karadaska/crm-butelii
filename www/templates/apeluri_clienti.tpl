@@ -275,7 +275,7 @@
                                             <td style="text-align: left;" class="span2">
                                                 {foreach from=$client['raspuns'] item=raspuns}
                                                         <span style="color: red;"> {$raspuns['nume_produs']}</span>
-                                                        {($raspuns['goale']  > 0) ? ':' : ''}
+                                                        {($raspuns['goale']  > 0) ? ':' : '-'}
                                                         <span style="font-weight: 600;">{$raspuns['goale']}</span>
                                                         <br/>
                                                 {/foreach}
