@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 15:48:58
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-06 15:16:34
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1614865736,
+      1 => 1615036588,
       2 => 'file',
     ),
   ),
@@ -61,7 +61,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Actualizare produse goale la client
 
-                        <a href="/print_apeluri_clienti.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
+                        <a target="_blank" href="/print_apeluri_clienti.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
 &stare_id=<?php echo $_smarty_tpl->tpl_vars['stare_id']->value;?>
 ">
                             <button class="i-print"></button>
@@ -265,7 +265,8 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                                 <?php $_smarty_tpl->tpl_vars['urgenta_client'] = new Smarty_variable(Clienti::getUrgentaApelClientiByClientId($_smarty_tpl->tpl_vars['client']->value['id'],$_smarty_tpl->tpl_vars['traseu_id']->value), null, 0);?>
                                                 <select name="urgent_<?php echo $_smarty_tpl->tpl_vars['target_client']->value['client_id'];?>
 _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
-" style="width: 250px;">
+"
+                                                        style="width: 250px;">
                                                     <option value="0"
                                                             <?php if ($_smarty_tpl->tpl_vars['urgenta_client']->value['urgent']==0) {?>selected="selected"<?php }?>>
                                                         NU
@@ -280,7 +281,7 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                     <?php } ?>
                                     </tbody>
                                     <tr>
-                                        <th colspan="5" style="text-align: right;color: red;"> TOTAL: </th>
+                                        <th colspan="5" style="text-align: right;color: red;"> TOTAL:</th>
                                         <th style="color: red;">
                                             <?php if ($_smarty_tpl->tpl_vars['total_bg_11']->value>0) {?>
                                                 <span style="font-weight: bolder;">BG 11: <?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
@@ -304,34 +305,34 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                         </form>
                     </div>
                     
-                        
-                            
-                                
-                                    
-                                        
-                                
-                            
-                            
-                                
-                                    
-                                
-                            
-                            
-                                
-                                    
-                                
-                            
-                            
-                                
-                                    
-                                
-                            
-                            
-                                
-                                    
-                                
-                            
-                        
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     <div style="display: inline-flex;margin-top: 20px;">
                         <?php if (count($_smarty_tpl->tpl_vars['clienti_cu_observatii']->value)>0) {?>
@@ -407,12 +408,13 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['raspuns']->key => $_smarty_tpl->tpl_vars['raspuns']->value) {
 $_smarty_tpl->tpl_vars['raspuns']->_loop = true;
 ?>
-                                                    <span style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['nume_produs'];?>
+                                                        <span style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['nume_produs'];?>
 </span>
-                                                     :
-                                                    <span style="font-weight: 600;"><?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale'];?>
+                                                        <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale']>0 ? ':' : '';?>
+
+                                                        <span style="font-weight: 600;"><?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale'];?>
 </span>
-                                                    <br/>
+                                                        <br/>
                                                 <?php } ?>
                                             </td>
                                         </tr>

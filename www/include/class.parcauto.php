@@ -289,7 +289,8 @@ class ParcAuto
             $data_stop = date('Y-m-t');
         }
 
-        $target_by_client_id = "SELECT SUM(a.km_parcursi) as km_traseu FROM miscari_fise as a
+        $km_traseu = "SELECT SUM(a.km_parcursi) as km_traseu
+                                FROM miscari_fise as a
                                 LEFT JOIN fise_generate as b on a.fisa_id = b.id
                                 WHERE b.sofer_id = '" . $sofer_id . "'
                                 AND b.traseu_id = '" . $traseu_id . "'
@@ -298,7 +299,7 @@ class ParcAuto
                                 ";
 
 
-        $result = myQuery($target_by_client_id);
+        $result = myQuery($km_traseu);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
         }
@@ -447,7 +448,11 @@ class ParcAuto
                     'nume_traseu' => $item['nume_traseu'],
                     'numar' => $item['numar'],
                     'total_produse' => array(),
-                    'km' => array()
+
+                    'km' => self::getTotalKmBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ))
                 );
                 foreach ($ret['produse_sofer'] as $tip_produs_id => $item_tip_produs) {
                     $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
@@ -456,10 +461,10 @@ class ParcAuto
                         'data_stop' => $data_stop
                     ));
 
-                    $r['km'] = self::getTotalKmBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
-                        'data_start' => $data_start,
-                        'data_stop' => $data_stop
-                    ));
+//                    $r['km'] = self::getTotalKmBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
+//                        'data_start' => $data_start,
+//                        'data_stop' => $data_stop
+//                    ));
 
                     $ret['grand'][$tip_produs_id] = self::getTotalCantitatiBySoferIdProdusId($item['sofer_id'], $tip_produs_id, array(
                         'data_start' => $data_start,
