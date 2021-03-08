@@ -1854,6 +1854,32 @@ class Clienti
         return $ret;
     }
 
+    public static function getTipObservatiiDinApeluri($traseu_id, $client_id)
+    {
+
+        $ret = array();
+        $query = "SELECT b.nume as nume_observatie from apeluri_clienti as a
+                  LEFT JOIN observatii as b on a.observatie_id = b.id
+                  WHERE a.traseu_id = 1
+                  AND a.observatie_id IN (5, 6, 7, 16, 19)
+                  AND a.data_start = '2021-03-08'
+                  GROUP BY a.observatie_id
+                  ";
+
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['nume_produs']] = 3;
+            }
+        }
+        return $ret;
+
+    }
+
+
 }
 
 

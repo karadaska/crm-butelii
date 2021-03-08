@@ -210,7 +210,7 @@
                         {foreach from=$clienti_cu_urgente item=client}
                             <tr>
                                 <td>{strtoupper($client['nume_localitate'])}</td>
-                                <th>{strtoupper($client['nume_client'])}</th>
+                                <th style="text-align: left;">{strtoupper($client['nume_client'])}</th>
                                 <th>
                                     {$client['urgent']}
                                 </th>

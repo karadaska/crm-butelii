@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-08 13:05:14
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-08 13:14:52
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1615201511,
+      1 => 1615202090,
       2 => 'file',
     ),
   ),
@@ -273,9 +273,9 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                     <?php } ?>
                                     </tbody>
                                     <tr>
-                                        <th colspan="5" style="text-align: right;color: red;"> TOTAL:</th>
+                                        <th colspan="5" style="text-align: right;color: red;vertical-align: middle;"> TOTAL:</th>
                                         <th style="color: red;">
-                                            <table class="table table-bordered">
+                                            <table class="table">
                                                 <?php if ($_smarty_tpl->tpl_vars['total_bg_11']->value>0) {?>
                                                     <tr>
                                                         <th>
@@ -305,6 +305,7 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                 <?php }?>
                                             </table>
                                         </th>
+                                        <th>TO DO categorie</th>
                                     </tr>
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza produse"

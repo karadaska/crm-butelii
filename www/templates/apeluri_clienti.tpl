@@ -165,9 +165,9 @@
                                     {/foreach}
                                     </tbody>
                                     <tr>
-                                        <th colspan="5" style="text-align: right;color: red;"> TOTAL:</th>
+                                        <th colspan="5" style="text-align: right;color: red;vertical-align: middle;"> TOTAL:</th>
                                         <th style="color: red;">
-                                            <table class="table table-bordered">
+                                            <table class="table">
                                                 {if $total_bg_11 > 0}
                                                     <tr>
                                                         <th>
@@ -194,6 +194,7 @@
                                                 {/if}
                                             </table>
                                         </th>
+                                        <th>TO DO categorie</th>
                                     </tr>
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza produse"
