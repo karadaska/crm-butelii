@@ -274,10 +274,20 @@
                                             </td>
                                             <td style="text-align: left;" class="span2">
                                                 {foreach from=$client['raspuns'] item=raspuns}
-                                                        <span style="color: red;"> {$raspuns['nume_produs']}</span>
-                                                        {($raspuns['goale']  > 0) ? ':' : '-'}
-                                                        <span style="font-weight: 600;">{$raspuns['goale']}</span>
-                                                        <br/>
+                                                    {if $raspuns['goale']  > 0}
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                <td><span style="color: red;"> {$raspuns['nume_produs']}
+                                                                </td>
+                                                                <td><span style="font-weight: 600;">{$raspuns['goale']}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    {/if}
+                                                    {*<span style="color: red;"> {$raspuns['nume_produs']}</span>*}
+                                                    {*{($raspuns['goale']  > 0) ? ':' : '-'}*}
+                                                    {*<span style="font-weight: 600;">{$raspuns['goale']}</span>*}
+                                                    {*<br/>*}
                                                 {/foreach}
                                             </td>
                                         </tr>
