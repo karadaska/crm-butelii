@@ -165,7 +165,9 @@
                                     {/foreach}
                                     </tbody>
                                     <tr>
-                                        <th colspan="5" style="text-align: right;color: red;vertical-align: middle;"> TOTAL:</th>
+                                        <th colspan="5" style="text-align: right;color: red;vertical-align: middle;">
+                                            TOTAL:
+                                        </th>
                                         <th style="color: red;">
                                             <table class="table">
                                                 {if $total_bg_11 > 0}
@@ -194,7 +196,19 @@
                                                 {/if}
                                             </table>
                                         </th>
-                                        <th>TO DO categorie</th>
+                                        <th style="text-align: left;">
+                                            <table class="table">
+                                                <tr>
+                                                    <th colspan="2">CLIENTI FARA INFO: </th>
+                                                </tr>
+                                                {foreach from=$total_obs_pe_categorii item=obs}
+                                                <tr>
+                                                    <th style="text-align: right;color: red;">{$obs['nume_observatie']}</th>
+                                                    <th class="span2">{$obs['numar_observatie']['total_observatie']}</th>
+                                                </tr>
+                                                {/foreach}
+                                            </table>
+                                        </th>
                                     </tr>
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza produse"

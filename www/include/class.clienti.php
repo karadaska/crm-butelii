@@ -1869,7 +1869,6 @@ class Clienti
 
 
         $result = myQuery($query);
-
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {

@@ -46,6 +46,11 @@ $total_urgente = Trasee::getNumarUrgenteApelClientiByTraseuId(array(
     'data_start' => $data_start
 ));
 
+$total_obs_pe_categorii = Clienti::getTipObservatiiDinApeluri($traseu_id, array(
+    'data_start' => $data_start
+));
+$smarty->assign('total_obs_pe_categorii', $total_obs_pe_categorii);
+
 $smarty->assign('total_urgente', $total_urgente);
 
 $clienti_cu_observatii = Clienti::getClientiCuNumarGresitSauNumarLipsaApelClientiByTraseuId($traseu_id, array(

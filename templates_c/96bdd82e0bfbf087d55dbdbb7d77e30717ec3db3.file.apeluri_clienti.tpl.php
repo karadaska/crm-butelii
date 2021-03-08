@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-08 13:14:52
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-08 15:52:56
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1615202090,
+      1 => 1615211575,
       2 => 'file',
     ),
   ),
@@ -39,6 +39,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'observatie' => 0,
     'observatie_client' => 0,
     'urgenta_client' => 0,
+    'total_obs_pe_categorii' => 0,
+    'obs' => 0,
     'clienti_cu_observatii' => 0,
     'clienti_cu_urgente' => 0,
     'raspuns' => 0,
@@ -273,7 +275,9 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                     <?php } ?>
                                     </tbody>
                                     <tr>
-                                        <th colspan="5" style="text-align: right;color: red;vertical-align: middle;"> TOTAL:</th>
+                                        <th colspan="5" style="text-align: right;color: red;vertical-align: middle;">
+                                            TOTAL:
+                                        </th>
                                         <th style="color: red;">
                                             <table class="table">
                                                 <?php if ($_smarty_tpl->tpl_vars['total_bg_11']->value>0) {?>
@@ -305,7 +309,25 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                 <?php }?>
                                             </table>
                                         </th>
-                                        <th>TO DO categorie</th>
+                                        <th style="text-align: left;">
+                                            <table class="table">
+                                                <tr>
+                                                    <th colspan="2">CLIENTI FARA INFO: </th>
+                                                </tr>
+                                                <?php  $_smarty_tpl->tpl_vars['obs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['obs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['total_obs_pe_categorii']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['obs']->key => $_smarty_tpl->tpl_vars['obs']->value) {
+$_smarty_tpl->tpl_vars['obs']->_loop = true;
+?>
+                                                <tr>
+                                                    <th style="text-align: right;color: red;"><?php echo $_smarty_tpl->tpl_vars['obs']->value['nume_observatie'];?>
+</th>
+                                                    <th class="span2"><?php echo $_smarty_tpl->tpl_vars['obs']->value['numar_observatie']['total_observatie'];?>
+</th>
+                                                </tr>
+                                                <?php } ?>
+                                            </table>
+                                        </th>
                                     </tr>
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza produse"
