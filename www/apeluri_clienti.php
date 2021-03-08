@@ -48,12 +48,12 @@ $total_urgente = Trasee::getNumarUrgenteApelClientiByTraseuId(array(
 
 $smarty->assign('total_urgente', $total_urgente);
 
-$clienti_cu_observatii = Clienti::getClientiCuNumarGresitSauNumarLipsaApelClientiByTraseuId($traseu_id, $opts = array(
+$clienti_cu_observatii = Clienti::getClientiCuNumarGresitSauNumarLipsaApelClientiByTraseuId($traseu_id, array(
     'data_start' => $data_start
 ));
 $smarty->assign('clienti_cu_observatii', $clienti_cu_observatii);
 
-$clienti_cu_urgente = Clienti::getClientiCuUrgenteApelClientiByTraseuId($traseu_id, $opts = array(
+$clienti_cu_urgente = Clienti::getClientiCuUrgenteApelClientiByTraseuId($traseu_id, array(
     'data_start' => $data_start
 ));
 $smarty->assign('clienti_cu_urgente', $clienti_cu_urgente);
@@ -89,7 +89,7 @@ if (isset($_POST['update'])) {
             if (isset($to_add[$client['id']][$item_target['tip_produs_id']])) {
                 $a = $to_add[$client['id']][$item_target['tip_produs_id']];
 
-               $t_start_update_clienti_target =  microtime(true);
+                $t_start_update_clienti_target = microtime(true);
 
                 $update_target_clienti = "UPDATE clienti_target set
                             goale_la_client  = '" . $a['goale'] . "'
@@ -102,7 +102,7 @@ if (isset($_POST['update'])) {
 //                debug('1.update clienti target: ' . (microtime(true)- $t_start_update_clienti_target));
 
 //                Select id din apeluri_clienti
-                $t_start_select_id_apeluri =  microtime(true);
+                $t_start_select_id_apeluri = microtime(true);
 
                 $select_id_apeluri_clienti = "SELECT id from apeluri_clienti
                                                       where traseu_id = '" . $client['traseu_id'] . "'
@@ -115,11 +115,11 @@ if (isset($_POST['update'])) {
 
 //                debug('2.verific daca am date in apeluri: ' . (microtime(true)- $t_start_select_id_apeluri));
 
-                $t_start_insert =  microtime(true);
+                $t_start_insert = microtime(true);
 
                 if ($select_id_apeluri_clienti->rowCount() == 0) {
 
-                    $t_start_insert_cantitati_apeluri =  microtime(true);
+                    $t_start_insert_cantitati_apeluri = microtime(true);
 
                     $insert_apeluri_clienti = "INSERT INTO apeluri_clienti
                 (traseu_id, client_id, observatie_id, urgent, data_start)
@@ -139,7 +139,7 @@ if (isset($_POST['update'])) {
 
 
                 } else {
-                    $t_start_update_obs_apeluri =  microtime(true);
+                    $t_start_update_obs_apeluri = microtime(true);
 
                     $update_apeluri_clienti = "UPDATE apeluri_clienti set
                             observatie_id = '" . $a['obs'] . "',
@@ -155,7 +155,7 @@ if (isset($_POST['update'])) {
 
 //Daca am id bagat in apel_clienti
 
-                $t_start_verific_id_apel =  microtime(true);
+                $t_start_verific_id_apel = microtime(true);
 
                 $select_apel_id_clienti_produse = "SELECT a.apel_id
                                       FROM apeluri_clienti_produse AS a
@@ -174,7 +174,7 @@ if (isset($_POST['update'])) {
 
 
                 if ($apel_id->rowCount() == 0) {
-                    $t_start_id_apeluri_pentru_produse =  microtime(true);
+                    $t_start_id_apeluri_pentru_produse = microtime(true);
 
                     $select_id_apeluri_clienti = "SELECT id from apeluri_clienti
                                                       where traseu_id = '" . $client['traseu_id'] . "'
@@ -187,7 +187,7 @@ if (isset($_POST['update'])) {
 
 //                    debug('6. verific id in apeluri pentru produse: ' . (microtime(true)- $t_start_id_apeluri_pentru_produse));
 
-                    $t_start_id_insert_produse =  microtime(true);
+                    $t_start_id_insert_produse = microtime(true);
 
                     if ($a['goale'] > 0) {
                         $insert_apeluri_clienti_produse = "INSERT INTO apeluri_clienti_produse
@@ -198,7 +198,7 @@ if (isset($_POST['update'])) {
 
                     }
                 } else {
-                    $t_start_id_update_produse =  microtime(true);
+                    $t_start_id_update_produse = microtime(true);
 
                     $update_goale_apeluri_clienti_produse = "UPDATE apeluri_clienti_produse set
                                goale = '" . $a['goale'] . "'
@@ -217,7 +217,7 @@ if (isset($_POST['update'])) {
     }
 }
 
-$totaltime = (microtime(true)- $tstart);
+$totaltime = (microtime(true) - $tstart);
 
 $smarty->assign('totaltime', $totaltime);
 

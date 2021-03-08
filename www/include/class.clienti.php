@@ -90,6 +90,7 @@ class Clienti
         $query .= " order by a.ordine ASC";
 
         $result = myQuery($query);
+        $ret ['total'] = array();
         if ($result) {
             $tmp = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($tmp as $client) {
@@ -706,7 +707,7 @@ class Clienti
 //                if ($ok) {
 //                    array_push($ret, $client);
 //                }
-                                    array_push($ret, $client);
+                array_push($ret, $client);
 
             }
         }

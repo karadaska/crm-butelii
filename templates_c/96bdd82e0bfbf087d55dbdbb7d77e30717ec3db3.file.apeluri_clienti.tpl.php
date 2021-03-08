@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-08 10:09:01
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-08 13:05:14
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1615190939,
+      1 => 1615201511,
       2 => 'file',
     ),
   ),
@@ -33,7 +33,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cantitati_goale' => 0,
     'valoare_goale_input' => 0,
     'total_bg_11' => 0,
-    'total_bg_9' => 0,
     'total_ar_8' => 0,
     'total_ar_9' => 0,
     'lista_observatii' => 0,
@@ -144,9 +143,8 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                     </thead>
                                     <tbody>
                                     <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable(0, null, 0);?>
-                                    <?php $_smarty_tpl->tpl_vars['total_bg_9'] = new Smarty_variable(0, null, 0);?>
-                                    <?php $_smarty_tpl->tpl_vars['total_bg_ar_8'] = new Smarty_variable(0, null, 0);?>
-                                    <?php $_smarty_tpl->tpl_vars['total_bg_ar_9'] = new Smarty_variable(0, null, 0);?>
+                                    <?php $_smarty_tpl->tpl_vars['total_ar_8'] = new Smarty_variable(0, null, 0);?>
+                                    <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable(0, null, 0);?>
                                     <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
                                     <?php  $_smarty_tpl->tpl_vars['client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['client']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_clienti']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -191,9 +189,6 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                                                 <?php } ?>
                                             </th>
                                             <?php if ($_smarty_tpl->tpl_vars['target_client']->value['target']>0) {?>
-                                                <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable(0, null, 0);?>
-                                                <?php $_smarty_tpl->tpl_vars['total_ar_8'] = new Smarty_variable(0, null, 0);?>
-                                                <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable(0, null, 0);?>
                                                 <td style="vertical-align: middle;text-align: right;color: red;background-color: gainsboro;"
                                                     class="span4">
                                                     <?php  $_smarty_tpl->tpl_vars['target_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target_client']->_loop = false;
@@ -218,16 +213,13 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
 ">
                                                         <br/>
                                                         <?php if (($_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'])==1) {?>
-                                                            <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11']->value+($_smarty_tpl->tpl_vars['cantitati_goale']->value['goale']), null, 0);?>
-                                                        <?php }?>
-                                                        <?php if (($_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'])==2) {?>
-                                                            <?php $_smarty_tpl->tpl_vars['total_bg_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_9']->value+($_smarty_tpl->tpl_vars['cantitati_goale']->value['goale']), null, 0);?>
+                                                            <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['target_client']->value['goale_la_client']), null, 0);?>
                                                         <?php }?>
                                                         <?php if (($_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'])==3) {?>
-                                                            <?php $_smarty_tpl->tpl_vars['total_ar_8'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_8']->value+($_smarty_tpl->tpl_vars['cantitati_goale']->value['goale']), null, 0);?>
+                                                            <?php $_smarty_tpl->tpl_vars['total_ar_8'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_8']->value+$_smarty_tpl->tpl_vars['target_client']->value['goale_la_client'], null, 0);?>
                                                         <?php }?>
                                                         <?php if (($_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'])==4) {?>
-                                                            <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_9']->value+($_smarty_tpl->tpl_vars['cantitati_goale']->value['goale']), null, 0);?>
+                                                            <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_9']->value+$_smarty_tpl->tpl_vars['target_client']->value['goale_la_client'], null, 0);?>
                                                         <?php }?>
                                                     <?php } ?>
                                                 </td>
@@ -283,19 +275,35 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                     <tr>
                                         <th colspan="5" style="text-align: right;color: red;"> TOTAL:</th>
                                         <th style="color: red;">
-                                            <?php if ($_smarty_tpl->tpl_vars['total_bg_11']->value>0) {?>
-                                                <span style="font-weight: bolder;">BG 11: <?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
-</span>
-                                                <br/>
-                                            <?php }?>
-                                            <?php if ($_smarty_tpl->tpl_vars['total_ar_8']->value>0) {?>
-                                                <span style="font-weight: bolder;text-align: left;">AR 8: <?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
-</span>
-                                            <?php }?>
-                                            <?php if ($_smarty_tpl->tpl_vars['total_ar_9']->value>0) {?>
-                                                <span style="font-weight: bolder;text-align: left;">AR 9: <?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
-</span>
-                                            <?php }?>
+                                            <table class="table table-bordered">
+                                                <?php if ($_smarty_tpl->tpl_vars['total_bg_11']->value>0) {?>
+                                                    <tr>
+                                                        <th>
+                                                            <span style="font-weight: bolder;">BG 11: <?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
+
+                                                                buc</span>
+                                                        </th>
+                                                    </tr>
+                                                <?php }?>
+                                                <?php if ($_smarty_tpl->tpl_vars['total_ar_8']->value>0) {?>
+                                                    <tr>
+                                                        <th>
+                                                            <span style="font-weight: bolder;">Ar 8: <?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
+
+                                                                buc</span>
+                                                        </th>
+                                                    </tr>
+                                                <?php }?>
+                                                <?php if ($_smarty_tpl->tpl_vars['total_ar_9']->value>0) {?>
+                                                    <tr>
+                                                        <th>
+                                                            <span style="font-weight: bolder;">Ar 9: <?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
+
+                                                                buc</span>
+                                                        </th>
+                                                    </tr>
+                                                <?php }?>
+                                            </table>
                                         </th>
                                     </tr>
                                 </table>
@@ -304,36 +312,6 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                             </div>
                         </form>
                     </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     <div style="display: inline-flex;margin-top: 20px;">
                         <?php if (count($_smarty_tpl->tpl_vars['clienti_cu_observatii']->value)>0) {?>
                             <div style="margin-left: 10px;">
@@ -420,10 +398,6 @@ $_smarty_tpl->tpl_vars['raspuns']->_loop = true;
                                                             </tr>
                                                         </table>
                                                     <?php }?>
-                                                    
-                                                    
-                                                    
-                                                    
                                                 <?php } ?>
                                             </td>
                                         </tr>
@@ -432,7 +406,6 @@ $_smarty_tpl->tpl_vars['raspuns']->_loop = true;
                             </div>
                         <?php }?>
                     </div>
-
                 </div>
             </div>
     </section>
@@ -441,4 +414,33 @@ $_smarty_tpl->tpl_vars['raspuns']->_loop = true;
 <script src="/js/pagini/apeluri_clienti.js"></script>
 <span style="margin-left: 230px;"><?php echo $_smarty_tpl->tpl_vars['totaltime']->value;?>
 </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php }} ?>
