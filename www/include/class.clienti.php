@@ -1854,16 +1854,17 @@ class Clienti
         return $ret;
     }
 
-    public static function getTipObservatiiDinApeluri($traseu_id, $client_id)
+    public static function getTipObservatiiDinApeluri($traseu_id, $opts = array())
     {
 
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+
         $ret = array();
-        $query = "SELECT b.nume as nume_observatie from apeluri_clienti as a
+        $query = "SELECT a.observatie_id, b.nume as nume_observatie from apeluri_clienti as a
                   LEFT JOIN observatii as b on a.observatie_id = b.id
-                  WHERE a.traseu_id = 1
+                  WHERE a.traseu_id = '" . $traseu_id . "'
                   AND a.observatie_id IN (5, 6, 7, 16, 19)
-                  AND a.data_start = '2021-03-08'
-                  GROUP BY a.observatie_id
+                  AND a.data_start = '" . $data_start . "'
                   ";
 
 
@@ -1872,11 +1873,35 @@ class Clienti
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-                $ret[$item['nume_produs']] = 3;
+                $ret[$item['observatie_id']] = array(
+                    'nume_observatie' => $item['nume_observatie'],
+                    'numar_observatie' => self::getTotalObsApeluriClientiByObsAndTraseuIdAndData($item['observatie_id'], $traseu_id, array(
+                        'data_start' => $data_start
+                    ))
+                );
             }
         }
         return $ret;
 
+    }
+
+    public static function getTotalObsApeluriClientiByObsAndTraseuIdAndData($observatie_id, $traseu_id, $opts = array())
+    {
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+
+        $ret = array();
+        $query = "SELECT COUNT(a.observatie_id) as total_observatie
+                  FROM apeluri_clienti as a
+                  WHERE a.observatie_id = '" . $observatie_id . "'
+                  AND a.traseu_id = '" . $traseu_id . "'
+                  AND data_start = '" . $data_start . "'
+        ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
     }
 
 

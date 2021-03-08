@@ -163,8 +163,17 @@ $stare_id = 1;
 
 //$b = Stocuri::getFisaGenerataById(188);
 
-$b = Clienti::getApelTraseuNew(array(
-    'traseu_id' => 1,
-    'stare_id' => 1
+//$b = Clienti::getApelTraseuNew(array(
+//    'traseu_id' => 1,
+//    'stare_id' => 1
+//));
+
+$b = Clienti::getTipObservatiiDinApeluri(1, array(
+    'data_start' => '2021-03-08'
 ));
+
+//$b = Clienti::getTotalObsApeluriClientiByObsAndTraseuIdAndData(7, 1,  array(
+//    'data_start' => '2021-03-08'
+//));
+
 echo json_encode($b);
