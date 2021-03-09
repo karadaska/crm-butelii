@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-09 11:35:12
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-09 11:38:35
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1929950229603df39e482f18-35501088%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1615282506,
+      1 => 1615282713,
       2 => 'file',
     ),
   ),
@@ -362,13 +362,18 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['raspuns']->key => $_smarty_tpl->tpl_vars['raspuns']->value) {
 $_smarty_tpl->tpl_vars['raspuns']->_loop = true;
 ?>
-                                        <span> <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['nume_produs'];?>
-</span>
-                                        <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale']>0 ? ':' : '-';?>
+                                        <?php if ($_smarty_tpl->tpl_vars['raspuns']->value['goale']>0) {?>
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <td><span style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['nume_produs'];?>
 
-                                        <span style="font-weight: 600;"><?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale'];?>
-</span>
-                                        <br/>
+                                                    </td>
+                                                    <td><span style="font-weight: 600;"><?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale'];?>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        <?php }?>
                                     <?php } ?>
                                 </th>
                             </tr>

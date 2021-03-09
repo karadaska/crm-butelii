@@ -312,33 +312,3 @@
 <div style="margin-top: 100px;"></div>
 <script src="/js/pagini/apeluri_clienti.js"></script>
 <span style="margin-left: 230px;">{$totaltime}</span>
-{*<table class="table table-bordered" style="width:68%;margin-left: 15px;">*}
-{*<tr>*}
-{*{if $total_bg_11 > 0}*}
-{*<th style="text-align: left;color: red;">*}
-{*<span style="font-weight: bolder;margin-left: 20px;">BG 11: {$total_bg_11}*}
-{*buc</span><br/>*}
-{*</th>*}
-{*{/if}*}
-{*{if $total_ar_8 > 0}*}
-{*<th style="text-align: left;color: red">*}
-{*<span style="font-weight: bolder;margin-left: 20px;">AR 8: {$total_ar_8} buc</span>*}
-{*</th>*}
-{*{/if}*}
-{*{if $total_ar_9 > 0}*}
-{*<th style="text-align: left;color: red">*}
-{*<span style="font-weight: bolder;margin-left: 20px;">AR 9: {$total_ar_9} buc</span>*}
-{*</th>*}
-{*{/if}*}
-{*<th style="text-align: left;">*}
-{*{foreach from = $total_obs item=numar_obs}*}
-{*<span style="font-weight: bolder;margin-left: 20px;color: red">OBSERVATII : {$numar_obs}</span>*}
-{*{/foreach}*}
-{*</th>*}
-{*<th style="text-align: left;">*}
-{*{foreach from = $total_urgente item=numar_urgente}*}
-{*<span style="font-weight: bolder;margin-left: 20px;color: red">URGENTE : {$numar_urgente}</span>*}
-{*{/foreach}*}
-{*</th>*}
-{*</tr>*}
-{*</table>*}
