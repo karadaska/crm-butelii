@@ -99,13 +99,18 @@ class Trasee
             $data_start = date('Y-m-d');
         }
 
-        $ret = array();
+        $ret = NULL;
 
-        $query = "select count(*) from (select client_id, traseu_id, observatie_id, data_start from apeluri_clienti
-                  where traseu_id = '" . $traseu_id . "'
-                  and observatie_id > 0
-                  and data_start='" . $data_start . "'
-                  group by client_id) as observatii";
+//        $query = "SELECT count(*) from (select client_id, traseu_id, observatie_id, data_start from apeluri_clienti
+//                  where traseu_id = '" . $traseu_id . "'
+//                  and observatie_id > 0
+//                  and data_start='" . $data_start . "'
+//                  group by client_id) as observatii";
+
+        $query = "SELECT count(observatie_id) as total_observatii from apeluri_clienti
+                    WHERE observatie_id > 0
+                    AND traseu_id = '".$traseu_id."'
+                    AND `data_start` = '".$data_start."' ";
 
         $result = myQuery($query);
 

@@ -168,12 +168,17 @@ $stare_id = 1;
 //    'stare_id' => 1
 //));
 
-$b = Clienti::getTipObservatiiDinApeluri(1, array(
-    'data_start' => '2021-03-08'
-));
+//$b = Clienti::getTipObservatiiDinApeluri(1, array(
+//    'data_start' => '2021-03-08'
+//));
 
 //$b = Clienti::getTotalObsApeluriClientiByObsAndTraseuIdAndData(7, 1,  array(
 //    'data_start' => '2021-03-08'
 //));
+
+$b = Trasee::getNumarObservatiiApelClientiByTraseuId(array(
+        'traseu_id' => 1,
+        'data_start' => '2021-03-09'
+));
 
 echo json_encode($b);

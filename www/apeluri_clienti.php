@@ -41,17 +41,17 @@ $total_obs = Trasee::getNumarObservatiiApelClientiByTraseuId(array(
 ));
 $smarty->assign('total_obs', $total_obs);
 
+
 $total_urgente = Trasee::getNumarUrgenteApelClientiByTraseuId(array(
     'traseu_id' => $traseu_id,
     'data_start' => $data_start
 ));
+$smarty->assign('total_urgente', $total_urgente);
 
 $total_obs_pe_categorii = Clienti::getTipObservatiiDinApeluri($traseu_id, array(
     'data_start' => $data_start
 ));
 $smarty->assign('total_obs_pe_categorii', $total_obs_pe_categorii);
-
-$smarty->assign('total_urgente', $total_urgente);
 
 $clienti_cu_observatii = Clienti::getClientiCuNumarGresitSauNumarLipsaApelClientiByTraseuId($traseu_id, array(
     'data_start' => $data_start
@@ -62,6 +62,7 @@ $clienti_cu_urgente = Clienti::getClientiCuUrgenteApelClientiByTraseuId($traseu_
     'data_start' => $data_start
 ));
 $smarty->assign('clienti_cu_urgente', $clienti_cu_urgente);
+
 
 $to_add = array();
 if (isset($_POST['update'])) {
