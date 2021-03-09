@@ -257,7 +257,6 @@
                                 <th>
                                     {$client['urgent']}
                                 </th>
-
                                 <th style="text-align: left;width: 100px;">
                                     {foreach from=$client['raspuns'] item=raspuns}
                                         {if $raspuns['goale']  > 0}
