@@ -90,8 +90,12 @@ $data_intrare = $fisa['data_intrare'];
 $cantitati_produse_clienti_by_fisa_id = Stocuri::getCantitatiProduseClientiByFisaId($id);
 $smarty->assign('cantitati_produse_clienti_by_fisa_id', $cantitati_produse_clienti_by_fisa_id);
 
-$zi_curenta = date('n');
-$smarty->assign('zi_curenta', $zi_curenta);
+$extract_data_fisa = date("n", strtotime($data_intrare));
+$smarty->assign('extract_data_fisa', $extract_data_fisa);
+
+$luna_curenta = date('n');
+$smarty->assign('luna_curenta', $luna_curenta);
+
 
 $to_add = array();
 $to_add_obs = array();

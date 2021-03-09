@@ -576,7 +576,7 @@
                                     </tr>
                                 {/foreach}
                             </table>
-                            {if ($zi_curenta) <=2}
+                            {if ($luna_curenta <= $extract_data_fisa)}
                                 <button type="submit" name="adauga" value="adauga"
                                         class="btn btn-primary" style="float: right">
                                     Adauga cantitate client
