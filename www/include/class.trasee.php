@@ -76,12 +76,17 @@ class Trasee
         }
 
         $ret = array();
+//
+//        $query = "SELECT count(*) from (select client_id, traseu_id, observatie_id, data_start from apeluri_clienti
+//                  WHERE traseu_id = '" . $traseu_id . "'
+//                  AND urgent = 1
+//                  AND data_start= '" . $data_start . "'
+//                  GROUP BY client_id) as total_urgente";
 
-        $query = "SELECT count(*) from (select client_id, traseu_id, observatie_id, data_start from apeluri_clienti
-                  WHERE traseu_id = '" . $traseu_id . "'
-                  AND urgent = 1
-                  AND data_start= '" . $data_start . "'
-                  GROUP BY client_id) as T";
+        $query = "SELECT count(urgent) as total_urgente from apeluri_clienti
+                    WHERE urgent > 0
+                    AND traseu_id = '".$traseu_id."'
+                    AND `data_start` = '".$data_start."' ";
 
         $result = myQuery($query);
         if ($result) {

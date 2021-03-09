@@ -203,7 +203,7 @@
                     </table>
                 </th>
                 <th style="text-align: left;">
-                    <table border="1" style="width: 100%">
+                    <table border="1" style="width: 100%;margin-bottom: 18px;">
                         {if ($total_obs['total_observatii'] > 0)}
                             <tr>
                                 <th colspan="2">CLIENTI FARA
@@ -217,6 +217,9 @@
                             </tr>
                         {/foreach}
                     </table>
+                </th>
+                <th>
+                    <span>TOTAL: {$total_urgente['total_urgente']} </span>
                 </th>
             </tr>
         {/if}
@@ -271,6 +274,7 @@
                                         {/if}
                                     {/foreach}
                                 </th>
+
                             </tr>
                         {/foreach}
                     </table>
