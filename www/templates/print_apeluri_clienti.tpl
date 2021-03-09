@@ -181,7 +181,7 @@
                                 <th>
                                     <table border="1" style="width: 100%">
                                         <tr>
-                                            <th class="span3">AR 8</th>
+                                            <th style="width: 50%">AR 8</th>
                                             <th>{$total_ar_8} buc</th>
                                         </tr>
                                     </table>
@@ -193,7 +193,7 @@
                                 <th>
                                     <table border="1" style="width: 100%">
                                         <tr>
-                                            <th class="span3">AR 9</th>
+                                            <th style="width: 50%">AR 9</th>
                                             <th>{$total_ar_9} buc</th>
                                         </tr>
                                     </table>
@@ -203,7 +203,7 @@
                     </table>
                 </th>
                 <th style="text-align: left;">
-                    <table class="table">
+                    <table border="1" style="width: 100%">
                         {if ($total_obs['total_observatii'] > 0)}
                             <tr>
                                 <th colspan="2">CLIENTI FARA
@@ -212,8 +212,8 @@
                         {/if}
                         {foreach from=$total_obs_pe_categorii item=obs}
                             <tr>
-                                <th style="text-align: right;color: red;">{$obs['nume_observatie']}</th>
-                                <th class="span2">{$obs['numar_observatie']['total_observatie']}</th>
+                                <th style="text-align: right;width: 60%">{$obs['nume_observatie']}</th>
+                                <th>{$obs['numar_observatie']['total_observatie']}</th>
                             </tr>
                         {/foreach}
                     </table>
