@@ -176,24 +176,36 @@
                                                     {if $total_bg_11 > 0}
                                                         <tr>
                                                             <th>
-                                                            <span style="font-weight: bolder;">BG 11: {$total_bg_11}
-                                                                buc</span>
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <th class="span3">BG</th>
+                                                                        <th>{$total_bg_11} buc</th>
+                                                                    </tr>
+                                                                </table>
                                                             </th>
                                                         </tr>
                                                     {/if}
                                                     {if $total_ar_8 > 0}
                                                         <tr>
                                                             <th>
-                                                            <span style="font-weight: bolder;">Ar 8: {$total_ar_8}
-                                                                buc</span>
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <th class="span3">AR 8</th>
+                                                                        <th>{$total_ar_8} buc</th>
+                                                                    </tr>
+                                                                </table>
                                                             </th>
                                                         </tr>
                                                     {/if}
                                                     {if $total_ar_9 > 0}
                                                         <tr>
                                                             <th>
-                                                            <span style="font-weight: bolder;">Ar 9: {$total_ar_9}
-                                                                buc</span>
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <th class="span3">AR 9</th>
+                                                                        <th>{$total_ar_9} buc</th>
+                                                                    </tr>
+                                                                </table>
                                                             </th>
                                                         </tr>
                                                     {/if}

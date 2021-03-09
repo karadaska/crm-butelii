@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-09 10:54:11
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-09 11:25:58
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1615280049,
+      1 => 1615281948,
       2 => 'file',
     ),
   ),
@@ -288,27 +288,39 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                     <?php if ($_smarty_tpl->tpl_vars['total_bg_11']->value>0) {?>
                                                         <tr>
                                                             <th>
-                                                            <span style="font-weight: bolder;">BG 11: <?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
-
-                                                                buc</span>
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <th class="span3">BG</th>
+                                                                        <th><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
+ buc</th>
+                                                                    </tr>
+                                                                </table>
                                                             </th>
                                                         </tr>
                                                     <?php }?>
                                                     <?php if ($_smarty_tpl->tpl_vars['total_ar_8']->value>0) {?>
                                                         <tr>
                                                             <th>
-                                                            <span style="font-weight: bolder;">Ar 8: <?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
-
-                                                                buc</span>
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <th class="span3">AR 8</th>
+                                                                        <th><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
+ buc</th>
+                                                                    </tr>
+                                                                </table>
                                                             </th>
                                                         </tr>
                                                     <?php }?>
                                                     <?php if ($_smarty_tpl->tpl_vars['total_ar_9']->value>0) {?>
                                                         <tr>
                                                             <th>
-                                                            <span style="font-weight: bolder;">Ar 9: <?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
-
-                                                                buc</span>
+                                                                <table class="table">
+                                                                    <tr>
+                                                                        <th class="span3">AR 9</th>
+                                                                        <th><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
+ buc</th>
+                                                                    </tr>
+                                                                </table>
                                                             </th>
                                                         </tr>
                                                     <?php }?>
