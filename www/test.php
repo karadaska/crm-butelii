@@ -22,10 +22,10 @@ $stare_id = 1;
 //    'data_start' => $zi_curenta
 //));
 
-//$b = Clienti::getRaportLivrariClienti(28, $opts = array(
-//    'data_start' => $data_start,
-//    'data_stop' => $data_stop
-//));
+$b = Clienti::getRaportLivrariClienti(29, $opts = array(
+    'data_start' => '2021-02-01',
+    'data_stop' => '2021-02-03'
+));
 //$b =Clienti::getPreturiLivrariClienti($traseu_id, $opts = array(
 //        'data_start' => $data_start,
 //    'data_stop' => $data_stop
@@ -176,9 +176,9 @@ $stare_id = 1;
 //    'data_start' => '2021-03-08'
 //));
 
-$b = Trasee::getNumarObservatiiApelClientiByTraseuId(array(
-        'traseu_id' => 1,
-        'data_start' => '2021-03-09'
-));
+//$b = Trasee::getNumarObservatiiApelClientiByTraseuId(array(
+//        'traseu_id' => 1,
+//        'data_start' => '2021-03-09'
+//));
 
 echo json_encode($b);

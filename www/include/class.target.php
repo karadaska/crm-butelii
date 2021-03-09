@@ -106,5 +106,30 @@ class Target
         return $ret;
     }
 
+    public static function getPreturiClientPentruRaportLivrariDinFise($client_id = 0)
+    {
+        $ret = array();
+        $target_by_client_id = "SELECT  a.tip_produs_id, c . tip as nume_produs,
+        a.target, a.pret, a.comision       
+        from clienti_target as a
+        left join clienti as b on b . id = a . client_id
+        left join tip_produs as c on c . id = a . tip_produs_id
+        where a . client_id = '" . $client_id . "'
+        and a . sters = 0
+        and c . sters = 0
+        order by a.tip_produs_id ASC
+        ";
+
+        $result = myQuery($target_by_client_id);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['tip_produs_id']] = $item;
+            }
+        }
+        return $ret;
+    }
+
 
 }

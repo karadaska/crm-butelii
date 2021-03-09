@@ -576,12 +576,12 @@
                                     </tr>
                                 {/foreach}
                             </table>
-                            {if ($luna_curenta <= $extract_data_fisa)}
+                            {*{if ($luna_curenta <= $extract_data_fisa)}*}
                                 <button type="submit" name="adauga" value="adauga"
                                         class="btn btn-primary" style="float: right">
                                     Adauga cantitate client
                                 </button>
-                            {/if}
+                            {*{/if}*}
                         </form>
                     {/if}
                     <div style="display: inline-flex">
