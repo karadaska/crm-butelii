@@ -154,6 +154,8 @@
                 </th>
             </tr>
         {/foreach}
+        {$conditie = ($total_bg_11 > 0) || ($total_ar_8 > 0) || ($total_ar_9 > 0) || ($total_obs['total_observatii'])}
+        {if ($conditite)}
         <tr>
             <th colspan="5" style="text-align: right;">TOTAL:</th>
             <th style="text-align: center;">
@@ -190,9 +192,9 @@
                 {/foreach}
             </th>
         </tr>
+        {/if}
         </tbody>
     </table>
-
     {if (count($clienti_cu_observatii) > 0  || count($clienti_cu_urgente) > 0)}
         <div style="margin-top: 30px;margin-bottom: 100px;display: inline-flex">
             <div style="margin-left: 2px;">
