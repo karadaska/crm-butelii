@@ -30,8 +30,6 @@ $apel_traseu = Clienti::getApelTraseuNew(array(
     'stare_id' => $stare_id
 ));
 
-
-
 $lista_clienti = $apel_traseu['list'];
 $smarty->assign('lista_clienti', $lista_clienti);
 
@@ -59,6 +57,11 @@ $clienti_cu_urgente = Clienti::getClientiCuUrgenteApelClientiByTraseuId($id, $op
     'data_start' => $data_start
 ));
 $smarty->assign('clienti_cu_urgente',$clienti_cu_urgente);
+
+$total_obs_pe_categorii = Clienti::getTipObservatiiDinApeluri($id, array(
+    'data_start' => $data_traseu
+));
+$smarty->assign('total_obs_pe_categorii',$total_obs_pe_categorii);
 
 
 $smarty->display($template_page);

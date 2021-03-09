@@ -168,7 +168,22 @@
                     <span style="font-weight: bolder;text-align: left;">AR 9: {$total_ar_9}</span>
                 {/if}
             </th>
-            <th></th>
+            <th style="text-align: left;">
+                <table border="1" style="width: 100%">
+                    {if ($total_obs['total_observatii'] > 0)}
+                        <tr>
+                            <th colspan="2">CLIENTI FARA
+                                INFO: {$total_obs['total_observatii']}</th>
+                        </tr>
+                    {/if}
+                    {foreach from=$total_obs_pe_categorii item=obs}
+                        <tr>
+                            <th style="text-align: right;">{$obs['nume_observatie']}</th>
+                            <th style="width: 40%;">{$obs['numar_observatie']['total_observatie']}</th>
+                        </tr>
+                    {/foreach}
+                </table>
+            </th>
             <th>
                 {foreach from = $total_urgente item=numar_urgente}
                     <span style="font-weight: bolder;">TOTAL URGENTE : {$numar_urgente}</span>
@@ -214,6 +229,7 @@
                                 <th>
                                     {$client['urgent']}
                                 </th>
+
                                 <th style="text-align: left;width: 100px;">
                                     {foreach from=$client['raspuns'] item=raspuns}
                                         <span> {$raspuns['nume_produs']}</span>
