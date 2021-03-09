@@ -90,6 +90,9 @@ $data_intrare = $fisa['data_intrare'];
 $cantitati_produse_clienti_by_fisa_id = Stocuri::getCantitatiProduseClientiByFisaId($id);
 $smarty->assign('cantitati_produse_clienti_by_fisa_id', $cantitati_produse_clienti_by_fisa_id);
 
+$zi_curenta = date('n');
+$smarty->assign('zi_curenta', $zi_curenta);
+
 $to_add = array();
 $to_add_obs = array();
 $to_add_obssecond = array();

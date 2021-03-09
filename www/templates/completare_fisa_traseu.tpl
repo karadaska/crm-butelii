@@ -264,10 +264,10 @@
                                         </th>
                                     </tr>
                                     {*<tr>*}
-                                        {*<th colspan="3">*}
-                                            {*<textarea style="width: 100%" type="text" rows="2"*}
-                                                      {*name="nota_explicativa">{$fisa['miscari_fisa']['nota_explicativa']}</textarea>*}
-                                        {*</th>*}
+                                    {*<th colspan="3">*}
+                                    {*<textarea style="width: 100%" type="text" rows="2"*}
+                                    {*name="nota_explicativa">{$fisa['miscari_fisa']['nota_explicativa']}</textarea>*}
+                                    {*</th>*}
                                     {*</tr>*}
                                     <tr>
                                         <th colspan="3" style="text-align: right;">
@@ -576,11 +576,11 @@
                                     </tr>
                                 {/foreach}
                             </table>
-                            {if (date('n') >= 3)}
-                            <button type="submit" name="adauga" value="adauga"
-                                    class="btn btn-primary" style="float: right">
-                                Adauga cantitate client
-                            </button>
+                            {if ($zi_curenta) <=2}
+                                <button type="submit" name="adauga" value="adauga"
+                                        class="btn btn-primary" style="float: right">
+                                    Adauga cantitate client
+                                </button>
                             {/if}
                         </form>
                     {/if}
