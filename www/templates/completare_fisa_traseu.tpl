@@ -378,7 +378,7 @@
                             </div>
                         </div>
                     </form>
-                    {*{if (count($fisa['clienti']) > 0)}*}
+                    {if (count($fisa['clienti']) > 0)}
                         <form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post"
                               style="margin-bottom: 0">
                             <input type="hidden" name="id_fisa_adauga_produse" value="{$fisa['id']}">
@@ -576,12 +576,14 @@
                                     </tr>
                                 {/foreach}
                             </table>
+                            {if (date('n') >= 3)}
                             <button type="submit" name="adauga" value="adauga"
                                     class="btn btn-primary" style="float: right">
                                 Adauga cantitate client
                             </button>
+                            {/if}
                         </form>
-                    {*{/if}*}
+                    {/if}
                     <div style="display: inline-flex">
                         {if ($fisa['grand_total_vandute_bg'] != 0 || $fisa['grand_defecte_bg'] != 0)}
                             <div>
