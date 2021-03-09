@@ -156,42 +156,56 @@
         {/foreach}
         {$conditie = ($total_bg_11 > 0) || ($total_ar_8 > 0) || ($total_ar_9 > 0) || ($total_obs['total_observatii'])}
         {if ($conditite)}
-        <tr>
-            <th colspan="5" style="text-align: right;">TOTAL:</th>
-            <th style="text-align: center;">
-                {if $total_bg_11 > 0}
-                    <span style="font-weight: bolder;">BG 11: {$total_bg_11}</span>
-                    <br/>
-                {/if}
-                {if $total_ar_8 > 0}
-                    <span style="font-weight: bolder;text-align: left;">AR 8: {$total_ar_8}</span>
-                {/if}
-                {if $total_ar_9 > 0}
-                    <span style="font-weight: bolder;text-align: left;">AR 9: {$total_ar_9}</span>
-                {/if}
-            </th>
-            <th style="text-align: left;">
-                <table border="1" style="width: 100%">
-                    {if ($total_obs['total_observatii'] > 0)}
-                        <tr>
-                            <th colspan="2">CLIENTI FARA
-                                INFO: {$total_obs['total_observatii']}</th>
-                        </tr>
+            <tr>
+                <th colspan="5" style="text-align: right;">TOTAL:</th>
+                <th style="text-align: center;">
+                    {if $total_bg_11 > 0}
+                        <table border="1">
+                            <tr>
+                                <th>BG</th>
+                                <th>{$total_bg_11} buc</th>
+                            </tr>
+                        </table>
                     {/if}
-                    {foreach from=$total_obs_pe_categorii item=obs}
-                        <tr>
-                            <th style="text-align: right;">{$obs['nume_observatie']}</th>
-                            <th style="width: 40%;">{$obs['numar_observatie']['total_observatie']}</th>
-                        </tr>
+                    {if $total_ar_8 > 0}
+                        <table border="1">
+                            <tr>
+                                <th>AR 8</th>
+                                <th>{$total_ar_8} buc</th>
+                            </tr>
+                        </table>
+                    {/if}
+                    {if $total_ar_9 > 0}
+                        <table border="1">
+                            <tr>
+                                <th>AR 9</th>
+                                <th>{$total_ar_9} buc</th>
+                            </tr>
+                        </table>
+                    {/if}
+                </th>
+                <th style="text-align: left;">
+                    <table border="1" style="width: 100%">
+                        {if ($total_obs['total_observatii'] > 0)}
+                            <tr>
+                                <th colspan="2">CLIENTI FARA
+                                    INFO: {$total_obs['total_observatii']}</th>
+                            </tr>
+                        {/if}
+                        {foreach from=$total_obs_pe_categorii item=obs}
+                            <tr>
+                                <th style="text-align: right;">{$obs['nume_observatie']}</th>
+                                <th style="width: 40%;">{$obs['numar_observatie']['total_observatie']}</th>
+                            </tr>
+                        {/foreach}
+                    </table>
+                </th>
+                <th>
+                    {foreach from = $total_urgente item=numar_urgente}
+                        <span style="font-weight: bolder;">TOTAL URGENTE : {$numar_urgente}</span>
                     {/foreach}
-                </table>
-            </th>
-            <th>
-                {foreach from = $total_urgente item=numar_urgente}
-                    <span style="font-weight: bolder;">TOTAL URGENTE : {$numar_urgente}</span>
-                {/foreach}
-            </th>
-        </tr>
+                </th>
+            </tr>
         {/if}
         </tbody>
     </table>
