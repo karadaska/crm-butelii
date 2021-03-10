@@ -177,8 +177,8 @@
                                             {$total_ar_9 = $total_ar_9 + $client['total_produse']['ar_9']['total_ar_9']}
                                             {$total_valoare_incasare_bg_11 = $total_valoare_incasare_bg_11 + $client['total_produse']['bg_11']['total_bg_11_cu_pret']}
                                             {$total_valoare_incasare_ar_9 = $total_valoare_incasare_ar_9 + $client['total_produse']['ar_9']['total_ar_9_cu_pret']}
-                                            {$total_comision_bg_11 = ($total_comision_bg_11 + $client['total_produse']['bg_11']['total_bg_11'] * $client['target']['1']['comision'])}
-                                            {$total_comision_ar_9 =  ($total_comision_ar_9 + $client['total_produse']['ar_9']['total_ar_9'] * $client['target']['4']['comision'])}
+                                            {$total_comision_bg_11 = ($total_comision_bg_11 + $client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'])}
+                                            {$total_comision_ar_9 =  ($total_comision_ar_9 + $client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'])}
                                         {/foreach}
                                         <tr>
                                             <th colspan="10" style="text-align: right;border-right:double;">TOTAL:</th>
