@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 10:24:47
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 10:32:55
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1615364683,
+      1 => 1615364781,
       2 => 'file',
     ),
   ),
@@ -59,7 +59,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Raport livrari clienti
-                        <a href="/print_raport_livrari_clienti.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
+                        <a target="_blank" href="/print_raport_livrari_clienti.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
 &data_start=<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 &data_stop=<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
 ">

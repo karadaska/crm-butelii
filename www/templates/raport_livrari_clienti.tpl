@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Raport livrari clienti
-                        <a href="/print_raport_livrari_clienti.php?id={$traseu_id}&data_start={$data_start}&data_stop={$data_stop}">
+                        <a target="_blank" href="/print_raport_livrari_clienti.php?id={$traseu_id}&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
                     </h1>
@@ -113,7 +113,7 @@
                                                             {strtoupper($client['nume_client'])}
                                                         </a>
                                                     {else}
-                                                        <a href="edit_client.php?id={$client['id']}">
+                                                        <a target="_blank" href="edit_client.php?id={$client['id']}">
                                                             <abbr title="Client sters de pe acest traseu"
                                                                   style="color: red;"> {strtoupper($client['nume_client'])}</abbr>
                                                         </a>
@@ -142,7 +142,7 @@
                                                             <tr>
                                                                 {foreach from=$client['lista_preturi_bg_11'] item=lista}
                                                                     <td style="text-align: center;">
-                                                                        <a href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
+                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
                                                                             Pret: {$lista['pret']} <br/>
                                                                             Cant: {$lista['total_cantitati_bg_11']['numar_produs_by_pret']}
                                                                         </a>
@@ -160,7 +160,7 @@
                                                             <tr>
                                                                 {foreach from=$client['lista_preturi_ar_9'] item=lista}
                                                                     <td style="text-align: center;">
-                                                                        <a href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
+                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
                                                                             Pret: {$lista['pret']}<br/>
                                                                             Cant: {$lista['total_cantitati_ar_9']['numar_produs_by_pret']}
                                                                         </a>
@@ -322,7 +322,7 @@
                                                             {strtoupper($client['nume_client'])}
                                                         </a>
                                                     {else}
-                                                        <a href="edit_client.php?id={$client['id']}">
+                                                        <a target="_blank" href="edit_client.php?id={$client['id']}">
 
                                                             <abbr title="Client sters de pe acest traseu"
                                                                   style="color: red;"> {strtoupper($client['nume_client'])}</abbr>
@@ -354,7 +354,7 @@
                                                             <tr>
                                                                 {foreach from=$client['lista_preturi_bg_11'] item=lista}
                                                                     <td style="text-align: center;">
-                                                                        <a href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
+                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
                                                                             Pret: {$lista['pret']} <br/>
                                                                             Cant: {$lista['total_cantitati_bg_11']['numar_produs_by_pret']}
                                                                         </a>
@@ -372,7 +372,7 @@
                                                             <tr>
                                                                 {foreach from=$client['lista_preturi_ar_8'] item=lista}
                                                                     <td style="text-align: center;">
-                                                                        <a href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
+                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
                                                                             Pret: {$lista['pret']} <br/>
                                                                             Cant: {$lista['total_cantitati_ar_8']['numar_produs_by_pret']}
                                                                         </a>
@@ -390,7 +390,7 @@
                                                             <tr>
                                                                 {foreach from=$client['lista_preturi_ar_9'] item=lista}
                                                                     <td style="text-align: center;">
-                                                                        <a href="istoric_client_fisa_traseu.php?id={{$client['client_id']}}">
+                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id={{$client['client_id']}}">
                                                                             Pret: {$lista['pret']} <br/>
                                                                             Cant: {$lista['total_cantitati_ar_9']['numar_produs_by_pret']}
                                                                         </a>
