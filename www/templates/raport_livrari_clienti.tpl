@@ -131,15 +131,10 @@
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? $client['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-'} </td>
                                                 <td style="text-align: center;border-right:double;">{($client['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? $client['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-'}</td>
                                                 <td style="text-align: center;">
-                                                    total bucati: {$client['total_produse']['bg_11']['total_bg_11']} <br/>
-                                                    comision: {$client['total_produse']['bg_11']['comision']}<br/>
-                                                    {($client['total_produse']['bg_11']['total_ar_9'] * $client['total_produse']['bg_11']['comision'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'] : '-'}
+                                                    {($client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'] : '-'}
                                                 </td>
                                                 <td style="text-align: center;border-right:double">
-                                                    total bucati: {$client['total_produse']['ar_9']['total_ar_9']} <br/>
-                                                    comision: {$client['total_produse']['ar_9']['comision']}<br/>
                                                     {($client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'] !='') ? $client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'] : '-'}
-
                                                 </td>
                                                 <td>
                                                     {if count($client['lista_preturi_bg_11']) >0}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 09:49:24
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 09:52:41
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1615362561,
+      1 => 1615362754,
       2 => 'file',
     ),
   ),
@@ -221,7 +221,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
  <br/>
                                                     comision: <?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'];?>
 <br/>
-                                                    <?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
+                                                    <?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
 
                                                 </td>
                                                 <td style="text-align: center;border-right:double">
