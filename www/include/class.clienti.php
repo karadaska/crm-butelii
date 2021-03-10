@@ -49,7 +49,7 @@ class Clienti
                     'numar' => $item['numar'],
                     'nume_traseu' => $item['nume_traseu'],
                     'data_intrare' => $item['data_intrare'],
-                    'observatie' => Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($item['client_id'], $item['fisa_generata_id']),
+                    'observatie' => self::getObservatieClientiByClientIdAndFisaId($item['client_id'], $item['fisa_generata_id']),
                     'produse' => Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId($item['fisa_generata_id'], $item['client_id'])
                 );
 
@@ -60,6 +60,28 @@ class Clienti
         return $ret;
 
     }
+
+    public static function getObservatieClientiByClientIdAndFisaId($client_id, $fisa_id)
+    {
+        $ret = array();
+        $query = "SELECT
+                  b.nume AS nume_observatie, d.nume as observatie_extra	
+                  FROM
+                  observatii_clienti_fisa_traseu AS a
+                  LEFT JOIN observatii AS b ON a.observatie_id = b.id
+                  LEFT JOIN observatii_secundare_fisa AS c ON a.observatie_id = c.parent_obs
+                  LEFT JOIN observatii AS d ON c.second_obs = d.id 
+                  WHERE a.client_id = '" . $client_id . "' 
+                  AND a.fisa_id = '" . $fisa_id . "' 
+                  ";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
 
     public static function getApelTraseuNew($opts = array())
     {

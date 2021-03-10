@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-01 13:31:05
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 12:02:17
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1614598263,
+      1 => 1615370535,
       2 => 'file',
     ),
   ),
@@ -139,15 +139,15 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                        class="table table-striped table-bordered table-hover" id="dataTable">
                                     <thead>
                                     <tr>
-                                        <th style="text-align: left;">Localitate</th>
-                                        <th style="text-align: left;">Client</th>
-                                        <th style="text-align: left;">Telefon</th>
-                                        <th style="text-align: center;">Masina</th>
-                                        <th style="text-align: center;">Sofer</th>
-                                        <th style="text-align: center;">Data</th>
-                                        <th style="text-align: center;">Observatie I</th>
-                                        <th style="text-align: center;">Observatie Extra</th>
-                                        <th style="text-align: center;" class="span1">Fisa</th>
+                                        <th style="text-align: left;">LOCALITATE</th>
+                                        <th style="text-align: left;">CLIENT</th>
+                                        <th style="text-align: center;">TELEFON</th>
+                                        <th style="text-align: center;">MASINA</th>
+                                        <th style="text-align: center;">SOFER</th>
+                                        <th style="text-align: center;">DATA</th>
+                                        <th style="text-align: center;">OBSERVATIE I</th>
+                                        <th style="text-align: center;">OBSERVATIE EXTRA</th>
+                                        <th style="text-align: center;" class="span1">FISA</th>
                                     </tr>
                                     </thead>
                                     <tbody>

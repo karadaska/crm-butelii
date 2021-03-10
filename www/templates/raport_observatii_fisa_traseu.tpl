@@ -78,15 +78,15 @@
                                        class="table table-striped table-bordered table-hover" id="dataTable">
                                     <thead>
                                     <tr>
-                                        <th style="text-align: left;">Localitate</th>
-                                        <th style="text-align: left;">Client</th>
-                                        <th style="text-align: left;">Telefon</th>
-                                        <th style="text-align: center;">Masina</th>
-                                        <th style="text-align: center;">Sofer</th>
-                                        <th style="text-align: center;">Data</th>
-                                        <th style="text-align: center;">Observatie I</th>
-                                        <th style="text-align: center;">Observatie Extra</th>
-                                        <th style="text-align: center;" class="span1">Fisa</th>
+                                        <th style="text-align: left;">LOCALITATE</th>
+                                        <th style="text-align: left;">CLIENT</th>
+                                        <th style="text-align: center;">TELEFON</th>
+                                        <th style="text-align: center;">MASINA</th>
+                                        <th style="text-align: center;">SOFER</th>
+                                        <th style="text-align: center;">DATA</th>
+                                        <th style="text-align: center;">OBSERVATIE I</th>
+                                        <th style="text-align: center;">OBSERVATIE EXTRA</th>
+                                        <th style="text-align: center;" class="span1">FISA</th>
                                     </tr>
                                     </thead>
                                     <tbody>

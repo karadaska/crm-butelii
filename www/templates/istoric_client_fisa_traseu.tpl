@@ -30,8 +30,8 @@
                                         <th colspan="2" style="border: 1px;border-right: double;border-left: double;">
                                             VALOARE INCASATA SOFER
                                         </th>
-                                        <th rowspan="2">Observatie I</th>
-                                        <th rowspan="2">Observatie II</th>
+                                        <th rowspan="2">OBSERVATIE I</th>
+                                        <th rowspan="2">OBSERVATIE EXTRA</th>
                                         <th rowspan="2">Data</th>
                                     </tr>
                                     <tr>
@@ -84,7 +84,8 @@
                                             <td style="text-align: center;vertical-align: middle;">
                                                 {($cantitate['observatie']['nume_observatie'] !='') ? $cantitate['observatie']['nume_observatie'] : '-'}
                                             </td>
-                                            <td></td>
+                                            <td style="text-align: center;vertical-align: middle;">{($cantitate['observatie']['observatie_extra'] !='') ? $cantitate['observatie']['observatie_extra'] : '-'}
+                                            </td>
                                             <td style="text-align: center;vertical-align: middle;">{$cantitate['data_intrare']}</td>
                                         </tr>
                                     {/foreach}

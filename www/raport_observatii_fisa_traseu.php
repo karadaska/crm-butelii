@@ -54,7 +54,6 @@ $smarty->assign('data_stop_interval', $data_stop_interval);
 $lista_clienti = Clienti::getObservatiiClientiDinFiseGenerate(array(
     'traseu_id' => $traseu_id,
     'observatie_id' => $observatie_id,
-
     'data_start' => $data_start,
     'data_stop' => $data_stop
 ));
