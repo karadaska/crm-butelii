@@ -1393,7 +1393,8 @@ class Clienti
             $data_stop = date('Y-m-t');
         }
 
-        $target_by_client_id = "SELECT SUM(a.cantitate) as total_bg_11, SUM(a.cantitate * a.pret) as total_bg_11_cu_pret, a.pret_contract as pret_contract_client
+        $target_by_client_id = "SELECT SUM(a.cantitate) as total_bg_11, SUM(a.cantitate * a.pret) as total_bg_11_cu_pret, 
+                                a.pret_contract as pret_contract_client, a.comision
                                 FROM detalii_fisa_intoarcere_produse  as a
                                 LEFT JOIN fise_generate as b on a.fisa_id = b.id
                                 WHERE a.client_id = '" . $client_id . "'                                
@@ -1426,7 +1427,8 @@ class Clienti
             $data_stop = date('Y-m-t');
         }
 
-        $target_by_client_id = "SELECT SUM(a.cantitate) as total_ar_8, SUM(a.cantitate * a.pret) as total_ar_8_cu_pret,  a.pret_contract as pret_contract_client
+        $target_by_client_id = "SELECT SUM(a.cantitate) as total_ar_8, SUM(a.cantitate * a.pret) as total_ar_8_cu_pret,
+                                a.pret_contract as pret_contract_client, a.comision
                                 FROM detalii_fisa_intoarcere_produse  as a
                                 LEFT JOIN fise_generate as b on a.fisa_id = b.id
                                 WHERE a.client_id = '" . $client_id . "'                                
@@ -1458,7 +1460,8 @@ class Clienti
             $data_stop = date('Y-m-t');
         }
 
-        $target_by_client_id = "SELECT SUM(a.cantitate) as total_ar_9, SUM(a.cantitate * a.pret) as total_ar_9_cu_pret, a.pret_contract as pret_contract_client
+        $target_by_client_id = "SELECT SUM(a.cantitate) as total_ar_9, SUM(a.cantitate * a.pret) as total_ar_9_cu_pret,
+                                a.pret_contract as pret_contract_client, a.comision
                                 FROM detalii_fisa_intoarcere_produse  as a
                                 LEFT JOIN fise_generate as b on a.fisa_id = b.id
                                 WHERE a.client_id = '" . $client_id . "'                                
