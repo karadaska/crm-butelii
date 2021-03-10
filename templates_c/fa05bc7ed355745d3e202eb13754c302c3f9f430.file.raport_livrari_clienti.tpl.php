@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 10:37:48
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 11:17:01
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1615365252,
+      1 => 1615367761,
       2 => 'file',
     ),
   ),
@@ -59,7 +59,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Raport livrari clienti
-                        <a target="_blank" href="/print_raport_livrari_clienti.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
+                        <a target="_blank"
+                           href="/print_raport_livrari_clienti.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
 &data_start=<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 &data_stop=<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
 ">
@@ -234,7 +235,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                                                     <td style="text-align: center;">
-                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
@@ -259,7 +261,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                                                     <td style="text-align: center;">
-                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
 <br/>
@@ -510,7 +513,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                                                     <td style="text-align: center;">
-                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
@@ -535,7 +539,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                                                     <td style="text-align: center;">
-                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
@@ -560,7 +565,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                                                     <td style="text-align: center;">
-                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id=<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id=<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 <?php $_tmp1=ob_get_clean();?><?php echo $_tmp1;?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
@@ -595,7 +601,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                             <th style="color: red;"><abbr title="Total bucati AR 8"><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
 </abbr>
                                             </th>
-                                            <th style="text-align: right;border-right:double;"><abbr
+                                            <th style="text-align: center;border-right:double;"><abbr
                                                         title="Total bucati AR 9"
                                                         style="color: red;"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
 </abbr></th>
@@ -607,7 +613,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                                 <abbr title="Total valoare incasare AR 8"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value;?>
 </abbr>
                                             </th>
-                                            <th style="text-align: right;border-right:double;">
+                                            <th style="text-align: center;border-right:double;">
                                                 <abbr title="Total valoare incasare AR 9"
                                                       style="color: red;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
 </abbr>
@@ -618,7 +624,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                             <th style="color: red;"><abbr
                                                         title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_8']->value;?>
 </abbr></th>
-                                            <th style="text-align: right;border-right:double;"><abbr
+                                            <th style="text-align: center;border-right:double;"><abbr
                                                         title="Total comision AR 9"
                                                         style="color: red;"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
 </abbr></th>

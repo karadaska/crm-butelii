@@ -540,7 +540,7 @@
                 <th colspan="13" style="text-align: right;border-right:double">TOTAL:</th>
                 <th><abbr title="Total bucati BG 11">{$total_bg_11}</abbr></th>
                 <th><abbr title="Total bucati AR 8">{$total_ar_8}</abbr></th>
-                <th style="text-align: right;border-right:double"><abbr
+                <th style="text-align: center;border-right:double"><abbr
                             title="Total bucati AR 9">{$total_ar_9}</abbr></th>
                 <th>
                     <abbr title="Total valoare incasare BG 11">{$total_valoare_incasare_bg_11}</abbr>
@@ -548,12 +548,12 @@
                 <th>
                     <abbr title="Total valoare incasare AR 8">{$total_valoare_incasare_ar_8}</abbr>
                 </th>
-                <th style="text-align: right;border-right:double">
+                <th style="text-align: center;border-right:double">
                     <abbr title="Total valoare incasare AR 9">{$total_valoare_incasare_ar_9}</abbr>
                 </th>
                 <th><abbr title="Total comision BG 11">{$total_comision_bg_11}</abbr></th>
                 <th><abbr title="Total comision BG 11">{$total_comision_ar_8}</abbr></th>
-                <th style="text-align: right;border-right:double"><abbr
+                <th style="text-align: center;border-right:double"><abbr
                             title="Total comision AR 9">{$total_comision_ar_9}</abbr></th>
                 <th colspan="20"></th>
             </tr>
