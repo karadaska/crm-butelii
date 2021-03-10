@@ -123,15 +123,24 @@
                                                 <td style="text-align: center;border-left:double">{($client['target']['1']['target'] !='') ? $client['target']['1']['target'] : '-'}</td>
                                                 <td style="text-align: center">{($client['target']['4']['target'] !='') ? $client['target']['4']['target'] : '-'}</td>
                                                 <td style="text-align: center;border-left:double">{($client['total_produse']['bg_11']['pret_contract_client'] !='') ? $client['total_produse']['bg_11']['pret_contract_client'] - $client['total_produse']['bg_11']['comision']  : '-'}</td>
-                                                <td style="text-align: center;border-left:double">{($client['total_produse']['ar_9']['pret_contract_client'] !='') ? $client['total_produse']['ar_9']['pret_contract_client'] - $client['total_produse']['ar_9']['comision']  : '-'}</td>
+                                                <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['pret_contract_client'] !='') ? $client['total_produse']['ar_9']['pret_contract_client'] - $client['total_produse']['ar_9']['comision']  : '-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['comision'] !='') ? $client['total_produse']['bg_11']['comision'] : '-'}</td>
                                                 <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['comision'] !='') ? $client['total_produse']['ar_9']['comision'] : '-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] :'-'}</td>
                                                 <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] !='') ? $client['total_produse']['ar_9']['total_ar_9']: '-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? $client['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-'} </td>
                                                 <td style="text-align: center;border-right:double;">{($client['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? $client['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-'}</td>
-                                                <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] * $client['target']['1']['comision'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] * $client['target']['1']['comision'] :'-'}</td>
-                                                <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] * $client['target']['4']['comision'] !='') ? $client['total_produse']['ar_9']['total_ar_9'] * $client['target']['4']['comision'] : '-'}</td>
+                                                <td style="text-align: center;">
+                                                    total bucati: {$client['total_produse']['bg_11']['total_bg_11']} <br/>
+                                                    comision: {$client['total_produse']['bg_11']['comision']}<br/>
+                                                    {($client['total_produse']['bg_11']['total_ar_9'] * $client['total_produse']['bg_11']['comision'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'] : '-'}
+                                                </td>
+                                                <td style="text-align: center;border-right:double">
+                                                    total bucati: {$client['total_produse']['ar_9']['total_ar_9']} <br/>
+                                                    comision: {$client['total_produse']['ar_9']['comision']}<br/>
+                                                    {($client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'] !='') ? $client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'] : '-'}
+
+                                                </td>
                                                 <td>
                                                     {if count($client['lista_preturi_bg_11']) >0}
                                                         <table class="table table-bordered">
