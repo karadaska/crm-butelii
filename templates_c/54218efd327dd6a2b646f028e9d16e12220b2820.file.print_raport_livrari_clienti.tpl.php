@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 10:50:26
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 11:06:25
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1615366222,
+      1 => 1615366871,
       2 => 'file',
     ),
   ),
@@ -150,175 +150,175 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         </tr>
     </table>
     <?php if ($_smarty_tpl->tpl_vars['depozit_by_traseu']->value['depozit_id']==1) {?>
-    <table border="1">
-        <thead>
-        <tr>
-            <th style="text-align: center;" rowspan="2">#</th>
-            <th style="text-align: center;" rowspan="2">LOCALITATE</th>
-            <th style="text-align: center;" rowspan="2">CLIENT</th>
-            <th style="text-align: center;" rowspan="2">TELEFON</th>
-            <th colspan="2" style="text-align: center;">BG/AR</th>
-            <th colspan="2" style="text-align: center;">PRET UNITAR</th>
-            <th colspan="2" style="text-align: center;">COMISION</th>
-            <th colspan="2" style="text-align: center;">TOTAL BUCATI</th>
-            <th colspan="2" style="text-align: center;">TOTAL VAL. INCASATA</th>
-            <th colspan="2" style="text-align: center;">TOTAL COMISION</th>
-            <th colspan="2" style="text-align: center;">VALOARE BUCATI BG/AR</th>
-        </tr>
-        <tr>
+        <table border="1">
+            <thead>
+            <tr>
+                <th style="text-align: center;" rowspan="2">#</th>
+                <th style="text-align: center;" rowspan="2">LOCALITATE</th>
+                <th style="text-align: center;" rowspan="2">CLIENT</th>
+                <th style="text-align: center;" rowspan="2">TELEFON</th>
+                <th colspan="2" style="text-align: center;">BG/AR</th>
+                <th colspan="2" style="text-align: center;">PRET UNITAR</th>
+                <th colspan="2" style="text-align: center;">COMISION</th>
+                <th colspan="2" style="text-align: center;">TOTAL BUCATI</th>
+                <th colspan="2" style="text-align: center;">TOTAL VAL. INCASATA</th>
+                <th colspan="2" style="text-align: center;">TOTAL COMISION</th>
+                <th colspan="2" style="text-align: center;">VALOARE BUCATI BG/AR</th>
+            </tr>
+            <tr>
 
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 9</td>
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 9</td>
-            <td style="text-align: center;">BG 11</td>
-            <td style="text-align: center;">AR 9</td>
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 9</td>
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 9</td>
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 9</td>
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 9</td>
+                <td style="text-align: center;">BG 11</td>
+                <td style="text-align: center;">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 9</td>
 
-        </tr>
-        </thead>
-        <tbody>
-        <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_comision_bg_11'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(0, null, 0);?>
-        <?php  $_smarty_tpl->tpl_vars['client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['client']->_loop = false;
+            </tr>
+            </thead>
+            <tbody>
+            <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_comision_bg_11'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(0, null, 0);?>
+            <?php  $_smarty_tpl->tpl_vars['client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['client']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_clienti']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['client']->key => $_smarty_tpl->tpl_vars['client']->value) {
 $_smarty_tpl->tpl_vars['client']->_loop = true;
 ?>
-            <tr>
-                <td style="text-align: center" class="span1"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
+                <tr>
+                    <td style="text-align: center" class="span1"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
-                <td style="text-align: left"
-                    class="span3"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
+                    <td style="text-align: left"
+                        class="span3"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
 </td>
-                <td>
-                    <?php if (($_smarty_tpl->tpl_vars['client']->value['sters']==0)) {?>
-                        <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
+                    <td>
+                        <?php if (($_smarty_tpl->tpl_vars['client']->value['sters']==0)) {?>
+                            <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 
-                    <?php } else { ?>
-                        <abbr title="Client sters de pe acest traseu"
-                              style="color: red;"> <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
+                        <?php } else { ?>
+                            <abbr title="Client sters de pe acest traseu"
+                                  style="color: red;"> <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 </abbr>
-                    <?php }?>
-                </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
+                        <?php }?>
+                    </td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
 <br/><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon2'];?>
 </td>
-                <td style="text-align: center;border-left:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['1']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['1']['target'] : '-';?>
+                    <td style="text-align: center;border-left:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['1']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['1']['target'] : '-';?>
 </td>
-                <td style="text-align: center"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['4']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['4']['target'] : '-';?>
+                    <td style="text-align: center"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['4']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['4']['target'] : '-';?>
 </td>
-                <td style="text-align: center;border-left:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['pret_contract_client']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['pret_contract_client']-$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
+                    <td style="text-align: center;border-left:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['pret_contract_client']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['pret_contract_client']-$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['pret_contract_client']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['pret_contract_client']-$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision'] : '-';?>
+                    <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['pret_contract_client']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['pret_contract_client']-$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision'] : '-';?>
+                    <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'] : '-';?>
 </td>
-                <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'] : '-';?>
+                    <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-';?>
  </td>
-                <td style="text-align: center;border-right:double;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-';?>
+                    <td style="text-align: center;border-right:double;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-';?>
 </td>
-                <td style="text-align: center;">
-                    <?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
+                    <td style="text-align: center;">
+                        <?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
 
-                </td>
-                <td style="text-align: center;border-right:double">
-                    <?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision'] : '-';?>
+                    </td>
+                    <td style="text-align: center;border-right:double">
+                        <?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision'] : '-';?>
 
-                </td>
+                    </td>
 
-                <td>
-                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11'])>0) {?>
-                        <table border="1">
-                            <tr>
-                                <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
+                    <td>
+                        <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11'])>0) {?>
+                            <table border="1">
+                                <tr>
+                                    <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
-                                    <td style="text-align: center;">
-                                        Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
+                                        <td style="text-align: center;">
+                                            Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
-                                        Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_bg_11']['numar_produs_by_pret'];?>
+                                            Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_bg_11']['numar_produs_by_pret'];?>
 
-                                    </td>
-                                <?php } ?>
-                            </tr>
-                        </table>
-                    <?php } else { ?>
-                        <span style="text-align: center;">-</span>
-                    <?php }?>
-                </td>
-                <td style="text-align: center;border-right:double">
-                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9'])>0) {?>
-                        <table border="1">
-                            <tr>
-                                <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
+                                        </td>
+                                    <?php } ?>
+                                </tr>
+                            </table>
+                        <?php } else { ?>
+                            <span style="text-align: center;">-</span>
+                        <?php }?>
+                    </td>
+                    <td style="text-align: center;border-right:double">
+                        <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9'])>0) {?>
+                            <table border="1">
+                                <tr>
+                                    <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
-                                    <td style="text-align: center;">
-                                        Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
+                                        <td style="text-align: center;">
+                                            Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
-                                        Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_9']['numar_produs_by_pret'];?>
+                                            Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_9']['numar_produs_by_pret'];?>
 
-                                    </td>
-                                <?php } ?>
-                            </tr>
-                        </table>
-                    <?php } else { ?>
-                        <span style="text-align: center;">-</span>
-                    <?php }?>
-                </td>
+                                        </td>
+                                    <?php } ?>
+                                </tr>
+                            </table>
+                        <?php } else { ?>
+                            <span style="text-align: center;">-</span>
+                        <?php }?>
+                    </td>
+                </tr>
+                <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret'], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_comision_bg_11'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']), null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']), null, 0);?>
+            <?php } ?>
+            <tr>
+                <th colspan="10" style="text-align: right;">TOTAL:</th>
+                <th><abbr title="Total bucati BG 11"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
+</abbr></th>
+                <th><abbr title="Total bucati AR 9"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
+</abbr></th>
+                <th>
+                    <abbr title="Total valoare incasare BG 11"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value;?>
+</abbr>
+                </th>
+                <th>
+                    <abbr title="Total valoare incasare AR 9"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
+</abbr>
+                </th>
+                <th><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
+</abbr></th>
+                <th><abbr title="Total comision AR 9"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
+</abbr></th>
+                <th colspan="20"></th>
             </tr>
-            <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'], null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'], null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'], null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret'], null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_comision_bg_11'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['target']['1']['comision']), null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['target']['4']['comision']), null, 0);?>
-        <?php } ?>
-        <tr>
-            <th colspan="10" style="text-align: right;">TOTAL:</th>
-            <th><abbr title="Total bucati BG 11"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
-</abbr></th>
-            <th><abbr title="Total bucati AR 9"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
-</abbr></th>
-            <th>
-                <abbr title="Total valoare incasare BG 11"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value;?>
-</abbr>
-            </th>
-            <th>
-                <abbr title="Total valoare incasare AR 9"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
-</abbr>
-            </th>
-            <th><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
-</abbr></th>
-            <th><abbr title="Total comision AR 9"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
-</abbr></th>
-            <th colspan="20"></th>
-        </tr>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
         <div style="display: inline-flex">
             <?php if (($_smarty_tpl->tpl_vars['total_bg_11']->value!=0)) {?>
                 <div>
@@ -524,334 +524,334 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
             </div>
         </div>
     <?php } else { ?>
-    <table border="1">
-        <thead>
-        <tr>
-            <th style="text-align: center;" rowspan="2">#</th>
-            <th style="text-align: center;" rowspan="2">LOCALITATE</th>
-            <th style="text-align: center;" rowspan="2">CLIENT</th>
-            <th style="text-align: center;" rowspan="2">TELEFON</th>
-            <th colspan="3" style="text-align: center;">BG/AR</th>
-            <th colspan="3" style="text-align: center;">PRET UNITAR</th>
-            <th colspan="3" style="text-align: center;">COMISION</th>
-            <th colspan="3" style="text-align: center;">TOTAL BUCATI</th>
-            <th colspan="3" style="text-align: center;">TOTAL VAL. INCASATA</th>
-            <th colspan="3" style="text-align: center;">TOTAL COMISION</th>
-            <th colspan="3" style="text-align: center;">VALOARE BUCATI BG/AR</th>
-        </tr>
-        <tr>
+        <table border="1">
+            <thead>
+            <tr>
+                <th style="text-align: center;" rowspan="2">#</th>
+                <th style="text-align: center;" rowspan="2">LOCALITATE</th>
+                <th style="text-align: center;" rowspan="2">CLIENT</th>
+                <th style="text-align: center;" rowspan="2">TELEFON</th>
+                <th colspan="3" style="text-align: center;">BG/AR</th>
+                <th colspan="3" style="text-align: center;">PRET UNITAR</th>
+                <th colspan="3" style="text-align: center;">COMISION</th>
+                <th colspan="3" style="text-align: center;">TOTAL BUCATI</th>
+                <th colspan="3" style="text-align: center;">TOTAL VAL. INCASATA</th>
+                <th colspan="3" style="text-align: center;">TOTAL COMISION</th>
+                <th colspan="3" style="text-align: center;">VALOARE BUCATI BG/AR</th>
+            </tr>
+            <tr>
 
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 8</td>
-            <td style="text-align: center">AR 9</td>
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 8</td>
-            <td style="text-align: center">AR 9</td>
-            <td style="text-align: center;">BG 11</td>
-            <td style="text-align: center;">AR 8</td>
-            <td style="text-align: center;">AR 9</td>
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 8</td>
-            <td style="text-align: center">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 8</td>
+                <td style="text-align: center">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 8</td>
+                <td style="text-align: center">AR 9</td>
+                <td style="text-align: center;">BG 11</td>
+                <td style="text-align: center;">AR 8</td>
+                <td style="text-align: center;">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 8</td>
+                <td style="text-align: center">AR 9</td>
 
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 8</td>
-            <td style="text-align: center">AR 9</td>
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 8</td>
-            <td style="text-align: center">AR 9</td>
-            <td style="text-align: center">BG 11</td>
-            <td style="text-align: center">AR 8</td>
-            <td style="text-align: center">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 8</td>
+                <td style="text-align: center">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 8</td>
+                <td style="text-align: center">AR 9</td>
+                <td style="text-align: center">BG 11</td>
+                <td style="text-align: center">AR 8</td>
+                <td style="text-align: center">AR 9</td>
 
-        </tr>
-        </thead>
-        <tbody>
-        <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_ar_8'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_comision_bg_11'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_comision_ar_8'] = new Smarty_variable(0, null, 0);?>
-        <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(0, null, 0);?>
-        <?php  $_smarty_tpl->tpl_vars['client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['client']->_loop = false;
+            </tr>
+            </thead>
+            <tbody>
+            <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_ar_8'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_comision_bg_11'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_comision_ar_8'] = new Smarty_variable(0, null, 0);?>
+            <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(0, null, 0);?>
+            <?php  $_smarty_tpl->tpl_vars['client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['client']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_clienti']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['client']->key => $_smarty_tpl->tpl_vars['client']->value) {
 $_smarty_tpl->tpl_vars['client']->_loop = true;
 ?>
-            <tr>
-                <td style="text-align: center" class="span1"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
+                <tr>
+                    <td style="text-align: center" class="span1"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
-                <td style="text-align: left"
-                    class="span3"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
+                    <td style="text-align: left"
+                        class="span3"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
 </td>
-                <td>
-                    <?php if (($_smarty_tpl->tpl_vars['client']->value['sters']==0)) {?>
-                        <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
+                    <td>
+                        <?php if (($_smarty_tpl->tpl_vars['client']->value['sters']==0)) {?>
+                            <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 
-                    <?php } else { ?>
-                        <abbr title="Client sters de pe acest traseu"
-                              style="color: red;"> <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
+                        <?php } else { ?>
+                            <abbr title="Client sters de pe acest traseu"
+                                  style="color: red;"> <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 </abbr>
-                    <?php }?>
-                </td>
-                <td><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
+                        <?php }?>
+                    </td>
+                    <td><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
 <br/><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon2'];?>
 </td>
-                <td style="text-align: center;border-left:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['1']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['1']['target'] : '-';?>
+                    <td style="text-align: center;border-left:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['1']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['1']['target'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['3']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['3']['target'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['3']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['3']['target'] : '-';?>
 </td>
-                <td style="text-align: center"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['4']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['4']['target'] : '-';?>
+                    <td style="text-align: center"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['4']['target']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['4']['target'] : '-';?>
 </td>
-                <td style="text-align: center;border-left:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['1']['pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['1']['pret']-$_smarty_tpl->tpl_vars['client']->value['target']['1']['comision'] : '-';?>
+                    <td style="text-align: center;border-left:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['pret_contract_client']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['pret_contract_client']-$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
 </td>
-                <td style="text-align: center"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['3']['pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['3']['pret']-$_smarty_tpl->tpl_vars['client']->value['target']['3']['comision'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['pret_contract_client']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['pret_contract_client']-$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['4']['pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['4']['pret']-$_smarty_tpl->tpl_vars['client']->value['target']['4']['comision'] : '-';?>
+                    <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['pret_contract_client']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['pret_contract_client']-$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['1']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['1']['comision'] : '-';?>
+                    <td style="text-align: center"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['3']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['3']['comision'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['4']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['target']['4']['comision'] : '-';?>
+                    <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8'] : '-';?>
 </td>
-                <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'] : '-';?>
+                    <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8_cu_pret'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8_cu_pret'] : '-';?>
 </td>
-                <td style="text-align: center;border-right:double;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-';?>
+                    <td style="text-align: center;border-right:double;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['target']['1']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['target']['1']['comision'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8']*$_smarty_tpl->tpl_vars['client']->value['target']['3']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8']*$_smarty_tpl->tpl_vars['client']->value['target']['3']['comision'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['target']['4']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['target']['4']['comision'] : '-';?>
+                    <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision'] : '-';?>
 </td>
-                <td style="text-align: center;border-right:double">
-                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11'])>0) {?>
-                        <table border="1">
-                            <tr>
-                                <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
+                    <td style="text-align: center;border-right:double">
+                        <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11'])>0) {?>
+                            <table border="1">
+                                <tr>
+                                    <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
-                                    <td style="text-align: center;">
-                                        Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
+                                        <td style="text-align: center;">
+                                            Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
-                                        Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_bg_11']['numar_produs_by_pret'];?>
+                                            Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_bg_11']['numar_produs_by_pret'];?>
 
-                                    </td>
-                                <?php } ?>
-                            </tr>
-                        </table>
-                    <?php } else { ?>
-                        <span style="text-align: center;">-</span>
-                    <?php }?>
-                </td>
-                <td style="text-align: center;border-right:double">
-                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_8'])>0) {?>
-                        <table border="1">
-                            <tr>
-                                <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
+                                        </td>
+                                    <?php } ?>
+                                </tr>
+                            </table>
+                        <?php } else { ?>
+                            <span style="text-align: center;">-</span>
+                        <?php }?>
+                    </td>
+                    <td style="text-align: center;border-right:double">
+                        <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_8'])>0) {?>
+                            <table border="1">
+                                <tr>
+                                    <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_8']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
-                                    <td style="text-align: center;">
-                                        Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
+                                        <td style="text-align: center;">
+                                            Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
-                                        Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_8']['numar_produs_by_pret'];?>
+                                            Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_8']['numar_produs_by_pret'];?>
 
-                                    </td>
-                                <?php } ?>
-                            </tr>
-                        </table>
-                    <?php } else { ?>
-                        <span style="text-align: center;">-</span>
-                    <?php }?>
-                </td>
-                <td style="text-align: center;">
-                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9'])>0) {?>
-                        <table border="1">
-                            <tr>
-                                <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
+                                        </td>
+                                    <?php } ?>
+                                </tr>
+                            </table>
+                        <?php } else { ?>
+                            <span style="text-align: center;">-</span>
+                        <?php }?>
+                    </td>
+                    <td style="text-align: center;">
+                        <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9'])>0) {?>
+                            <table border="1">
+                                <tr>
+                                    <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
-                                    <td style="text-align: center;">
-                                        Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
+                                        <td style="text-align: center;">
+                                            Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
-                                        Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_9']['numar_produs_by_pret'];?>
+                                            Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_9']['numar_produs_by_pret'];?>
 
-                                    </td>
-                                <?php } ?>
-                            </tr>
-                        </table>
-                    <?php } else { ?>
-                        <span style="text-align: center;">-</span>
-                    <?php }?>
-                </td>
+                                        </td>
+                                    <?php } ?>
+                                </tr>
+                            </table>
+                        <?php } else { ?>
+                            <span style="text-align: center;">-</span>
+                        <?php }?>
+                    </td>
+                </tr>
+                <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_ar_8'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_8']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8'], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8_cu_pret'], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret'], null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_comision_bg_11'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']), null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_comision_ar_8'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_ar_8']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['comision']), null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']), null, 0);?>
+            <?php } ?>
+            <tr>
+                <th colspan="13" style="text-align: right;border-right:double">TOTAL:</th>
+                <th><abbr title="Total bucati BG 11"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
+</abbr></th>
+                <th><abbr title="Total bucati AR 8"><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
+</abbr></th>
+                <th style="text-align: right;border-right:double"><abbr
+                            title="Total bucati AR 9"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
+</abbr></th>
+                <th>
+                    <abbr title="Total valoare incasare BG 11"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value;?>
+</abbr>
+                </th>
+                <th>
+                    <abbr title="Total valoare incasare AR 8"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value;?>
+</abbr>
+                </th>
+                <th style="text-align: right;border-right:double">
+                    <abbr title="Total valoare incasare AR 9"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
+</abbr>
+                </th>
+                <th><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
+</abbr></th>
+                <th><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_8']->value;?>
+</abbr></th>
+                <th style="text-align: right;border-right:double"><abbr
+                            title="Total comision AR 9"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
+</abbr></th>
+                <th colspan="20"></th>
             </tr>
-            <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'], null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_ar_8'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_8']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8'], null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'], null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'], null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8_cu_pret'], null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret'], null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_comision_bg_11'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['target']['1']['comision']), null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_comision_ar_8'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_ar_8']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_8']['total_ar_8']*$_smarty_tpl->tpl_vars['client']->value['target']['3']['comision']), null, 0);?>
-            <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['target']['4']['comision']), null, 0);?>
-        <?php } ?>
-        <tr>
-            <th colspan="13" style="text-align: right;border-right:double">TOTAL:</th>
-            <th><abbr title="Total bucati BG 11"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
-</abbr></th>
-            <th><abbr title="Total bucati AR 8"><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
-</abbr></th>
-            <th style="text-align: right;border-right:double"><abbr
-                        title="Total bucati AR 9"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
-</abbr></th>
-            <th>
-                <abbr title="Total valoare incasare BG 11"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value;?>
-</abbr>
-            </th>
-            <th>
-                <abbr title="Total valoare incasare AR 8"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value;?>
-</abbr>
-            </th>
-            <th style="text-align: right;border-right:double">
-                <abbr title="Total valoare incasare AR 9"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
-</abbr>
-            </th>
-            <th><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
-</abbr></th>
-            <th><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_8']->value;?>
-</abbr></th>
-            <th style="text-align: right;border-right:double"><abbr
-                        title="Total comision AR 9"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
-</abbr></th>
-            <th colspan="20"></th>
-        </tr>
-        </tbody>
-    </table>
-    <div style="display: inline-flex">
-        <?php if (($_smarty_tpl->tpl_vars['total_bg_11']->value!=0)) {?>
-        <div>
-            <table border="1" style="width: 180px;">
-                <tr>
-                    <td style="text-align: center;font-weight: 900;" colspan="2">BG
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
+            </tbody>
+        </table>
+        <div style="display: inline-flex">
+            <?php if (($_smarty_tpl->tpl_vars['total_bg_11']->value!=0)) {?>
+                <div>
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">BG
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
 </td>
-                </tr>
-                <tr class="info">
-                    <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value;?>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value;?>
 </td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;font-weight: 900;">Total Comision</td>
-                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
 </td>
-                </tr>
-            </table>
+                        </tr>
+                    </table>
+                </div>
+            <?php }?>
+            <?php if (($_smarty_tpl->tpl_vars['total_ar_8']->value!=0)) {?>
+                <div style="margin-left: 10px;">
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">AR
+                                8
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
+</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value;?>
+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_8']->value;?>
+</td>
+                        </tr>
+                    </table>
+                </div>
+            <?php }?>
+            <?php if (($_smarty_tpl->tpl_vars['total_ar_9']->value)) {?>
+                <div style="margin-left: 10px;">
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">AR
+                                9
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
+</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
+</td>
+                        </tr>
+                    </table>
+                </div>
+            <?php }?>
+            <?php $_smarty_tpl->tpl_vars['total_afisare'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['total_ar_8']->value+$_smarty_tpl->tpl_vars['total_ar_9']->value, null, 0);?>
+            <?php if (($_smarty_tpl->tpl_vars['total_afisare']->value!=0)) {?>
+                <div style="margin-left: 10px;">
+                    <table border="1" style="width: 180px;">
+                        <tr>
+                            <td style="text-align: center;font-weight: 900;" colspan="2">
+                                TOTALURI
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">BG + AR</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['total_ar_8']->value+$_smarty_tpl->tpl_vars['total_ar_9']->value;?>
+</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value+$_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value+$_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
+</td>
+                        </tr>
+                        <tr class="info">
+                            <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
+                            <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value+$_smarty_tpl->tpl_vars['total_comision_ar_8']->value+$_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
+</td>
+                        </tr>
+                    </table>
+                </div>
+            <?php }?>
         </div>
-        <?php }?>
-        <?php if (($_smarty_tpl->tpl_vars['total_ar_8']->value!=0)) {?>
-        <div style="margin-left: 10px;">
-            <table border="1" style="width: 180px;">
-                <tr>
-                    <td style="text-align: center;font-weight: 900;" colspan="2">AR
-                        8
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
-</td>
-                </tr>
-                <tr class="info">
-                    <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value;?>
-</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;font-weight: 900;">Total Comision</td>
-                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_8']->value;?>
-</td>
-                </tr>
-            </table>
-        </div>
-        <?php }?>
-        <?php if (($_smarty_tpl->tpl_vars['total_ar_9']->value)) {?>
-        <div style="margin-left: 10px;">
-            <table border="1" style="width: 180px;">
-                <tr>
-                    <td style="text-align: center;font-weight: 900;" colspan="2">AR
-                        9
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
-</td>
-                </tr>
-                <tr class="info">
-                    <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
-</td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;font-weight: 900;">Total Comision</td>
-                    <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
-</td>
-                </tr>
-            </table>
-        </div>
-        <?php }?>
-        <?php $_smarty_tpl->tpl_vars['total_afisare'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['total_ar_8']->value+$_smarty_tpl->tpl_vars['total_ar_9']->value, null, 0);?>
-        <?php if (($_smarty_tpl->tpl_vars['total_afisare']->value!=0)) {?>
-            <div style="margin-left: 10px;">
-                <table border="1" style="width: 180px;">
-                    <tr>
-                        <td style="text-align: center;font-weight: 900;" colspan="2">
-                            TOTALURI
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;font-weight: 900;">BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['total_ar_8']->value+$_smarty_tpl->tpl_vars['total_ar_9']->value;?>
-</td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value+$_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value+$_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
-</td>
-                    </tr>
-                    <tr class="info">
-                        <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value+$_smarty_tpl->tpl_vars['total_comision_ar_8']->value+$_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
-</td>
-                    </tr>
-                </table>
-            </div>
-        <?php }?>
-    </div>
         <div style="display: inline-flex;margin-left: 20px;">
             <div><?php if (count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value)>0) {?>
                     <table border="1" style="margin-top: 20px;">
