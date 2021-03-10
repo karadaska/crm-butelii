@@ -489,8 +489,8 @@
                                                         {else}
                                                             {$valoare_cantitate = $realizat_produs['pret']}
                                                         {/if}
-                                                        {if ($target_client['pret'] != $realizat_produs['pret']) && $realizat_produs['pret']!=''}
-                                                            {if ($target_client['pret'] < $realizat_produs['pret'])}
+                                                        {if ($realizat_produs['pret_contract'] != $realizat_produs['pret']) && $realizat_produs['pret']!=''}
+                                                            {if ($realizat_produs['pret_contract'] < $realizat_produs['pret'])}
                                                                 {$title_pret = 'PRET MAI MARE DECAT CEL DIN CONTRACT'}
                                                             {else}
                                                                 {$title_pret = 'PRET MAI MIC DECAT CEL DIN CONTRACT'}

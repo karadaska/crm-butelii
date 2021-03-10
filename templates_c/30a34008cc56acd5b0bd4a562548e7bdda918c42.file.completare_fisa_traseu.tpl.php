@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 12:12:03
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 13:02:37
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1615371122,
+      1 => 1615374146,
       2 => 'file',
     ),
   ),
@@ -55,6 +55,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'valoare_cantitate' => 0,
     'valoare_defecte' => 0,
     'valoare_goale' => 0,
+    'luna_curenta' => 0,
+    'extract_data_fisa' => 0,
     'total_afisare' => 0,
     'totaltime' => 0,
   ),
@@ -651,8 +653,8 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                                                         <?php } else { ?>
                                                             <?php $_smarty_tpl->tpl_vars['valoare_cantitate'] = new Smarty_variable($_smarty_tpl->tpl_vars['realizat_produs']->value['pret'], null, 0);?>
                                                         <?php }?>
-                                                        <?php if (($_smarty_tpl->tpl_vars['target_client']->value['pret']!=$_smarty_tpl->tpl_vars['realizat_produs']->value['pret'])&&$_smarty_tpl->tpl_vars['realizat_produs']->value['pret']!='') {?>
-                                                            <?php if (($_smarty_tpl->tpl_vars['target_client']->value['pret']<$_smarty_tpl->tpl_vars['realizat_produs']->value['pret'])) {?>
+                                                        <?php if (($_smarty_tpl->tpl_vars['realizat_produs']->value['pret_contract']!=$_smarty_tpl->tpl_vars['realizat_produs']->value['pret'])&&$_smarty_tpl->tpl_vars['realizat_produs']->value['pret']!='') {?>
+                                                            <?php if (($_smarty_tpl->tpl_vars['realizat_produs']->value['pret_contract']<$_smarty_tpl->tpl_vars['realizat_produs']->value['pret'])) {?>
                                                                 <?php $_smarty_tpl->tpl_vars['title_pret'] = new Smarty_variable('PRET MAI MARE DECAT CEL DIN CONTRACT', null, 0);?>
                                                             <?php } else { ?>
                                                                 <?php $_smarty_tpl->tpl_vars['title_pret'] = new Smarty_variable('PRET MAI MIC DECAT CEL DIN CONTRACT', null, 0);?>
@@ -770,12 +772,12 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                     </tr>
                                 <?php } ?>
                             </table>
-                            
+                            <?php if (($_smarty_tpl->tpl_vars['luna_curenta']->value<=$_smarty_tpl->tpl_vars['extract_data_fisa']->value)) {?>
                                 <button type="submit" name="adauga" value="adauga"
                                         class="btn btn-primary" style="float: right">
                                     Adauga cantitate client
                                 </button>
-                            
+                            <?php }?>
                         </form>
                     <?php }?>
                     <div style="display: inline-flex">
