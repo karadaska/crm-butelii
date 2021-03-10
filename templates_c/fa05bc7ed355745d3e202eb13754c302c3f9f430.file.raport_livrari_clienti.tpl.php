@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 10:32:55
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 10:37:48
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1615364781,
+      1 => 1615365252,
       2 => 'file',
     ),
   ),
@@ -185,7 +185,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 
                                                         </a>
                                                     <?php } else { ?>
-                                                        <a href="edit_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
+                                                        <a target="_blank" href="edit_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
 ">
                                                             <abbr title="Client sters de pe acest traseu"
                                                                   style="color: red;"> <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
@@ -234,7 +234,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                                                     <td style="text-align: center;">
-                                                                        <a href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
@@ -259,7 +259,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                                                     <td style="text-align: center;">
-                                                                        <a href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
 <br/>
@@ -452,7 +452,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 
                                                         </a>
                                                     <?php } else { ?>
-                                                        <a href="edit_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
+                                                        <a target="_blank" href="edit_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
 ">
 
                                                             <abbr title="Client sters de pe acest traseu"
@@ -510,7 +510,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                                                     <td style="text-align: center;">
-                                                                        <a href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
@@ -535,7 +535,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                                                     <td style="text-align: center;">
-                                                                        <a href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
  <br/>
@@ -560,7 +560,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                                                     <td style="text-align: center;">
-                                                                        <a href="istoric_client_fisa_traseu.php?id=<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+                                                                        <a target="_blank" href="istoric_client_fisa_traseu.php?id=<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 <?php $_tmp1=ob_get_clean();?><?php echo $_tmp1;?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
