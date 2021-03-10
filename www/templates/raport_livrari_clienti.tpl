@@ -109,7 +109,7 @@
                                                     class="span3">{strtoupper($client['nume_localitate'])}</td>
                                                 <td>
                                                     {if ($client['sters'] == 0)}
-                                                        <a href="edit_client.php?id={$client['id']}">
+                                                        <a target="_blank" href="edit_client.php?id={$client['id']}">
                                                             {strtoupper($client['nume_client'])}
                                                         </a>
                                                     {else}
@@ -318,8 +318,7 @@
                                                     class="span3">{strtoupper($client['nume_localitate'])}</td>
                                                 <td>
                                                     {if ($client['sters'] == 0)}
-                                                        <a href="edit_client.php?id={$client['id']}">
-
+                                                        <a target="_blank" href="edit_client.php?id={$client['id']}">
                                                             {strtoupper($client['nume_client'])}
                                                         </a>
                                                     {else}
@@ -346,9 +345,9 @@
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? $client['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8_cu_pret'] != '') ? $client['total_produse']['ar_8']['total_ar_8_cu_pret'] :'-'}</td>
                                                 <td style="text-align: center;border-right:double;">{($client['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? $client['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-'}</td>
-                                                <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] * $client['target']['1']['comision'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] * $client['target']['1']['comision'] :'-'}</td>
-                                                <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8'] * $client['target']['3']['comision'] !='') ? $client['total_produse']['ar_8']['total_ar_8'] * $client['target']['3']['comision'] : '-'}</td>
-                                                <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] * $client['target']['4']['comision'] !='') ? $client['total_produse']['ar_9']['total_ar_9'] * $client['target']['4']['comision'] : '-'}</td>
+                                                <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'] :'-'}</td>
+                                                <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8'] * $client['total_produse']['ar_8']['comision'] !='') ? $client['total_produse']['ar_8']['total_ar_8'] * $client['total_produse']['ar_8']['comision'] : '-'}</td>
+                                                <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'] !='') ? $client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'] : '-'}</td>
                                                 <td style="text-align: center;border-right:double">
                                                     {if count($client['lista_preturi_bg_11']) >0}
                                                         <table class="table table-bordered">
