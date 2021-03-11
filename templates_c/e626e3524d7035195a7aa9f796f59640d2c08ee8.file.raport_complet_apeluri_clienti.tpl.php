@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-11 15:05:02
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-11 15:13:27
          compiled from "/var/www/html/fofoweb/www/templates/raport_complet_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1997336165602cdfc1ee1979-05360952%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e626e3524d7035195a7aa9f796f59640d2c08ee8' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_complet_apeluri_clienti.tpl',
-      1 => 1615467897,
+      1 => 1615468406,
       2 => 'file',
     ),
   ),
@@ -53,7 +53,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Raport complet apeluri clienti
-                        <a href="/print_raport_complet_apeluri_clienti.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
+                        <a target="_blank" href="/print_raport_complet_apeluri_clienti.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
 &stare_id=<?php echo $_smarty_tpl->tpl_vars['stare_id']->value;?>
 &observatie_id=<?php echo $_smarty_tpl->tpl_vars['observatie_id']->value;?>
 &urgent=<?php echo $_smarty_tpl->tpl_vars['urgent']->value;?>
@@ -160,7 +160,7 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                        class="table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
-                                        <th style="text-align: left;">NR.</th>
+                                        <th style="text-align: center;">NR.</th>
                                         <th style="text-align: left;">LOCALITATE</th>
                                         <th style="text-align: left;">CLIENT</th>
                                         <th style="text-align: left;">TELEFON</th>

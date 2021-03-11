@@ -60,11 +60,11 @@
 <section id="content" class="print">
     <div class="wrapper">
         <input type="button" onclick="setPrint();window.print();return false;" id="print_button" name="print_button"
-               value="Print"/>
+               value="PRINT"/>
         <a href="/raport_complet_apeluri_clienti.php?id={$id}&stare_id={$stare_id}&observatie_id={$observatie_id}&data_start={$data_start}&data_stop={$data_stop}"
            class="ascuns">
             <button type="button" class="btn btn-mini btn-warning ascuns">
-                Inapoi
+                INAPOI
             </button>
         </a>
     </div>
@@ -72,8 +72,8 @@
         <tr>
             <td style="text-align: left;" class="span3">
                 <h3>
-                    Traseu: {strtoupper($nume_traseu['nume'])} <br/>
-                    Data: {date('Y-m-d')}
+                    TRASEU: {strtoupper($nume_traseu['nume'])} <br/>
+                    DATA: {date('Y-m-d')}
                 </h3>
             </td>
         </tr>
@@ -83,13 +83,13 @@
             <thead>
             <tr>
                 <th style="text-align: center;">#</th>
-                <th style="text-align: left;">Localitate</th>
-                <th style="text-align: left;">Client</th>
-                <th style="text-align: left;">Telefon</th>
-                <th style="text-align: center;">Data</th>
-                <th style="text-align: center;">Obs</th>
-                <th style="text-align: center;">Urgent</th>
-                <th style="text-align: center;">Produse</th>
+                <th style="text-align: left;">LOCALITATE</th>
+                <th style="text-align: left;">CLIENT</th>
+                <th style="text-align: left;">TELEFON</th>
+                <th style="text-align: center;">DATA</th>
+                <th style="text-align: center;">OBS</th>
+                <th style="text-align: center;">URGENT</th>
+                <th style="text-align: center;">PRODUSE</th>
             </tr>
             </thead>
             <tbody>
@@ -106,12 +106,12 @@
                 {/if}
                 <input type="hidden" name="valoare_client_id" value="{{$client['id']}}">
                 <tr {$culoare}>
-                    <th>{$nr++}</th>
-                    <th style="text-align: left;vertical-align: middle;">{strtoupper($client['nume_localitate'])}
-                    </th>
-                    <th style="text-align: left;vertical-align: middle;">{strtoupper($client['nume_client'])}
-                    </th>
-                    <th style="text-align: left;vertical-align: middle;">
+                    <td>{$nr++}</td>
+                    <td style="text-align: left;vertical-align: middle;">{strtoupper($client['nume_localitate'])}
+                    </td>
+                    <td style="text-align: left;vertical-align: middle;">{strtoupper($client['nume_client'])}
+                    </td>
+                    <td style="text-align: left;vertical-align: middle;">
                         {if $client['telefon'] >0}
                             {strtoupper($client['telefon'])}
                             <br/>
@@ -119,7 +119,7 @@
                         {if $client['telefon_2'] >0}
                             {strtoupper($client['telefon_2'])}
                         {/if}
-                    </th>
+                    </td>
                     <td style="text-align: center;">{strtoupper($client['data'])}</td>
                     <td style="text-align: center;">{strtoupper($client['nume_observatie'])}</td>
                     <td style="text-align: center;"> {if {$client['urgent']} == 0}
@@ -128,12 +128,12 @@
                            DA
                         {/if}
                     </td>
-                    <td style="text-align: center;">
+                    <td style="text-align: center;width: 150px;">
                         <table border="1" style="width: 100%;height: 100%">
                             {foreach from=$client['raspuns'] item = client_raspuns}
                                 <tr>
-                                    <th style="width: 120px;">{$client_raspuns['nume_produs']}</th>
-                                    <th>{$client_raspuns['goale']}</th>
+                                    <td style="width: 80px;text-align: left;">{$client_raspuns['nume_produs']}</td>
+                                    <td style="text-align: center;width: 80px;">{$client_raspuns['goale']}</td>
                                 </tr>
                             {/foreach}
                         </table>

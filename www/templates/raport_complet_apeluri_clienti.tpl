@@ -81,7 +81,7 @@
                                        class="table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
-                                        <th style="text-align: left;">NR.</th>
+                                        <th style="text-align: center;">NR.</th>
                                         <th style="text-align: left;">LOCALITATE</th>
                                         <th style="text-align: left;">CLIENT</th>
                                         <th style="text-align: left;">TELEFON</th>
