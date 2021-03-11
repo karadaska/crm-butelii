@@ -106,12 +106,12 @@
             {/if}
             <input type="hidden" name="valoare_client_id" value="{$client['id']}">
             <tr {$culoare}>
-                <th>{$nr++}</th>
-                <th style="text-align: left;vertical-align: middle;">{strtoupper($client['nume_localitate'])}</th>
-                <th style="text-align: left;vertical-align: middle;">
+                <td>{$nr++}</td>
+                <td style="text-align: left;vertical-align: middle;">{strtoupper($client['nume_localitate'])}</td>
+                <td style="text-align: left;vertical-align: middle;">
                     {strtoupper($client['nume_client'])}
-                </th>
-                <th style="text-align: center;vertical-align: middle;">
+                </td>
+                <td style="text-align: center;vertical-align: middle;">
                     {if strlen($client['telefon']) >1}
                         {strtoupper($client['telefon'])}
                     {/if}
@@ -119,14 +119,14 @@
                     {if strlen($client['telefon_2']) > 1}
                         {strtoupper($client['telefon_2'])}
                     {/if}
-                </th>
-                <th style="text-align: left;">
+                </td>
+                <td style="text-align: left;">
                     {foreach from=$client['target'] item = target_client}
                         {$target_client['nume_produs']}: {$target_client['target']}
                         <br/>
                     {/foreach}
-                </th>
-                <th>
+                </td>
+                <td>
                     {foreach from=$client['target'] item = target_client}
                         {$target_client['goale_la_client']}
                         <br/>
@@ -143,25 +143,25 @@
                             {$total_ar_9 = $total_ar_9+ ($target_client['goale_la_client']) }
                         {/if}
                     {/foreach}
-                </th>
-                <th style="width: 300px;">
+                </td>
+                <td style="width: 300px;">
                     {assign var=client_observatie value=Clienti::getObservatieApelClientiByClientId($target_client['client_id'], $id)}
                     {$client_observatie['nume_observatie']}
-                </th>
-                <th>
+                </td>
+                <td style="text-align: center;">
                     {assign var=client_urgenta value=Clienti::getNumeUrgentaApelClientiByClientId($target_client['client_id'],$id)}
                     {$client_urgenta['urgent']}
-                </th>
+                </td>
             </tr>
         {/foreach}
         </tbody>
         {$conditie = ($total_bg_11 > 0) || ($total_ar_8 > 0) || ($total_ar_9 > 0) || ($total_obs['total_observatii'] > 0)}
         {if $conditie }
             <tr>
-                <th colspan="5"
+                <td colspan="5"
                     style="text-align: right;vertical-align: middle;">
                     TOTAL:
-                </th>
+                </td>
                 <th>
                     <table border="1" style="width: 100%">
                         {if $total_bg_11 > 0}
@@ -170,7 +170,7 @@
                                     <table border="1" style="width: 100%">
                                         <tr>
                                             <th style="width: 50%">BG</th>
-                                            <th>{$total_bg_11} buc</th>
+                                            <td>{$total_bg_11} buc</td>
                                         </tr>
                                     </table>
                                 </th>
@@ -182,7 +182,7 @@
                                     <table border="1" style="width: 100%">
                                         <tr>
                                             <th style="width: 50%">AR 8</th>
-                                            <th>{$total_ar_8} buc</th>
+                                            <td>{$total_ar_8} buc</td>
                                         </tr>
                                     </table>
                                 </th>
@@ -194,7 +194,7 @@
                                     <table border="1" style="width: 100%">
                                         <tr>
                                             <th style="width: 50%">AR 9</th>
-                                            <th>{$total_ar_9} buc</th>
+                                            <td>{$total_ar_9} buc</td>
                                         </tr>
                                     </table>
                                 </th>
@@ -206,21 +206,21 @@
                     <table border="1" style="width: 100%;margin-bottom: 18px;">
                         {if ($total_obs['total_observatii'] > 0)}
                             <tr>
-                                <th colspan="2">CLIENTI FARA
-                                    INFO: {$total_obs['total_observatii']}</th>
+                                <td colspan="2" style="text-align: center;">CLIENTI FARA
+                                    INFO: {$total_obs['total_observatii']}</td>
                             </tr>
                         {/if}
                         {foreach from=$total_obs_pe_categorii item=obs}
                             <tr>
-                                <th style="text-align: right;width: 60%">{$obs['nume_observatie']}</th>
-                                <th>{$obs['numar_observatie']['total_observatie']}</th>
+                                <td style="text-align: right;width: 60%">{$obs['nume_observatie']}</td>
+                                <td>{$obs['numar_observatie']['total_observatie']}</td>
                             </tr>
                         {/foreach}
                     </table>
                 </th>
-                <th>
+                <td style="text-align: center;">
                     <span>TOTAL: {$total_urgente['total_urgente']} </span>
-                </th>
+                </td>
             </tr>
         {/if}
     </table>
@@ -236,9 +236,9 @@
                         </tr>
                         {foreach from=$clienti_cu_observatii item=observatie}
                             <tr>
-                                <th style="text-align: left;">{strtoupper($observatie['nume_localitate'])}</th>
-                                <th style="text-align: left;">{strtoupper($observatie['nume_client'])}</th>
-                                <th style="text-align: left;">{strtoupper($observatie['nume_observatie'])}</th>
+                                <td style="text-align: left;">{strtoupper($observatie['nume_localitate'])}</td>
+                                <td style="text-align: left;">{strtoupper($observatie['nume_client'])}</td>
+                                <td style="text-align: left;">{strtoupper($observatie['nume_observatie'])}</td>
                             </tr>
                         {/foreach}
                     </table>
@@ -274,7 +274,6 @@
                                         {/if}
                                     {/foreach}
                                 </th>
-
                             </tr>
                         {/foreach}
                     </table>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-09 12:48:47
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-11 12:14:47
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1929950229603df39e482f18-35501088%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1615286925,
+      1 => 1615457686,
       2 => 'file',
     ),
   ),
@@ -163,15 +163,15 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 ">
             <tr <?php echo $_smarty_tpl->tpl_vars['culoare']->value;?>
 >
-                <th><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
-</th>
-                <th style="text-align: left;vertical-align: middle;"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
-</th>
-                <th style="text-align: left;vertical-align: middle;">
+                <td><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
+</td>
+                <td style="text-align: left;vertical-align: middle;"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
+</td>
+                <td style="text-align: left;vertical-align: middle;">
                     <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 
-                </th>
-                <th style="text-align: center;vertical-align: middle;">
+                </td>
+                <td style="text-align: center;vertical-align: middle;">
                     <?php if (strlen($_smarty_tpl->tpl_vars['client']->value['telefon'])>1) {?>
                         <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['telefon']);?>
 
@@ -181,8 +181,8 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                         <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['telefon_2']);?>
 
                     <?php }?>
-                </th>
-                <th style="text-align: left;">
+                </td>
+                <td style="text-align: left;">
                     <?php  $_smarty_tpl->tpl_vars['target_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target_client']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['target']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['target_client']->key => $_smarty_tpl->tpl_vars['target_client']->value) {
@@ -193,8 +193,8 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 
                         <br/>
                     <?php } ?>
-                </th>
-                <th>
+                </td>
+                <td>
                     <?php  $_smarty_tpl->tpl_vars['target_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target_client']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['target']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['target_client']->key => $_smarty_tpl->tpl_vars['target_client']->value) {
@@ -216,27 +216,27 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                             <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_ar_9']->value+($_smarty_tpl->tpl_vars['target_client']->value['goale_la_client']), null, 0);?>
                         <?php }?>
                     <?php } ?>
-                </th>
-                <th style="width: 300px;">
+                </td>
+                <td style="width: 300px;">
                     <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Clienti::getObservatieApelClientiByClientId($_smarty_tpl->tpl_vars['target_client']->value['client_id'],$_smarty_tpl->tpl_vars['id']->value), null, 0);?>
                     <?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['nume_observatie'];?>
 
-                </th>
-                <th>
+                </td>
+                <td style="text-align: center;">
                     <?php $_smarty_tpl->tpl_vars['client_urgenta'] = new Smarty_variable(Clienti::getNumeUrgentaApelClientiByClientId($_smarty_tpl->tpl_vars['target_client']->value['client_id'],$_smarty_tpl->tpl_vars['id']->value), null, 0);?>
                     <?php echo $_smarty_tpl->tpl_vars['client_urgenta']->value['urgent'];?>
 
-                </th>
+                </td>
             </tr>
         <?php } ?>
         </tbody>
         <?php $_smarty_tpl->tpl_vars['conditie'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_bg_11']->value>0)||($_smarty_tpl->tpl_vars['total_ar_8']->value>0)||($_smarty_tpl->tpl_vars['total_ar_9']->value>0)||($_smarty_tpl->tpl_vars['total_obs']->value['total_observatii']>0), null, 0);?>
         <?php if ($_smarty_tpl->tpl_vars['conditie']->value) {?>
             <tr>
-                <th colspan="5"
+                <td colspan="5"
                     style="text-align: right;vertical-align: middle;">
                     TOTAL:
-                </th>
+                </td>
                 <th>
                     <table border="1" style="width: 100%">
                         <?php if ($_smarty_tpl->tpl_vars['total_bg_11']->value>0) {?>
@@ -245,8 +245,8 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                                     <table border="1" style="width: 100%">
                                         <tr>
                                             <th style="width: 50%">BG</th>
-                                            <th><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
- buc</th>
+                                            <td><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
+ buc</td>
                                         </tr>
                                     </table>
                                 </th>
@@ -258,8 +258,8 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                                     <table border="1" style="width: 100%">
                                         <tr>
                                             <th style="width: 50%">AR 8</th>
-                                            <th><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
- buc</th>
+                                            <td><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
+ buc</td>
                                         </tr>
                                     </table>
                                 </th>
@@ -271,8 +271,8 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                                     <table border="1" style="width: 100%">
                                         <tr>
                                             <th style="width: 50%">AR 9</th>
-                                            <th><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
- buc</th>
+                                            <td><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
+ buc</td>
                                         </tr>
                                     </table>
                                 </th>
@@ -284,9 +284,9 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                     <table border="1" style="width: 100%;margin-bottom: 18px;">
                         <?php if (($_smarty_tpl->tpl_vars['total_obs']->value['total_observatii']>0)) {?>
                             <tr>
-                                <th colspan="2">CLIENTI FARA
+                                <td colspan="2" style="text-align: center;">CLIENTI FARA
                                     INFO: <?php echo $_smarty_tpl->tpl_vars['total_obs']->value['total_observatii'];?>
-</th>
+</td>
                             </tr>
                         <?php }?>
                         <?php  $_smarty_tpl->tpl_vars['obs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['obs']->_loop = false;
@@ -295,18 +295,18 @@ foreach ($_from as $_smarty_tpl->tpl_vars['obs']->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars['obs']->_loop = true;
 ?>
                             <tr>
-                                <th style="text-align: right;width: 60%"><?php echo $_smarty_tpl->tpl_vars['obs']->value['nume_observatie'];?>
-</th>
-                                <th><?php echo $_smarty_tpl->tpl_vars['obs']->value['numar_observatie']['total_observatie'];?>
-</th>
+                                <td style="text-align: right;width: 60%"><?php echo $_smarty_tpl->tpl_vars['obs']->value['nume_observatie'];?>
+</td>
+                                <td><?php echo $_smarty_tpl->tpl_vars['obs']->value['numar_observatie']['total_observatie'];?>
+</td>
                             </tr>
                         <?php } ?>
                     </table>
                 </th>
-                <th>
+                <td style="text-align: center;">
                     <span>TOTAL: <?php echo $_smarty_tpl->tpl_vars['total_urgente']->value['total_urgente'];?>
  </span>
-                </th>
+                </td>
             </tr>
         <?php }?>
     </table>
@@ -326,12 +326,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['observatie']->key => $_smarty_tpl->tp
 $_smarty_tpl->tpl_vars['observatie']->_loop = true;
 ?>
                             <tr>
-                                <th style="text-align: left;"><?php echo strtoupper($_smarty_tpl->tpl_vars['observatie']->value['nume_localitate']);?>
-</th>
-                                <th style="text-align: left;"><?php echo strtoupper($_smarty_tpl->tpl_vars['observatie']->value['nume_client']);?>
-</th>
-                                <th style="text-align: left;"><?php echo strtoupper($_smarty_tpl->tpl_vars['observatie']->value['nume_observatie']);?>
-</th>
+                                <td style="text-align: left;"><?php echo strtoupper($_smarty_tpl->tpl_vars['observatie']->value['nume_localitate']);?>
+</td>
+                                <td style="text-align: left;"><?php echo strtoupper($_smarty_tpl->tpl_vars['observatie']->value['nume_client']);?>
+</td>
+                                <td style="text-align: left;"><?php echo strtoupper($_smarty_tpl->tpl_vars['observatie']->value['nume_observatie']);?>
+</td>
                             </tr>
                         <?php } ?>
                     </table>
@@ -380,7 +380,6 @@ $_smarty_tpl->tpl_vars['raspuns']->_loop = true;
                                         <?php }?>
                                     <?php } ?>
                                 </th>
-
                             </tr>
                         <?php } ?>
                     </table>
