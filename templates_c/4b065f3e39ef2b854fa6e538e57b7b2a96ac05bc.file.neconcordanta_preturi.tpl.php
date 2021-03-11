@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-19 14:59:32
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-11 14:37:52
          compiled from "/var/www/html/fofoweb/www/templates/neconcordanta_preturi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15636048576022834fda05e0-72628903%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4b065f3e39ef2b854fa6e538e57b7b2a96ac05bc' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/neconcordanta_preturi.tpl',
-      1 => 1613739567,
+      1 => 1615466270,
       2 => 'file',
     ),
   ),
@@ -99,10 +99,10 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                         <tr>
                                             <th style="text-align: center;vertical-align: middle;"> <?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </th>
-                                            <th style="text-align: center;vertical-align: middle;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
+                                            <th style="text-align: left;vertical-align: middle;"> <?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
 </th>
-                                            <th style="text-align: left;vertical-align: middle;"> <a href="asigneaza_produse_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume'];?>
+                                            <th style="text-align: left;vertical-align: middle;"> <a target="_blank" href="asigneaza_produse_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume']);?>
 </a></th>
                                             <th style="text-align: center;vertical-align: middle;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
 </th>
@@ -140,7 +140,7 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
                                                                                         <th title="CANTITATE"><?php echo $_smarty_tpl->tpl_vars['produs']->value['cantitate'];?>
 </th>
                                                                                         <th>
-                                                                                            <a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['produs']->value['fisa_id'];?>
+                                                                                            <a target="_blank" href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['produs']->value['fisa_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['produs']->value['fisa_id'];?>
 </a>
                                                                                         </th>

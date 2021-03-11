@@ -51,8 +51,8 @@
                                     {foreach from=$lista_clienti['neconcordanta'] item=client}
                                         <tr>
                                             <th style="text-align: center;vertical-align: middle;"> {$nr++}</th>
-                                            <th style="text-align: center;vertical-align: middle;"> {$client['nume_localitate']}</th>
-                                            <th style="text-align: left;vertical-align: middle;"> <a href="asigneaza_produse_client.php?id={$client['client_id']}">{$client['nume']}</a></th>
+                                            <th style="text-align: left;vertical-align: middle;"> {strtoupper($client['nume_localitate'])}</th>
+                                            <th style="text-align: left;vertical-align: middle;"> <a target="_blank" href="asigneaza_produse_client.php?id={$client['client_id']}">{strtoupper($client['nume'])}</a></th>
                                             <th style="text-align: center;vertical-align: middle;"> {$client['telefon']}</th>
                                             <th>
                                                 <table class="table table-bordered">
@@ -74,7 +74,7 @@
                                                                                         <th><abbr title="PRET SOFER" style="cursor: pointer;color: red;">{$produs['pret']}</abbr></th>
                                                                                         <th title="CANTITATE">{$produs['cantitate']}</th>
                                                                                         <th>
-                                                                                            <a href="completare_fisa_traseu.php?id={$produs['fisa_id']}">{$produs['fisa_id']}</a>
+                                                                                            <a target="_blank" href="completare_fisa_traseu.php?id={$produs['fisa_id']}">{$produs['fisa_id']}</a>
                                                                                         </th>
                                                                                     </tr>
                                                                                 </table>

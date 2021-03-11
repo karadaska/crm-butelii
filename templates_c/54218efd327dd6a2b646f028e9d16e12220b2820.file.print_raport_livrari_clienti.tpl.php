@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 11:14:20
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-11 14:20:30
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1615367658,
+      1 => 1615465228,
       2 => 'file',
     ),
   ),
@@ -298,24 +298,24 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                 <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']), null, 0);?>
             <?php } ?>
             <tr>
-                <th colspan="10" style="text-align: right;">TOTAL:</th>
-                <th><abbr title="Total bucati BG 11"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
-</abbr></th>
-                <th><abbr title="Total bucati AR 9"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
-</abbr></th>
-                <th>
+                <td colspan="10" style="text-align: right;">TOTAL:</td>
+                <td style="text-align: center"><abbr title="Total bucati BG 11"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
+</abbr></td>
+                <td style="text-align: center"><abbr title="Total bucati AR 9"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
+</abbr></td>
+                <td style="text-align: center">
                     <abbr title="Total valoare incasare BG 11"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value;?>
 </abbr>
-                </th>
-                <th>
+                </td>
+                <td style="text-align: center">
                     <abbr title="Total valoare incasare AR 9"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
 </abbr>
-                </th>
-                <th><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
-</abbr></th>
-                <th><abbr title="Total comision AR 9"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
-</abbr></th>
-                <th colspan="20"></th>
+                </td>
+                <td style="text-align: center"><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
+</abbr></td>
+                <td style="text-align: center"><abbr title="Total comision AR 9"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
+</abbr></td>
+                <td colspan="20"></td>
             </tr>
             </tbody>
         </table>
@@ -715,34 +715,34 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                 <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']), null, 0);?>
             <?php } ?>
             <tr>
-                <th colspan="13" style="text-align: right;border-right:double">TOTAL:</th>
-                <th><abbr title="Total bucati BG 11"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
-</abbr></th>
-                <th><abbr title="Total bucati AR 8"><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
-</abbr></th>
-                <th style="text-align: center;border-right:double"><abbr
+                <td colspan="13" style="text-align: right;border-right:double">TOTAL:</td>
+                <td><abbr title="Total bucati BG 11"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
+</abbr></td>
+                <td><abbr title="Total bucati AR 8"><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
+</abbr></td>
+                <td style="text-align: center;border-right:double"><abbr
                             title="Total bucati AR 9"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
-</abbr></th>
-                <th>
+</abbr></td>
+                <td style="text-align: center">
                     <abbr title="Total valoare incasare BG 11"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value;?>
 </abbr>
-                </th>
-                <th>
+                </td>
+                <td style="text-align: center">
                     <abbr title="Total valoare incasare AR 8"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_8']->value;?>
 </abbr>
-                </th>
-                <th style="text-align: center;border-right:double">
+                </td>
+                <td style="text-align: center;border-right:double">
                     <abbr title="Total valoare incasare AR 9"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value;?>
 </abbr>
-                </th>
-                <th><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
-</abbr></th>
-                <th><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_8']->value;?>
-</abbr></th>
-                <th style="text-align: center;border-right:double"><abbr
+                </td>
+                <td style="text-align: center"><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_bg_11']->value;?>
+</abbr></td>
+                <td style="text-align: center"><abbr title="Total comision BG 11"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_8']->value;?>
+</abbr></td>
+                <td style="text-align: center;border-right:double"><abbr
                             title="Total comision AR 9"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
-</abbr></th>
-                <th colspan="20"></th>
+</abbr></td>
+                <td colspan="20"></td>
             </tr>
             </tbody>
         </table>

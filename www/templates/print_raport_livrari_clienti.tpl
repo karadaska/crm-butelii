@@ -205,18 +205,18 @@
                 {$total_comision_ar_9 =  ($total_comision_ar_9 + $client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'])}
             {/foreach}
             <tr>
-                <th colspan="10" style="text-align: right;">TOTAL:</th>
-                <th><abbr title="Total bucati BG 11">{$total_bg_11}</abbr></th>
-                <th><abbr title="Total bucati AR 9">{$total_ar_9}</abbr></th>
-                <th>
+                <td colspan="10" style="text-align: right;">TOTAL:</td>
+                <td style="text-align: center"><abbr title="Total bucati BG 11">{$total_bg_11}</abbr></td>
+                <td style="text-align: center"><abbr title="Total bucati AR 9">{$total_ar_9}</abbr></td>
+                <td style="text-align: center">
                     <abbr title="Total valoare incasare BG 11">{$total_valoare_incasare_bg_11}</abbr>
-                </th>
-                <th>
+                </td>
+                <td style="text-align: center">
                     <abbr title="Total valoare incasare AR 9">{$total_valoare_incasare_ar_9}</abbr>
-                </th>
-                <th><abbr title="Total comision BG 11">{$total_comision_bg_11}</abbr></th>
-                <th><abbr title="Total comision AR 9">{$total_comision_ar_9}</abbr></th>
-                <th colspan="20"></th>
+                </td>
+                <td style="text-align: center"><abbr title="Total comision BG 11">{$total_comision_bg_11}</abbr></td>
+                <td style="text-align: center"><abbr title="Total comision AR 9">{$total_comision_ar_9}</abbr></td>
+                <td colspan="20"></td>
             </tr>
             </tbody>
         </table>
@@ -537,25 +537,25 @@
                 {$total_comision_ar_9 =  ($total_comision_ar_9 + $client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'])}
             {/foreach}
             <tr>
-                <th colspan="13" style="text-align: right;border-right:double">TOTAL:</th>
-                <th><abbr title="Total bucati BG 11">{$total_bg_11}</abbr></th>
-                <th><abbr title="Total bucati AR 8">{$total_ar_8}</abbr></th>
-                <th style="text-align: center;border-right:double"><abbr
-                            title="Total bucati AR 9">{$total_ar_9}</abbr></th>
-                <th>
+                <td colspan="13" style="text-align: right;border-right:double">TOTAL:</td>
+                <td><abbr title="Total bucati BG 11">{$total_bg_11}</abbr></td>
+                <td><abbr title="Total bucati AR 8">{$total_ar_8}</abbr></td>
+                <td style="text-align: center;border-right:double"><abbr
+                            title="Total bucati AR 9">{$total_ar_9}</abbr></td>
+                <td style="text-align: center">
                     <abbr title="Total valoare incasare BG 11">{$total_valoare_incasare_bg_11}</abbr>
-                </th>
-                <th>
+                </td>
+                <td style="text-align: center">
                     <abbr title="Total valoare incasare AR 8">{$total_valoare_incasare_ar_8}</abbr>
-                </th>
-                <th style="text-align: center;border-right:double">
+                </td>
+                <td style="text-align: center;border-right:double">
                     <abbr title="Total valoare incasare AR 9">{$total_valoare_incasare_ar_9}</abbr>
-                </th>
-                <th><abbr title="Total comision BG 11">{$total_comision_bg_11}</abbr></th>
-                <th><abbr title="Total comision BG 11">{$total_comision_ar_8}</abbr></th>
-                <th style="text-align: center;border-right:double"><abbr
-                            title="Total comision AR 9">{$total_comision_ar_9}</abbr></th>
-                <th colspan="20"></th>
+                </td>
+                <td style="text-align: center"><abbr title="Total comision BG 11">{$total_comision_bg_11}</abbr></td>
+                <td style="text-align: center"><abbr title="Total comision BG 11">{$total_comision_ar_8}</abbr></td>
+                <td style="text-align: center;border-right:double"><abbr
+                            title="Total comision AR 9">{$total_comision_ar_9}</abbr></td>
+                <td colspan="20"></td>
             </tr>
             </tbody>
         </table>
