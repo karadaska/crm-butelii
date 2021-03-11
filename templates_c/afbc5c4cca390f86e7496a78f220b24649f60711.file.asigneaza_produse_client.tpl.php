@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-11 10:02:48
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-11 10:21:57
          compiled from "/var/www/html/fofoweb/www/templates/asigneaza_produse_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:285660358602591153273a3-72985693%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'afbc5c4cca390f86e7496a78f220b24649f60711' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/asigneaza_produse_client.tpl',
-      1 => 1615449767,
+      1 => 1615450915,
       2 => 'file',
     ),
   ),
@@ -160,7 +160,8 @@ $_smarty_tpl->tpl_vars['target']->_loop = true;
                                     <?php }?>
                                     <td style="text-align: right;">
                                         <input style="width: 100%" name="comision_<?php echo $_smarty_tpl->tpl_vars['target']->value['tip_produs_id'];?>
-" type="text"
+"
+                                               type="text"
                                                value="<?php echo $_smarty_tpl->tpl_vars['valoare_comision']->value;?>
 "
                                                autocomplete="off"/>
@@ -185,34 +186,36 @@ $_smarty_tpl->tpl_vars['target']->_loop = true;
                         </table>
                     </form>
                 <?php }?>
-                <table class="table table-bordered" style="width: 720px;margin-left: 30px;margin-top: 50px;">
-                    <tr class="info">
-                        <td colspan="4" style="text-align: center;color: red;">ISTORIC PRET</td>
-                    </tr>
-                    <tr>
-                        <th>PRODUS</th>
-                        <th>PRET</th>
-                        <th>COMISION</th>
-                        <th>DATA</th>
-                    </tr>
-                    <?php  $_smarty_tpl->tpl_vars['istoric'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['istoric']->_loop = false;
+                <?php if (count($_smarty_tpl->tpl_vars['istoric_preturi']->value)>0) {?>
+                    <table class="table table-bordered" style="width: 720px;margin-left: 30px;margin-top: 50px;">
+                        <tr class="info">
+                            <td colspan="4" style="text-align: center;color: red;">ISTORIC PRET</td>
+                        </tr>
+                        <tr>
+                            <th>PRODUS</th>
+                            <th>PRET</th>
+                            <th>COMISION</th>
+                            <th>DATA</th>
+                        </tr>
+                        <?php  $_smarty_tpl->tpl_vars['istoric'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['istoric']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['istoric_preturi']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['istoric']->key => $_smarty_tpl->tpl_vars['istoric']->value) {
 $_smarty_tpl->tpl_vars['istoric']->_loop = true;
 ?>
-                    <tr>
-                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['istoric']->value['nume_produs'];?>
+                            <tr>
+                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['istoric']->value['nume_produs'];?>
 </td>
-                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['istoric']->value['pret'];?>
+                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['istoric']->value['pret'];?>
 </td>
-                        <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['istoric']->value['comision'];?>
+                                <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['istoric']->value['comision'];?>
 </td>
-                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['istoric']->value['data_start'];?>
+                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['istoric']->value['data_start'];?>
  - <?php echo $_smarty_tpl->tpl_vars['istoric']->value['data_stop'];?>
 </td>
-                    </tr>
-                    <?php } ?>
-                </table>
+                            </tr>
+                        <?php } ?>
+                    </table>
+                <?php }?>
             </div>
         </div>
     </section>
