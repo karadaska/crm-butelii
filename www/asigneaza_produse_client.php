@@ -6,7 +6,7 @@ require_once 'etc/config.php';
 $smarty->assign('name', 'Asigneaza produse la client');
 $template_page = "asigneaza_produse_client.tpl";
 
-$id = getRequestParameter('id',0);
+$id = getRequestParameter('id', 0);
 $smarty->assign('id', $id);
 
 $adauga = getRequestParameter('adauga', '');
@@ -20,7 +20,7 @@ $nume_client = Clienti::getInfoClientByClientId($id);
 $smarty->assign('nume_client', $nume_client);
 
 $lista_trasee = Trasee::getTrasee();
-$smarty->assign('lista_trasee',$lista_trasee);
+$smarty->assign('lista_trasee', $lista_trasee);
 
 $target_by_client_id = Target::getTargetClient($id);
 $smarty->assign('target_by_client_id', $target_by_client_id);
@@ -31,10 +31,17 @@ $smarty->assign('lista_produse', $lista_produse);
 if ($adauga) {
     if ($id > 0 and $tip_produs_id > 0 and $target_produs > 0) {
         $data_start = date('Y-m-d');
-        $insert_clienti_target = "INSERT INTO clienti_target (client_id, tip_produs_id, target, pret, comision, data_start)
+
+        $query = "INSERT INTO clienti_target (client_id, tip_produs_id, target, pret, comision, data_start)
         VALUES ('" . $id . "','" . $tip_produs_id . "','" . $target_produs . "','" . $pret_produs . "','" . $comision_produs . "','" . $data_start . "')";
-        myExec($insert_clienti_target);
+        myExec($query);
+
+        $query = "INSERT INTO istoric_preturi_clienti (client_id, tip_produs_id, pret, comision, data_start)
+        VALUES ('" . $id . "','" . $tip_produs_id . "','" . $pret_produs . "','" . $comision_produs . "','" . $data_start . "')";
+        myExec($query);
+
         header('Location: /asigneaza_produse_client.php?id=' . $id);
+
     }
 }
 
@@ -60,14 +67,50 @@ if (isset($_POST['update'])) {
     }
 
     foreach ($to_add as $produs_id => $item_produs) {
-        $update_clienti_target = "UPDATE clienti_target set
+        $data_start = date('Y-m-d');
+        $query = "UPDATE clienti_target SET
                                           target = '" . $item_produs['target'] . "',
                                           pret = '" . $item_produs['pret'] . "',
                                           comision = '" . $item_produs['comision'] . "'
-                                         where client_id = '" . $id . "'
-                                         and tip_produs_id = '" . $produs_id . "'
+                                          where client_id = '" . $id . "'
+                                          and tip_produs_id = '" . $produs_id . "'
                                           ";
-        myExec($update_clienti_target);
+        myExec($query);
+
+        $query = "SELECT id FROM istoric_preturi_clienti
+                  WHERE client_id = '" . $item_produs['client'] . "' 
+                  AND tip_produs_id = '" . $produs_id . "' 
+                  AND pret = '" . $item_produs['pret'] . "' 
+                  AND comision = '" . $item_produs['comision'] . "' 
+                  AND sters = 0
+                  AND data_stop = '0000-00-00'
+                  LIMIT 1 ";
+
+        $id_istoric = myQuery($query);
+        $ret_id = $id_istoric->fetch(PDO::FETCH_ASSOC);
+        $id_gasit = $ret_id['id'];
+
+        if ($id_istoric->rowCount() == 1) {
+
+            $query = "UPDATE istoric_preturi_clienti SET
+                                          pret = '" . $item_produs['pret'] . "',
+                                          comision = '" . $item_produs['comision'] . "',
+                                          data_stop = '" . $data_start . "'
+                                          WHERE client_id = '" . $id . "'
+                                          AND tip_produs_id = '" . $produs_id . "'
+                                          AND data_stop = '0000-00-00'
+                                          and sters = 0 
+                                          ";
+            myExec($query);
+
+//            if ($id > 0 and $produs_id > 0) {
+//                $query = "INSERT INTO istoric_preturi_clienti (client_id, tip_produs_id, pret, comision, data_start)
+//        VALUES ('" . $id . "','" . $produs_id . "','" . $item_produs['pret'] . "','" . $item_produs['comision'] . "','" . $data_start . "')";
+//                myExec($query);
+//
+//            }
+        }
+
     }
     header('Location: /asigneaza_produse_client.php?id=' . $id);
 
