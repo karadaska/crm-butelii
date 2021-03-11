@@ -222,9 +222,11 @@
                         {/foreach}
                     </table>
                 </th>
-                <td style="text-align: center;">
-                    <span>TOTAL: {$total_urgente['total_urgente']} </span>
-                </td>
+                {if ($total_urgente['total_urgente'] > 0)}
+                    <td style="text-align: center;">
+                        <span>TOTAL: {$total_urgente['total_urgente']} </span>
+                    </td>
+                {/if}
             </tr>
         {/if}
     </table>
