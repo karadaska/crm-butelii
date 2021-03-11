@@ -78,10 +78,10 @@ if (isset($_POST['update'])) {
         myExec($query);
 
         $query = "SELECT id FROM istoric_preturi_clienti
-                  WHERE client_id = '" . $item_produs['client'] . "' 
-                  AND tip_produs_id = '" . $produs_id . "' 
-                  AND pret = '" . $item_produs['pret'] . "' 
-                  AND comision = '" . $item_produs['comision'] . "' 
+                  WHERE client_id = '" . $id . "'
+                  AND tip_produs_id = '" . $produs_id . "'
+                  AND pret = '" . $item_produs['pret'] . "'
+                  AND comision = '" . $item_produs['comision'] . "'
                   AND sters = 0
                   AND data_stop = '0000-00-00'
                   LIMIT 1 ";
@@ -90,25 +90,22 @@ if (isset($_POST['update'])) {
         $ret_id = $id_istoric->fetch(PDO::FETCH_ASSOC);
         $id_gasit = $ret_id['id'];
 
-        if ($id_istoric->rowCount() == 1) {
-
+        if ($id_istoric->rowCount() == 0) {
             $query = "UPDATE istoric_preturi_clienti SET
-                                          pret = '" . $item_produs['pret'] . "',
-                                          comision = '" . $item_produs['comision'] . "',
                                           data_stop = '" . $data_start . "'
                                           WHERE client_id = '" . $id . "'
                                           AND tip_produs_id = '" . $produs_id . "'
                                           AND data_stop = '0000-00-00'
-                                          and sters = 0 
+                                          AND sters = 0 
                                           ";
             myExec($query);
 
-//            if ($id > 0 and $produs_id > 0) {
-//                $query = "INSERT INTO istoric_preturi_clienti (client_id, tip_produs_id, pret, comision, data_start)
-//        VALUES ('" . $id . "','" . $produs_id . "','" . $item_produs['pret'] . "','" . $item_produs['comision'] . "','" . $data_start . "')";
-//                myExec($query);
-//
-//            }
+            if ($id > 0 and $produs_id > 0) {
+                $query = "INSERT INTO istoric_preturi_clienti (client_id, tip_produs_id, pret, comision, data_start)
+        VALUES ('" . $id . "','" . $produs_id . "','" . $item_produs['pret'] . "','" . $item_produs['comision'] . "','" . $data_start . "')";
+                myExec($query);
+
+            }
         }
 
     }
