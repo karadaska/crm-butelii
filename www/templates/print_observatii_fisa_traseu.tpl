@@ -83,11 +83,11 @@
             <thead>
             <tr>
                 <th style="text-align: center;">#</th>
-                <th style="text-align: left;">Localitate</th>
-                <th style="text-align: left;">Client</th>
-                <th style="text-align: center;">Telefon</th>
-                <th style="text-align: center;">Data</th>
-                <th style="text-align: center;">Obs</th>
+                <th style="text-align: left;">LOCALITATE</th>
+                <th style="text-align: left;">CLIENT</th>
+                <th style="text-align: center;">TELEFON</th>
+                <th style="text-align: center;">DATA</th>
+                <th style="text-align: center;">OBS</th>
             </tr>
             </thead>
             <tbody>
