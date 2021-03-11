@@ -115,6 +115,25 @@
                         </table>
                     </form>
                 {/if}
+                <table class="table table-bordered" style="width: 720px;margin-left: 30px;margin-top: 50px;">
+                    <tr class="info">
+                        <td colspan="4" style="text-align: center;color: red;">ISTORIC PRET</td>
+                    </tr>
+                    <tr>
+                        <th>PRODUS</th>
+                        <th>PRET</th>
+                        <th>COMISION</th>
+                        <th>DATA</th>
+                    </tr>
+                    {foreach from=$istoric_preturi item=istoric}
+                    <tr>
+                        <td style="text-align: center;">{$istoric['nume_produs']}</td>
+                        <td style="text-align: center;">{$istoric['pret']}</td>
+                        <td style="text-align: right;">{$istoric['comision']}</td>
+                        <td style="text-align: center;">{$istoric['data_start']} - {$istoric['data_stop']}</td>
+                    </tr>
+                    {/foreach}
+                </table>
             </div>
         </div>
     </section>

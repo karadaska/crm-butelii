@@ -1928,6 +1928,29 @@ class Clienti
         return $ret;
     }
 
+    public static function getIstoricPreturiByClientId($client_id)
+    {
+        $ret = array();
+        $query = "SELECT c . tip as nume_produs,
+        a.pret, a.comision, a.data_start, a.data_stop    
+        FROM istoric_preturi_clienti as a
+        LEFT JOIN clienti as b on b . id = a . client_id
+        LEFT JOIN tip_produs as c on c . id = a . tip_produs_id
+        WHERE a . client_id = '" . $client_id . "'
+        AND a.data_stop != '0000-00-00'
+        AND a . sters = 0
+               
+        ORDER BY a.tip_produs_id ASC
+        ";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
 
 }
 

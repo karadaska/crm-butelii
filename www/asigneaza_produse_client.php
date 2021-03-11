@@ -28,6 +28,9 @@ $smarty->assign('target_by_client_id', $target_by_client_id);
 $lista_produse = Produse::getTipProdus();
 $smarty->assign('lista_produse', $lista_produse);
 
+$istoric_preturi = Clienti::getIstoricPreturiByClientId($id);
+$smarty->assign('istoric_preturi', $istoric_preturi);
+
 if ($adauga) {
     if ($id > 0 and $tip_produs_id > 0 and $target_produs > 0) {
         $data_start = date('Y-m-d');
