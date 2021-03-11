@@ -114,6 +114,7 @@ class Trasee
 
         $query = "SELECT count(observatie_id) as total_observatii from apeluri_clienti
                     WHERE observatie_id > 0
+                    AND observatie_id != 18
                     AND traseu_id = '".$traseu_id."'
                     AND `data_start` = '".$data_start."' ";
 
