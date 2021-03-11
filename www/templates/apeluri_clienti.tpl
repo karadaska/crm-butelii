@@ -94,10 +94,20 @@
                                                 {/if}
                                             </th>
                                             <th style="vertical-align: middle;text-align: left;">
-                                                {foreach from=$client['target'] item = target_client}
-                                                    {$target_client['nume_produs']}: {$target_client['target']} buc
-                                                    <br/>
-                                                {/foreach}
+                                                {if count($client['target']) > 0}
+                                                <table class="table table-bordered" style="width: 100%">
+                                                    {foreach from=$client['target'] item = target_client}
+                                                        <tr>
+                                                            <td style="width: 60%;text-align: right;">{$target_client['nume_produs']}</td>
+                                                            <td style="width: 60%;text-align: left;">{$target_client['target']}</td>
+                                                        </tr>
+                                                    {/foreach}
+                                                </table>
+                                                {/if}
+                                                {*{foreach from=$client['target'] item = target_client}*}
+                                                    {*{$target_client['nume_produs']}: {$target_client['target']} buc*}
+                                                    {*<br/>*}
+                                                {*{/foreach}*}
                                             </th>
                                             {if $target_client['target'] > 0}
                                                 <td style="vertical-align: middle;text-align: right;color: red;background-color: gainsboro;"

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-09 12:37:55
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-11 14:07:49
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1615282713,
+      1 => 1615464462,
       2 => 'file',
     ),
   ),
@@ -181,16 +181,26 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                 <?php }?>
                                             </th>
                                             <th style="vertical-align: middle;text-align: left;">
-                                                <?php  $_smarty_tpl->tpl_vars['target_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target_client']->_loop = false;
+                                                <?php if (count($_smarty_tpl->tpl_vars['client']->value['target'])>0) {?>
+                                                <table class="table table-bordered" style="width: 100%">
+                                                    <?php  $_smarty_tpl->tpl_vars['target_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target_client']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['target']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['target_client']->key => $_smarty_tpl->tpl_vars['target_client']->value) {
 $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 ?>
-                                                    <?php echo $_smarty_tpl->tpl_vars['target_client']->value['nume_produs'];?>
-: <?php echo $_smarty_tpl->tpl_vars['target_client']->value['target'];?>
- buc
-                                                    <br/>
-                                                <?php } ?>
+                                                        <tr>
+                                                            <td style="width: 60%;text-align: right;"><?php echo $_smarty_tpl->tpl_vars['target_client']->value['nume_produs'];?>
+</td>
+                                                            <td style="width: 60%;text-align: left;"><?php echo $_smarty_tpl->tpl_vars['target_client']->value['target'];?>
+</td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                </table>
+                                                <?php }?>
+                                                
+                                                    
+                                                    
+                                                
                                             </th>
                                             <?php if ($_smarty_tpl->tpl_vars['target_client']->value['target']>0) {?>
                                                 <td style="vertical-align: middle;text-align: right;color: red;background-color: gainsboro;"
