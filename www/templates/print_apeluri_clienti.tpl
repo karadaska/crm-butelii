@@ -121,10 +121,14 @@
                     {/if}
                 </td>
                 <td style="text-align: left;">
-                    {foreach from=$client['target'] item = target_client}
-                        {$target_client['nume_produs']}: {$target_client['target']}
-                        <br/>
-                    {/foreach}
+                    <table border="1" style="width: 100%">
+                        {foreach from=$client['target'] item = target_client}
+                            <tr>
+                                <td style="width: 60%">{$target_client['nume_produs']}</td>
+                                <td style="width: 60%;text-align: center;">{$target_client['target']}</td>
+                            </tr>
+                        {/foreach}
+                    </table>
                 </td>
                 <td>
                     {foreach from=$client['target'] item = target_client}
