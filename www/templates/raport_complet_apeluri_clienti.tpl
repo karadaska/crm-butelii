@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Raport complet apeluri clienti
-                        <a href="/print_raport_complet_apeluri_clienti.php?id={$traseu_id}&stare_id={$stare_id}&observatie_id={$observatie_id}&urgent={$urgent}&data_start={$data_start}&data_stop={$data_stop}">
+                        <a target="_blank" href="/print_raport_complet_apeluri_clienti.php?id={$traseu_id}&stare_id={$stare_id}&observatie_id={$observatie_id}&urgent={$urgent}&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
                     </h1>
@@ -81,14 +81,14 @@
                                        class="table table-striped table-bordered table-hover">
                                     <thead>
                                     <tr>
-                                        <th style="text-align: left;">Nr</th>
-                                        <th style="text-align: left;">Localitate</th>
-                                        <th style="text-align: left;">Client</th>
-                                        <th style="text-align: left;">Telefon</th>
-                                        <th style="text-align: center;">Data</th>
-                                        <th style="text-align: center;">Obs</th>
-                                        <th style="text-align: center;">Urgent</th>
-                                        <th style="text-align: center;">Produse</th>
+                                        <th style="text-align: left;">NR.</th>
+                                        <th style="text-align: left;">LOCALITATE</th>
+                                        <th style="text-align: left;">CLIENT</th>
+                                        <th style="text-align: left;">TELEFON</th>
+                                        <th style="text-align: center;">DATA</th>
+                                        <th style="text-align: center;">OBS</th>
+                                        <th style="text-align: center;">URGENT</th>
+                                        <th style="text-align: center;">PRODUSE</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -96,8 +96,8 @@
                                     {foreach from=$lista_clienti item = client}
                                         <tr>
                                             <td style="text-align: center;">{$nr++}</td>
-                                            <td>{$client['nume_localitate']}</td>
-                                            <td>{$client['nume_client']}</td>
+                                            <td>{strtoupper($client['nume_localitate'])}</td>
+                                            <td>{strtoupper($client['nume_client'])}</td>
                                             <td>
                                                 {$client['telefon']}<br/>
                                                 {$client['telefon_2']}
