@@ -91,8 +91,8 @@
                                                     {strtoupper($client['telefon_2'])}
                                                 {/if}
                                             </th>
+                                            {if count($client['target']) > 0}
                                             <th style="vertical-align: middle;text-align: left;">
-                                                {if count($client['target']) > 0}
                                                     <table class="table table-bordered" style="width: 100%">
                                                         {foreach from=$client['target'] item = target_client}
                                                             <tr>
@@ -101,12 +101,18 @@
                                                             </tr>
                                                         {/foreach}
                                                     </table>
-                                                {/if}
-                                                {*{foreach from=$client['target'] item = target_client}*}
-                                                {*{$target_client['nume_produs']}: {$target_client['target']} buc*}
-                                                {*<br/>*}
-                                                {*{/foreach}*}
+                                                    {*{foreach from=$client['target'] item = target_client}*}
+                                                        {*{$target_client['nume_produs']}: {$target_client['target']} buc*}
+                                                        {*<br/>*}
+                                                    {*{/foreach}*}
                                             </th>
+                                                {else}
+                                                <td style="vertical-align: middle;text-align: center;">
+                                                    <span style="color: red;">Nu are produse asignate!!</span>
+                                                    <a href="/asigneaza_produse_client.php?id={$client['id']}"
+                                                       class="btn btn-mini btn-inverse">Asigneaza</a>
+                                                </td>
+                                            {/if}
                                             {if $target_client['target'] > 0}
                                                 <td style="vertical-align: middle;text-align: right;color: red;background-color: gainsboro;"
                                                     class="span4">
@@ -124,7 +130,6 @@
                                                                name="goale_{$target_client['client_id']}_{$target_client['tip_produs_id']}">
                                                         <br/>
                                                         {if ($target_client['tip_produs_id']) == 1}
-                                                            {*{$total_bg_11 = ($total_bg_11 + $target_client['goale_la_client']) }*}
                                                             {$total_bg_11 = ($total_bg_11 + $cantitati_goale['goale']) }
                                                         {/if}
                                                         {if ($target_client['tip_produs_id']) == 3}
@@ -134,12 +139,6 @@
                                                             {$total_ar_9 = $total_ar_9 + $cantitati_goale['goale'] }
                                                         {/if}
                                                     {/foreach}
-                                                </td>
-                                            {else}
-                                                <td style="vertical-align: middle;text-align: center;">
-                                                    <span style="color: red;">Nu are produse asignate!!</span>
-                                                    <a href="/asigneaza_produse_client.php?id={$client['id']}"
-                                                       class="btn btn-mini btn-inverse">Asigneaza</a>
                                                 </td>
                                             {/if}
                                             <th style="vertical-align: middle;width: 300px;padding-bottom: 10px;padding-top: 10px;">
@@ -170,7 +169,7 @@
                                                     </option>
                                                 </select>
                                             </th>
-                                        </tr>
+                                        </td>
                                     {/foreach}
                                     </tbody>
                                     {$conditie = ($total_bg_11 > 0) || ($total_ar_8 > 0) || ($total_ar_9 > 0) || ($total_obs['total_observatii'] > 0)}

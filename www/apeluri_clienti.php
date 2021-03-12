@@ -41,7 +41,6 @@ $total_obs = Trasee::getNumarObservatiiApelClientiByTraseuId(array(
 ));
 $smarty->assign('total_obs', $total_obs);
 
-
 $total_urgente = Trasee::getNumarUrgenteApelClientiByTraseuId(array(
     'traseu_id' => $traseu_id,
     'data_start' => $data_start
