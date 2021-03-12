@@ -101,10 +101,6 @@
                                                             </tr>
                                                         {/foreach}
                                                     </table>
-                                                    {*{foreach from=$client['target'] item = target_client}*}
-                                                        {*{$target_client['nume_produs']}: {$target_client['target']} buc*}
-                                                        {*<br/>*}
-                                                    {*{/foreach}*}
                                             </th>
                                                 {else}
                                                 <td style="vertical-align: middle;text-align: center;">

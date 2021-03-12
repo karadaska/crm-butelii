@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-19 14:14:15
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-12 15:08:43
          compiled from "/var/www/html/fofoweb/www/templates/edit_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1979719332602fab97965419-87497705%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0aebfd4daf867fa4f0f494c6e8ebffdee0e47ddc' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_traseu.tpl',
-      1 => 1612175584,
+      1 => 1615554521,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_602fab97a0e8f1_30984443',
   'variables' => 
   array (
     'title' => 0,
@@ -32,8 +34,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'target' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_602fab97a0e8f1_30984443',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_602fab97a0e8f1_30984443')) {function content_602fab97a0e8f1_30984443($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -124,7 +124,6 @@ $_smarty_tpl->tpl_vars['depozit']->_loop = true;
                                         </form>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -190,12 +189,12 @@ $_smarty_tpl->tpl_vars['asignare']->_loop = true;
                                    class="table table-bordered table-hover" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: left;width: 40px;">
-                                        Localitate
+                                    <th style="text-align: center;width: 40px;">
+                                        LOCALITATE
                                     </th>
-                                    <td>Clienti</td>
-                                    <td>Telefon</td>
-                                    <td style="text-align: center;">Stoc client</td>
+                                    <td>CLIENTI</td>
+                                    <td>TELEFON</td>
+                                    <td style="text-align: center;">STOC CLIENT</td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
@@ -208,7 +207,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_var
 $_smarty_tpl->tpl_vars['lista']->_loop = true;
 ?>
                                     <tr>
-                                        <td style="text-align: left;width: 150px;"><?php echo $_smarty_tpl->tpl_vars['lista']->value['localitate'];?>
+                                        <td style="text-align: left;width: 150px;"><?php echo strtoupper($_smarty_tpl->tpl_vars['lista']->value['localitate']);?>
 </td>
                                         <td>
                                             <a href="edit_client.php?id=<?php echo $_smarty_tpl->tpl_vars['lista']->value['id'];?>

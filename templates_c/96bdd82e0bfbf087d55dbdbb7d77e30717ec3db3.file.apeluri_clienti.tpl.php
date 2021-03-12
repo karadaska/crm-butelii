@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-12 14:52:41
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-12 14:57:46
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1615553554,
+      1 => 1615553860,
       2 => 'file',
     ),
   ),
@@ -194,10 +194,6 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                                                             </tr>
                                                         <?php } ?>
                                                     </table>
-                                                    
-                                                        
-                                                        
-                                                    
                                             </th>
                                                 <?php } else { ?>
                                                 <td style="vertical-align: middle;text-align: center;">

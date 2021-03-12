@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 12:48:05
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-12 15:01:44
          compiled from "/var/www/html/fofoweb/www/templates/trasee.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:746633397602fab92b92a49-94208282%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f9061ca273197e00b2ea6e84884d94b4e4c01e34' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/trasee.tpl',
-      1 => 1614374406,
+      1 => 1615554102,
       2 => 'file',
     ),
   ),
@@ -57,9 +57,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                    class="table table-striped table-bordered table-hover" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: center;" class="span1">Id traseu</th>
-                                    <th style="text-align: left;" class="span3">Traseu</th>
-                                    <th style="text-align: left;">Clienti asignati</th>
+                                    <th style="text-align: center;" class="span1">ID</th>
+                                    <th style="text-align: left;" class="span3">TRASEU</th>
+                                    <th style="text-align: left;">CLIENTI ASIGNATI</th>
 
                                 </tr>
                                 </thead>

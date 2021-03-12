@@ -27,9 +27,9 @@
                                    class="table table-striped table-bordered table-hover" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: center;" class="span1">Id traseu</th>
-                                    <th style="text-align: left;" class="span3">Traseu</th>
-                                    <th style="text-align: left;">Clienti asignati</th>
+                                    <th style="text-align: center;" class="span1">ID</th>
+                                    <th style="text-align: left;" class="span3">TRASEU</th>
+                                    <th style="text-align: left;">CLIENTI ASIGNATI</th>
 
                                 </tr>
                                 </thead>

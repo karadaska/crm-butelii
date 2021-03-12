@@ -50,8 +50,8 @@
                                     <thead>
                                     <tr>
                                         <th style="text-align: center;">#</th>
-                                        <th style="text-align: left;">Nume</th>
-                                        <th style="text-align: left;" colspan="3">Localitate</th>
+                                        <th style="text-align: center;">NUME</th>
+                                        <th style="text-align: left;" colspan="3">LOCALITATE</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -69,19 +69,19 @@
                                                     <tr class="info">
                                                         <td class="span3"
                                                             style="text-align: center;font-weight: bolder;">
-                                                            Produs
+                                                            PRODUS
                                                         </td>
                                                         <td class="span1"
                                                             style="text-align: center;font-weight: bolder;width: 100px;">
-                                                            Stoc
+                                                            STOC
                                                         </td>
                                                         <td class="span1"
                                                             style="text-align: center;font-weight: bolder;width: 100px;">
-                                                            Pret
+                                                            PRET
                                                         </td>
                                                         <td class="span1"
                                                             style="text-align: center;font-weight: bolder;">
-                                                            Comision
+                                                            COMISION
                                                         </td>
                                                     </tr>
                                                     {foreach from=$client['target'] item = target_client}

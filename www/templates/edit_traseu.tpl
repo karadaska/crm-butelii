@@ -74,7 +74,6 @@
                                         </form>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -126,12 +125,12 @@
                                    class="table table-bordered table-hover" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: left;width: 40px;">
-                                        Localitate
+                                    <th style="text-align: center;width: 40px;">
+                                        LOCALITATE
                                     </th>
-                                    <td>Clienti</td>
-                                    <td>Telefon</td>
-                                    <td style="text-align: center;">Stoc client</td>
+                                    <td>CLIENTI</td>
+                                    <td>TELEFON</td>
+                                    <td style="text-align: center;">STOC CLIENT</td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
@@ -140,7 +139,7 @@
                                 </thead>
                                 {foreach from = $lista_asignari_clienti_trasee item =lista}
                                     <tr>
-                                        <td style="text-align: left;width: 150px;">{$lista['localitate']}</td>
+                                        <td style="text-align: left;width: 150px;">{strtoupper($lista['localitate'])}</td>
                                         <td>
                                             <a href="edit_client.php?id={$lista['id']}">{strtoupper($lista['nume_client'])}</a>
                                         </td>

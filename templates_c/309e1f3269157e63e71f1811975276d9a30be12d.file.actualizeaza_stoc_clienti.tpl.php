@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-26 09:12:57
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-12 15:01:09
          compiled from "/var/www/html/fofoweb/www/templates/actualizeaza_stoc_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:16184302560389f799b2e34-32957709%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '309e1f3269157e63e71f1811975276d9a30be12d' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/actualizeaza_stoc_clienti.tpl',
-      1 => 1611733272,
+      1 => 1615554066,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60389f79aa6709_71152512',
   'variables' => 
   array (
     'title' => 0,
@@ -31,8 +33,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'totaltime' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60389f79aa6709_71152512',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60389f79aa6709_71152512')) {function content_60389f79aa6709_71152512($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -104,8 +104,8 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                     <thead>
                                     <tr>
                                         <th style="text-align: center;">#</th>
-                                        <th style="text-align: left;">Nume</th>
-                                        <th style="text-align: left;" colspan="3">Localitate</th>
+                                        <th style="text-align: center;">NUME</th>
+                                        <th style="text-align: left;" colspan="3">LOCALITATE</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -133,19 +133,19 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                     <tr class="info">
                                                         <td class="span3"
                                                             style="text-align: center;font-weight: bolder;">
-                                                            Produs
+                                                            PRODUS
                                                         </td>
                                                         <td class="span1"
                                                             style="text-align: center;font-weight: bolder;width: 100px;">
-                                                            Stoc
+                                                            STOC
                                                         </td>
                                                         <td class="span1"
                                                             style="text-align: center;font-weight: bolder;width: 100px;">
-                                                            Pret
+                                                            PRET
                                                         </td>
                                                         <td class="span1"
                                                             style="text-align: center;font-weight: bolder;">
-                                                            Comision
+                                                            COMISION
                                                         </td>
                                                     </tr>
                                                     <?php  $_smarty_tpl->tpl_vars['target_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target_client']->_loop = false;
