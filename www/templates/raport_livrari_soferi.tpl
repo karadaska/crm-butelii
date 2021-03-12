@@ -81,6 +81,7 @@
                                         </thead>
                                         <tbody>
                                         {$nr = 1}
+                                        {$grand_total_km = 0}
                                         {foreach from = $livrari_soferi['trasee'] item= livrare}
                                             <tr>
                                                 <td style="text-align: center;" class="span1">{$nr++}</td>
@@ -102,10 +103,11 @@
                                                     </td>
                                                 {/foreach}
                                             </tr>
+                                            {$grand_total_km = $grand_total_km + $livrare['km']['km_traseu']}
                                         {/foreach}
                                         <tr>
                                             <th colspan="4" style="text-align: right;"></th>
-                                            <th style="text-align: right;">To do</th>
+                                            <th style="text-align: right;color: red;">{$grand_total_km}</th>
                                             {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                                 <th style="text-align: right;color: red;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['cantitate']}</th>
                                                 <th style="text-align: right;color: red;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['valoare']}</th>
@@ -120,29 +122,8 @@
                     </div>
                 </div>
             {/if}
-            {*<div style="margin-left: 10px;">*}
-            {*<table class="table table-bordered table-striped" style="width: 280px;">*}
-            {*<tr class="info">*}
-            {*<td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG*}
-            {*</td>*}
-            {*</tr>*}
-            {*<tr>*}
-            {*<td style="text-align: left;font-weight: 900;">Total cantitati</td>*}
-            {*<td style="text-align: center;font-weight: 900;">cantitate</td>*}
-            {*</tr>*}
-            {*<tr class="info">*}
-            {*<td style="text-align: left;font-weight: 900;">Total Valoare</td>*}
-            {*<td style="text-align: center;font-weight: 900;">total valoare</td>*}
-            {*</tr>*}
-            {*<tr>*}
-            {*<td style="text-align: left;font-weight: 900;">Total Comision</td>*}
-            {*<td style="text-align: center;font-weight: 900;">comison</td>*}
-            {*</tr>*}
-            {*</table>*}
-            {*</div>*}
     </section>
 </div>
 <div style="margin-top: 100px;"></div>
-
 <script src="/js/pagini/raport_livrari_soferi.js"></script>
 

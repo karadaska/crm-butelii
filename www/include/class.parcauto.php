@@ -429,7 +429,7 @@ class ParcAuto
                   WHERE a.sofer_id = '" . $sofer_id . "'
                   AND a.data_intrare >= '" . $data_start . "'
                   AND a.data_intrare <= '" . $data_stop . "'
-                  and a.sters = 0
+                  AND a.sters = 0
                   GROUP BY a.traseu_id
                   ORDER BY c.nume ASC             
                     ";
@@ -460,11 +460,6 @@ class ParcAuto
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ));
-
-//                    $r['km'] = self::getTotalKmBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
-//                        'data_start' => $data_start,
-//                        'data_stop' => $data_stop
-//                    ));
 
                     $ret['grand'][$tip_produs_id] = self::getTotalCantitatiBySoferIdProdusId($item['sofer_id'], $tip_produs_id, array(
                         'data_start' => $data_start,

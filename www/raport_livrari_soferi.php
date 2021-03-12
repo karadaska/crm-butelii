@@ -28,10 +28,5 @@ $livrari_soferi = ParcAuto::getRaportLivrariSoferi($sofer_id,
     ));
 $smarty->assign('livrari_soferi', $livrari_soferi);
 
-//foreach ($livrari_soferi['trasee'] as $item) {
-// foreach ($item['km'] as $unu){
-//     pre($unu);
-// }
-//}
 $smarty->display($template_page);
 
