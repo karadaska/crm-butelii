@@ -14,7 +14,6 @@
                         </a>
                     </h1>
                 </div>
-
             </div>
             <div class="row-fluid span12">
                 <form action="/apeluri_clienti.php" method="post" id="form_actualizeaza_stoc"
@@ -39,7 +38,6 @@
                         </select>
                     </div>
                     <input type="hidden" name="id_traseu" value="{$stare['id']}">
-
                 </form>
             </div>
             <div class="row-fluid">
@@ -95,18 +93,18 @@
                                             </th>
                                             <th style="vertical-align: middle;text-align: left;">
                                                 {if count($client['target']) > 0}
-                                                <table class="table table-bordered" style="width: 100%">
-                                                    {foreach from=$client['target'] item = target_client}
-                                                        <tr>
-                                                            <td style="width: 60%;text-align: right;">{$target_client['nume_produs']}</td>
-                                                            <td style="width: 60%;text-align: left;">{$target_client['target']}</td>
-                                                        </tr>
-                                                    {/foreach}
-                                                </table>
+                                                    <table class="table table-bordered" style="width: 100%">
+                                                        {foreach from=$client['target'] item = target_client}
+                                                            <tr>
+                                                                <td style="width: 60%;text-align: right;">{$target_client['nume_produs']}</td>
+                                                                <td style="width: 60%;text-align: left;">{$target_client['target']}</td>
+                                                            </tr>
+                                                        {/foreach}
+                                                    </table>
                                                 {/if}
                                                 {*{foreach from=$client['target'] item = target_client}*}
-                                                    {*{$target_client['nume_produs']}: {$target_client['target']} buc*}
-                                                    {*<br/>*}
+                                                {*{$target_client['nume_produs']}: {$target_client['target']} buc*}
+                                                {*<br/>*}
                                                 {*{/foreach}*}
                                             </th>
                                             {if $target_client['target'] > 0}
@@ -126,13 +124,14 @@
                                                                name="goale_{$target_client['client_id']}_{$target_client['tip_produs_id']}">
                                                         <br/>
                                                         {if ($target_client['tip_produs_id']) == 1}
-                                                            {$total_bg_11 = ($total_bg_11 + $target_client['goale_la_client']) }
+                                                            {*{$total_bg_11 = ($total_bg_11 + $target_client['goale_la_client']) }*}
+                                                            {$total_bg_11 = ($total_bg_11 + $cantitati_goale['goale']) }
                                                         {/if}
                                                         {if ($target_client['tip_produs_id']) == 3}
-                                                            {$total_ar_8 = $total_ar_8 + $target_client['goale_la_client'] }
+                                                            {$total_ar_8 = $total_ar_8 + $cantitati_goale['goale'] }
                                                         {/if}
                                                         {if ($target_client['tip_produs_id']) == 4}
-                                                            {$total_ar_9 = $total_ar_9 + $target_client['goale_la_client'] }
+                                                            {$total_ar_9 = $total_ar_9 + $cantitati_goale['goale'] }
                                                         {/if}
                                                     {/foreach}
                                                 </td>

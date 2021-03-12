@@ -181,6 +181,6 @@ $b = Clienti::getRaportLivrariClienti(29, $opts = array(
 //        'data_start' => '2021-03-09'
 //));
 
-$b = Stocuri::getFisaGenerataById(362);
-
+//$b = Stocuri::getFisaGenerataById(362);
+$b = Clienti::getGoaleApelClientiByClientId(2267, 1, 1);
 echo json_encode($b);

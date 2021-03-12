@@ -130,21 +130,24 @@
                         {/foreach}
                     </table>
                 </td>
-                <td>
+                <td style="text-align: center;">
                     {foreach from=$client['target'] item = target_client}
-                        {$target_client['goale_la_client']}
-                        <br/>
-                        {if ($target_client['tip_produs_id']) == 1}
-                            {$total_bg_11 = $total_bg_11+ ($target_client['goale_la_client']) }
+                        {assign var=cantitati_goale value=Clienti::getGoaleApelClientiByClientId($client['id'],$target_client['tip_produs_id'], $id)}
+                        {*{$target_client['goale_la_client']} asdasds*}
+                        {if $cantitati_goale['goale'] > 0}
+                            {$valoare_goale_input = $cantitati_goale['goale']}
+                        {else}
+                            {$valoare_goale_input = 0}
                         {/if}
-                        {if ($target_client['tip_produs_id']) == 2}
-                            {$total_bg_9 = $total_bg_9+ ($target_client['goale_la_client']) }
+                        {$valoare_goale_input}<br/>
+                        {if ($target_client['tip_produs_id']) == 1}
+                            {$total_bg_11 = $total_bg_11 + $cantitati_goale['goale']}
                         {/if}
                         {if ($target_client['tip_produs_id']) == 3}
-                            {$total_ar_8 = $total_ar_8+ ($target_client['goale_la_client']) }
+                            {$total_ar_8 = $total_ar_8+ $cantitati_goale['goale'] }
                         {/if}
                         {if ($target_client['tip_produs_id']) == 4}
-                            {$total_ar_9 = $total_ar_9+ ($target_client['goale_la_client']) }
+                            {$total_ar_9 = $total_ar_9+ $cantitati_goale['goale'] }
                         {/if}
                     {/foreach}
                 </td>
