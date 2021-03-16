@@ -3,7 +3,7 @@ require_once 'etc/config.php';
 header('content-type: application/json');
 
 $zi_curenta = date('Y-m-d');
-$traseu_id = 36;
+$traseu_id = 1;
 $data_start = '2021-01-01';
 $data_stop = '2021-03-31';
 $depozit_id = 0;
@@ -47,7 +47,7 @@ $stare_id = 1;
 //        'data_stop' => $data_stop
 //    ));
 
-$b = Stocuri::getCantitatiProduseClientiByFisaId(188);
+//$b = Stocuri::getCantitatiProduseClientiByFisaId(188);
 
 //$b = ParcAuto::getRaportLivrariMasini(20,
 //    array(
@@ -191,4 +191,9 @@ $b = Stocuri::getCantitatiProduseClientiByFisaId(188);
 
 //$b = Stocuri::getFisaGenerataById(362);
 //$b = Clienti::getGoaleApelClientiByClientId(2267, 1, 1);
+$b = ParcAuto::getRaportLivrariTrasee($traseu_id,
+    array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+    ));
 echo json_encode($b);

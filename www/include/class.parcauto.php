@@ -339,7 +339,36 @@ class ParcAuto
 
     }
 
+    public static function getTotalKmByTraseuId($traseu_id, $opts = array())
+    {
+        $ret = null;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
 
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $km_traseu = "SELECT SUM(a.km_parcursi) as km_traseu
+                                FROM miscari_fise as a
+                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                                WHERE b.traseu_id = '" . $traseu_id . "'
+                                AND a.data_intrare >= '" . $data_start . "'
+                                AND a.data_intrare <= '" . $data_stop . "'
+                                ";
+
+
+        $result = myQuery($km_traseu);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
 
     public static function getTotalCantitatiBySoferIdProdusId($sofer_id = 0, $tip_produs_id, $opts = array())
     {
@@ -504,8 +533,6 @@ class ParcAuto
         }
         return $ret;
     }
-
-
     public static function getRaportLivrariMasini($masina_id, $opts = array())
     {
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
@@ -557,6 +584,76 @@ class ParcAuto
                     'data_start' => $data_start,
                     'data_stop' => $data_stop
                 ))
+                );
+                foreach ($ret['produse_masina'] as $tip_produs_id => $item_tip_produs) {
+                    $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiByMasinaIdAndTraseuId($item['masina_id'], $item['traseu_id'], array(
+                        'tip_produs_id' => $tip_produs_id,
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ));
+
+                    $ret['grand'][$tip_produs_id] = self::getTotalCantitatiByMasinaIdProdusId($item['masina_id'], $tip_produs_id, array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ));
+                }
+                array_push($ret['trasee'], $r);
+            }
+        }
+        return $ret;
+    }
+
+    public static function getRaportLivrariTrasee($traseu_id, $opts = array())
+    {
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $ret = array(
+            'trasee' => array()
+        );
+
+        $query = "SELECT a.id, a.masina_id, b.nume as nume_sofer,
+                  c.nume as nume_traseu, d.numar, d.model, a.traseu_id 
+                  FROM fise_generate as a
+                  LEFT JOIN soferi as b on a.sofer_id = b.id
+                  LEFT JOIN trasee as c on a.traseu_id = c.id
+                  LEFT JOIN masini as d on a.masina_id = d.id
+                  WHERE a.traseu_id = '" . $traseu_id . "'
+                  AND a.data_intrare >= '" . $data_start . "'
+                  AND a.data_intrare <= '" . $data_stop . "'
+                  AND a.sters = 0
+                  GROUP BY a.masina_id
+                  ORDER BY c.nume ASC             
+                    ";
+
+        $result = myQuery($query);
+        $ret['produse_traseu'] = Produse::getProduseVanduteByTraseuId($traseu_id, array(
+            'data_start' => $data_start,
+            'data_stop' => $data_stop
+        ));
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $r = array(
+                    'numar' => $item['numar'],
+                    'model' => $item['model'],
+                    'nume_sofer' => $item['nume_sofer'],
+                    'nume_traseu' => $item['nume_traseu'],
+                    'total_produse' => array(),
+
+                    'km' => self::getTotalKmByTraseuId($item['traseu_id'], array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ))
                 );
                 foreach ($ret['produse_masina'] as $tip_produs_id => $item_tip_produs) {
                     $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiByMasinaIdAndTraseuId($item['masina_id'], $item['traseu_id'], array(
