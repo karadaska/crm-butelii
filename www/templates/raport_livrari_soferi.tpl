@@ -7,7 +7,7 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Raport livrari sofer (de verificat cantitatile + print TO DO)
+                    <h1><i class="icon20 i-menu-6"></i> Raport livrari sofer
                         <a target="_blank" href="/print_raport_livrari_soferi.php?id={$sofer_id}&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
