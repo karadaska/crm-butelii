@@ -339,9 +339,12 @@ class ParcAuto
 
     }
 
-    public static function getTotalKmByTraseuId($traseu_id, $opts = array())
+    public static function getTotalKmByTraseuId($opts = array())
     {
         $ret = null;
+        $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
+        $masina_id = isset($opts['masina_id']) ? $opts['masina_id'] : 0;
+        $sofer_id = isset($opts['sofer_id']) ? $opts['sofer_id'] : 0;
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
 
@@ -353,16 +356,26 @@ class ParcAuto
             $data_stop = date('Y-m-t');
         }
 
-        $km_traseu = "SELECT SUM(a.km_parcursi) as km_traseu
+        $query = "SELECT SUM(a.km_parcursi) as km_traseu
                                 FROM miscari_fise as a
                                 LEFT JOIN fise_generate as b on a.fisa_id = b.id
-                                WHERE b.traseu_id = '" . $traseu_id . "'
-                                AND a.data_intrare >= '" . $data_start . "'
+                                WHERE a.data_intrare >= '" . $data_start . "'
                                 AND a.data_intrare <= '" . $data_stop . "'
                                 ";
 
+        if ($traseu_id > 0) {
+            $query .= " and traseu_id = " . $traseu_id;
+        }
 
-        $result = myQuery($km_traseu);
+        if ($sofer_id > 0) {
+            $query .= " and sofer_id = " . $sofer_id;
+        }
+
+        if ($masina_id > 0) {
+            $query .= " and masina_id = " . $masina_id;
+        }
+
+        $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
         }

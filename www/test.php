@@ -6,11 +6,11 @@ $zi_curenta = date('Y-m-d');
 $traseu_id = 1;
 $data_start = '2021-01-01';
 $data_stop = '2021-03-31';
-$depozit_id = 0;
-$sofer_id = 0;
-$masina_id = 0;
-$luna_id = 0;
-$stare_id = 1;
+//$depozit_id = 0;
+//$sofer_id = 0;
+//$masina_id = 0;
+//$luna_id = 0;
+//$stare_id = 1;
 
 //CLIENTI -----------------------------------------------------------
 //$b = Clienti::getListaClientiByPret(12,1,1);
@@ -191,9 +191,17 @@ $stare_id = 1;
 
 //$b = Stocuri::getFisaGenerataById(362);
 //$b = Clienti::getGoaleApelClientiByClientId(2267, 1, 1);
-$b = ParcAuto::getRaportLivrariTrasee($traseu_id,
-    array(
-        'data_start' => $data_start,
-        'data_stop' => $data_stop
-    ));
+//$b = ParcAuto::getRaportLivrariTrasee($traseu_id,
+//    array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//    ));
+
+$b = ParcAuto::getTotalKmByTraseuId(array(
+    'data_start' => $data_start,
+    'data_stop' => $data_stop,
+    'traseu_id' => 1,
+    'sofer_id' => 23,
+    'masina_id' => 2
+));
 echo json_encode($b);
