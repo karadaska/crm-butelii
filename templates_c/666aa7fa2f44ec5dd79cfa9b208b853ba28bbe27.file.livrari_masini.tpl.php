@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-16 10:44:41
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-16 10:50:10
          compiled from "/var/www/html/fofoweb/www/templates/livrari_masini.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11988036646040940f14d4e2-58340311%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '666aa7fa2f44ec5dd79cfa9b208b853ba28bbe27' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_masini.tpl',
-      1 => 1615884274,
+      1 => 1615884387,
       2 => 'file',
     ),
   ),
@@ -47,7 +47,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <div id="heading" class="page-header">
                     <h1>
                         <i class="icon20 i-menu-6"></i> Raport livrari masini
-                        <a href="/print_livrari_masini.php?id=<?php echo $_smarty_tpl->tpl_vars['masina_id']->value;?>
+                        <a target="_blank" href="/print_livrari_masini.php?id=<?php echo $_smarty_tpl->tpl_vars['masina_id']->value;?>
 &data_start=<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 &data_stop=<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
 ">
