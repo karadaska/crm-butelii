@@ -96,9 +96,9 @@
                         </tr>
                         <tr>
                             {foreach from = $livrari_masini['produse_masina'] item= produse}
-                                <th>Cantitate</th>
-                                <th>Valoare</th>
-                                <th>Comision</th>
+                                <th>CANTITATE</th>
+                                <th>VALOARE</th>
+                                <th>COMISION</th>
                             {/foreach}
                         </tr>
                         </thead>

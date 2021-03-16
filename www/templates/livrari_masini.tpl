@@ -9,7 +9,7 @@
                 <div id="heading" class="page-header">
                     <h1>
                         <i class="icon20 i-menu-6"></i> Raport livrari masini
-                        <a href="/print_livrari_masini.php?id={$masina_id}&data_start={$data_start}&data_stop={$data_stop}">
+                        <a target="_blank" href="/print_livrari_masini.php?id={$masina_id}&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
                     </h1>
