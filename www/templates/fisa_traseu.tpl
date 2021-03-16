@@ -64,14 +64,14 @@
                                                                class="table table-bordered table-hover" id="dataTable">
                                                             <thead>
                                                             <tr>
-                                                                <td class="span1">Id</td>
-                                                                <td>Depozit</td>
-                                                                <td>Traseu</td>
-                                                                <th>Sofer</th>
-                                                                <th>Masina</th>
-                                                                <th>Incarcatura plecare</th>
-                                                                <th>Incarcatura sosire</th>
-                                                                <th>Detalii Km</th>
+                                                                <td class="span1">ID</td>
+                                                                <th>DEPOZIT</th>
+                                                                <th>TRASEU</th>
+                                                                <th>SOFER</th>
+                                                                <th>MASINA</th>
+                                                                <th>INCARCATURA PLECARE</th>
+                                                                <th>INCARCATURA SOSIRE</th>
+                                                                <th>KM</th>
                                                                 <th>Data</th>
                                                                 <th>&nbsp;</th>
                                                             </tr>
@@ -98,7 +98,7 @@
                                                                         {/foreach}
                                                                     </td>
                                                                     <td style="text-align: center;">
-                                                                       {($fisa['km_fisa']['km_parcursi'] != '') ? $fisa['km_fisa']['km_parcursi'] :'0'}
+                                                                        {($fisa['km_fisa']['km_parcursi'] != '') ? $fisa['km_fisa']['km_parcursi'] :'0'}
                                                                         km
                                                                     </td>
                                                                     <td style="text-align: center;">{$fisa['data_intrare']}</td>

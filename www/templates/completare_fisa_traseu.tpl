@@ -22,7 +22,7 @@
                                 <th style="text-align: left;vertical-align: middle;"><h6
                                             style="color: red;">{$fisa['data_intrare']}</h6></th>
                                 <th>
-                                    <a href="/print_fisa_sosire.php?id={$fisa['id']}" class="i-print"></a>
+                                    <a target="_blank" href="/print_fisa_sosire.php?id={$fisa['id']}" class="i-print"></a>
                                 </th>
                             </tr>
                         </table>

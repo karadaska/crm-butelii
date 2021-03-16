@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-11 14:26:47
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-16 13:15:50
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1615374463,
+      1 => 1615893349,
       2 => 'file',
     ),
   ),
@@ -95,7 +95,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                             style="color: red;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['data_intrare'];?>
 </h6></th>
                                 <th>
-                                    <a href="/print_fisa_sosire.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
+                                    <a target="_blank" href="/print_fisa_sosire.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
 " class="i-print"></a>
                                 </th>
                             </tr>

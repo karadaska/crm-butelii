@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-16 09:20:41
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-16 13:08:49
          compiled from "/var/www/html/fofoweb/www/templates/fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:41291163760227fca5e0d02-36086469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6a816e77c26a3e44e8901f8e5bf303b562bf874' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/fisa_traseu.tpl',
-      1 => 1615879165,
+      1 => 1615892927,
       2 => 'file',
     ),
   ),
@@ -140,14 +140,14 @@ $_smarty_tpl->tpl_vars['luna']->_loop = true;
                                                                class="table table-bordered table-hover" id="dataTable">
                                                             <thead>
                                                             <tr>
-                                                                <td class="span1">Id</td>
-                                                                <td>Depozit</td>
-                                                                <td>Traseu</td>
-                                                                <th>Sofer</th>
-                                                                <th>Masina</th>
-                                                                <th>Incarcatura plecare</th>
-                                                                <th>Incarcatura sosire</th>
-                                                                <th>Detalii Km</th>
+                                                                <td class="span1">ID</td>
+                                                                <th>DEPOZIT</th>
+                                                                <th>TRASEU</th>
+                                                                <th>SOFER</th>
+                                                                <th>MASINA</th>
+                                                                <th>INCARCATURA PLECARE</th>
+                                                                <th>INCARCATURA SOSIRE</th>
+                                                                <th>KM</th>
                                                                 <th>Data</th>
                                                                 <th>&nbsp;</th>
                                                             </tr>
@@ -197,7 +197,7 @@ $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = true;
                                                                         <?php } ?>
                                                                     </td>
                                                                     <td style="text-align: center;">
-                                                                       <?php echo $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_parcursi']!='' ? $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_parcursi'] : '0';?>
+                                                                        <?php echo $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_parcursi']!='' ? $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_parcursi'] : '0';?>
 
                                                                         km
                                                                     </td>
