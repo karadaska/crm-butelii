@@ -97,8 +97,8 @@
                                                                             <br/>
                                                                         {/foreach}
                                                                     </td>
-                                                                    <td>
-                                                                        <span style="font-weight: 900">{($fisa['km_fisa']['km_parcursi'] != '') ? $fisa['km_fisa']['km_parcursi'] :'0'}
+                                                                    <td style="text-align: center;">
+                                                                       {($fisa['km_fisa']['km_parcursi'] != '') ? $fisa['km_fisa']['km_parcursi'] :'0'}
                                                                         km
                                                                     </td>
                                                                     <td style="text-align: center;">{$fisa['data_intrare']}</td>
