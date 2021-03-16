@@ -13,7 +13,7 @@ $smarty->assign('name', 'Print raport livrari soferi');
 $template_page = "print_raport_livrari_soferi.tpl";
 
 $id = getRequestParameter('id', 0);
-$smarty->assign('id',$id);
+$smarty->assign('id', $id);
 
 $nume_sofer = ParcAuto::getSoferById($id);
 $smarty->assign('nume_sofer',$nume_sofer);
@@ -25,7 +25,7 @@ $data_stop = getRequestParameter('data_stop', date('Y-m-t'));
 $smarty->assign('data_stop', $data_stop);
 
 $livrari_soferi = ParcAuto::getRaportLivrariSoferi($id,
-    $opts = array(
+    array(
         'data_start' => $data_start,
         'data_stop' => $data_stop
     ));

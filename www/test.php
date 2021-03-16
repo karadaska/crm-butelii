@@ -22,10 +22,10 @@ $stare_id = 1;
 //    'data_start' => $zi_curenta
 //));
 
-$b = Clienti::getRaportLivrariClienti(29, $opts = array(
-    'data_start' => '2021-02-01',
-    'data_stop' => '2021-02-03'
-));
+//$b = Clienti::getRaportLivrariClienti(29, $opts = array(
+//    'data_start' => '2021-02-01',
+//    'data_stop' => '2021-02-03'
+//));
 //$b =Clienti::getPreturiLivrariClienti($traseu_id, $opts = array(
 //        'data_start' => $data_start,
 //    'data_stop' => $data_stop
@@ -41,11 +41,17 @@ $b = Clienti::getRaportLivrariClienti(29, $opts = array(
 //$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(298,2433);
 
 //
-//$b = ParcAuto::getRaportLivrariSoferi(26,
-//    $opts = array(
+//$b = ParcAuto::getRaportLivrariSoferi(22,
+//    array(
 //        'data_start' => $data_start,
 //        'data_stop' => $data_stop
 //    ));
+
+$b = ParcAuto::getRaportLivrariMasini(20,
+    array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+    ));
 
 //$b = Produse::getProduseVanduteBySoferId(23, array(
 //        'data_start' => $data_start,

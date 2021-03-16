@@ -60,11 +60,11 @@
 <section id="content" class="print">
     <div class="wrapper">
         <input type="button" onclick="setPrint();window.print();return false;" id="print_button" name="print_button"
-               value="Print"/>
+               value="PRINT"/>
         <a href="/raport_livrari_soferi.php?sofer_id={$id}&data_start={$data_start}&data_stop={$data_stop}"
            class="ascuns">
             <button type="button" class="btn btn-mini btn-warning ascuns">
-                Inapoi
+                INAPOI
             </button>
         </a>
     </div>
@@ -72,8 +72,8 @@
         <tr>
             <td style="text-align: left;" class="span3">
                 <h3>
-                    Raport livrare sofer: {strtoupper($nume_sofer['nume'])} <br/>
-                    Perioada: {$data_start} / {$data_stop}
+                    RAPORT LIVRARE SOFER: {strtoupper($nume_sofer['nume'])} <br/>
+                    PERIOADA: {$data_start} / {$data_stop}
                 </h3>
             </td>
         </tr>
@@ -81,121 +81,192 @@
     <div class="row-fluid">
         <div class="span12">
             <div class="widget">
+                <form action="/raport_livrari_soferi.php"
+                      method="post" id="form_actualizeaza_stoc"
+                      style="margin-bottom: 0">
                     <div class="widget-content">
-                        <table border="1">
+                        <table cellpadding="0" cellspacing="0" border="1">
                             <thead>
                             <tr>
                                 <th style="text-align: center;" rowspan="2">#</th>
                                 <th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>
-                                <th style="text-align: center;" rowspan="2">INDICATOR AUTO</th>
-                                <th style="text-align: center;" rowspan="2">Traseu</th>
-                                <th colspan="3">TOTAL BUTELII VANDUTE</th>
-                                <th colspan="3">TOTAL VALOARE INCASATA</th>
-                                <th colspan="3">TOTAL COMISION</th>
+                                <th style="text-align: center;" rowspan="2">NR. ANTO</th>
+                                <th style="text-align: center;" rowspan="2">TRASEU</th>
+                                <th style="text-align: center;" rowspan="2">KM PARCURSI</th>
+                                {foreach from = $livrari_soferi['produse_sofer'] item= produse}
+                                    <th colspan="3" style="border: double;">{$produse['nume_produs']}</th>
+                                {/foreach}
                             </tr>
                             <tr>
-                                <td style="text-align: center">BG 11</td>
-                                <td style="text-align: center">AR 8</td>
-                                <td style="text-align: center">AR 9</td>
-                                <td style="text-align: center">BG 11</td>
-                                <td style="text-align: center">AR 8</td>
-                                <td style="text-align: center">AR 9</td>
-                                <td style="text-align: center;">BG 11</td>
-                                <td style="text-align: center;">AR 8</td>
-                                <td style="text-align: center;">AR 9</td>
+                                {foreach from = $livrari_soferi['produse_sofer'] item= produse}
+                                    <td>CANTITATE</td>
+                                    <td>VALOARE</td>
+                                    <td>COMISION</td>
+                                {/foreach}
                             </tr>
                             </thead>
                             <tbody>
                             {$nr = 1}
-                            {$total_bg_11 = 0}
-                            {$total_valoare_incasata_bg_11 = 0}
-                            {$total_valoare_comision_bg_11 = 0}
-
-                            {$total_ar_8 = 0}
-                            {$total_valoare_incasata_ar_8  = 0}
-                            {$total_valoare_comision_ar_8 = 0}
-
-                            {$total_ar_9 = 0}
-                            {$total_valoare_incasata_ar_9  = 0}
-                            {$total_valoare_comision_ar_9 = 0}
-
-                            {foreach from=$livrari_soferi item=sofer}
+                            {$grand_total_km = 0}
+                            {foreach from = $livrari_soferi['trasee'] item= livrare}
                                 <tr>
-                                    <td style="text-align: center" class="span1">{$nr++}</td>
-                                    <td style="text-align: left"
-                                        class="span3">{$sofer['nume_sofer']}
+                                    <td style="text-align: center;" class="span1">{$nr++}</td>
+                                    <td>{$livrare['nume_sofer']}</td>
+                                    <td style="text-align: center;">{$livrare['numar']}</td>
+                                    <td>{$livrare['nume_traseu']}</td>
+                                    <td style="text-align: right;">
+                                        {$livrare['km']['km_traseu']}
                                     </td>
-                                    <td>
-                                        {$sofer['numar']}
-                                    </td>
-                                    <td>{$sofer['nume_traseu']}</td>
-                                    <td style="text-align: center;border-left:double">
-                                        {($sofer['total_produse']['bg_11']['total_bg_11'] !='') ? {$sofer['total_produse']['bg_11']['total_bg_11']} : '-'}
-                                    </td>
-                                    <td style="text-align: center;">
-                                        {($sofer['total_produse']['ar_8']['total_ar_8'] !='') ? {$sofer['total_produse']['ar_8']['total_ar_8']} : '-'}
-                                    </td>
-                                    <td style="text-align: center">
-                                        {($sofer['total_produse']['ar_9']['total_ar_9'] !='') ? {$sofer['total_produse']['ar_9']['total_ar_9']} : '-'}
-                                    </td>
-                                    <td style="text-align: center;border-left:double">
-                                        {($sofer['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? {$sofer['total_produse']['bg_11']['total_bg_11_cu_pret']} : '-'}
-                                    </td>
-                                    <td style="text-align: center">
-                                        {($sofer['total_produse']['ar_8']['total_ar_8_cu_pret'] !='') ? {$sofer['total_produse']['ar_8']['total_ar_8_cu_pret']} : '-'}
-                                    </td>
-                                    <td style="text-align: center;border-right:double">
-                                        {($sofer['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? {$sofer['total_produse']['ar_9']['total_ar_9_cu_pret']} : '-'}
-                                    </td>
-                                    <td style="text-align: center">
-                                        {($sofer['total_produse']['bg_11']['comision'] !='') ? {$sofer['total_produse']['bg_11']['comision']} : '-'}
-                                    </td>
-                                    <td style="text-align: center;">
-                                        {($sofer['total_produse']['ar_8']['comision'] !='') ? {$sofer['total_produse']['ar_8']['comision']} : '-'}
-                                    </td>
-                                    <td style="text-align: center;">
-                                        {($sofer['total_produse']['ar_9']['comision'] !='') ? {$sofer['total_produse']['ar_9']['comision']} : '-'}
+                                    {foreach from = $livrari_soferi['produse_sofer'] item= produse}
+                                        <td style="text-align: right;">
+                                            {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
+                                        </td>
+                                        <td style="text-align: right;">
+                                            {($livrare['total_produse'][$produse['tip_produs_id']]['valoare'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['valoare'] : '-'}
+                                        </td>
+                                        <td style="text-align: right;">
+                                            {($livrare['total_produse'][$produse['tip_produs_id']]['comision'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['comision'] : '-'}
+                                        </td>
+                                    {/foreach}
                                 </tr>
-                                {$total_bg_11 = $total_bg_11 + $sofer['total_produse']['bg_11']['total_bg_11']}
-                                {$total_ar_8 = $total_ar_8 + $sofer['total_produse']['ar_8']['total_ar_8']}
-                                {$total_ar_9 = $total_ar_9 + $sofer['total_produse']['ar_9']['total_ar_9']}
-
-                                {$total_valoare_incasata_bg_11 = $total_valoare_incasata_bg_11 + $sofer['total_produse']['bg_11']['total_bg_11_cu_pret']}
-                                {$total_valoare_incasata_ar_8 = $total_valoare_incasata_ar_8 + $sofer['total_produse']['ar_8']['total_ar_8_cu_pret']}
-                                {$total_valoare_incasata_ar_9 = $total_valoare_incasata_ar_9 + $sofer['total_produse']['ar_9']['total_ar_9_cu_pret']}
-
-                                {$total_valoare_comision_bg_11 = $total_valoare_comision_bg_11 + $sofer['total_produse']['bg_11']['comision']}
-                                {$total_valoare_comision_ar_8 = $total_valoare_comision_ar_8 + $sofer['total_produse']['ar_8']['comision']}
-                                {$total_valoare_comision_ar_9 = $total_valoare_comision_ar_9 + $sofer['total_produse']['ar_9']['comision']}
-
-
+                                {$grand_total_km = $grand_total_km + $livrare['km']['km_traseu']}
                             {/foreach}
                             <tr>
-                                <th colspan="4" style="text-align: right;">TOTAL:</th>
-                                <th style="text-align: center;"><abbr title="Total bucati vandute BG 11">{$total_bg_11}</abbr></th>
-                                <th style="text-align: center;"><abbr title="Total bucati AR 8">{$total_ar_8}</abbr></th>
-                                <th style="text-align: center;"><abbr
-                                            title="Total bucati AR 9">{$total_ar_9}</abbr></th>
-                                <th>
-                                    <abbr title="Total valoare incasare BG 11">{$total_valoare_incasata_bg_11}</abbr>
-                                </th>
-                                <th>
-                                    <abbr title="Total valoare incasare AR 8">{$total_valoare_incasata_ar_8}</abbr>
-                                </th>
-                                <th>
-                                    <abbr title="Total valoare incasare AR 9">{$total_valoare_incasata_ar_9}</abbr>
-                                </th>
-                                <th><abbr title="Total comision BG 11">{$total_valoare_comision_bg_11}</abbr></th>
-                                <th><abbr title="Total comision AR 8">{$total_valoare_comision_ar_8}</abbr></th>
-                                <th><abbr
-                                            title="Total comision AR 9">{$total_valoare_comision_ar_9}</abbr></th>
+                                <td colspan="4" style="text-align: right;"></td>
+                                <td style="text-align: right;">{$grand_total_km}</td>
+                                {foreach from = $livrari_soferi['produse_sofer'] item= produse}
+                                    <td style="text-align: right;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['cantitate']}</td>
+                                    <td style="text-align: right;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['valoare']}</td>
+                                    <td style="text-align: right;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['comision']}</td>
+                                {/foreach}
                             </tr>
                             </tbody>
                         </table>
                     </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
 </body>
 </html>
+
+{*<div class="row-fluid">*}
+    {*<div class="span12">*}
+        {*<div class="widget">*}
+            {*<div class="widget-content">*}
+                {*<table border="1">*}
+                    {*<thead>*}
+                    {*<tr>*}
+                        {*<th style="text-align: center;" rowspan="2">#</th>*}
+                        {*<th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>*}
+                        {*<th style="text-align: center;" rowspan="2">INDICATOR AUTO</th>*}
+                        {*<th style="text-align: center;" rowspan="2">TRASEU</th>*}
+                        {*<th colspan="3">TOTAL BUTELII VANDUTE</th>*}
+                        {*<th colspan="3">TOTAL VALOARE INCASATA</th>*}
+                        {*<th colspan="3">TOTAL COMISION</th>*}
+                    {*</tr>*}
+                    {*<tr>*}
+                        {*<td style="text-align: center">BG 11</td>*}
+                        {*<td style="text-align: center">AR 8</td>*}
+                        {*<td style="text-align: center">AR 9</td>*}
+                        {*<td style="text-align: center">BG 11</td>*}
+                        {*<td style="text-align: center">AR 8</td>*}
+                        {*<td style="text-align: center">AR 9</td>*}
+                        {*<td style="text-align: center;">BG 11</td>*}
+                        {*<td style="text-align: center;">AR 8</td>*}
+                        {*<td style="text-align: center;">AR 9</td>*}
+                    {*</tr>*}
+                    {*</thead>*}
+                    {*<tbody>*}
+                    {*{$nr = 1}*}
+                    {*{$total_bg_11 = 0}*}
+                    {*{$total_valoare_incasata_bg_11 = 0}*}
+                    {*{$total_valoare_comision_bg_11 = 0}*}
+
+                    {*{$total_ar_8 = 0}*}
+                    {*{$total_valoare_incasata_ar_8  = 0}*}
+                    {*{$total_valoare_comision_ar_8 = 0}*}
+
+                    {*{$total_ar_9 = 0}*}
+                    {*{$total_valoare_incasata_ar_9  = 0}*}
+                    {*{$total_valoare_comision_ar_9 = 0}*}
+
+                    {*{foreach from=$livrari_soferi item=sofer}*}
+                        {*<tr>*}
+                            {*<td style="text-align: center" class="span1">{$nr++}</td>*}
+                            {*<td style="text-align: left"*}
+                                {*class="span3">{$sofer['nume_sofer']}*}
+                            {*</td>*}
+                            {*<td>*}
+                                {*{$sofer['numar']}*}
+                            {*</td>*}
+                            {*<td>{$sofer['nume_traseu']}</td>*}
+                            {*<td style="text-align: center;border-left:double">*}
+                                {*{($sofer['total_produse']['bg_11']['total_bg_11'] !='') ? {$sofer['total_produse']['bg_11']['total_bg_11']} : '-'}*}
+                            {*</td>*}
+                            {*<td style="text-align: center;">*}
+                                {*{($sofer['total_produse']['ar_8']['total_ar_8'] !='') ? {$sofer['total_produse']['ar_8']['total_ar_8']} : '-'}*}
+                            {*</td>*}
+                            {*<td style="text-align: center">*}
+                                {*{($sofer['total_produse']['ar_9']['total_ar_9'] !='') ? {$sofer['total_produse']['ar_9']['total_ar_9']} : '-'}*}
+                            {*</td>*}
+                            {*<td style="text-align: center;border-left:double">*}
+                                {*{($sofer['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? {$sofer['total_produse']['bg_11']['total_bg_11_cu_pret']} : '-'}*}
+                            {*</td>*}
+                            {*<td style="text-align: center">*}
+                                {*{($sofer['total_produse']['ar_8']['total_ar_8_cu_pret'] !='') ? {$sofer['total_produse']['ar_8']['total_ar_8_cu_pret']} : '-'}*}
+                            {*</td>*}
+                            {*<td style="text-align: center;border-right:double">*}
+                                {*{($sofer['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? {$sofer['total_produse']['ar_9']['total_ar_9_cu_pret']} : '-'}*}
+                            {*</td>*}
+                            {*<td style="text-align: center">*}
+                                {*{($sofer['total_produse']['bg_11']['comision'] !='') ? {$sofer['total_produse']['bg_11']['comision']} : '-'}*}
+                            {*</td>*}
+                            {*<td style="text-align: center;">*}
+                                {*{($sofer['total_produse']['ar_8']['comision'] !='') ? {$sofer['total_produse']['ar_8']['comision']} : '-'}*}
+                            {*</td>*}
+                            {*<td style="text-align: center;">*}
+                                {*{($sofer['total_produse']['ar_9']['comision'] !='') ? {$sofer['total_produse']['ar_9']['comision']} : '-'}*}
+                        {*</tr>*}
+                        {*{$total_bg_11 = $total_bg_11 + $sofer['total_produse']['bg_11']['total_bg_11']}*}
+                        {*{$total_ar_8 = $total_ar_8 + $sofer['total_produse']['ar_8']['total_ar_8']}*}
+                        {*{$total_ar_9 = $total_ar_9 + $sofer['total_produse']['ar_9']['total_ar_9']}*}
+
+                        {*{$total_valoare_incasata_bg_11 = $total_valoare_incasata_bg_11 + $sofer['total_produse']['bg_11']['total_bg_11_cu_pret']}*}
+                        {*{$total_valoare_incasata_ar_8 = $total_valoare_incasata_ar_8 + $sofer['total_produse']['ar_8']['total_ar_8_cu_pret']}*}
+                        {*{$total_valoare_incasata_ar_9 = $total_valoare_incasata_ar_9 + $sofer['total_produse']['ar_9']['total_ar_9_cu_pret']}*}
+
+                        {*{$total_valoare_comision_bg_11 = $total_valoare_comision_bg_11 + $sofer['total_produse']['bg_11']['comision']}*}
+                        {*{$total_valoare_comision_ar_8 = $total_valoare_comision_ar_8 + $sofer['total_produse']['ar_8']['comision']}*}
+                        {*{$total_valoare_comision_ar_9 = $total_valoare_comision_ar_9 + $sofer['total_produse']['ar_9']['comision']}*}
+
+
+                    {*{/foreach}*}
+                    {*<tr>*}
+                        {*<th colspan="4" style="text-align: right;">TOTAL:</th>*}
+                        {*<th style="text-align: center;"><abbr*}
+                                    {*title="Total bucati vandute BG 11">{$total_bg_11}</abbr></th>*}
+                        {*<th style="text-align: center;"><abbr title="Total bucati AR 8">{$total_ar_8}</abbr></th>*}
+                        {*<th style="text-align: center;"><abbr*}
+                                    {*title="Total bucati AR 9">{$total_ar_9}</abbr></th>*}
+                        {*<th>*}
+                            {*<abbr title="Total valoare incasare BG 11">{$total_valoare_incasata_bg_11}</abbr>*}
+                        {*</th>*}
+                        {*<th>*}
+                            {*<abbr title="Total valoare incasare AR 8">{$total_valoare_incasata_ar_8}</abbr>*}
+                        {*</th>*}
+                        {*<th>*}
+                            {*<abbr title="Total valoare incasare AR 9">{$total_valoare_incasata_ar_9}</abbr>*}
+                        {*</th>*}
+                        {*<th><abbr title="Total comision BG 11">{$total_valoare_comision_bg_11}</abbr></th>*}
+                        {*<th><abbr title="Total comision AR 8">{$total_valoare_comision_ar_8}</abbr></th>*}
+                        {*<th><abbr*}
+                                    {*title="Total comision AR 9">{$total_valoare_comision_ar_9}</abbr></th>*}
+                    {*</tr>*}
+                    {*</tbody>*}
+                {*</table>*}
+            {*</div>*}
+        {*</div>*}
+    {*</div>*}
+{*</div>*}
