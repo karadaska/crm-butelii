@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-24 13:31:06
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-16 14:09:25
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1614166252,
+      1 => 1615896563,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'id' => 0,
     'print_fisa' => 0,
+    'data' => 0,
+    'newDate' => 0,
     'nr' => 0,
     'client' => 0,
     'realizat' => 0,
@@ -91,12 +93,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <section id="content" class="print">
     <div class="wrapper">
         <input type="button" onclick="setPrint();window.print();return false;" id="print_button" name="print_button"
-               value="Print"/>
+               value="PRINT"/>
         <a href="/completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
 "
            class="ascuns">
             <button type="button" class="btn btn-mini btn-warning ascuns">
-                Inapoi
+                INAPOI
             </button>
         </a>
     </div>
@@ -104,14 +106,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <tr>
             <td style="text-align: left;" class="span3">
                 <h3>
-                    Traseu: <?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['nume_traseu'];?>
+                    TRASEU: <?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['nume_traseu'];?>
 <br/>
-                    Sofer: <?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['nume_sofer'];?>
+                    SOFER: <?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['nume_sofer'];?>
 <br/>
-                    Masina: <?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['numar'];?>
+                    MASINA: <?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['numar'];?>
 <br/>
-                    Data:<?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['data_intrare'];?>
-
+                    <?php $_smarty_tpl->tpl_vars['data'] = new Smarty_variable($_smarty_tpl->tpl_vars['print_fisa']->value['data_intrare'], null, 0);?>
+                    <?php $_smarty_tpl->tpl_vars['newDate'] = new Smarty_variable(date("d-m-Y",strtotime($_smarty_tpl->tpl_vars['data']->value)), null, 0);?>
+                    <span style="font-weight: 900;margin-top: 20px;"> DATA: <?php echo $_smarty_tpl->tpl_vars['newDate']->value;?>
+</span>
                 </h3>
             </td>
         </tr>

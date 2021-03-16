@@ -80,7 +80,7 @@
                     Nr. clienti: {count($print_fisa['clienti'])}<br/>
                     {$data = $print_fisa['data_intrare']}
                     {$newDate = date("d-m-Y", strtotime($data))}
-                    <span style="font-weight: 900;margin-top: 20px;"> Data: {$newDate}</span>
+                    <span style="font-weight: 900;margin-top: 20px;"> DATA: {$newDate}</span>
                 </h5>
             </td>
 

@@ -60,11 +60,11 @@
 <section id="content" class="print">
     <div class="wrapper">
         <input type="button" onclick="setPrint();window.print();return false;" id="print_button" name="print_button"
-               value="Print"/>
+               value="PRINT"/>
         <a href="/completare_fisa_traseu.php?id={$id}"
            class="ascuns">
             <button type="button" class="btn btn-mini btn-warning ascuns">
-                Inapoi
+                INAPOI
             </button>
         </a>
     </div>
@@ -72,10 +72,12 @@
         <tr>
             <td style="text-align: left;" class="span3">
                 <h3>
-                    Traseu: {$print_fisa['nume_traseu']}<br/>
-                    Sofer: {$print_fisa['nume_sofer']}<br/>
-                    Masina: {$print_fisa['numar']}<br/>
-                    Data:{$print_fisa['data_intrare']}
+                    TRASEU: {$print_fisa['nume_traseu']}<br/>
+                    SOFER: {$print_fisa['nume_sofer']}<br/>
+                    MASINA: {$print_fisa['numar']}<br/>
+                    {$data = $print_fisa['data_intrare']}
+                    {$newDate = date("d-m-Y", strtotime($data))}
+                    <span style="font-weight: 900;margin-top: 20px;"> DATA: {$newDate}</span>
                 </h3>
             </td>
         </tr>
