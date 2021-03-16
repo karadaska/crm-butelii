@@ -88,7 +88,7 @@
                                                 <td>{$livrare['nume_sofer']}</td>
                                                 <td style="text-align: center;">{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
-                                                <td></td>
+                                                <td style="text-align: center;">{$livrare['km']['km_traseu']}</td>
                                                 {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                     <td style="text-align: right;">
                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
@@ -101,9 +101,11 @@
                                                     </td>
                                                 {/foreach}
                                             </tr>
+                                            {$grand_total_km = $grand_total_km + $livrare['km']['km_traseu']}
                                         {/foreach}
                                         <tr>
-                                            <th colspan="5" style="text-align: right;"></th>
+                                            <th colspan="4" style="text-align: right;"></th>
+                                            <th style="text-align: center;color: red;">{$grand_total_km}</th>
                                             {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                 <th style="text-align: right;color: red;">{$livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}</th>
                                                 <th style="text-align: right;color: red;">{$livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}</th>

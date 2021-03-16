@@ -41,17 +41,17 @@ $stare_id = 1;
 //$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(298,2433);
 
 //
-//$b = ParcAuto::getRaportLivrariSoferi(22,
-//    array(
-//        'data_start' => $data_start,
-//        'data_stop' => $data_stop
-//    ));
-
-$b = ParcAuto::getRaportLivrariMasini(20,
+$b = ParcAuto::getRaportLivrariSoferi(23,
     array(
         'data_start' => $data_start,
         'data_stop' => $data_stop
     ));
+
+//$b = ParcAuto::getRaportLivrariMasini(20,
+//    array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//    ));
 
 //$b = Produse::getProduseVanduteBySoferId(23, array(
 //        'data_start' => $data_start,
@@ -188,5 +188,5 @@ $b = ParcAuto::getRaportLivrariMasini(20,
 //));
 
 //$b = Stocuri::getFisaGenerataById(362);
-$b = Clienti::getGoaleApelClientiByClientId(2267, 1, 1);
+//$b = Clienti::getGoaleApelClientiByClientId(2267, 1, 1);
 echo json_encode($b);

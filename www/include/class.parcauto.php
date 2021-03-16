@@ -307,6 +307,39 @@ class ParcAuto
 
     }
 
+    public static function getTotalKmByMasinaIdAndTraseuId($masina_id = 0, $traseu_id, $opts = array())
+    {
+        $ret = null;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $km_traseu = "SELECT SUM(a.km_parcursi) as km_traseu
+                                FROM miscari_fise as a
+                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                                WHERE b.masina_id = '" . $masina_id . "'
+                                AND b.traseu_id = '" . $traseu_id . "'
+                                AND a.data_intrare >= '" . $data_start . "'
+                                AND a.data_intrare <= '" . $data_stop . "'
+                                ";
+
+
+        $result = myQuery($km_traseu);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
+
 
     public static function getTotalCantitatiBySoferIdProdusId($sofer_id = 0, $tip_produs_id, $opts = array())
     {
@@ -490,7 +523,7 @@ class ParcAuto
             'trasee' => array()
         );
 
-        $query = "SELECT a.id,masina_id, b.nume as nume_sofer,
+        $query = "SELECT a.id, a.masina_id, b.nume as nume_sofer,
                   c.nume as nume_traseu, d.numar, d.model, a.traseu_id 
                   FROM fise_generate as a
                   LEFT JOIN soferi as b on a.sofer_id = b.id
@@ -518,7 +551,12 @@ class ParcAuto
                     'model' => $item['model'],
                     'nume_sofer' => $item['nume_sofer'],
                     'nume_traseu' => $item['nume_traseu'],
-                    'total_produse' => array()
+                    'total_produse' => array(),
+
+                    'km' => self::getTotalKmByMasinaIdAndTraseuId($item['masina_id'], $item['traseu_id'], array(
+                    'data_start' => $data_start,
+                    'data_stop' => $data_stop
+                ))
                 );
                 foreach ($ret['produse_masina'] as $tip_produs_id => $item_tip_produs) {
                     $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiByMasinaIdAndTraseuId($item['masina_id'], $item['traseu_id'], array(
