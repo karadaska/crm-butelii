@@ -8,10 +8,10 @@
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1>
-                        <i class="icon20 i-menu-6"></i> Raport livrari masini (de verificat cantitatile + print TO DO)
-                        {*<a href="/print_raport_livrari_soferi.php?id={$sofer_id}&data_start={$data_start}&data_stop={$data_stop}">*}
-                            {*<button class="i-print"></button>*}
-                        {*</a>*}
+                        <i class="icon20 i-menu-6"></i> Raport livrari masini
+                        <a href="/print_livrari_masini.php?id={$masina_id}&data_start={$data_start}&data_stop={$data_stop}">
+                            <button class="i-print"></button>
+                        </a>
                     </h1>
                 </div>
             </div>
@@ -65,18 +65,18 @@
                                         <tr>
                                             <th style="text-align: center;" rowspan="2">#</th>
                                             <th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>
-                                            <th style="text-align: center;" rowspan="2">Nr. auto</th>
+                                            <th style="text-align: center;" rowspan="2">NR. AUTO</th>
                                             <th style="text-align: center;" rowspan="2">TRASEU</th>
-                                            <th style="text-align: center;" rowspan="2">Km parcursi</th>
+                                            <th style="text-align: center;" rowspan="2">KM PARCURSI</th>
                                             {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                 <th colspan="3" style="border: double;">{$produse['nume_produs']}</th>
                                             {/foreach}
                                         </tr>
                                         <tr>
                                             {foreach from = $livrari_masini['produse_masina'] item= produse}
-                                                <th>Cantitate</th>
-                                                <th>Valoare</th>
-                                                <th>Comision</th>
+                                                <th>CANTITATE</th>
+                                                <th>VALOARE</th>
+                                                <th>COMISION</th>
                                             {/foreach}
                                         </tr>
                                         </thead>
