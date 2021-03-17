@@ -48,8 +48,8 @@ $b = ParcAuto::getRaportLivrariSoferi(23,
     ));
 
 //$b = Stocuri::getCantitatiProduseClientiByFisaId(188);
-
-//$b = ParcAuto::getRaportLivrariMasini(20,
+//
+//$b = ParcAuto::getRaportLivrariMasini(2,
 //    array(
 //        'data_start' => $data_start,
 //        'data_stop' => $data_stop

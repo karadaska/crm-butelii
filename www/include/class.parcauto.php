@@ -202,7 +202,7 @@ class ParcAuto
         return $ret;
     }
 
-    public static function getTotalCantitatiBySoferIdAndTraseuId($sofer_id, $traseu_id, $opts = array())
+    public static function getTotalCantitatiBySoferIdAndTraseuId($sofer_id, $traseu_id,$masina_id, $opts = array())
     {
         $ret = null;
         $tip_produs_id = isset($opts['tip_produs_id']) ? $opts['tip_produs_id'] : 0;
@@ -222,6 +222,7 @@ class ParcAuto
                                 LEFT JOIN fise_generate as b on a.fisa_id = b.id
                                 WHERE b.sofer_id = '" . $sofer_id . "'                                
                                 AND b.traseu_id = '" . $traseu_id . "'                                
+                                AND b.masina_id = '" . $masina_id . "'                                
                                 AND a.data_intrare >= '" . $data_start . "'
                                 AND a.data_intrare <= '" . $data_stop . "'
                                 AND a.sters = 0";
@@ -275,7 +276,7 @@ class ParcAuto
 
     }
 
-    public static function getTotalKmBySoferIdAndTraseuId($sofer_id = 0, $traseu_id, $opts = array())
+    public static function getTotalKmBySoferIdAndTraseuId($sofer_id = 0, $traseu_id, $masina_id, $opts = array())
     {
         $ret = null;
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
@@ -294,8 +295,10 @@ class ParcAuto
                                 LEFT JOIN fise_generate as b on a.fisa_id = b.id
                                 WHERE b.sofer_id = '" . $sofer_id . "'
                                 AND b.traseu_id = '" . $traseu_id . "'
+                                AND b.masina_id = '" . $masina_id . "'
                                 AND a.data_intrare >= '" . $data_start . "'
                                 AND a.data_intrare <= '" . $data_stop . "'
+                                AND b.sters = 0
                                 ";
 
 
@@ -328,6 +331,7 @@ class ParcAuto
                                 AND b.traseu_id = '" . $traseu_id . "'
                                 AND a.data_intrare >= '" . $data_start . "'
                                 AND a.data_intrare <= '" . $data_stop . "'
+                                AND b.sters = 0
                                 ";
 
 
@@ -496,7 +500,7 @@ class ParcAuto
             'trasee' => array()
         );
 
-        $query = "SELECT a.id, a.depozit_id,a.traseu_id, a.sofer_id, b.nume as nume_sofer, c.nume as nume_traseu, d.numar 
+        $query = "SELECT a.id, a.depozit_id, a.traseu_id, a.masina_id, a.sofer_id, b.nume as nume_sofer, c.nume as nume_traseu, d.numar 
                   FROM fise_generate as a
                   LEFT JOIN soferi as b on a.sofer_id = b.id
                   LEFT JOIN trasee as c on a.traseu_id = c.id
@@ -524,13 +528,13 @@ class ParcAuto
                     'numar' => $item['numar'],
                     'total_produse' => array(),
 
-                    'km' => self::getTotalKmBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
+                    'km' => self::getTotalKmBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], $item['masina_id'], array(
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ))
                 );
                 foreach ($ret['produse_sofer'] as $tip_produs_id => $item_tip_produs) {
-                    $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], array(
+                    $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'],$item['masina_id'], array(
                         'tip_produs_id' => $tip_produs_id,
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
@@ -573,7 +577,7 @@ class ParcAuto
                   AND a.data_intrare >= '" . $data_start . "'
                   AND a.data_intrare <= '" . $data_stop . "'
                   AND a.sters = 0
-                  GROUP BY a.traseu_id, a.sofer_id
+                  GROUP BY a.traseu_id
                   ORDER BY c.nume ASC             
                     ";
 
