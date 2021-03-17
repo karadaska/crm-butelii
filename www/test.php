@@ -49,7 +49,13 @@ $data_stop = '2021-03-31';
 
 //$b = Stocuri::getCantitatiProduseClientiByFisaId(188);
 //
-$b = ParcAuto::getRaportLivrariMasini(2,
+//$b = ParcAuto::getRaportLivrariMasini(2,
+//    array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//    ));
+
+$b = ParcAuto::getRaportLivrariTrasee(1,
     array(
         'data_start' => $data_start,
         'data_stop' => $data_stop
