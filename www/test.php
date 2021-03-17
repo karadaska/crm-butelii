@@ -41,19 +41,19 @@ $data_stop = '2021-03-31';
 //$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(298,2433);
 
 //
-$b = ParcAuto::getRaportLivrariSoferi(23,
-    array(
-        'data_start' => $data_start,
-        'data_stop' => $data_stop
-    ));
-
-//$b = Stocuri::getCantitatiProduseClientiByFisaId(188);
-//
-//$b = ParcAuto::getRaportLivrariMasini(2,
+//$b = ParcAuto::getRaportLivrariSoferi(23,
 //    array(
 //        'data_start' => $data_start,
 //        'data_stop' => $data_stop
 //    ));
+
+//$b = Stocuri::getCantitatiProduseClientiByFisaId(188);
+//
+$b = ParcAuto::getRaportLivrariMasini(2,
+    array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+    ));
 
 //$b = Produse::getProduseVanduteBySoferId(23, array(
 //        'data_start' => $data_start,
