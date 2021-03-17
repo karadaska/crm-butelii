@@ -143,6 +143,12 @@
                                 <span class="txt">Raport livrari masini</span>
                             </a>
                         </li>
+                        <li {if $menu_curent==9}class="current"{/if}>
+                            <a href="/livrari_trasee.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Raport livrari trasee</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li {if $menu_curent==1}class="current"{/if}>

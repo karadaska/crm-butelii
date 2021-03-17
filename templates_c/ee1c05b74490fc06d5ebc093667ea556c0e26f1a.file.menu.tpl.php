@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-04 10:01:42
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 00:27:01
          compiled from "/var/www/html/fofoweb/www/templates/menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9616245660227ba4d27c14-20917452%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee1c05b74490fc06d5ebc093667ea556c0e26f1a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/menu.tpl',
-      1 => 1614844589,
+      1 => 1616020019,
       2 => 'file',
     ),
   ),
@@ -166,6 +166,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <a href="/livrari_masini.php">
                                 <span class="icon"><i class="icon20 i-stack-list"></i></span>
                                 <span class="txt">Raport livrari masini</span>
+                            </a>
+                        </li>
+                        <li <?php if ($_smarty_tpl->tpl_vars['menu_curent']->value==9) {?>class="current"<?php }?>>
+                            <a href="/livrari_trasee.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Raport livrari trasee</span>
                             </a>
                         </li>
                     </ul>
