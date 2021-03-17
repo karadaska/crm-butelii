@@ -41,11 +41,11 @@ $data_stop = '2021-03-31';
 //$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(298,2433);
 
 //
-//$b = ParcAuto::getRaportLivrariSoferi(23,
-//    array(
-//        'data_start' => $data_start,
-//        'data_stop' => $data_stop
-//    ));
+$b = ParcAuto::getRaportLivrariSoferi(23,
+    array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+    ));
 
 //$b = Stocuri::getCantitatiProduseClientiByFisaId(188);
 
@@ -197,11 +197,11 @@ $data_stop = '2021-03-31';
 //        'data_stop' => $data_stop
 //    ));
 
-$b = ParcAuto::getTotalKmByTraseuId(array(
-    'data_start' => $data_start,
-    'data_stop' => $data_stop,
-    'traseu_id' => 1,
-    'sofer_id' => 23,
-    'masina_id' => 2
-));
+//$b = ParcAuto::getTotalKmByTraseuId(array(
+//    'data_start' => $data_start,
+//    'data_stop' => $data_stop,
+//    'traseu_id' => 1,
+//    'sofer_id' => 23,
+//    'masina_id' => 2
+//));
 echo json_encode($b);

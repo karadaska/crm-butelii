@@ -505,7 +505,7 @@ class ParcAuto
                   AND a.data_intrare >= '" . $data_start . "'
                   AND a.data_intrare <= '" . $data_stop . "'
                   AND a.sters = 0
-                  GROUP BY a.traseu_id
+                  GROUP BY a.traseu_id, a.masina_id
                   ORDER BY c.nume ASC             
                     ";
 
