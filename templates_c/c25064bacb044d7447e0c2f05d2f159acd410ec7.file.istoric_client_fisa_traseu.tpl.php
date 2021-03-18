@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 13:36:57
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 22:41:37
          compiled from "/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18422813406022e19d8704d1-73136330%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c25064bacb044d7447e0c2f05d2f159acd410ec7' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl',
-      1 => 1616067415,
+      1 => 1616100096,
       2 => 'file',
     ),
   ),
@@ -159,7 +159,8 @@ $_smarty_tpl->tpl_vars['valoare_comision_sofer']->_loop = true;
                                                 <?php echo $_smarty_tpl->tpl_vars['cantitate']->value['observatie']['nume_observatie']!='' ? $_smarty_tpl->tpl_vars['cantitate']->value['observatie']['nume_observatie'] : '-';?>
 
                                             </td>
-                                            <td style="text-align: center;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['observatie']['observatie_extra']!='' ? $_smarty_tpl->tpl_vars['cantitate']->value['observatie']['observatie_extra'] : '-';?>
+                                            <td style="text-align: center;vertical-align: middle;">
+                                                <?php echo $_smarty_tpl->tpl_vars['cantitate']->value['observatie']['observatie_extra']!='' ? $_smarty_tpl->tpl_vars['cantitate']->value['observatie']['observatie_extra'] : '-';?>
 
                                             </td>
                                             <td style="text-align: center;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['data_intrare'];?>

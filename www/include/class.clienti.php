@@ -65,12 +65,13 @@ class Clienti
     {
         $ret = array();
         $query = "SELECT
-                  b.nume AS nume_observatie, d.nume as observatie_extra	
+                  b.nume AS nume_observatie, e.nume as observatie_extra	
                   FROM
                   observatii_clienti_fisa_traseu AS a
                   LEFT JOIN observatii AS b ON a.observatie_id = b.id
                   LEFT JOIN observatii_secundare_fisa AS c ON a.observatie_id = c.parent_obs
                   LEFT JOIN observatii AS d ON c.second_obs = d.id 
+                  LEFT JOIN observatii AS e ON a.second_obs = e.id
                   WHERE a.client_id = '" . $client_id . "' 
                   AND a.fisa_id = '" . $fisa_id . "' 
                   ";
