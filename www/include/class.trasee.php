@@ -6,7 +6,7 @@ class Trasee
     public static function getObservatieDinFisaTraseuByClientIdAndFisaId($client_id, $fisa_id)
     {
         $ret = array();
-        $query = "SELECT a.observatie_id, b.nume as nume_observatie
+        $query = "SELECT a.observatie_id,a.second_obs, b.nume as nume_observatie
                   FROM observatii_clienti_fisa_traseu as a
                   LEFT JOIN observatii as b on a.observatie_id = b.id  
                   WHERE a.client_id = '" . $client_id . "'

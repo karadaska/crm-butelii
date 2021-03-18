@@ -21,7 +21,7 @@
                                                 <option value={$depozit['id']} {if $depozit['id'] == $depozit_id} selected="selected"{/if}>{$depozit['nume']}</option>
                                             {/foreach}
                                         </select>
-                                        <select name="traseu_id" style="width: 150px;"
+                                        <select name="traseu_id" style="width: 180px;"
                                                 data-schimba="2">
                                             <option value="0">-Alege traseu-</option>
                                             {foreach from=$lista_trasee item=traseu}
