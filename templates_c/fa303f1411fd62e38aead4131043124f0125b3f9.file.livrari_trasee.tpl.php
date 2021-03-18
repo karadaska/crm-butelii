@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 00:32:22
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 10:47:20
          compiled from "/var/www/html/fofoweb/www/templates/livrari_trasee.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1461625418605282379e3659-26311985%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa303f1411fd62e38aead4131043124f0125b3f9' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_trasee.tpl',
-      1 => 1616020339,
+      1 => 1616057237,
       2 => 'file',
     ),
   ),
@@ -49,7 +49,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <div id="heading" class="page-header">
                     <h1>
                         <i class="icon20 i-menu-6"></i> Raport livrari trasee
-                        <a target="_blank" href="/print_livrari_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
+                        <a target="_blank" href="/print_livrari_trasee.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
 &data_start=<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 &data_stop=<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
 ">
@@ -156,7 +156,7 @@ $_smarty_tpl->tpl_vars['livrare']->_loop = true;
 </td>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['livrare']->value['numar'];?>
 </td>
-                                                <td><?php echo $_smarty_tpl->tpl_vars['livrare']->value['nume_traseu'];?>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['livrare']->value['nume_traseu'];?>
 </td>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['livrare']->value['km']['km_traseu'];?>
 </td>
@@ -182,7 +182,8 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                             <?php $_smarty_tpl->tpl_vars['grand_total_km'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_total_km']->value+$_smarty_tpl->tpl_vars['livrare']->value['km']['km_traseu'], null, 0);?>
                                         <?php } ?>
                                         <tr>
-                                            <th colspan="4" style="text-align: right;"></th>
+                                            <th colspan="3" style="text-align: right;"></th>
+                                            <th style="text-align: right;">TOTAL:</th>
                                             <th style="text-align: center;color: red;"><?php echo $_smarty_tpl->tpl_vars['grand_total_km']->value;?>
 </th>
                                             <?php  $_smarty_tpl->tpl_vars['produse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produse']->_loop = false;

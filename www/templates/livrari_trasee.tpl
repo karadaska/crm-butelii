@@ -9,7 +9,7 @@
                 <div id="heading" class="page-header">
                     <h1>
                         <i class="icon20 i-menu-6"></i> Raport livrari trasee
-                        <a target="_blank" href="/print_livrari_traseu.php?id={$traseu_id}&data_start={$data_start}&data_stop={$data_stop}">
+                        <a target="_blank" href="/print_livrari_trasee.php?id={$traseu_id}&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
                     </h1>
@@ -87,7 +87,7 @@
                                                 <td style="text-align: center;" class="span1">{$nr++}</td>
                                                 <td>{$livrare['nume_sofer']}</td>
                                                 <td style="text-align: center;">{$livrare['numar']}</td>
-                                                <td>{$livrare['nume_traseu']}</td>
+                                                <td style="text-align: center;">{$livrare['nume_traseu']}</td>
                                                 <td style="text-align: center;">{$livrare['km']['km_traseu']}</td>
                                                 {foreach from = $livrari_trasee['produse_traseu'] item= produse}
                                                     <td style="text-align: right;">
@@ -104,7 +104,8 @@
                                             {$grand_total_km = $grand_total_km + $livrare['km']['km_traseu']}
                                         {/foreach}
                                         <tr>
-                                            <th colspan="4" style="text-align: right;"></th>
+                                            <th colspan="3" style="text-align: right;"></th>
+                                            <th style="text-align: right;">TOTAL:</th>
                                             <th style="text-align: center;color: red;">{$grand_total_km}</th>
                                             {foreach from = $livrari_trasee['produse_traseu'] item= produse}
                                                 <th style="text-align: right;color: red;">{$livrari_trasee['grand'][$produse['tip_produs_id']]['cantitate']}</th>

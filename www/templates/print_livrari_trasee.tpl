@@ -61,7 +61,7 @@
     <div class="wrapper">
         <input type="button" onclick="setPrint();window.print();return false;" id="print_button" name="print_button"
                value="PRINT"/>
-        <a href="/livrari_masini.php?masina_id={$id}&data_start={$data_start}&data_stop={$data_stop}"
+        <a href="/livrari_trasee.php?traseu_id={$id}&data_start={$data_start}&data_stop={$data_stop}"
            class="ascuns">
             <button type="button" class="btn btn-mini btn-warning ascuns">
                 INAPOI
@@ -74,7 +74,7 @@
                 {$newdata_start = date("d-m-Y", strtotime($data_start))}
                 {$newdata_stop = date("d-m-Y", strtotime($data_stop))}
                 <h3 style="font-weight: normal;">
-                    RAPORT LIVRARI MASINI: {strtoupper($numar['numar'])} <br/>
+                    RAPORT LIVRARE TRASEU: {strtoupper($traseu_id['nume'])} <br/>
                     PERIOADA: {$newdata_start} / {$newdata_stop}
                 </h3>
             </td>
@@ -92,7 +92,7 @@
                             <td style="text-align: center;" rowspan="2">NR. AUTO</td>
                             <td style="text-align: center;" rowspan="2">TRASEU</td>
                             <td style="text-align: center;" rowspan="2">KM PARCURSI</td>
-                            {foreach from = $livrari_masini['produse_masina'] item= produse}
+                            {foreach from = $livrari_trasee['produse_traseu'] item= produse}
                                 <td colspan="2" style="text-align: center;">{$produse['nume_produs']}</td>
                             {/foreach}
                         </tr>
@@ -106,14 +106,14 @@
                         </thead>
                         <tbody>
                         {$nr = 1}
-                        {foreach from = $livrari_masini['trasee'] item= livrare}
+                        {foreach from = $livrari_trasee['trasee'] item= livrare}
                             <tr>
                                 <td style="text-align: center;" class="span1">{$nr++}</td>
                                 <td>{$livrare['nume_sofer']}</td>
                                 <td style="text-align: center;">{$livrare['numar']}</td>
                                 <td>{$livrare['nume_traseu']}</td>
                                 <td style="text-align: center;">{$livrare['km']['km_traseu']}</td>
-                                {foreach from = $livrari_masini['produse_masina'] item= produse}
+                                {foreach from = $livrari_trasee['produse_traseu'] item= produse}
                                     <td style="text-align: right;">
                                         {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
                                     </td>
@@ -131,9 +131,9 @@
                             <td colspan="3" style="text-align: right;"></td>
                             <td style="text-align: right;">TOTAL:</td>
                             <td style="text-align: center;">{$grand_total_km}</td>
-                            {foreach from = $livrari_masini['produse_masina'] item= produse}
-                                <td style="text-align: right;">{$livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}</td>
-                                <td style="text-align: right;">{$livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}</td>
+                            {foreach from = $livrari_trasee['produse_traseu'] item= produse}
+                                <td style="text-align: right;">{$livrari_trasee['grand'][$produse['tip_produs_id']]['cantitate']}</td>
+                                <td style="text-align: right;">{$livrari_trasee['grand'][$produse['tip_produs_id']]['valoare']}</td>
                                 {*<td style="text-align: right;">{$livrari_masini['grand'][$produse['tip_produs_id']]['comision']}</td>*}
                             {/foreach}
                         </tr>
