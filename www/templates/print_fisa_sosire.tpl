@@ -70,7 +70,7 @@
     </div>
     <table style="width: 1800px;">
         <tr>
-            <td style="text-align: left;" class="span3">
+            <td style="text-align: left;font-weight: normal;" class="span3">
                 <h3>
                     TRASEU: {$print_fisa['nume_traseu']}<br/>
                     SOFER: {$print_fisa['nume_sofer']}<br/>
@@ -97,9 +97,9 @@
                 <td>
                     <table border="1" class="print" style="width: 100%">
                         <tr>
-                            <td style="text-align: center;width: 150px;">Produs</td>
-                            <td style="text-align: center;">Pline</td>
-                            <td style="text-align: center;">Defecte</td>
+                            <td style="text-align: center;width: 150px;">PRODUS</td>
+                            <td style="text-align: center;">VANDUTE</td>
+                            <td style="text-align: center;">DEFECTE</td>
                         </tr>
                         {foreach from=$client['realizat'] item= realizat}
                             <tr>
