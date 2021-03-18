@@ -71,9 +71,12 @@
     <table style="width: 1800px;">
         <tr>
             <td style="text-align: left;" class="span3">
+                {$newdata_start = date("d-m-Y", strtotime($data_start))}
+                {$newdata_stop = date("d-m-Y", strtotime($data_stop))}
+
                 <h3>
                     RAPORT LIVRARE SOFER: {strtoupper($nume_sofer['nume'])} <br/>
-                    PERIOADA: {$data_start} / {$data_stop}
+                    PERIOADA: {$newdata_start} / {$newdata_stop}
                 </h3>
             </td>
         </tr>
@@ -90,7 +93,7 @@
                             <tr>
                                 <td style="text-align: center;" rowspan="2">#</td>
                                 <td style="text-align: left;" rowspan="2">NUME SI PRENUME</td>
-                                <td style="text-align: center;" rowspan="2">NR. ANTO</td>
+                                <td style="text-align: center;" rowspan="2">NR. AUTO</td>
                                 <td style="text-align: center;" rowspan="2">TRASEU</td>
                                 <td style="text-align: center;" rowspan="2">KM PARCURSI</td>
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
