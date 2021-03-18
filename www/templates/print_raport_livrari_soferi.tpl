@@ -94,14 +94,14 @@
                                 <td style="text-align: center;" rowspan="2">TRASEU</td>
                                 <td style="text-align: center;" rowspan="2">KM PARCURSI</td>
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
-                                    <td colspan="3" style="border: double;">{$produse['nume_produs']}</td>
+                                    <td colspan="2" style="text-align: center;">{$produse['nume_produs']}</td>
                                 {/foreach}
                             </tr>
                             <tr>
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                     <td>CANTITATE</td>
                                     <td>VALOARE</td>
-                                    <td>COMISION</td>
+                                    {*<td>COMISION</td>*}
                                 {/foreach}
                             </tr>
                             </thead>
@@ -124,9 +124,9 @@
                                         <td style="text-align: right;">
                                             {($livrare['total_produse'][$produse['tip_produs_id']]['valoare'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['valoare'] : '-'}
                                         </td>
-                                        <td style="text-align: right;">
-                                            {($livrare['total_produse'][$produse['tip_produs_id']]['comision'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['comision'] : '-'}
-                                        </td>
+                                        {*<td style="text-align: right;">*}
+                                            {*{($livrare['total_produse'][$produse['tip_produs_id']]['comision'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['comision'] : '-'}*}
+                                        {*</td>*}
                                     {/foreach}
                                 </tr>
                                 {$grand_total_km = $grand_total_km + $livrare['km']['km_traseu']}
@@ -137,7 +137,7 @@
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                     <td style="text-align: right;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['cantitate']}</td>
                                     <td style="text-align: right;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['valoare']}</td>
-                                    <td style="text-align: right;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['comision']}</td>
+                                    {*<td style="text-align: right;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['comision']}</td>*}
                                 {/foreach}
                             </tr>
                             </tbody>
