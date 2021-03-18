@@ -224,7 +224,7 @@ class Clienti
                   LEFT JOIN fise_generate as e on a.fisa_id = e.id
                   LEFT JOIN soferi as f on e.sofer_id = f.id
                   LEFT JOIN masini as g on e.masina_id = g.id                     
-                  LEFT JOIN observatii as i on a.second_obs = c.id               
+                  LEFT JOIN observatii as i on a.second_obs = i.id               
                   WHERE a.data >= ('" . $data_start . "')
                   AND a.data <= ('" . $data_stop . "')
                   ";
