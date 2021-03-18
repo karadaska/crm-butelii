@@ -88,13 +88,13 @@
                         <table cellpadding="0" cellspacing="0" border="1">
                             <thead>
                             <tr>
-                                <th style="text-align: center;" rowspan="2">#</th>
-                                <th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>
-                                <th style="text-align: center;" rowspan="2">NR. ANTO</th>
-                                <th style="text-align: center;" rowspan="2">TRASEU</th>
-                                <th style="text-align: center;" rowspan="2">KM PARCURSI</th>
+                                <td style="text-align: center;" rowspan="2">#</td>
+                                <td style="text-align: left;" rowspan="2">NUME SI PRENUME</td>
+                                <td style="text-align: center;" rowspan="2">NR. ANTO</td>
+                                <td style="text-align: center;" rowspan="2">TRASEU</td>
+                                <td style="text-align: center;" rowspan="2">KM PARCURSI</td>
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
-                                    <th colspan="3" style="border: double;">{$produse['nume_produs']}</th>
+                                    <td colspan="3" style="border: double;">{$produse['nume_produs']}</td>
                                 {/foreach}
                             </tr>
                             <tr>
