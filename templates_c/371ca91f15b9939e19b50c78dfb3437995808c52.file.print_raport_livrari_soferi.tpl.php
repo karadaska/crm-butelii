@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 10:21:11
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 10:22:49
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_soferi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8904266056037a5fd98eb05-27757984%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '371ca91f15b9939e19b50c78dfb3437995808c52' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_soferi.tpl',
-      1 => 1616055668,
+      1 => 1616055755,
       2 => 'file',
     ),
   ),
@@ -111,8 +111,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <td style="text-align: left;" class="span3">
                 <?php $_smarty_tpl->tpl_vars['newdata_start'] = new Smarty_variable(date("d-m-Y",strtotime($_smarty_tpl->tpl_vars['data_start']->value)), null, 0);?>
                 <?php $_smarty_tpl->tpl_vars['newdata_stop'] = new Smarty_variable(date("d-m-Y",strtotime($_smarty_tpl->tpl_vars['data_stop']->value)), null, 0);?>
-
-                <h3>
+                <h3 style="font-weight: normal;">
                     RAPORT LIVRARE SOFER: <?php echo strtoupper($_smarty_tpl->tpl_vars['nume_sofer']->value['nume']);?>
  <br/>
                     PERIOADA: <?php echo $_smarty_tpl->tpl_vars['newdata_start']->value;?>

@@ -73,7 +73,7 @@
             <td style="text-align: left;" class="span3">
                 {$newdata_start = date("d-m-Y", strtotime($data_start))}
                 {$newdata_stop = date("d-m-Y", strtotime($data_stop))}
-                <h3>
+                <h3 style="font-weight: normal;">
                     RAPORT LIVRARI MASINI: {strtoupper($numar['numar'])} <br/>
                     PERIOADA: {$newdata_start} / {$newdata_stop}
                 </h3>

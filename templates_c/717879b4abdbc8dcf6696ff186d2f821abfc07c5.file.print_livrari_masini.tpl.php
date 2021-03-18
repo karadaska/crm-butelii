@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 10:05:56
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 10:22:25
          compiled from "/var/www/html/fofoweb/www/templates/print_livrari_masini.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3206910160506f8a7d4a93-57642739%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '717879b4abdbc8dcf6696ff186d2f821abfc07c5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_livrari_masini.tpl',
-      1 => 1616054755,
+      1 => 1616055743,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'data_start' => 0,
     'data_stop' => 0,
     'numar' => 0,
+    'newdata_start' => 0,
+    'newdata_stop' => 0,
     'livrari_masini' => 0,
     'produse' => 0,
     'nr' => 0,
@@ -107,11 +109,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <table style="width: 1800px;">
         <tr>
             <td style="text-align: left;" class="span3">
-                <h3>
+                <?php $_smarty_tpl->tpl_vars['newdata_start'] = new Smarty_variable(date("d-m-Y",strtotime($_smarty_tpl->tpl_vars['data_start']->value)), null, 0);?>
+                <?php $_smarty_tpl->tpl_vars['newdata_stop'] = new Smarty_variable(date("d-m-Y",strtotime($_smarty_tpl->tpl_vars['data_stop']->value)), null, 0);?>
+                <h3 style="font-weight: normal;">
                     RAPORT LIVRARI MASINI: <?php echo strtoupper($_smarty_tpl->tpl_vars['numar']->value['numar']);?>
  <br/>
-                    PERIOADA: <?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
- / <?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
+                    PERIOADA: <?php echo $_smarty_tpl->tpl_vars['newdata_start']->value;?>
+ / <?php echo $_smarty_tpl->tpl_vars['newdata_stop']->value;?>
 
                 </h3>
             </td>
