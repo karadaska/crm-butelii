@@ -50,7 +50,7 @@
                                             <td style="text-align: center;vertical-align: middle;">{$cantitate['nume_traseu']}</td>
                                             <td style="text-align: center;vertical-align: middle;">{$cantitate['numar']}</td>
                                             <td style="text-align: left;vertical-align: middle;">{$cantitate['nume_sofer']}</td>
-                                            <td>
+                                            <td class="span4">
                                                 {foreach from=$cantitate['produse'] item = x}
                                                         {$x['nume_produs']} => [Vandute: {$x['vandute']}, Defecte: {$x['defecte']}]
                                                         <br/>

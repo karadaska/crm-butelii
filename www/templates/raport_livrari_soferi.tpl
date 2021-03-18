@@ -107,7 +107,7 @@
                                         {/foreach}
                                         <tr>
                                             <th colspan="3" style="text-align: right;"></th>
-                                            <td style="text-align: right;">TOTAL:</td>
+                                            <th style="text-align: right;">TOTAL:</th>
                                             <th style="text-align: right;color: red;vertical-align: middle;">{$grand_total_km}</th>
                                             {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                                 <th style="text-align: right;color: red;vertical-align: middle;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['cantitate']}</th>

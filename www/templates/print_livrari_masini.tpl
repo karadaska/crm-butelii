@@ -73,7 +73,7 @@
             <td style="text-align: left;" class="span3">
                 {$newdata_start = date("d-m-Y", strtotime($data_start))}
                 {$newdata_stop = date("d-m-Y", strtotime($data_stop))}
-                <h3 style="font-weight: normal;">
+                <h3 style="font-weight: 600;">
                     RAPORT LIVRARE MASINA: {strtoupper($numar['numar'])} <br/>
                     PERIOADA: {$newdata_start} / {$newdata_stop}
                 </h3>
@@ -87,19 +87,19 @@
                     <table cellpadding="0" cellspacing="0" border="1">
                         <thead>
                         <tr>
-                            <td style="text-align: center;" rowspan="2">#</td>
-                            <td style="text-align: left;" rowspan="2">NUME SI PRENUME</td>
-                            <td style="text-align: center;" rowspan="2">NR. AUTO</td>
-                            <td style="text-align: center;" rowspan="2">TRASEU</td>
-                            <td style="text-align: center;" rowspan="2">KM PARCURSI</td>
+                            <td style="text-align: center;font-weight: 600" rowspan="2">#</td>
+                            <td style="text-align: left;font-weight: 600" rowspan="2">NUME SI PRENUME</td>
+                            <td style="text-align: center;font-weight: 600" rowspan="2">NR. AUTO</td>
+                            <td style="text-align: center;font-weight: 600" rowspan="2">TRASEU</td>
+                            <td style="text-align: center;font-weight: 600" rowspan="2">KM PARCURSI</td>
                             {foreach from = $livrari_masini['produse_masina'] item= produse}
-                                <td colspan="2" style="text-align: center;">{$produse['nume_produs']}</td>
+                                <td colspan="2" style="text-align: center;font-weight: 600">{$produse['nume_produs']}</td>
                             {/foreach}
                         </tr>
                         <tr>
                             {foreach from = $livrari_masini['produse_masina'] item= produse}
-                                <td>CANTITATE</td>
-                                <td>VALOARE</td>
+                                <td style="text-align: center;">CANTITATE</td>
+                                <td style="text-align: center;">VALOARE</td>
                                 {*<td>COMISION</td>*}
                             {/foreach}
                         </tr>
@@ -129,11 +129,11 @@
                         {/foreach}
                         <tr>
                             <td colspan="3" style="text-align: right;"></td>
-                            <td style="text-align: right;">TOTAL:</td>
-                            <td style="text-align: center;">{$grand_total_km}</td>
+                            <td style="text-align: right;font-weight: 900;">TOTAL:</td>
+                            <td style="text-align: center;font-weight: 900;">{$grand_total_km}</td>
                             {foreach from = $livrari_masini['produse_masina'] item= produse}
-                                <td style="text-align: right;">{$livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}</td>
-                                <td style="text-align: right;">{$livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}</td>
+                                <td style="text-align: right;font-weight: 900;">{$livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}</td>
+                                <td style="text-align: right;font-weight: 900;">{$livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}</td>
                                 {*<td style="text-align: right;">{$livrari_masini['grand'][$produse['tip_produs_id']]['comision']}</td>*}
                             {/foreach}
                         </tr>

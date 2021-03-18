@@ -9,7 +9,8 @@
                 <div id="heading" class="page-header">
                     <h1>
                         <i class="icon20 i-menu-6"></i> Raport livrari masini
-                        <a target="_blank" href="/print_livrari_masini.php?id={$masina_id}&data_start={$data_start}&data_stop={$data_stop}">
+                        <a target="_blank"
+                           href="/print_livrari_masini.php?id={$masina_id}&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
                     </h1>
@@ -97,7 +98,7 @@
                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['valoare'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['valoare'] : '-'}
                                                     </td>
                                                     {*<td style="text-align: right;">*}
-                                                        {*{($livrare['total_produse'][$produse['tip_produs_id']]['comision'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['comision'] : '-'}*}
+                                                    {*{($livrare['total_produse'][$produse['tip_produs_id']]['comision'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['comision'] : '-'}*}
                                                     {*</td>*}
                                                 {/foreach}
                                             </tr>
@@ -105,7 +106,7 @@
                                         {/foreach}
                                         <tr>
                                             <th colspan="3" style="text-align: right;"></th>
-                                            <td style="text-align: right;">TOTAL:</td>
+                                            <th style="text-align: right;">TOTAL:</th>
                                             <th style="text-align: center;color: red;vertical-align: middle;">{$grand_total_km}</th>
                                             {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                 <th style="text-align: right;color: red;vertical-align: middle;">{$livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}</th>

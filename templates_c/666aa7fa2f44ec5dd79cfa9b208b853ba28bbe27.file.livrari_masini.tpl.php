@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 10:40:19
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 12:36:12
          compiled from "/var/www/html/fofoweb/www/templates/livrari_masini.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11988036646040940f14d4e2-58340311%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '666aa7fa2f44ec5dd79cfa9b208b853ba28bbe27' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_masini.tpl',
-      1 => 1616056816,
+      1 => 1616063770,
       2 => 'file',
     ),
   ),
@@ -47,7 +47,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <div id="heading" class="page-header">
                     <h1>
                         <i class="icon20 i-menu-6"></i> Raport livrari masini
-                        <a target="_blank" href="/print_livrari_masini.php?id=<?php echo $_smarty_tpl->tpl_vars['masina_id']->value;?>
+                        <a target="_blank"
+                           href="/print_livrari_masini.php?id=<?php echo $_smarty_tpl->tpl_vars['masina_id']->value;?>
 &data_start=<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 &data_stop=<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
 ">
@@ -172,7 +173,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
 
                                                     </td>
                                                     
-                                                        
+                                                    
                                                     
                                                 <?php } ?>
                                             </tr>
@@ -180,7 +181,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                         <?php } ?>
                                         <tr>
                                             <th colspan="3" style="text-align: right;"></th>
-                                            <td style="text-align: right;">TOTAL:</td>
+                                            <th style="text-align: right;">TOTAL:</th>
                                             <th style="text-align: center;color: red;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['grand_total_km']->value;?>
 </th>
                                             <?php  $_smarty_tpl->tpl_vars['produse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produse']->_loop = false;

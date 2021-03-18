@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 12:28:31
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 13:36:57
          compiled from "/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:18422813406022e19d8704d1-73136330%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c25064bacb044d7447e0c2f05d2f159acd410ec7' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/istoric_client_fisa_traseu.tpl',
-      1 => 1615372109,
+      1 => 1616067415,
       2 => 'file',
     ),
   ),
@@ -96,7 +96,7 @@ $_smarty_tpl->tpl_vars['cantitate']->_loop = true;
 </td>
                                             <td style="text-align: left;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['nume_sofer'];?>
 </td>
-                                            <td>
+                                            <td class="span4">
                                                 <?php  $_smarty_tpl->tpl_vars['x'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['x']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['cantitate']->value['produse']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['x']->key => $_smarty_tpl->tpl_vars['x']->value) {

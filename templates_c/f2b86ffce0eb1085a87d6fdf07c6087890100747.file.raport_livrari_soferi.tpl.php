@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 10:38:45
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 13:02:32
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:181507985860227fc6e3c330-67745625%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f2b86ffce0eb1085a87d6fdf07c6087890100747' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl',
-      1 => 1616056723,
+      1 => 1616065349,
       2 => 'file',
     ),
   ),
@@ -182,7 +182,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                         <?php } ?>
                                         <tr>
                                             <th colspan="3" style="text-align: right;"></th>
-                                            <td style="text-align: right;">TOTAL:</td>
+                                            <th style="text-align: right;">TOTAL:</th>
                                             <th style="text-align: right;color: red;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['grand_total_km']->value;?>
 </th>
                                             <?php  $_smarty_tpl->tpl_vars['produse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produse']->_loop = false;
