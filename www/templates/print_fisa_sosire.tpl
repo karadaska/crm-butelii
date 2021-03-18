@@ -82,12 +82,13 @@
             </td>
         </tr>
     </table>
-    <table border="1" class="print" style="width: 1800px;">
+    <table border="1" class="print" style="width: 100%">
         <tr>
             <td>#</td>
             <td>CLIENT</td>
             <td style="text-align: center;">PRODUS</td>
             <td style="text-align: center;">OBSERVATII</td>
+            <td style="text-align: center;">OBSERVATII EXTRA</td>
         </tr>
         {$nr = 1}
         {foreach from=$print_fisa['clienti'] item="client"}
@@ -108,12 +109,15 @@
                                 <td style="text-align: right;">{$realizat['defecte']}</td>
                             </tr>
                         {/foreach}
-
                     </table>
                 </td>
                 <td>
                     {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
                    {$client_observatie['nume_observatie']}
+                </td>
+                <td>
+                    {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
+                    {$client_observatie['observatie_extra']}
                 </td>
             </tr>
         {/foreach}
