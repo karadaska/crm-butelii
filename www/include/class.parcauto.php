@@ -217,7 +217,7 @@ class ParcAuto
             $data_stop = date('Y-m-t');
         }
 
-        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare,  SUM(a.comision) as comision
+        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
                                 FROM detalii_fisa_intoarcere_produse  as a
                                 LEFT JOIN fise_generate as b on a.fisa_id = b.id
                                 WHERE b.sofer_id = '" . $sofer_id . "'                                
@@ -255,7 +255,7 @@ class ParcAuto
             $data_stop = date('Y-m-t');
         }
 
-        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare,  SUM(a.comision) as comision
+        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
                                 FROM detalii_fisa_intoarcere_produse  as a
                                 LEFT JOIN fise_generate as b on a.fisa_id = b.id
                                 WHERE b.masina_id = '" . $masina_id . "'                                
