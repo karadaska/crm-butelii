@@ -134,7 +134,8 @@
                                 {$grand_total_km = $grand_total_km + $livrare['km']['km_traseu']}
                             {/foreach}
                             <tr>
-                                <td colspan="4" style="text-align: right;"></td>
+                                <td colspan="3" style="text-align: right;"></td>
+                                <td style="text-align: right;">TOTAL:</td>
                                 <td style="text-align: right;">{$grand_total_km}</td>
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                     <td style="text-align: right;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['cantitate']}</td>
