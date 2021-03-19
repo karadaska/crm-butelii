@@ -95,14 +95,14 @@
                                 <td style="text-align: center;" rowspan="2">NR. AUTO</td>
                                 <td style="text-align: center;" rowspan="2">TRASEU</td>
                                 <td style="text-align: center;" rowspan="2">KM PARCURSI</td>
-                                <th style="text-align: center;" colspan="2">TOTAL PRODUSE</th>
+                                <td style="text-align: center;" colspan="2">TOTAL PRODUSE</td>
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                     <td colspan="2" style="text-align: center;">{$produse['nume_produs']}</td>
                                 {/foreach}
                             </tr>
                             <tr>
-                                <th>CANTITATI</th>
-                                <th>VALOARE</th>
+                                <td>CANTITATI</td>
+                                <td>VALOARE</td>
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                     <td>CANTITATE</td>
                                     <td>VALOARE</td>
@@ -150,8 +150,8 @@
                                 <th colspan="3" style="text-align: right;"></th>
                                 <th style="text-align: right;font-weight: 900;">TOTAL:</th>
                                 <th style="text-align: right;font-weight: 900;">{$grand_total_km}</th>
-                                <th style="text-align: right;color: red;vertical-align: middle;">{$grand_cantitati}</th>
-                                <th style="text-align: right;color: red;vertical-align: middle;">{$grand_valoare}</th>
+                                <th style="text-align: right;vertical-align: middle;">{$grand_cantitati}</th>
+                                <th style="text-align: right;vertical-align: middle;">{$grand_valoare}</th>
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                     <th style="text-align: right;font-weight: 900;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['cantitate']}</th>
                                     <th style="text-align: right;font-weight: 900;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['valoare']}</th>
@@ -168,123 +168,3 @@
 </section>
 </body>
 </html>
-
-{*<div class="row-fluid">*}
-    {*<div class="span12">*}
-        {*<div class="widget">*}
-            {*<div class="widget-content">*}
-                {*<table border="1">*}
-                    {*<thead>*}
-                    {*<tr>*}
-                        {*<th style="text-align: center;" rowspan="2">#</th>*}
-                        {*<th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>*}
-                        {*<th style="text-align: center;" rowspan="2">INDICATOR AUTO</th>*}
-                        {*<th style="text-align: center;" rowspan="2">TRASEU</th>*}
-                        {*<th colspan="3">TOTAL BUTELII VANDUTE</th>*}
-                        {*<th colspan="3">TOTAL VALOARE INCASATA</th>*}
-                        {*<th colspan="3">TOTAL COMISION</th>*}
-                    {*</tr>*}
-                    {*<tr>*}
-                        {*<td style="text-align: center">BG 11</td>*}
-                        {*<td style="text-align: center">AR 8</td>*}
-                        {*<td style="text-align: center">AR 9</td>*}
-                        {*<td style="text-align: center">BG 11</td>*}
-                        {*<td style="text-align: center">AR 8</td>*}
-                        {*<td style="text-align: center">AR 9</td>*}
-                        {*<td style="text-align: center;">BG 11</td>*}
-                        {*<td style="text-align: center;">AR 8</td>*}
-                        {*<td style="text-align: center;">AR 9</td>*}
-                    {*</tr>*}
-                    {*</thead>*}
-                    {*<tbody>*}
-                    {*{$nr = 1}*}
-                    {*{$total_bg_11 = 0}*}
-                    {*{$total_valoare_incasata_bg_11 = 0}*}
-                    {*{$total_valoare_comision_bg_11 = 0}*}
-
-                    {*{$total_ar_8 = 0}*}
-                    {*{$total_valoare_incasata_ar_8  = 0}*}
-                    {*{$total_valoare_comision_ar_8 = 0}*}
-
-                    {*{$total_ar_9 = 0}*}
-                    {*{$total_valoare_incasata_ar_9  = 0}*}
-                    {*{$total_valoare_comision_ar_9 = 0}*}
-
-                    {*{foreach from=$livrari_soferi item=sofer}*}
-                        {*<tr>*}
-                            {*<td style="text-align: center" class="span1">{$nr++}</td>*}
-                            {*<td style="text-align: left"*}
-                                {*class="span3">{$sofer['nume_sofer']}*}
-                            {*</td>*}
-                            {*<td>*}
-                                {*{$sofer['numar']}*}
-                            {*</td>*}
-                            {*<td>{$sofer['nume_traseu']}</td>*}
-                            {*<td style="text-align: center;border-left:double">*}
-                                {*{($sofer['total_produse']['bg_11']['total_bg_11'] !='') ? {$sofer['total_produse']['bg_11']['total_bg_11']} : '-'}*}
-                            {*</td>*}
-                            {*<td style="text-align: center;">*}
-                                {*{($sofer['total_produse']['ar_8']['total_ar_8'] !='') ? {$sofer['total_produse']['ar_8']['total_ar_8']} : '-'}*}
-                            {*</td>*}
-                            {*<td style="text-align: center">*}
-                                {*{($sofer['total_produse']['ar_9']['total_ar_9'] !='') ? {$sofer['total_produse']['ar_9']['total_ar_9']} : '-'}*}
-                            {*</td>*}
-                            {*<td style="text-align: center;border-left:double">*}
-                                {*{($sofer['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? {$sofer['total_produse']['bg_11']['total_bg_11_cu_pret']} : '-'}*}
-                            {*</td>*}
-                            {*<td style="text-align: center">*}
-                                {*{($sofer['total_produse']['ar_8']['total_ar_8_cu_pret'] !='') ? {$sofer['total_produse']['ar_8']['total_ar_8_cu_pret']} : '-'}*}
-                            {*</td>*}
-                            {*<td style="text-align: center;border-right:double">*}
-                                {*{($sofer['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? {$sofer['total_produse']['ar_9']['total_ar_9_cu_pret']} : '-'}*}
-                            {*</td>*}
-                            {*<td style="text-align: center">*}
-                                {*{($sofer['total_produse']['bg_11']['comision'] !='') ? {$sofer['total_produse']['bg_11']['comision']} : '-'}*}
-                            {*</td>*}
-                            {*<td style="text-align: center;">*}
-                                {*{($sofer['total_produse']['ar_8']['comision'] !='') ? {$sofer['total_produse']['ar_8']['comision']} : '-'}*}
-                            {*</td>*}
-                            {*<td style="text-align: center;">*}
-                                {*{($sofer['total_produse']['ar_9']['comision'] !='') ? {$sofer['total_produse']['ar_9']['comision']} : '-'}*}
-                        {*</tr>*}
-                        {*{$total_bg_11 = $total_bg_11 + $sofer['total_produse']['bg_11']['total_bg_11']}*}
-                        {*{$total_ar_8 = $total_ar_8 + $sofer['total_produse']['ar_8']['total_ar_8']}*}
-                        {*{$total_ar_9 = $total_ar_9 + $sofer['total_produse']['ar_9']['total_ar_9']}*}
-
-                        {*{$total_valoare_incasata_bg_11 = $total_valoare_incasata_bg_11 + $sofer['total_produse']['bg_11']['total_bg_11_cu_pret']}*}
-                        {*{$total_valoare_incasata_ar_8 = $total_valoare_incasata_ar_8 + $sofer['total_produse']['ar_8']['total_ar_8_cu_pret']}*}
-                        {*{$total_valoare_incasata_ar_9 = $total_valoare_incasata_ar_9 + $sofer['total_produse']['ar_9']['total_ar_9_cu_pret']}*}
-
-                        {*{$total_valoare_comision_bg_11 = $total_valoare_comision_bg_11 + $sofer['total_produse']['bg_11']['comision']}*}
-                        {*{$total_valoare_comision_ar_8 = $total_valoare_comision_ar_8 + $sofer['total_produse']['ar_8']['comision']}*}
-                        {*{$total_valoare_comision_ar_9 = $total_valoare_comision_ar_9 + $sofer['total_produse']['ar_9']['comision']}*}
-
-
-                    {*{/foreach}*}
-                    {*<tr>*}
-                        {*<th colspan="4" style="text-align: right;">TOTAL:</th>*}
-                        {*<th style="text-align: center;"><abbr*}
-                                    {*title="Total bucati vandute BG 11">{$total_bg_11}</abbr></th>*}
-                        {*<th style="text-align: center;"><abbr title="Total bucati AR 8">{$total_ar_8}</abbr></th>*}
-                        {*<th style="text-align: center;"><abbr*}
-                                    {*title="Total bucati AR 9">{$total_ar_9}</abbr></th>*}
-                        {*<th>*}
-                            {*<abbr title="Total valoare incasare BG 11">{$total_valoare_incasata_bg_11}</abbr>*}
-                        {*</th>*}
-                        {*<th>*}
-                            {*<abbr title="Total valoare incasare AR 8">{$total_valoare_incasata_ar_8}</abbr>*}
-                        {*</th>*}
-                        {*<th>*}
-                            {*<abbr title="Total valoare incasare AR 9">{$total_valoare_incasata_ar_9}</abbr>*}
-                        {*</th>*}
-                        {*<th><abbr title="Total comision BG 11">{$total_valoare_comision_bg_11}</abbr></th>*}
-                        {*<th><abbr title="Total comision AR 8">{$total_valoare_comision_ar_8}</abbr></th>*}
-                        {*<th><abbr*}
-                                    {*title="Total comision AR 9">{$total_valoare_comision_ar_9}</abbr></th>*}
-                    {*</tr>*}
-                    {*</tbody>*}
-                {*</table>*}
-            {*</div>*}
-        {*</div>*}
-    {*</div>*}
-{*</div>*}
