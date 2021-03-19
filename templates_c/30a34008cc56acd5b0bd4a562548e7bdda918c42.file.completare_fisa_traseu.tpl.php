@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-19 13:09:05
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-19 13:20:25
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1616152132,
+      1 => 1616152818,
       2 => 'file',
     ),
   ),
@@ -752,16 +752,17 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                             <span style="color:red;"><?php ob_start();?><?php echo ('BG = ').($_smarty_tpl->tpl_vars['client']->value['total_valoare_bg']);?>
 <?php $_tmp2=ob_get_clean();?><?php echo $_smarty_tpl->tpl_vars['client']->value['total_valoare_bg']>0 ? $_tmp2 : '';?>
 </span>
-                                                            <?php echo $_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_8']>0 ? ',' : '';?>
-
-                                                            <span style="color:red;"><?php ob_start();?><?php echo ('AR 8 = ').($_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_8']);?>
-<?php $_tmp3=ob_get_clean();?><?php echo $_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_8']>0 ? $_tmp3 : '';?>
-</span>
-                                                            <?php echo $_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_9']>0 ? ',' : '';?>
+                                                            <?php echo ($_smarty_tpl->tpl_vars['client']->value['total_valoare_bg']>0)&&($_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_8']>0||$_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_9']>0) ? ',' : '';?>
 
                                                             <span style="color:red;"><?php ob_start();?><?php echo ('AR 9 = ').($_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_9']);?>
-<?php $_tmp4=ob_get_clean();?><?php echo $_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_9']>0 ? $_tmp4 : '';?>
+<?php $_tmp3=ob_get_clean();?><?php echo $_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_9']>0 ? $_tmp3 : '';?>
 </span>
+                                                            <?php echo $_smarty_tpl->tpl_vars['client']->value['total_valoare_bg']>0&&$_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_9']>0&&$_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_8']>0 ? ',' : '';?>
+
+                                                            <span style="color:red;"><?php ob_start();?><?php echo ('AR 8 = ').($_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_8']);?>
+<?php $_tmp4=ob_get_clean();?><?php echo $_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_8']>0 ? $_tmp4 : '';?>
+</span>
+
                                                         </th>
                                                     <?php }?>
                                                 </tr>
