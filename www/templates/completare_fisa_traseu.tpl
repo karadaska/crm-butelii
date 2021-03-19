@@ -22,7 +22,8 @@
                                 <th style="text-align: left;vertical-align: middle;"><h6
                                             style="color: red;">{$fisa['data_intrare']}</h6></th>
                                 <th>
-                                    <a target="_blank" href="/print_fisa_sosire.php?id={$fisa['id']}" class="i-print"></a>
+                                    <a target="_blank" href="/print_fisa_sosire.php?id={$fisa['id']}"
+                                       class="i-print"></a>
                                 </th>
                             </tr>
                         </table>
@@ -552,18 +553,17 @@
                                                     </tr>
                                                 {/foreach}
                                                 <tr>
-                                                    <th style="text-align: left;" colspan="7">
-                                                        TOTAL:
-                                                    </th>
-                                                    {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
-                                                    {*<th style="text-align: right;">{$client['total_defecte']}</th>*}
-                                                    {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
-                                                    {*<th style="text-align: right;"></th>*}
+                                                    {if ($client['total_valoare_ar_8'] > 0 || $client['total_valoare_bg'] > 0 || $client['total_valoare_ar_9'] > 0)}
+                                                        <th style="text-align: left;" colspan="7">
+                                                            TOTAL:
+                                                            <span style="color:red;">{($client['total_valoare_bg'] > 0) ? {'BG = '|cat:$client['total_valoare_bg']} : ''}</span>
+                                                            {($client['total_valoare_ar_8'] > 0)? ',' : ''}
+                                                            <span style="color:red;">{($client['total_valoare_ar_8'] > 0) ? {'AR 8 = '|cat:$client['total_valoare_ar_8']} : ''}</span>
+                                                            {($client['total_valoare_ar_9'] > 0)? ',' : ''}
+                                                            <span style="color:red;">{($client['total_valoare_ar_9'] > 0) ? {'AR 9 = '|cat:$client['total_valoare_ar_9']} : ''}</span>
+                                                        </th>
+                                                    {/if}
                                                 </tr>
-                                                {*{$calcul = ($realizat_produs['pret'] - $target_client['comision']) *$realizat_produs['cantitate'] }*}
-                                                {*<tr>*}
-                                                {*<th colspan="7" style="text-align: left;">{$target_client['nume_produs']} = ({$realizat_produs['pret']} - {$target_client['comision']}) * {$realizat_produs['cantitate']} = {$calcul}</th>*}
-                                                {*</tr>*}
                                             </table>
                                         </td>
                                     </tr>
