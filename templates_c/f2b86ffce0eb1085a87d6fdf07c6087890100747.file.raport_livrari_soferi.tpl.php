@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-19 14:16:13
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-19 15:34:55
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:181507985860227fc6e3c330-67745625%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f2b86ffce0eb1085a87d6fdf07c6087890100747' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl',
-      1 => 1616156171,
+      1 => 1616160892,
       2 => 'file',
     ),
   ),
@@ -162,7 +162,7 @@ $_smarty_tpl->tpl_vars['livrare']->_loop = true;
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['livrare']->value['numar'];?>
 </td>
                                                 <td><?php echo $_smarty_tpl->tpl_vars['livrare']->value['nume_traseu'];?>
-</td>
+ : </td>
                                                 <td style="text-align: right;">
                                                     <?php echo $_smarty_tpl->tpl_vars['livrare']->value['km']['km_traseu'];?>
 

@@ -92,7 +92,7 @@
                                                 <td style="text-align: center;" class="span1">{$nr++}</td>
                                                 <td>{$livrare['nume_sofer']}</td>
                                                 <td style="text-align: center;">{$livrare['numar']}</td>
-                                                <td>{$livrare['nume_traseu']}</td>
+                                                <td>{$livrare['nume_traseu']} <br/></td>
                                                 <td style="text-align: right;">
                                                     {$livrare['km']['km_traseu']}
                                                 </td>

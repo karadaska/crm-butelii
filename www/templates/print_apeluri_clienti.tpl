@@ -40,10 +40,10 @@
             font-size: 16px;
         }
 
-        th {
-            /*font-weight: bold;*/
-            /*color: #000;*/
-        }
+        /*th {*/
+            /*!*font-weight: bold;*!*/
+            /*!*color: #000;*!*/
+        /*}*/
 
         @page {
             size: auto;
@@ -74,7 +74,7 @@
             <td style="text-align: left;" class="span3">
                 <h3>
                     TRASEU: {strtoupper($nume_traseu['nume'])} <br/>
-                    DATA: {date('Y-m-d')}
+                    DATA: {date('d-m-Y')}
                 </h3>
             </td>
         </tr>

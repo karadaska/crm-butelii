@@ -560,7 +560,6 @@ class ParcAuto
                     'nume_traseu' => $item['nume_traseu'],
                     'numar' => $item['numar'],
                     'total_produse' => array(),
-
                     'km' => self::getTotalKmBySoferIdAndTraseuIdAndMasinaId($item['sofer_id'], $item['traseu_id'], $item['masina_id'], array(
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
