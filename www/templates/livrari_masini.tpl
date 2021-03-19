@@ -69,20 +69,25 @@
                                             <th style="text-align: center;" rowspan="2">NR. AUTO</th>
                                             <th style="text-align: center;" rowspan="2">TRASEU</th>
                                             <th style="text-align: center;" rowspan="2">KM PARCURSI</th>
+                                            <th style="text-align: center;" colspan="2">TOTAL PRODUSE</th>
                                             {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                 <th colspan="2" style="border: double;">{$produse['nume_produs']}</th>
                                             {/foreach}
                                         </tr>
                                         <tr>
+                                            <th>CANTITATI</th>
+                                            <th>VALOARE</th>
                                             {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                 <th>CANTITATE</th>
                                                 <th>VALOARE</th>
-                                                {*<th>COMISION</th>*}
                                             {/foreach}
                                         </tr>
                                         </thead>
                                         <tbody>
                                         {$nr = 1}
+                                        {$grand_total_km = 0}
+                                        {$grand_cantitati = 0}
+                                        {$grand_valoare = 0}
                                         {foreach from = $livrari_masini['trasee'] item= livrare}
                                             <tr>
                                                 <td style="text-align: center;" class="span1">{$nr++}</td>
@@ -90,6 +95,12 @@
                                                 <td style="text-align: center;">{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
                                                 <td style="text-align: center;">{$livrare['km']['km_traseu']}</td>
+                                                <td style="text-align: center">
+                                                    {$livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] }
+                                                </td>
+                                                <td style="text-align: center">
+                                                    {$livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] }
+                                                </td>
                                                 {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                     <td style="text-align: right;">
                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
@@ -97,21 +108,21 @@
                                                     <td style="text-align: right;">
                                                         {($livrare['total_produse'][$produse['tip_produs_id']]['valoare'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['valoare'] : '-'}
                                                     </td>
-                                                    {*<td style="text-align: right;">*}
-                                                    {*{($livrare['total_produse'][$produse['tip_produs_id']]['comision'] != '') ? $livrare['total_produse'][$produse['tip_produs_id']]['comision'] : '-'}*}
-                                                    {*</td>*}
                                                 {/foreach}
                                             </tr>
                                             {$grand_total_km = $grand_total_km + $livrare['km']['km_traseu']}
+                                            {$grand_cantitati = $grand_cantitati + $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] }
+                                            {$grand_valoare = $grand_cantitati + $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] }
                                         {/foreach}
                                         <tr>
                                             <th colspan="3" style="text-align: right;"></th>
                                             <th style="text-align: right;">TOTAL:</th>
                                             <th style="text-align: center;color: red;vertical-align: middle;">{$grand_total_km}</th>
+                                            <th style="text-align: right;color: red;vertical-align: middle;">{$grand_cantitati}</th>
+                                            <th style="text-align: right;color: red;vertical-align: middle;">{$grand_valoare}</th>
                                             {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                 <th style="text-align: right;color: red;vertical-align: middle;">{$livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}</th>
                                                 <th style="text-align: right;color: red;vertical-align: middle;">{$livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}</th>
-                                                {*<th style="text-align: right;color: red;">{$livrari_masini['grand'][$produse['tip_produs_id']]['comision']}</th>*}
                                             {/foreach}
                                         </tr>
                                         </tbody>
