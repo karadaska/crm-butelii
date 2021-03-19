@@ -202,7 +202,7 @@ class ParcAuto
         return $ret;
     }
 
-    public static function getTotalCantitatiBySoferIdAndTraseuId($sofer_id, $traseu_id,$masina_id, $opts = array())
+    public static function getTotalCantitatiBySoferIdAndTraseuId($sofer_id, $traseu_id, $masina_id, $opts = array())
     {
         $ret = null;
         $tip_produs_id = isset($opts['tip_produs_id']) ? $opts['tip_produs_id'] : 0;
