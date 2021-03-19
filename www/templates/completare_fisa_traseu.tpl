@@ -557,9 +557,9 @@
                                                         <th style="text-align: left;" colspan="7">
                                                             TOTAL:
                                                             <span style="color:red;">{($client['total_valoare_bg'] > 0) ? {'BG = '|cat:$client['total_valoare_bg']} : ''}</span>
-                                                            {(($client['total_valoare_bg'] > 0) && ($client['total_valoare_ar_8'] > 0 || $client['total_valoare_ar_9'] > 0))? ',' : ''}
+                                                            {(($client['total_valoare_bg'] > 0) && ($client['total_valoare_ar_8'] > 0 || $client['total_valoare_ar_9'] > 0))? ';' : ''}
                                                             <span style="color:red;">{($client['total_valoare_ar_9'] > 0) ? {'AR 9 = '|cat:$client['total_valoare_ar_9']} : ''}</span>
-                                                            {($client['total_valoare_bg'] > 0 && $client['total_valoare_ar_9'] > 0 && $client['total_valoare_ar_8'] > 0)? ',' : ''}
+                                                            {($client['total_valoare_bg'] > 0 && $client['total_valoare_ar_9'] > 0 && $client['total_valoare_ar_8'] > 0)? ';' : ''}
                                                             <span style="color:red;">{($client['total_valoare_ar_8'] > 0) ? {'AR 8 = '|cat:$client['total_valoare_ar_8']} : ''}</span>
 
                                                         </th>
