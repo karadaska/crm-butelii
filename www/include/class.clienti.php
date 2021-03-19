@@ -741,12 +741,13 @@ class Clienti
     {
         $stare_id = isset($opts['stare_id']) ? $opts['stare_id'] : 0;
 
+//        am scos a.*
+
         $ret = array();
-        $query = "SELECT a.* , b.nume as nume_client, c.nume as nume_localitate,b.rastel,d.nume as culoare
+        $query = "SELECT a.fisa_generata_id, a.client_id, b.nume as nume_client, c.nume as nume_localitate
                   FROM clienti_asignati_fise_generate as a
                   LEFT JOIN clienti as b on a.client_id = b.id
-                  LEFT JOIN localitati as c on b.localitate_id = c.id
-                  LEFT JOIN culori_butelii as d on b.culoare_id = d.id
+                  LEFT JOIN localitati as c on b.localitate_id = c.id                  
                   LEFT JOIN ordine_clienti as e on a.client_id = e.client_id
                   WHERE a.fisa_generata_id = '" . $fisa_id . "'
                   AND a.sters = 0                  
@@ -850,7 +851,6 @@ class Clienti
         }
         return $ret;
     }
-
 
     public static function getObservatieById($id = 0)
     {

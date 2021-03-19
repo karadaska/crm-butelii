@@ -6,7 +6,7 @@ class Target
     public static function getTargetByClientId($client_id)
     {
         $ret = array();
-        $target_by_client_id = "SELECT a.*, b.tip as nume_produs
+        $target_by_client_id = "SELECT a.client_id, a.tip_produs_id,a.target, a.goale_la_client,a.pret, a.comision, b.tip as nume_produs
         from clienti_target as a
         left join tip_produs as b on a.tip_produs_id = b.id
         where a.client_id = '" . $client_id . "'

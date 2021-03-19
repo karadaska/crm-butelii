@@ -155,8 +155,11 @@ class Stocuri
 
     public static function getRealizatClientByFisaId($fisa_id, $client_id)
     {
+//        am scos b.*
         $ret = array();
-        $produse_by_client_id_fisa_intoarcere = "SELECT b.*, c.tip as nume_produs FROM fise_generate AS a
+        $produse_by_client_id_fisa_intoarcere = "SELECT b.fisa_id, b.client_id, b.tip_produs_id, b.cantitate, b.defecte, b.pret, 
+                                                b.comision, b.pret_contract, c.tip as nume_produs
+                                                FROM fise_generate AS a
                                                 LEFT JOIN detalii_fisa_intoarcere_produse as b on a.id = b.fisa_id
                                                 LEFT JOIN tip_produs as c on b.tip_produs_id = c.id
                                                 WHERE a.id = '" . $fisa_id . "'

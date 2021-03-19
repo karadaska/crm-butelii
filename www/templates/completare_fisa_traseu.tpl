@@ -447,10 +447,6 @@
                                                         style="text-align: center;font-weight: bolder;">
                                                         Stoc
                                                     </th>
-                                                    {*<th class="span2"*}
-                                                        {*style="text-align: center;font-weight: bolder;">*}
-                                                        {*Pret Contract*}
-                                                    {*</th>*}
                                                     <th class="span1"
                                                         style="text-align: center;font-weight: bolder;width: 100px;">
                                                         Pret + comision
@@ -481,9 +477,6 @@
                                                         <td style="text-align: center;vertical-align: middle;">
                                                             {$target_client['target']}
                                                         </td>
-                                                        {*<td style="text-align: center;vertical-align: middle;">*}
-                                                            {*<abbr title="PRET + COMISION DIN CONTRACT">{$target_client['pret']}</abbr>*}
-                                                        {*</td>*}
                                                         {if $realizat_produs['pret'] == 0}
                                                             {$valoare_cantitate = $target_client['pret']}
                                                         {else}
