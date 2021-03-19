@@ -33,8 +33,10 @@ class Zone
     public static function getLocalitati()
     {
         $ret = array();
-        $query = "SELECT a.*, b.nume as zona FROM localitati as a
-                  left join judete as b on a.judet_id = b.id
+        $query = "SELECT a.*, b.nume as zona
+                  FROM localitati as a
+                  LEFT JOIN judete as b on a.judet_id = b.id
+                  WHERE a.sters = 0
                   order by a.nume ASC";
         $result = myQuery($query);
         if ($result) {

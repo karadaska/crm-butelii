@@ -553,7 +553,7 @@
                                                 {/foreach}
                                                 <tr>
                                                     <th style="text-align: left;" colspan="7">
-                                                        TOTAL: 
+                                                        TOTAL:
                                                     </th>
                                                     {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
                                                     {*<th style="text-align: right;">{$client['total_defecte']}</th>*}
