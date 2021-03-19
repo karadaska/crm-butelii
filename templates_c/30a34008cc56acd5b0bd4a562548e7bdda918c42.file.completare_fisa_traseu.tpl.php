@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-19 09:45:47
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-19 10:29:12
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1616139945,
+      1 => 1616142551,
       2 => 'file',
     ),
   ),
@@ -55,7 +55,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'valoare_cantitate' => 0,
     'valoare_defecte' => 0,
     'valoare_goale' => 0,
-    'calcul' => 0,
     'luna_curenta' => 0,
     'extract_data_fisa' => 0,
     'total_afisare' => 0,
@@ -746,26 +745,19 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                     </tr>
                                                 <?php } ?>
                                                 <tr>
-                                                    <th style="text-align: right;" colspan="3">
-                                                        Total:
+                                                    <th style="text-align: left;" colspan="7">
+                                                        TOTAL: <?php echo $_smarty_tpl->tpl_vars['fisa']->value['clienti']['realizat']['total_valoare_bg'];?>
+
                                                     </th>
-                                                    <th style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_vandute'];?>
-</th>
-                                                    <th style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_defecte'];?>
-</th>
-                                                    <th style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_vandute'];?>
-</th>
-                                                    <th style="text-align: right;"></th>
+                                                    
+                                                    
+                                                    
+                                                    
                                                 </tr>
-                                                <?php $_smarty_tpl->tpl_vars['calcul'] = new Smarty_variable(($_smarty_tpl->tpl_vars['realizat_produs']->value['pret']-$_smarty_tpl->tpl_vars['target_client']->value['comision'])*$_smarty_tpl->tpl_vars['realizat_produs']->value['cantitate'], null, 0);?>
-                                                <tr>
-                                                <th colspan="7" style="text-align: left;"><?php echo $_smarty_tpl->tpl_vars['target_client']->value['nume_produs'];?>
- = (<?php echo $_smarty_tpl->tpl_vars['realizat_produs']->value['pret'];?>
- - <?php echo $_smarty_tpl->tpl_vars['target_client']->value['comision'];?>
-) * <?php echo $_smarty_tpl->tpl_vars['realizat_produs']->value['cantitate'];?>
- = <?php echo $_smarty_tpl->tpl_vars['calcul']->value;?>
-</th>
-                                                </tr>
+                                                
+                                                
+                                                
+                                                
                                             </table>
                                         </td>
                                     </tr>

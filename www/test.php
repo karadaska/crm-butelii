@@ -76,7 +76,7 @@ $b = ParcAuto::getRaportLivrariTrasee(1,
 //    'stari' => array(3)
 //));
 
-$b = Stocuri::getFisaGenerataById(592);
+$b = Stocuri::getFisaGenerataById(594);
 //$b = Clienti::getFiseByClientId(1802);
 
 //$b = Clienti::getRaportLivrariClienti(2, array(

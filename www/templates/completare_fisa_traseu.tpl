@@ -552,13 +552,13 @@
                                                     </tr>
                                                 {/foreach}
                                                 <tr>
-                                                    <th style="text-align: right;" colspan="3">
-                                                        Total:
+                                                    <th style="text-align: left;" colspan="7">
+                                                        TOTAL: 
                                                     </th>
-                                                    <th style="text-align: right;">{$client['total_vandute']}</th>
-                                                    <th style="text-align: right;">{$client['total_defecte']}</th>
-                                                    <th style="text-align: right;">{$client['total_vandute']}</th>
-                                                    <th style="text-align: right;"></th>
+                                                    {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
+                                                    {*<th style="text-align: right;">{$client['total_defecte']}</th>*}
+                                                    {*<th style="text-align: right;">{$client['total_vandute']}</th>*}
+                                                    {*<th style="text-align: right;"></th>*}
                                                 </tr>
                                                 {*{$calcul = ($realizat_produs['pret'] - $target_client['comision']) *$realizat_produs['cantitate'] }*}
                                                 {*<tr>*}
