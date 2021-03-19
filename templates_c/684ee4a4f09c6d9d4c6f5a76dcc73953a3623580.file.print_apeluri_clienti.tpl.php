@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-19 21:48:50
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-19 21:52:03
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1929950229603df39e482f18-35501088%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1616183329,
+      1 => 1616183358,
       2 => 'file',
     ),
   ),
@@ -249,7 +249,7 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                                 <th>
                                     <table border="1" style="width: 100%">
                                         <tr>
-                                            <th style="width: 50%">BGdasdasdasd</th>
+                                            <th style="width: 50%">BG</th>
                                             <td><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
  buc</td>
                                         </tr>

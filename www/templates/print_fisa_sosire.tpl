@@ -92,61 +92,38 @@
         </tr>
         {$nr = 1}
         {foreach from=$print_fisa['clienti'] item="client"}
-            <tr>
-                <td style="text-align: center;">{$nr++}</td>
-                <td>{strtoupper($client['nume_client'])}</td>
-                <td>
-                    <table border="1" class="print" style="width: 100%">
+        <tr>
+            <td style="text-align: center;">{$nr++}</td>
+            <td>{strtoupper($client['nume_client'])}</td>
+            <td>
+                {if (count($client['realizat']) > 0)}
+                <table border="1" class="print" style="width: 100%">
+                    <tr>
+                        <td style="text-align: center;width: 150px;">PRODUS</td>
+                        <td style="text-align: center;">VANDUTE</td>
+                        <td style="text-align: center;">DEFECTE</td>
+                    </tr>
+                    {foreach from=$client['realizat'] item= realizat}
                         <tr>
-                            <td style="text-align: center;width: 150px;">PRODUS</td>
-                            <td style="text-align: center;">VANDUTE</td>
-                            <td style="text-align: center;">DEFECTE</td>
+                            <td>{$realizat['nume_produs']}:</td>
+                            <td style="text-align: right;">{$realizat['cantitate']}</td>
+                            <td style="text-align: right;">{$realizat['defecte']}</td>
                         </tr>
-                        {foreach from=$client['realizat'] item= realizat}
-                            <tr>
-                                <td>{$realizat['nume_produs']}:</td>
-                                <td style="text-align: right;">{$realizat['cantitate']}</td>
-                                <td style="text-align: right;">{$realizat['defecte']}</td>
-                            </tr>
-                        {/foreach}
-                    </table>
-                </td>
-                <td>
-                    {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
-                   {$client_observatie['nume_observatie']}
-                </td>
-                <td>
-                    {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
-                    {$client_observatie['observatie_extra']}
-                </td>
-            </tr>
+                    {/foreach}
+                </table>
+                {/if}
+            </td>
+            <td style="text-align: center;">
+                {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
+                {($client_observatie['nume_observatie'] !='') ? $client_observatie['nume_observatie'] : '-'}
+            </td>
+            <td style="text-align: center;">
+                {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
+                {($client_observatie['observatie_extra'] !='') ? $client_observatie['observatie_extra'] :'-'}
+            </td>
+        </tr>
         {/foreach}
     </table>
-    {*{if count($cantitati_produse_clienti_by_fisa_id) > 0}*}
-        {*<table border="1" style="width: 600px;margin-top: 10px;">*}
-            {*<tr class="info">*}
-                {*<td style="text-align: center;font-weight: 900;">Produs</td>*}
-                {*<td style="text-align: center;font-weight: 900;">Pline</td>*}
-                {*<td style="text-align: center;font-weight: 900;">Defecte</td>*}
-            {*</tr>*}
-            {*{foreach from=$cantitati_produse_clienti_by_fisa_id item="cantitate"}*}
-                {*{if $cantitate['pline'] > 0 || $cantitate['defecte'] > 0}*}
-                    {*<tr>*}
-                        {*<td>*}
-                            {*<span style="color: red;font-weight: 900">{$cantitate['nume_produs']}</span>*}
-                        {*</td>*}
-                        {*<td style="text-align: right;">{$cantitate['pline']}</td>*}
-                        {*<td style="text-align: right;">{$cantitate['defecte']}</td>*}
-                    {*</tr>*}
-                {*{/if}*}
-            {*{/foreach}*}
-            {*<tr>*}
-                {*<th style="text-align: right;color: red;">Total:</th>*}
-                {*<th style="text-align: right;">{$cantitati_produse_clienti_by_fisa_id['total_vandute']}</th>*}
-                {*<th style="text-align: right">{$cantitati_produse_clienti_by_fisa_id['total_defecte']}</th>*}
-            {*</tr>*}
-        {*</table>*}
-    {*{/if}*}
     <div style="display: inline-flex;margin-top: 20px;">
         {if ($print_fisa['grand_total_vandute_bg'] != 0 || $print_fisa['grand_defecte_bg'] != 0)}
             <div>
@@ -169,7 +146,7 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Total Defecte</td>
-                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_defecte_bg']}</td>
+                        <td style="text-align: center;font-weight: 900;">{($print_fisa['grand_defecte_bg'] > 0) ? $print_fisa['grand_defecte_bg'] : '-'}</td>
                     </tr>
                 </table>
             </div>
@@ -183,19 +160,19 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                        <td style="text-align: left;font-weight: 900;">TOTAL CANTITATI</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_ar_8']}</td>
                     </tr>
                     <tr class="info">
-                        <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                        <td style="text-align: left;font-weight: 900;">TOTAL VALOARE</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_ar_8']}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                        <td style="text-align: left;font-weight: 900;">TOTAL COMISION</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_comision_ar_8']}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                        <td style="text-align: left;font-weight: 900;">TOTAL DEFECTE</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_defecte_ar_8']}</td>
                     </tr>
                 </table>
@@ -210,19 +187,19 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                        <td style="text-align: left;font-weight: 900;">TOTAL CANTITATI</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_ar_9']}</td>
                     </tr>
                     <tr class="info">
-                        <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                        <td style="text-align: left;font-weight: 900;">TOTAL VALOARE</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_ar_9']}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                        <td style="text-align: left;font-weight: 900;">TOTAL COMISION</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_comision_ar_9']}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                        <td style="text-align: left;font-weight: 900;">TOTAL DEFECTE</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_defecte_ar_9']}</td>
                     </tr>
                 </table>
@@ -242,15 +219,15 @@
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_bg'] + $print_fisa['grand_total_vandute_ar_8'] + $print_fisa['grand_total_vandute_ar_9']}</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
+                        <td style="text-align: left;font-weight: 900;">VAL. BG + AR</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_bg'] + $print_fisa['grand_valoare_ar_8'] + $print_fisa['grand_valoare_ar_9']}</td>
                     </tr>
                     <tr class="info">
-                        <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
+                        <td style="text-align: left;font-weight: 900;">COM. BG + AR</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_comision_bg'] + $print_fisa['grand_comision_ar_8'] + $print_fisa['grand_comision_ar_9']}</td>
                     </tr>
                     <tr class="info">
-                        <td style="text-align: left;font-weight: 900;">Def. BG + AR</td>
+                        <td style="text-align: left;font-weight: 900;">DEF. BG + AR</td>
                         <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_defecte_bg'] + $print_fisa['grand_defecte_ar_8'] + $print_fisa['grand_defecte_ar_9']}</td>
                     </tr>
                 </table>
