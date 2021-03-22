@@ -40,13 +40,23 @@
             font-size: 16px;
         }
 
-        /*th {*/
-            /*font-weight: bold;*/
-            /*color: #000;*/
-        /*}*/
+        /*th
 
-        /*td {*/
-        /*}*/
+
+        {*/
+                                    /*font-weight: bold;*/
+                                    /*color: #000;*/
+                                /*}   */
+
+        /*td
+
+
+        {*/
+                                /*}   */
+        @page {
+            size: auto;
+            margin: 0;
+        }
     </style>
     <script type="text/javascript">
         function setPrint() {
@@ -60,10 +70,10 @@
 <section id="content" class="print">
     <div class="wrapper">
         <input type="button" onclick="setPrint();window.print();return false;" id="print_button" name="print_button"
-               value="Print"/>
+               value="PRINT"/>
         <a href="edit_fisa_traseu.php?id={$print_fisa['id']}" class="ascuns">
             <button type="button" class="btn btn-mini btn-warning ascuns">
-                Inapoi
+                INAPOI
             </button>
         </a>
     </div>
@@ -72,12 +82,12 @@
             <td style="text-align: left;" class="span3">
                 <h5>
 
-                    Traseu: {strtoupper($print_fisa['nume_traseu'])} <br/>
-                    Auto: {$print_fisa['numar']}<br/>
-                    Sofer: {$print_fisa['nume_sofer']}<br/>
-                    Km plecare:<br/>
-                    Km sosire:<br/>
-                    Nr. clienti: {count($print_fisa['clienti'])}<br/>
+                    TRASEU: {strtoupper($print_fisa['nume_traseu'])} <br/>
+                    AUTO: {$print_fisa['numar']}<br/>
+                    SOFER: {$print_fisa['nume_sofer']}<br/>
+                    KM PLECARE:<br/>
+                    KM SOSIRE:<br/>
+                    NR. CLIENTI: {count($print_fisa['clienti'])}<br/>
                     {$data = $print_fisa['data_intrare']}
                     {$newDate = date("d-m-Y", strtotime($data))}
                     <span style="font-weight: 900;margin-top: 20px;"> DATA: {$newDate}</span>
@@ -86,8 +96,8 @@
 
         </tr>
     </table>
-    <span style="text-align: center;"><h1>RAPORT ZILNIC</h1></span>
-    <table border="1" class="print" style="width: 1800px;">
+    <div style="text-align: center;"><h1>RAPORT ZILNIC</h1></div>
+    <table border="1" class="print" style="width: 100%;">
         <thead>
         <tr>
             <td style="text-align: center;" rowspan="3">#</td>
@@ -95,38 +105,38 @@
             <th rowspan="3">COMISIONAR</th>
             <th colspan="2" style="border-right: double;">RASTEL</th>
             {if $print_fisa['depozit_id'] == 1}
-            <th colspan="2" style="border-right: double;">BG/AR</th>
-                {else}
+                <th colspan="2" style="border-right: double;">BG/AR</th>
+            {else}
                 <th colspan="3" style="border-right: double;">BG/AR</th>
             {/if}
-            <th colspan="4" style="border-right: double;">Incarcaturi BG/11 kg</th>
-            <th colspan="4" style="border-right: double;">Incarcaturi AR/9 kg</th>
+            <th colspan="4" style="border-right: double;">INCARCATURI BG</th>
+            <th colspan="4" style="border-right: double;">INCARCATURI AR/9 kg</th>
             {if $print_fisa['depozit_id'] == 2}
                 <th colspan="4" style="border-right: double;">Incarcaturi AR/8 kg</th>
             {/if}
-            <th>Obs</th>
+            <th>OBS</th>
         </tr>
         <tr>
             <td style="text-align: center;">BUC</td>
             <td style="text-align: center;border-right: double;">CUL</td>
-            <td style="text-align: center;">Bg11</td>
+            <td style="text-align: center;">BG</td>
             {if $print_fisa['depozit_id'] == 2}
-                <td style="text-align: center;">Ar8</td>
+                <td style="text-align: center;">AR 8</td>
             {/if}
-            <td style="text-align: center;border-right: double;">Ar9</td>
-            <td style="text-align: center;">Buc<br/> BG 11</td>
-            <td style="text-align: center;">Pret</td>
-            <td>Com</td>
-            <td style="text-align: center;border-right: double;">Val 2</td>
-            <td style="text-align: center;">Buc<br/> Ar 9</td>
-            <td style="text-align: center;">Pret</td>
-            <td>Com</td>
-            <td style="text-align: center;border-right: double;">Val 3</td>
+            <td style="text-align: center;border-right: double;">AR 9</td>
+            <td style="text-align: center;">BUC<br/> BG</td>
+            <td style="text-align: center;">PRET</td>
+            <td style="text-align: center">COM</td>
+            <td style="text-align: center;border-right: double;">VAL 2</td>
+            <td style="text-align: center;">BUC<br/> AR 9</td>
+            <td style="text-align: center;">PRET</td>
+            <td style="text-align: center">COM</td>
+            <td style="text-align: center;border-right: double;">VAL 3</td>
             {if $print_fisa['depozit_id'] == 2}
-                <td style="text-align: center;">Buc<br/> Ar 8</td>
-                <td style="text-align: center;">Pret</td>
-                <td style="text-align: center;">Com</td>
-                <td style="text-align: center;border-right: double;">Val 4</td>
+                <td style="text-align: center;">BUC<br/> AR 8</td>
+                <td style="text-align: center;">PRET</td>
+                <td style="text-align: center;">COM</td>
+                <td style="text-align: center;border-right: double;">VAL 4</td>
             {/if}
             <td>&nbsp;</td>
         </tr>
@@ -155,35 +165,34 @@
                 <td style="text-align: center">{$client['rastel']}</td>
                 <td style="border-right: double;text-align: center">{$client['culoare']}</td>
                 <td style="text-align: center;">
-                    {($client['target']['1']['pret'] !='') ? {'Pret: '|cat:$client['target']['1']['pret']} :'-'}
-                    <br/>{($client['target']['1']['target'] !='') ? {'Stoc: '|cat:$client['target']['1']['target']} : '-'}
+                    {($client['realizat']['1']['pret'] > 0) ? {'PRET: '|cat:$client['realizat']['1']['pret']} :'-'}
+                    <br/>{($client['target']['1']['target'] > 0) ? {'STOC: '|cat:$client['target']['1']['target']} : '-'}
                 </td>
                 {if $print_fisa['depozit_id'] == 2}
                 <td style="text-align: center;">
-                    {($client['target']['3']['pret'] !='') ? {'Pret: '|cat:$client['target']['3']['pret']} :'-'}
-                    <br/>{($client['target']['3']['target'] !='') ? {'Stoc: '|cat:$client['target']['3']['target']} : '-'}
+                    {($client['realizat']['1']['pret'] !='') ? {'PRET: '|cat:$client['realizat']['1']['pret']} :'-'}
+                    <br/>{($client['target']['3']['target'] > 0) ? {'STOC: '|cat:$client['target']['3']['target']} : '-'}
                     {/if}
                 <td style="text-align: center;border-right: double;">
-                    {($client['target']['4']['pret'] !='') ? {'Pret: '|cat:$client['target']['4']['pret']} :'-'}
-                    <br/>{($client['target']['4']['target'] !='') ? {'Stoc: '|cat:$client['target']['4']['target']} : '-'}
+                    {($client['realizat']['4']['pret'] !='') ? {'PRET: '|cat:$client['realizat']['4']['pret']} :'-'}
+                    <br/>{($client['target']['4']['target'] > 0) ? {'STOC: '|cat:$client['target']['4']['target']} : '-'}
                 </td>
-                <td style="text-align: center;">{($client['realizat']['1']['cantitate'] !='') ? $client['realizat']['1']['cantitate'] : '-'}</td>
-                <td style="text-align: center;">{($client['realizat']['1']['pret'] !='') ? $client['realizat']['1']['pret'] : '-'}</td>
-                <td style="text-align: center;">{($client['target']['1']['comision'] !='') ? $client['target']['1']['comision'] : '-'}</td>
+                <td style="text-align: center;">{($client['realizat']['1']['cantitate'] > 0) ? $client['realizat']['1']['cantitate'] : '-'}</td>
+                <td style="text-align: center;">{($client['realizat']['1']['pret'] > 0) ? $client['realizat']['1']['pret'] : '-'}</td>
+                <td style="text-align: center;">{($client['realizat']['1']['comision'] > 0) ? $client['target']['1']['comision'] : '-'}</td>
                 <td style="text-align: center;border-right: double;">
-                    {*{$client['realizat']['1']['cantitate'] * ($client['realizat']['1']['pret'] - $client['target']['1']['comision'])}*}
-                    {($client['realizat']['1']['cantitate'] !='') ? ($client['realizat']['1']['cantitate'] * ($client['realizat']['1']['pret'] - $client['target']['1']['comision'] )) : '-'}
+                    {($client['realizat']['1']['cantitate'] > 0) ? ($client['realizat']['1']['cantitate'] * ($client['realizat']['1']['pret'] - $client['target']['1']['comision'] )) : '-'}
                 </td>
-                <td style="text-align: center;">{($client['realizat']['4']['cantitate'] !='') ? $client['realizat']['4']['cantitate'] : '-'}</td>
-                <td style="text-align: center;">{($client['realizat']['4']['pret'] !='') ? $client['realizat']['4']['pret'] : '-'}</td>
-                <td style="text-align: center;">{($client['target']['4']['comision'] !='') ? $client['target']['4']['comision']: '-'}</td>
+                <td style="text-align: center;">{($client['realizat']['4']['cantitate'] > 0) ? $client['realizat']['4']['cantitate'] : '-'}</td>
+                <td style="text-align: center;">{($client['realizat']['4']['pret']> 0) ? $client['realizat']['4']['pret'] : '-'}</td>
+                <td style="text-align: center;">{($client['realizat']['4']['comision'] > 0) ? $client['target']['4']['comision']: '-'}</td>
                 <td style="text-align: center;border-right: double;">
-                    {($client['realizat']['4']['cantitate'] !='') ? ($client['realizat']['4']['cantitate'] * ($client['realizat']['4']['pret'] - $client['target']['4']['comision'])):'-'}
+                    {($client['realizat']['4']['cantitate'] > 0) ? ($client['realizat']['4']['cantitate'] * ($client['realizat']['4']['pret'] - $client['target']['4']['comision'])):'-'}
                 </td>
                 {if $print_fisa['depozit_id'] == 2}
                     <td style="text-align: center;">{($client['realizat']['3']['cantitate'] !='') ? $client['realizat']['3']['cantitate'] : '-'}</td>
                     <td style="text-align: center;">{($client['realizat']['3']['pret'] !='') ? $client['realizat']['3']['pret']: '-'}</td>
-                    <td style="text-align: center;">{($client['target']['3']['comision']!='')? $client['target']['3']['comision']:'-'}</td>
+                    <td style="text-align: center;">{($client['realizat']['3']['comision']!='')? $client['target']['3']['comision']:'-'}</td>
                     <td style="text-align: center;border-right: double;">
                         {($client['realizat']['3']['pret'] !='') ? ($client['realizat']['3']['cantitate'] * ($client['realizat']['3']['pret'] - $client['target']['3']['comision'])) :'-'}
                     </td>
@@ -207,8 +216,8 @@
         {/foreach}
         <tr style="background-color: lemonchiffon;">
             {if $print_fisa['depozit_id'] == 1}
-            <td colspan="7" style="text-align: right;">TOTAL</td>
-                {else}
+                <td colspan="7" style="text-align: right;">TOTAL</td>
+            {else}
                 <td colspan="8" style="text-align: right;">TOTAL</td>
             {/if}
             <td style="text-align: center;">{$total_bg_11}</td>
@@ -225,7 +234,6 @@
             <td style="text-align: center;"></td>
         </tr>
     </table>
-
     <div style="display: inline-flex;margin-top: 20px;">
         {if ($print_fisa['grand_total_vandute_bg'] != 0 || $print_fisa['grand_defecte_bg'] != 0)}
             <div>

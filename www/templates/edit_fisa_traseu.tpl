@@ -11,7 +11,7 @@
                             <div class="widget-title" style="display: block ruby;">
                                 <div class="icon"><i class="i-truck"></i></div>
                                 <h4>Editare Fisa Traseu: {$fisa_id['nume_traseu']}</h4>
-                                <a href="/print_fisa_traseu.php?id={$id}">
+                                <a target="_blank" href="/print_fisa_traseu.php?id={$id}">
                                     <button class="i-print"></button>
                                 </a>
                                 <a href="/completare_fisa_traseu.php?id={$id}" class="btn btn-mini btn-primary">Completeaza
@@ -71,14 +71,6 @@
                                                 </select>
                                             </th>
                                             <th>
-                                                {*{$date = date('d-m-Y', strtotime($fisa_id['data_intrare']))}*}
-                                                {*<div id="data_start_datepicker" class="input-append date"*}
-                                                     {*data-date="{date("Y-m-d")}"*}
-                                                     {*data-date-format="yyyy-mm-dd">*}
-                                                    {*<input style="margin-bottom: 0;" type="text" name="data_start"*}
-                                                           {*value="{$date}"/>*}
-                                                    {*<span class="add-on"><i class="icon16 i-calendar-4"></i></span>*}
-                                                {*</div>*}
                                                 <input style="width: 120px;" type="date" name="data_start"
                                                 value="{$fisa_id['data_intrare']}">
                                             </th>

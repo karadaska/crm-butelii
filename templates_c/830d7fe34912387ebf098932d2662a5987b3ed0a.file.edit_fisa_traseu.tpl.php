@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-25 14:02:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 14:05:27
          compiled from "/var/www/html/fofoweb/www/templates/edit_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:784229793602ce6e8234e61-17225753%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '830d7fe34912387ebf098932d2662a5987b3ed0a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_fisa_traseu.tpl',
-      1 => 1614254533,
+      1 => 1616414725,
       2 => 'file',
     ),
   ),
@@ -66,7 +66,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 <div class="icon"><i class="i-truck"></i></div>
                                 <h4>Editare Fisa Traseu: <?php echo $_smarty_tpl->tpl_vars['fisa_id']->value['nume_traseu'];?>
 </h4>
-                                <a href="/print_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+                                <a target="_blank" href="/print_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
 ">
                                     <button class="i-print"></button>
                                 </a>
