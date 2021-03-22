@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-19 14:44:39
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 10:55:40
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_soferi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8904266056037a5fd98eb05-27757984%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '371ca91f15b9939e19b50c78dfb3437995808c52' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_soferi.tpl',
-      1 => 1616157878,
+      1 => 1616403338,
       2 => 'file',
     ),
   ),
@@ -78,11 +78,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         }
 
         th {
-            font-weight: bold;
+            font-weight: normal;
             color: #000;
         }
 
         td {
+            font-weight: normal;
+        }
+        @page {
+            size: auto;
+            margin: 0;
         }
     </style>
     <script type="text/javascript">
@@ -217,9 +222,9 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                 <th style="text-align: right;font-weight: 900;">TOTAL:</th>
                                 <th style="text-align: right;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['grand_total_km']->value;?>
 </th>
-                                <th style="text-align: right;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['grand_cantitati']->value;?>
+                                <th style="text-align: right;vertical-align: middle;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['grand_cantitati']->value;?>
 </th>
-                                <th style="text-align: right;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['grand_valoare']->value;?>
+                                <th style="text-align: right;vertical-align: middle;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['grand_valoare']->value;?>
 </th>
                                 <?php  $_smarty_tpl->tpl_vars['produse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produse']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['livrari_soferi']->value['produse_sofer']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

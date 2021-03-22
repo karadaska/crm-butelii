@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 10:48:42
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 10:49:52
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1616402915,
+      1 => 1616402954,
       2 => 'file',
     ),
   ),
@@ -134,7 +134,7 @@ $_smarty_tpl->tpl_vars["client"]->_loop = true;
 </td>
                 <td>
                     <?php if ((count($_smarty_tpl->tpl_vars['client']->value['realizat'])>0)) {?>
-                        <table style="width: 100%">
+                        <table border="1" style="width: 100%">
                             <tr>
                                 <td style="text-align: center;width: 150px;">PRODUS</td>
                                 <td style="text-align: center;">VANDUTE</td>

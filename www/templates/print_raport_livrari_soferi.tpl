@@ -41,11 +41,16 @@
         }
 
         th {
-            font-weight: bold;
+            font-weight: normal;
             color: #000;
         }
 
         td {
+            font-weight: normal;
+        }
+        @page {
+            size: auto;
+            margin: 0;
         }
     </style>
     <script type="text/javascript">
@@ -147,8 +152,8 @@
                                 <th colspan="3" style="text-align: right;"></th>
                                 <th style="text-align: right;font-weight: 900;">TOTAL:</th>
                                 <th style="text-align: right;font-weight: 900;">{$grand_total_km}</th>
-                                <th style="text-align: right;vertical-align: middle;">{$grand_cantitati}</th>
-                                <th style="text-align: right;vertical-align: middle;">{$grand_valoare}</th>
+                                <th style="text-align: right;vertical-align: middle;font-weight: 900;">{$grand_cantitati}</th>
+                                <th style="text-align: right;vertical-align: middle;font-weight: 900;">{$grand_valoare}</th>
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                     <th style="text-align: right;font-weight: 900;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['cantitate']}</th>
                                     <th style="text-align: right;font-weight: 900;">{$livrari_soferi['grand'][$produse['tip_produs_id']]['valoare']}</th>

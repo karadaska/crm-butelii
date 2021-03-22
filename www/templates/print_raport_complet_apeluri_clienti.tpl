@@ -47,6 +47,11 @@
 
         td {
         }
+
+        @page {
+            size: auto;
+            margin: 0;
+        }
     </style>
     <script type="text/javascript">
         function setPrint() {

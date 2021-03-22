@@ -40,13 +40,13 @@
             font-size: 16px;
         }
 
-        th {
-            font-weight: bold;
-            color: #000;
-        }
+        /*th {*/
+            /*font-weight: bold;*/
+            /*color: #000;*/
+        /*}*/
 
-        td {
-        }
+        /*td {*/
+        /*}*/
     </style>
     <script type="text/javascript">
         function setPrint() {
