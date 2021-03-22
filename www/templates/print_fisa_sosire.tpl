@@ -86,7 +86,7 @@
         <tr>
             <td>#</td>
             <td>CLIENT</td>
-            <td style="text-align: center;">PRODUS</td>
+            <td style="text-align: center;">DETALII</td>
             <td style="text-align: center;">OBSERVATII</td>
             <td style="text-align: center;">OBSERVATII EXTRA</td>
         </tr>
@@ -111,6 +111,8 @@
                         </tr>
                     {/foreach}
                 </table>
+                    {else}
+                    <div style="text-align: center;">-</div>
                 {/if}
             </td>
             <td style="text-align: center;">

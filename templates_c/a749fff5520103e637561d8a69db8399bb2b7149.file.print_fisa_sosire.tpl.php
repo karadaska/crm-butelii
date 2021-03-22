@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-19 22:17:16
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 10:32:31
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1616185035,
+      1 => 1616401950,
       2 => 'file',
     ),
   ),
@@ -124,7 +124,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <tr>
             <td>#</td>
             <td>CLIENT</td>
-            <td style="text-align: center;">PRODUS</td>
+            <td style="text-align: center;">DETALII</td>
             <td style="text-align: center;">OBSERVATII</td>
             <td style="text-align: center;">OBSERVATII EXTRA</td>
         </tr>
@@ -162,6 +162,8 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
                         </tr>
                     <?php } ?>
                 </table>
+                    <?php } else { ?>
+                    <div style="text-align: center;">-</div>
                 <?php }?>
             </td>
             <td style="text-align: center;">
@@ -273,7 +275,7 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
         <?php $_smarty_tpl->tpl_vars['total_afisare'] = new Smarty_variable($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9'], null, 0);?>
         <?php if (($_smarty_tpl->tpl_vars['total_afisare']->value!=0)) {?>
             <div style="margin-left: 10px;">
-                <table border="1" style="width: 180px;">
+                <table border="1" style="width: 200px;">
                     <tr>
                         <td style="text-align: center;font-weight: 900;" colspan="2">
                             TOTALURI
