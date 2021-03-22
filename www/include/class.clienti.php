@@ -767,6 +767,8 @@ class Clienti
         return $ret;
     }
 
+
+
     public static function getClientById($id = 0)
     {
         $ret = array();

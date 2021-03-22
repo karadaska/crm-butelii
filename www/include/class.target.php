@@ -6,13 +6,14 @@ class Target
     public static function getTargetByClientId($client_id)
     {
         $ret = array();
-        $target_by_client_id = "SELECT a.client_id, a.tip_produs_id,a.target, a.goale_la_client,a.pret, a.comision, b.tip as nume_produs
-        from clienti_target as a
-        left join tip_produs as b on a.tip_produs_id = b.id
-        where a.client_id = '" . $client_id . "'
-        and a.sters = 0
-        and b.sters = 0
-        ORDER BY b.id
+        $target_by_client_id = "SELECT a.client_id, a.tip_produs_id,a.target,
+                                a.goale_la_client,a.pret, a.comision, b.tip as nume_produs
+                                FROM clienti_target as a
+                                LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                                WHERE a.client_id = '" . $client_id . "'
+                                AND a.sters = 0
+                                AND b.sters = 0
+                                ORDER BY b.id
         ";
 
         $result = myQuery($target_by_client_id);
@@ -25,6 +26,31 @@ class Target
         }
         return $ret;
     }
+
+    public static function getTargetByClientIdPrintEditFisa($client_id)
+    {
+        $ret = array();
+        $target_by_client_id = "SELECT a.client_id, a.tip_produs_id, a.target,
+                                b.tip as nume_produs
+                                FROM clienti_target as a
+                                LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                                WHERE a.client_id = '" . $client_id . "'
+                                AND a.sters = 0
+                                AND b.sters = 0
+                                ORDER BY b.id
+        ";
+
+        $result = myQuery($target_by_client_id);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['tip_produs_id']] = $item;
+            }
+        }
+        return $ret;
+    }
+
 
     public static function getProduseByClientIdNeconcordantaPreturi($client_id, $opts = array())
     {

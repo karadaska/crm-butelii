@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 14:05:27
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 14:56:20
          compiled from "/var/www/html/fofoweb/www/templates/edit_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:784229793602ce6e8234e61-17225753%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '830d7fe34912387ebf098932d2662a5987b3ed0a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_fisa_traseu.tpl',
-      1 => 1616414725,
+      1 => 1616414757,
       2 => 'file',
     ),
   ),
@@ -152,14 +152,6 @@ $_smarty_tpl->tpl_vars['masina']->_loop = true;
                                                 </select>
                                             </th>
                                             <th>
-                                                
-                                                
-                                                     
-                                                     
-                                                    
-                                                           
-                                                    
-                                                
                                                 <input style="width: 120px;" type="date" name="data_start"
                                                 value="<?php echo $_smarty_tpl->tpl_vars['fisa_id']->value['data_intrare'];?>
 ">
