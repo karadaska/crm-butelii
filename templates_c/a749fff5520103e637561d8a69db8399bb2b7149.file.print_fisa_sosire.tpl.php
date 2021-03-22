@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 10:35:16
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 10:43:45
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1616402115,
+      1 => 1616402623,
       2 => 'file',
     ),
   ),
@@ -73,13 +73,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             font-size: 16px;
         }
 
-        th {
-            font-weight: bold;
-            color: #000;
-        }
+        /*th */
 
-        td {
-        }
+
     </style>
     <script type="text/javascript">
         function setPrint() {
@@ -104,7 +100,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </div>
     <table style="width: 1800px;">
         <tr>
-            <td style="text-align: left;font-weight: normal;" class="span3">
+            <td style="text-align: left;font-weight: 400" class="span3">
                 <h3>
                     TRASEU: <?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['nume_traseu'];?>
 <br/>
@@ -122,11 +118,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     </table>
     <table border="1" class="print" style="width: 100%">
         <tr>
-            <td>#</td>
-            <td>CLIENT</td>
-            <td style="text-align: center;">DETALII</td>
-            <td style="text-align: center;">OBSERVATII</td>
-            <td style="text-align: center;">OBSERVATII EXTRA</td>
+            <th>#</th>
+            <th>CLIENT</th>
+            <th style="text-align: center;">DETALII</th>
+            <th style="text-align: center;">OBSERVATII</th>
+            <th style="text-align: center;">OBSERVATII EXTRA</th>
         </tr>
         <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
         <?php  $_smarty_tpl->tpl_vars["client"] = new Smarty_Variable; $_smarty_tpl->tpl_vars["client"]->_loop = false;
@@ -184,27 +180,26 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
             <div>
                 <table border="1" style="width: 200px;">
                     <tr>
-                        <td style="text-align: center;font-weight: 900;" colspan="2">BG
-                        </td>
+                        <td style="text-align: center;font-weight: 900;" colspan="2">BG</td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg'];?>
 </td>
                     </tr>
                     <tr class="info">
-                        <td style="text-align: left;font-weight: 900;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_bg'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_bg'];?>
 </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">TOTAL COMISION</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_bg'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_bg'];?>
 </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">TOTAL DEFECTE</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']>0 ? $_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg'] : '-';?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL DEFECTE</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']>0 ? $_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg'] : '-';?>
 </td>
                     </tr>
                 </table>
@@ -214,28 +209,28 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 200px;">
                     <tr>
-                        <td style="text-align: center;font-weight: 900;" colspan="2">AR
+                        <td style="text-align: center;font-weight: 500;" colspan="2">AR
                             8
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8'];?>
 </td>
                     </tr>
                     <tr class="info">
-                        <td style="text-align: left;font-weight: 900;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_8'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_8'];?>
 </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">TOTAL COMISION</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_ar_8'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_ar_8'];?>
 </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">TOTAL DEFECTE</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL DEFECTE</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8'];?>
 </td>
                     </tr>
                 </table>
@@ -245,28 +240,28 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 200px;">
                     <tr>
-                        <td style="text-align: center;font-weight: 900;" colspan="2">AR
+                        <td style="text-align: center;font-weight: 600;" colspan="2">AR
                             9
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9'];?>
 </td>
                     </tr>
                     <tr class="info">
-                        <td style="text-align: left;font-weight: 900;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_9'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_9'];?>
 </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">TOTAL COMISION</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_ar_9'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_ar_9'];?>
 </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">TOTAL DEFECTE</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9'];?>
+                        <td style="text-align: left;font-weight: 500;">TOTAL DEFECTE</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9'];?>
 </td>
                     </tr>
                 </table>
@@ -282,23 +277,23 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
                         </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9'];?>
+                        <td style="text-align: left;font-weight: 500;">BG + AR</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9'];?>
 </td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;font-weight: 900;">VAL. BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_9'];?>
+                        <td style="text-align: left;font-weight: 500;">VAL. BG + AR</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_9'];?>
 </td>
                     </tr>
                     <tr class="info">
-                        <td style="text-align: left;font-weight: 900;">COM. BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_ar_9'];?>
+                        <td style="text-align: left;font-weight: 500;">COM. BG + AR</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_comision_ar_9'];?>
 </td>
                     </tr>
                     <tr class="info">
-                        <td style="text-align: left;font-weight: 900;">DEF. BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9'];?>
+                        <td style="text-align: left;font-weight: 500;">DEF. BG + AR</td>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9'];?>
 </td>
                     </tr>
                 </table>
