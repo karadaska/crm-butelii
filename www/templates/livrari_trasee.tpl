@@ -118,12 +118,12 @@
                                         <tr>
                                             <th colspan="3" style="text-align: right;"></th>
                                             <th style="text-align: right;">TOTAL:</th>
-                                            <th style="text-align: right;color: red;">{$grand_total_km}</th>
-                                            <th style="text-align: right;color: red;vertical-align: middle;">{$grand_cantitati}</th>
-                                            <th style="text-align: right;color: red;vertical-align: middle;">{$grand_valoare}</th>
+                                            <th style="text-align: right;">{($grand_total_km > 0) ? $grand_total_km : '-'}</th>
+                                            <th style="text-align: right;vertical-align: middle;">{($grand_cantitati > 0) ? $grand_cantitati : '-'}</th>
+                                            <th style="text-align: right;vertical-align: middle;">{($grand_valoare >0) ? $grand_valoare :'-'}</th>
                                             {foreach from = $livrari_trasee['produse_traseu'] item= produse}
-                                                <th style="text-align: right;color: red;">{$livrari_trasee['grand'][$produse['tip_produs_id']]['cantitate']}</th>
-                                                <th style="text-align: right;color: red;">{$livrari_trasee['grand'][$produse['tip_produs_id']]['valoare']}</th>
+                                                <th style="text-align: right;">{($livrari_trasee['grand'][$produse['tip_produs_id']]['cantitate'] > 0) ? $livrari_trasee['grand'][$produse['tip_produs_id']]['cantitate'] : '-'}</th>
+                                                <th style="text-align: right;">{($livrari_trasee['grand'][$produse['tip_produs_id']]['valoare'] > 0) ? $livrari_trasee['grand'][$produse['tip_produs_id']]['valoare'] : '-'}</th>
                                             {/foreach}
                                         </tr>
                                         </tbody>

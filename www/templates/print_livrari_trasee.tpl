@@ -121,7 +121,7 @@
                                 <td style="text-align: center;" class="span1">{$nr++}</td>
                                 <td>{$livrare['nume_sofer']}</td>
                                 <td style="text-align: center;">{$livrare['numar']}</td>
-                                <td>{$livrare['nume_traseu']}</td>
+                                <td style="text-align: center;">{$livrare['nume_traseu']}</td>
                                 <td style="text-align: right;">{($livrare['km']['km_traseu'] > 0) ? $livrare['km']['km_traseu'] : '-'}</td>
                                 <td style="text-align: right">
                                     {$total_bg = $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate']}
