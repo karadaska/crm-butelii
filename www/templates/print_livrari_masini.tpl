@@ -118,11 +118,11 @@
                                 <td>{$livrare['nume_sofer']}</td>
                                 <td style="text-align: center;">{$livrare['numar']}</td>
                                 <td>{$livrare['nume_traseu']}</td>
-                                <td style="text-align: center;">{$livrare['km']['km_traseu']}</td>
-                                <td style="text-align: center">
+                                <td style="text-align: right;">{$livrare['km']['km_traseu']}</td>
+                                <td style="text-align: right">
                                     {$livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] }
                                 </td>
-                                <td style="text-align: center">
+                                <td style="text-align: right">
                                     {$livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] }
                                 </td>
                                 {foreach from = $livrari_masini['produse_masina'] item= produse}
@@ -141,7 +141,7 @@
                         <tr>
                             <td colspan="3" style="text-align: right;"></td>
                             <td style="text-align: right;font-weight: 900;">TOTAL:</td>
-                            <td style="text-align: center;font-weight: 900;">{$grand_total_km}</td>
+                            <td style="text-align: right;font-weight: 900;">{$grand_total_km}</td>
                             <th style="text-align: right;vertical-align: middle;">{$grand_cantitati}</th>
                             <th style="text-align: right;vertical-align: middle;">{$grand_valoare}</th>
                             {foreach from = $livrari_masini['produse_masina'] item= produse}
