@@ -40,13 +40,6 @@
             font-size: 16px;
         }
 
-        /*th
-        {*/
-                    /*font-weight: bold;*/
-                    /*color: #000;*/
-                /*} */
-
-
     </style>
     <script type="text/javascript">
         function setPrint() {
@@ -97,7 +90,7 @@
                 <td>{strtoupper($client['nume_client'])}</td>
                 <td>
                     {if (count($client['realizat']) > 0)}
-                        <table border="1" class="print" style="width: 100%">
+                        <table border="1" style="width: 100%">
                             <tr>
                                 <td style="text-align: center;width: 150px;">PRODUS</td>
                                 <td style="text-align: center;">VANDUTE</td>

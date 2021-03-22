@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 10:43:45
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 10:48:42
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1616402623,
+      1 => 1616402915,
       2 => 'file',
     ),
   ),
@@ -73,9 +73,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             font-size: 16px;
         }
 
-        /*th */
-
-
     </style>
     <script type="text/javascript">
         function setPrint() {
@@ -130,49 +127,49 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars["client"]->key => $_smarty_tpl->tpl_vars["client"]->value) {
 $_smarty_tpl->tpl_vars["client"]->_loop = true;
 ?>
-        <tr>
-            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
+            <tr>
+                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
-            <td><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
+                <td><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 </td>
-            <td>
-                <?php if ((count($_smarty_tpl->tpl_vars['client']->value['realizat'])>0)) {?>
-                <table border="1" class="print" style="width: 100%">
-                    <tr>
-                        <td style="text-align: center;width: 150px;">PRODUS</td>
-                        <td style="text-align: center;">VANDUTE</td>
-                        <td style="text-align: center;">DEFECTE</td>
-                    </tr>
-                    <?php  $_smarty_tpl->tpl_vars['realizat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['realizat']->_loop = false;
+                <td>
+                    <?php if ((count($_smarty_tpl->tpl_vars['client']->value['realizat'])>0)) {?>
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="text-align: center;width: 150px;">PRODUS</td>
+                                <td style="text-align: center;">VANDUTE</td>
+                                <td style="text-align: center;">DEFECTE</td>
+                            </tr>
+                            <?php  $_smarty_tpl->tpl_vars['realizat'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['realizat']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['realizat']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['realizat']->key => $_smarty_tpl->tpl_vars['realizat']->value) {
 $_smarty_tpl->tpl_vars['realizat']->_loop = true;
 ?>
-                        <tr>
-                            <td><?php echo $_smarty_tpl->tpl_vars['realizat']->value['nume_produs'];?>
+                                <tr>
+                                    <td><?php echo $_smarty_tpl->tpl_vars['realizat']->value['nume_produs'];?>
 :</td>
-                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['realizat']->value['cantitate']>0 ? $_smarty_tpl->tpl_vars['realizat']->value['cantitate'] : '-';?>
+                                    <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['realizat']->value['cantitate']>0 ? $_smarty_tpl->tpl_vars['realizat']->value['cantitate'] : '-';?>
 </td>
-                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['realizat']->value['defecte']>0 ? $_smarty_tpl->tpl_vars['realizat']->value['defecte'] : '-';?>
+                                    <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['realizat']->value['defecte']>0 ? $_smarty_tpl->tpl_vars['realizat']->value['defecte'] : '-';?>
 </td>
-                        </tr>
-                    <?php } ?>
-                </table>
+                                </tr>
+                            <?php } ?>
+                        </table>
                     <?php } else { ?>
-                    <div style="text-align: center;">-</div>
-                <?php }?>
-            </td>
-            <td style="text-align: center;">
-                <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['client']->value['fisa_generata_id']), null, 0);?>
-                <?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['nume_observatie']!='' ? $_smarty_tpl->tpl_vars['client_observatie']->value['nume_observatie'] : '-';?>
+                        <div style="text-align: center;">-</div>
+                    <?php }?>
+                </td>
+                <td style="text-align: center;">
+                    <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['client']->value['fisa_generata_id']), null, 0);?>
+                    <?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['nume_observatie']!='' ? $_smarty_tpl->tpl_vars['client_observatie']->value['nume_observatie'] : '-';?>
 
-            </td>
-            <td style="text-align: center;">
-                <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['client']->value['fisa_generata_id']), null, 0);?>
-                <?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['observatie_extra']!='' ? $_smarty_tpl->tpl_vars['client_observatie']->value['observatie_extra'] : '-';?>
+                </td>
+                <td style="text-align: center;">
+                    <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['client']->value['fisa_generata_id']), null, 0);?>
+                    <?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['observatie_extra']!='' ? $_smarty_tpl->tpl_vars['client_observatie']->value['observatie_extra'] : '-';?>
 
-            </td>
-        </tr>
+                </td>
+            </tr>
         <?php } ?>
     </table>
     <div style="display: inline-flex;margin-top: 20px;">
