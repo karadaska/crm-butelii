@@ -106,8 +106,8 @@
                     {foreach from=$client['realizat'] item= realizat}
                         <tr>
                             <td>{$realizat['nume_produs']}:</td>
-                            <td style="text-align: right;">{$realizat['cantitate']}</td>
-                            <td style="text-align: right;">{$realizat['defecte']}</td>
+                            <td style="text-align: right;">{($realizat['cantitate'] > 0) ? $realizat['cantitate'] : '-'}</td>
+                            <td style="text-align: right;">{($realizat['defecte'] > 0) ? $realizat['defecte'] : '-'}</td>
                         </tr>
                     {/foreach}
                 </table>
