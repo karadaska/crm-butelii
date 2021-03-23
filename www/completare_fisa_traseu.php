@@ -52,8 +52,8 @@ $plecare_marfa_by_fisa_id = Stocuri::getPlecareMarfaByFisaId($id);
 $smarty->assign('plecare_marfa_by_fisa_id', $plecare_marfa_by_fisa_id);
 
 //Trebuie scoasa verificata
-$intoarcere_marfa = Stocuri::getIntoarcereMarfaByFisaId($id);
-$smarty->assign('intoarcere_marfa', $intoarcere_marfa);
+//$intoarcere_marfa = Stocuri::getIntoarcereMarfaByFisaId($id);
+//$smarty->assign('intoarcere_marfa', $intoarcere_marfa);
 
 $cantitate_sosire_by_fisa_id = Stocuri::getIncarcaturaMasinaSosireByFisaIdCompleteazaFisa($id);
 $smarty->assign('cantitate_sosire_by_fisa_id', $cantitate_sosire_by_fisa_id);
@@ -229,11 +229,13 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
 
     if ($tip_produs_id > 0) {
 //        Select daca am produs introdus
-        $select_id_produs_fisa_intoarcere = "SELECT id from fisa_total_intoarcere where fisa_id = '" . $id . "'
-                                                and traseu_id = '" . $traseu_by_fisa_generata_id['traseu_id'] . "'
-                                                and stare_produs = '" . $stare_produs . "'
-                                                and data_intrare = '" . $data_intrare . "'
-                                                and tip_produs_id = '" . $tip_produs_id . "'
+//        and traseu_id = '" . $traseu_by_fisa_generata_id['traseu_id'] . "'
+//        and data_intrare = '" . $data_intrare . "'
+
+        $select_id_produs_fisa_intoarcere = "SELECT id from fisa_total_intoarcere 
+                                                WHERE fisa_id = '" . $id . "'
+                                                AND stare_produs = '" . $stare_produs . "'
+                                                AND tip_produs_id = '" . $tip_produs_id . "'
                                                 ";
 
         $id_fisa_gasit_fisa_intoarcere = myQuery($select_id_produs_fisa_intoarcere);
@@ -242,26 +244,27 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
 // select daca am produs adaugat cu cantitati pline sau defecte
 
         if ($id_fisa_gasit_fisa_intoarcere->rowCount() == 1) {
+//            and id = '" . $id_fisa_intoarcere . "'
             $update_raport_fisa_intoarcere = "UPDATE fisa_total_intoarcere 
-                                              set cantitate = '" . $cantitate . "'
-                                              where fisa_id = '" . $id . "'
-                                              and stare_produs = '" . $stare_produs . "'
-                                              and tip_produs_id = '" . $tip_produs_id . "'
-                                              and id = '" . $id_fisa_intoarcere . "'
+                                              SET cantitate = '" . $cantitate . "'
+                                              WHERE fisa_id = '" . $id . "'
+                                              AND stare_produs = '" . $stare_produs . "'
+                                              AND tip_produs_id = '" . $tip_produs_id . "'
                                                 ";
             myExec($update_raport_fisa_intoarcere);
 
 //select produse goale
-            $select_goale = "SELECT id from fisa_total_intoarcere where fisa_id = '" . $id . "'
-                                                and traseu_id = '" . $traseu_by_fisa_generata_id['traseu_id'] . "'
-                                                and stare_produs = '" . $stare_goale . "'
-                                                and data_intrare = '" . $data_intrare . "'
-                                                and tip_produs_id = '" . $tip_produs_id . "'
-                                               ";
+//            AND traseu_id = '" . $traseu_by_fisa_generata_id['traseu_id'] . "'
+//            AND data_intrare = '" . $data_intrare . "'
+
+            $select_goale = "SELECT id from fisa_total_intoarcere 
+                              WHERE fisa_id = '" . $id . "'
+                              AND stare_produs = '" . $stare_goale . "'
+                              AND tip_produs_id = '" . $tip_produs_id . "'";
+
             $id_gasit_goale = myQuery($select_goale);
             $ret_goale = $id_gasit_goale->fetch(PDO::FETCH_ASSOC);
             $id_goale = $ret_goale['id'];
-
 
 //            daca am gasit o inregistrare de goale
             if ($id_gasit_goale->rowCount() == 1) {
