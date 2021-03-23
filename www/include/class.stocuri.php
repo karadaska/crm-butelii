@@ -262,7 +262,7 @@ class Stocuri
     public static function getIncarcaturaMasinaSosireByFisaId($id)
     {
         $ret = array();
-        $query = "SELECT a.*, b.tip as nume_produs
+        $query = "SELECT a.tip_produs_id, a.cantitate,a.stare_produs, b.tip as nume_produs
                   from fisa_total_intoarcere as a 
                   left join tip_produs as b on a.tip_produs_id = b.id
                   where fisa_id = '" . $id . "'
