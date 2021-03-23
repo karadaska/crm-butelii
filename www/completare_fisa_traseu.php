@@ -233,10 +233,10 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
 //        and data_intrare = '" . $data_intrare . "'
 
         $select_id_produs_fisa_intoarcere = "SELECT id from fisa_total_intoarcere 
-                                                WHERE fisa_id = '" . $id . "'
-                                                AND stare_produs = '" . $stare_produs . "'
-                                                AND tip_produs_id = '" . $tip_produs_id . "'
-                                                ";
+                                             WHERE fisa_id = '" . $id . "'
+                                             AND stare_produs = '" . $stare_produs . "'
+                                             AND tip_produs_id = '" . $tip_produs_id . "'
+                                             ";
 
         $id_fisa_gasit_fisa_intoarcere = myQuery($select_id_produs_fisa_intoarcere);
         $ret_fisa_intoarcere = $id_fisa_gasit_fisa_intoarcere->fetch(PDO::FETCH_ASSOC);
@@ -270,12 +270,12 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
             if ($id_gasit_goale->rowCount() == 1) {
 
                 $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
-                $smarty->assign('intoarcere_marfa_by_fisa_id', $intoarcere_marfa_by_fisa_id);
+//                $smarty->assign('intoarcere_marfa_by_fisa_id', $intoarcere_marfa_by_fisa_id);
 
-                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
+//                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
 
                 $update_goale = "UPDATE fisa_total_intoarcere 
-                                              set cantitate = '" . $cantitate_goale . "'
+                                              set cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
                                               where fisa_id = '" . $id . "'
                                               and stare_produs = '" . $stare_goale . "'
                                               and tip_produs_id = '" . $tip_produs_id . "'

@@ -263,10 +263,10 @@ class Stocuri
     {
         $ret = array();
         $query = "SELECT a.tip_produs_id, a.cantitate,a.stare_produs, b.tip as nume_produs
-                  from fisa_total_intoarcere as a 
-                  left join tip_produs as b on a.tip_produs_id = b.id
-                  where fisa_id = '" . $id . "'
-                  and a.sters = 0
+                  FROM fisa_total_intoarcere as a 
+                  LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                  WHERE a.fisa_id = '" . $id . "'
+                  AND a.sters = 0
                   ORDER BY b.id ASC 
                  ";
         $result = myQuery($query);
@@ -435,59 +435,124 @@ class Stocuri
         return $ret;
     }
 
-//Trebuie verificata functia asta ca intoarce mai mult de 1 row => am facut una noua
-    public static function getIntoarcereMarfaByFisaId($id)
-    {
-        $ret = array();
-        $query = "SELECT
-                        a.tip_produs_id,
-                        a.fisa_id,
-                        b.tip AS nume_produs,
-                        ( SELECT cantitate FROM fisa_total_plecare WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 1 AND sters = 0) AS pline_plecare,
-                        ( SELECT cantitate FROM fisa_total_intoarcere WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 1 ) AS pline_intoarcere,
-                        ( SELECT cantitate FROM fisa_total_intoarcere WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 3 ) AS defecte_intoarcere 
-                    FROM fisa_total_intoarcere AS a
-                        LEFT JOIN tip_produs AS b ON a.tip_produs_id = b.id 
-                    WHERE a.fisa_id = '" . $id . "'                   
-                    and a.sters = 0 
-                    GROUP BY a.tip_produs_id
-                        ";
-
-        $result = myQuery($query);
-
-        if ($result) {
-            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
-        }
-        return $ret;
-    }
-
 //Trebuie refacuta la completare fisa
-    public static function getIntoarcereMarfaByFisaIdAndprodusId($id, $produs_id)
+//    public static function getIntoarcereMarfaByFisaIdAndprodusId($id, $produs_id)
+//    {
+//        $ret = array();
+//        $query = "SELECT
+//                        a.tip_produs_id,
+//                        a.fisa_id,
+//                        b.tip AS nume_produs,
+//                        ( SELECT cantitate FROM fisa_total_plecare WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 1 AND sters = 0) AS pline_plecare,
+//                        ( SELECT cantitate FROM fisa_total_intoarcere WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 1 ) AS pline_intoarcere,
+//                        ( SELECT cantitate FROM fisa_total_intoarcere WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 3 ) AS defecte_intoarcere
+//                        FROM fisa_total_intoarcere AS a
+//                        LEFT JOIN tip_produs AS b ON a.tip_produs_id = b.id
+//                        WHERE  a.fisa_id = '" . $id . "'
+//                        and a.tip_produs_id = '" . $produs_id . "'
+//                        and a.sters = 0
+//                        and b.sters = 0
+//                        ";
+//
+//        $result = myQuery($query);
+//
+//        if ($result) {
+//            $ret = $result->fetch(PDO::FETCH_ASSOC);
+//        }
+//        return $ret;
+//    }
+
+    public static function getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id)
     {
         $ret = array();
-        $query = "SELECT
-                        a.tip_produs_id,
-                        a.fisa_id,
-                        b.tip AS nume_produs,
-                        ( SELECT cantitate FROM fisa_total_plecare WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 1 AND sters = 0) AS pline_plecare,
-                        ( SELECT cantitate FROM fisa_total_intoarcere WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 1 ) AS pline_intoarcere,
-                        ( SELECT cantitate FROM fisa_total_intoarcere WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 3 ) AS defecte_intoarcere 
-                        FROM fisa_total_intoarcere AS a
-                        LEFT JOIN tip_produs AS b ON a.tip_produs_id = b.id 
-                        WHERE  a.fisa_id = '" . $id . "'                        
-                        and a.tip_produs_id = '" . $produs_id . "'
-                        and a.sters = 0                       
-                        and b.sters = 0                       
-                        ";
+        $query = "SELECT a.fisa_id, a.tip_produs_id, a.cantitate, a.stare_produs, b.tip as nume_produs
+                  FROM fisa_total_intoarcere as a 
+                  LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                  WHERE a.fisa_id = '" . $id . "'
+                  AND a.tip_produs_id = '" . $tip_produs_id . "'
+                  AND a.sters = 0
+                  ORDER BY b.id ASC 
+                 ";
 
         $result = myQuery($query);
 
         if ($result) {
-            $ret = $result->fetch(PDO::FETCH_ASSOC);
+            $ret['totaluri'] = array(
+                'total_goale' => 0,
+            );
+
+            $ret['marfa_plecare'] = self::getPlecareMarfaByFisaIdAndprodusId($id, $tip_produs_id);
+            $ret['marfa_sosire'] = array();
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                if (!isset($ret['marfa_sosire'][$item['tip_produs_id']])) {
+                    $ret['marfa_sosire'][$item['tip_produs_id']] = array(
+                        'pline' => 0,
+                        'defecte' => 0,
+                    );
+
+                }
+
+                if ($item['stare_produs'] == 1) {
+                    $ret['marfa_sosire'][$item['tip_produs_id']]['pline'] += $item['cantitate'];
+                } else if ($item['stare_produs'] == 3) {
+                    $ret['marfa_sosire'][$item['tip_produs_id']]['defecte'] += $item['cantitate'];
+                    $ret['totaluri']['total_goale'] = $ret['marfa_plecare'][$item['tip_produs_id']]['pline_plecare'] - $ret['marfa_sosire'][$item['tip_produs_id']]['pline'];
+                }
+            }
         }
         return $ret;
     }
 
+//    public static function getPlecareMarfaByFisaIdAndprodusId($id, $tip_produs_id)
+//    {
+//        $ret = array();
+//        $query = "SELECT a.fisa_id, a.tip_produs_id, a.cantitate, a.stare_produs, b.tip as nume_produs
+//                  FROM fisa_total_plecare as a
+//                  LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+//                  WHERE a.fisa_id = '" . $id . "'
+//                  AND a.tip_produs_id = '" . $tip_produs_id . "'
+//                  AND a.sters = 0
+//                  ORDER BY b.id ASC
+//                 ";
+//
+//        $result = myQuery($query);
+//
+//        if ($result) {
+//            $ret['marfa_plecare'] = array();
+//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+//            foreach ($a as $item) {
+//                if (!isset($ret['marfa_plecare'][$item['tip_produs_id']])) {
+//                    $ret['marfa_plecare'][$item['tip_produs_id']] = array(
+//                        'pline' => 0,
+//                    );
+//                }
+//                    $ret['marfa_plecare'][$item['tip_produs_id']]['pline'] += $item['cantitate'];
+//            }
+//        }
+//        return $ret;
+//    }
+    public static function getPlecareMarfaByFisaIdAndprodusId($id, $tip_produs_id)
+    {
+        $ret = array();
+        $query = "SELECT a.tip_produs_id, a.cantitate as pline_plecare
+                  FROM fisa_total_plecare as a 
+                  WHERE a.fisa_id = '" . $id . "'
+                  AND a.tip_produs_id = '" . $tip_produs_id . "'
+                  AND a.sters = 0
+                 ";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['tip_produs_id']] = $item;
+            }
+        }
+        return $ret;
+
+    }
     public static function getPlecareMarfaByFisaIdAndTraseuId($id, $data_start, $opts = array())
     {
         $fisa_id = isset($opts['fisa_id']) ? $opts['fisa_id'] : 0;
@@ -853,7 +918,6 @@ class Stocuri
         return $ret;
     }
 
-
     public static function getMiscariByFisaId($id)
     {
         $ret = array();
@@ -1006,4 +1070,31 @@ class Stocuri
 
 }
 
+
+
+//Trebuie verificata functia asta ca intoarce mai mult de 1 row => am facut una noua
+//    public static function getIntoarcereMarfaByFisaId($id)
+//    {
+//        $ret = array();
+//        $query = "SELECT
+//                        a.tip_produs_id,
+//                        a.fisa_id,
+//                        b.tip AS nume_produs,
+//                        ( SELECT cantitate FROM fisa_total_plecare WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 1 AND sters = 0) AS pline_plecare,
+//                        ( SELECT cantitate FROM fisa_total_intoarcere WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 1 ) AS pline_intoarcere,
+//                        ( SELECT cantitate FROM fisa_total_intoarcere WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 3 ) AS defecte_intoarcere
+//                    FROM fisa_total_intoarcere AS a
+//                        LEFT JOIN tip_produs AS b ON a.tip_produs_id = b.id
+//                    WHERE a.fisa_id = '" . $id . "'
+//                    and a.sters = 0
+//                    GROUP BY a.tip_produs_id
+//                        ";
+//
+//        $result = myQuery($query);
+//
+//        if ($result) {
+//            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+//        }
+//        return $ret;
+//    }
 
