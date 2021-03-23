@@ -210,4 +210,5 @@ $b = ParcAuto::getRaportLivrariSoferi(23,
 //    'sofer_id' => 23,
 //    'masina_id' => 2
 //));
+$b = Stocuri::getIncarcaturaMasinaSosireByFisaIdCompleteazaFisa(591);
 echo json_encode($b);

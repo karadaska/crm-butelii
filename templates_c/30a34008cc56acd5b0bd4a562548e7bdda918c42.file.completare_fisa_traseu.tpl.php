@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-23 09:05:27
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-23 14:10:18
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1616483124,
+      1 => 1616501416,
       2 => 'file',
     ),
   ),
@@ -39,9 +39,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'stare_produs' => 0,
     'cantitate_sosire_by_fisa_id' => 0,
     'marfa_sosire' => 0,
-    'total_pline' => 0,
-    'total_defecte' => 0,
-    'total_goale' => 0,
     'total_vandute' => 0,
     'nr' => 0,
     'client' => 0,
@@ -440,7 +437,7 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                         </tr>
                                     </table>
                                 <?php }?>
-                                <?php if (count($_smarty_tpl->tpl_vars['cantitate_sosire_by_fisa_id']->value)>0) {?>
+                                <?php if (count($_smarty_tpl->tpl_vars['cantitate_sosire_by_fisa_id']->value['marfa_sosire'])>0) {?>
                                     <table class="table table-bordered"
                                            style="width: 500px;margin-right: 100px;margin-top: 10px;margin-left: 10px;">
                                         <tr>
@@ -449,11 +446,8 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                             <th>Def.</th>
                                             <th>Goale</th>
                                         </tr>
-                                        <?php $_smarty_tpl->tpl_vars['total_pline'] = new Smarty_variable(0, null, 0);?>
-                                        <?php $_smarty_tpl->tpl_vars['total_defecte'] = new Smarty_variable(0, null, 0);?>
-                                        <?php $_smarty_tpl->tpl_vars['total_goale'] = new Smarty_variable(0, null, 0);?>
                                         <?php  $_smarty_tpl->tpl_vars['marfa_sosire'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['marfa_sosire']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['cantitate_sosire_by_fisa_id']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['cantitate_sosire_by_fisa_id']->value['marfa_sosire']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['marfa_sosire']->key => $_smarty_tpl->tpl_vars['marfa_sosire']->value) {
 $_smarty_tpl->tpl_vars['marfa_sosire']->_loop = true;
 ?>
@@ -473,18 +467,15 @@ $_smarty_tpl->tpl_vars['marfa_sosire']->_loop = true;
 
                                                 </td>
                                             </tr>
-                                            <?php $_smarty_tpl->tpl_vars['total_pline'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_pline']->value+$_smarty_tpl->tpl_vars['marfa_sosire']->value['pline'], null, 0);?>
-                                            <?php $_smarty_tpl->tpl_vars['total_defecte'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_defecte']->value+$_smarty_tpl->tpl_vars['marfa_sosire']->value['defecte'], null, 0);?>
-                                            <?php $_smarty_tpl->tpl_vars['total_goale'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_goale']->value+$_smarty_tpl->tpl_vars['marfa_sosire']->value['goale'], null, 0);?>
                                         <?php } ?>
                                         <tfoot>
                                         <tr>
                                             <td style="text-align: left;">Total:</td>
-                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['total_pline']->value;?>
+                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['cantitate_sosire_by_fisa_id']->value['totaluri']['total_pline'];?>
 </td>
-                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['total_defecte']->value;?>
+                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['cantitate_sosire_by_fisa_id']->value['totaluri']['total_defecte'];?>
 </td>
-                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['total_goale']->value;?>
+                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['cantitate_sosire_by_fisa_id']->value['totaluri']['total_goale'];?>
  </td>
                                         </tr>
                                         <form action="/completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>

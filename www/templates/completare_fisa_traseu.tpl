@@ -323,7 +323,7 @@
                                         </tr>
                                     </table>
                                 {/if}
-                                {if count($cantitate_sosire_by_fisa_id) > 0}
+                                {if count($cantitate_sosire_by_fisa_id['marfa_sosire']) > 0}
                                     <table class="table table-bordered"
                                            style="width: 500px;margin-right: 100px;margin-top: 10px;margin-left: 10px;">
                                         <tr>
@@ -332,10 +332,7 @@
                                             <th>Def.</th>
                                             <th>Goale</th>
                                         </tr>
-                                        {$total_pline = 0}
-                                        {$total_defecte = 0}
-                                        {$total_goale= 0}
-                                        {foreach from=$cantitate_sosire_by_fisa_id item=marfa_sosire}
+                                        {foreach from=$cantitate_sosire_by_fisa_id['marfa_sosire'] item=marfa_sosire}
                                             <tr>
                                                 <td>{$marfa_sosire['nume_produs']}</td>
                                                 <td style="text-align: right;">
@@ -348,16 +345,13 @@
                                                     {$marfa_sosire['goale']}
                                                 </td>
                                             </tr>
-                                            {$total_pline = $total_pline + $marfa_sosire['pline']}
-                                            {$total_defecte = $total_defecte + $marfa_sosire['defecte']}
-                                            {$total_goale = $total_goale + $marfa_sosire['goale']}
                                         {/foreach}
                                         <tfoot>
                                         <tr>
                                             <td style="text-align: left;">Total:</td>
-                                            <td style="text-align: right;">{$total_pline}</td>
-                                            <td style="text-align: right;">{$total_defecte}</td>
-                                            <td style="text-align: right;">{$total_goale} </td>
+                                            <td style="text-align: right;">{$cantitate_sosire_by_fisa_id['totaluri']['total_pline']}</td>
+                                            <td style="text-align: right;">{$cantitate_sosire_by_fisa_id['totaluri']['total_defecte']}</td>
+                                            <td style="text-align: right;">{$cantitate_sosire_by_fisa_id['totaluri']['total_goale']} </td>
                                         </tr>
                                         <form action="/completare_fisa_traseu.php?id={$fisa['id']}" method="post"
                                               style="margin-bottom: 0;">

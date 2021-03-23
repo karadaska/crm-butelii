@@ -55,7 +55,7 @@ $smarty->assign('plecare_marfa_by_fisa_id', $plecare_marfa_by_fisa_id);
 $intoarcere_marfa = Stocuri::getIntoarcereMarfaByFisaId($id);
 $smarty->assign('intoarcere_marfa', $intoarcere_marfa);
 
-$cantitate_sosire_by_fisa_id = Stocuri::getIncarcaturaMasinaSosireByFisaId($id);
+$cantitate_sosire_by_fisa_id = Stocuri::getIncarcaturaMasinaSosireByFisaIdCompleteazaFisa($id);
 $smarty->assign('cantitate_sosire_by_fisa_id', $cantitate_sosire_by_fisa_id);
 
 $lista_asignari_clienti_by_fisa_generata = Clienti::getAsignariClientiByFisaGenerataId($id);

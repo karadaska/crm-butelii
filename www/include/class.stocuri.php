@@ -295,6 +295,55 @@ class Stocuri
         return $ret;
     }
 
+    public static function getIncarcaturaMasinaSosireByFisaIdCompleteazaFisa($id)
+    {
+        $ret = array();
+        $query = "SELECT a.*, b.tip as nume_produs
+                  from fisa_total_intoarcere as a 
+                  left join tip_produs as b on a.tip_produs_id = b.id
+                  where fisa_id = '" . $id . "'
+                  and a.sters = 0
+                  ORDER BY b.id ASC 
+                 ";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret['totaluri'] = array(
+                'total_pline' => 0,
+                'total_goale' => 0,
+                'total_defecte' => 0,
+            );
+
+            $ret['marfa_sosire'] = array();
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                if (!isset($ret['marfa_sosire'][$item['tip_produs_id']])) {
+                    $ret['marfa_sosire'][$item['tip_produs_id']] = array(
+                        'nume_produs' => $item['nume_produs'],
+                        'pline' => 0,
+                        'goale' => 0,
+                        'defecte' => 0,
+                    );
+
+                }
+
+                if ($item['stare_produs'] == 1) {
+                    $ret['marfa_sosire'][$item['tip_produs_id']]['pline'] += $item['cantitate'];
+                    $ret['totaluri']['total_pline'] += $item['cantitate'];
+
+                } else if ($item['stare_produs'] == 2) {
+                    $ret['marfa_sosire'][$item['tip_produs_id']]['goale'] += $item['cantitate'];
+                    $ret['totaluri']['total_goale'] += $item['cantitate'];
+                } else if ($item['stare_produs'] == 3) {
+                    $ret['marfa_sosire'][$item['tip_produs_id']]['defecte'] += $item['cantitate'];
+                    $ret['totaluri']['total_defecte'] += $item['cantitate'];
+                }
+            }
+        }
+        return $ret;
+    }
+
     public static function getCantitatiVanduteLaSosireByFisaIdAndClientId($fisa_id, $client_id)
     {
         $ret = array();
