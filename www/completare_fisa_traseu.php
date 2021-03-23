@@ -268,18 +268,17 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
 
 //            daca am gasit o inregistrare de goale
             if ($id_gasit_goale->rowCount() == 1) {
-
                 $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
 //                $smarty->assign('intoarcere_marfa_by_fisa_id', $intoarcere_marfa_by_fisa_id);
 
 //                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
 
+//                AND id = '" . $id_goale . "'
                 $update_goale = "UPDATE fisa_total_intoarcere 
-                                              set cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
-                                              where fisa_id = '" . $id . "'
-                                              and stare_produs = '" . $stare_goale . "'
-                                              and tip_produs_id = '" . $tip_produs_id . "'
-                                              and id = '" . $id_goale . "'
+                                              SET cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
+                                              WHERE fisa_id = '" . $id . "'
+                                              AND stare_produs = '" . $stare_goale . "'
+                                              AND tip_produs_id = '" . $tip_produs_id . "'
                                                 ";
                 myExec($update_goale);
 
@@ -313,16 +312,16 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
 //                daca am gasit fac update la produse goale
 
                 $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
-                $smarty->assign('intoarcere_marfa_by_fisa_id', $intoarcere_marfa_by_fisa_id);
+//                $smarty->assign('intoarcere_marfa_by_fisa_id', $intoarcere_marfa_by_fisa_id);
 
-                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
+//                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
+//                and id = '" . $id_goale . "'
 
                 $am_gasit_goale = "UPDATE fisa_total_intoarcere 
-                                              set cantitate = '" . $cantitate_goale . "'
+                                              set cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
                                               where fisa_id = '" . $id . "'
                                               and stare_produs = '" . $stare_goale . "'
                                               and tip_produs_id = '" . $tip_produs_id . "'
-                                              and id = '" . $id_goale . "'
                                                 ";
                 myExec($am_gasit_goale);
 
@@ -330,14 +329,13 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
             } else {
 
                 $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
-                $smarty->assign('intoarcere_marfa_by_fisa_id', $intoarcere_marfa_by_fisa_id);
 
-                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
+//                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
 
                 $insert_goale = "INSERT INTO fisa_total_intoarcere(fisa_id, traseu_id, tip_produs_id, cantitate, stare_produs, data_intrare)
                      values
                     ('" . $id . "','" . $traseu_by_fisa_generata_id['traseu_id'] . "',
-                    '" . $tip_produs_id . "','" . $cantitate_goale . "','" . $stare_goale . "','" . $data_intrare . "')";
+                    '" . $tip_produs_id . "','" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "','" . $stare_goale . "','" . $data_intrare . "')";
 
                 myExec($insert_goale);
 
