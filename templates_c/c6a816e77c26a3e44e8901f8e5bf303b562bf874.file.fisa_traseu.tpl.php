@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-18 14:00:02
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-24 14:32:48
          compiled from "/var/www/html/fofoweb/www/templates/fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:41291163760227fca5e0d02-36086469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6a816e77c26a3e44e8901f8e5bf303b562bf874' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/fisa_traseu.tpl',
-      1 => 1616068799,
+      1 => 1616589166,
       2 => 'file',
     ),
   ),
@@ -178,8 +178,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['marfa_plecare']->key => $_smarty_tpl-
 $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = true;
 ?>
                                                                             <?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['nume_produs'];?>
- : [Pline:<?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['cantitate'];?>
-]
+ : <?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['cantitate'];?>
+
                                                                             <br/>
                                                                         <?php } ?>
                                                                     </td>

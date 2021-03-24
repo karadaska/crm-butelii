@@ -87,7 +87,7 @@
                                                                     <td style="text-align: center;">{$fisa['numar_masina']}</td>
                                                                     <td style="text-align: left;">
                                                                         {foreach from=$fisa['incarcatura_masina_plecare'] item=marfa_plecare}
-                                                                            {$marfa_plecare['nume_produs']} : [Pline:{$marfa_plecare['cantitate']}]
+                                                                            {$marfa_plecare['nume_produs']} : {$marfa_plecare['cantitate']}
                                                                             <br/>
                                                                         {/foreach}
                                                                     </td>
