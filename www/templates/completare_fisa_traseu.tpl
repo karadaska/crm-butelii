@@ -43,8 +43,8 @@
                                                         Z:
                                                     </th>
                                                     <th style="text-align: left;">
-                                                        {if $fisa['miscari_fisa']['valoare_z'] != ''}
-                                                            {$valoare_z = $fisa['miscari_fisa']['valoare_z']}
+                                                        {if $miscari_fisa['valoare_z'] != ''}
+                                                            {$valoare_z = $miscari_fisa['valoare_z']}
                                                         {else}
                                                             {$valoare_z = 0}
                                                         {/if}
@@ -54,6 +54,18 @@
                                                                value="{$valoare_z}"
                                                         />
                                                     </th>
+                                                    {*<th style="text-align: left;">*}
+                                                        {*{if $fisa['miscari_fisa']['valoare_z'] != ''}*}
+                                                            {*{$valoare_z = $fisa['miscari_fisa']['valoare_z']}*}
+                                                        {*{else}*}
+                                                            {*{$valoare_z = 0}*}
+                                                        {*{/if}*}
+                                                        {*<input style="width: 100%; line-height: 10px;min-height: 10px !important;"*}
+                                                               {*type="text" class="form-control" name="valoare_z"*}
+                                                               {*autocomplete="off"*}
+                                                               {*value="{$valoare_z}"*}
+                                                        {*/>*}
+                                                    {*</th>*}
                                                 </tr>
                                             </table>
                                         </th>
@@ -62,8 +74,8 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">NR. casa</th>
                                                     <th style="text-align: left;">
-                                                        {if $fisa['miscari_fisa']['casa_marcat'] != ''}
-                                                            {$valoare_casa_marcat = $fisa['miscari_fisa']['casa_marcat']}
+                                                        {if $miscari_fisa != ''}
+                                                            {$valoare_casa_marcat = $miscari_fisa['casa_marcat']}
                                                         {else}
                                                             {$valoare_casa_marcat = 0}
                                                         {/if}
@@ -83,8 +95,8 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;">Km parcursi:</th>
                                                     <th style="text-align: left;">
-                                                        {if $fisa['miscari_fisa']['km_parcursi'] != ''}
-                                                            {$km_parcursi = $fisa['miscari_fisa']['km_parcursi']}
+                                                        {if $miscari_fisa['km_parcursi'] != ''}
+                                                            {$km_parcursi = $miscari_fisa['km_parcursi']}
                                                         {else}
                                                             {$km_parcursi = 0}
                                                         {/if}
@@ -102,8 +114,8 @@
                                                 <tr>
                                                     <th style="text-align: left;width: 100px;"> Nr. raport Z</th>
                                                     <th style="text-align: left;">
-                                                        {if $fisa['miscari_fisa']['raport_z'] != ''}
-                                                            {$valoare_raport_z = $fisa['miscari_fisa']['raport_z']}
+                                                        {if $miscari_fisa['raport_z'] != ''}
+                                                            {$valoare_raport_z = $miscari_fisa['raport_z']}
                                                         {else}
                                                             {$valoare_raport_z = 0}
                                                         {/if}
@@ -126,7 +138,7 @@
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="nr_bg"
                                                                autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['nr_bg']}"
+                                                               value="{$miscari_fisa['nr_bg']}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -141,7 +153,7 @@
                                                     <th style="text-align: left;">
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="valoare_bg"
-                                                               value="{$fisa['miscari_fisa']['valoare_bg']}"
+                                                               value="{$miscari_fisa['valoare_bg']}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -157,7 +169,7 @@
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="nr_ar_8"
                                                                autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['nr_ar_8']}"
+                                                               value="{$miscari_fisa['nr_ar_8']}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -171,7 +183,7 @@
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="valoare_ar_8"
                                                                autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['valoare_ar_8']}"
+                                                               value="{$miscari_fisa['valoare_ar_8']}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -188,7 +200,7 @@
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="nr_ar_9"
                                                                autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['nr_ar_9']}"
+                                                               value="{$miscari_fisa['nr_ar_9']}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -202,7 +214,7 @@
                                                         <input style="width: 100%; line-height: 10px;min-height: 10px !important;"
                                                                type="text" class="form-control" name="valoare_ar_9"
                                                                autocomplete="off"
-                                                               value="{$fisa['miscari_fisa']['valoare_ar_9']}"
+                                                               value="{$miscari_fisa['valoare_ar_9']}"
                                                         />
                                                     </th>
                                                 </tr>
@@ -219,7 +231,7 @@
                                                             <option value="0">Alege..</option>
                                                             {foreach from=$get_tip_alimentare item=alimentare_tip}
                                                                 <option value={$alimentare_tip['id']}
-                                                                        {if $alimentare_tip['id'] == {$fisa['miscari_fisa']['tip_alimentare_id']}}selected="selected"{/if}>
+                                                                        {if $alimentare_tip['id'] == {$miscari_fisa['tip_alimentare_id']}}selected="selected"{/if}>
                                                                     {$alimentare_tip['tip']}</option>
                                                             {/foreach}
                                                         </select>
@@ -234,8 +246,8 @@
                                                         plata
                                                     </th>
                                                     <th style="text-align: left;">
-                                                        {if $fisa['miscari_fisa']['valoare_alimentare'] != ''}
-                                                            {$valoare_alimentare = $fisa['miscari_fisa']['valoare_alimentare']}
+                                                        {if $miscari_fisa['valoare_alimentare'] != ''}
+                                                            {$valoare_alimentare = $miscari_fisa['valoare_alimentare']}
                                                         {else}
                                                             {$valoare_alimentare = 0}
                                                         {/if}
@@ -260,7 +272,7 @@
                                         </th>
                                         <th class="table_miscari">
                                             <textarea style="width: 100%" type="text" rows="2"
-                                                      name="nota_explicativa">{$fisa['miscari_fisa']['nota_explicativa']}</textarea>
+                                                      name="nota_explicativa">{$miscari_fisa['nota_explicativa']}</textarea>
                                         </th>
                                     </tr>
                                     <tr>

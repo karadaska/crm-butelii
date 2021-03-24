@@ -48,12 +48,16 @@ $smarty->assign('lista_produse', $lista_produse);
 $lista_stari_produse = Produse::getStareProdus();
 $smarty->assign('lista_stari_produse', $lista_stari_produse);
 
-$plecare_marfa_by_fisa_id = Stocuri::getPlecareMarfaByFisaId($id);
-$smarty->assign('plecare_marfa_by_fisa_id', $plecare_marfa_by_fisa_id);
+//$plecare_marfa_by_fisa_id = Stocuri::getPlecareMarfaByFisaId($id);
+//$smarty->assign('plecare_marfa_by_fisa_id', $plecare_marfa_by_fisa_id);
 
 $cantitati_plecare = Fise::getPlecareMarfaByFisaIdMiscariFise($id);
 $smarty->assign('cantitati_plecare', $cantitati_plecare);
 
+$miscari_fisa = Fise::getMiscariByFisaId($id);
+$smarty->assign('miscari_fisa', $miscari_fisa);
+
+//pre($miscari_fisa);
 $cantitate_sosire_by_fisa_id = Stocuri::getIncarcaturaMasinaSosireByFisaIdCompleteazaFisa($id);
 $smarty->assign('cantitate_sosire_by_fisa_id', $cantitate_sosire_by_fisa_id);
 

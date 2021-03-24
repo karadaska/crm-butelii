@@ -67,4 +67,22 @@ class Fise
         }
         return $ret;
     }
+
+    public static function getMiscariByFisaId($id)
+    {
+        $ret = array();
+        $query = "SELECT a.fisa_id, a.casa_marcat,raport_z,a.valoare_z,
+                  a.valoare_alimentare, a.km_parcursi, a.tip_alimentare as tip_alimentare_id, b.tip as tip_plata,
+                  a.nr_bg, a.nr_ar_8, a.nr_ar_9, a.valoare_bg, a.valoare_ar_8, a.valoare_ar_9, a.nota_explicativa
+                  from miscari_fise as a
+                  left join tip_alimentare as b on a.tip_alimentare = b.id
+                  where a.fisa_id = '" . $id . "'";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
 }
