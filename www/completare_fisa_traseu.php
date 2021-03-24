@@ -57,7 +57,6 @@ $smarty->assign('cantitati_plecare', $cantitati_plecare);
 $miscari_fisa = Fise::getMiscariByFisaId($id);
 $smarty->assign('miscari_fisa', $miscari_fisa);
 
-//pre($miscari_fisa);
 $cantitate_sosire_by_fisa_id = Stocuri::getIncarcaturaMasinaSosireByFisaIdCompleteazaFisa($id);
 $smarty->assign('cantitate_sosire_by_fisa_id', $cantitate_sosire_by_fisa_id);
 
