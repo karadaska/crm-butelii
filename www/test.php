@@ -210,6 +210,7 @@ $b = ParcAuto::getRaportLivrariSoferi(23,
 //    'sofer_id' => 23,
 //    'masina_id' => 2
 //));
-$b = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId(591,1);
+//$b = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId(591,1);
+$b = Fise::getPlecareMarfaByFisaIdMiscariFise(591);
 //$b = Stocuri::getPlecareMarfaByFisaIdAndprodusId(595,3);
 echo json_encode($b);

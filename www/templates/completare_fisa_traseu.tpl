@@ -251,7 +251,7 @@
                                     </tr>
                                     <tr>
                                         <th class="table_miscari">
-                                            <h6> {foreach from = $fisa['incarcatura_masina_plecare'] item = incarcatura}
+                                            <h6> {foreach from = $cantitati_plecare item = incarcatura}
                                                     <span style="color: red;"> {$incarcatura['nume_produs']}
                                                         : {$incarcatura['cantitate']} bucati</span>
                                                     <br/>

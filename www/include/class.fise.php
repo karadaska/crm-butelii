@@ -46,4 +46,25 @@ class Fise
         }
         return $ret;
     }
+
+    public static function getPlecareMarfaByFisaIdMiscariFise($id)
+    {
+
+        $ret = array();
+        $query = "SELECT a.tip_produs_id, a.cantitate, b.tip as  nume_produs, a.cantitate
+                  from fisa_total_plecare as a 
+                  left join tip_produs as b on a.tip_produs_id = b.id
+                  where fisa_id = '" . $id . "'
+                  and a.sters = 0
+                 ";
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['tip_produs_id']] = $item;
+            }
+        }
+        return $ret;
+    }
 }

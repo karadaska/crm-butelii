@@ -198,6 +198,8 @@ class Stocuri
         return $ret;
     }
 
+
+
 //    Functia asta o folosesc doar la pagina de afisare fise
     public static function getIncarcaturaMasinaPlecareByFisaId($id)
     {

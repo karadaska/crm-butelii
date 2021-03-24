@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-24 11:29:39
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-24 12:23:13
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1616578176,
+      1 => 1616581387,
       2 => 'file',
     ),
   ),
@@ -28,6 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'get_tip_alimentare' => 0,
     'alimentare_tip' => 0,
     'valoare_alimentare' => 0,
+    'cantitati_plecare' => 0,
     'incarcatura' => 0,
     'lista_produse' => 0,
     'plecare_marfa_by_fisa_id' => 0,
@@ -342,7 +343,7 @@ $_smarty_tpl->tpl_vars['alimentare_tip']->_loop = true;
                                     <tr>
                                         <th class="table_miscari">
                                             <h6> <?php  $_smarty_tpl->tpl_vars['incarcatura'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['incarcatura']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['fisa']->value['incarcatura_masina_plecare']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['cantitati_plecare']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['incarcatura']->key => $_smarty_tpl->tpl_vars['incarcatura']->value) {
 $_smarty_tpl->tpl_vars['incarcatura']->_loop = true;
 ?>
