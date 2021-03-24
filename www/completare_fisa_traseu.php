@@ -237,6 +237,7 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
         $id_fisa_intoarcere = $ret_fisa_intoarcere['id'];
 
         if ($id_fisa_gasit_fisa_intoarcere->rowCount() == 1) {
+
             $update_raport_fisa_intoarcere = "UPDATE fisa_total_intoarcere 
                                               SET cantitate = '" . $cantitate . "'
                                               WHERE fisa_id = '" . $id . "'
@@ -246,8 +247,10 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
             myExec($update_raport_fisa_intoarcere);
 
             if ($stare_produs == 1) {
+                $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
+
                 $update_raport_fisa_intoarcere = "UPDATE fisa_total_intoarcere 
-                                              SET cantitate = '" . $cantitate . "'
+                                              SET cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
                                               WHERE fisa_id = '" . $id . "'
                                               AND stare_produs = '" . $stare_goale . "'
                                               AND tip_produs_id = '" . $tip_produs_id . "'
@@ -262,10 +265,11 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
             myExec($insert_fisa_total_intoarcere);
 
             if ($stare_produs == 1) {
+                $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
                 $insert_goale = "INSERT INTO fisa_total_intoarcere(fisa_id, traseu_id, tip_produs_id, cantitate, stare_produs, data_intrare)
                      values
                     ('" . $id . "','" . $traseu_by_fisa_generata_id['traseu_id'] . "',
-                    '" . $tip_produs_id . "','" . $cantitate . "','" . $stare_goale . "','" . $data_intrare . "')";
+                    '" . $tip_produs_id . "','" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "','" . $stare_goale . "','" . $data_intrare . "')";
                 myExec($insert_goale);
             }
         }

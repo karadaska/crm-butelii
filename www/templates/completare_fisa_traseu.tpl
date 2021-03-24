@@ -314,7 +314,7 @@
                                                 <input autocomplete="off" placeholder="Cantitate"
                                                        style="margin-top: 10px;width: 100px;" type="text"
                                                        name="cantitate">
-                                                <button style="margin-top: 2px;" disabled type="submit"
+                                                <button style="margin-top: 2px;" type="submit"
                                                         name="adauga_cantitate_intoarcere_traseu"
                                                         class="btn btn-primary">
                                                     Adauga
