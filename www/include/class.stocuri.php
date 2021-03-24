@@ -495,6 +495,7 @@ class Stocuri
 
                 if ($item['stare_produs'] == 1) {
                     $ret['marfa_sosire'][$item['tip_produs_id']]['pline'] += $item['cantitate'];
+                    $ret['totaluri']['total_goale'] = $ret['marfa_plecare'][$item['tip_produs_id']]['pline_plecare'] - ($ret['marfa_sosire'][$item['tip_produs_id']]['pline'] + $ret['marfa_sosire'][$item['tip_produs_id']]['defecte']);
                 } else if ($item['stare_produs'] == 3) {
                     $ret['marfa_sosire'][$item['tip_produs_id']]['defecte'] += $item['cantitate'];
                     $ret['totaluri']['total_goale'] = $ret['marfa_plecare'][$item['tip_produs_id']]['pline_plecare'] - ($ret['marfa_sosire'][$item['tip_produs_id']]['pline'] + $ret['marfa_sosire'][$item['tip_produs_id']]['defecte']);
