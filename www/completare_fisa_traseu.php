@@ -222,16 +222,10 @@ if (isset($_POST['adauga'])) {
 }
 
 if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
-
     $data_intrare = $fisa['data_intrare'];
-
     $stare_goale = 2;
 
     if ($tip_produs_id > 0) {
-//        Select daca am produs introdus
-//        and traseu_id = '" . $traseu_by_fisa_generata_id['traseu_id'] . "'
-//        and data_intrare = '" . $data_intrare . "'
-
         $select_id_produs_fisa_intoarcere = "SELECT id from fisa_total_intoarcere 
                                              WHERE fisa_id = '" . $id . "'
                                              AND stare_produs = '" . $stare_produs . "'
@@ -241,10 +235,8 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
         $id_fisa_gasit_fisa_intoarcere = myQuery($select_id_produs_fisa_intoarcere);
         $ret_fisa_intoarcere = $id_fisa_gasit_fisa_intoarcere->fetch(PDO::FETCH_ASSOC);
         $id_fisa_intoarcere = $ret_fisa_intoarcere['id'];
-// select daca am produs adaugat cu cantitati pline sau defecte
 
         if ($id_fisa_gasit_fisa_intoarcere->rowCount() == 1) {
-//            and id = '" . $id_fisa_intoarcere . "'
             $update_raport_fisa_intoarcere = "UPDATE fisa_total_intoarcere 
                                               SET cantitate = '" . $cantitate . "'
                                               WHERE fisa_id = '" . $id . "'
