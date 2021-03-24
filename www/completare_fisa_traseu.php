@@ -266,7 +266,6 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
                      values
                     ('" . $id . "','" . $traseu_by_fisa_generata_id['traseu_id'] . "',
                     '" . $tip_produs_id . "','" . $cantitate . "','" . $stare_goale . "','" . $data_intrare . "')";
-
                 myExec($insert_goale);
             }
         }
