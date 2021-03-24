@@ -31,7 +31,10 @@ $smarty->assign('adaugat', 0);
 $data_start = getRequestParameter('data_start', '');
 $data_fisa = getRequestParameter('data_fisa', '');
 
-$fisa_id = Stocuri::getFisaGenerataById($id);
+//$fisa_id = Stocuri::getFisaGenerataById($id);
+//$smarty->assign('fisa_id', $fisa_id);
+
+$fisa_id = Fise::getDetaliiFisaDinEditFisaTraseu($id);
 $smarty->assign('fisa_id', $fisa_id);
 
 $traseu_id_by_fisa_generata = Trasee::getTraseuByFisaGenerataId($id);
@@ -65,9 +68,6 @@ $smarty->assign('lista_clienti', $lista_clienti);
 
 $lista_asignari_clienti_trasee = Clienti::getClientiByTraseuId($traseu_id_by_fisa_generata['traseu_id']);
 $smarty->assign('lista_asignari_clienti_trasee', $lista_asignari_clienti_trasee);
-
-//$lista_clienti_asignati_la_fisa = Clienti::getAsignariClientiByFisaGenerataId($id);
-//$smarty->assign('lista_clienti_asignati_la_fisa', $lista_clienti_asignati_la_fisa);
 
 $lista_clienti_asignati_la_fisa = Asignari::getAsignariClientiByFisaGenerataId($id);
 $smarty->assign('lista_clienti_asignati_la_fisa', $lista_clienti_asignati_la_fisa);

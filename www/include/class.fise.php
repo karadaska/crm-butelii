@@ -85,4 +85,19 @@ class Fise
         return $ret;
     }
 
+    public static function getDetaliiFisaDinEditFisaTraseu($id)
+    {
+        $ret = array();
+        $query = "SELECT a.depozit_id, a.traseu_id, a.sofer_id, a.masina_id, 
+                  a.data_intrare, a.consum_plecare, a.consum_sosire 
+                  FROM fise_generate as a
+                  where a.id = '" . $id . "'";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
 }
