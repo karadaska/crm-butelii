@@ -257,19 +257,12 @@
                                                     <br/>
                                                 {/foreach}
                                             </h6>
-
                                         </th>
                                         <th class="table_miscari">
                                             <textarea style="width: 100%" type="text" rows="2"
                                                       name="nota_explicativa">{$fisa['miscari_fisa']['nota_explicativa']}</textarea>
                                         </th>
                                     </tr>
-                                    {*<tr>*}
-                                    {*<th colspan="3">*}
-                                    {*<textarea style="width: 100%" type="text" rows="2"*}
-                                    {*name="nota_explicativa">{$fisa['miscari_fisa']['nota_explicativa']}</textarea>*}
-                                    {*</th>*}
-                                    {*</tr>*}
                                     <tr>
                                         <th colspan="3" style="text-align: right;">
                                             <button style="margin-bottom: 11px;" type="submit"
@@ -291,7 +284,7 @@
                                                     <option>Alege produs</option>
                                                     {foreach from=$lista_produse item=produs}
                                                         {$gasit = 0}
-                                                        {foreach from=$plecare_marfa_by_fisa_id item=marfa}
+                                                        {foreach from=$cantitati_plecare item=marfa}
                                                             {if $produs['id'] == $marfa['tip_produs_id']}
                                                                 {if $gasit == 0}
                                                                     <option value="{$produs['id']}"> {$produs['tip']}</option>
