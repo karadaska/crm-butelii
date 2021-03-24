@@ -39,7 +39,7 @@ $smarty->assign('observatii_clienti', $observatii_clienti);
 $tip_produs_id = getRequestParameter('tip_produs_id', 0);
 $smarty->assign('tip_produs_id', $tip_produs_id);
 
-$stare_produs = getRequestParameter('stare_produs', 2);
+$stare_produs = getRequestParameter('stare_produs', '');
 $smarty->assign('stare_produs', $stare_produs);
 
 $lista_produse = Produse::getTipProdus();
@@ -253,85 +253,27 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
                                                 ";
             myExec($update_raport_fisa_intoarcere);
 
-//select produse goale
-//            AND traseu_id = '" . $traseu_by_fisa_generata_id['traseu_id'] . "'
-//            AND data_intrare = '" . $data_intrare . "'
-
-            $select_goale = "SELECT id from fisa_total_intoarcere 
-                              WHERE fisa_id = '" . $id . "'
-                              AND stare_produs = '" . $stare_goale . "'
-                              AND tip_produs_id = '" . $tip_produs_id . "'";
-
-            $id_gasit_goale = myQuery($select_goale);
-            $ret_goale = $id_gasit_goale->fetch(PDO::FETCH_ASSOC);
-            $id_goale = $ret_goale['id'];
-
-//            daca am gasit o inregistrare de goale
-            if ($id_gasit_goale->rowCount() == 1) {
-                $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
-//                $smarty->assign('intoarcere_marfa_by_fisa_id', $intoarcere_marfa_by_fisa_id);
-
-//                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
-
-//                AND id = '" . $id_goale . "'
-                $update_goale = "UPDATE fisa_total_intoarcere 
-                                              SET cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
+            if ($stare_produs == 1) {
+                $update_raport_fisa_intoarcere = "UPDATE fisa_total_intoarcere 
+                                              SET cantitate = '" . $cantitate . "'
                                               WHERE fisa_id = '" . $id . "'
                                               AND stare_produs = '" . $stare_goale . "'
                                               AND tip_produs_id = '" . $tip_produs_id . "'
                                                 ";
-                myExec($update_goale);
+                myExec($update_raport_fisa_intoarcere);
             }
-
-        } else {
-//                aici fac insert daca nu am produs adaugat cu cantitati pline sau defecte
-
+        }else {
             $insert_fisa_total_intoarcere = "INSERT INTO fisa_total_intoarcere(fisa_id, traseu_id, tip_produs_id, cantitate, stare_produs, data_intrare)
                      values
                     ('" . $id . "','" . $traseu_by_fisa_generata_id['traseu_id'] . "',
                     '" . $tip_produs_id . "','" . $cantitate . "','" . $stare_produs . "','" . $data_intrare . "')";
             myExec($insert_fisa_total_intoarcere);
 
-
-            //select produse cu stare produs goale
-            $select_goale = "SELECT id from fisa_total_intoarcere where fisa_id = '" . $id . "'
-                                                and traseu_id = '" . $traseu_by_fisa_generata_id['traseu_id'] . "'
-                                                and stare_produs = 2
-                                                and data_intrare = '" . $data_intrare . "'
-                                                and tip_produs_id = '" . $tip_produs_id . "'
-                                                ";
-
-            $id_gasit_goale = myQuery($select_goale);
-            $ret_goale = $id_gasit_goale->fetch(PDO::FETCH_ASSOC);
-            $id_goale = $ret_goale['id'];
-
-//            verific dupa insert daca am gasit o inregistrare cu produse goale
-            if ($id_gasit_goale->rowCount() == 1) {
-//                daca am gasit fac update la produse goale
-
-                $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
-//                $smarty->assign('intoarcere_marfa_by_fisa_id', $intoarcere_marfa_by_fisa_id);
-
-//                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
-//                and id = '" . $id_goale . "'
-
-                $am_gasit_goale = "UPDATE fisa_total_intoarcere 
-                                    SET cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
-                                    WHERE fisa_id = '" . $id . "'
-                                    AND stare_produs = '" . $stare_goale . "'
-                                    AND tip_produs_id = '" . $tip_produs_id . "'
-                                                ";
-                myExec($am_gasit_goale);
-
-//                daca nu am gasit goale fac insert cu cantitati goale prin diferenta
-            } else {
-
-                $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
-//                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
+            if ($stare_produs == 1) {
                 $insert_goale = "INSERT INTO fisa_total_intoarcere(fisa_id, traseu_id, tip_produs_id, cantitate, stare_produs, data_intrare)
                      values
                     ('" . $id . "','" . $traseu_by_fisa_generata_id['traseu_id'] . "',
-                    '" . $tip_produs_id . "','" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "','" . $stare_goale . "','" . $data_intrare . "')";
+                    '" . $tip_produs_id . "','" . $cantitate . "','" . $stare_goale . "','" . $data_intrare . "')";
 
                 myExec($insert_goale);
             }
@@ -437,3 +379,121 @@ $smarty->display($template);
 //                        myExec($update_obs_clienti);
 //                    }
 //                }
+
+//if ($tip_produs_id > 0) {
+////        Select daca am produs introdus
+////        and traseu_id = '" . $traseu_by_fisa_generata_id['traseu_id'] . "'
+////        and data_intrare = '" . $data_intrare . "'
+//
+//    $select_id_produs_fisa_intoarcere = "SELECT id from fisa_total_intoarcere
+//                                             WHERE fisa_id = '" . $id . "'
+//                                             AND stare_produs = '" . $stare_produs . "'
+//                                             AND tip_produs_id = '" . $tip_produs_id . "'
+//                                             ";
+//
+//    $id_fisa_gasit_fisa_intoarcere = myQuery($select_id_produs_fisa_intoarcere);
+//    $ret_fisa_intoarcere = $id_fisa_gasit_fisa_intoarcere->fetch(PDO::FETCH_ASSOC);
+//    $id_fisa_intoarcere = $ret_fisa_intoarcere['id'];
+//// select daca am produs adaugat cu cantitati pline sau defecte
+//
+//    if ($id_fisa_gasit_fisa_intoarcere->rowCount() == 1) {
+////            and id = '" . $id_fisa_intoarcere . "'
+//        $update_raport_fisa_intoarcere = "UPDATE fisa_total_intoarcere
+//                                              SET cantitate = '" . $cantitate . "'
+//                                              WHERE fisa_id = '" . $id . "'
+//                                              AND stare_produs = '" . $stare_produs . "'
+//                                              AND tip_produs_id = '" . $tip_produs_id . "'
+//                                                ";
+//        myExec($update_raport_fisa_intoarcere);
+//
+////select produse goale
+////            AND traseu_id = '" . $traseu_by_fisa_generata_id['traseu_id'] . "'
+////            AND data_intrare = '" . $data_intrare . "'
+//
+//        $select_goale = "SELECT id from fisa_total_intoarcere
+//                              WHERE fisa_id = '" . $id . "'
+//                              AND stare_produs = '" . $stare_goale . "'
+//                              AND tip_produs_id = '" . $tip_produs_id . "'";
+//
+//        $id_gasit_goale = myQuery($select_goale);
+//        $ret_goale = $id_gasit_goale->fetch(PDO::FETCH_ASSOC);
+//        $id_goale = $ret_goale['id'];
+//
+////            daca am gasit o inregistrare de goale
+//        if ($id_gasit_goale->rowCount() == 1) {
+////                $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
+////                $smarty->assign('intoarcere_marfa_by_fisa_id', $intoarcere_marfa_by_fisa_id);
+//
+////                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
+//
+////                AND id = '" . $id_goale . "'
+////                $update_goale = "UPDATE fisa_total_intoarcere
+////                                              SET cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
+////                                              WHERE fisa_id = '" . $id . "'
+////                                              AND stare_produs = '" . $stare_goale . "'
+////                                              AND tip_produs_id = '" . $tip_produs_id . "'
+////                                                ";
+//            $update_goale = "UPDATE fisa_total_intoarcere
+//                                 SET cantitate = '" . $cantitate . "'
+//                                 WHERE fisa_id = '" . $id . "'
+//                                 AND stare_produs = '" . $stare_goale . "'
+//                                 AND tip_produs_id = '" . $tip_produs_id . "'
+//                                                ";
+//            myExec($update_goale);
+//        }
+//
+//    } else {
+////                aici fac insert daca nu am produs adaugat cu cantitati pline sau defecte
+//
+//        $insert_fisa_total_intoarcere = "INSERT INTO fisa_total_intoarcere(fisa_id, traseu_id, tip_produs_id, cantitate, stare_produs, data_intrare)
+//                     values
+//                    ('" . $id . "','" . $traseu_by_fisa_generata_id['traseu_id'] . "',
+//                    '" . $tip_produs_id . "','" . $cantitate . "','" . $stare_produs . "','" . $data_intrare . "')";
+//        myExec($insert_fisa_total_intoarcere);
+//
+//
+//        //select produse cu stare produs goale
+//        $select_goale = "SELECT id from fisa_total_intoarcere where fisa_id = '" . $id . "'
+//                                                and traseu_id = '" . $traseu_by_fisa_generata_id['traseu_id'] . "'
+//                                                and stare_produs = 2
+//                                                and data_intrare = '" . $data_intrare . "'
+//                                                and tip_produs_id = '" . $tip_produs_id . "'
+//                                                ";
+//
+//        $id_gasit_goale = myQuery($select_goale);
+//        $ret_goale = $id_gasit_goale->fetch(PDO::FETCH_ASSOC);
+//        $id_goale = $ret_goale['id'];
+//
+////            verific dupa insert daca am gasit o inregistrare cu produse goale
+//        if ($id_gasit_goale->rowCount() == 1) {
+////                daca am gasit fac update la produse goale
+//
+//            $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
+////                $smarty->assign('intoarcere_marfa_by_fisa_id', $intoarcere_marfa_by_fisa_id);
+//
+////                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
+////                and id = '" . $id_goale . "'
+//
+//            $am_gasit_goale = "UPDATE fisa_total_intoarcere
+//                                    SET cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
+//                                    WHERE fisa_id = '" . $id . "'
+//                                    AND stare_produs = '" . $stare_goale . "'
+//                                    AND tip_produs_id = '" . $tip_produs_id . "'
+//                                                ";
+//            myExec($am_gasit_goale);
+//
+////                daca nu am gasit goale fac insert cu cantitati goale prin diferenta
+//        } else {
+//
+//            $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
+////                $cantitate_goale = $intoarcere_marfa_by_fisa_id['pline_plecare'] - ($intoarcere_marfa_by_fisa_id['pline_intoarcere'] + $intoarcere_marfa_by_fisa_id['defecte_intoarcere']);
+//            $insert_goale = "INSERT INTO fisa_total_intoarcere(fisa_id, traseu_id, tip_produs_id, cantitate, stare_produs, data_intrare)
+//                     values
+//                    ('" . $id . "','" . $traseu_by_fisa_generata_id['traseu_id'] . "',
+//                    '" . $tip_produs_id . "','" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "','" . $stare_goale . "','" . $data_intrare . "')";
+//
+//            myExec($insert_goale);
+//        }
+//    }
+//}
+//header('Location: /completare_fisa_traseu.php?id=' . $id);

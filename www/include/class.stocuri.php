@@ -56,7 +56,7 @@ class Stocuri
             $stare_produs_goale = 2;
             $stare_produs_defecte = 3;
 
-            $select_operatiuni_stoc = "SELECT * from stoc_operatiuni
+            $select_operatiuni_stoc = "SELECT * FROM stoc_operatiuni
                                 where id_fisa = '" . $id . "'                               
                                 and depozit_id	= '" . $fisa['depozit_id'] . "'
                                 and traseu_id	= '" . $item_produs['traseu_id'] . "'
@@ -710,7 +710,7 @@ class Stocuri
     public static function getFisaGenerataById($id, $opt = array())
     {
         $ret = array();
-        $query = "SELECT a.id,a.depozit_id,a.traseu_id,a.data_intrare, a.consum_sosire,
+        $query = "SELECT a.id, a.depozit_id, a.traseu_id, a.data_intrare, a.consum_sosire,
                   a.consum_plecare, b.nume as nume_depozit,a.sofer_id,a.masina_id,
                   c.nume as nume_traseu, d.nume as nume_sofer, e.numar
                   from fise_generate as a
