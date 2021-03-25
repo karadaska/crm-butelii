@@ -3,23 +3,18 @@
 class Trasee
 {
 
-    public static function AdaugaTraseu($nume){
+    public static function AdaugaTraseu($nume)
+    {
 
         $sql = "SELECT id FROM trasee WHERE `nume`='" . $nume . "' LIMIT 1";
-        $result        = myQuery($sql);
+        $result = myQuery($sql);
 
-        $ret           = $result->fetch(PDO::FETCH_ASSOC);
+        $ret = $result->fetch(PDO::FETCH_ASSOC);
         $traseu_nou = $ret['id'];
 
-        if ($traseu_nou == 0 and $nume !='') {
+        if ($traseu_nou == 0 and $nume != '') {
             $query = "INSERT INTO trasee(nume) values ('" . $nume . "')";
-            $rows = myExec($query);
-//            if ($rows == 1) {
-//                $smarty->assign('adaugat', 1);
-//            } else {
-//                $smarty->assign('adaugat', 2);
-//            }
-
+            myExec($query);
         }
 
     }
@@ -107,8 +102,8 @@ class Trasee
 
         $query = "SELECT count(urgent) as total_urgente from apeluri_clienti
                     WHERE urgent > 0
-                    AND traseu_id = '".$traseu_id."'
-                    AND `data_start` = '".$data_start."' ";
+                    AND traseu_id = '" . $traseu_id . "'
+                    AND `data_start` = '" . $data_start . "' ";
 
         $result = myQuery($query);
         if ($result) {
@@ -137,8 +132,8 @@ class Trasee
         $query = "SELECT count(observatie_id) as total_observatii from apeluri_clienti
                     WHERE observatie_id > 0
                     AND observatie_id != 18
-                    AND traseu_id = '".$traseu_id."'
-                    AND `data_start` = '".$data_start."' ";
+                    AND traseu_id = '" . $traseu_id . "'
+                    AND `data_start` = '" . $data_start . "' ";
 
         $result = myQuery($query);
 
