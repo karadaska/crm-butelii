@@ -3,6 +3,27 @@
 class Trasee
 {
 
+    public static function AdaugaTraseu($nume){
+
+        $sql = "SELECT id FROM trasee WHERE `nume`='" . $nume . "' LIMIT 1";
+        $result        = myQuery($sql);
+
+        $ret           = $result->fetch(PDO::FETCH_ASSOC);
+        $traseu_nou = $ret['id'];
+
+        if ($traseu_nou == 0 and $nume !='') {
+            $query = "INSERT INTO trasee(nume) values ('" . $nume . "')";
+            $rows = myExec($query);
+//            if ($rows == 1) {
+//                $smarty->assign('adaugat', 1);
+//            } else {
+//                $smarty->assign('adaugat', 2);
+//            }
+
+        }
+
+    }
+
     public static function getObservatieDinFisaTraseuByClientIdAndFisaId($client_id, $fisa_id)
     {
         $ret = array();
