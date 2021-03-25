@@ -9,7 +9,6 @@ if (!Utilizatori::hasRights(1, 6)) {
 $smarty->assign('name', 'Edit clienti');
 $template = 'edit_client.tpl';
 
-
 $modifica = getRequestParameter('modifica', '');
 $adauga = getRequestParameter('adauga', '');
 $id = getRequestParameter('id', 0);

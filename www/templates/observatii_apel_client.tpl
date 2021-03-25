@@ -21,12 +21,12 @@
                                        id="dataTable">
                                     <thead>
                                     <tr>
-                                        <th>Nume</th>
-                                        <th>Observatie</th>
-                                        <th>Urgent</th>
-                                        <th>Produs</th>
-                                        <th>Cantitate goale</th>
-                                        <th>Data adaugarii</th>
+                                        <th>NUME</th>
+                                        <th>OBSERVATIE</th>
+                                        <th>URGENT</th>
+                                        <th>PPRODUS</th>
+                                        <th>CANTITATE</th>
+                                        <th>DATA</th>
                                     </tr>
                                     </thead>
                                     <tbody>

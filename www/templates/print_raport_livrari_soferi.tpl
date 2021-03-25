@@ -106,7 +106,7 @@
                                 {/foreach}
                             </tr>
                             <tr>
-                                <td>CANTITATI</td>
+                                <td>CANTITATE</td>
                                 <td>VALOARE</td>
                                 {foreach from = $livrari_soferi['produse_sofer'] item= produse}
                                     <td>CANTITATE</td>

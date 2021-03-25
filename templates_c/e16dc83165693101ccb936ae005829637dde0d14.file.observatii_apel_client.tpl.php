@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-01 13:10:35
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-25 14:37:35
          compiled from "/var/www/html/fofoweb/www/templates/observatii_apel_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:303182875603ccbabcaa7d9-69186848%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e16dc83165693101ccb936ae005829637dde0d14' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/observatii_apel_client.tpl',
-      1 => 1611754734,
+      1 => 1616675854,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_603ccbabd1ac14_87368023',
   'variables' => 
   array (
     'title' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'observatie' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_603ccbabd1ac14_87368023',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_603ccbabd1ac14_87368023')) {function content_603ccbabd1ac14_87368023($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -51,12 +51,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                        id="dataTable">
                                     <thead>
                                     <tr>
-                                        <th>Nume</th>
-                                        <th>Observatie</th>
-                                        <th>Urgent</th>
-                                        <th>Produs</th>
-                                        <th>Cantitate goale</th>
-                                        <th>Data adaugarii</th>
+                                        <th>NUME</th>
+                                        <th>OBSERVATIE</th>
+                                        <th>URGENT</th>
+                                        <th>PPRODUS</th>
+                                        <th>CANTITATE</th>
+                                        <th>DATA</th>
                                     </tr>
                                     </thead>
                                     <tbody>

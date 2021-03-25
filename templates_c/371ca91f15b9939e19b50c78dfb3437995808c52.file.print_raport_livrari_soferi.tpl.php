@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-25 10:02:59
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-25 13:42:29
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_soferi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8904266056037a5fd98eb05-27757984%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '371ca91f15b9939e19b50c78dfb3437995808c52' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_soferi.tpl',
-      1 => 1616659299,
+      1 => 1616672548,
       2 => 'file',
     ),
   ),
@@ -156,7 +156,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                 <?php } ?>
                             </tr>
                             <tr>
-                                <td>CANTITATI</td>
+                                <td>CANTITATE</td>
                                 <td>VALOARE</td>
                                 <?php  $_smarty_tpl->tpl_vars['produse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produse']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['livrari_soferi']->value['produse_sofer']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
