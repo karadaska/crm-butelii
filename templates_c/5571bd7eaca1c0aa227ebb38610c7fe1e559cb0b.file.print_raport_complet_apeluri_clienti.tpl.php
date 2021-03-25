@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-11 15:13:01
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-25 13:33:54
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_complet_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2132582317603961b0f18269-53085489%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5571bd7eaca1c0aa227ebb38610c7fe1e559cb0b' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_complet_apeluri_clienti.tpl',
-      1 => 1615468380,
+      1 => 1616403399,
       2 => 'file',
     ),
   ),
@@ -81,6 +81,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         }
 
         td {
+        }
+
+        @page {
+            size: auto;
+            margin: 0;
         }
     </style>
     <script type="text/javascript">

@@ -65,7 +65,7 @@
                                         <tr>
                                             <th style="text-align: center;" rowspan="2">#</th>
                                             <th style="text-align: left;" rowspan="2">NUME SI PRENUME</th>
-                                            <th style="text-align: center;" rowspan="2">NR. ANTO</th>
+                                            <th style="text-align: center;" rowspan="2">NR. AUTO</th>
                                             <th style="text-align: center;" rowspan="2">TRASEU</th>
                                             <th style="text-align: center;" rowspan="2">KM PARCURSI</th>
                                             <th style="text-align: center;" colspan="2">TOTAL PRODUSE</th>
