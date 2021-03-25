@@ -12,7 +12,9 @@ if (!Utilizatori::hasRights(1)) {
 $smarty->assign('nume', 'Trasee');
 $template_page = "trasee.tpl";
 
-$lista_trasee= Trasee::getTrasee();
+$lista_trasee= Trasee::getTraseeIndex(array(
+    'cu_asignari' => true
+));
 $smarty->assign('lista_trasee', $lista_trasee);
 
 $smarty->display($template_page);

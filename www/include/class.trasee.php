@@ -160,6 +160,33 @@ class Trasee
         return $ret;
     }
 
+    public static function getTraseeIndex($opts = array())
+    {
+        $cu_asignari = isset($opts['cu_asignari']) ? $opts['cu_asignari'] : false;
+
+        $ret = array();
+        $query = "SELECT a.id, a.nume
+                  FROM trasee as a
+                  WHERE a.sters = 0 
+                  ORDER BY a.nume ASC";
+        $result = myQuery($query);
+
+        if ($result) {
+            if ($cu_asignari) {
+                $a = $result->fetchAll(PDO::FETCH_ASSOC);
+                foreach ($a as $item) {
+                    $item['asignari_clienti'] = Asignari::getAsignariClientiByTraseuId($item['id']);
+                    array_push($ret, $item);
+                }
+            } else {
+                $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+            }
+        }
+
+        return $ret;
+    }
+
+
     public static function getTraseuByClientId($id = 0)
     {
         $ret = null;

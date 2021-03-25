@@ -36,7 +36,7 @@
                                 {foreach from=$lista_trasee item=traseu}
                                     <tr>
                                         <td style="text-align: center;">{$traseu['id']}</td>
-                                        <td><a target="_blank" href="edit_traseu.php?id={$traseu['id']}"
+                                        <td class="span3"><a target="_blank" href="edit_traseu.php?id={$traseu['id']}"
                                                title="Adauga client la traseu"
                                                style="cursor: pointer;">{strtoupper($traseu['nume'])}</a></td>
                                         <td>
