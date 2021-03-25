@@ -96,11 +96,11 @@
                                                 <td style="text-align: right;">
                                                     {($livrare['km']['km_traseu'] > 0) ? $livrare['km']['km_traseu'] : '-'}
                                                 </td>
-                                                <td style="text-align: center">
+                                                <td style="text-align: right">
                                                     {$total_cantitati_produse = $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate']}
                                                     {($total_cantitati_produse > 0) ? $total_cantitati_produse : '-'}
                                                 </td>
-                                                <td style="text-align: center">
+                                                <td style="text-align: right">
                                                     {$total_produse_valoare = $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] }
                                                     {($total_produse_valoare >0) ? $total_produse_valoare :'-'}
                                                 </td>
@@ -115,7 +115,7 @@
                                             </tr>
                                             {$grand_total_km = $grand_total_km + $livrare['km']['km_traseu']}
                                             {$grand_cantitati = $grand_cantitati + $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] }
-                                            {$grand_valoare = $grand_cantitati + $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] }
+                                            {$grand_valoare = $grand_valoare + $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] }
                                         {/foreach}
                                         <tr>
                                             <th colspan="3" style="text-align: right;"></th>

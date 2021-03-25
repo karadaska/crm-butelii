@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 12:20:38
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-25 09:26:55
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:181507985860227fc6e3c330-67745625%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f2b86ffce0eb1085a87d6fdf07c6087890100747' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_soferi.tpl',
-      1 => 1616408434,
+      1 => 1616657214,
       2 => 'file',
     ),
   ),
@@ -169,12 +169,12 @@ $_smarty_tpl->tpl_vars['livrare']->_loop = true;
                                                     <?php echo $_smarty_tpl->tpl_vars['livrare']->value['km']['km_traseu']>0 ? $_smarty_tpl->tpl_vars['livrare']->value['km']['km_traseu'] : '-';?>
 
                                                 </td>
-                                                <td style="text-align: center">
+                                                <td style="text-align: right">
                                                     <?php $_smarty_tpl->tpl_vars['total_cantitati_produse'] = new Smarty_variable($_smarty_tpl->tpl_vars['livrare']->value['total_produse']['1']['cantitate']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['3']['cantitate']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['4']['cantitate'], null, 0);?>
                                                     <?php echo $_smarty_tpl->tpl_vars['total_cantitati_produse']->value>0 ? $_smarty_tpl->tpl_vars['total_cantitati_produse']->value : '-';?>
 
                                                 </td>
-                                                <td style="text-align: center">
+                                                <td style="text-align: right">
                                                     <?php $_smarty_tpl->tpl_vars['total_produse_valoare'] = new Smarty_variable($_smarty_tpl->tpl_vars['livrare']->value['total_produse']['1']['valoare']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['3']['valoare']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['4']['valoare'], null, 0);?>
                                                     <?php echo $_smarty_tpl->tpl_vars['total_produse_valoare']->value>0 ? $_smarty_tpl->tpl_vars['total_produse_valoare']->value : '-';?>
 
@@ -196,7 +196,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                             </tr>
                                             <?php $_smarty_tpl->tpl_vars['grand_total_km'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_total_km']->value+$_smarty_tpl->tpl_vars['livrare']->value['km']['km_traseu'], null, 0);?>
                                             <?php $_smarty_tpl->tpl_vars['grand_cantitati'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_cantitati']->value+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['1']['cantitate']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['3']['cantitate']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['4']['cantitate'], null, 0);?>
-                                            <?php $_smarty_tpl->tpl_vars['grand_valoare'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_cantitati']->value+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['1']['valoare']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['3']['valoare']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['4']['valoare'], null, 0);?>
+                                            <?php $_smarty_tpl->tpl_vars['grand_valoare'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_valoare']->value+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['1']['valoare']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['3']['valoare']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['4']['valoare'], null, 0);?>
                                         <?php } ?>
                                         <tr>
                                             <th colspan="3" style="text-align: right;"></th>
