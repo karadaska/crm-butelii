@@ -50,7 +50,7 @@ $smarty->assign('lista_depozite', $lista_depozite);
 
 //$smarty->assign('lista_masini', $lista_masini);
 
-debug('dsadsa');
+//debug('dsadsa');
 
 $smarty->assign('adaugat', 0);
 
