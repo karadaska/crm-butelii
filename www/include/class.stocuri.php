@@ -749,8 +749,8 @@ class Stocuri
             $ret['grand_defecte_ar_8'] = 0;
             $ret['grand_defecte_ar_9'] = 0;
 
-//            $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
-//            $ret['incarcatura_masina_intoarcere'] = self::getIntoarcereCantitateMarfaByFisaId($id);
+            $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
+            $ret['incarcatura_masina_intoarcere'] = self::getIntoarcereCantitateMarfaByFisaId($id);
 //            $ret['miscari_fisa'] = self::getMiscariByFisaId($id);
             $ret['clienti'] = Clienti::getAsignariClientiByFisaGenerataId($id, $opt = array());
             foreach ($ret['clienti'] as $num => $client) {
