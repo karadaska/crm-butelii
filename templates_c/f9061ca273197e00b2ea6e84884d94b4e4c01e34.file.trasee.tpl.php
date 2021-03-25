@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-12 15:01:44
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-25 15:44:58
          compiled from "/var/www/html/fofoweb/www/templates/trasee.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:746633397602fab92b92a49-94208282%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f9061ca273197e00b2ea6e84884d94b4e4c01e34' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/trasee.tpl',
-      1 => 1615554102,
+      1 => 1616679897,
       2 => 'file',
     ),
   ),
@@ -71,10 +71,10 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                     <tr>
                                         <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['traseu']->value['id'];?>
 </td>
-                                        <td><a href="edit_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu']->value['id'];?>
+                                        <td><a target="_blank" href="edit_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu']->value['id'];?>
 "
                                                title="Adauga client la traseu"
-                                               style="cursor: pointer;"><?php echo $_smarty_tpl->tpl_vars['traseu']->value['nume'];?>
+                                               style="cursor: pointer;"><?php echo strtoupper($_smarty_tpl->tpl_vars['traseu']->value['nume']);?>
 </a></td>
                                         <td>
                                                 <a  title="Adauga asignare" href="../edit_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu']->value['id'];?>
