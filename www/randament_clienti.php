@@ -43,21 +43,20 @@ if (isset($_POST['update'])) {
             $splits = explode("_", $key);
             $client_id = $splits[1];
             $traseu = $splits[2];
-            $an_randament = $splits[3];
-            $perioada_randament = $splits[4];
 
             if (!isset($to_add[$client_id])) {
                 $to_add[$client_id] = array();
             }
 
-            if (!isset($to_add[$client_id][$traseu][$an][$perioada_id])) {
-                $to_add[$client_id][$traseu][$an][$perioada_id] = array(
+            if (!isset($to_add[$client_id][$traseu])) {
+                $to_add[$client_id][$traseu] = array(
                     'randament' => 0
                 );
             }
-            $to_add[$client_id][$traseu][$an][$perioada_id][$splits[0]] = $value;
+            $to_add[$client_id][$traseu][$splits[0]] = $value;
         }
     }
+
     $id_traseu = getRequestParameter('id_traseu', '');
     $id_perioada = getRequestParameter('id_perioada', '');
     $id_an = getRequestParameter('id_an', '');
@@ -65,7 +64,6 @@ if (isset($_POST['update'])) {
     foreach ($lista_clienti as $client) {
         if (isset($to_add[$client['client_id']][$client['traseu_id']])) {
             $a = $to_add[$client['client_id']][$client['traseu_id']];
-
             $select_randament_clienti = "SELECT id from randament_clienti
                                           WHERE client_id = '" . $client['client_id'] . "' 
                                           AND traseu_id = '" . $client['traseu_id'] . "'
@@ -88,7 +86,7 @@ if (isset($_POST['update'])) {
             } else {
 
                 $insert = "INSERT INTO randament_clienti (client_id, traseu_id, an, perioada_id, randament) 
-                          VALUES ('" . $client['client_id'] . "', '" . $client['traseu_id'] . "','" . $id_an . "','" . $id_perioada . "','" . 23 . "')";
+                          VALUES ('" . $client['client_id'] . "', '" . $client['traseu_id'] . "','" . $id_an . "','" . $id_perioada . "','" . $a['randament'] . "')";
                 myExec($insert);
             }
 
