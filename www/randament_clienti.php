@@ -9,7 +9,7 @@ $data_start = date('Y-m-d');
 $smarty->assign('name', 'Randament clienti');
 $template_page = "randament_clienti.tpl";
 
-$traseu_id = getRequestParameter('traseu_id', 30);
+$traseu_id = getRequestParameter('traseu_id', 1);
 $smarty->assign('traseu_id', $traseu_id);
 
 $perioada_id = getRequestParameter('perioada_id', date('n'));
