@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-26 12:49:35
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-26 13:06:48
          compiled from "/var/www/html/fofoweb/www/templates/randament_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:551758277605d8a60b93d06-29052548%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '99391cd228b81ab5dd6cc14e5f34218ca840363a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_clienti.tpl',
-      1 => 1616755765,
+      1 => 1616756805,
       2 => 'file',
     ),
   ),
@@ -32,7 +32,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_clienti' => 0,
     'nr' => 0,
     'client' => 0,
-    'id_an' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -68,8 +67,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
 
                                 </option>
                             <?php } ?>
-                            <input type="hidden" name="id_traseu" value="<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
-">
+                            
                         </select>
                     </div>
                     <div style="float: left;margin-right: 10px;">
@@ -104,7 +102,6 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
 
                                 </option>
                             <?php } ?>
-                            
                         </select>
                     </div>
                 </form>
@@ -117,14 +114,11 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
                             <h4>List&#259; clien&#355i</h4>
                         </div>
                         <form action="/randament_clienti.php?traseu_id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
-&an=<?php echo $_smarty_tpl->tpl_vars['an']->value;?>
-&perioada_id=<?php echo $_smarty_tpl->tpl_vars['perioada_id']->value;?>
-" method="post"
+"
+                              method="post"
                               style="margin-bottom: 0">
-                            <input type="hidden" name="id_perioada" value="<?php echo $_smarty_tpl->tpl_vars['perioada_id']->value;?>
-">
-                            <input type="hidden" name="id_an" value="<?php echo $_smarty_tpl->tpl_vars['an']->value;?>
-">
+                            
+                            
                             <div class="widget-content">
                                 <table cellpadding="0" cellspacing="0" border="0"
                                        class="table table-striped table-bordered table-hover" id="dataTable">
@@ -160,7 +154,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                        type="text" autocomplete="off"
                                                        name="randament_<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 _<?php echo $_smarty_tpl->tpl_vars['client']->value['traseu_id'];?>
-_<?php echo $_smarty_tpl->tpl_vars['id_an']->value;?>
+_<?php echo $_smarty_tpl->tpl_vars['an']->value;?>
 _<?php echo $_smarty_tpl->tpl_vars['perioada_id']->value;?>
 ">
                                             </th>

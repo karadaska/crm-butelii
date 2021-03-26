@@ -56,11 +56,11 @@ if (isset($_POST['update'])) {
         }
     }
     $id_traseu = getRequestParameter('id_traseu', '');
-    $id_an = getRequestParameter('id_an', '');
-    $id_perioada = getRequestParameter('id_perioada', '');
+//    $id_an = getRequestParameter('id_an', '');
+//    $id_perioada = getRequestParameter('id_perioada', '');
 
 
-    debug($id_traseu, $id_an, $id_perioada);
+//    debug($id_traseu, $id_an, $id_perioada);
     foreach ($lista_clienti as $client) {
         if (isset($to_add[$client['client_id']][$client['traseu_id']])) {
             $a = $to_add[$client['client_id']][$client['traseu_id']];
