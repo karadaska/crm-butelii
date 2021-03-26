@@ -33,6 +33,12 @@
                                 <span class="txt">Depozite</span>
                             </a>
                         </li>
+                        <li {if $menu_curent==4}class="current"{/if}>
+                            <a href="/randament_clienti.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Randament</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li {if $menu_curent==7}class="current"{/if}>
