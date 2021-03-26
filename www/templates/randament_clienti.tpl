@@ -25,24 +25,25 @@
                         </select>
                     </div>
                     <div style="float: left;margin-right: 10px;">
-                        <select name="an" style="width: 180px;">
-                            {foreach from=$lista_ani item=an}
-                                <option value={$an['id']}
-                                        {if $an['id'] == $an} selected="selected" {/if}>
-                                    {$an['an']}
+                        <select name="id_an" style="width: 180px;">
+                            {foreach from=$lista_ani item=ani}
+                                <option value={$ani['id']}
+                                        {if $ani['id'] == $id_an} selected="selected" {/if}>
+                                    {$ani['an']}
                                 </option>
                             {/foreach}
                         </select>
+                        {*<input type="hidden" name="id_an" value="{$an}">*}
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
                             {foreach from=$lista_perioade item=perioada}
                                 <option value={$perioada['id']}
-                                        {if $perioada['id'] == $perioada} selected="selected" {/if}>
+                                        {if $perioada['id'] == $perioada_id} selected="selected" {/if}>
                                     {$perioada['nume']}
                                 </option>
                             {/foreach}
-                            <input type="hidden" name="id_traseu" value="{$traseu_id}">
+                            {*<input type="hidden" name="id_perioada" value="{$perioada_id}">*}
                         </select>
                     </div>
                 </form>
@@ -80,7 +81,7 @@
                                                 <input style="text-align: right"
                                                        value="{$client['randament']}"
                                                        type="text" autocomplete="off"
-                                                       name="randament_{$client['client_id']}_{$client['traseu_id']}">
+                                                       name="randament_{$client['client_id']}_{$client['traseu_id']}_{$id_an}_{$perioada_id}">
                                             </th>
                                         </tr>
                                     {/foreach}

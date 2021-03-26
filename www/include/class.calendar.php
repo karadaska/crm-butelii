@@ -25,7 +25,7 @@ class Calendar
 
         $query = "SELECT *
                   FROM ani
-                  ORDER BY an ASC";
+                  ORDER BY id ASC";
         $result = myQuery($query);
 
         if ($result) {
