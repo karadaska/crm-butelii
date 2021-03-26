@@ -160,7 +160,7 @@ class Trasee
         return $ret;
     }
 
-    public static function getTraseeIndex($opts = array())
+    public static function getTraseeNew($opts = array())
     {
         $cu_asignari = isset($opts['cu_asignari']) ? $opts['cu_asignari'] : false;
 
