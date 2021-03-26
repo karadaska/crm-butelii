@@ -15,7 +15,7 @@ $smarty->assign('traseu_id', $traseu_id);
 $perioada_id = getRequestParameter('perioada_id', date('n'));
 $smarty->assign('perioada_id', $perioada_id);
 
-$an = getRequestParameter('an', '');
+$an = getRequestParameter('an', 2);
 $smarty->assign('an', $an);
 
 $id_an = getRequestParameter('id_an', '');
@@ -59,6 +59,7 @@ if (isset($_POST['update'])) {
     }
     $id_traseu = getRequestParameter('id_traseu', '');
     $id_perioada = getRequestParameter('id_perioada', '');
+    $id_an = getRequestParameter('id_an', '');
 
     foreach ($lista_clienti as $client) {
         if (isset($to_add[$client['client_id']][$client['traseu_id']])) {
@@ -90,7 +91,7 @@ if (isset($_POST['update'])) {
 //                myExec($insert);
             }
 
-            header('Location: /randament_clienti.php?traseu_id=' . $traseu_id.'&an='.$an .'&perioada_id='.$id_perioada);
+            header('Location: /randament_clienti.php?traseu_id=' . $traseu_id.'&an='.$id_an .'&perioada_id='.$id_perioada);
         }
     }
 }
