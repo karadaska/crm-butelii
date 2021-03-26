@@ -81,8 +81,13 @@
                                             <th style="text-align: center;"> {$client['telefon']}</th>
                                             <th>
                                                 {assign var=randament value=Clienti::getRandamentByClientIdAndAnAndPerioadaId($client['client_id'], $client['traseu_id'],  $an , $perioada_id)}
+                                                {if ($randament['randament'] !='')}
+                                                    {$valoare_randament = $randament['randament']}
+                                                {else}
+                                                    {$valoare_randament = 0}
+                                                {/if}
                                                 <input style="text-align: right"
-                                                       value="{$randament['randament']}"
+                                                       value="{$valoare_randament}"
                                                        type="text" autocomplete="off"
                                                        name="randament_{$client['client_id']}_{$client['traseu_id']}">
                                             </th>
