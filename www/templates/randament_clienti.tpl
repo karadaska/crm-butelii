@@ -21,7 +21,6 @@
                                     {$traseu['nume']}
                                 </option>
                             {/foreach}
-                            {*<input type="hidden" name="id_traseu" value="{$traseu_id}">*}
                         </select>
                     </div>
                     <div style="float: left;margin-right: 10px;">
@@ -58,6 +57,7 @@
                               style="margin-bottom: 0">
                             <input type="hidden" name="id_perioada" value="{$perioada_id}">
                             <input type="hidden" name="id_an" value="{$an}">
+                            <input type="hidden" name="id_traseu" value="{$traseu_id}">
 
                             <div class="widget-content">
                                 <table cellpadding="0" cellspacing="0" border="0"

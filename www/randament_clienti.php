@@ -84,7 +84,7 @@ if (isset($_POST['update'])) {
                 myExec($insert);
             }
 
-            header('Location: /randament_clienti.php?traseu_id=' . $traseu_id.'&an='.$id_an .'&perioada_id='.$id_perioada);
+            header('Location: /randament_clienti.php?traseu_id=' . $id_traseu.'&an='.$id_an .'&perioada_id='.$id_perioada);
         }
     }
 }
