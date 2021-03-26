@@ -18,12 +18,6 @@ $smarty->assign('perioada_id', $perioada_id);
 $an = getRequestParameter('an', 2);
 $smarty->assign('an', $an);
 
-//$id_an = getRequestParameter('id_an', '');
-//$smarty->assign('id_an', $id_an);
-//
-//$id_perioada = getRequestParameter('id_perioada', '');
-//$smarty->assign('id_perioada', $id_perioada);
-
 $lista_trasee = Trasee::getTrasee();
 $smarty->assign('lista_trasee', $lista_trasee);
 

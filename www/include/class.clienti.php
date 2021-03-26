@@ -2,6 +2,36 @@
 
 class Clienti
 {
+
+    public static function getRandamentByClientIdAndAnAndPerioadaId($client_id, $traseu_id, $an, $perioada_id)
+    {
+//        $an = isset($opts['an']) ? $opts['an'] : 0;
+//        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
+
+        if ($an == 0) {
+            $an = 2;
+        }
+
+        if ($perioada_id == 0) {
+            $perioada_id = date('n');
+        }
+
+        $ret = array();
+        $query = "SELECT randament FROM randament_clienti as a
+                  WHERE a.client_id = '" . $client_id . "' 
+                  AND a.traseu_id = '" . $traseu_id . "' 
+                  AND a.an = '" . $an . "' 
+                  AND a.perioada_id = '" . $perioada_id . "'
+                  ";
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return $ret;
+    }
+
+
     public static function getListaClientiByPret($pret, $depozit_id, $tip_produs_id)
     {
         $ret = array();
@@ -766,7 +796,6 @@ class Clienti
         }
         return $ret;
     }
-
 
 
     public static function getClientById($id = 0)

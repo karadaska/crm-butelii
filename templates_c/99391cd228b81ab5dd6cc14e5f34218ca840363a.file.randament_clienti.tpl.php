@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-26 14:27:05
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-26 15:31:42
          compiled from "/var/www/html/fofoweb/www/templates/randament_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:551758277605d8a60b93d06-29052548%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '99391cd228b81ab5dd6cc14e5f34218ca840363a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_clienti.tpl',
-      1 => 1616761623,
+      1 => 1616765500,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_clienti' => 0,
     'nr' => 0,
     'client' => 0,
+    'randament' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -148,8 +149,9 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                             <th style="text-align: center;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
 </th>
                                             <th>
+                                                <?php $_smarty_tpl->tpl_vars['randament'] = new Smarty_variable(Clienti::getRandamentByClientIdAndAnAndPerioadaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['client']->value['traseu_id'],$_smarty_tpl->tpl_vars['an']->value,$_smarty_tpl->tpl_vars['perioada_id']->value), null, 0);?>
                                                 <input style="text-align: right"
-                                                       value="<?php echo $_smarty_tpl->tpl_vars['client']->value['randament'];?>
+                                                       value="<?php echo $_smarty_tpl->tpl_vars['randament']->value['randament'];?>
 "
                                                        type="text" autocomplete="off"
                                                        name="randament_<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>

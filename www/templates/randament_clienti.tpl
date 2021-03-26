@@ -80,8 +80,9 @@
                                             <th style="text-align: left;"> {strtoupper($client['nume_client'])}</th>
                                             <th style="text-align: center;"> {$client['telefon']}</th>
                                             <th>
+                                                {assign var=randament value=Clienti::getRandamentByClientIdAndAnAndPerioadaId($client['client_id'], $client['traseu_id'],  $an , $perioada_id)}
                                                 <input style="text-align: right"
-                                                       value="{$client['randament']}"
+                                                       value="{$randament['randament']}"
                                                        type="text" autocomplete="off"
                                                        name="randament_{$client['client_id']}_{$client['traseu_id']}">
                                             </th>
