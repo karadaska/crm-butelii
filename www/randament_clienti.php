@@ -9,10 +9,10 @@ $data_start = date('Y-m-d');
 $smarty->assign('name', 'Randament clienti');
 $template_page = "randament_clienti.tpl";
 
-$traseu_id = getRequestParameter('traseu_id', 1);
+$traseu_id = getRequestParameter('traseu_id', 30);
 $smarty->assign('traseu_id', $traseu_id);
 
-$perioada_id = getRequestParameter('perioada_id', '');
+$perioada_id = getRequestParameter('perioada_id', date('n'));
 $smarty->assign('perioada_id', $perioada_id);
 
 $an = getRequestParameter('an', '');
@@ -32,16 +32,18 @@ $smarty->assign('lista_perioade', $lista_perioade);
 
 $lista_ani = Calendar::getAni();
 $smarty->assign('lista_ani', $lista_ani);
+//debug('an: ' . $an. 'Perioada_id: ' . $perioada_id );
 
 $to_add = array();
 if (isset($_POST['update'])) {
     foreach ($_POST as $key => $value) {
+//        debug('Perioada_id: ' . $perioada_id .'an: ' . $an);
         if (preg_match('/^randament/', $key)) {
             $splits = explode("_", $key);
             $client_id = $splits[1];
             $traseu = $splits[2];
-            $an = $splits[3];
-            $perioada_id = $splits[4];
+            $an_randament = $splits[3];
+            $perioada_randament = $splits[4];
 
             if (!isset($to_add[$client_id])) {
                 $to_add[$client_id] = array();
@@ -56,11 +58,8 @@ if (isset($_POST['update'])) {
         }
     }
     $id_traseu = getRequestParameter('id_traseu', '');
-//    $id_an = getRequestParameter('id_an', '');
-//    $id_perioada = getRequestParameter('id_perioada', '');
+    $id_perioada = getRequestParameter('id_perioada', '');
 
-
-//    debug($id_traseu, $id_an, $id_perioada);
     foreach ($lista_clienti as $client) {
         if (isset($to_add[$client['client_id']][$client['traseu_id']])) {
             $a = $to_add[$client['client_id']][$client['traseu_id']];
@@ -68,13 +67,12 @@ if (isset($_POST['update'])) {
             $select_randament_clienti = "SELECT id from randament_clienti
                                           WHERE client_id = '" . $client['client_id'] . "' 
                                           AND traseu_id = '" . $client['traseu_id'] . "'
-                                          AND an = 2020
+                                          AND an = '" . $an  . "'
                                           AND perioada_id = '" . $perioada_id . "'
                                           LIMIT 1 ";
 
             $select_id_randament_clienti = myQuery($select_randament_clienti);
             $ret = $select_id_randament_clienti->fetch(PDO::FETCH_ASSOC);
-//            $id_randament = $ret['id'];
 
             if ($select_id_randament_clienti->rowCount() == 1) {
                 $query = "UPDATE randament_clienti SET
@@ -82,18 +80,17 @@ if (isset($_POST['update'])) {
                             WHERE client_id = '" . $client['client_id'] . "'
                             AND traseu_id = '" . $client['traseu_id'] . "'
                             AND perioada_id = '" .$perioada_id . "'
-                            AND an = '" . $an . "'
-                            AND sters = 0
+                            AND an = '" . $an . "'                            
                             ";
-                myExec($query);
+//                myExec($query);
             } else {
 
                 $insert = "INSERT INTO randament_clienti (client_id, traseu_id, an, perioada_id, randament) 
                           VALUES ('" . $client['client_id'] . "', '" . $client['traseu_id'] . "','" . $an . "','" . $perioada_id . "','" . 23 . "')";
-                myExec($insert);
+//                myExec($insert);
             }
 
-            header('Location: /randament_clienti.php?traseu_id=' . $traseu_id);
+            header('Location: /randament_clienti.php?traseu_id=' . $traseu_id.'&an='.$an .'&perioada_id='.$id_perioada);
         }
     }
 }

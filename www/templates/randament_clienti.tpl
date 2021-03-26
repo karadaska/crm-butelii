@@ -33,7 +33,6 @@
                                 </option>
                             {/foreach}
                         </select>
-                        <input type="hidden" name="id_an" value="{$an}">
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -54,11 +53,12 @@
                             <div class="icon"><i class="icon20 i-table"></i></div>
                             <h4>List&#259; clien&#355i</h4>
                         </div>
-                        <form action="/randament_clienti.php?traseu_id={$traseu_id}"
+                        <form action="/randament_clienti.php"
                               method="post"
                               style="margin-bottom: 0">
-                            {*<input type="hidden" name="id_an" value="{$an}">*}
-                            {*<input type="hidden" name="id_perioada" value="{$perioada_id}">*}
+                            <input type="hidden" name="id_perioada" value="{$perioada_id}">
+                            <input type="hidden" name="id_an" value="{$an}">
+
                             <div class="widget-content">
                                 <table cellpadding="0" cellspacing="0" border="0"
                                        class="table table-striped table-bordered table-hover" id="dataTable">
@@ -83,7 +83,7 @@
                                                 <input style="text-align: right"
                                                        value="{$client['randament']}"
                                                        type="text" autocomplete="off"
-                                                       name="randament_{$client['client_id']}_{$client['traseu_id']}_{$an}_{$perioada_id}">
+                                                       name="randament_{$client['client_id']}_{$client['traseu_id']}">
                                             </th>
                                         </tr>
                                     {/foreach}
