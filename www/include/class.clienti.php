@@ -93,13 +93,13 @@ class Clienti
         return $ret;
     }
 
-    public static function getRandamentClientDinFise($client_id, $traseu_id, $opts = array())
+    public static function getRandamentByClientIdDinFise($client_id, $opts = array())
     {
-        $data = isset($opts['data']) ? $opts['data'] : '';
-        
-        if($data == 0){
-            $data = date('n');
-        }
+        $an = isset($opts['an']) ? $opts['an'] : date('Y');
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
+
+//        $txt = '2021-' . $perioada_id . '-09';
+        $txt = $an .'%' . $perioada_id . '%';
 
         $ret = array();
 
@@ -109,9 +109,16 @@ class Clienti
                     detalii_fisa_intoarcere_produse AS a 
                     LEFT JOIN fise_generate as b on a.fisa_id = b.id
                 WHERE
-                    a.client_id = '" . $client_id . "' 
-                    AND b.traseu_id = '" . $traseu_id . "'
-                    AND a.data_intrare >= '" . $data . "'";
+                    a.client_id = '" . $client_id . "'                    
+                    AND a.data_intrare LIKE '%" . $an . "%'
+                    AND a.data_intrare LIKE '%" . $txt . "%'
+                     ";
+
+
+//$txt = '2021-03-09';
+//        if($perioada_id > 0){
+//            $query .= " AND a.data_intrare LIKE " . $txt;
+//        }
 
         $result = myQuery($query);
         if ($result) {

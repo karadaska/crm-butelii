@@ -121,6 +121,11 @@
                                                title="Lista observatii apeluri">
                                                 <i class="i-bell"></i>
                                             </a>
+                                            <a style="float: right;margin-right: 5px;" target="_blank"
+                                               href="randament_client.php?id={$client['id']}"
+                                               title="Randament client">
+                                                <i class="i-bell"></i>
+                                            </a>
                                         </td>
                                         <td>
                                             {foreach from = $client['asignare_client_traseu'] item=asignare_traseu}
