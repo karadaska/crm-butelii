@@ -124,7 +124,7 @@
                                             <a style="float: right;margin-right: 5px;" target="_blank"
                                                href="randament_client.php?id={$client['id']}"
                                                title="Randament client">
-                                                <i class="i-bell"></i>
+                                                <i class="i-balance"></i>
                                             </a>
                                         </td>
                                         <td>
