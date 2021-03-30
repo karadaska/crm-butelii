@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-26 15:57:11
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-30 10:02:40
          compiled from "/var/www/html/fofoweb/www/templates/randament_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:551758277605d8a60b93d06-29052548%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '99391cd228b81ab5dd6cc14e5f34218ca840363a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_clienti.tpl',
-      1 => 1616767028,
+      1 => 1617087734,
       2 => 'file',
     ),
   ),
@@ -49,7 +49,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Ordine clienti</h1>
+                    <h1><i class="icon20 i-menu-6"></i> Randament clienti</h1>
                 </div>
             </div>
             <div class="row-fluid span12">
@@ -70,6 +70,8 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                 </option>
                             <?php } ?>
                         </select>
+                        <input type="hidden" name="id_traseu" value="<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
+">
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="an" style="width: 180px;">

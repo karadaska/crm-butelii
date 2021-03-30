@@ -12,6 +12,9 @@ $template_page = "randament_clienti.tpl";
 $traseu_id = getRequestParameter('traseu_id', 1);
 $smarty->assign('traseu_id', $traseu_id);
 
+$id_traseu = getRequestParameter('id_traseu', '');
+
+//debug($id_traseu);
 $perioada_id = getRequestParameter('perioada_id', date('n'));
 $smarty->assign('perioada_id', $perioada_id);
 
@@ -33,7 +36,7 @@ $lista_ani = Calendar::getAni();
 $smarty->assign('lista_ani', $lista_ani);
 
 if (isset($_POST['update'])) {
-    Clienti::seteazaRandamentClienti($traseu_id);
+    Clienti::seteazaRandamentClienti($id_traseu);
 }
 
 

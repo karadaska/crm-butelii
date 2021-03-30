@@ -7,7 +7,7 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Ordine clienti</h1>
+                    <h1><i class="icon20 i-menu-6"></i> Randament clienti</h1>
                 </div>
             </div>
             <div class="row-fluid span12">
@@ -22,6 +22,7 @@
                                 </option>
                             {/foreach}
                         </select>
+                        <input type="hidden" name="id_traseu" value="{$traseu_id}">
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="an" style="width: 180px;">
