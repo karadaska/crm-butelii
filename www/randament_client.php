@@ -35,5 +35,18 @@ $smarty->assign('lista_ani', $lista_ani);
 
 //pre(date('n'));
 
+$an = date('Y');
+$perioada_id = date('n');
+$txt = $an . '-%' . $perioada_id . '-%';
+
+//pre($txt);
+
+$txt = Clienti::getRandamentByClientIdDinFise(1470, array(
+    'an' => 2021,
+    'perioada_id' => 3
+));
+
+
+//pre($txt);
 $smarty->display($template_page);
 

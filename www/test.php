@@ -215,7 +215,7 @@ $data_stop = '2021-03-31';
 //$b = Stocuri::getPlecareMarfaByFisaIdAndprodusId(595,3);
 //$b = Clienti::getRandamentByClientIdAndAnAndPerioadaId(2608, 30, 2, 3);
 $b = Clienti::getRandamentByClientIdDinFise(1470, array(
-    'an' => 2021,
-    'perioada_id' => 3
+   'an' => 2021,
+   'perioada_id' => 3
 ));
 echo json_encode($b);
