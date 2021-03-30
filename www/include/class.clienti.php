@@ -3,6 +3,67 @@
 class Clienti
 {
 
+    public static function seteazaRandamentClienti($traseu_id){
+        $lista_clienti = Trasee::getAsignareClientiTraseuByClientid($traseu_id);
+        $to_add = array();
+
+            foreach ($_POST as $key => $value) {
+                if (preg_match('/^randament/', $key)) {
+                    $splits = explode("_", $key);
+                    $client_id = $splits[1];
+                    $traseu = $splits[2];
+
+                    if (!isset($to_add[$client_id])) {
+                        $to_add[$client_id] = array();
+                    }
+
+                    if (!isset($to_add[$client_id][$traseu])) {
+                        $to_add[$client_id][$traseu] = array(
+                            'randament' => 0
+                        );
+                    }
+                    $to_add[$client_id][$traseu][$splits[0]] = $value;
+                }
+            }
+
+            $id_traseu = getRequestParameter('id_traseu', '');
+            $id_perioada = getRequestParameter('id_perioada', '');
+            $id_an = getRequestParameter('id_an', '');
+
+            foreach ($lista_clienti as $client) {
+                if (isset($to_add[$client['client_id']][$client['traseu_id']])) {
+                    $a = $to_add[$client['client_id']][$client['traseu_id']];
+                    $select_randament_clienti = "SELECT id from randament_clienti
+                                          WHERE client_id = '" . $client['client_id'] . "' 
+                                          AND traseu_id = '" . $client['traseu_id'] . "'
+                                          AND an = '" . $id_an  . "'
+                                          AND perioada_id = '" . $id_perioada . "'
+                                          LIMIT 1 ";
+
+                    $select_id_randament_clienti = myQuery($select_randament_clienti);
+                    $ret = $select_id_randament_clienti->fetch(PDO::FETCH_ASSOC);
+
+                    if ($select_id_randament_clienti->rowCount() == 1) {
+                        $query = "UPDATE randament_clienti SET
+                            randament  = '" . floatval($a['randament']) . "'
+                            WHERE client_id = '" . $client['client_id'] . "'
+                            AND traseu_id = '" . $client['traseu_id'] . "'
+                            AND perioada_id = '" .$id_perioada . "'
+                            AND an = '" . $id_an . "'                            
+                            ";
+                        myExec($query);
+                    } else {
+
+                        $insert = "INSERT INTO randament_clienti (client_id, traseu_id, an, perioada_id, randament) 
+                          VALUES ('" . $client['client_id'] . "', '" . $client['traseu_id'] . "','" . $id_an . "','" . $id_perioada . "','" . floatval($a['randament']) . "')";
+                        myExec($insert);
+                    }
+
+                    header('Location: /randament_clienti.php?traseu_id=' . $id_traseu.'&an='.$id_an .'&perioada_id='.$id_perioada);
+                }
+            }
+    }
+
     public static function getRandamentByClientIdAndAnAndPerioadaId($client_id, $traseu_id, $an, $perioada_id)
     {
 //        $an = isset($opts['an']) ? $opts['an'] : 0;
