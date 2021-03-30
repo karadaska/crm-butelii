@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-21 00:58:24
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-30 09:32:08
          compiled from "/var/www/html/fofoweb/www/templates/observatii.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:176545557260319410baef04-49217148%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ce0814f4b21997853473ec83ce0806dfd1747bf7' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/observatii.tpl',
-      1 => 1611732350,
+      1 => 1617085927,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60319410c048c4_82200078',
   'variables' => 
   array (
     'title' => 0,
@@ -24,8 +26,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'nr' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60319410c048c4_82200078',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60319410c048c4_82200078')) {function content_60319410c048c4_82200078($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -47,9 +47,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <div class="widget-title">
                                 <div class="icon"><i class="icon20 i-user"></i></div>
                                 <h4>Adauga observatii
-                                    <form method="post" action="export.php">
-                                        <input type="submit" name="export" class="btn btn-success" value="Export" />
-                                    </form>
+                                    
+                                        
+                                    
                                 </h4>
 
                             </div>

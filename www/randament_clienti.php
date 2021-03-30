@@ -18,7 +18,9 @@ $smarty->assign('perioada_id', $perioada_id);
 $an = getRequestParameter('an', 2);
 $smarty->assign('an', $an);
 
-$lista_trasee = Trasee::getTrasee();
+$lista_trasee = Trasee::getTraseeNew(array(
+    'cu_asignari' => false
+));
 $smarty->assign('lista_trasee', $lista_trasee);
 
 $lista_clienti = Trasee::getAsignareClientiTraseuByClientid($traseu_id);

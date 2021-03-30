@@ -15,9 +15,9 @@
                             <div class="widget-title">
                                 <div class="icon"><i class="icon20 i-user"></i></div>
                                 <h4>Adauga observatii
-                                    <form method="post" action="export.php">
-                                        <input type="submit" name="export" class="btn btn-success" value="Export" />
-                                    </form>
+                                    {*<form method="post" action="export.php">*}
+                                        {*<input type="submit" name="export" class="btn btn-success" value="Export" />*}
+                                    {*</form>*}
                                 </h4>
 
                             </div>
