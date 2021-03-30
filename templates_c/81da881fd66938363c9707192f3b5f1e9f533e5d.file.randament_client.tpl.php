@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-30 14:26:03
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-30 14:50:58
          compiled from "/var/www/html/fofoweb/www/templates/randament_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20520424996062d8c3b89b35-52836680%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '81da881fd66938363c9707192f3b5f1e9f533e5d' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_client.tpl',
-      1 => 1617103562,
+      1 => 1617105054,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'title' => 0,
+    'id' => 0,
     'lista_ani' => 0,
     'ani' => 0,
     'an' => 0,
@@ -27,6 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'perioada' => 0,
     'perioada_id' => 0,
     'traseu_id' => 0,
+    'randament_client' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -46,7 +48,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/randament_client.php" method="post" id="form_actualizeaza_stoc"
+                <form action="/randament_client.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+" method="post" id="form_actualizeaza_stoc"
                       style="margin-bottom: 0">
                     <div style="float: left;margin-right: 10px;">
                         <select name="an" style="width: 180px;">
@@ -90,30 +93,37 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
             <div class="row-fluid">
                 <div class="span12">
                     <div class="widget">
-                            <input type="hidden" name="id_perioada" value="<?php echo $_smarty_tpl->tpl_vars['perioada_id']->value;?>
+                        <input type="hidden" name="id_perioada" value="<?php echo $_smarty_tpl->tpl_vars['perioada_id']->value;?>
 ">
-                            <input type="hidden" name="id_an" value="<?php echo $_smarty_tpl->tpl_vars['an']->value;?>
+                        <input type="hidden" name="id_an" value="<?php echo $_smarty_tpl->tpl_vars['an']->value;?>
 ">
-                            <input type="hidden" name="id_traseu" value="<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
+                        <input type="hidden" name="id_traseu" value="<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
 ">
 
-                            <div class="widget-content">
-                                <table cellpadding="0" cellspacing="0" border="0"
-                                       class="table table-striped table-bordered table-hover" id="dataTable">
-                                    <thead>
+                        <div class="widget-content">
+                            <table cellpadding="0" cellspacing="0" border="0"
+                                   class="table table-striped table-bordered table-hover" id="dataTable">
+                                <thead>
+                                <tr>
+                                    <th style="text-align: center;">#</th>
+                                    <th style="text-align: left;">LOCALITATE</th>
+                                    <th style="text-align: left;">CLIENT</th>
+                                    <th style="text-align: left;">TELEFON</th>
+                                    <th style="text-align: left;">RANDAMENT</th>
+                                </tr>
+                                </thead>
+                                <tbody>
                                     <tr>
-                                        <th style="text-align: center;">#</th>
-                                        <th style="text-align: left;">LOCALITATE</th>
-                                        <th style="text-align: left;">CLIENT</th>
-                                        <th style="text-align: left;">TELEFON</th>
-                                        <th style="text-align: left;">RANDAMENT</th>
+                                        <td>ds</td>
+                                        <td>ds</td>
+                                        <td>ds</td>
+                                        <td>ds</td>
+                                        <td><?php echo $_smarty_tpl->tpl_vars['randament_client']->value['randament_client'];?>
+</td>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

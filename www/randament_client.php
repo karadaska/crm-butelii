@@ -4,11 +4,14 @@ require_once('etc/config.php');
 if (!Utilizatori::hasRights(1, 4)) {
     web_redirect('/eroare_faradrept.php');
 }
-$data_start = date('Y-m-d');
 
 $smarty->assign('name', 'Randament client');
 $template_page = "randament_client.tpl";
 
+$id = getRequestParameter('id', 0);
+$smarty->assign('id', $id);
+
+$data_start = date('Y-m-d');
 $traseu_id = getRequestParameter('traseu_id', 1);
 $smarty->assign('traseu_id', $traseu_id);
 
@@ -30,10 +33,11 @@ $smarty->assign('lista_ani', $lista_ani);
 $id_an = getRequestParameter('id_an', '');
 $id_perioada = getRequestParameter('id_perioada', '');
 
-$randament = Clienti::getRandamentByClientIdDinFise(1470, array(
+$randament_client = Clienti::getRandamentByClientIdDinFise($id, array(
     'an' => $id_an,
     'perioada_id' => $id_perioada
 ));
+$smarty->assign('randament_client', $randament_client);
 
 $smarty->display($template_page);
 

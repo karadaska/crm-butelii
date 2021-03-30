@@ -112,7 +112,6 @@ class Clienti
                      ";
 
         if ($perioada_id > 0) {
-//            $query .= " AND a.data_intrare LIKE '2021-%" . $perioada_id . "-%'";
             $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
         }
 

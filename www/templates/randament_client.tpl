@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/randament_client.php" method="post" id="form_actualizeaza_stoc"
+                <form action="/randament_client.php?id={$id}" method="post" id="form_actualizeaza_stoc"
                       style="margin-bottom: 0">
                     <div style="float: left;margin-right: 10px;">
                         <select name="an" style="width: 180px;">
@@ -41,27 +41,33 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div class="widget">
-                            <input type="hidden" name="id_perioada" value="{$perioada_id}">
-                            <input type="hidden" name="id_an" value="{$an}">
-                            <input type="hidden" name="id_traseu" value="{$traseu_id}">
+                        <input type="hidden" name="id_perioada" value="{$perioada_id}">
+                        <input type="hidden" name="id_an" value="{$an}">
+                        <input type="hidden" name="id_traseu" value="{$traseu_id}">
 
-                            <div class="widget-content">
-                                <table cellpadding="0" cellspacing="0" border="0"
-                                       class="table table-striped table-bordered table-hover" id="dataTable">
-                                    <thead>
+                        <div class="widget-content">
+                            <table cellpadding="0" cellspacing="0" border="0"
+                                   class="table table-striped table-bordered table-hover" id="dataTable">
+                                <thead>
+                                <tr>
+                                    <th style="text-align: center;">#</th>
+                                    <th style="text-align: left;">LOCALITATE</th>
+                                    <th style="text-align: left;">CLIENT</th>
+                                    <th style="text-align: left;">TELEFON</th>
+                                    <th style="text-align: left;">RANDAMENT</th>
+                                </tr>
+                                </thead>
+                                <tbody>
                                     <tr>
-                                        <th style="text-align: center;">#</th>
-                                        <th style="text-align: left;">LOCALITATE</th>
-                                        <th style="text-align: left;">CLIENT</th>
-                                        <th style="text-align: left;">TELEFON</th>
-                                        <th style="text-align: left;">RANDAMENT</th>
+                                        <td>ds</td>
+                                        <td>ds</td>
+                                        <td>ds</td>
+                                        <td>ds</td>
+                                        <td>{$randament_client['randament_client']}</td>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                    {$nr = 1}
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
