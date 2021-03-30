@@ -41,7 +41,6 @@ if (isset($_POST['update'])) {
 
 
 
-
 //$to_add = array();
 //if (isset($_POST['update'])) {
 //    foreach ($_POST as $key => $value) {
