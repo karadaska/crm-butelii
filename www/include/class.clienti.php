@@ -2,7 +2,36 @@
 
 class Clienti
 {
-
+//$query = "SELECT a.client_id, b.nume as nume_client, c.nume as nume_localitate,
+//                if (a.urgent = 1, 'DA', 'NU') as urgent
+//                FROM apeluri_clienti as a
+//                LEFT JOIN clienti as b on a.client_id = b.id
+//                LEFT JOIN localitati as c on b.localitate_id = c.id                         
+//                WHERE a.traseu_id = '" . $traseu_id . "'
+//                AND a.data_start = '" . $data_start . "'
+//                AND a.urgent = 1
+//                ORDER BY c.nume ASC
+//                ";
+//
+//$result = myQuery($query);
+//
+//if ($result) {
+//$a = $result->fetchAll(PDO::FETCH_ASSOC);
+//foreach ($a as $item) {
+//$r = array(
+//'client_id' => $item['client_id'],
+//'nume_client' => $item['nume_client'],
+//'nume_localitate' => $item['nume_localitate'],
+//'urgent' => $item['urgent'],
+//'raspuns' => self::getCantitatiGoaleApeluriUrgente($item['client_id'], $opts = array(
+//'data_start' => $data_start
+//)),
+//);
+//array_push($ret, $r);
+//}
+    
+    
+    
     public static function seteazaRandamentClienti($traseu_id)
     {
         $lista_clienti = Trasee::getAsignareClientiTraseuByClientid($traseu_id);
@@ -119,6 +148,51 @@ class Clienti
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
         }
+
+        return $ret;
+
+    }
+
+    public static function getRandamentByClientIdDinFise2($client_id, $opts = array())
+    {
+//
+//        $an = isset($opts['an']) ? $opts['an'] : date('Y');
+//        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
+
+        $ret = array();
+
+        $query = "SELECT
+                    a.client_id, a.cantitate, a.data_intrare 
+                FROM
+                    detalii_fisa_intoarcere_produse AS a
+                    LEFT JOIN fise_generate AS b ON a.fisa_id = b.id 
+                WHERE
+                    a.client_id = '" . $client_id . "'
+                    ORDER BY a.data_intrare ASC                               
+                     ";
+
+//        if ($perioada_id > 0) {
+//            $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
+//        }
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret['randament'] = array();
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret['randament'][$item['client_id']] = array(
+                  'ani' => Fise::getAniRandamentDinFiseByClientId($item['client_id'])
+                );
+
+            }
+        }
+
+//        $ret['randament'] = array();
+
+//        if ($result) {
+//            if($ret)
+//            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+//        }
 
         return $ret;
 

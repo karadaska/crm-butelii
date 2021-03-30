@@ -214,8 +214,6 @@ $data_stop = '2021-03-31';
 //$b = Fise::getPlecareMarfaByFisaIdMiscariFise(591);
 //$b = Stocuri::getPlecareMarfaByFisaIdAndprodusId(595,3);
 //$b = Clienti::getRandamentByClientIdAndAnAndPerioadaId(2608, 30, 2, 3);
-$b = Clienti::getRandamentByClientIdDinFise(1470, array(
-   'an' => 2020,
-   'perioada_id' => 0
-));
+$b = Clienti::getRandamentByClientIdDinFise2(1332);
+//$b = Fise::getAniRandamentDinFiseByClientId(1332);
 echo json_encode($b);
