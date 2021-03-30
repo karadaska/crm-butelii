@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/randament_clienti.php" method="post" id="form_actualizeaza_stoc"
+                <form action="/randament_client.php" method="post" id="form_actualizeaza_stoc"
                       style="margin-bottom: 0">
                     <div style="float: left;margin-right: 10px;">
                         <select name="an" style="width: 180px;">
@@ -22,6 +22,7 @@
                                 </option>
                             {/foreach}
                         </select>
+                        <input type="hidden" name="id_an" value="{$ani['an']}">
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -33,6 +34,7 @@
                                 </option>
                             {/foreach}
                         </select>
+                        <input type="hidden" name="id_perioada" value="{$perioada_id}">
                     </div>
                 </form>
             </div>
@@ -57,11 +59,8 @@
                                     </thead>
                                     <tbody>
                                     {$nr = 1}
-
                                     </tbody>
                                 </table>
-                                <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza clienti"
-                                       class="btn btn-info" name="update">
                             </div>
                     </div>
                 </div>

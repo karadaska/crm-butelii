@@ -97,7 +97,7 @@ class Clienti
     {
 
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
-        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
 
         $ret = array();
 
@@ -117,7 +117,6 @@ class Clienti
         }
 
         $result = myQuery($query);
-        debug($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
         }

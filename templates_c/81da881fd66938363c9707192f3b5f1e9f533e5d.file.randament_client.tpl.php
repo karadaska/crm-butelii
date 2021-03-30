@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-30 10:59:35
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-30 14:26:03
          compiled from "/var/www/html/fofoweb/www/templates/randament_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20520424996062d8c3b89b35-52836680%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '81da881fd66938363c9707192f3b5f1e9f533e5d' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_client.tpl',
-      1 => 1617091173,
+      1 => 1617103562,
       2 => 'file',
     ),
   ),
@@ -46,7 +46,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/randament_clienti.php" method="post" id="form_actualizeaza_stoc"
+                <form action="/randament_client.php" method="post" id="form_actualizeaza_stoc"
                       style="margin-bottom: 0">
                     <div style="float: left;margin-right: 10px;">
                         <select name="an" style="width: 180px;">
@@ -63,6 +63,8 @@ $_smarty_tpl->tpl_vars['ani']->_loop = true;
                                 </option>
                             <?php } ?>
                         </select>
+                        <input type="hidden" name="id_an" value="<?php echo $_smarty_tpl->tpl_vars['ani']->value['an'];?>
+">
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -80,6 +82,8 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
                                 </option>
                             <?php } ?>
                         </select>
+                        <input type="hidden" name="id_perioada" value="<?php echo $_smarty_tpl->tpl_vars['perioada_id']->value;?>
+">
                     </div>
                 </form>
             </div>
@@ -107,11 +111,8 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
                                     </thead>
                                     <tbody>
                                     <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
-
                                     </tbody>
                                 </table>
-                                <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza clienti"
-                                       class="btn btn-info" name="update">
                             </div>
                     </div>
                 </div>

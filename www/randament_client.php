@@ -12,8 +12,6 @@ $template_page = "randament_client.tpl";
 $traseu_id = getRequestParameter('traseu_id', 1);
 $smarty->assign('traseu_id', $traseu_id);
 
-$id_traseu = getRequestParameter('id_traseu', '');
-
 $perioada_id = getRequestParameter('perioada_id', 0);
 $smarty->assign('perioada_id', $perioada_id);
 
@@ -29,24 +27,13 @@ $smarty->assign('lista_perioade', $lista_perioade);
 $lista_ani = Calendar::getAni();
 $smarty->assign('lista_ani', $lista_ani);
 
-//if (isset($_POST['update'])) {
-//    Clienti::seteazaRandamentClienti($id_traseu);
-//}
+$id_an = getRequestParameter('id_an', '');
+$id_perioada = getRequestParameter('id_perioada', '');
 
-//pre(date('n'));
-
-$an = date('Y');
-$perioada_id = date('n');
-$txt = $an . '-%' . $perioada_id . '-%';
-
-//pre($txt);
-
-$txt = Clienti::getRandamentByClientIdDinFise(1470, array(
-    'an' => 2021,
-    'perioada_id' => 3
+$randament = Clienti::getRandamentByClientIdDinFise(1470, array(
+    'an' => $id_an,
+    'perioada_id' => $id_perioada
 ));
 
-
-//pre($txt);
 $smarty->display($template_page);
 
