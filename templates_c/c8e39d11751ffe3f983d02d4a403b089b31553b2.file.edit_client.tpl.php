@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-23 13:30:00
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-30 15:01:50
          compiled from "/var/www/html/fofoweb/www/templates/edit_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9248587256024dd62ec9005-45001616%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c8e39d11751ffe3f983d02d4a403b089b31553b2' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_client.tpl',
-      1 => 1614079781,
+      1 => 1617105709,
       2 => 'file',
     ),
   ),
@@ -62,6 +62,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             name="inapoi"
                             value="inapoi" class="btn btn-small btn-info">
                         Observatii apel client
+                    </button>
+                    <button type="button" onclick="location.href='/randament_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
+'"
+                            value="Randament" class="btn btn-small btn-info">
+                        Randament
                     </button>
                 </div>
                 <div class="row-fluid">

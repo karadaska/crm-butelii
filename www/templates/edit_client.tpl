@@ -17,6 +17,10 @@
                             value="inapoi" class="btn btn-small btn-info">
                         Observatii apel client
                     </button>
+                    <button type="button" onclick="location.href='/randament_client.php?id={$client['id']}'"
+                            value="Randament" class="btn btn-small btn-info">
+                        Randament
+                    </button>
                 </div>
                 <div class="row-fluid">
                     <div class="span12">
