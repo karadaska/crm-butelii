@@ -33,6 +33,7 @@
                                 </option>
                             {/foreach}
                         </select>
+                        <input type="hidden" name="numar_an" value="{$ani['id']}">
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -43,6 +44,7 @@
                                 </option>
                             {/foreach}
                         </select>
+                        <input type="hidden" name="id_perioada" value="{$perioada['id']}">
                     </div>
                 </form>
             </div>
@@ -81,9 +83,8 @@
                                             <th style="text-align: left;"> {strtoupper($client['nume_client'])}</th>
                                             <th style="text-align: center;"> {$client['telefon']}</th>
                                             <th>
-                                                {assign var=randament value=Clienti::getRandamentByClientIdAndAnAndPerioadaId($client['client_id'], $client['traseu_id'],  $an , $perioada_id)}
-                                                {if ($randament['randament'] !='')}
-                                                    {$valoare_randament = $randament['randament']}
+                                                {if ($randament{'_'|cat:$client['client_id']}['randament_client'] !='')}
+                                                    {$valoare_randament = $randament{'_'|cat:$client['client_id']}['randament_client']}
                                                 {else}
                                                     {$valoare_randament = 0}
                                                 {/if}

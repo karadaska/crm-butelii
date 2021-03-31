@@ -13,8 +13,9 @@ $traseu_id = getRequestParameter('traseu_id', 1);
 $smarty->assign('traseu_id', $traseu_id);
 
 $id_traseu = getRequestParameter('id_traseu', '');
+$id_an = getRequestParameter('id_an', '');
+$id_perioada = getRequestParameter('id_perioada', '');
 
-//debug($id_traseu);
 $perioada_id = getRequestParameter('perioada_id', date('n'));
 $smarty->assign('perioada_id', $perioada_id);
 
@@ -39,6 +40,13 @@ if (isset($_POST['update'])) {
     Clienti::seteazaRandamentClienti($id_traseu);
 }
 
+foreach ($lista_clienti as $client) {
+    $randament = Clienti::getRandamentByClientIdDinFise($client['client_id'], array(
+        'an' => 2021,
+        'perioada_id' => 3
+    ));
+    $smarty->assign('randament_'.$client['client_id'], $randament);
+}
 
 
 //$to_add = array();

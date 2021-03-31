@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-30 10:02:40
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-31 12:23:23
          compiled from "/var/www/html/fofoweb/www/templates/randament_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:551758277605d8a60b93d06-29052548%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '99391cd228b81ab5dd6cc14e5f34218ca840363a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_clienti.tpl',
-      1 => 1617087734,
+      1 => 1617182601,
       2 => 'file',
     ),
   ),
@@ -32,7 +32,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_clienti' => 0,
     'nr' => 0,
     'client' => 0,
-    'randament' => 0,
     'valoare_randament' => 0,
   ),
   'has_nocache_code' => false,
@@ -88,6 +87,8 @@ $_smarty_tpl->tpl_vars['ani']->_loop = true;
                                 </option>
                             <?php } ?>
                         </select>
+                        <input type="hidden" name="numar_an" value="<?php echo $_smarty_tpl->tpl_vars['ani']->value['id'];?>
+">
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -104,6 +105,8 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
                                 </option>
                             <?php } ?>
                         </select>
+                        <input type="hidden" name="id_perioada" value="<?php echo $_smarty_tpl->tpl_vars['perioada']->value['id'];?>
+">
                     </div>
                 </form>
             </div>
@@ -153,9 +156,8 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                             <th style="text-align: center;"> <?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
 </th>
                                             <th>
-                                                <?php $_smarty_tpl->tpl_vars['randament'] = new Smarty_variable(Clienti::getRandamentByClientIdAndAnAndPerioadaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['client']->value['traseu_id'],$_smarty_tpl->tpl_vars['an']->value,$_smarty_tpl->tpl_vars['perioada_id']->value), null, 0);?>
-                                                <?php if (($_smarty_tpl->tpl_vars['randament']->value['randament']!='')) {?>
-                                                    <?php $_smarty_tpl->tpl_vars['valoare_randament'] = new Smarty_variable($_smarty_tpl->tpl_vars['randament']->value['randament'], null, 0);?>
+                                                <?php if (($_smarty_tpl->tpl_vars['randament'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['randament_client']!='')) {?>
+                                                    <?php $_smarty_tpl->tpl_vars['valoare_randament'] = new Smarty_variable($_smarty_tpl->tpl_vars['randament'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['randament_client'], null, 0);?>
                                                 <?php } else { ?>
                                                     <?php $_smarty_tpl->tpl_vars['valoare_randament'] = new Smarty_variable(0, null, 0);?>
                                                 <?php }?>
