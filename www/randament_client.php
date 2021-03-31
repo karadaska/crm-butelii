@@ -19,11 +19,9 @@ $smarty->assign('an', $an);
 $lista_clienti = Trasee::getAsignareClientiTraseuByClientid($traseu_id);
 $smarty->assign('lista_clienti', $lista_clienti);
 
-
 $lista_ani = Calendar::getAni();
 $smarty->assign('lista_ani', $lista_ani);
 
-$id_an = getRequestParameter('id_an', '');
 
 $nume_perioada = Calendar::getNumePerioadaById(1);
 
@@ -32,9 +30,10 @@ $nume_perioada = Calendar::getNumePerioadaById(1);
 //    'perioada_id' => $id_perioada
 //));
 //$smarty->assign('randament_client', $randament_client);
+$id_an = getRequestParameter('id_an', '');
 
 $randament_client = Fise::getRandamentAnualDinFiseByClientId($id, array(
-    'an' => 2021
+    'an' => $id_an
 ));
 $smarty->assign('randament_client', $randament_client);
 

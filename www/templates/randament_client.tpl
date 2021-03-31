@@ -29,10 +29,7 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div class="widget">
-                        <input type="hidden" name="id_perioada" value="{$perioada_id}">
-                        <input type="hidden" name="id_an" value="{$an}">
-                        <input type="hidden" name="id_traseu" value="{$traseu_id}">
-
+                        {*<input type="hidden" name="id_an" value="{$ani['an']}">*}
                         <div class="widget-content">
                             <table cellpadding="0" cellspacing="0" border="0"
                                    class="table table-striped table-bordered table-hover" id="dataTable">

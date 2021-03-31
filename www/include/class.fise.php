@@ -162,9 +162,13 @@ class Fise
                ";
 
         if ($an > 0) {
-            $query .= " AND a.data_intrare LIKE '%".$an."%'";
+            $query .= " AND a.data_intrare LIKE '%" . $an . "%'";
         }
 
+        $query .= " GROUP BY luna_randament ORDER BY
+                    luna_randament ASC";
+
+        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
