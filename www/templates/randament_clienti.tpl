@@ -33,7 +33,7 @@
                                 </option>
                             {/foreach}
                         </select>
-                        <input type="hidden" name="numar_an" value="{$ani['id']}">
+                        <input type="hidden" name="numar_an" value="{$ani['an']}">
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -44,7 +44,7 @@
                                 </option>
                             {/foreach}
                         </select>
-                        <input type="hidden" name="id_perioada" value="{$perioada['id']}">
+                        <input type="hidden" name="perioada_select" value="{$perioada_id}">
                     </div>
                 </form>
             </div>

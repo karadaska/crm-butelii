@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-31 12:23:23
+<?php /* Smarty version Smarty-3.1.15, created on 2021-03-31 12:57:54
          compiled from "/var/www/html/fofoweb/www/templates/randament_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:551758277605d8a60b93d06-29052548%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '99391cd228b81ab5dd6cc14e5f34218ca840363a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_clienti.tpl',
-      1 => 1617182601,
+      1 => 1617184673,
       2 => 'file',
     ),
   ),
@@ -24,8 +24,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'traseu' => 0,
     'traseu_id' => 0,
     'lista_ani' => 0,
-    'ani' => 0,
     'an' => 0,
+    'ani' => 0,
     'lista_perioade' => 0,
     'perioada' => 0,
     'perioada_id' => 0,
@@ -79,7 +79,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['ani']->key => $_smarty_tpl->tpl_vars['ani']->value) {
 $_smarty_tpl->tpl_vars['ani']->_loop = true;
 ?>
-                                <option value=<?php echo $_smarty_tpl->tpl_vars['ani']->value['id'];?>
+                                <option value=<?php echo $_smarty_tpl->tpl_vars['an']->value;?>
 
                                         <?php if ($_smarty_tpl->tpl_vars['ani']->value['id']==$_smarty_tpl->tpl_vars['an']->value) {?> selected="selected" <?php }?>>
                                     <?php echo $_smarty_tpl->tpl_vars['ani']->value['an'];?>
@@ -87,7 +87,7 @@ $_smarty_tpl->tpl_vars['ani']->_loop = true;
                                 </option>
                             <?php } ?>
                         </select>
-                        <input type="hidden" name="numar_an" value="<?php echo $_smarty_tpl->tpl_vars['ani']->value['id'];?>
+                        <input type="hidden" name="numar_an" value="<?php echo $_smarty_tpl->tpl_vars['ani']->value['an'];?>
 ">
                     </div>
                     <div style="float: left;margin-right: 10px;">
@@ -105,7 +105,7 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
                                 </option>
                             <?php } ?>
                         </select>
-                        <input type="hidden" name="id_perioada" value="<?php echo $_smarty_tpl->tpl_vars['perioada']->value['id'];?>
+                        <input type="hidden" name="perioada_select" value="<?php echo $_smarty_tpl->tpl_vars['perioada_id']->value;?>
 ">
                     </div>
                 </form>

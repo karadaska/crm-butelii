@@ -139,10 +139,11 @@ class Clienti
                     AND a.data_intrare LIKE '%" . $an . "%'
                      ";
 
-        if ($perioada_id > 0) {
-            $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
-        }
+//        if ($perioada_id > 0) {
+//            $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
+//        }
 
+        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
