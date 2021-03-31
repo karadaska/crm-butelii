@@ -33,7 +33,9 @@ $nume_perioada = Calendar::getNumePerioadaById(1);
 //));
 //$smarty->assign('randament_client', $randament_client);
 
-$randament_client = Fise::getRandamentAnualDinFiseByClientId($id);
+$randament_client = Fise::getRandamentAnualDinFiseByClientId($id, array(
+    'an' => $id_an
+));
 $smarty->assign('randament_client', $randament_client);
 
 $smarty->display($template_page);

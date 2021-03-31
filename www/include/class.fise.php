@@ -134,15 +134,20 @@ class Fise
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-                $ret[$item['luni_randament']] = array(
-                );
+                $ret[$item['luni_randament']] = array();
             }
         }
         return $ret;
     }
 
-    public static function getRandamentAnualDinFiseByClientId($client_id)
+    public static function getRandamentAnualDinFiseByClientId($client_id, $opts = array())
     {
+        $an = isset($opts['an']) ? $opts['an'] : 0;
+
+        if ($an == 0) {
+            $an = date('Y');
+        }
+
         $ret = array();
         $query = "SELECT
                     a.client_id,                    
@@ -152,12 +157,16 @@ class Fise
                 FROM
                     detalii_fisa_intoarcere_produse AS a
                     LEFT JOIN fise_generate AS b ON a.fisa_id = b.id 
-                WHERE	a.client_id = '".$client_id."'
+                WHERE	a.client_id = '" . $client_id . "'
                     AND b.sters = 0 
                     GROUP BY luna_randament
                 ORDER BY
                     luna_randament ASC";
 
+        if ($an > 0) {
+            $query .= " AND a.data_intrare LIKE '" . $an . "-%'";
+        }
+        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
