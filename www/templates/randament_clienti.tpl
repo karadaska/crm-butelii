@@ -97,7 +97,7 @@
                                     {/foreach}
                                     </tbody>
                                 </table>
-                                <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza clienti"
+                                <input style="float: right;margin-top: 20px;" disabled type="submit" value="Actualizeaza clienti"
                                        class="btn btn-info" name="update">
                             </div>
                         </form>
