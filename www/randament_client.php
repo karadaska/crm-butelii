@@ -34,7 +34,7 @@ $nume_perioada = Calendar::getNumePerioadaById(1);
 //$smarty->assign('randament_client', $randament_client);
 
 $randament_client = Fise::getRandamentAnualDinFiseByClientId($id, array(
-    'an' => $id_an
+    'an' => 2021
 ));
 $smarty->assign('randament_client', $randament_client);
 
