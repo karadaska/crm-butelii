@@ -29,9 +29,8 @@ class Clienti
 //);
 //array_push($ret, $r);
 //}
-    
-    
-    
+
+
     public static function seteazaRandamentClienti($traseu_id)
     {
         $lista_clienti = Trasee::getAsignareClientiTraseuByClientid($traseu_id);
@@ -124,8 +123,17 @@ class Clienti
     public static function getRandamentByClientIdDinFise($client_id, $opts = array())
     {
 
-        $an = isset($opts['an']) ? $opts['an'] : date('Y');
-        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
+        $an = isset($opts['an']) ? $opts['an'] : 0;
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
+
+        if($an == 0){
+            $an = date('Y');
+        }
+
+        if ($perioada_id == 0) {
+            $perioada_id = date('n');
+        }
+
 
         $ret = array();
 
@@ -139,11 +147,11 @@ class Clienti
                     AND a.data_intrare LIKE '%" . $an . "%'
                      ";
 
-//        if ($perioada_id > 0) {
-//            $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
-//        }
+        if ($perioada_id > 0) {
+            $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
+        }
 
-        debug($query);
+//        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
@@ -181,7 +189,7 @@ class Clienti
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
                 $ret['randament'][$item['client_id']] = array(
-                  'ani' => Fise::getAniRandamentDinFiseByClientId($item['client_id'])
+                    'ani' => Fise::getAniRandamentDinFiseByClientId($item['client_id'])
                 );
 
             }

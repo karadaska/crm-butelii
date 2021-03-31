@@ -41,15 +41,11 @@ if (isset($_POST['update'])) {
     Clienti::seteazaRandamentClienti($id_traseu);
 }
 
-//debug($id_perioada);
 foreach ($lista_clienti as $client) {
     $numar_an = getRequestParameter('numar_an', '');
-    if ($numar_an == 0) {
-        $numar_an = date('Y');
-    }
     $randament = Clienti::getRandamentByClientIdDinFise($client['client_id'], array(
         'an' => $numar_an,
-        'perioada_id' => $perioada_select
+        'perioada_id' => $perioada_id
     ));
     $smarty->assign('randament_' . $client['client_id'], $randament);
 }
