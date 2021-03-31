@@ -146,6 +146,7 @@ class Clienti
                     a.client_id = '" . $client_id . "'
                     AND a.data_intrare LIKE '%" . $an . "%'
                     AND b.sters = 0
+                    AND a.sters = 0
                      ";
 
         if ($perioada_id > 0) {
