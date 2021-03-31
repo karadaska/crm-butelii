@@ -24,18 +24,6 @@
                         </select>
                         <input type="hidden" name="id_an" value="{$ani['an']}">
                     </div>
-                    <div style="float: left;margin-right: 10px;">
-                        <select name="perioada_id" style="width: 180px;">
-                            <option value="0">Toate</option>
-                            {foreach from=$lista_perioade item=perioada}
-                                <option value={$perioada['id']}
-                                        {if $perioada['id'] == $perioada_id} selected="selected" {/if}>
-                                    {$perioada['nume']}
-                                </option>
-                            {/foreach}
-                        </select>
-                        <input type="hidden" name="id_perioada" value="{$perioada_id}">
-                    </div>
                 </form>
             </div>
             <div class="row-fluid">
@@ -51,20 +39,20 @@
                                 <thead>
                                 <tr>
                                     <th style="text-align: center;">#</th>
-                                    <th style="text-align: left;">LOCALITATE</th>
-                                    <th style="text-align: left;">CLIENT</th>
-                                    <th style="text-align: left;">TELEFON</th>
+                                    <th style="text-align: left;">LUNA</th>
                                     <th style="text-align: left;">RANDAMENT</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                {$nr = 1}
+                                {foreach from=$randament_client item=randament}
                                     <tr>
-                                        <td>ds</td>
-                                        <td>ds</td>
-                                        <td>ds</td>
-                                        <td>ds</td>
-                                        <td>{$randament_client['randament_client']}</td>
+                                        <th style="text-align: center;">{$nr++}</th>
+                                        {assign var=luna value=Calendar::getNumePerioadaById($randament['luna_randament'])}
+                                        <td>{$luna['nume']}</td>
+                                        <td>{$randament['randament_lunar']}</td>
                                     </tr>
+                                {/foreach}
                                 </tbody>
                             </table>
                         </div>

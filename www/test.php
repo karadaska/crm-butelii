@@ -217,8 +217,9 @@ $data_stop = '2021-03-31';
 //$b = Clienti::getRandamentByClientIdDinFise2(1332);
 //$b = Fise::getAniRandamentDinFiseByClientId(1332);
 //$b = Fise::getLuniRandamentDinFiseByClientId(1332);
-$b = Clienti::getRandamentByClientIdDinFise(1332,array(
-    'an'=>2021,
-
-));
+//$b = Clienti::getRandamentByClientIdDinFise(1332,array(
+//    'an'=>2021,
+//
+//));
+$b = Fise::getRandamentAnualDinFiseByClientId(1332);
 echo json_encode($b);

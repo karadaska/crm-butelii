@@ -141,4 +141,28 @@ class Fise
         return $ret;
     }
 
+    public static function getRandamentAnualDinFiseByClientId($client_id)
+    {
+        $ret = array();
+        $query = "SELECT
+                    a.client_id,                    
+                    date_format(a.data_intrare,'%Y') AS ani_randament,
+                    date_format(a.data_intrare,'%m') AS luna_randament,
+                    SUM(a.cantitate) as randament_lunar
+                FROM
+                    detalii_fisa_intoarcere_produse AS a
+                    LEFT JOIN fise_generate AS b ON a.fisa_id = b.id 
+                WHERE	a.client_id = '".$client_id."'
+                    AND b.sters = 0 
+                    GROUP BY luna_randament
+                ORDER BY
+                    luna_randament ASC";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
 }

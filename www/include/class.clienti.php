@@ -126,7 +126,7 @@ class Clienti
         $an = isset($opts['an']) ? $opts['an'] : 0;
         $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
 
-        if($an == 0){
+        if ($an == 0) {
             $an = date('Y');
         }
 
@@ -152,7 +152,6 @@ class Clienti
             $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
         }
 
-//        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
@@ -164,8 +163,11 @@ class Clienti
 
     public static function getRandamentByClientIdDinFise2($client_id, $opts = array())
     {
-//
-//        $an = isset($opts['an']) ? $opts['an'] : date('Y');
+        $an = isset($opts['an']) ? $opts['an'] : 0;
+        if ($an == 0) {
+            $an = date('Y');
+        }
+
 //        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
 
         $ret = array();
@@ -177,6 +179,7 @@ class Clienti
                     LEFT JOIN fise_generate AS b ON a.fisa_id = b.id 
                 WHERE
                     a.client_id = '" . $client_id . "'
+                AND b.sters = 0
                     ORDER BY a.data_intrare ASC                               
                      ";
 
