@@ -23,7 +23,7 @@ $lista_ani = Calendar::getAni();
 $smarty->assign('lista_ani', $lista_ani);
 
 
-$nume_perioada = Calendar::getNumePerioadaById(1);
+//$nume_perioada = Calendar::getNumePerioadaById(1);
 
 //$randament_client = Clienti::getRandamentByClientIdDinFise($id, array(
 //    'an' => $id_an,

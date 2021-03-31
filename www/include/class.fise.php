@@ -158,7 +158,8 @@ class Fise
                     detalii_fisa_intoarcere_produse AS a
                     LEFT JOIN fise_generate AS b ON a.fisa_id = b.id 
                 WHERE	a.client_id = '" . $client_id . "'
-                    AND b.sters = 0                     
+                    AND b.sters = 0
+                    AND a.sters = 0                     
                ";
 
         if ($an > 0) {
@@ -168,7 +169,6 @@ class Fise
         $query .= " GROUP BY luna_randament ORDER BY
                     luna_randament ASC";
 
-        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
