@@ -402,14 +402,11 @@ class Clienti
         return $ret;
     }
 
-    public static function getObservatiiClientiDinFiseGenerate($observatie_id = array(), $opts = array())
+    public static function getObservatiiClientiDinFiseGenerate($opts = array())
     {
 
         $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
-//        $observatie_id = isset($opts['observatie_id']) ? $opts['observatie_id'] : 0;
-        $txt = array($observatie_id);
-
-        debug($observatie_id);
+        $observatii = isset($opts['observatii']) ? $opts['observatii'] : array();
 
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
@@ -442,13 +439,10 @@ class Clienti
             $query .= " and a.traseu_id = " . $traseu_id;
         }
 
-        if ($observatie_id > 0) {
-//            $query .= " and a.observatie_id IN (" . implode(',', $observatie_id) . ')';
-            $query .= " and a.observatie_id IN (".$observatie_id.")";
-
+        if (count($observatii) > 0) {
+            $query .= " and a.observatie_id IN (" . join(', ', $observatii) . ")";
         }
 
-//        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
