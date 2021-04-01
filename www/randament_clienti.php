@@ -22,7 +22,7 @@ $smarty->assign('perioada_id', $perioada_id);
 $an = getRequestParameter('an', date('Y'));
 $smarty->assign('an', $an);
 
-//$id_an = getRequestParameter('id_an', '');
+$id_an = getRequestParameter('id_an', '');
 
 $lista_trasee = Trasee::getTraseeNew(array(
     'cu_asignari' => false
@@ -45,7 +45,7 @@ if (isset($_POST['update'])) {
 foreach ($lista_clienti as $client) {
     $numar_an = getRequestParameter('numar_an', '');
     $randament = Clienti::getRandamentByClientIdDinFise($client['client_id'], array(
-        'an' => $an,
+        'an' => $id_an,
         'perioada_id' => $perioada_id
     ));
     $smarty->assign('randament_' . $client['client_id'], $randament);

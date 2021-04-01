@@ -39,7 +39,7 @@
                             {*{/foreach}*}
                         {*</select>*}
                         {*<input type="hidden" name="numar_an" value="{$an['an']}">*}
-                        {*<input type="hidden" name="id_an" value="{$ani['an']}">*}
+                        {*<input type="hidden" name="id_an" value="{$an}">*}
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -65,8 +65,8 @@
                               method="post"
                               style="margin-bottom: 0">
                             <input type="hidden" name="id_perioada" value="{$perioada_id}">
-
                             <input type="hidden" name="id_traseu" value="{$traseu_id}">
+                            <input type="hidden" name="id_an" value="{$an}">
 
                             <div class="widget-content">
                                 <table cellpadding="0" cellspacing="0" border="0"
@@ -103,7 +103,7 @@
                                     {/foreach}
                                     </tbody>
                                 </table>
-                                <input style="float: right;margin-top: 20px;" disabled type="submit" value="Actualizeaza clienti"
+                                <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza clienti"
                                        class="btn btn-info" name="update">
                             </div>
                         </form>

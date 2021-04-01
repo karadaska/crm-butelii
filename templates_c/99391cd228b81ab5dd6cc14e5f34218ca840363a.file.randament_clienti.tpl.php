@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 09:14:52
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 09:24:48
          compiled from "/var/www/html/fofoweb/www/templates/randament_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:551758277605d8a60b93d06-29052548%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '99391cd228b81ab5dd6cc14e5f34218ca840363a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_clienti.tpl',
-      1 => 1617257686,
+      1 => 1617258284,
       2 => 'file',
     ),
   ),
@@ -125,8 +125,9 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
                               style="margin-bottom: 0">
                             <input type="hidden" name="id_perioada" value="<?php echo $_smarty_tpl->tpl_vars['perioada_id']->value;?>
 ">
-
                             <input type="hidden" name="id_traseu" value="<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
+">
+                            <input type="hidden" name="id_an" value="<?php echo $_smarty_tpl->tpl_vars['an']->value;?>
 ">
 
                             <div class="widget-content">
@@ -175,7 +176,7 @@ _<?php echo $_smarty_tpl->tpl_vars['client']->value['traseu_id'];?>
                                     <?php } ?>
                                     </tbody>
                                 </table>
-                                <input style="float: right;margin-top: 20px;" disabled type="submit" value="Actualizeaza clienti"
+                                <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza clienti"
                                        class="btn btn-info" name="update">
                             </div>
                         </form>
