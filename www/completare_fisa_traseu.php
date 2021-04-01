@@ -225,7 +225,6 @@ if (isset($_POST['adauga'])) {
 
 if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
     $data_intrare = $fisa['data_intrare'];
-    $stare_goale = 2;
 
     if ($tip_produs_id > 0) {
         $select_id_produs_fisa_intoarcere = "SELECT id from fisa_total_intoarcere 
@@ -250,24 +249,6 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
 
             $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
 
-//            $select_goale = "SELECT id from fisa_total_intoarcere
-//                              WHERE fisa_id = '" . $id . "'
-//                             AND stare_produs = '" . $stare_goale . "'
-//                              AND tip_produs_id = '" . $tip_produs_id . "'";
-//            $id_gasit_goale = myQuery($select_goale);
-//            $ret_goale = $id_gasit_goale->fetch(PDO::FETCH_ASSOC);
-//            $id_goale = $ret_goale['id'];
-
-//            am scos update goale
-//            $update_goale = "UPDATE fisa_total_intoarcere
-//                                 SET cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
-//                                 WHERE fisa_id = '" . $id . "'
-//                                 AND stare_produs = '" . $stare_goale . "'
-//                                 AND tip_produs_id = '" . $tip_produs_id . "'
-//                                 ";
-//            myExec($update_goale);
-
-
         } else {
             $insert_fisa_total_intoarcere = "INSERT INTO fisa_total_intoarcere(fisa_id, traseu_id, tip_produs_id, cantitate, stare_produs, data_intrare)
                      values
@@ -275,31 +256,6 @@ if (isset($_POST['adauga_cantitate_intoarcere_traseu'])) {
                     '" . $tip_produs_id . "','" . $cantitate . "','" . $stare_produs . "','" . $data_intrare . "')";
             myExec($insert_fisa_total_intoarcere);
 
-//            $intoarcere_marfa_by_fisa_id = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id);
-//
-//            $select_goale = "SELECT id from fisa_total_intoarcere
-//                              WHERE fisa_id = '" . $id . "'
-//                             AND stare_produs = '" . $stare_goale . "'
-//                              AND tip_produs_id = '" . $tip_produs_id . "'";
-//            $id_gasit_goale = myQuery($select_goale);
-//            $ret_goale = $id_gasit_goale->fetch(PDO::FETCH_ASSOC);
-//            $id_goale = $ret_goale['id'];
-//
-//            if ($id_gasit_goale->rowCount() == 0) {
-//                $insert_goale = "INSERT INTO fisa_total_intoarcere(fisa_id, traseu_id, tip_produs_id, cantitate, stare_produs, data_intrare)
-//                     values
-//                    ('" . $id . "','" . $traseu_by_fisa_generata_id['traseu_id'] . "',
-//                    '" . $tip_produs_id . "','" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "','" . $stare_goale . "','" . $data_intrare . "')";
-//                myExec($insert_goale);
-//            } else {
-//                $update_goale = "UPDATE fisa_total_intoarcere
-//                                 SET cantitate = '" . $intoarcere_marfa_by_fisa_id['totaluri']['total_goale'] . "'
-//                                 WHERE fisa_id = '" . $id . "'
-//                                 AND stare_produs = '" . $stare_goale . "'
-//                                 AND tip_produs_id = '" . $tip_produs_id . "'
-//                                 ";
-//                myExec($update_goale);
-//            }
         }
     }
     header('Location: /completare_fisa_traseu.php?id=' . $id);

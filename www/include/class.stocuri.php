@@ -199,7 +199,6 @@ class Stocuri
     }
 
 
-
 //    Functia asta o folosesc doar la pagina de afisare fise
     public static function getIncarcaturaMasinaPlecareByFisaId($id)
     {
@@ -368,7 +367,7 @@ class Stocuri
                         'nume_produs' => $item['nume_produs'],
                         'vandute' => $item['cantitate'],
                         'defecte' => $item['defecte'],
-                        'pret_fisa_sofer' => ($item['pret'] - $item['comision']) ,
+                        'pret_fisa_sofer' => ($item['pret'] - $item['comision']),
                         'comision' => $item['comision'],
                         'pret_contract' => $item['pret_contract']
                     );
@@ -502,7 +501,7 @@ class Stocuri
                 } else if ($item['stare_produs'] == 3) {
                     $ret['marfa_sosire'][$item['tip_produs_id']]['defecte'] += $item['cantitate'];
 //                    $ret['totaluri']['total_goale'] = $ret['marfa_plecare'][$item['tip_produs_id']]['pline_plecare'] - ($ret['marfa_sosire'][$item['tip_produs_id']]['pline'] + $ret['marfa_sosire'][$item['tip_produs_id']]['defecte']);
-                }else if($item['stare_produs'] == 2){
+                } else if ($item['stare_produs'] == 2) {
                     $ret['marfa_sosire'][$item['tip_produs_id']]['goale'] += $item['cantitate'];
                 }
             }
@@ -531,6 +530,7 @@ class Stocuri
         return $ret;
 
     }
+
     public static function getPlecareMarfaByFisaIdAndTraseuId($id, $data_start, $opts = array())
     {
         $fisa_id = isset($opts['fisa_id']) ? $opts['fisa_id'] : 0;
@@ -754,7 +754,7 @@ class Stocuri
 
                     } elseif ($item_realizat['tip_produs_id'] == 3) {
                         $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'];
-                        $ret['clienti'][$num]['total_valoare_ar_8'] += $item_realizat['cantitate'] *($item_realizat['pret'] - $item_realizat['comision']);
+                        $ret['clienti'][$num]['total_valoare_ar_8'] += $item_realizat['cantitate'] * ($item_realizat['pret'] - $item_realizat['comision']);
                         $ret['clienti'][$num]['total_defecte_ar_8'] += $item_realizat['defecte'];
 
                     } elseif ($item_realizat['tip_produs_id'] == 4) {
@@ -859,7 +859,7 @@ class Stocuri
 
                     } elseif ($item_realizat['tip_produs_id'] == 3) {
                         $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'];
-                        $ret['clienti'][$num]['total_valoare_ar_8'] += $item_realizat['cantitate'] *($item_realizat['pret'] - $item_realizat['comision']);
+                        $ret['clienti'][$num]['total_valoare_ar_8'] += $item_realizat['cantitate'] * ($item_realizat['pret'] - $item_realizat['comision']);
                         $ret['clienti'][$num]['total_defecte_ar_8'] += $item_realizat['defecte'];
 
                     } elseif ($item_realizat['tip_produs_id'] == 4) {
