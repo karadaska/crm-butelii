@@ -321,7 +321,7 @@
                                            style="width: 500px;margin-right: 100px;margin-top: 10px;margin-left: 10px;">
                                         <tr>
                                             <th class="span2">Produs</th>
-                                            <th>Pline</th>
+                                            <th>Pline (Ramase)</th>
                                             <th>Def.</th>
                                             <th>Goale</th>
                                         </tr>

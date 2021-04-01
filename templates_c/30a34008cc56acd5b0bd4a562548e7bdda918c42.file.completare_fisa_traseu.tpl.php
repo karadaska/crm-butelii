@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 09:37:00
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 10:33:02
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1617259018,
+      1 => 1617262381,
       2 => 'file',
     ),
   ),
@@ -436,7 +436,7 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                            style="width: 500px;margin-right: 100px;margin-top: 10px;margin-left: 10px;">
                                         <tr>
                                             <th class="span2">Produs</th>
-                                            <th>Pline</th>
+                                            <th>Pline (Ramase)</th>
                                             <th>Def.</th>
                                             <th>Goale</th>
                                         </tr>
