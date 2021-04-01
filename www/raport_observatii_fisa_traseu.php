@@ -35,14 +35,15 @@ $smarty->assign('data_start_interval', $data_start_interval);
 $data_stop_interval = getRequestParameter('data_stop_interval', '');
 $smarty->assign('data_stop_interval', $data_stop_interval);
 
-$array = array();
+$observatii = array();
 foreach ($_POST['observatie_id'] as $key => $value) {
     $array_observatii = join(",", $value);
 //    $array_observatii = explode(",", $value);
 //    foreach ($array_observatii as $txt) {
-    array_push($array, $value);
+    array_push($observatii, $value);
+
         $lista_clienti = Clienti::getObservatiiClientiDinFiseGenerate(array(
-            'observatii' => $array,
+            'observatii' => $observatii,
             'traseu_id' => $traseu_id,
             'data_start' => $data_start,
             'data_stop' => $data_stop
