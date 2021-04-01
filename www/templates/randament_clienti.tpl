@@ -25,15 +25,21 @@
                         <input type="hidden" name="id_traseu" value="{$traseu_id}">
                     </div>
                     <div style="float: left;margin-right: 10px;">
-                        <select name="an" style="width: 180px;">
-                            {foreach from=$lista_ani item=ani}
-                                <option value={$ani['id']}
-                                        {if $ani['id'] == $an} selected="selected" {/if}>
-                                    {$ani['an']}
-                                </option>
-                            {/foreach}
+                        <select name="an" style="width: 180px;" data-schimba="4">
+                            {for $a=2020 to date("Y")}
+                                <option value="{$a}" {if $a==$an} selected="selected" {/if}>{$a}</option>
+                            {/for}
                         </select>
-                        <input type="hidden" name="numar_an" value="{$ani['an']}">
+                        {*<select name="an" style="width: 180px;">*}
+                            {*{foreach from=$lista_ani item=ani}*}
+                                {*<option value={$ani['id']}*}
+                                        {*{if $ani['id'] == $an} selected="selected" {/if}>*}
+                                    {*{$ani['an']}*}
+                                {*</option>*}
+                            {*{/foreach}*}
+                        {*</select>*}
+                        {*<input type="hidden" name="numar_an" value="{$an['an']}">*}
+                        {*<input type="hidden" name="id_an" value="{$ani['an']}">*}
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -59,7 +65,7 @@
                               method="post"
                               style="margin-bottom: 0">
                             <input type="hidden" name="id_perioada" value="{$perioada_id}">
-                            <input type="hidden" name="id_an" value="{$an}">
+
                             <input type="hidden" name="id_traseu" value="{$traseu_id}">
 
                             <div class="widget-content">

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-31 13:03:19
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 09:14:52
          compiled from "/var/www/html/fofoweb/www/templates/randament_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:551758277605d8a60b93d06-29052548%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '99391cd228b81ab5dd6cc14e5f34218ca840363a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_clienti.tpl',
-      1 => 1617184984,
+      1 => 1617257686,
       2 => 'file',
     ),
   ),
@@ -23,8 +23,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_trasee' => 0,
     'traseu' => 0,
     'traseu_id' => 0,
-    'lista_ani' => 0,
-    'ani' => 0,
+    'a' => 0,
     'an' => 0,
     'lista_perioade' => 0,
     'perioada' => 0,
@@ -73,22 +72,26 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
 ">
                     </div>
                     <div style="float: left;margin-right: 10px;">
-                        <select name="an" style="width: 180px;">
-                            <?php  $_smarty_tpl->tpl_vars['ani'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ani']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['lista_ani']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['ani']->key => $_smarty_tpl->tpl_vars['ani']->value) {
-$_smarty_tpl->tpl_vars['ani']->_loop = true;
-?>
-                                <option value=<?php echo $_smarty_tpl->tpl_vars['ani']->value['id'];?>
-
-                                        <?php if ($_smarty_tpl->tpl_vars['ani']->value['id']==$_smarty_tpl->tpl_vars['an']->value) {?> selected="selected" <?php }?>>
-                                    <?php echo $_smarty_tpl->tpl_vars['ani']->value['an'];?>
-
-                                </option>
-                            <?php } ?>
+                        <select name="an" style="width: 180px;" data-schimba="4">
+                            <?php $_smarty_tpl->tpl_vars['a'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['a']->step = 1;$_smarty_tpl->tpl_vars['a']->total = (int) ceil(($_smarty_tpl->tpl_vars['a']->step > 0 ? date("Y")+1 - (2020) : 2020-(date("Y"))+1)/abs($_smarty_tpl->tpl_vars['a']->step));
+if ($_smarty_tpl->tpl_vars['a']->total > 0) {
+for ($_smarty_tpl->tpl_vars['a']->value = 2020, $_smarty_tpl->tpl_vars['a']->iteration = 1;$_smarty_tpl->tpl_vars['a']->iteration <= $_smarty_tpl->tpl_vars['a']->total;$_smarty_tpl->tpl_vars['a']->value += $_smarty_tpl->tpl_vars['a']->step, $_smarty_tpl->tpl_vars['a']->iteration++) {
+$_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1;$_smarty_tpl->tpl_vars['a']->last = $_smarty_tpl->tpl_vars['a']->iteration == $_smarty_tpl->tpl_vars['a']->total;?>
+                                <option value="<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+" <?php if ($_smarty_tpl->tpl_vars['a']->value==$_smarty_tpl->tpl_vars['an']->value) {?> selected="selected" <?php }?>><?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+</option>
+                            <?php }} ?>
                         </select>
-                        <input type="hidden" name="numar_an" value="<?php echo $_smarty_tpl->tpl_vars['ani']->value['an'];?>
-">
+                        
+                            
+                                
+                                        
+                                    
+                                
+                            
+                        
+                        
+                        
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -122,8 +125,7 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
                               style="margin-bottom: 0">
                             <input type="hidden" name="id_perioada" value="<?php echo $_smarty_tpl->tpl_vars['perioada_id']->value;?>
 ">
-                            <input type="hidden" name="id_an" value="<?php echo $_smarty_tpl->tpl_vars['an']->value;?>
-">
+
                             <input type="hidden" name="id_traseu" value="<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
 ">
 
@@ -173,7 +175,7 @@ _<?php echo $_smarty_tpl->tpl_vars['client']->value['traseu_id'];?>
                                     <?php } ?>
                                     </tbody>
                                 </table>
-                                <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza clienti"
+                                <input style="float: right;margin-top: 20px;" disabled type="submit" value="Actualizeaza clienti"
                                        class="btn btn-info" name="update">
                             </div>
                         </form>
