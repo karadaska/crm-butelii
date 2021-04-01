@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 12:02:17
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 13:41:19
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1615370535,
+      1 => 1617273634,
       2 => 'file',
     ),
   ),
@@ -28,6 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_observatii' => 0,
     'observatie' => 0,
     'observatie_id' => 0,
+    'array_obs' => 0,
     'lista_clienti' => 0,
     'client' => 0,
   ),
@@ -54,7 +55,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <button class="i-print"></button>
                         </a>
                         
-                            
+                        
                         
                     </h1>
                 </div>
@@ -83,8 +84,9 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                     <?php } ?>
                                 </select>
                             </th>
+                            <?php $_smarty_tpl->tpl_vars['array_obs'] = new Smarty_variable(array(), null, 0);?>
                             <th style="text-align: left" width="300px;">Obs
-                                <select name="observatie_id">
+                                <select name="observatie_id[]" multiple="multiple">
                                     <option value="0">Toate</option>
                                     <?php  $_smarty_tpl->tpl_vars['observatie'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['observatie']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_observatii']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -100,6 +102,8 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                             </option>
                                         <?php }?>
                                     <?php } ?>
+                                    <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['array_obs']->value;?>
+" name="observatii_multimple">
                                 </select>
                             </th>
                             <th style="text-align: left;width: 500px;">
@@ -116,7 +120,8 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                 <input type="hidden" name="data_stop_interval" value="<?php echo $_smarty_tpl->tpl_vars['data_stop']->value;?>
 "/>
                             </th>
-                            <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Aplica" name="aplica"></th>
+                            <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Aplica"
+                                                                 name="aplica"></th>
                         </tr>
                         </thead>
                     </table>
@@ -177,9 +182,11 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 </td>
                                             <td style="text-align: left;"><?php echo $_smarty_tpl->tpl_vars['client']->value['observatie_extra']!='' ? $_smarty_tpl->tpl_vars['client']->value['observatie_extra'] : '-';?>
 </td>
-                                            <td style="text-align: center;"><a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['fisa_id'];?>
+                                            <td style="text-align: center;"><a
+                                                        href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['fisa_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['client']->value['fisa_id'];?>
-</a></td>
+</a>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>

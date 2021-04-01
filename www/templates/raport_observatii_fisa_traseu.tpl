@@ -12,7 +12,7 @@
                             <button class="i-print"></button>
                         </a>
                         {*<a href="/filtreaza_observatii.php">*}
-                            {*<button class="btn btn-mini btn-success">Filtreaza observatii</button>*}
+                        {*<button class="btn btn-mini btn-success">Filtreaza observatii</button>*}
                         {*</a>*}
                     </h1>
                 </div>
@@ -35,8 +35,9 @@
                                     {/foreach}
                                 </select>
                             </th>
+                            {$array_obs = array()}
                             <th style="text-align: left" width="300px;">Obs
-                                <select name="observatie_id">
+                                <select name="observatie_id[]" multiple="multiple">
                                     <option value="0">Toate</option>
                                     {foreach from=$lista_observatii item=observatie}
                                         {if $observatie['tip_observatie'] == 2}
@@ -46,6 +47,7 @@
                                             </option>
                                         {/if}
                                     {/foreach}
+                                    <input type="hidden" value="{$array_obs}" name="observatii_multimple">
                                 </select>
                             </th>
                             <th style="text-align: left;width: 500px;">
@@ -57,7 +59,8 @@
                                 <input type="hidden" placeholder="" name="data_start_interval" value="{$data_start}"/>
                                 <input type="hidden" name="data_stop_interval" value="{$data_stop}"/>
                             </th>
-                            <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Aplica" name="aplica"></th>
+                            <th style="text-align: left;"><input type="submit" class="btn btn-primary" value="Aplica"
+                                                                 name="aplica"></th>
                         </tr>
                         </thead>
                     </table>
@@ -103,7 +106,9 @@
                                             <td style="text-align: center;">{$client['data']}</td>
                                             <td style="text-align: left;">{($client['nume_observatie'] !='') ? $client['nume_observatie'] : '-'}</td>
                                             <td style="text-align: left;">{($client['observatie_extra'] !='') ? $client['observatie_extra'] : '-'}</td>
-                                            <td style="text-align: center;"><a href="completare_fisa_traseu.php?id={$client['fisa_id']}">{$client['fisa_id']}</a></td>
+                                            <td style="text-align: center;"><a
+                                                        href="completare_fisa_traseu.php?id={$client['fisa_id']}">{$client['fisa_id']}</a>
+                                            </td>
                                         </tr>
                                     {/foreach}
                                     </tbody>
