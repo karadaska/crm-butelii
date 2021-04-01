@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 15:56:06
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 16:00:39
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1617281661,
+      1 => 1617282035,
       2 => 'file',
     ),
   ),
@@ -28,7 +28,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_observatii' => 0,
     'observatie' => 0,
     'observatie_id' => 0,
-    'array_obs' => 0,
+    'observatii' => 0,
+    't' => 0,
     'lista_clienti' => 0,
     'client' => 0,
   ),
@@ -102,9 +103,15 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                             </option>
                                         <?php }?>
                                     <?php } ?>
-                                    <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['array_obs']->value;?>
-" name="observatii_multimple">
                                 </select>
+                                <?php  $_smarty_tpl->tpl_vars['t'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['t']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['observatii']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['t']->key => $_smarty_tpl->tpl_vars['t']->value) {
+$_smarty_tpl->tpl_vars['t']->_loop = true;
+?>
+                                    <?php echo $_smarty_tpl->tpl_vars['t']->value;?>
+
+                                <?php } ?>
                             </th>
                             <th style="text-align: left;width: 500px;">
                                 Interval <input placeholder="<?php echo smarty_modifier_date_format(time());?>

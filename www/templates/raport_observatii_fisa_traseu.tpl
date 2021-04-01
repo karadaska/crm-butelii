@@ -47,8 +47,10 @@
                                             </option>
                                         {/if}
                                     {/foreach}
-                                    <input type="hidden" value="{$array_obs}" name="observatii_multimple">
                                 </select>
+                                {foreach from = $observatii item=t}
+                                    {$t}
+                                {/foreach}
                             </th>
                             <th style="text-align: left;width: 500px;">
                                 Interval <input placeholder="{$smarty.now|date_format}" autocomplete="off" type="date"
