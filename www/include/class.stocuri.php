@@ -479,11 +479,11 @@ class Stocuri
         $result = myQuery($query);
 
         if ($result) {
-            $ret['totaluri'] = array(
-                'total_goale' => 0,
-            );
+//            $ret['totaluri'] = array(
+//                'total_goale' => 0,
+//            );
 
-            $ret['marfa_plecare'] = self::getPlecareMarfaByFisaIdAndprodusId($id, $tip_produs_id);
+//            $ret['marfa_plecare'] = self::getPlecareMarfaByFisaIdAndprodusId($id, $tip_produs_id);
             $ret['marfa_sosire'] = array();
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
@@ -491,50 +491,25 @@ class Stocuri
                     $ret['marfa_sosire'][$item['tip_produs_id']] = array(
                         'pline' => 0,
                         'defecte' => 0,
+                        'goale' => 0,
                     );
 
                 }
 
                 if ($item['stare_produs'] == 1) {
                     $ret['marfa_sosire'][$item['tip_produs_id']]['pline'] += $item['cantitate'];
-                    $ret['totaluri']['total_goale'] = $ret['marfa_plecare'][$item['tip_produs_id']]['pline_plecare'] - ($ret['marfa_sosire'][$item['tip_produs_id']]['pline'] + $ret['marfa_sosire'][$item['tip_produs_id']]['defecte']);
+//                    $ret['totaluri']['total_goale'] = $ret['marfa_plecare'][$item['tip_produs_id']]['pline_plecare'] - ($ret['marfa_sosire'][$item['tip_produs_id']]['pline'] + $ret['marfa_sosire'][$item['tip_produs_id']]['defecte']);
                 } else if ($item['stare_produs'] == 3) {
                     $ret['marfa_sosire'][$item['tip_produs_id']]['defecte'] += $item['cantitate'];
-                    $ret['totaluri']['total_goale'] = $ret['marfa_plecare'][$item['tip_produs_id']]['pline_plecare'] - ($ret['marfa_sosire'][$item['tip_produs_id']]['pline'] + $ret['marfa_sosire'][$item['tip_produs_id']]['defecte']);
+//                    $ret['totaluri']['total_goale'] = $ret['marfa_plecare'][$item['tip_produs_id']]['pline_plecare'] - ($ret['marfa_sosire'][$item['tip_produs_id']]['pline'] + $ret['marfa_sosire'][$item['tip_produs_id']]['defecte']);
+                }else if($item['stare_produs'] == 2){
+                    $ret['marfa_sosire'][$item['tip_produs_id']]['goale'] += $item['cantitate'];
                 }
             }
         }
         return $ret;
     }
 
-//    public static function getPlecareMarfaByFisaIdAndprodusId($id, $tip_produs_id)
-//    {
-//        $ret = array();
-//        $query = "SELECT a.fisa_id, a.tip_produs_id, a.cantitate, a.stare_produs, b.tip as nume_produs
-//                  FROM fisa_total_plecare as a
-//                  LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
-//                  WHERE a.fisa_id = '" . $id . "'
-//                  AND a.tip_produs_id = '" . $tip_produs_id . "'
-//                  AND a.sters = 0
-//                  ORDER BY b.id ASC
-//                 ";
-//
-//        $result = myQuery($query);
-//
-//        if ($result) {
-//            $ret['marfa_plecare'] = array();
-//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-//            foreach ($a as $item) {
-//                if (!isset($ret['marfa_plecare'][$item['tip_produs_id']])) {
-//                    $ret['marfa_plecare'][$item['tip_produs_id']] = array(
-//                        'pline' => 0,
-//                    );
-//                }
-//                    $ret['marfa_plecare'][$item['tip_produs_id']]['pline'] += $item['cantitate'];
-//            }
-//        }
-//        return $ret;
-//    }
     public static function getPlecareMarfaByFisaIdAndprodusId($id, $tip_produs_id)
     {
         $ret = array();
@@ -1101,3 +1076,32 @@ class Stocuri
 //        return $ret;
 //    }
 
+
+//    public static function getPlecareMarfaByFisaIdAndprodusId($id, $tip_produs_id)
+//    {
+//        $ret = array();
+//        $query = "SELECT a.fisa_id, a.tip_produs_id, a.cantitate, a.stare_produs, b.tip as nume_produs
+//                  FROM fisa_total_plecare as a
+//                  LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+//                  WHERE a.fisa_id = '" . $id . "'
+//                  AND a.tip_produs_id = '" . $tip_produs_id . "'
+//                  AND a.sters = 0
+//                  ORDER BY b.id ASC
+//                 ";
+//
+//        $result = myQuery($query);
+//
+//        if ($result) {
+//            $ret['marfa_plecare'] = array();
+//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+//            foreach ($a as $item) {
+//                if (!isset($ret['marfa_plecare'][$item['tip_produs_id']])) {
+//                    $ret['marfa_plecare'][$item['tip_produs_id']] = array(
+//                        'pline' => 0,
+//                    );
+//                }
+//                    $ret['marfa_plecare'][$item['tip_produs_id']]['pline'] += $item['cantitate'];
+//            }
+//        }
+//        return $ret;
+//    }

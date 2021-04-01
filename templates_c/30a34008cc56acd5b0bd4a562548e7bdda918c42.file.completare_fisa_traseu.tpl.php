@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-24 13:10:33
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 09:37:00
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1616584034,
+      1 => 1617259018,
       2 => 'file',
     ),
   ),
@@ -408,7 +408,7 @@ $_smarty_tpl->tpl_vars['marfa']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['stare']->key => $_smarty_tpl->tpl_vars['stare']->value) {
 $_smarty_tpl->tpl_vars['stare']->_loop = true;
 ?>
-                                                        <?php if (($_smarty_tpl->tpl_vars['stare']->value['id']!=2&&$_smarty_tpl->tpl_vars['stare']->value['id']!=4)) {?>
+                                                        <?php if (($_smarty_tpl->tpl_vars['stare']->value['id']!=4)) {?>
                                                             <option value=<?php echo $_smarty_tpl->tpl_vars['stare']->value['id'];?>
 
                                                                     <?php if ($_smarty_tpl->tpl_vars['stare']->value['id']==$_smarty_tpl->tpl_vars['stare_produs']->value['id']) {?> selected=<?php echo $_smarty_tpl->tpl_vars['stare']->value['id'];?>

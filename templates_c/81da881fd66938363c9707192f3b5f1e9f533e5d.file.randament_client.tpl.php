@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-31 21:51:20
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 09:34:29
          compiled from "/var/www/html/fofoweb/www/templates/randament_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20520424996062d8c3b89b35-52836680%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '81da881fd66938363c9707192f3b5f1e9f533e5d' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_client.tpl',
-      1 => 1617195327,
+      1 => 1617257173,
       2 => 'file',
     ),
   ),

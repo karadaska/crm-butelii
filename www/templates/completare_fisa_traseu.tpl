@@ -296,7 +296,7 @@
                                                 <select name="stare_produs" style="width: 100px;">
                                                     <option>Alege stare</option>
                                                     {foreach from=$lista_stari_produse item=stare}
-                                                        {if ($stare['id'] !=2 and $stare['id'] !=4)}
+                                                        {if ($stare['id'] !=4)}
                                                             <option value={$stare['id']}
                                                                     {if $stare['id'] == $stare_produs['id']} selected={$stare['id']}{/if}>
                                                                 {$stare['nume']}
