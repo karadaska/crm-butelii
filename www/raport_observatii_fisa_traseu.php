@@ -10,6 +10,7 @@ $form_submit = getRequestParameter('form_submit', 0);
 $valoare_client_id = getRequestParameter('valoare_client_id', 0);
 
 $aplica = getRequestParameter('aplica', 0);
+
 $data_start = getRequestParameter('data_start', date('Y-m-d'));
 $smarty->assign('data_start', $data_start);
 
@@ -34,18 +35,20 @@ $smarty->assign('data_start_interval', $data_start_interval);
 $data_stop_interval = getRequestParameter('data_stop_interval', '');
 $smarty->assign('data_stop_interval', $data_stop_interval);
 
-$array_observatii = array();
+$array = array();
 foreach ($_POST['observatie_id'] as $key => $value) {
-    $array_observatii = explode(",", $value);
-    foreach ($array_observatii as $txt) {
+    $array_observatii = join(",", $value);
+//    $array_observatii = explode(",", $value);
+//    foreach ($array_observatii as $txt) {
+    array_push($array, $value);
         $lista_clienti = Clienti::getObservatiiClientiDinFiseGenerate(array(
-            'observatii' => $txt,
+            'observatii' => $array,
             'traseu_id' => $traseu_id,
             'data_start' => $data_start,
             'data_stop' => $data_stop
         ));
         $smarty->assign('lista_clienti', $lista_clienti);
-    }
+//    }
 }
 
 $smarty->display($template_page);
