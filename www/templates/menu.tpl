@@ -106,7 +106,7 @@
                             </a>
                         </li>
                         <li {if $menu_curent==10}class="current"{/if}>
-                            <a href="/raport_observatii_fisa_traseu.php">
+                            <a href="/observatii_fisa_traseu.php">
                                 <span class="icon"><i class="icon20 i-stack-list"></i></span>
                                 <span class="txt">Observatii fisa traseu</span>
                             </a>

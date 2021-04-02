@@ -83,15 +83,13 @@
                                    class="table table-striped table-bordered table-hover" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: left;">Zona</th>
-                                    <th style="text-align: left;">Localitate</th>
-                                    <th style="text-align: left;">Nume</th>
-                                    <th style="text-align: center;">Traseu</th>
-                                    <th style="text-align: center;">Stare</th>
-                                    <th style="text-align: center;">Telefon</th>
-                                    {*<th style="text-align: left;">Rastel</th>*}
-                                    {*<th style="text-align: left;">Detalii produs</th>*}
-                                    <th style="text-align: left;" class="span1">Observatii</th>
+                                    <th style="text-align: left;">ZONS</th>
+                                    <th style="text-align: left;">LOCALITATE</th>
+                                    <th style="text-align: left;">NUME</th>
+                                    <th style="text-align: center;">TRASEU</th>
+                                    <th style="text-align: center;">STARE</th>
+                                    <th style="text-align: center;">TELEFON</th>
+                                    <th style="text-align: left;" class="span1">OBSERVATII</th>
                                 </tr>
                                 </thead>
                                 <tbody>

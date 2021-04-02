@@ -1,12 +1,12 @@
 <?php /* Smarty version Smarty-3.1.15, created on 2021-04-02 10:05:46
-         compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
+         compiled from "/var/www/html/fofoweb/www/templates/observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
-      0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
+      0 => '/var/www/html/fofoweb/www/templates/observatii_fisa_traseu.tpl',
       1 => 1617347145,
       2 => 'file',
     ),

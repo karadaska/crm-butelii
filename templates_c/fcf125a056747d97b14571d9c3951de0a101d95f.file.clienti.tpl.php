@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-30 14:57:51
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-02 11:03:57
          compiled from "/var/www/html/fofoweb/www/templates/clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2258838906024d92f57e424-09898508%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fcf125a056747d97b14571d9c3951de0a101d95f' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti.tpl',
-      1 => 1617105469,
+      1 => 1617350633,
       2 => 'file',
     ),
   ),
@@ -162,15 +162,13 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                    class="table table-striped table-bordered table-hover" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: left;">Zona</th>
-                                    <th style="text-align: left;">Localitate</th>
-                                    <th style="text-align: left;">Nume</th>
-                                    <th style="text-align: center;">Traseu</th>
-                                    <th style="text-align: center;">Stare</th>
-                                    <th style="text-align: center;">Telefon</th>
-                                    
-                                    
-                                    <th style="text-align: left;" class="span1">Observatii</th>
+                                    <th style="text-align: left;">ZONS</th>
+                                    <th style="text-align: left;">LOCALITATE</th>
+                                    <th style="text-align: left;">NUME</th>
+                                    <th style="text-align: center;">TRASEU</th>
+                                    <th style="text-align: center;">STARE</th>
+                                    <th style="text-align: center;">TELEFON</th>
+                                    <th style="text-align: left;" class="span1">OBSERVATII</th>
                                 </tr>
                                 </thead>
                                 <tbody>
