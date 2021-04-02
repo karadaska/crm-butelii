@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-02 10:00:26
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-02 10:05:46
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1617346822,
+      1 => 1617347145,
       2 => 'file',
     ),
   ),
@@ -86,8 +86,8 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                 </select>
                             </th>
                             <?php $_smarty_tpl->tpl_vars['array_obs'] = new Smarty_variable(array(), null, 0);?>
-                            <th style="text-align: left" width="300px;">Obs
-                                <select name="observatie_id[]" multiple="multiple">
+                            <th style="text-align: left" width="400px;">Obs
+                                <select name="observatie_id[]" multiple="multiple" style="width: 400px;">
                                     <option value="0">Toate</option>
                                     <?php  $_smarty_tpl->tpl_vars['observatie'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['observatie']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_observatii']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

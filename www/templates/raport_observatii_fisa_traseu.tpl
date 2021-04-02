@@ -36,8 +36,8 @@
                                 </select>
                             </th>
                             {$array_obs = array()}
-                            <th style="text-align: left" width="300px;">Obs
-                                <select name="observatie_id[]" multiple="multiple">
+                            <th style="text-align: left" width="400px;">Obs
+                                <select name="observatie_id[]" multiple="multiple" style="width: 400px;">
                                     <option value="0">Toate</option>
                                     {foreach from=$lista_observatii item=observatie}
                                         {$selected = ""}
