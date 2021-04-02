@@ -636,6 +636,7 @@ class Stocuri
                   left join soferi as d on a . sofer_id = d . id
                   left join trasee as e on a . traseu_id = e . id
                   where a.sters = 0
+                  
                   ";
 
         if ($depozit_id > 0) {
@@ -660,7 +661,7 @@ class Stocuri
             }
             $query .= " and a.data_intrare LIKE '%-" . $luna_id . "-%'";
         }
-
+        $query .= " ORDER BY a.data_intrare DESC";
         $result = myQuery($query);
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);

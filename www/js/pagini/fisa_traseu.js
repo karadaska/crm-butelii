@@ -9,7 +9,7 @@ $(document).ready(function () {
     // setDataTable('dataTable', false, 15, 5,'desc');
     // setDataTable('dataTable', [], 25, 1)
     // setDataTable('dataTable', [7], 25, 3,'desc');
-    setDataTable('dataTable', [4, 5]);
+    // setDataTable('dataTable', [4, 5]);
     // setDataTable('dataTable', [4]);
     //setDataTable('dataTable', [0]);
 });
