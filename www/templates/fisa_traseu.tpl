@@ -16,7 +16,7 @@
                                         <input type="hidden" name="form_submit" value="1" id="form_submit"/>
                                         <select name="depozit_id" id="depozit_id" style="width: 150px;"
                                                 data-schimba="1">
-                                            <option value="0">-Alege depozit-</option>
+                                            <option value="0">-Alege depozit-2</option>
                                             {foreach from=$lista_depozite item=depozit}
                                                 <option value={$depozit['id']} {if $depozit['id'] == $depozit_id} selected="selected"{/if}>{$depozit['nume']}</option>
                                             {/foreach}
