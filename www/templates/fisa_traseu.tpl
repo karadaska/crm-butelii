@@ -64,7 +64,7 @@
                                                                class="table table-bordered table-hover" id="dataTable">
                                                             <thead>
                                                             <tr>
-                                                                <td class="span1">ID</td>
+                                                                <th class="span1">ID</th>
                                                                 <th>DEPOZIT</th>
                                                                 <th>TRASEU</th>
                                                                 <th>SOFER</th>
