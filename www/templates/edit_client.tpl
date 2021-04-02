@@ -54,13 +54,13 @@
                                         <input type="hidden" name="id" id="id" value="{$client['id']}"/>
                                         <table class="table table-bordered" style="width: 400px;">
                                             <tr style="text-align: left;">
-                                                <th style="width: 150px;vertical-align: middle;">Nume client</th>
+                                                <th style="width: 150px;vertical-align: middle;text-align: left">Nume client</th>
                                                 <th><input style="width: 100%" autocomplete="off" id="nume" type="text"
                                                            name="nume"
                                                            value="{$client['nume']}"></th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Zona</th>
+                                                <th style="vertical-align: middle;text-align: left">Zona</th>
                                                 <th style="text-align: left;">
                                                     <select name="judet_id" id="judet_id" style="width: 100%">
                                                         <option value="0">Alege...</option>
@@ -71,7 +71,7 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Localitate</th>
+                                                <th style="vertical-align: middle;text-align: left">Localitate</th>
                                                 <th style="text-align: left;">
                                                     <select name="localitate_id" id="localitate_id" style="width: 100%">
                                                         <option value="0">Alege...</option>
@@ -82,7 +82,7 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Stare client</th>
+                                                <th style="vertical-align: middle;text-align: left">Stare client</th>
                                                 <th style="text-align: left;">
                                                     <select name="stare_id" id="stare_id" style="width: 100%">
                                                         {foreach from=$lista_stari key=tmp item=stare}
@@ -92,7 +92,7 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Adresa</th>
+                                                <th style="vertical-align: middle;text-align: left">Adresa</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" style="width: 100%" type="text"
                                                            name="adresa"
@@ -100,7 +100,7 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Telefon</th>
+                                                <th style="vertical-align: middle;text-align: left">Telefon</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" style="width: 100%" type="text"
                                                            name="telefon"
@@ -108,7 +108,7 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Telefon 2</th>
+                                                <th style="vertical-align: middle;text-align: left">Telefon 2</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" style="width: 100%" type="text"
                                                            name="telefon_2"
@@ -116,21 +116,21 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Cnp</th>
+                                                <th style="vertical-align: middle;text-align: left">Cnp</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" style="width: 100%" type="text" name="cnp"
                                                            value="{$client['cnp']}">
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">C.I</th>
+                                                <th style="vertical-align: middle;text-align: left">C.I</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" style="width: 100%" type="text" name="ci"
                                                            value="{$client['ci']}">
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Contract</th>
+                                                <th style="vertical-align: middle;text-align: left">Contract</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" style="width: 100%" type="text"
                                                            name="contract"
@@ -138,7 +138,7 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Titular</th>
+                                                <th style="vertical-align: middle;text-align: left">Titular</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" style="width: 100%" type="text"
                                                            name="titular"
@@ -146,7 +146,7 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Rastel</th>
+                                                <th style="vertical-align: middle;text-align: left">Rastel</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" style="width: 100%" id="rastel"
                                                            type="text"
@@ -155,7 +155,7 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Tip Rastel</th>
+                                                <th style="vertical-align: middle;text-align: left">Tip Rastel</th>
                                                 <th style="text-align: left;">
                                                     <select name="tip_rastel">
                                                         {assign var=rastel_by_client_id value=Clienti::getTipRastelByClientId($client['id'])}
@@ -170,7 +170,7 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Culoare</th>
+                                                <th style="vertical-align: middle;text-align: left">Culoare</th>
                                                 <th style="text-align: left;">
                                                     <select name="culoare_id">
                                                         <option value="0">Selecteaza culoare</option>
@@ -181,21 +181,21 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Data adaugarii</th>
+                                                <th style="vertical-align: middle;text-align: left">Data adaugarii</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" type="date" name="data_start"
                                                            value="{$client['data_start']}">
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Data desfiintare</th>
+                                                <th style="vertical-align: middle;text-align: left">Data desfiintare</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" type="date" name="data_stop"
                                                            value="{$client['data_stop']}">
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Latitudine</th>
+                                                <th style="vertical-align: middle;text-align: left">Latitudine</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" style="width: 100%" id="latitudine"
                                                            type="text"
@@ -204,7 +204,7 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;">Longitudine</th>
+                                                <th style="vertical-align: middle;text-align: left">Longitudine</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" style="width: 100%" id="longitudine"
                                                            type="text"
