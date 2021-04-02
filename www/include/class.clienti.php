@@ -246,6 +246,7 @@ class Clienti
                   LEFT JOIN masini as e on e.id = b.masina_id
                   WHERE a.client_id = '" . $client_id . "'
                   AND a.sters = 0
+                  ORDER BY a.data_intrare DESC
                   ";
 
         $result = myQuery($query);

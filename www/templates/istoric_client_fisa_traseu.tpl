@@ -32,7 +32,7 @@
                                         </th>
                                         <th rowspan="2">OBSERVATIE I</th>
                                         <th rowspan="2">OBSERVATIE EXTRA</th>
-                                        <th rowspan="2">Data</th>
+                                        <th rowspan="2">DATA</th>
                                     </tr>
                                     <tr>
                                         <th style="border-left: double;">PRET UNITAR</th>
@@ -102,5 +102,5 @@
 </div>
 
 <div style="margin-top: 100px;"></div>
-<script src="js/pagini/edit_client.js"></script>
-<script src="js/pagini/data_table.js"></script>
+{*<script src="js/pagini/edit_client.js"></script>*}
+{*<script src="js/pagini/data_table.js"></script>*}
