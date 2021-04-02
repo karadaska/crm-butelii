@@ -87,7 +87,8 @@
                                             <td style="text-align: center;vertical-align: middle;">
                                                 {($cantitate['observatie']['observatie_extra'] !='') ? $cantitate['observatie']['observatie_extra'] : '-'}
                                             </td>
-                                            <td style="text-align: center;vertical-align: middle;">{$cantitate['data_intrare']}</td>
+                                            {$newdata_start = date("d-m-Y", strtotime($cantitate['data_intrare']))}
+                                            <td style="text-align: center;vertical-align: middle;">{$newdata_start}</td>
                                         </tr>
                                     {/foreach}
                                     </tbody>
