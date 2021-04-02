@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 16:00:39
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-02 09:22:33
          compiled from "/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1151649124602ce6d8aba836-28658495%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '75dbb8e5bee0fda3401336e196eab05605dfd4b5' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_observatii_fisa_traseu.tpl',
-      1 => 1617282035,
+      1 => 1617344550,
       2 => 'file',
     ),
   ),
@@ -27,9 +27,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'traseu' => 0,
     'lista_observatii' => 0,
     'observatie' => 0,
-    'observatie_id' => 0,
     'observatii' => 0,
-    't' => 0,
+    'obs' => 0,
+    'observatie_id' => 0,
     'lista_clienti' => 0,
     'client' => 0,
   ),
@@ -96,22 +96,18 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
 ?>
                                         <?php if ($_smarty_tpl->tpl_vars['observatie']->value['tip_observatie']==2) {?>
                                             <option value="<?php echo $_smarty_tpl->tpl_vars['observatie']->value['id'];?>
-"
-                                                    <?php if ($_smarty_tpl->tpl_vars['observatie']->value['id']==$_smarty_tpl->tpl_vars['observatie_id']->value) {?> selected="selected"<?php }?>>
+" <?php if (in_array($_smarty_tpl->tpl_vars['observatii']->value,106)) {?> selected="selected"<?php }?>>
                                                 <?php echo $_smarty_tpl->tpl_vars['observatie']->value['nume'];?>
 
                                             </option>
                                         <?php }?>
                                     <?php } ?>
                                 </select>
-                                <?php  $_smarty_tpl->tpl_vars['t'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['t']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['observatii']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['t']->key => $_smarty_tpl->tpl_vars['t']->value) {
-$_smarty_tpl->tpl_vars['t']->_loop = true;
-?>
-                                    <?php echo $_smarty_tpl->tpl_vars['t']->value;?>
+                                
+                                    
+                                
+                                <?php echo $_smarty_tpl->tpl_vars['obs']->value;?>
 
-                                <?php } ?>
                             </th>
                             <th style="text-align: left;width: 500px;">
                                 Interval <input placeholder="<?php echo smarty_modifier_date_format(time());?>

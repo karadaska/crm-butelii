@@ -37,9 +37,8 @@ $smarty->assign('data_stop_interval', $data_stop_interval);
 
 $observatii = array();
 foreach ($_POST['observatie_id'] as $key => $value) {
-    $array_observatii = join(",", $value);
+//    $array_observatii = join(",", $value);
     array_push($observatii, $value);
-
         $lista_clienti = Clienti::getObservatiiClientiDinFiseGenerate(array(
             'observatii' => $observatii,
             'traseu_id' => $traseu_id,

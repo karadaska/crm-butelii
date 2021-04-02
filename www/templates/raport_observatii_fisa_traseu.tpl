@@ -41,16 +41,16 @@
                                     <option value="0">Toate</option>
                                     {foreach from=$lista_observatii item=observatie}
                                         {if $observatie['tip_observatie'] == 2}
-                                            <option value="{$observatie['id']}"
-                                                    {if $observatie['id'] == $observatie_id} selected="selected"{/if}>
+                                            <option value="{$observatie['id']}" {if in_array($observatii,106)} selected="selected"{/if}>
                                                 {$observatie['nume']}
                                             </option>
                                         {/if}
                                     {/foreach}
                                 </select>
-                                {foreach from = $observatii item=t}
-                                    {$t}
-                                {/foreach}
+                                {*{foreach from = $observatii item=t}*}
+                                    {*{$t}*}
+                                {*{/foreach}*}
+                                {$obs}
                             </th>
                             <th style="text-align: left;width: 500px;">
                                 Interval <input placeholder="{$smarty.now|date_format}" autocomplete="off" type="date"
