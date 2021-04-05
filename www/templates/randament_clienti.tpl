@@ -30,7 +30,7 @@
                                 <option value="{$a}" {if $a==$an} selected="selected" {/if}>{$a}</option>
                             {/for}
                         </select>
-                        <input type="hidden" name="id_an" value="{$an}">
+                        {*<input type="hidden" name="id_an" value="{$an}">*}
 
                         {*<select name="an" style="width: 180px;">*}
                             {*{foreach from=$lista_ani item=ani}*}
@@ -68,6 +68,7 @@
                               style="margin-bottom: 0">
                             <input type="hidden" name="id_perioada" value="{$perioada_id}">
                             <input type="hidden" name="id_traseu" value="{$traseu_id}">
+                            <input type="hidden" name="id_an" value="{$an}">
 
                             <div class="widget-content">
                                 <table cellpadding="0" cellspacing="0" border="0"
