@@ -50,8 +50,8 @@ if (isset($_POST['update'])) {
 
 foreach ($lista_clienti as $client) {
     $randamentclientdinfisa = Clienti::getRandamentByClientIdDinFise($client['client_id'], array(
-        'an' => $an,
-        'perioada_id' => $perioada_id
+        'an' => 2020,
+        'perioada_id' => 1
     ));
     $smarty->assign('randamentclientdinfisa_' . $client['client_id'], $randamentclientdinfisa);
 }

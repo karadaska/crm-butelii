@@ -97,16 +97,16 @@ class Clienti
     public static function getRandamentByClientIdDinFise($client_id, $opts = array())
     {
 
-        $an = isset($opts['an']) ? $opts['an'] : 0;
-        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
+        $an = isset($opts['an']) ? $opts['an'] : date('Y');
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
 
-        if ($an == 0) {
-            $an = date('Y');
-        }
-
-        if ($perioada_id == 0) {
-            $perioada_id = date('n');
-        }
+//        if ($an == 0) {
+//            $an = date('Y');
+//        }
+//
+//        if ($perioada_id == 0) {
+//            $perioada_id = date('n');
+//        }
 
 
         $ret = array();

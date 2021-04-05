@@ -83,7 +83,6 @@
                                                 {if ($randament{'_'|cat:$client['client_id']}['randament_client'] !='')}
                                                     {$valoare_randament = $randament{'_'|cat:$client['client_id']}['randament_client']}
                                                 {else}
-                                                    {*{$valoare_randament = 0}*}
                                                     {$valoare_randament = $randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client']}
                                                 {/if}
                                                 <input style="text-align: right" {$conditie_update}
