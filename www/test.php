@@ -222,5 +222,9 @@ $data_stop = '2021-03-31';
 //
 //));
 //$b = Fise::getRandamentAnualDinFiseByClientId(1332);
-$b = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId(593,1);
+//$b = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId(593,1);
+$b = Clienti::getRandamentByClientIdDinFise(2631, array(
+    'an' => 2020,
+    'perioada_id' => 12
+));
 echo json_encode($b);
