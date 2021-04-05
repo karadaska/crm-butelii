@@ -38,12 +38,21 @@ $smarty->assign('lista_perioade', $lista_perioade);
 $lista_ani = Calendar::getAni();
 $smarty->assign('lista_ani', $lista_ani);
 
+//debug('am an ' . $an  . ' and perioada_id ' . $perioada_id);
+
+//$conditie_update = '';
+if (($an >= 2021 || ($an == 2020 && $perioada_id >=11))) {
+    debug('am an ' . $an  . ' and perioada_id ' . $perioada_id);
+    $conditie_update = "disabled";
+    $smarty->assign('conditie_update', $conditie_update);
+}
+
 if (isset($_POST['update'])) {
     Clienti::seteazaRandamentClienti($id_traseu);
 }
 
 foreach ($lista_clienti as $client) {
-    $numar_an = getRequestParameter('numar_an', '');
+//    $numar_an = getRequestParameter('numar_an', '');
     $randament = Clienti::getRandamentByClientIdDinFise($client['client_id'], array(
         'an' => $an,
         'perioada_id' => $perioada_id

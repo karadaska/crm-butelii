@@ -29,19 +29,17 @@
                             {for $a=2020 to date("Y")}
                                 <option value="{$a}" {if $a==$an} selected="selected" {/if}>{$a}</option>
                             {/for}
+                            <input type="hidden" name="numar_an" value="{$an}">
                         </select>
-                        {*<input type="hidden" name="id_an" value="{$an}">*}
 
                         {*<select name="an" style="width: 180px;">*}
-                            {*{foreach from=$lista_ani item=ani}*}
-                                {*<option value={$ani['id']}*}
-                                        {*{if $ani['id'] == $an} selected="selected" {/if}>*}
-                                    {*{$ani['an']}*}
-                                {*</option>*}
-                            {*{/foreach}*}
+                        {*{foreach from=$lista_ani item=ani}*}
+                        {*<option value={$ani['id']}*}
+                        {*{if $ani['id'] == $an} selected="selected" {/if}>*}
+                        {*{$ani['an']}*}
+                        {*</option>*}
+                        {*{/foreach}*}
                         {*</select>*}
-                        {*<input type="hidden" name="numar_an" value="{$an['an']}">*}
-                        {*<input type="hidden" name="id_an" value="{$an}">*}
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -96,7 +94,7 @@
                                                 {else}
                                                     {$valoare_randament = 0}
                                                 {/if}
-                                                <input style="text-align: right"
+                                                <input style="text-align: right" {$conditie_update}
                                                        value="{$valoare_randament}"
                                                        type="text" autocomplete="off"
                                                        name="randament_{$client['client_id']}_{$client['traseu_id']}">
@@ -105,7 +103,8 @@
                                     {/foreach}
                                     </tbody>
                                 </table>
-                                <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza clienti"
+                                <input style="float: right;margin-top: 20px;" type="submit"
+                                        value="Actualizeaza clienti"
                                        class="btn btn-info" name="update">
                             </div>
                         </form>
