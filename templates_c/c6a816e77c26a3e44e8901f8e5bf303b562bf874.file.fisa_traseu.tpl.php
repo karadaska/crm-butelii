@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-05 11:08:22
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-05 22:15:03
          compiled from "/var/www/html/fofoweb/www/templates/fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:41291163760227fca5e0d02-36086469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6a816e77c26a3e44e8901f8e5bf303b562bf874' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/fisa_traseu.tpl',
-      1 => 1617352174,
+      1 => 1617650100,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_masini' => 0,
     'masina' => 0,
     'masina_id' => 0,
+    'a' => 0,
+    'an' => 0,
     'lunile_anului' => 0,
     'luna' => 0,
     'luna_id' => 0,
@@ -111,6 +113,18 @@ $_smarty_tpl->tpl_vars['masina']->_loop = true;
  <?php if ($_smarty_tpl->tpl_vars['masina']->value['id']==$_smarty_tpl->tpl_vars['masina_id']->value) {?> selected="selected"<?php }?>><?php echo $_smarty_tpl->tpl_vars['masina']->value['numar'];?>
 </option>
                                             <?php } ?>
+                                        </select>
+                                        <select name="an" style="width: 180px;" data-schimba="4">
+                                            <?php $_smarty_tpl->tpl_vars['a'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['a']->step = 1;$_smarty_tpl->tpl_vars['a']->total = (int) ceil(($_smarty_tpl->tpl_vars['a']->step > 0 ? date("Y")+1 - (2020) : 2020-(date("Y"))+1)/abs($_smarty_tpl->tpl_vars['a']->step));
+if ($_smarty_tpl->tpl_vars['a']->total > 0) {
+for ($_smarty_tpl->tpl_vars['a']->value = 2020, $_smarty_tpl->tpl_vars['a']->iteration = 1;$_smarty_tpl->tpl_vars['a']->iteration <= $_smarty_tpl->tpl_vars['a']->total;$_smarty_tpl->tpl_vars['a']->value += $_smarty_tpl->tpl_vars['a']->step, $_smarty_tpl->tpl_vars['a']->iteration++) {
+$_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1;$_smarty_tpl->tpl_vars['a']->last = $_smarty_tpl->tpl_vars['a']->iteration == $_smarty_tpl->tpl_vars['a']->total;?>
+                                                <option value="<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+" <?php if ($_smarty_tpl->tpl_vars['a']->value==$_smarty_tpl->tpl_vars['an']->value) {?> selected="selected" <?php }?>><?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+</option>
+                                            <?php }} ?>
+                                            <input type="hidden" name="numar_an" value="<?php echo $_smarty_tpl->tpl_vars['an']->value;?>
+">
                                         </select>
                                         <select name="luna_id" style="width: 150px;" data-schimba="2">
                                             <option value="0">Toate</option>

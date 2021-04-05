@@ -621,12 +621,16 @@ class Stocuri
 
     public static function getFise($opt = array())
     {
+        $an = isset($opt['an']) ? $opt['an'] : 0;
         $depozit_id = isset($opt['depozit_id']) ? $opt['depozit_id'] : 0;
         $luna_id = isset($opt['luna_id']) ? $opt['luna_id'] : 0;
         $traseu_id = isset($opt['traseu_id']) ? $opt['traseu_id'] : 0;
         $sofer_id = isset($opt['sofer_id']) ? $opt['sofer_id'] : 0;
         $masina_id = isset($opt['masina_id']) ? $opt['masina_id'] : 0;
 
+        if ($an == 0) {
+            $an = date('Y');
+        }
 
         $ret = array();
         $query = "SELECT a .id,a.data_intrare, b . nume as nume_depozit, c . numar as numar_masina, d . nume as nume_sofer, e . nume as nume_traseu 
@@ -659,8 +663,13 @@ class Stocuri
             if ($luna_id < 10) {
                 $luna_id = '0' . $luna_id;
             }
-            $query .= " and a.data_intrare LIKE '%-" . $luna_id . "-%'";
+            $query .= " AND a.data_intrare LIKE '%-" . $luna_id . "-%'";
         }
+
+        if ($an > 0) {
+            $query .= " AND a.data_intrare LIKE '%" . $an . "%'";
+        }
+
         $query .= " ORDER BY a.data_intrare DESC";
         $result = myQuery($query);
         if ($result) {

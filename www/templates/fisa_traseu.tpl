@@ -42,6 +42,12 @@
                                                 <option value={$masina['id']} {if $masina['id'] == $masina_id} selected="selected"{/if}>{$masina['numar']}</option>
                                             {/foreach}
                                         </select>
+                                        <select name="an" style="width: 180px;" data-schimba="4">
+                                            {for $a=2020 to date("Y")}
+                                                <option value="{$a}" {if $a==$an} selected="selected" {/if}>{$a}</option>
+                                            {/for}
+                                            <input type="hidden" name="numar_an" value="{$an}">
+                                        </select>
                                         <select name="luna_id" style="width: 150px;" data-schimba="2">
                                             <option value="0">Toate</option>
                                             {foreach from=$lunile_anului item=luna}

@@ -24,7 +24,11 @@ $smarty->assign('masina_id', $masina_id);
 $luna_id = getRequestParameter('luna_id', date('n'));
 $smarty->assign('luna_id', $luna_id);
 
+$an = getRequestParameter('an', date('Y'));
+$smarty->assign('an', $an);
+
 $lista_fise = Stocuri::getFise(array(
+    'an'=>$an,
     'depozit_id' => $depozit_id,
     'traseu_id' => $traseu_id,
     'sofer_id' => $sofer_id,
