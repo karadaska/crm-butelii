@@ -31,15 +31,6 @@
                             {/for}
                             <input type="hidden" name="numar_an" value="{$an}">
                         </select>
-
-                        {*<select name="an" style="width: 180px;">*}
-                        {*{foreach from=$lista_ani item=ani}*}
-                        {*<option value={$ani['id']}*}
-                        {*{if $ani['id'] == $an} selected="selected" {/if}>*}
-                        {*{$ani['an']}*}
-                        {*</option>*}
-                        {*{/foreach}*}
-                        {*</select>*}
                     </div>
                     <div style="float: left;margin-right: 10px;">
                         <select name="perioada_id" style="width: 180px;">
@@ -92,7 +83,8 @@
                                                 {if ($randament{'_'|cat:$client['client_id']}['randament_client'] !='')}
                                                     {$valoare_randament = $randament{'_'|cat:$client['client_id']}['randament_client']}
                                                 {else}
-                                                    {$valoare_randament = 0}
+                                                    {*{$valoare_randament = 0}*}
+                                                    {$valoare_randament = $randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client']}
                                                 {/if}
                                                 <input style="text-align: right" {$conditie_update}
                                                        value="{$valoare_randament}"

@@ -137,6 +137,46 @@ class Clienti
 
     }
 
+    public static function getRandamentByClientIdDinFiseNew($client_id, $opts = array())
+    {
+
+        $an = isset($opts['an']) ? $opts['an'] : date('Y');
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
+
+//        if ($an == 0) {
+//            $an = date('Y');
+//        }
+//
+//        if ($perioada_id == 0) {
+//            $perioada_id = date('n');
+//        }
+
+
+        $ret = array();
+
+        $query = "SELECT
+                    SUM( a.randament ) AS randament_client 
+                FROM
+                    randament_clienti AS a                    
+                WHERE
+                    a.client_id = '" . $client_id . "'
+                    AND a.an LIKE '%" . $an . "%'                   
+                     ";
+
+        if ($perioada_id > 0) {
+            $query .= " AND a.perioada_id LIKE '%" . $perioada_id . "%'";
+        }
+
+//        debug($query);
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return $ret;
+
+    }
+
     public static function getRandamentByClientIdDinFise2($client_id, $opts = array())
     {
         $an = isset($opts['an']) ? $opts['an'] : 0;
