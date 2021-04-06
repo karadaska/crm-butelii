@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-05 23:22:39
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-06 11:07:39
          compiled from "/var/www/html/fofoweb/www/templates/randament_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:551758277605d8a60b93d06-29052548%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '99391cd228b81ab5dd6cc14e5f34218ca840363a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_clienti.tpl',
-      1 => 1617654111,
+      1 => 1617696457,
       2 => 'file',
     ),
   ),
@@ -133,6 +133,7 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
                                         <th style="text-align: left;">CLIENT</th>
                                         <th style="text-align: left;">TELEFON</th>
                                         <th style="text-align: left;">RANDAMENT</th>
+                                        <th style="text-align: center;">PROCENT</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -165,6 +166,10 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                        name="randament_<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 _<?php echo $_smarty_tpl->tpl_vars['client']->value['traseu_id'];?>
 ">
+                                            </th>
+                                            <th>
+                                                <?php echo number_format($_smarty_tpl->tpl_vars['randamentclientdinfisa'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['randament_client']/($_smarty_tpl->tpl_vars['randament'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['suma_target']*4),2);?>
+ %
                                             </th>
                                         </tr>
                                     <?php } ?>

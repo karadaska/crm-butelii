@@ -157,7 +157,7 @@ class Clienti
         $ret = array();
 
         $query = "SELECT
-                    SUM( a.randament ) AS randament_client 
+                    SUM( a.randament ) AS randament_client, suma_target 
                 FROM
                     randament_clienti AS a                    
                 WHERE

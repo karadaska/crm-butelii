@@ -69,6 +69,7 @@
                                         <th style="text-align: left;">CLIENT</th>
                                         <th style="text-align: left;">TELEFON</th>
                                         <th style="text-align: left;">RANDAMENT</th>
+                                        <th style="text-align: center;">PROCENT</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -89,6 +90,9 @@
                                                        value="{$valoare_randament}"
                                                        type="text" autocomplete="off"
                                                        name="randament_{$client['client_id']}_{$client['traseu_id']}">
+                                            </th>
+                                            <th>
+                                                {number_format($randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client'] / ($randament{'_'|cat:$client['client_id']}['suma_target'] * 4), 2)} %
                                             </th>
                                         </tr>
                                     {/foreach}
