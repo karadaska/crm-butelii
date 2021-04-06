@@ -14,13 +14,11 @@
                 <form action="/randament_client.php?id={$id}" method="post" id="form_actualizeaza_stoc"
                       style="margin-bottom: 0">
                     <div style="float: left;margin-right: 10px;">
-                        <select name="an" style="width: 180px;">
-                            {foreach from=$lista_ani item=ani}
-                                <option value={$ani['id']}
-                                        {if $ani['id'] == $an} selected="selected" {/if}>
-                                    {$ani['an']}
-                                </option>
-                            {/foreach}
+                        <select name="an" style="width: 180px;" data-schimba="4">
+                            {for $a=2020 to date("Y")}
+                                <option value="{$a}" {if $a==$an} selected="selected" {/if}>{$a}</option>
+                            {/for}
+                            <input type="hidden" name="numar_an" value="{$an}">
                         </select>
                         <input type="hidden" name="id_an" value="{$ani['an']}">
                     </div>
@@ -45,7 +43,7 @@
                                 {foreach from=$randament_client item=randament}
                                     <tr>
                                         <th style="text-align: center;">{$nr++}</th>
-                                        {assign var=luna value=Calendar::getNumePerioadaById($randament['luna_randament'])}
+                                        {assign var=luna value=Calendar::getNumePerioadaById($randament['perioada_id'])}
                                         <td>{$luna['nume']}</td>
                                         <td>{$randament['randament_lunar']}</td>
                                     </tr>

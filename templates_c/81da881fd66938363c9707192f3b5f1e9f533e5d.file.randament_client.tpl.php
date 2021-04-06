@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 09:34:29
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-06 10:15:21
          compiled from "/var/www/html/fofoweb/www/templates/randament_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20520424996062d8c3b89b35-52836680%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '81da881fd66938363c9707192f3b5f1e9f533e5d' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_client.tpl',
-      1 => 1617257173,
+      1 => 1617693319,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'title' => 0,
     'id' => 0,
-    'lista_ani' => 0,
-    'ani' => 0,
+    'a' => 0,
     'an' => 0,
+    'ani' => 0,
     'randament_client' => 0,
     'nr' => 0,
     'randament' => 0,
@@ -51,19 +51,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 " method="post" id="form_actualizeaza_stoc"
                       style="margin-bottom: 0">
                     <div style="float: left;margin-right: 10px;">
-                        <select name="an" style="width: 180px;">
-                            <?php  $_smarty_tpl->tpl_vars['ani'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ani']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['lista_ani']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['ani']->key => $_smarty_tpl->tpl_vars['ani']->value) {
-$_smarty_tpl->tpl_vars['ani']->_loop = true;
-?>
-                                <option value=<?php echo $_smarty_tpl->tpl_vars['ani']->value['id'];?>
-
-                                        <?php if ($_smarty_tpl->tpl_vars['ani']->value['id']==$_smarty_tpl->tpl_vars['an']->value) {?> selected="selected" <?php }?>>
-                                    <?php echo $_smarty_tpl->tpl_vars['ani']->value['an'];?>
-
-                                </option>
-                            <?php } ?>
+                        <select name="an" style="width: 180px;" data-schimba="4">
+                            <?php $_smarty_tpl->tpl_vars['a'] = new Smarty_Variable;$_smarty_tpl->tpl_vars['a']->step = 1;$_smarty_tpl->tpl_vars['a']->total = (int) ceil(($_smarty_tpl->tpl_vars['a']->step > 0 ? date("Y")+1 - (2020) : 2020-(date("Y"))+1)/abs($_smarty_tpl->tpl_vars['a']->step));
+if ($_smarty_tpl->tpl_vars['a']->total > 0) {
+for ($_smarty_tpl->tpl_vars['a']->value = 2020, $_smarty_tpl->tpl_vars['a']->iteration = 1;$_smarty_tpl->tpl_vars['a']->iteration <= $_smarty_tpl->tpl_vars['a']->total;$_smarty_tpl->tpl_vars['a']->value += $_smarty_tpl->tpl_vars['a']->step, $_smarty_tpl->tpl_vars['a']->iteration++) {
+$_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1;$_smarty_tpl->tpl_vars['a']->last = $_smarty_tpl->tpl_vars['a']->iteration == $_smarty_tpl->tpl_vars['a']->total;?>
+                                <option value="<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+" <?php if ($_smarty_tpl->tpl_vars['a']->value==$_smarty_tpl->tpl_vars['an']->value) {?> selected="selected" <?php }?>><?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+</option>
+                            <?php }} ?>
+                            <input type="hidden" name="numar_an" value="<?php echo $_smarty_tpl->tpl_vars['an']->value;?>
+">
                         </select>
                         <input type="hidden" name="id_an" value="<?php echo $_smarty_tpl->tpl_vars['ani']->value['an'];?>
 ">
@@ -94,7 +92,7 @@ $_smarty_tpl->tpl_vars['randament']->_loop = true;
                                     <tr>
                                         <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </th>
-                                        <?php $_smarty_tpl->tpl_vars['luna'] = new Smarty_variable(Calendar::getNumePerioadaById($_smarty_tpl->tpl_vars['randament']->value['luna_randament']), null, 0);?>
+                                        <?php $_smarty_tpl->tpl_vars['luna'] = new Smarty_variable(Calendar::getNumePerioadaById($_smarty_tpl->tpl_vars['randament']->value['perioada_id']), null, 0);?>
                                         <td><?php echo $_smarty_tpl->tpl_vars['luna']->value['nume'];?>
 </td>
                                         <td><?php echo $_smarty_tpl->tpl_vars['randament']->value['randament_lunar'];?>
