@@ -72,6 +72,9 @@ class Clienti
                 $select_id_randament_clienti = myQuery($select_randament_clienti);
                 $ret = $select_id_randament_clienti->fetch(PDO::FETCH_ASSOC);
 
+                $suma_target = Target::getSumaTargetClient($client['client_id']);
+
+
                 if ($select_id_randament_clienti->rowCount() == 1) {
                     $query = "UPDATE randament_clienti SET
                             randament  = '" . floatval($a['randament']) . "'
@@ -83,8 +86,9 @@ class Clienti
                     myExec($query);
                 } else {
 
-                    $insert = "INSERT INTO randament_clienti (client_id, traseu_id, an, perioada_id, randament) 
-                          VALUES ('" . $client['client_id'] . "', '" . $client['traseu_id'] . "','" . $id_an . "','" . $id_perioada . "','" . floatval($a['randament']) . "')";
+                    $insert = "INSERT INTO randament_clienti (client_id, traseu_id, an, perioada_id, randament, suma_target) 
+                          VALUES ('" . $client['client_id'] . "', '" . $client['traseu_id'] . "',
+                          '" . $id_an . "','" . $id_perioada . "','" . floatval($a['randament']) . "','" . $suma_target['suma_target'] . "')";
                     myExec($insert);
                 }
 
@@ -166,7 +170,6 @@ class Clienti
             $query .= " AND a.perioada_id = " . $perioada_id;
         }
 
-        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);

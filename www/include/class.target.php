@@ -128,6 +128,23 @@ class Target
         return $ret;
     }
 
+    public static function getSumaTargetClient($client_id = 0)
+    {
+        $ret = array();
+        $query = "SELECT SUM(target) as suma_target 
+                  FROM clienti_target
+                  WHERE client_id = '" . $client_id . "'
+
+        ";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
     public static function getPreturiClientPentruRaportLivrariDinFise($client_id = 0)
     {
         $ret = array();

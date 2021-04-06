@@ -149,7 +149,7 @@ class Fise
         }
 
         $ret = array();
-        $query = "SELECT an, perioada_id, SUM(randament ) AS randament_lunar 
+        $query = "SELECT an, perioada_id, SUM(randament ) AS randament_lunar, suma_target 
                 FROM randament_clienti 
                 WHERE client_id = '" . $client_id . "'
                 AND an = '" . $an . "'

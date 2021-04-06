@@ -27,15 +27,15 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div class="widget">
-                        {*<input type="hidden" name="id_an" value="{$ani['an']}">*}
                         <div class="widget-content">
                             <table cellpadding="0" cellspacing="0" border="0"
                                    class="table table-striped table-bordered table-hover" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: center;">#</th>
+                                    <th style="text-align: center;" class="span1">#</th>
                                     <th style="text-align: left;">LUNA</th>
                                     <th style="text-align: left;">RANDAMENT</th>
+                                    <th style="text-align: left;">PROCENT</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -46,6 +46,7 @@
                                         {assign var=luna value=Calendar::getNumePerioadaById($randament['perioada_id'])}
                                         <td>{$luna['nume']}</td>
                                         <td>{$randament['randament_lunar']}</td>
+                                        <td>{$randament['randament_lunar']/ ($randament['suma_target'] * 4) }</td>
                                     </tr>
                                 {/foreach}
                                 </tbody>
