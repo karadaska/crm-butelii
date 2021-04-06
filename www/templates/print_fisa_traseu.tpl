@@ -45,18 +45,20 @@
 
 
 
+
         {*/
-                                                    /*font-weight: bold;*/
-                                                    /*color: #000;*/
-                                                /*}     */
+                                                            /*font-weight: bold;*/
+                                                            /*color: #000;*/
+                                                        /*}      */
 
         /*td
 
 
 
 
+
         {*/
-                                                /*}     */
+                                                        /*}      */
         @page {
             size: auto;
             margin: 0;
@@ -174,11 +176,11 @@
                 </td>
                 {if $print_fisa['depozit_id'] == 2}
                 <td style="text-align: center;">
-                    {($client['realizat']['1']['pret'] !='') ? {'PRET: '|cat:$client['realizat']['1']['pret']} :'-'}
+                    {($client['realizat']['1']['pret'] >0 ) ? {'PRET: '|cat:$client['realizat']['1']['pret']} :'-'}
                     <br/>{($client['target']['3']['target'] > 0) ? {'STOC: '|cat:$client['target']['3']['target']} : '-'}
                     {/if}
                 <td style="text-align: center;border-right: double;">
-                    {($client['realizat']['4']['pret'] !='') ? {'PRET: '|cat:$client['realizat']['4']['pret']} :'-'}
+                    {($client['realizat']['4']['pret'] >0 ) ? {'PRET: '|cat:$client['realizat']['4']['pret']} :'-'}
                     <br/>{($client['target']['4']['target'] > 0) ? {'STOC: '|cat:$client['target']['4']['target']} : '-'}
                 </td>
                 <td style="text-align: center;">{($client['realizat']['1']['cantitate'] > 0) ? $client['realizat']['1']['cantitate'] : '-'}</td>
@@ -188,7 +190,7 @@
                     {($client['realizat']['1']['cantitate'] > 0) ? ($client['realizat']['1']['cantitate'] * ($client['realizat']['1']['pret'] - $client['realizat']['1']['comision'] )) : '-'}
                 </td>
                 <td style="text-align: center;">{($client['realizat']['4']['cantitate'] > 0) ? $client['realizat']['4']['cantitate'] : '-'}</td>
-                <td style="text-align: center;">{($client['realizat']['4']['pret']> 0) ? $client['realizat']['4']['pret'] : '-'}</td>
+                <td style="text-align: center;">{($client['realizat']['4']['pret'] > 0) ? $client['realizat']['4']['pret'] : '-'}</td>
                 <td style="text-align: center;">{($client['realizat']['4']['comision'] > 0) ? $client['realizat']['4']['comision']: '-'}</td>
                 <td style="text-align: center;border-right: double;">
                     {($client['realizat']['4']['cantitate'] > 0) ? ($client['realizat']['4']['cantitate'] * ($client['realizat']['4']['pret'] - $client['realizat']['4']['comision'])):'-'}
@@ -198,7 +200,7 @@
                     <td style="text-align: center;">{($client['realizat']['3']['pret'] > 0) ? $client['realizat']['3']['pret']: '-'}</td>
                     <td style="text-align: center;">{($client['realizat']['3']['comision'] > 0)? $client['realizat']['3']['comision']:'-'}</td>
                     <td style="text-align: center;border-right: double;">
-                        {($client['realizat']['3']['pret'] > 0) ? ($client['realizat']['3']['cantitate'] * ($client['realizat']['3']['pret'] - $client['realizat']['3']['comision'])) :'-'}
+                       {($client['realizat']['3']['cantitate'] > 0) ? ($client['realizat']['3']['cantitate'] * ($client['realizat']['3']['pret'] - $client['realizat']['3']['comision'])) :'-'}
                     </td>
                 {/if}
                 <td style="text-align: left;">
