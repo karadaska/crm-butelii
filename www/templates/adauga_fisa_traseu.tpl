@@ -35,7 +35,7 @@
                                                     </td>
                                                 </tr>
                                                 <th style="text-align: center;vertical-align: middle;">Traseu:</th>
-                                                <th style="text-align: left;">
+                                                <td style="text-align: left;">
                                                     <div id="lista_trasee">
                                                         <select name="traseu_id" id="traseu_id">
                                                             <option value="0">- Trasee -</option>
@@ -44,7 +44,7 @@
                                                             {/foreach}
                                                         </select>
                                                     </div>
-                                                </th>
+                                                </td>
                                                 <tr>
                                                     <th style="vertical-align: middle;">Sofer</th>
                                                     <td>

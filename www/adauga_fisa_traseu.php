@@ -59,16 +59,12 @@ if (isset($_POST['genereaza_fisa_traseu']) and $conditie) {
             $lista_asignari_clienti_trasee = Clienti::getClientiByTraseuId($id_traseu);
 
             foreach ($lista_asignari_clienti_trasee as $clienti_asignati) {
-                $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare)
+                $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare, ordine_client)
         values
-        ('" . $id_fisa . "','" . $clienti_asignati['client_id'] . "','" . $data_intrare . "')";
+        ('" . $id_fisa . "','" . $clienti_asignati['client_id'] . "','" . $data_intrare . "','" . $clienti_asignati['ordine'] . "')";
                 myExec($query);
             }
         };
-//    }
-//    else {
-//       return;
-//    }
 
 //    fac redirect sa duca in pagina de edit fisa
     $select_id_fisa_desc = "SELECT id from fise_generate ORDER BY ID DESC LIMIT 1";

@@ -300,7 +300,7 @@ class Trasee
     public static function getTraseuByDepozitId($depozit_id)
     {
         $ret = array();
-        $query = "SELECT * FROM trasee WHERE depozit_id = " . $depozit_id . " ORDER BY nume";
+        $query = "SELECT * FROM trasee WHERE depozit_id = " . $depozit_id . " and sters = 0 ORDER BY nume";
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);

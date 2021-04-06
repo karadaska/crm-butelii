@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-23 21:03:27
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-06 13:32:01
          compiled from "/var/www/html/fofoweb/www/templates/adauga_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4555111236035517f2e80b0-62001607%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5e10ad82a4745cc0c93863631956e19ca9870ef2' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_fisa_traseu.tpl',
-      1 => 1611047942,
+      1 => 1617705120,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_6035517f344a00_87179706',
   'variables' => 
   array (
     'title' => 0,
@@ -32,8 +34,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'asignare' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_6035517f344a00_87179706',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_6035517f344a00_87179706')) {function content_6035517f344a00_87179706($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -82,7 +82,7 @@ $_smarty_tpl->tpl_vars['depozit']->_loop = true;
                                                     </td>
                                                 </tr>
                                                 <th style="text-align: center;vertical-align: middle;">Traseu:</th>
-                                                <th style="text-align: left;">
+                                                <td style="text-align: left;">
                                                     <div id="lista_trasee">
                                                         <select name="traseu_id" id="traseu_id">
                                                             <option value="0">- Trasee -</option>
@@ -99,7 +99,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                                             <?php } ?>
                                                         </select>
                                                     </div>
-                                                </th>
+                                                </td>
                                                 <tr>
                                                     <th style="vertical-align: middle;">Sofer</th>
                                                     <td>
