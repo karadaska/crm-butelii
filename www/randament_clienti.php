@@ -48,16 +48,16 @@ if (isset($_POST['update'])) {
     Clienti::seteazaRandamentClienti($id_traseu);
 }
 
-//foreach ($lista_clienti as $client) {
-//    $randamentclientdinfisa = Clienti::getRandamentByClientIdDinFise($client['client_id'], array(
-//        'an' => $an,
-//        'perioada_id' => $perioada_id
-//    ));
-//    $smarty->assign('randamentclientdinfisa_' . $client['client_id'], $randamentclientdinfisa);
-//}
+foreach ($lista_clienti as $client) {
+    $randamentclientdinfisa = Clienti::getRandamentByClientIdDinFise($client['client_id'], array(
+        'an' => $an,
+        'perioada_id' => $perioada_id
+    ));
+    $smarty->assign('randamentclientdinfisa_' . $client['client_id'], $randamentclientdinfisa);
+}
 
 foreach ($lista_clienti as $client) {
-    $randament = Clienti::getRandamentByClientIdDinFiseNew($client['client_id'], array(
+    $randament = Clienti::getRandamentByClientIdDinRandamentClienti($client['client_id'], array(
         'an' => $an,
         'perioada_id' => $perioada_id
     ));

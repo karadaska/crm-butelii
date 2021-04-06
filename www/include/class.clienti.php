@@ -140,7 +140,7 @@ class Clienti
 
     }
 
-    public static function getRandamentByClientIdDinFiseNew($client_id, $opts = array())
+    public static function getRandamentByClientIdDinRandamentClienti($client_id, $opts = array())
     {
 
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
