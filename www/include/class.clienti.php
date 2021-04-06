@@ -97,17 +97,20 @@ class Clienti
     public static function getRandamentByClientIdDinFise($client_id, $opts = array())
     {
 
-        $an = isset($opts['an']) ? $opts['an'] : date('Y');
-        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
+        $an = isset($opts['an']) ? $opts['an'] : 0;
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
 
-//        if ($an == 0) {
-//            $an = date('Y');
-//        }
-//
-//        if ($perioada_id == 0) {
-//            $perioada_id = date('n');
-//        }
+        if ($an == 0) {
+            $an = date('Y');
+        }
 
+        if ($perioada_id == 0) {
+            $perioada_id = date('n');
+        }
+
+        if ($perioada_id <= 9) {
+            $perioada_id = '0' . $perioada_id;
+        }
 
         $ret = array();
 
@@ -119,15 +122,16 @@ class Clienti
                 WHERE
                     a.client_id = '" . $client_id . "'
                     AND a.data_intrare LIKE '%" . $an . "%'
+                    AND a.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'
                     AND b.sters = 0
                     AND a.sters = 0
                      ";
 
-        if ($perioada_id > 0) {
-            $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
-        }
+//        if ($perioada_id > 0) {
+//            $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
+//        }
 
-//        debug($query);
+        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);

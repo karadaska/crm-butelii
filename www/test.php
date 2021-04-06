@@ -223,12 +223,12 @@ $data_stop = '2021-03-31';
 //));
 //$b = Fise::getRandamentAnualDinFiseByClientId(1332);
 //$b = Stocuri::getIntoarcereMarfaByFisaIdAndprodusId(593,1);
-//$b = Clienti::getRandamentByClientIdDinFise(2627, array(
+$b = Clienti::getRandamentByClientIdDinFise(1332, array(
+    'an' => 2020,
+    'perioada_id' => 1
+));
+//$b = Clienti::getRandamentByClientIdDinFiseNew(1348, array(
 //    'an' => 2021,
 //    'perioada_id' => 4
 //));
-$b = Clienti::getRandamentByClientIdDinFiseNew(1348, array(
-    'an' => 2021,
-    'perioada_id' => 4
-));
 echo json_encode($b);
