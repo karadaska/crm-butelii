@@ -131,7 +131,6 @@ class Clienti
 //            $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
 //        }
 
-        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
@@ -147,15 +146,6 @@ class Clienti
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
         $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
 
-//        if ($an == 0) {
-//            $an = date('Y');
-//        }
-//
-//        if ($perioada_id == 0) {
-//            $perioada_id = date('n');
-//        }
-
-
         $ret = array();
 
         $query = "SELECT
@@ -164,14 +154,13 @@ class Clienti
                     randament_clienti AS a                    
                 WHERE
                     a.client_id = '" . $client_id . "'
-                    AND a.an LIKE '%" . $an . "%'                   
+                    AND a.an LIKE '%" . $an . "%'
                      ";
 
         if ($perioada_id > 0) {
             $query .= " AND a.perioada_id LIKE '%" . $perioada_id . "%'";
         }
 
-//        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
