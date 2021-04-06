@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-06 12:21:37
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-06 12:32:49
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:93953769760363ba43e8b40-06532767%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '28466ecbac126ded8271f40af77df08dc0861b8e' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl',
-      1 => 1617700895,
+      1 => 1617701568,
       2 => 'file',
     ),
   ),
@@ -163,6 +163,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <th colspan="4" style="border-right: double;">Incarcaturi AR/8 kg</th>
             <?php }?>
             <th>OBS</th>
+            <th>OBS EXTRA</th>
         </tr>
         <tr>
             <td style="text-align: center;">BUC</td>
@@ -186,7 +187,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <td style="text-align: center;">COM</td>
                 <td style="text-align: center;border-right: double;">VAL 4</td>
             <?php }?>
-            <td>&nbsp;</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
         </tr>
         </thead>
         <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable(0, null, 0);?>
@@ -279,11 +281,13 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 
                     </td>
                 <?php }?>
+                <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['client']->value['fisa_generata_id']), null, 0);?>
                 <td style="text-align: left;">
-                    <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['client']->value['fisa_generata_id']), null, 0);?>
                     <?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['nume_observatie'];?>
 
                 </td>
+                <td><?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['observatie_extra'];?>
+</td>
             </tr>
             <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['realizat']['1']['cantitate'], null, 0);?>
             <?php $_smarty_tpl->tpl_vars['total_bg_11_comision'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11_comision']->value+$_smarty_tpl->tpl_vars['client']->value['realizat']['1']['cantitate']*$_smarty_tpl->tpl_vars['client']->value['realizat']['1']['comision'], null, 0);?>
@@ -323,6 +327,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['total_ar_8_unitar']->value;?>
 </td>
             <?php }?>
+            <td style="text-align: center;"></td>
             <td style="text-align: center;"></td>
         </tr>
     </table>

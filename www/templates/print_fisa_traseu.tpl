@@ -121,6 +121,7 @@
                 <th colspan="4" style="border-right: double;">Incarcaturi AR/8 kg</th>
             {/if}
             <th>OBS</th>
+            <th>OBS EXTRA</th>
         </tr>
         <tr>
             <td style="text-align: center;">BUC</td>
@@ -144,7 +145,8 @@
                 <td style="text-align: center;">COM</td>
                 <td style="text-align: center;border-right: double;">VAL 4</td>
             {/if}
-            <td>&nbsp;</td>
+            <td>&nbsp</td>
+            <td>&nbsp</td>
         </tr>
         </thead>
         {$total_bg_11 = 0}
@@ -203,10 +205,11 @@
                        {($client['realizat']['3']['cantitate'] > 0) ? ($client['realizat']['3']['cantitate'] * ($client['realizat']['3']['pret'] - $client['realizat']['3']['comision'])) :'-'}
                     </td>
                 {/if}
+                {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
                 <td style="text-align: left;">
-                    {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
                     {$client_observatie['nume_observatie']}
                 </td>
+                <td>{$client_observatie['observatie_extra']}</td>
             </tr>
             {$total_bg_11 = $total_bg_11 + $client['realizat']['1']['cantitate']}
             {$total_bg_11_comision = $total_bg_11_comision + $client['realizat']['1']['cantitate'] *  $client['realizat']['1']['comision']}
@@ -237,6 +240,7 @@
                 <td colspan="2" style="text-align: center;">{$total_ar_8_comision}</td>
                 <td style="text-align: center;">{$total_ar_8_unitar}</td>
             {/if}
+            <td style="text-align: center;"></td>
             <td style="text-align: center;"></td>
         </tr>
     </table>
