@@ -57,7 +57,7 @@ if (isset($_POST['genereaza_fisa_traseu']) and $conditie) {
         if (isset($_POST['import_clienti_trasee'])) {
 //            $lista_asignari_clienti_trasee = Asignari::getAsignariClientiByTraseuId($id_traseu);
             $lista_asignari_clienti_trasee = Clienti::getClientiByTraseuId($id_traseu);
-
+             pre($lista_asignari_clienti_trasee);
             foreach ($lista_asignari_clienti_trasee as $clienti_asignati) {
                 $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare, ordine_client)
         values

@@ -1343,7 +1343,7 @@ class Clienti
 
         $ret = array();
 
-        $query = "SELECT a.* from asignari_clienti_trasee as a
+        $query = "SELECT a.client_id, a.traseu_id, a.ordine from asignari_clienti_trasee as a
                     LEFT JOIN clienti as b on a.client_id = b.id
                     WHERE a.traseu_id = '" . $traseu_id . "'
                     AND a.sters = 0
