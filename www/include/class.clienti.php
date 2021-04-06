@@ -976,7 +976,7 @@ class Clienti
                   WHERE a.fisa_generata_id = '" . $fisa_id . "'
                   AND a.sters = 0                  
                   GROUP BY b.id
-                  ORDER BY e.ordine ASC
+                  ORDER BY a.ordine_client ASC
                   ";
         $result = myQuery($query);
 

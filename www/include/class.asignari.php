@@ -196,12 +196,11 @@ class Asignari
         $query = "SELECT a.fisa_generata_id, a.client_id, b.nume as nume_client, c.nume as nume_localitate
                   FROM clienti_asignati_fise_generate as a
                   LEFT JOIN clienti as b on a.client_id = b.id
-                  LEFT JOIN localitati as c on b.localitate_id = c.id                  
-                  LEFT JOIN ordine_clienti as e on a.client_id = e.client_id
+                  LEFT JOIN localitati as c on b.localitate_id = c.id               
                   WHERE a.fisa_generata_id = '" . $fisa_id . "'
                   AND a.sters = 0                  
                   GROUP BY b.id
-                  ORDER BY e.ordine ASC
+                  ORDER BY a.ordine ASC
                   ";
         $result = myQuery($query);
 
