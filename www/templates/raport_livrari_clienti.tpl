@@ -73,7 +73,7 @@
                                             <th colspan="2">BG/AR</th>
                                             <th colspan="2">PRET UNITAR</th>
                                             <th colspan="2">COMISION</th>
-                                            <th colspan="2">TOTAL BUCATI</th>
+                                            <th colspan="3">TOTAL BUCATI</th>
                                             <th colspan="2">TOTAL VAL. INCASATA</th>
                                             <th colspan="2">TOTAL COMISION</th>
                                             <th colspan="2">VALOARE BUCATI BG/AR</th>
@@ -87,6 +87,7 @@
                                             <td style="text-align: center;">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
+                                            <td>BG + AR</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
@@ -99,6 +100,7 @@
                                         {$nr = 1}
                                         {$total_bg_11 = 0}
                                         {$total_ar_9 = 0}
+                                        {$total_bg_ar = 0}
                                         {$total_valoare_incasare_bg_11 = 0}
                                         {$total_valoare_incasare_ar_9 = 0}
                                         {$total_comision_bg_11 = 0}
@@ -128,7 +130,8 @@
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['comision'] !='') ? $client['total_produse']['bg_11']['comision'] : '-'}</td>
                                                 <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['comision'] !='') ? $client['total_produse']['ar_9']['comision'] : '-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] :'-'}</td>
-                                                <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] !='') ? $client['total_produse']['ar_9']['total_ar_9']: '-'}</td>
+                                                <td style="text-align: center;">{($client['total_produse']['ar_9']['total_ar_9'] !='') ? $client['total_produse']['ar_9']['total_ar_9']: '-'}</td>
+                                                <td style="text-align: center;border-right:double">{($client['total_produse']['bg_11']['total_bg_11'] !='' || $client['total_produse']['ar_9']['total_ar_9'] !='') ? ($client['total_produse']['bg_11']['total_bg_11'] + $client['total_produse']['ar_9']['total_ar_9']) :'-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? $client['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-'} </td>
                                                 <td style="text-align: center;border-right:double;">{($client['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? $client['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-'}</td>
                                                 <td style="text-align: center;">
@@ -138,7 +141,7 @@
                                                     {($client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'] !='') ? $client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'] : '-'}
                                                 </td>
                                                 <td>
-                                                    {if count($client['lista_preturi_bg_11']) >0}
+                                                    {if count($client['lista_preturi_bg_11']) > 0}
                                                         <table class="table table-bordered">
                                                             <tr>
                                                                 {foreach from=$client['lista_preturi_bg_11'] item=lista}
@@ -157,7 +160,7 @@
                                                     {/if}
                                                 </td>
                                                 <td style="text-align: center;border-right:double">
-                                                    {if count($client['lista_preturi_ar_9']) >0}
+                                                    {if count($client['lista_preturi_ar_9']) > 0}
                                                         <table class="table table-bordered">
                                                             <tr>
                                                                 {foreach from=$client['lista_preturi_ar_9'] item=lista}
@@ -182,14 +185,16 @@
                                             {$total_valoare_incasare_ar_9 = $total_valoare_incasare_ar_9 + $client['total_produse']['ar_9']['total_ar_9_cu_pret']}
                                             {$total_comision_bg_11 = ($total_comision_bg_11 + $client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'])}
                                             {$total_comision_ar_9 =  ($total_comision_ar_9 + $client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'])}
+                                            {$total_bg_ar = $total_bg_11 + $total_ar_9}
                                         {/foreach}
                                         <tr>
                                             <th colspan="10" style="text-align: right;border-right:double;">TOTAL:</th>
                                             <th><abbr title="Total bucati BG 11"
                                                       style="color: red;">{$total_bg_11}</abbr></th>
-                                            <th style="border-right:double;"><abbr title="Total bucati AR 9"
+                                            <th><abbr title="Total bucati AR 9"
                                                                                    style="color: red;">{$total_ar_9}</abbr>
                                             </th>
+                                            <th style="border-right:double;color: red;">{$total_bg_ar}</th>
                                             <th>
                                                 <abbr title="Total valoare incasare BG 11"
                                                       style="color: red;">{$total_valoare_incasare_bg_11}</abbr>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-10 11:17:01
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-07 15:43:25
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1615367761,
+      1 => 1617799404,
       2 => 'file',
     ),
   ),
@@ -36,6 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'total_valoare_incasare_ar_9' => 0,
     'total_comision_bg_11' => 0,
     'total_comision_ar_9' => 0,
+    'total_bg_ar' => 0,
     'preturi_by_bg_11' => 0,
     'pret' => 0,
     'preturi_by_ar_9' => 0,
@@ -137,7 +138,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                             <th colspan="2">BG/AR</th>
                                             <th colspan="2">PRET UNITAR</th>
                                             <th colspan="2">COMISION</th>
-                                            <th colspan="2">TOTAL BUCATI</th>
+                                            <th colspan="3">TOTAL BUCATI</th>
                                             <th colspan="2">TOTAL VAL. INCASATA</th>
                                             <th colspan="2">TOTAL COMISION</th>
                                             <th colspan="2">VALOARE BUCATI BG/AR</th>
@@ -151,6 +152,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                             <td style="text-align: center;">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
+                                            <td>BG + AR</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
@@ -163,6 +165,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                         <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
                                         <?php $_smarty_tpl->tpl_vars['total_bg_11'] = new Smarty_variable(0, null, 0);?>
                                         <?php $_smarty_tpl->tpl_vars['total_ar_9'] = new Smarty_variable(0, null, 0);?>
+                                        <?php $_smarty_tpl->tpl_vars['total_bg_ar'] = new Smarty_variable(0, null, 0);?>
                                         <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11'] = new Smarty_variable(0, null, 0);?>
                                         <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9'] = new Smarty_variable(0, null, 0);?>
                                         <?php $_smarty_tpl->tpl_vars['total_comision_bg_11'] = new Smarty_variable(0, null, 0);?>
@@ -211,7 +214,9 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 </td>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11'] : '-';?>
 </td>
-                                                <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'] : '-';?>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9'] : '-';?>
+</td>
+                                                <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']!=''||$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']!='' ? ($_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']) : '-';?>
 </td>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-';?>
  </td>
@@ -284,16 +289,19 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                             <?php $_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_valoare_incasare_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9_cu_pret'], null, 0);?>
                                             <?php $_smarty_tpl->tpl_vars['total_comision_bg_11'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_bg_11']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['total_bg_11']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['bg_11']['comision']), null, 0);?>
                                             <?php $_smarty_tpl->tpl_vars['total_comision_ar_9'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_comision_ar_9']->value+$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']), null, 0);?>
+                                            <?php $_smarty_tpl->tpl_vars['total_bg_ar'] = new Smarty_variable($_smarty_tpl->tpl_vars['total_bg_11']->value+$_smarty_tpl->tpl_vars['total_ar_9']->value, null, 0);?>
                                         <?php } ?>
                                         <tr>
                                             <th colspan="10" style="text-align: right;border-right:double;">TOTAL:</th>
                                             <th><abbr title="Total bucati BG 11"
                                                       style="color: red;"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
 </abbr></th>
-                                            <th style="border-right:double;"><abbr title="Total bucati AR 9"
+                                            <th><abbr title="Total bucati AR 9"
                                                                                    style="color: red;"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>
 </abbr>
                                             </th>
+                                            <th style="border-right:double;color: red;"><?php echo $_smarty_tpl->tpl_vars['total_bg_ar']->value;?>
+</th>
                                             <th>
                                                 <abbr title="Total valoare incasare BG 11"
                                                       style="color: red;"><?php echo $_smarty_tpl->tpl_vars['total_valoare_incasare_bg_11']->value;?>
