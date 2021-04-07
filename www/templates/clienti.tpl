@@ -83,7 +83,7 @@
                                    class="table table-striped table-bordered table-hover" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: left;">ZONS</th>
+                                    <th style="text-align: left;">ZONA</th>
                                     <th style="text-align: left;">LOCALITATE</th>
                                     <th style="text-align: left;">NUME</th>
                                     <th style="text-align: center;">TRASEU</th>
@@ -167,6 +167,7 @@
             </div>
     </section>
 </div>
-<script src="js/pagini/edit_client.js"></script>
-<script src="/js/pagini/clienti.js"></script>
+{*<script src="js/pagini/edit_client.js"></script>*}
+{*<script src="/js/pagini/clienti.js"></script>*}
+<script src="js/pagini/edit_traseu.js"></script>
 <span style="margin-left: 230px;">{$totaltime}</span>
