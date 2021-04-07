@@ -21,7 +21,7 @@ if ($client_id) {
     $nr_update = myExec($query);
 
     $update_ordine_clienti = "UPDATE ordine_clienti 
-                  SET  sters= 1,                
+                  SET  sters= 1                
                   where client_id='" . $client_id . "'
                   and traseu_id = '" . $traseu_id . "'
                   ";
