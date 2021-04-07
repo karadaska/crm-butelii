@@ -188,7 +188,7 @@ class Asignari
     }
 
 
-    public static function getAsignariClientiByFisaGenerataId($fisa_id, $opts = array())
+    public static function getAsignariClientiByFisaGenerataId($fisa_id, $traseu_id, $opts = array())
     {
         $stare_id = isset($opts['stare_id']) ? $opts['stare_id'] : 0;
 
@@ -198,8 +198,10 @@ class Asignari
                   LEFT JOIN clienti as b on a.client_id = b.id
                   LEFT JOIN localitati as c on b.localitate_id = c.id                  
                   LEFT JOIN ordine_clienti as e on a.client_id = e.client_id
+                  LEFT JOIN fise_generate as f on a.fisa_generata_id = f.id
                   WHERE a.fisa_generata_id = '" . $fisa_id . "'
                   AND a.sters = 0                  
+                  AND e.traseu_id = '" . $traseu_id . "'                 
                   GROUP BY b.id
                   ORDER BY e.ordine ASC
                   ";
