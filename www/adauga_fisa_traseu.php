@@ -42,33 +42,28 @@ if (isset($_POST['genereaza_fisa_traseu']) and $conditie) {
     $id_fisa = $ret['id'];
 
 //    if ($id_gasit->rowCount() == 0) {
-    $insert_fise_generate = 'INSERT INTO fise_generate(depozit_id, traseu_id, sofer_id, masina_id, data_intrare)
+        $insert_fise_generate = 'INSERT INTO fise_generate(depozit_id, traseu_id, sofer_id, masina_id, data_intrare)
         values
         ("' . $depozit_id . '","' . $traseu_id . '","' . $sofer_id . '","' . $masina_id . '", "' . $data_intrare . '")';
-    myExec($insert_fise_generate);
-    header('Location: /fisa_traseu.php');
+        myExec($insert_fise_generate);
+        header('Location: /fisa_traseu.php');
 
-    $select_last_fisa_id = "SELECT * from fise_generate ORDER BY id DESC LIMIT 1";
-    $id_gasit = myQuery($select_last_fisa_id);
-    $ret = $id_gasit->fetch(PDO::FETCH_ASSOC);
-    $id_fisa = $ret['id'];
-    $id_traseu = $ret['traseu_id'];
+        $select_last_fisa_id = "SELECT * from fise_generate ORDER BY id DESC LIMIT 1";
+        $id_gasit = myQuery($select_last_fisa_id);
+        $ret = $id_gasit->fetch(PDO::FETCH_ASSOC);
+        $id_fisa = $ret['id'];
+        $id_traseu = $ret['traseu_id'];
 
-    if (isset($_POST['import_clienti_trasee'])) {
+        if (isset($_POST['import_clienti_trasee'])) {
 //            $lista_asignari_clienti_trasee = Asignari::getAsignariClientiByTraseuId($id_traseu);
-        $lista_asignari_clienti_trasee = Clienti::getClientiByTraseuId(1);
-
-        foreach ($lista_asignari_clienti_trasee as $clienti_asignati) {
-            $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare)
+            $lista_asignari_clienti_trasee = Clienti::getClientiByTraseuId($id_traseu);
+            foreach ($lista_asignari_clienti_trasee as $clienti_asignati) {
+                $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare, ordine_client)
         values
-        ('" . $id_fisa . "','" . $clienti_asignati['client_id'] . "','" . $data_intrare . "')";
-            myExec($query);
-        }
-    };
-//    }
-//    else {
-//       return;
-//    }
+        ('" . $id_fisa . "','" . $clienti_asignati['client_id'] . "','" . $data_intrare . "','" . $clienti_asignati['ordine'] . "')";
+                myExec($query);
+            }
+        };
 
 //    fac redirect sa duca in pagina de edit fisa
     $select_id_fisa_desc = "SELECT id from fise_generate ORDER BY ID DESC LIMIT 1";
