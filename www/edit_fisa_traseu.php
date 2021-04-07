@@ -69,7 +69,7 @@ $smarty->assign('lista_clienti', $lista_clienti);
 $lista_asignari_clienti_trasee = Clienti::getClientiByTraseuId($traseu_id_by_fisa_generata['traseu_id']);
 $smarty->assign('lista_asignari_clienti_trasee', $lista_asignari_clienti_trasee);
 
-$lista_clienti_asignati_la_fisa = Asignari::getAsignariClientiByFisaGenerataId($id, 1);
+$lista_clienti_asignati_la_fisa = Asignari::getAsignariClientiByFisaGenerataId($id, $traseu_id_by_fisa_generata['traseu_id']);
 $smarty->assign('lista_clienti_asignati_la_fisa', $lista_clienti_asignati_la_fisa);
 
 //pre($lista_clienti_asignati_la_fisa);
@@ -198,9 +198,9 @@ if (isset($_POST['import_clienti_fisa_generata'])) {
 
         if ($id_gasit->rowCount() == 0) {
 
-            $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare)
+            $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare, ordine_client)
         values
-        ('" . $id . "','" . $clienti_asignati['client_id'] . "','" . $data_start . "')";
+        ('" . $id . "','" . $clienti_asignati['client_id'] . "','" . $data_start . "','" . $clienti_asignati['ordine_client'] . "')";
             myExec($query);
         }
     }
