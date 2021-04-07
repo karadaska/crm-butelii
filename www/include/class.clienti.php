@@ -157,7 +157,7 @@ class Clienti
         $ret = array();
 
         $query = "SELECT
-                    SUM( a.randament ) AS randament_client, suma_target 
+                    SUM( a.randament ) AS randament_client 
                 FROM
                     randament_clienti AS a                    
                 WHERE
@@ -170,6 +170,7 @@ class Clienti
             $query .= " AND a.perioada_id = " . $perioada_id;
         }
 
+        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
@@ -976,7 +977,7 @@ class Clienti
                   WHERE a.fisa_generata_id = '" . $fisa_id . "'
                   AND a.sters = 0                  
                   GROUP BY b.id
-                  ORDER BY a.ordine_client ASC
+                  ORDER BY e.ordine ASC
                   ";
         $result = myQuery($query);
 
@@ -1343,7 +1344,7 @@ class Clienti
 
         $ret = array();
 
-        $query = "SELECT a.client_id, a.traseu_id, a.ordine from asignari_clienti_trasee as a
+        $query = "SELECT a.* from asignari_clienti_trasee as a
                     LEFT JOIN clienti as b on a.client_id = b.id
                     WHERE a.traseu_id = '" . $traseu_id . "'
                     AND a.sters = 0
