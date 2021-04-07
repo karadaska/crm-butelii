@@ -167,7 +167,6 @@
             </div>
     </section>
 </div>
-{*<script src="js/pagini/edit_client.js"></script>*}
-{*<script src="/js/pagini/clienti.js"></script>*}
-<script src="js/pagini/edit_traseu.js"></script>
+<script src="js/pagini/edit_client.js"></script>
+<script src="/js/pagini/clienti.js"></script>
 <span style="margin-left: 230px;">{$totaltime}</span>
