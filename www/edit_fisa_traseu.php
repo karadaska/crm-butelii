@@ -186,21 +186,21 @@ if (isset($_POST['sterge_fisa'])) {
 if (isset($_POST['import_clienti_fisa_generata'])) {
     $data_start = getRequestParameter('data_fisa', '');
     foreach ($lista_asignari_clienti_trasee as $clienti_asignati) {
-        $select_clienti_asignati_la_fisa = "SELECT * from clienti_asignati_fise_generate
+        $select_clienti_asignati_la_fisa = "SELECT id from clienti_asignati_fise_generate
                                         WHERE fisa_generata_id = '" . $id . "'
-                                        and client_id = '" . $clienti_asignati['id'] . "'
+                                        and client_id = '" . $clienti_asignati['client_id'] . "'
                                         and sters = 0
                                         ORDER BY id DESC";
         $id_gasit = myQuery($select_clienti_asignati_la_fisa);
 
-        $ret = $id_gasit->fetchAll(PDO::FETCH_ASSOC);
+        $ret = $id_gasit->fetch(PDO::FETCH_ASSOC);
         $id_client_gasit = $ret['id'];
 
         if ($id_gasit->rowCount() == 0) {
 
             $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare, ordine_client)
         values
-        ('" . $id . "','" . $clienti_asignati['client_id'] . "','" . $data_start . "','" . $clienti_asignati['ordine_client'] . "')";
+        ('" . $id . "','" . $clienti_asignati['client_id'] . "','" . $data_start . "','" . $clienti_asignati['ordine'] . "')";
             myExec($query);
         }
     }
