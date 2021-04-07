@@ -20,6 +20,13 @@ if ($client_id) {
                   ";
     $nr_update = myExec($query);
 
+    $update_ordine_clienti = "UPDATE ordine_clienti 
+                  SET  sters= 1,                
+                  where client_id='" . $client_id . "'
+                  and traseu_id = '" . $traseu_id . "'
+                  ";
+    myExec($update_ordine_clienti);
+
     $ret['error'] = $nr_update == 1 ? 0 : 1;
 }
 
