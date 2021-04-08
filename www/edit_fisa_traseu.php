@@ -65,7 +65,7 @@ $smarty->assign('plecare_marfa_by_traseu_id', $plecare_marfa_by_traseu_id);
 
 $lista_clienti = Clienti::getClientiPentruAsignatByDepozit(array(
     'stari' => array(1, 3),
-    'depozit_id'=>$depozit_by_traseu_id['depozit_id']
+    'depozit_id' => $depozit_by_traseu_id['depozit_id']
 ));
 $smarty->assign('lista_clienti', $lista_clienti);
 
@@ -102,7 +102,7 @@ if (isset($_POST['modifica'])) {
                     SET traseu_id = '" . $traseu_id . "',
                     sofer_id = '" . $sofer_id . "',
                     masina_id = '" . $masina_id . "',
-                    data_intrare = '".$data_start."'
+                    data_intrare = '" . $data_start . "'
                     WHERE id = '" . $id . "'";
 
     myExec($query);
@@ -218,12 +218,12 @@ if (isset($_POST['consuma_stoc'])) {
 
 
 $mtime = microtime();
-$mtime = explode(" ",$mtime);
+$mtime = explode(" ", $mtime);
 $mtime = $mtime[1] + $mtime[0];
 $tend = $mtime;
 $totaltime = ($tend - $tstart);
 
-$smarty->assign('mtime',$mtime);
-$smarty->assign('totaltime',$totaltime);
+$smarty->assign('mtime', $mtime);
+$smarty->assign('totaltime', $totaltime);
 $smarty->display($template);
 
