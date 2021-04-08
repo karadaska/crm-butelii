@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-08 09:52:57
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-08 10:43:47
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1617864774,
+      1 => 1617867825,
       2 => 'file',
     ),
   ),
@@ -517,7 +517,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 </td>
                                                 <td style="text-align: center;border-right:double"><?php echo $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision']!='' ? $_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['total_ar_9']*$_smarty_tpl->tpl_vars['client']->value['total_produse']['ar_9']['comision'] : '-';?>
 </td>
-                                                <td style="text-align: center;border-right:double">
+                                                <td style="text-align: center;">
                                                     <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11'])>0) {?>
                                                         <table class="table table-bordered">
                                                             <tr>
@@ -543,7 +543,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                                         <span style="text-align: center;">-</span>
                                                     <?php }?>
                                                 </td>
-                                                <td style="text-align: center;border-right:double">
+                                                <td style="text-align: center;">
                                                     <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_8'])>0) {?>
                                                         <table class="table table-bordered">
                                                             <tr>
@@ -569,7 +569,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                                         <span style="text-align: center;">-</span>
                                                     <?php }?>
                                                 </td>
-                                                <td style="text-align: center;">
+                                                <td style="text-align: center;border-right:double">
                                                     <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9'])>0) {?>
                                                         <table class="table table-bordered">
                                                             <tr>
@@ -650,7 +650,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                                         title="Total comision AR 9"
                                                         style="color: red;"><?php echo $_smarty_tpl->tpl_vars['total_comision_ar_9']->value;?>
 </abbr></th>
-                                            <th colspan="20"></th>
+                                            <th colspan="20" style="text-align: center;border-right:double;"></th>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -720,7 +720,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                                 </table>
                                             <?php }?>
                                         </div>
-                                        <div style="margin-left: 10px;w">
+                                        <div style="margin-left: 10px;">
                                             <?php if (count($_smarty_tpl->tpl_vars['preturi_by_ar_9']->value)>0) {?>
                                                 <table class="table table-bordered"
                                                        style="margin-top: 20px;width: 400px;">

@@ -361,7 +361,7 @@
                                                 <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'] :'-'}</td>
                                                 <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8'] * $client['total_produse']['ar_8']['comision'] !='') ? $client['total_produse']['ar_8']['total_ar_8'] * $client['total_produse']['ar_8']['comision'] : '-'}</td>
                                                 <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'] !='') ? $client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'] : '-'}</td>
-                                                <td style="text-align: center;border-right:double">
+                                                <td style="text-align: center;">
                                                     {if count($client['lista_preturi_bg_11']) >0}
                                                         <table class="table table-bordered">
                                                             <tr>
@@ -380,7 +380,7 @@
                                                         <span style="text-align: center;">-</span>
                                                     {/if}
                                                 </td>
-                                                <td style="text-align: center;border-right:double">
+                                                <td style="text-align: center;">
                                                     {if count($client['lista_preturi_ar_8']) >0}
                                                         <table class="table table-bordered">
                                                             <tr>
@@ -399,7 +399,7 @@
                                                         <span style="text-align: center;">-</span>
                                                     {/if}
                                                 </td>
-                                                <td style="text-align: center;">
+                                                <td style="text-align: center;border-right:double">
                                                     {if count($client['lista_preturi_ar_9']) >0}
                                                         <table class="table table-bordered">
                                                             <tr>
@@ -462,7 +462,7 @@
                                             <th style="text-align: center;border-right:double;"><abbr
                                                         title="Total comision AR 9"
                                                         style="color: red;">{$total_comision_ar_9}</abbr></th>
-                                            <th colspan="20"></th>
+                                            <th colspan="20" style="text-align: center;border-right:double;"></th>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -518,7 +518,7 @@
                                                 </table>
                                             {/if}
                                         </div>
-                                        <div style="margin-left: 10px;w">
+                                        <div style="margin-left: 10px;">
                                             {if count($preturi_by_ar_9) > 0}
                                                 <table class="table table-bordered"
                                                        style="margin-top: 20px;width: 400px;">
