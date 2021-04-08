@@ -87,7 +87,7 @@
                                             <td style="text-align: center;">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
-                                            <td style="text-align: center">BG + AR</td>
+                                            <td style="text-align: center">BG&AR</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
@@ -298,7 +298,7 @@
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
-                                            <td style="text-align: center">BG + AR</td>
+                                            <td style="text-align: center">BG&AR</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>

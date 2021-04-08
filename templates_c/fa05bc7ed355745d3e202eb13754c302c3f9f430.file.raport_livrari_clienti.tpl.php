@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-08 10:43:47
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-08 11:06:21
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1617867825,
+      1 => 1617869179,
       2 => 'file',
     ),
   ),
@@ -423,7 +423,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
-                                            <td style="text-align: center">BG + AR</td>
+                                            <td style="text-align: center">BG&AR</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
