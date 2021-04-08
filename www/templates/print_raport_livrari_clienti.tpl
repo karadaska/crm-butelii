@@ -428,10 +428,10 @@
                 <td style="text-align: center;">BG 11</td>
                 <td style="text-align: center;">AR 8</td>
                 <td style="text-align: center;">AR 9</td>
-                <td style="text-align: center;">BG +AR</td>
                 <td style="text-align: center">BG 11</td>
                 <td style="text-align: center">AR 8</td>
                 <td style="text-align: center">AR 9</td>
+                <td style="text-align: center;">BG +AR</td>
                 <td style="text-align: center">BG 11</td>
                 <td style="text-align: center">AR 8</td>
                 <td style="text-align: center">AR 9</td>
@@ -479,10 +479,10 @@
                     <td style="text-align: center">{($client['total_produse']['bg_11']['comision'] !='') ? $client['total_produse']['bg_11']['comision'] : '-'}</td>
                     <td style="text-align: center;">{($client['total_produse']['ar_8']['comision'] !='') ? $client['total_produse']['ar_8']['comision'] : '-' }</td>
                     <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['comision'] !='') ? $client['total_produse']['ar_9']['comision'] : '-'}</td>
-                    <td>asdsa</td>
                     <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] :'-'}</td>
                     <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8'] !='') ? $client['total_produse']['ar_8']['total_ar_8'] : '-'}</td>
-                    <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] !='') ? $client['total_produse']['ar_9']['total_ar_9']: '-'}</td>
+                    <td>{($client['total_produse']['ar_9']['total_ar_9'] !='') ? $client['total_produse']['ar_9']['total_ar_9']: '-'}</td>
+                    <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] !='' || $client['total_produse']['bg_11']['total_bg_11'] !='' || $client['total_produse']['ar_8']['total_ar_8'] !='') ? ($client['total_produse']['ar_9']['total_ar_9'] + $client['total_produse']['ar_8']['total_ar_8'] + $client['total_produse']['bg_11']['total_bg_11']) : '-'}</td>
                     <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11_cu_pret'] !='') ? $client['total_produse']['bg_11']['total_bg_11_cu_pret'] : '-'}</td>
                     <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8_cu_pret'] != '') ? $client['total_produse']['ar_8']['total_ar_8_cu_pret'] :'-'}</td>
                     <td style="text-align: center;border-right:double;">{($client['total_produse']['ar_9']['total_ar_9_cu_pret'] !='') ? $client['total_produse']['ar_9']['total_ar_9_cu_pret'] : '-'}</td>
@@ -547,13 +547,19 @@
                 {$total_comision_bg_11 = ($total_comision_bg_11 + $client['total_produse']['bg_11']['total_bg_11'] * $client['total_produse']['bg_11']['comision'])}
                 {$total_comision_ar_8 = ($total_comision_ar_8 + $client['total_produse']['ar_8']['total_ar_8'] * $client['total_produse']['ar_8']['comision'])}
                 {$total_comision_ar_9 =  ($total_comision_ar_9 + $client['total_produse']['ar_9']['total_ar_9'] * $client['total_produse']['ar_9']['comision'])}
+                {$total_bg_ar = $total_bg_11 + $total_ar_8 + $total_ar_9}
             {/foreach}
             <tr>
                 <td colspan="13" style="text-align: right;border-right:double">TOTAL:</td>
                 <td><abbr title="Total bucati BG 11">{$total_bg_11}</abbr></td>
                 <td><abbr title="Total bucati AR 8">{$total_ar_8}</abbr></td>
-                <td style="text-align: center;border-right:double"><abbr
+                <td style="text-align: center;"><abbr
                             title="Total bucati AR 9">{$total_ar_9}</abbr></td>
+                <td style="text-align: center;border-right:double;"><abbr
+
+                            title="Total bucati BG + AR"
+                            >{$total_bg_ar}</abbr>
+                </td>
                 <td style="text-align: center">
                     <abbr title="Total valoare incasare BG 11">{$total_valoare_incasare_bg_11}</abbr>
                 </td>
