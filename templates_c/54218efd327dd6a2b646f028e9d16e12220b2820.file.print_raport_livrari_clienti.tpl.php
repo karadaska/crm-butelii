@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-08 11:00:56
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-08 11:04:08
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1617868855,
+      1 => 1617869046,
       2 => 'file',
     ),
   ),
@@ -733,9 +733,9 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
             <?php } ?>
             <tr>
                 <td colspan="13" style="text-align: right;border-right:double">TOTAL:</td>
-                <td><abbr title="Total bucati BG 11"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
+                <td style="text-align: center;"><abbr title="Total bucati BG 11"><?php echo $_smarty_tpl->tpl_vars['total_bg_11']->value;?>
 </abbr></td>
-                <td><abbr title="Total bucati AR 8"><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
+                <td style="text-align: center;"><abbr title="Total bucati AR 8"><?php echo $_smarty_tpl->tpl_vars['total_ar_8']->value;?>
 </abbr></td>
                 <td style="text-align: center;"><abbr
                             title="Total bucati AR 9"><?php echo $_smarty_tpl->tpl_vars['total_ar_9']->value;?>

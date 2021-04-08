@@ -551,8 +551,8 @@
             {/foreach}
             <tr>
                 <td colspan="13" style="text-align: right;border-right:double">TOTAL:</td>
-                <td><abbr title="Total bucati BG 11">{$total_bg_11}</abbr></td>
-                <td><abbr title="Total bucati AR 8">{$total_ar_8}</abbr></td>
+                <td style="text-align: center;"><abbr title="Total bucati BG 11">{$total_bg_11}</abbr></td>
+                <td style="text-align: center;"><abbr title="Total bucati AR 8">{$total_ar_8}</abbr></td>
                 <td style="text-align: center;"><abbr
                             title="Total bucati AR 9">{$total_ar_9}</abbr></td>
                 <td style="text-align: center;border-right:double;"><abbr
