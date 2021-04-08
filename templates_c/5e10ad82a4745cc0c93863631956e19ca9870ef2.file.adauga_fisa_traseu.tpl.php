@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-06 13:32:01
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-08 12:38:08
          compiled from "/var/www/html/fofoweb/www/templates/adauga_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:4555111236035517f2e80b0-62001607%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5e10ad82a4745cc0c93863631956e19ca9870ef2' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_fisa_traseu.tpl',
-      1 => 1617705120,
+      1 => 1617874687,
       2 => 'file',
     ),
   ),
@@ -32,6 +32,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'masina' => 0,
     'masina_by_traseu_id' => 0,
     'asignare' => 0,
+    'data_intrare' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -62,7 +63,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                             <table class="table table-bordered" style="width: 370px;">
                                                 <tr>
                                                 <tr>
-                                                    <th style="vertical-align: middle;">Depozit:</th>
+                                                    <th style="vertical-align: middle;text-align: left;">Depozit:</th>
                                                     <td>
                                                         <select name="depozit_id" id="depozit_id" data-schimba="2">
                                                             <option value="0">-Alege depozit-</option>
@@ -81,7 +82,7 @@ $_smarty_tpl->tpl_vars['depozit']->_loop = true;
                                                         </select>
                                                     </td>
                                                 </tr>
-                                                <th style="text-align: center;vertical-align: middle;">Traseu:</th>
+                                                <th style="text-align: left;vertical-align: middle;">Traseu:</th>
                                                 <td style="text-align: left;">
                                                     <div id="lista_trasee">
                                                         <select name="traseu_id" id="traseu_id">
@@ -101,7 +102,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                                     </div>
                                                 </td>
                                                 <tr>
-                                                    <th style="vertical-align: middle;">Sofer</th>
+                                                    <th style="vertical-align: middle;text-align: left">Sofer</th>
                                                     <td>
                                                         <select name="sofer_id" id="sofer_id" data-schimba="2">
                                                             <option value="0">-Alege sofer-</option>
@@ -120,7 +121,7 @@ $_smarty_tpl->tpl_vars['sofer']->_loop = true;
                                                         </select>
                                                     </td>
                                                 <tr>
-                                                    <th style="vertical-align: middle;">Masina:</th>
+                                                    <th style="vertical-align: middle;text-align: left">Masina:</th>
                                                     <td>
                                                         <select name="masina_id" id="masina_id" data-schimba="2">
                                                             <option value="0">-Alege masina-</option>
@@ -141,13 +142,14 @@ $_smarty_tpl->tpl_vars['masina']->_loop = true;
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th style="vertical-align: middle;">Data:</th>
+                                                    <th style="vertical-align: middle;text-align: left;">Data:</th>
                                                     <td>
-                                                        <input type="date" name="data_intrare" />
+                                                        <input value="<?php echo $_smarty_tpl->tpl_vars['data_intrare']->value;?>
+" type="date" name="data_intrare" />
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>
+                                                    <th style="vertical-align: middle;text-align: left">
                                                         Import clienti
                                                     </th>
                                                     <td><input title="IMPORT CLIENTI ASIGNATI DE PE TRASEUL SELECTAT!!!" type="checkbox" checked="checked" name="import_clienti_trasee">

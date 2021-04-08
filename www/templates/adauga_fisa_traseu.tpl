@@ -21,7 +21,7 @@
                                             <table class="table table-bordered" style="width: 370px;">
                                                 <tr>
                                                 <tr>
-                                                    <th style="vertical-align: middle;">Depozit:</th>
+                                                    <th style="vertical-align: middle;text-align: left;">Depozit:</th>
                                                     <td>
                                                         <select name="depozit_id" id="depozit_id" data-schimba="2">
                                                             <option value="0">-Alege depozit-</option>
@@ -34,7 +34,7 @@
                                                         </select>
                                                     </td>
                                                 </tr>
-                                                <th style="text-align: center;vertical-align: middle;">Traseu:</th>
+                                                <th style="text-align: left;vertical-align: middle;">Traseu:</th>
                                                 <td style="text-align: left;">
                                                     <div id="lista_trasee">
                                                         <select name="traseu_id" id="traseu_id">
@@ -46,7 +46,7 @@
                                                     </div>
                                                 </td>
                                                 <tr>
-                                                    <th style="vertical-align: middle;">Sofer</th>
+                                                    <th style="vertical-align: middle;text-align: left">Sofer</th>
                                                     <td>
                                                         <select name="sofer_id" id="sofer_id" data-schimba="2">
                                                             <option value="0">-Alege sofer-</option>
@@ -59,7 +59,7 @@
                                                         </select>
                                                     </td>
                                                 <tr>
-                                                    <th style="vertical-align: middle;">Masina:</th>
+                                                    <th style="vertical-align: middle;text-align: left">Masina:</th>
                                                     <td>
                                                         <select name="masina_id" id="masina_id" data-schimba="2">
                                                             <option value="0">-Alege masina-</option>
@@ -73,13 +73,13 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th style="vertical-align: middle;">Data:</th>
+                                                    <th style="vertical-align: middle;text-align: left;">Data:</th>
                                                     <td>
-                                                        <input type="date" name="data_intrare" />
+                                                        <input value="{$data_intrare}" type="date" name="data_intrare" />
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>
+                                                    <th style="vertical-align: middle;text-align: left">
                                                         Import clienti
                                                     </th>
                                                     <td><input title="IMPORT CLIENTI ASIGNATI DE PE TRASEUL SELECTAT!!!" type="checkbox" checked="checked" name="import_clienti_trasee">

@@ -25,6 +25,8 @@ $smarty->assign('lista_depozite', $lista_depozite);
 
 if ($data_intrare == '' || $data_intrare == 0) {
     $data_intrare = date('Y-m-d');
+    $smarty->assign('data_intrare', $data_intrare);
+
 }
 
 $conditie = $depozit_id > 0 and $traseu_id > 0 and $masina_id > 0 and $sofer_id > 0;
