@@ -730,6 +730,34 @@ class Clienti
         return $ret;
     }
 
+    public static function getClientiPentruAsignatByDepozit($opts = array())
+    {
+        $stari = isset($opts['stari']) ? $opts['stari'] : array(1, 3);
+        $depozit_id = isset($opts['depozit_id']) ? $opts['depozit_id'] : 0;
+        $ret = array();
+
+        $filter_stari = count($stari) > 0 ? ' AND a.stare_id IN (' . join(', ', $stari) . ') ' : '';
+
+        $query = "SELECT
+        a.id, a.nume, d.nume as nume_localitate
+        FROM clienti as a   
+        LEFT JOIN localitati as d on a.localitate_id = d.id
+				LEFT JOIN asignari_clienti_trasee as e on a.id = e.client_id 
+				LEFT JOIN asignari_trasee_depozite as f on e.traseu_id = f.traseu_id 
+		WHERE a.sters = 0
+		" . $filter_stari . " 
+		AND f.depozit_id = '" . $depozit_id . "'
+		GROUP BY a.id
+		ORDER BY d.nume ASC
+		";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
     public static function getClienti($opts = array())
     {
         $depozit_id = isset($opts['depozit_id']) ? $opts['depozit_id'] : 0;

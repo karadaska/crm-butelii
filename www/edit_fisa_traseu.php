@@ -30,15 +30,17 @@ $smarty->assign('adaugat', 0);
 
 $data_start = getRequestParameter('data_start', '');
 $data_fisa = getRequestParameter('data_fisa', '');
-
-$fisa_id = Stocuri::getFisaGenerataById($id);
-$smarty->assign('fisa_id', $fisa_id);
+//
+//$fisa_id = Stocuri::getFisaGenerataById($id);
+//$smarty->assign('fisa_id', $fisa_id);
 
 $fisa_id = Fise::getDetaliiFisaDinEditFisaTraseu($id);
 $smarty->assign('fisa_id', $fisa_id);
 
 $traseu_id_by_fisa_generata = Trasee::getTraseuByFisaGenerataId($id);
 $smarty->assign('traseu_id_by_fisa_generata', $traseu_id_by_fisa_generata);
+
+$depozit_by_traseu_id = Depozite::getDepozitByTraseuId($traseu_id_by_fisa_generata['traseu_id']);
 
 $tip_produs_id = getRequestParameter('tip_produs_id', 0);
 $smarty->assign('tip_produs_id', $tip_produs_id);
@@ -61,8 +63,9 @@ $smarty->assign('lista_produse', $lista_produse);
 $plecare_marfa_by_traseu_id = Stocuri::getIncarcaturaMasinaPlecareByFisaId($id);
 $smarty->assign('plecare_marfa_by_traseu_id', $plecare_marfa_by_traseu_id);
 
-$lista_clienti = Clienti::getClientiPentruAsignat(array(
-    'stari' => array(1, 2, 3)
+$lista_clienti = Clienti::getClientiPentruAsignatByDepozit(array(
+    'stari' => array(1, 3),
+    'depozit_id'=>$depozit_by_traseu_id['depozit_id']
 ));
 $smarty->assign('lista_clienti', $lista_clienti);
 
