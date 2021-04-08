@@ -67,15 +67,16 @@ $lista_clienti = Clienti::getClientiPentruAsignatByDepozit(array(
     'stari' => array(1, 3),
     'depozit_id' => $depozit_by_traseu_id['depozit_id']
 ));
+
 $smarty->assign('lista_clienti', $lista_clienti);
 
 $lista_asignari_clienti_trasee = Clienti::getClientiByTraseuId($traseu_id_by_fisa_generata['traseu_id']);
 $smarty->assign('lista_asignari_clienti_trasee', $lista_asignari_clienti_trasee);
 
-$lista_clienti_asignati_la_fisa = Asignari::getAsignariClientiByFisaGenerataId($id, $traseu_id_by_fisa_generata['traseu_id']);
+$lista_clienti_asignati_la_fisa = Asignari::getAsignariClientiByFisaGenerataId($id, 30);
 $smarty->assign('lista_clienti_asignati_la_fisa', $lista_clienti_asignati_la_fisa);
 
-//pre($lista_clienti_asignati_la_fisa);
+pre($lista_clienti_asignati_la_fisa);
 $lista_masini = ParcAuto::getMasini(array(
     'stare_id' => $stare_masina
 ));
