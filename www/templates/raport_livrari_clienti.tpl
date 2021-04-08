@@ -87,7 +87,7 @@
                                             <td style="text-align: center;">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
-                                            <td>BG + AR</td>
+                                            <td style="text-align: center">BG + AR</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
@@ -192,9 +192,11 @@
                                             <th><abbr title="Total bucati BG 11"
                                                       style="color: red;">{$total_bg_11}</abbr></th>
                                             <th><abbr title="Total bucati AR 9"
-                                                                                   style="color: red;">{$total_ar_9}</abbr>
+                                                      style="color: red;">{$total_ar_9}</abbr>
                                             </th>
-                                            <th style="border-right:double;color: red;">{$total_bg_ar}</th>
+                                            <th style="border-right:double;"><abbr title="Total bucati BG + AR "
+                                                                                   style="color: red;">{$total_bg_ar}</abbr>
+                                            </th>
                                             <th>
                                                 <abbr title="Total valoare incasare BG 11"
                                                       style="color: red;">{$total_valoare_incasare_bg_11}</abbr>
