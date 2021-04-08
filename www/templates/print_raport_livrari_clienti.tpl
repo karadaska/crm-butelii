@@ -412,7 +412,7 @@
                 <th colspan="3" style="text-align: center;">BG/AR</th>
                 <th colspan="3" style="text-align: center;">PRET UNITAR</th>
                 <th colspan="3" style="text-align: center;">COMISION</th>
-                <th colspan="3" style="text-align: center;">TOTAL BUCATI</th>
+                <th colspan="4" style="text-align: center;">TOTAL BUCATI</th>
                 <th colspan="3" style="text-align: center;">TOTAL VAL. INCASATA</th>
                 <th colspan="3" style="text-align: center;">TOTAL COMISION</th>
                 <th colspan="3" style="text-align: center;">VALOARE BUCATI BG/AR</th>
@@ -428,10 +428,10 @@
                 <td style="text-align: center;">BG 11</td>
                 <td style="text-align: center;">AR 8</td>
                 <td style="text-align: center;">AR 9</td>
+                <td style="text-align: center;">BG +AR</td>
                 <td style="text-align: center">BG 11</td>
                 <td style="text-align: center">AR 8</td>
                 <td style="text-align: center">AR 9</td>
-
                 <td style="text-align: center">BG 11</td>
                 <td style="text-align: center">AR 8</td>
                 <td style="text-align: center">AR 9</td>
@@ -449,6 +449,7 @@
             {$total_bg_11 = 0}
             {$total_ar_8 = 0}
             {$total_ar_9 = 0}
+            {$total_bg_ar = 0}
             {$total_valoare_incasare_bg_11 = 0}
             {$total_valoare_incasare_ar_8 = 0}
             {$total_valoare_incasare_ar_9 = 0}
@@ -478,6 +479,7 @@
                     <td style="text-align: center">{($client['total_produse']['bg_11']['comision'] !='') ? $client['total_produse']['bg_11']['comision'] : '-'}</td>
                     <td style="text-align: center;">{($client['total_produse']['ar_8']['comision'] !='') ? $client['total_produse']['ar_8']['comision'] : '-' }</td>
                     <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['comision'] !='') ? $client['total_produse']['ar_9']['comision'] : '-'}</td>
+                    <td>asdsa</td>
                     <td style="text-align: center;">{($client['total_produse']['bg_11']['total_bg_11'] !='') ? $client['total_produse']['bg_11']['total_bg_11'] :'-'}</td>
                     <td style="text-align: center;">{($client['total_produse']['ar_8']['total_ar_8'] !='') ? $client['total_produse']['ar_8']['total_ar_8'] : '-'}</td>
                     <td style="text-align: center;border-right:double">{($client['total_produse']['ar_9']['total_ar_9'] !='') ? $client['total_produse']['ar_9']['total_ar_9']: '-'}</td>
