@@ -201,7 +201,7 @@ class Asignari
                   LEFT JOIN fise_generate as f on a.fisa_generata_id = f.id
                   WHERE a.fisa_generata_id = '" . $fisa_id . "'
                   AND a.sters = 0                  
-                  AND f.traseu_id = '" . $traseu_id . "'                 
+                  AND e.traseu_id = '" . $traseu_id . "'                 
                   GROUP BY b.id
                   ORDER BY e.ordine ASC
                   ";

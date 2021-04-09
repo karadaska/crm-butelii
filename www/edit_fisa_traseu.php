@@ -136,7 +136,6 @@ if (isset($_POST['modifica'])) {
 
     header('Location: /edit_fisa_traseu.php?id=' . $id);
 }
-
 //Asigneaza clienti la fisa traseu
 if ($adauga) {
     $clienti_de_asignat = $_POST['client_id'];

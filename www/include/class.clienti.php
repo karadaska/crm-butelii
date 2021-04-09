@@ -30,6 +30,22 @@ class Clienti
 //array_push($ret, $r);
 //}
 
+    public static function getOrdineByClientIdAndTraseuId($client_id, $traseu_id)
+    {
+        $ret = array();
+        $query = "SELECT ordine from ordine_clienti
+                WHERE client_id = '" . $client_id . "'
+                AND traseu_id = '" . $traseu_id . "'
+                AND sters = 0 
+                  ";
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return $ret;
+
+    }
 
     public static function seteazaRandamentClienti($traseu_id)
     {
@@ -170,7 +186,6 @@ class Clienti
             $query .= " AND a.perioada_id = " . $perioada_id;
         }
 
-        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
