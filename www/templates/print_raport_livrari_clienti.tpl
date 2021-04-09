@@ -80,8 +80,7 @@
     {$date_stop = str_replace('-"', '.', $org_date_stop)}
     {$newDateSop = date("d.m.Y", strtotime($date_stop))}
 
-    <table style="width: 1800px;">
-
+    <table style="width: 100%;">
         <tr>
             <td style="text-align: left;" class="span3">
                 <h2 style="text-align: center;">
@@ -95,7 +94,7 @@
         </tr>
     </table>
     {if $depozit_by_traseu['depozit_id'] == 1}
-        <table border="1">
+        <table border="1" style="width: 100%;">
             <thead>
             <tr>
                 <th style="text-align: center;" rowspan="2">#</th>
