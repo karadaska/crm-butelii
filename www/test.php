@@ -20,5 +20,5 @@ $data_stop = '2021-03-31';
 //    'perioada_id' => 4
 //));
 //$b = Calendar::getNumePerioadaById(1);
-//$b = Clienti::getOrdineByClientIdAndTraseuId(1913, 1);
+$b = Clienti::getOrdineByClientIdAndTraseuId(1332, 1);
 echo json_encode($b);

@@ -137,14 +137,16 @@ if (isset($_POST['modifica'])) {
     header('Location: /edit_fisa_traseu.php?id=' . $id);
 }
 //Asigneaza clienti la fisa traseu
+
 if ($adauga) {
     $clienti_de_asignat = $_POST['client_id'];
     $data_start = getRequestParameter('data_fisa', '');
 
-    foreach ($clienti_de_asignat as $txt) {
-        $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare)
+    foreach ($clienti_de_asignat as $client) {
+        $ordine_client = Clienti::getOrdineByClientIdAndTraseuId($client, $traseu_id_by_fisa_generata['traseu_id']);
+        $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare, ordine_client)
         values
-        ('" . $id . "','" . $txt . "','" . $data_start . "')";
+        ('" . $id . "','" . $client . "','" . $data_start . "','" . $ordine_client['ordine'] . "')";
 
         myExec($query);
     }
