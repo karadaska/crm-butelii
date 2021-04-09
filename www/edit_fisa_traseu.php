@@ -139,17 +139,17 @@ if (isset($_POST['modifica'])) {
 
 //Asigneaza clienti la fisa traseu
 if ($adauga) {
-    $client_id = getRequestParameter('client_id', '');
+    $clienti_de_asignat = $_POST['client_id'];
     $data_start = getRequestParameter('data_fisa', '');
 
-    if ($client_id > 0) {
+    foreach ($clienti_de_asignat as $txt) {
         $query = "INSERT INTO clienti_asignati_fise_generate(fisa_generata_id, client_id, data_intrare)
         values
-        ('" . $id . "','" . $client_id . "','" . $data_start . "')";
+        ('" . $id . "','" . $txt . "','" . $data_start . "')";
 
         myExec($query);
-        header('Location: /edit_fisa_traseu.php?id=' . $id);
     }
+    header('Location: /edit_fisa_traseu.php?id=' . $id);
 }
 
 //Adauga cantitate pleacare masina

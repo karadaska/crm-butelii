@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-08 12:38:45
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-09 10:06:32
          compiled from "/var/www/html/fofoweb/www/templates/edit_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:784229793602ce6e8234e61-17225753%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '830d7fe34912387ebf098932d2662a5987b3ed0a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_fisa_traseu.tpl',
-      1 => 1617861276,
+      1 => 1617951982,
       2 => 'file',
     ),
   ),
@@ -310,7 +310,7 @@ $_smarty_tpl->tpl_vars['marfa']->_loop = true;
                                         <tr>
                                             <th style="text-align: left" colspan="4">
                                                 <span style="font-weight: bold">Asigneaza client:</span>
-                                                <select name="client_id" id="client_id" style="width: 400px;"
+                                                <select name="client_id[]" multiple="multiple" style="width: 400px;"
                                                         data-schimba="2">
                                                     <option value="0">-Toti-</option>
                                                     <?php  $_smarty_tpl->tpl_vars['client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['client']->_loop = false;

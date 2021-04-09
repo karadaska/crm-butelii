@@ -192,7 +192,7 @@
                                         <tr>
                                             <th style="text-align: left" colspan="4">
                                                 <span style="font-weight: bold">Asigneaza client:</span>
-                                                <select name="client_id" id="client_id" style="width: 400px;"
+                                                <select name="client_id[]" multiple="multiple" style="width: 400px;"
                                                         data-schimba="2">
                                                     <option value="0">-Toti-</option>
                                                     {foreach from=$lista_clienti item=client}
