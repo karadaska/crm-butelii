@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-09 14:06:07
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-09 14:09:39
          compiled from "/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:45388571960350756c8e0e0-18599086%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '54218efd327dd6a2b646f028e9d16e12220b2820' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_raport_livrari_clienti.tpl',
-      1 => 1617966354,
+      1 => 1617966577,
       2 => 'file',
     ),
   ),
@@ -137,8 +137,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <?php $_smarty_tpl->tpl_vars['date_stop'] = new Smarty_variable(str_replace('-"','.',$_smarty_tpl->tpl_vars['org_date_stop']->value), null, 0);?>
     <?php $_smarty_tpl->tpl_vars['newDateSop'] = new Smarty_variable(date("d.m.Y",strtotime($_smarty_tpl->tpl_vars['date_stop']->value)), null, 0);?>
 
-    <table style="width: 1800px;">
-
+    <table style="width: 1500px;">
         <tr>
             <td style="text-align: left;" class="span3">
                 <h2 style="text-align: center;">

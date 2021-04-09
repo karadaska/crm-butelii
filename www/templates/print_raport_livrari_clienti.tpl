@@ -80,8 +80,7 @@
     {$date_stop = str_replace('-"', '.', $org_date_stop)}
     {$newDateSop = date("d.m.Y", strtotime($date_stop))}
 
-    <table style="width: 1800px;">
-
+    <table style="width: 1500px;">
         <tr>
             <td style="text-align: left;" class="span3">
                 <h2 style="text-align: center;">
