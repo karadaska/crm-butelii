@@ -56,13 +56,13 @@ foreach ($lista_clienti as $client) {
     $smarty->assign('randamentclientdinfisa_' . $client['client_id'], $randamentclientdinfisa);
 }
 
-foreach ($lista_clienti as $client) {
-    $randament = Clienti::getRandamentByClientIdDinRandamentClienti($client['client_id'], array(
-        'an' => $an,
-        'perioada_id' => $perioada_id
-    ));
-    $smarty->assign('randament_' . $client['client_id'], $randament);
-}
+//foreach ($lista_clienti as $client) {
+//    $randament = Clienti::getRandamentByClientIdDinRandamentClienti($client['client_id'], array(
+//        'an' => $an,
+//        'perioada_id' => $perioada_id
+//    ));
+//    $smarty->assign('randament_' . $client['client_id'], $randament);
+//}
 
 $smarty->display($template_page);
 

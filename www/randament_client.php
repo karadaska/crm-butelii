@@ -13,6 +13,9 @@ $smarty->assign('id', $id);
 
 $data_start = date('Y-m-d');
 
+$nume_client = Clienti::getNumeClientById($id);
+$smarty->assign('nume_client', $nume_client);
+
 $an = getRequestParameter('an', date('Y'));
 $smarty->assign('an', $an);
 

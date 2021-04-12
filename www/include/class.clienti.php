@@ -47,6 +47,23 @@ class Clienti
 
     }
 
+    public static function getNumeClientById($client_id)
+    {
+        $ret = array();
+        $query = "SELECT nume from clienti
+                WHERE id = '" . $client_id . "'
+                AND sters = 0 
+                  ";
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return $ret;
+
+    }
+
+
     public static function seteazaRandamentClienti($traseu_id)
     {
         $lista_clienti = Trasee::getAsignareClientiTraseuByClientid($traseu_id);

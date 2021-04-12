@@ -7,7 +7,7 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Randament clienti</h1>
+                    <h1><i class="icon20 i-menu-6"></i> Randament client: {$nume_client['nume']}</h1>
                 </div>
             </div>
             <div class="row-fluid span12">
