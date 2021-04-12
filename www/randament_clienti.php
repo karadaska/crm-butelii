@@ -39,7 +39,7 @@ $lista_ani = Calendar::getAni();
 $smarty->assign('lista_ani', $lista_ani);
 
 $conditie_update = '';
-if (($an >= 2021 || ($an == 2020 && $perioada_id >=11))) {
+if (($an >= 2021 || ($an == 2020 && $perioada_id >= 11))) {
     $conditie_update = "readonly";
     $smarty->assign('conditie_update', $conditie_update);
 }
@@ -49,20 +49,24 @@ if (isset($_POST['update'])) {
 }
 
 foreach ($lista_clienti as $client) {
-    $randamentclientdinfisa = Clienti::getRandamentByClientIdDinFise($client['client_id'], array(
-        'an' => $an,
-        'perioada_id' => $perioada_id
-    ));
-    $smarty->assign('randamentclientdinfisa_' . $client['client_id'], $randamentclientdinfisa);
+    if (($an >= 2021 || ($an == 2020 && $perioada_id >= 11))) {
+        $randamentclientdinfisa = Clienti::getRandamentByClientIdDinFise($client['client_id'], array(
+            'an' => $an,
+            'perioada_id' => $perioada_id
+        ));
+        $smarty->assign('randamentclientdinfisa_' . $client['client_id'], $randamentclientdinfisa);
+    } else {
+        foreach ($lista_clienti as $client2) {
+            $randament = Clienti::getRandamentByClientIdDinRandamentClienti($client2['client_id'], array(
+                'an' => $an,
+                'perioada_id' => $perioada_id
+            ));
+            $smarty->assign('randament_' . $client2['client_id'], $randament);
+        }
+    }
+
 }
 
-//foreach ($lista_clienti as $client) {
-//    $randament = Clienti::getRandamentByClientIdDinRandamentClienti($client['client_id'], array(
-//        'an' => $an,
-//        'perioada_id' => $perioada_id
-//    ));
-//    $smarty->assign('randament_' . $client['client_id'], $randament);
-//}
 
 $smarty->display($template_page);
 
