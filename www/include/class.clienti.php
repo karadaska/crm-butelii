@@ -134,16 +134,16 @@ class Clienti
     public static function getRandamentByClientIdDinFise($client_id, $opts = array())
     {
 
-        $an = isset($opts['an']) ? $opts['an'] : 0;
-        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
+        $an = isset($opts['an']) ? $opts['an'] : date('Y');
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
 
-        if ($an == 0) {
-            $an = date('Y');
-        }
-
-        if ($perioada_id == 0) {
-            $perioada_id = date('n');
-        }
+//        if ($an == 0) {
+//            $an = date('Y');
+//        }
+//
+//        if ($perioada_id == 0) {
+//            $perioada_id = date('n');
+//        }
 
         if ($perioada_id <= 9) {
             $perioada_id = '0' . $perioada_id;
@@ -152,7 +152,7 @@ class Clienti
         $ret = array();
 
         $query = "SELECT
-                    SUM( a.cantitate ) AS randament_client 
+                    SUM( a.cantitate ) AS randament_client
                 FROM
                     detalii_fisa_intoarcere_produse AS a 
                     LEFT JOIN fise_generate as b on a.fisa_id = b.id
@@ -167,9 +167,10 @@ class Clienti
 //        if ($perioada_id > 0) {
 //            $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
 //        }
-
+//        $randament = array();
         $result = myQuery($query);
         if ($result) {
+//            $ret['randament'] = 12;
             $ret = $result->fetch(PDO::FETCH_ASSOC);
         }
 

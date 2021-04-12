@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-06 11:07:39
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-12 15:15:26
          compiled from "/var/www/html/fofoweb/www/templates/randament_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:551758277605d8a60b93d06-29052548%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '99391cd228b81ab5dd6cc14e5f34218ca840363a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_clienti.tpl',
-      1 => 1617696457,
+      1 => 1618229724,
       2 => 'file',
     ),
   ),
@@ -33,6 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'client' => 0,
     'conditie_update' => 0,
     'valoare_randament' => 0,
+    'procent' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -155,8 +156,10 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                             <th>
                                                 <?php if (($_smarty_tpl->tpl_vars['randament'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['randament_client']!='')) {?>
                                                     <?php $_smarty_tpl->tpl_vars['valoare_randament'] = new Smarty_variable($_smarty_tpl->tpl_vars['randament'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['randament_client'], null, 0);?>
+                                                    <?php $_smarty_tpl->tpl_vars['procent'] = new Smarty_variable(($_smarty_tpl->tpl_vars['randament'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['randament_client']*100)/5, null, 0);?>
                                                 <?php } else { ?>
                                                     <?php $_smarty_tpl->tpl_vars['valoare_randament'] = new Smarty_variable($_smarty_tpl->tpl_vars['randamentclientdinfisa'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['randament_client'], null, 0);?>
+                                                    <?php $_smarty_tpl->tpl_vars['procent'] = new Smarty_variable(($_smarty_tpl->tpl_vars['randamentclientdinfisa'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['randament_client']*100)/5, null, 0);?>
                                                 <?php }?>
                                                 <input style="text-align: right" <?php echo $_smarty_tpl->tpl_vars['conditie_update']->value;?>
 
@@ -168,7 +171,8 @@ _<?php echo $_smarty_tpl->tpl_vars['client']->value['traseu_id'];?>
 ">
                                             </th>
                                             <th>
-                                                <?php echo number_format($_smarty_tpl->tpl_vars['randamentclientdinfisa'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['randament_client']/($_smarty_tpl->tpl_vars['randament'.(('_').($_smarty_tpl->tpl_vars['client']->value['client_id']))]->value['suma_target']*4),2);?>
+                                                
+                                                <?php echo $_smarty_tpl->tpl_vars['procent']->value;?>
  %
                                             </th>
                                         </tr>
@@ -176,7 +180,7 @@ _<?php echo $_smarty_tpl->tpl_vars['client']->value['traseu_id'];?>
                                     </tbody>
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit"
-                                        value="Actualizeaza clienti"
+                                       value="Actualizeaza clienti"
                                        class="btn btn-info" name="update">
                             </div>
                         </form>

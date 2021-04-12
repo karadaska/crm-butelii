@@ -83,8 +83,10 @@
                                             <th>
                                                 {if ($randament{'_'|cat:$client['client_id']}['randament_client'] !='')}
                                                     {$valoare_randament = $randament{'_'|cat:$client['client_id']}['randament_client']}
+                                                    {$procent = ($randament{'_'|cat:$client['client_id']}['randament_client'] * 100) / 5}
                                                 {else}
                                                     {$valoare_randament = $randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client']}
+                                                    {$procent = ($randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client'] * 100) / 5}
                                                 {/if}
                                                 <input style="text-align: right" {$conditie_update}
                                                        value="{$valoare_randament}"
@@ -92,14 +94,15 @@
                                                        name="randament_{$client['client_id']}_{$client['traseu_id']}">
                                             </th>
                                             <th>
-                                                {number_format($randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client'] / ($randament{'_'|cat:$client['client_id']}['suma_target'] * 4), 2)} %
+                                                {*{number_format($randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client'] / ($randament{'_'|cat:$client['client_id']}['suma_target'] * 4), 2)} %*}
+                                                {$procent} %
                                             </th>
                                         </tr>
                                     {/foreach}
                                     </tbody>
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit"
-                                        value="Actualizeaza clienti"
+                                       value="Actualizeaza clienti"
                                        class="btn btn-info" name="update">
                             </div>
                         </form>
