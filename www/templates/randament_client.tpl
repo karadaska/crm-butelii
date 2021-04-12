@@ -43,7 +43,7 @@
                                 {foreach from=$randament_client item=randament}
                                     <tr>
                                         <th style="text-align: center;">{$nr++}</th>
-                                        {assign var=luna value=Calendar::getNumePerioadaById($randament['perioada_id'])}
+                                        {assign var=luna value=Calendar::getNumePerioadaById($randament['luna_randament'])}
                                         <td>{$luna['nume']}</td>
                                         <td>{$randament['randament_lunar']}</td>
                                         <td>{number_format($randament['randament_lunar']/ ($randament['suma_target'] * 4), 2) } %</td>

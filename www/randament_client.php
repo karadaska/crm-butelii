@@ -22,9 +22,14 @@ $smarty->assign('lista_clienti', $lista_clienti);
 $target_client = Target::getSumaTargetClient($id);
 $smarty->assign('target_client', $target_client);
 
+//$randament_client = Fise::getRandamentAnualDinFiseByClientId($id, array(
+//    'an' => $an
+//));
+
 $randament_client = Fise::getRandamentAnualDinFiseByClientId($id, array(
     'an' => $an
 ));
+
 $smarty->assign('randament_client', $randament_client);
 
 $smarty->display($template_page);

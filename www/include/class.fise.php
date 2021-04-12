@@ -140,36 +140,32 @@ class Fise
         return $ret;
     }
 
-    public static function getRandamentAnualDinFiseByClientId($client_id, $opts = array())
-    {
-        $an = isset($opts['an']) ? $opts['an'] : 0;
-
-        if ($an == 0) {
-            $an = date('Y');
-        }
-
-        $ret = array();
-        $query = "SELECT an, perioada_id, SUM(randament ) AS randament_lunar, suma_target 
-                FROM randament_clienti 
-                WHERE client_id = '" . $client_id . "'
-                AND an = '" . $an . "'
-                GROUP BY perioada_id ASC                  
-               ";
-
-        $result = myQuery($query);
-        if ($result) {
-            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
-        }
-        return $ret;
-    }
-
-    public static function getRandamentAnualDinFiseByClientId2($client_id, $opts = array())
-    {
-        $an = isset($opts['an']) ? $opts['an'] : date('Y');
-
+//    public static function getRandamentAnualDinFiseByClientId($client_id, $opts = array())
+//    {
+//        $an = isset($opts['an']) ? $opts['an'] : 0;
+//
 //        if ($an == 0) {
 //            $an = date('Y');
 //        }
+//
+//        $ret = array();
+//        $query = "SELECT an, perioada_id, SUM(randament ) AS randament_lunar, suma_target
+//                FROM randament_clienti
+//                WHERE client_id = '" . $client_id . "'
+//                AND an = '" . $an . "'
+//                GROUP BY perioada_id ASC
+//               ";
+//
+//        $result = myQuery($query);
+//        if ($result) {
+//            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+//        }
+//        return $ret;
+//    }
+
+    public static function getRandamentAnualDinFiseByClientId($client_id, $opts = array())
+    {
+        $an = isset($opts['an']) ? $opts['an'] : date('Y');
 
         $ret = array();
         $query = "SELECT
@@ -178,7 +174,7 @@ class Fise
                     date_format(a.data_intrare,'%m') AS luna_randament,
                     SUM(a.cantitate) as randament_lunar
                 FROM
-                    randament_clienti AS a
+                    detalii_fisa_intoarcere_produse AS a
                     WHERE	a.client_id = '" . $client_id . "'
                ";
 
