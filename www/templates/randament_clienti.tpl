@@ -81,7 +81,7 @@
                                             <th style="text-align: left;"> {strtoupper($client['nume_client'])}</th>
                                             <th style="text-align: center;"> {$client['telefon']}</th>
                                             <th>
-                                                {if ($randament{'_'|cat:$client['client_id']}['randament_client'] !='')}
+                                                {if ($randament{'_'|cat:$client['client_id']}['randament_client'] > 0)}
                                                     {$valoare_randament = $randament{'_'|cat:$client['client_id']}['randament_client']}
                                                     {$procent = ($randament{'_'|cat:$client['client_id']}['randament_client'] * 100) / 5}
                                                 {else}
@@ -89,7 +89,7 @@
                                                     {$procent = ($randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client'] * 100) / 5}
                                                 {/if}
                                                 <input style="text-align: right" {$conditie_update}
-                                                       value="{$valoare_randament}"
+                                                       value="{($valoare_randament > 0) ? $valoare_randament : 0}"
                                                        type="text" autocomplete="off"
                                                        name="randament_{$client['client_id']}_{$client['traseu_id']}">
                                             </th>
