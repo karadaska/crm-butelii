@@ -6,14 +6,17 @@ class Fise
     public static function AdaugaProduseExtraFisa($fisa_id, $client_id)
     {
         $tip_produs_id = getRequestParameter('tip_produs_id', '');
+        $stare_produs = getRequestParameter('stare_produs', '');
+        $cantitate = getRequestParameter('cantitate', '');
 
-        if($tip_produs_id > 0){
-          $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate)
+        if ($tip_produs_id > 0) {
+            $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate)
                      values
-                    ('" . $fisa_id . "','" . $client_id['traseu_id'] . "',
-                    '" . $tip_produs_id . "','" . $cantitate . "','" . $stare_produs . "','" . $data_intrare . "')";
-          myExec(query);
-      }
+                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $stare_produs . "','" . $cantitate . "')";
+            myExec($query);
+        }
+
+        header('Location: /adauga_produse_extra_fisa.php?id=' . $fisa_id . '&client_id=' .$client_id);
 
     }
 

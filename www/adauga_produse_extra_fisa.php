@@ -6,6 +6,7 @@ $smarty->assign('name', 'Adauga produse extra la fisa');
 $template_page = "adauga_produse_extra_fisa.tpl";
 
 $adauga = getRequestParameter('adauga_extra', '');
+
 $id = getRequestParameter('id', 0);
 $smarty->assign('id', $id);
 
