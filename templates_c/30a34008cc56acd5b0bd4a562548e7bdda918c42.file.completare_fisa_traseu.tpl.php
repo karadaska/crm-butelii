@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-01 10:33:02
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 13:03:33
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1617262381,
+      1 => 1618308209,
       2 => 'file',
     ),
   ),
@@ -580,6 +580,13 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                                                 <?php }?>
                                                             <?php } ?>
                                                         </select>
+                                                        <a style="float: right;margin-right: 5px;" target="_blank"
+                                                           href="adauga_produse_extra_fisa.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
+&client_id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+"
+                                                           title="Adauga produse extra la client">
+                                                            <i class="i-box"></i>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                                 <tr>
