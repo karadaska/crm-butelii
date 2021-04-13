@@ -35,5 +35,5 @@ if ($adauga) {
 $produse_extra = Fise::getProduseExtraByFisaIdAndClientId($id, $client_id);
 $smarty->assign('produse_extra', $produse_extra);
 
-pre($produse_extra);
+//pre($produse_extra);
 $smarty->display($template_page);

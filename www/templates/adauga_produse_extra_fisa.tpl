@@ -82,15 +82,17 @@
                                     <table class="table table-bordered" style="width: 350px;margin-top: 10px;">
                                         <tr>
                                             <th>Produs</th>
-                                            <th>Stare</th>
-                                            <th>Cantitate</th>
+                                            <th>Pline</th>
+                                            <th>Goale</th>
+                                            <th>Defecte</th>
                                         </tr>
                                         {foreach from=$produse_extra item=produs}
-                                        <tr>
-                                            <td>{$produs['tip']}</td>
-                                            <td style="text-align: center;">{$produs['stare_produs']}</td>
-                                            <td style="text-align: center;">{$produs['cantitate']}</td>
-                                        </tr>
+                                            <tr>
+                                                <td>{$produs['nume_produs']}</td>
+                                                <td style="text-align: center;">{$produs['pline']}</td>
+                                                <td style="text-align: center;">{$produs['goale']}</td>
+                                                <td style="text-align: center;">{$produs['defecte']}</td>
+                                            </tr>
                                         {/foreach}
                                     </table>
                                 {/if}

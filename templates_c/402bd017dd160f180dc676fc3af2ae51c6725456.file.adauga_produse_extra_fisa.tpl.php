@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 14:48:26
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 15:10:15
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618314505,
+      1 => 1618315813,
       2 => 'file',
     ),
   ),
@@ -138,22 +138,25 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                     <table class="table table-bordered" style="width: 350px;margin-top: 10px;">
                                         <tr>
                                             <th>Produs</th>
-                                            <th>Stare</th>
-                                            <th>Cantitate</th>
+                                            <th>Pline</th>
+                                            <th>Goale</th>
+                                            <th>Defecte</th>
                                         </tr>
                                         <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['produse_extra']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['produs']->key => $_smarty_tpl->tpl_vars['produs']->value) {
 $_smarty_tpl->tpl_vars['produs']->_loop = true;
 ?>
-                                        <tr>
-                                            <td><?php echo $_smarty_tpl->tpl_vars['produs']->value['tip'];?>
+                                            <tr>
+                                                <td><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
 </td>
-                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['stare_produs'];?>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['pline'];?>
 </td>
-                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['cantitate'];?>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['goale'];?>
 </td>
-                                        </tr>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['defecte'];?>
+</td>
+                                            </tr>
                                         <?php } ?>
                                     </table>
                                 <?php }?>
