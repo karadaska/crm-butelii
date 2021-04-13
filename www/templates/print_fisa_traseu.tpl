@@ -218,11 +218,11 @@
             {$total_bg_11_unitar = $total_bg_11_unitar + $client['realizat']['1']['cantitate'] * ($client['realizat']['1']['pret'] - $client['realizat']['1']['comision'])}
 
             {$total_ar_8 = $total_ar_8 + $client['realizat']['3']['cantitate']}
-            {$total_ar_8_comision = $total_ar_8_comision + $client['realizat']['3']['cantitate'] * $client['target']['3']['comision']}
+            {$total_ar_8_comision = $total_ar_8_comision + $client['realizat']['3']['cantitate'] * $client['realizat']['3']['comision']}
             {$total_ar_8_unitar = $total_ar_8_unitar + $client['realizat']['3']['cantitate'] * ($client['realizat']['3']['pret'] - $client['realizat']['3']['comision'])}
 
             {$total_ar_9 = $total_ar_9 + $client['realizat']['4']['cantitate']}
-            {$total_ar_9_comision = $total_ar_9_comision + ($client['realizat']['4']['cantitate'] *  $client['target']['4']['comision'])}
+            {$total_ar_9_comision = $total_ar_9_comision + ($client['realizat']['4']['cantitate'] *  $client['realizat']['4']['comision'])}
             {$total_ar_9_unitar = $total_ar_9_unitar + $client['realizat']['4']['cantitate'] * ($client['realizat']['4']['pret'] - $client['realizat']['4']['comision'])}
         {/foreach}
         <tr style="background-color: lemonchiffon;">
