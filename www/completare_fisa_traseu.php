@@ -28,7 +28,6 @@ $nota_explicativa = getRequestParameter('nota_explicativa', '');
 $valoare_alimentare = getRequestParameter('valoare_alimentare', '');
 $adauga_miscari_fisa = getRequestParameter('adauga_miscari_fisa', '');
 
-
 $adauga_extra_contract = getRequestParameter('adauga_cantitate_extra', '');
 $cantitate_extra = getRequestParameter('cantitate_extra', '');
 $pret_extra = getRequestParameter('pret_extra', '');

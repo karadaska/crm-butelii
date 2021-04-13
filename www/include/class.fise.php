@@ -5,7 +5,7 @@ class Fise
     public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
     {
         $ret = array();
-        $query = "SELECT  a.tip_produs_id, b.tip, c.nume as stare_produs, a.cantitate
+        $query = "SELECT a.tip_produs_id, b.tip, c.nume as stare, a.cantitate, a.stare_produs
                   FROM detalii_fisa_extra_intoarcere_produse as a
                   LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
                   LEFT JOIN stare_produs as c on a.stare_produs = c.id
@@ -18,9 +18,24 @@ class Fise
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-                $ret[$item['tip_produs_id']] = $item;
+                if (!isset($ret[$item['tip_produs_id']])) {
+                    $ret[$item['tip_produs_id']] = array(
+                        'nume_produs' => $item['tip'],
+                        'tip_produs_id' => $item['tip_produs_id'],
+                        'cantitate' => $item['cantitate'],
+                        'pline' => 0,
+                        'goale' => 0,
+                        'defecte' => 0
+                    );
+                }
+                if ($item['stare_produs'] == 1) {
+                    $ret[$item['tip_produs_id']]['pline'] += $item['cantitate'];
+                } else if ($item['stare_produs'] == 2) {
+                    $ret[$item['tip_produs_id']]['goale'] += $item['cantitate'];
+                } else if ($item['stare_produs'] == 3) {
+                    $ret[$item['tip_produs_id']]['defecte'] += $item['cantitate'];
+                }
             }
-
         }
         return $ret;
     }

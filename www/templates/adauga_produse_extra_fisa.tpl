@@ -61,14 +61,15 @@
                                             <th style="text-align: left;vertical-align: middle;width: 120px;">
                                                 Cantitate:
                                             </th>
-                                            <td><input style="width: 100%" type="text" name="cantitate" placeholder="cantitate"
+                                            <td><input style="width: 100%" type="text" name="cantitate"
+                                                       placeholder="cantitate"
                                                        autocomplete="off"
                                                        value="">
                                             </td>
                                         </tr>
                                         <tr>
                                             <th></th>
-                                            <th>
+                                            <th style="text-align: right;">
                                                 <button type="submit" name="adauga_extra" value="adauga"
                                                         class="btn btn-primary">
                                                     Adauga
@@ -77,6 +78,22 @@
                                         </tr>
                                     </table>
                                 </form>
+                                {if count($produse_extra) > 0}
+                                    <table class="table table-bordered" style="width: 350px;margin-top: 10px;">
+                                        <tr>
+                                            <th>Produs</th>
+                                            <th>Stare</th>
+                                            <th>Cantitate</th>
+                                        </tr>
+                                        {foreach from=$produse_extra item=produs}
+                                        <tr>
+                                            <td>{$produs['tip']}</td>
+                                            <td style="text-align: center;">{$produs['stare_produs']}</td>
+                                            <td style="text-align: center;">{$produs['cantitate']}</td>
+                                        </tr>
+                                        {/foreach}
+                                    </table>
+                                {/if}
                             </div>
                         </div>
                     </div>
