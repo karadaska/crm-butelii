@@ -24,7 +24,7 @@ $smarty->assign('lista_stari_produse', $lista_stari_produse);
 $lista_tip_stoc = Produse::getTipProdus();
 $smarty->assign('lista_tip_stoc', $lista_tip_stoc);
 
-//if ($adauga) {
-//
-//}
+if ($adauga) {
+
+}
 $smarty->display($template_page);
