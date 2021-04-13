@@ -31,4 +31,8 @@ $smarty->assign('lista_tip_stoc', $lista_tip_stoc);
 if ($adauga) {
     Fise::AdaugaProduseExtraFisa($id, $client_id);
 }
+
+$produse_extra = Fise::getProduseExtraByFisaIdAndClientId($id, $client_id);
+
+pre($produse_extra);
 $smarty->display($template_page);

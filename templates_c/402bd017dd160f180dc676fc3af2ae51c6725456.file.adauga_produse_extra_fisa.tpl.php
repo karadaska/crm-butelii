@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 14:07:48
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 14:22:15
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618312067,
+      1 => 1618312934,
       2 => 'file',
     ),
   ),
@@ -47,8 +47,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <h1><i class="icon20 i-plus-circle-2"></i> Adauga Produse extra la clientul: <?php echo $_smarty_tpl->tpl_vars['nume_client']->value['nume'];?>
 
                     </h1>
-                    <a href="stoc.php">
-                        <button class="btn btn-mini btn-warning">Inapoi TO DO</button>
+                    <a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+">
+                        <button class="btn btn-mini btn-warning">Inapoi</button>
                     </a>
                 </div>
                 <div class="row-fluid">

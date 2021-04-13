@@ -9,8 +9,8 @@
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-plus-circle-2"></i> Adauga Produse extra la clientul: {$nume_client['nume']}
                     </h1>
-                    <a href="stoc.php">
-                        <button class="btn btn-mini btn-warning">Inapoi TO DO</button>
+                    <a href="completare_fisa_traseu.php?id={$id}">
+                        <button class="btn btn-mini btn-warning">Inapoi</button>
                     </a>
                 </div>
                 <div class="row-fluid">

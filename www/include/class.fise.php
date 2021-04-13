@@ -2,6 +2,29 @@
 
 class Fise
 {
+    public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
+    {
+        $ret = array();
+        $query = "SELECT  a.tip_produs_id, b.tip, c.nume as stare_produs, a.cantitate
+                  FROM detalii_fisa_extra_intoarcere_produse as a
+                  LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                  LEFT JOIN stare_produs as c on a.stare_produs = c.id
+                  WHERE a.fisa_id = '" . $fisa_id . "'
+                  AND a.client_id = '" . $client_id . "'
+                  AND a.sters = 0
+                  ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['tip_produs_id']] = $item;
+            }
+
+        }
+        return $ret;
+    }
+
     public static function AdaugaProduseExtraFisa($fisa_id, $client_id)
     {
         $tip_produs_id = getRequestParameter('tip_produs_id', '');
