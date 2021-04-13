@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 13:19:27
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 14:07:48
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618309123,
+      1 => 1618312067,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'nume_client' => 0,
     'id' => 0,
     'client_id' => 0,
-    'adaugat' => 0,
     'lista_tip_stoc' => 0,
     'tip' => 0,
     'lista_stari_produse' => 0,
@@ -57,7 +56,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <div class="widget">
                             <div class="widget-title">
                                 <div class="icon"><i class="icon20 i-user"></i></div>
-                                <h4>Detalii</h4>
+                                <h4>Produse Extra</h4>
                             </div>
                             <div class="widget-content">
                                 <form class="form-horizontal"
@@ -65,60 +64,71 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 &client_id=<?php echo $_smarty_tpl->tpl_vars['client_id']->value;?>
 "
                                       method="post">
-                                    <input type="hidden" name="adaugat" value="<?php echo $_smarty_tpl->tpl_vars['adaugat']->value;?>
-" id="adaugat"/>
-                                    <label class="control-label" for="tip_produs_id">Tip Produs:</label>
-                                    <div class="controls controls-row">
-                                        <select name="tip_produs_id" style="width: 200px;"
-                                                data-schimba="2">
-                                            <option value="0">--</option>
-                                            <?php  $_smarty_tpl->tpl_vars['tip'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['tip']->_loop = false;
+                                    <table class="table table-bordered" style="width: 350px;">
+                                        <tr>
+                                            <th style="text-align: left;vertical-align: middle;width: 120px;">Tip
+                                                produs:
+                                            </th>
+                                            <td style="text-align: left;vertical-align: middle;">
+                                                <select name="tip_produs_id" data-schimba="2">
+                                                    <option value="0">--</option>
+                                                    <?php  $_smarty_tpl->tpl_vars['tip'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['tip']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_tip_stoc']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['tip']->key => $_smarty_tpl->tpl_vars['tip']->value) {
 $_smarty_tpl->tpl_vars['tip']->_loop = true;
 ?>
-                                                <option value=<?php echo $_smarty_tpl->tpl_vars['tip']->value['id'];?>
+                                                        <option value=<?php echo $_smarty_tpl->tpl_vars['tip']->value['id'];?>
 
-                                                        <?php if ($_smarty_tpl->tpl_vars['tip']->value['produs_tip_id']==$_smarty_tpl->tpl_vars['tip']->value['id']) {?>selected="selected"<?php }?>>
-                                                    <?php echo $_smarty_tpl->tpl_vars['tip']->value['tip'];?>
+                                                                <?php if ($_smarty_tpl->tpl_vars['tip']->value['produs_tip_id']==$_smarty_tpl->tpl_vars['tip']->value['id']) {?>selected="selected"<?php }?>>
+                                                            <?php echo $_smarty_tpl->tpl_vars['tip']->value['tip'];?>
 
-                                                </option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-                                    <label class="control-label" for="tip_produs_id">Stare Produs:</label>
-                                    <div class="controls controls-row">
-                                        <select name="stare_produs">
-                                            <?php  $_smarty_tpl->tpl_vars['stare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['stare']->_loop = false;
+                                                        </option>
+                                                    <?php } ?>
+                                                </select></td>
+                                        </tr>
+                                        <tr>
+                                            <th style="text-align: left;vertical-align: middle;width: 120px;">Stare
+                                                Produs:
+                                            </th>
+                                            <td>
+                                                <select name="stare_produs">
+                                                    <?php  $_smarty_tpl->tpl_vars['stare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['stare']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_stari_produse']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['stare']->key => $_smarty_tpl->tpl_vars['stare']->value) {
 $_smarty_tpl->tpl_vars['stare']->_loop = true;
 ?>
-                                                <?php if (($_smarty_tpl->tpl_vars['stare']->value['id']!=4)) {?>
-                                                    <option value=<?php echo $_smarty_tpl->tpl_vars['stare']->value['id'];?>
+                                                        <?php if (($_smarty_tpl->tpl_vars['stare']->value['id']!=4)) {?>
+                                                            <option value=<?php echo $_smarty_tpl->tpl_vars['stare']->value['id'];?>
 
-                                                            <?php if ($_smarty_tpl->tpl_vars['stare']->value['id']==$_smarty_tpl->tpl_vars['stare_produs']->value['id']) {?> selected=<?php echo $_smarty_tpl->tpl_vars['stare']->value['id'];?>
+                                                                    <?php if ($_smarty_tpl->tpl_vars['stare']->value['id']==$_smarty_tpl->tpl_vars['stare_produs']->value['id']) {?> selected=<?php echo $_smarty_tpl->tpl_vars['stare']->value['id'];?>
 <?php }?>>
-                                                        <?php echo $_smarty_tpl->tpl_vars['stare']->value['nume'];?>
+                                                                <?php echo $_smarty_tpl->tpl_vars['stare']->value['nume'];?>
 
-                                                    </option>
-                                                <?php }?>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-                                    <label class="control-label" for="cantitate">Cantitate:</label>
-                                    <div class="controls controls-row">
-                                        <input class="span2" type="text" name="cantitate" placeholder="cantitate"
-                                               autocomplete="off"
-                                               value="">
-                                        <label class="error" style="display: inline-block" for="cantitate"></label>
-                                    </div>
-                                    <div class="form-actions">
-                                        <button type="submit" name="adauga_extra" value="adauga"
-                                                class="btn btn-primary">
-                                            Adauga
-                                        </button>
-                                    </div>
+                                                            </option>
+                                                        <?php }?>
+                                                    <?php } ?>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="text-align: left;vertical-align: middle;width: 120px;">
+                                                Cantitate:
+                                            </th>
+                                            <td><input style="width: 100%" type="text" name="cantitate" placeholder="cantitate"
+                                                       autocomplete="off"
+                                                       value="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th></th>
+                                            <th>
+                                                <button type="submit" name="adauga_extra" value="adauga"
+                                                        class="btn btn-primary">
+                                                    Adauga
+                                                </button>
+                                            </th>
+                                        </tr>
+                                    </table>
                                 </form>
                             </div>
                         </div>
