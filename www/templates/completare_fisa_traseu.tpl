@@ -424,11 +424,13 @@
                                                                 {/if}
                                                             {/foreach}
                                                         </select>
-                                                        <a style="float: right;margin-right: 5px;" target="_blank"
-                                                           href="adauga_produse_extra_fisa.php?id={$fisa['id']}&client_id={$client['client_id']}"
-                                                           title="Adauga produse extra la client">
-                                                            <i class="i-flag-5"></i>
-                                                        </a>
+                                                        {if ($produse_extra)}
+                                                            <a style="float: right;margin-right: 5px;" target="_blank"
+                                                               href="adauga_produse_extra_fisa.php?id={$fisa['id']}&client_id={$client['client_id']}"
+                                                               title="Adauga produse extra la client">
+                                                                <i class="i-flag-5"></i>
+                                                            </a>
+                                                        {/if}
                                                     </td>
                                                 </tr>
                                                 <tr>

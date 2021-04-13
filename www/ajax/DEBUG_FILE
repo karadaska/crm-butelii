@@ -324,3 +324,5 @@
 2021-02-09 15:11:51 | 10.0.128.15 | uid:   1 | insert into `logs` (tip,user_id,data) values (1,'1','2021-02-09 15:11:51');
 2021-02-09 21:22:50 | 10.0.128.15 | uid:   1 | SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dinobaby_crm.logs' doesn't exist
 2021-02-09 21:22:50 | 10.0.128.15 | uid:   1 | insert into `logs` (tip,user_id,data) values (1,'1','2021-02-09 21:22:50');
+2021-04-13 21:29:47 | 10.0.128.15 | uid:   1 | SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dinobaby_crm.logs' doesn't exist
+2021-04-13 21:29:47 | 10.0.128.15 | uid:   1 | insert into `logs` (tip,user_id,data) values (1,'1','2021-04-13 21:29:47');

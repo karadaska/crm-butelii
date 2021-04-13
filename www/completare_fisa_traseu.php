@@ -97,6 +97,12 @@ $smarty->assign('extract_data_fisa', $extract_data_fisa);
 $luna_curenta = date('n');
 $smarty->assign('luna_curenta', $luna_curenta);
 
+foreach ($lista_asignari_clienti_by_fisa_generata as $client) {
+    $produse_extra = Fise::getProduseExtraByFisaIdAndClientId($client['fisa_generata_id'], $client['client_id']);
+    if (count($produse_extra) > 0){
+        $smarty->assign('produse_extra', $produse_extra);
+    }
+}
 
 $to_add = array();
 $to_add_obs = array();
