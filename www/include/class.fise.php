@@ -2,6 +2,21 @@
 
 class Fise
 {
+
+    public static function AdaugaProduseExtraFisa($fisa_id, $client_id)
+    {
+        $tip_produs_id = getRequestParameter('tip_produs_id', '');
+
+        if($tip_produs_id > 0){
+          $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate)
+                     values
+                    ('" . $fisa_id . "','" . $client_id['traseu_id'] . "',
+                    '" . $tip_produs_id . "','" . $cantitate . "','" . $stare_produs . "','" . $data_intrare . "')";
+          myExec(query);
+      }
+
+    }
+
     public static function getObservatieSecundaraDinFisaTraseuByClientIdAndFisaId($client_id, $fisa_id)
     {
         $ret = array();

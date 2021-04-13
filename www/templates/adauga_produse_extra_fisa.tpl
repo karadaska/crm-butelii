@@ -21,7 +21,8 @@
                                 <h4>Detalii</h4>
                             </div>
                             <div class="widget-content">
-                                <form class="form-horizontal" action="/adauga_produse_extra_fisa.php"
+                                <form class="form-horizontal"
+                                      action="/adauga_produse_extra_fisa.php?id={$id}&client_id={$client_id}"
                                       method="post">
                                     <input type="hidden" name="adaugat" value="{$adaugat}" id="adaugat"/>
                                     <label class="control-label" for="tip_produs_id">Tip Produs:</label>

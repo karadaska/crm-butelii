@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 13:06:03
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 13:19:27
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618308362,
+      1 => 1618309123,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'title' => 0,
     'nume_client' => 0,
+    'id' => 0,
+    'client_id' => 0,
     'adaugat' => 0,
     'lista_tip_stoc' => 0,
     'tip' => 0,
@@ -58,7 +60,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 <h4>Detalii</h4>
                             </div>
                             <div class="widget-content">
-                                <form class="form-horizontal" action="/adauga_produse_extra_fisa.php"
+                                <form class="form-horizontal"
+                                      action="/adauga_produse_extra_fisa.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+&client_id=<?php echo $_smarty_tpl->tpl_vars['client_id']->value;?>
+"
                                       method="post">
                                     <input type="hidden" name="adaugat" value="<?php echo $_smarty_tpl->tpl_vars['adaugat']->value;?>
 " id="adaugat"/>

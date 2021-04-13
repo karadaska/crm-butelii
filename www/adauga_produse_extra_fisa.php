@@ -5,9 +5,12 @@ require_once 'etc/config.php';
 $smarty->assign('name', 'Adauga produse extra la fisa');
 $template_page = "adauga_produse_extra_fisa.tpl";
 
-$adauga = getRequestParameter('adauga', '');
+$adauga = getRequestParameter('adauga_extra', '');
 $id = getRequestParameter('id', 0);
+$smarty->assign('id', $id);
+
 $client_id = getRequestParameter('client_id', 0);
+$smarty->assign('client_id', $client_id);
 
 $nume_client = Clienti::getNumeClientById($id);
 $smarty->assign('nume_client', $nume_client);
@@ -25,6 +28,6 @@ $lista_tip_stoc = Produse::getTipProdus();
 $smarty->assign('lista_tip_stoc', $lista_tip_stoc);
 
 if ($adauga) {
-
+    Fise::AdaugaProduseExtraFisa($id, $client_id);
 }
 $smarty->display($template_page);
