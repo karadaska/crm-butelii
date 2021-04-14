@@ -5,10 +5,11 @@ class Fise
     public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
     {
         $ret = array();
-        $query = "SELECT a.tip_produs_id, b.tip, c.nume as stare, a.cantitate, a.stare_produs
+        $query = "SELECT a.tip_produs_id, b.tip, c.nume as stare, a.cantitate, a.stare_produs, d.nume as nume_client
                   FROM detalii_fisa_extra_intoarcere_produse as a
                   LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
                   LEFT JOIN stare_produs as c on a.stare_produs = c.id
+                  LEFT JOIN clienti as d on a.client_id = d.id
                   WHERE a.fisa_id = '" . $fisa_id . "'
                   AND a.client_id = '" . $client_id . "'
                   AND a.sters = 0
@@ -20,9 +21,9 @@ class Fise
             foreach ($a as $item) {
                 if (!isset($ret[$item['tip_produs_id']])) {
                     $ret[$item['tip_produs_id']] = array(
+                        'nume_client' => $item['nume_client'],
                         'nume_produs' => $item['tip'],
                         'tip_produs_id' => $item['tip_produs_id'],
-                        'cantitate' => $item['cantitate'],
                         'pline' => 0,
                         'goale' => 0,
                         'defecte' => 0

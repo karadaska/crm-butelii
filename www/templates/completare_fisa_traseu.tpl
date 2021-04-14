@@ -424,13 +424,11 @@
                                                                 {/if}
                                                             {/foreach}
                                                         </select>
-                                                        {if ($produse_extra)}
-                                                            <a style="float: right;margin-right: 5px;" target="_blank"
-                                                               href="adauga_produse_extra_fisa.php?id={$fisa['id']}&client_id={$client['client_id']}"
-                                                               title="Adauga produse extra la client">
-                                                                <i class="i-flag-5"></i>
-                                                            </a>
-                                                        {/if}
+                                                        <a style="float: right;margin-right: 5px;" target="_blank"
+                                                           href="adauga_produse_extra_fisa.php?id={$fisa['id']}&client_id={$client['client_id']}"
+                                                           title="Adauga produse extra la client">
+                                                            <i class="i-flag-5"></i>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -465,6 +463,7 @@
                                                     <th hidden>Pret contract</th>
                                                 </tr>
                                                 {foreach from=$client['target'] item = target_client}
+                                                    {assign var=produse_extra value=Fise::getProduseExtraByFisaIdAndClientId($fisa['id'],$client['client_id'])}
                                                     {*{foreach from=$fisa['incarcatura_masina_plecare'] item = target_client}*}
                                                     {$realizat_produs = $client['realizat'][$target_client['tip_produs_id']]}
                                                     <tr>
@@ -682,6 +681,24 @@
                             </div>
                         {/if}
                     </div>
+                    <table class="table table-bordered" style="width: 560px;">
+                        <tr>
+                            <th>CLIENT</th>
+                            <th>PRODUS</th>
+                            <th>PLINE</th>
+                            <th>DEFECTE</th>
+                            <th>GOALE</th>
+                        </tr>
+                        {foreach from=$produse_extra item=produs}
+                            <tr>
+                                <td>{$produs['pline']}</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                            </tr>
+                        {/foreach}
+                    </table>
                     <div style="margin-top: 100px;"></div>
                 </div>
             </div>
@@ -692,22 +709,3 @@
 <script src="js/pagini/completare_fisa_traseu.js"></script>
 <script src="../css/custom.css"></script>
 
-
-{*<table class="table table-bordered" style="width: 500px;">*}
-{*<tr>*}
-{*<th>Client</th>*}
-{*<th><select>*}
-{*<option>Produs</option>*}
-{*/select></th>*}
-{*<th><input type="text" name="pret_extra" autocomplete="off"></th>*}
-{*<th><input type="text" name="cantitate_extra" autocomplete="off"></th>*}
-{*<th>*}
-{*<button type="submit" name="adauga_cantitate_extra" value="adauga"*}
-{*class="btn btn-primary" style="float: right">*}
-{*Adauga cantitate extra*}
-{*</button>*}
-{*</th>*}
-{*</tr>*}
-{*</table>*}
-{*</form>*}
-{*{/if}*}
