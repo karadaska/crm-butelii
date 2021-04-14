@@ -68,6 +68,16 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <th style="text-align: left;vertical-align: middle;width: 120px;">
+                                                Pret:
+                                            </th>
+                                            <td><input style="width: 100%" type="text" name="pret"
+                                                       placeholder="pret"
+                                                       autocomplete="off"
+                                                       value="">
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <th></th>
                                             <th style="text-align: right;">
                                                 <button type="submit" name="adauga_extra" value="adauga"
@@ -85,6 +95,7 @@
                                             <th>Pline</th>
                                             <th>Goale</th>
                                             <th>Defecte</th>
+                                            <th>Pret</th>
                                         </tr>
                                         {foreach from=$produse_extra item=produs}
                                             <tr>
@@ -92,6 +103,7 @@
                                                 <td style="text-align: center;">{$produs['pline']}</td>
                                                 <td style="text-align: center;">{$produs['goale']}</td>
                                                 <td style="text-align: center;">{$produs['defecte']}</td>
+                                                <td style="text-align: center;">{$produs['pret']}</td>
                                             </tr>
                                         {/foreach}
                                     </table>

@@ -19,6 +19,9 @@ $smarty->assign('nume_client', $nume_client);
 $tip_produs_id = getRequestParameter('tip_produs_id', 0);
 $cantitate = getRequestParameter('cantitate', 0);
 
+$pret = getRequestParameter('pret', 0);
+$pret = getRequestParameter('pret', 0);
+
 $stare_produs = getRequestParameter('stare_produs', 1);
 $smarty->assign('stare_produs', $stare_produs);
 

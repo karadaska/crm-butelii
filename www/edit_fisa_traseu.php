@@ -184,6 +184,9 @@ if (isset($_POST['sterge_fisa'])) {
     $sterge_detalii_fisa_intoarcere_produse = "UPDATE detalii_fisa_intoarcere_produse set sters = 1 where fisa_id='" . $id . "'";
     myExec($sterge_detalii_fisa_intoarcere_produse);
 
+    $sterge_detalii_fisa_extra_intoarcere_produse = "UPDATE detalii_fisa_extra_intoarcere_produse set sters = 1 where fisa_id='" . $id . "'";
+    myExec($sterge_detalii_fisa_extra_intoarcere_produse);
+
     header('Location: /fisa_traseu.php');
 }
 

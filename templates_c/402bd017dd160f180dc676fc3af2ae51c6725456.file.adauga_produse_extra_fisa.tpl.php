@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-14 12:46:31
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-14 13:35:43
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618393588,
+      1 => 1618396542,
       2 => 'file',
     ),
   ),
@@ -124,6 +124,16 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                             </td>
                                         </tr>
                                         <tr>
+                                            <th style="text-align: left;vertical-align: middle;width: 120px;">
+                                                Pret:
+                                            </th>
+                                            <td><input style="width: 100%" type="text" name="pret"
+                                                       placeholder="pret"
+                                                       autocomplete="off"
+                                                       value="">
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <th></th>
                                             <th style="text-align: right;">
                                                 <button type="submit" name="adauga_extra" value="adauga"
@@ -141,6 +151,7 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                             <th>Pline</th>
                                             <th>Goale</th>
                                             <th>Defecte</th>
+                                            <th>Pret</th>
                                         </tr>
                                         <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['produse_extra']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -155,6 +166,8 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['goale'];?>
 </td>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['defecte'];?>
+</td>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['pret'];?>
 </td>
                                             </tr>
                                         <?php } ?>
