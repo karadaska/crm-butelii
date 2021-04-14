@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 22:37:45
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-14 09:13:04
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1618342663,
+      1 => 1618380783,
       2 => 'file',
     ),
   ),
@@ -581,13 +581,18 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                                                 <?php }?>
                                                             <?php } ?>
                                                         </select>
-                                                        <a style="float: right;margin-right: 5px;" target="_blank"
-                                                           href="adauga_produse_extra_fisa.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
+                                                        <div style="float: right">
+                                                            <a style="float: right;margin-right: 5px;"
+                                                               target="_blank"
+                                                               href="adauga_produse_extra_fisa.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>
 &client_id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 "
-                                                           title="Adauga produse extra la client">
-                                                            <i class="i-flag-5"></i>
-                                                        </a>
+                                                               title="Adauga produse extra la client">
+                                                                <button class="btn btn-mini btn-success">
+                                                                    Adauga extra
+                                                                </button>
+                                                            </a>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -627,7 +632,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['target_client']->key => $_smarty_tpl-
 $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 ?>
                                                     <?php $_smarty_tpl->tpl_vars['produse_extra'] = new Smarty_variable(Fise::getProduseExtraByFisaIdAndClientId($_smarty_tpl->tpl_vars['fisa']->value['id'],$_smarty_tpl->tpl_vars['client']->value['client_id']), null, 0);?>
-
                                                     
                                                     <?php $_smarty_tpl->tpl_vars['realizat_produs'] = new Smarty_variable($_smarty_tpl->tpl_vars['client']->value['realizat'][$_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id']], null, 0);?>
                                                     <tr>
