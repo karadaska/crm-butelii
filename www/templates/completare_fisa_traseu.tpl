@@ -424,6 +424,7 @@
                                                                 {/if}
                                                             {/foreach}
                                                         </select>
+                                                        <button onclick="window.location.href='/page2'">Continue</button>
                                                         {assign var=produse_extra value=Fise::getProduseExtraByFisaIdAndClientId($fisa['id'], $client['client_id'])}
                                                         {if count($produse_extra) > 0}
                                                             <div style="float: right">
