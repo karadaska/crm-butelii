@@ -69,6 +69,7 @@
                                             <th style="text-align: center;" rowspan="2">NR. AUTO</th>
                                             <th style="text-align: center;" rowspan="2">TRASEU</th>
                                             <th style="text-align: center;" rowspan="2">KM PARCURSI</th>
+                                            <th style="text-align: center;" rowspan="2">DATA</th>
                                             <th style="text-align: center;" colspan="2">TOTAL PRODUSE</th>
                                             {foreach from = $livrari_masini['produse_masina'] item= produse}
                                                 <th colspan="2" style="border: double;">{$produse['nume_produs']}</th>
@@ -95,6 +96,9 @@
                                                 <td style="text-align: center;">{$livrare['numar']}</td>
                                                 <td>{$livrare['nume_traseu']}</td>
                                                 <td style="text-align: right;">{($livrare['km']['km_traseu'] > 0) ? $livrare['km']['km_traseu'] : '-'}</td>
+                                                <td>
+
+                                                </td>
                                                 <td style="text-align: right">
                                                     {$total_livrare = $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] }
                                                     {($total_livrare > 0) ? $total_livrare : '-'}
