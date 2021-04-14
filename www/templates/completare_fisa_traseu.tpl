@@ -429,7 +429,7 @@
                                                             <div style="float: right">
                                                                 <a style="float: right;margin-right: 5px;"
                                                                    target="_blank"
-                                                                   href="adauga_produse_extra_fisa.php?id={$fisa['id']}&client_id={$client['client_id']}"
+                                                                   href="adauga_produse_extra_fisa.php?id={$fisa['id']}&id={$client['client_id']}"
                                                                    title="Adauga produse extra la client">
                                                                     <button class="btn btn-mini btn-success">
                                                                         Edit extra
@@ -440,7 +440,7 @@
                                                             <div style="float: right">
                                                                 <a style="float: right;margin-right: 5px;"
                                                                    target="_blank"
-                                                                   href="adauga_produse_extra_fisa.php?id={$fisa['id']}&client_id={$client['client_id']}"
+                                                                   href="adauga_produse_extra_fisa.php?id={$fisa['id']}&id={$client['client_id']}"
                                                                    title="Adauga produse extra la client">
                                                                     <button class="btn btn-mini btn-primary">
                                                                         Add extra
