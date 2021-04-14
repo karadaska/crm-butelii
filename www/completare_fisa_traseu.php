@@ -97,10 +97,10 @@ $smarty->assign('extract_data_fisa', $extract_data_fisa);
 $luna_curenta = date('n');
 $smarty->assign('luna_curenta', $luna_curenta);
 
-foreach ($lista_asignari_clienti_by_fisa_generata as $client) {
-    $produse_extra = Fise::getProduseExtraByFisaIdAndClientId($id, $client['client_id']);
-    $smarty->assign('produse_extra', $produse_extra);
-}
+//foreach ($lista_asignari_clienti_by_fisa_generata as $client) {
+//    $produse_extra = Fise::getProduseExtraByFisaIdAndClientId($id, $client['client_id']);
+//    $smarty->assign('produse_extra', $produse_extra);
+//}
 
 $to_add = array();
 $to_add_obs = array();

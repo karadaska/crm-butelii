@@ -424,16 +424,30 @@
                                                                 {/if}
                                                             {/foreach}
                                                         </select>
-                                                        <div style="float: right">
-                                                            <a style="float: right;margin-right: 5px;"
-                                                               target="_blank"
-                                                               href="adauga_produse_extra_fisa.php?id={$fisa['id']}&client_id={$client['client_id']}"
-                                                               title="Adauga produse extra la client">
-                                                                <button class="btn btn-mini btn-success">
-                                                                    Adauga extra
-                                                                </button>
-                                                            </a>
-                                                        </div>
+                                                        {assign var=produse_extra value=Fise::getProduseExtraByFisaIdAndClientId($fisa['id'], $client['client_id'])}
+                                                        {if count($produse_extra) > 0}
+                                                            <div style="float: right">
+                                                                <a style="float: right;margin-right: 5px;"
+                                                                   target="_blank"
+                                                                   href="adauga_produse_extra_fisa.php?id={$fisa['id']}&client_id={$client['client_id']}"
+                                                                   title="Adauga produse extra la client">
+                                                                    <button class="btn btn-mini btn-success">
+                                                                        Edit extra
+                                                                    </button>
+                                                                </a>
+                                                            </div>
+                                                        {else}
+                                                            <div style="float: right">
+                                                                <a style="float: right;margin-right: 5px;"
+                                                                   target="_blank"
+                                                                   href="adauga_produse_extra_fisa.php?id={$fisa['id']}&client_id={$client['client_id']}"
+                                                                   title="Adauga produse extra la client">
+                                                                    <button class="btn btn-mini btn-primary">
+                                                                        Add extra
+                                                                    </button>
+                                                                </a>
+                                                            </div>
+                                                        {/if}
                                                     </td>
                                                 </tr>
                                                 <tr>
