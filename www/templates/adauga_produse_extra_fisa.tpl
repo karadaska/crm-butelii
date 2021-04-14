@@ -9,7 +9,7 @@
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-plus-circle-2"></i> Adauga Produse extra la clientul: {$nume_client['nume']}
                     </h1>
-                    <a href="completare_fisa_traseu.php?fisa_id={$id}&id={$client['client_id']}">
+                    <a href="completare_fisa_traseu.php?id={$fisa_id}">
                         <button class="btn btn-mini btn-warning">Inapoi</button>
                     </a>
                 </div>
@@ -22,7 +22,7 @@
                             </div>
                             <div class="widget-content">
                                 <form class="form-horizontal"
-                                      action="/adauga_produse_extra_fisa.php?id={$id}&client_id={$client_id}"
+                                      action="/adauga_produse_extra_fisa.php?fisa_id={$fisa_id}&id_client={$client_id}"
                                       method="post">
                                     <table class="table table-bordered" style="width: 350px;">
                                         <tr>

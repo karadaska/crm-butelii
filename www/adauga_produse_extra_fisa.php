@@ -7,13 +7,13 @@ $template_page = "adauga_produse_extra_fisa.tpl";
 
 $adauga = getRequestParameter('adauga_extra', '');
 
-$id = getRequestParameter('id', 0);
-$smarty->assign('id', $id);
+$fisa_id = getRequestParameter('fisa_id', 0);
+$smarty->assign('fisa_id', $fisa_id);
 
-$client_id = getRequestParameter('client_id', 0);
+$client_id = getRequestParameter('id_client', 0);
 $smarty->assign('client_id', $client_id);
 
-$nume_client = Clienti::getNumeClientById($id);
+$nume_client = Clienti::getNumeClientById($client_id);
 $smarty->assign('nume_client', $nume_client);
 
 $tip_produs_id = getRequestParameter('tip_produs_id', 0);

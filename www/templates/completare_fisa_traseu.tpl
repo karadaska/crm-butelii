@@ -427,11 +427,11 @@
                                                             {assign var=produse_extra value=Fise::getProduseExtraByFisaIdAndClientId($fisa['id'], $client['client_id'])}
                                                         {if count($produse_extra) > 0}
                                                             <div style="float: right">
-                                                                <a target="_blank" class="btn btn-success btn-mini" href="adauga_produse_extra_fisa.php?fisa_id={$fisa['id']}&id={$client['client_id']}">Edit extra</a>
+                                                                <a target="_blank" class="btn btn-success btn-mini" href="adauga_produse_extra_fisa.php?fisa_id={$fisa['id']}&id_client={$client['client_id']}">Edit extra</a>
                                                             </div>
                                                         {else}
                                                             <div style="float: right">
-                                                                <a target="_blank" class="btn btn-primary btn-mini" href="adauga_produse_extra_fisa.php?fisa_id={$fisa['id']}&id={$client['client_id']}">Add extra</a>
+                                                                <a target="_blank" class="btn btn-primary btn-mini" href="adauga_produse_extra_fisa.php?fisa_id={$fisa['id']}&id_client={$client['client_id']}">Add extra</a>
                                                             </div>
                                                         {/if}
                                                     </td>

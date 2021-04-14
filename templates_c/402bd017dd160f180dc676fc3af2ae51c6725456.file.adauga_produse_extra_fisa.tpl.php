@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-13 15:10:15
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-14 12:46:31
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618315813,
+      1 => 1618393588,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'title' => 0,
     'nume_client' => 0,
-    'id' => 0,
+    'fisa_id' => 0,
     'client_id' => 0,
     'lista_tip_stoc' => 0,
     'tip' => 0,
@@ -49,7 +49,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <h1><i class="icon20 i-plus-circle-2"></i> Adauga Produse extra la clientul: <?php echo $_smarty_tpl->tpl_vars['nume_client']->value['nume'];?>
 
                     </h1>
-                    <a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+                    <a href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa_id']->value;?>
 ">
                         <button class="btn btn-mini btn-warning">Inapoi</button>
                     </a>
@@ -63,8 +63,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             </div>
                             <div class="widget-content">
                                 <form class="form-horizontal"
-                                      action="/adauga_produse_extra_fisa.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
-&client_id=<?php echo $_smarty_tpl->tpl_vars['client_id']->value;?>
+                                      action="/adauga_produse_extra_fisa.php?fisa_id=<?php echo $_smarty_tpl->tpl_vars['fisa_id']->value;?>
+&id_client=<?php echo $_smarty_tpl->tpl_vars['client_id']->value;?>
 "
                                       method="post">
                                     <table class="table table-bordered" style="width: 350px;">

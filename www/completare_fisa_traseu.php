@@ -77,6 +77,10 @@ $smarty->assign('traseu_by_fisa_generata_id', $traseu_by_fisa_generata_id);
 $fisa = Stocuri::getFisaGenerataById($id);
 $smarty->assign('fisa', $fisa);
 
+$client = 1231;
+$smarty->assign('client', $client);
+
+
 $get_tip_alimentare = ParcAuto::getTipALimentare();
 $smarty->assign('get_tip_alimentare', $get_tip_alimentare);
 
