@@ -29,10 +29,10 @@ $lista_tip_stoc = Produse::getTipProdus();
 $smarty->assign('lista_tip_stoc', $lista_tip_stoc);
 
 if ($adauga) {
-    Fise::AdaugaProduseExtraFisa($id, $client_id);
+    Fise::AdaugaProduseExtraFisa($fisa_id, $client_id);
 }
 
-$produse_extra = Fise::getProduseExtraByFisaIdAndClientId($id, $client_id);
+$produse_extra = Fise::getProduseExtraByFisaIdAndClientId($fisa_id, $client_id);
 $smarty->assign('produse_extra', $produse_extra);
 
 //pre($produse_extra);

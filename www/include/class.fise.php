@@ -75,7 +75,7 @@ class Fise
             myExec($query);
         }
 
-        header('Location: /adauga_produse_extra_fisa.php?id=' . $fisa_id . '&client_id=' . $client_id);
+        header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
 
     }
 
