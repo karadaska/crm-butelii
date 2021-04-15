@@ -124,6 +124,7 @@
                                             <th colspan="3" style="text-align: right;"></th>
                                             <th style="text-align: right;">TOTAL:</th>
                                             <th style="text-align: right;color: red;vertical-align: middle;">{($grand_total_km > 0) ? $grand_total_km :'-'}</th>
+                                            <td></td>
                                             <th style="text-align: right;color: red;vertical-align: middle;">{($grand_cantitati > 0) ? $grand_cantitati : '-'}</th>
                                             <th style="text-align: right;color: red;vertical-align: middle;">{($grand_valoare > 0) ? $grand_valoare : '-'}</th>
                                             {foreach from = $livrari_masini['produse_masina'] item= produse}
