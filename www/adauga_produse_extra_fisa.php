@@ -6,6 +6,8 @@ $smarty->assign('name', 'Adauga produse extra la fisa');
 $template_page = "adauga_produse_extra_fisa.tpl";
 
 $adauga = getRequestParameter('adauga_extra', '');
+$update = getRequestParameter('update', '');
+$sterge = getRequestParameter('sterge', '');
 
 $fisa_id = getRequestParameter('fisa_id', 0);
 $smarty->assign('fisa_id', $fisa_id);
@@ -34,6 +36,10 @@ $smarty->assign('lista_tip_stoc', $lista_tip_stoc);
 if ($adauga) {
     Fise::AdaugaProduseExtraFisa($fisa_id, $client_id);
 }
+
+//if ($update) {
+//    debug('am facut update');
+//}
 
 $produse_extra = Fise::getProduseExtraByFisaIdAndClientId($fisa_id, $client_id);
 $smarty->assign('produse_extra', $produse_extra);

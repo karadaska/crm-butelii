@@ -88,26 +88,48 @@
                                         </tr>
                                     </table>
                                 </form>
-                                {if count($produse_extra) > 0}
-                                    <table class="table table-bordered" style="width: 350px;margin-top: 10px;">
-                                        <tr>
-                                            <th>Produs</th>
-                                            <th>Pline</th>
-                                            <th>Goale</th>
-                                            <th>Defecte</th>
-                                            <th>Pret</th>
-                                        </tr>
-                                        {foreach from=$produse_extra item=produs}
+                                    {if count($produse_extra) > 0}
+                                        <table class="table table-bordered" style="margin-top: 10px;width: 600px;">
                                             <tr>
-                                                <td>{$produs['nume_produs']}</td>
-                                                <td style="text-align: center;">{$produs['pline']}</td>
-                                                <td style="text-align: center;">{$produs['goale']}</td>
-                                                <td style="text-align: center;">{$produs['defecte']}</td>
-                                                <td style="text-align: center;">{$produs['pret']}</td>
+                                                <th class="span2">Produs</th>
+                                                <th class="span1">Pline</th>
+                                                <th class="span1">Goale</th>
+                                                <th class="span1">Defecte</th>
+                                                <th class="span1">Pret</th>
+                                                <th class="span1"></th>
                                             </tr>
-                                        {/foreach}
-                                    </table>
-                                {/if}
+                                            {foreach from=$produse_extra item=produs}
+                                                <tr>
+                                                    <td>{$produs['nume_produs']}</td>
+                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                                                           type="text" name="pline"
+                                                                                           value="{$produs['pline']}">
+                                                    </td>
+                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                                                           type="text" name="goale"
+                                                                                           value="{$produs['goale']}">
+                                                    </td>
+                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                                                           type="text" name="defecte"
+                                                                                           value="{$produs['defecte']}">
+                                                    </td>
+                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                                                           type="text" name="pret"
+                                                                                           value="{$produs['pret']}">
+                                                    </td>
+                                                    <td>
+                                                        <button type="submit" class="btn btn-mini btn-primary"
+                                                                name="update">Update
+                                                        </button>
+                                                        <button type="submit" class="btn btn-mini btn-danger"
+                                                                name="sterge" style="margin-top: 10px;">Sterge
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            {/foreach}
+                                        </table>
+                                    {/if}
+                                </form>
                             </div>
                         </div>
                     </div>

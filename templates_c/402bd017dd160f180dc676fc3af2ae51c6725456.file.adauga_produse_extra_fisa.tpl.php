@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-14 13:35:43
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-16 17:20:15
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618396542,
+      1 => 1618582813,
       2 => 'file',
     ),
   ),
@@ -144,35 +144,57 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                         </tr>
                                     </table>
                                 </form>
-                                <?php if (count($_smarty_tpl->tpl_vars['produse_extra']->value)>0) {?>
-                                    <table class="table table-bordered" style="width: 350px;margin-top: 10px;">
-                                        <tr>
-                                            <th>Produs</th>
-                                            <th>Pline</th>
-                                            <th>Goale</th>
-                                            <th>Defecte</th>
-                                            <th>Pret</th>
-                                        </tr>
-                                        <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
+                                    <?php if (count($_smarty_tpl->tpl_vars['produse_extra']->value)>0) {?>
+                                        <table class="table table-bordered" style="margin-top: 10px;width: 600px;">
+                                            <tr>
+                                                <th class="span2">Produs</th>
+                                                <th class="span1">Pline</th>
+                                                <th class="span1">Goale</th>
+                                                <th class="span1">Defecte</th>
+                                                <th class="span1">Pret</th>
+                                                <th class="span1"></th>
+                                            </tr>
+                                            <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['produse_extra']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['produs']->key => $_smarty_tpl->tpl_vars['produs']->value) {
 $_smarty_tpl->tpl_vars['produs']->_loop = true;
 ?>
-                                            <tr>
-                                                <td><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
+                                                <tr>
+                                                    <td><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
 </td>
-                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['pline'];?>
-</td>
-                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['goale'];?>
-</td>
-                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['defecte'];?>
-</td>
-                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produs']->value['pret'];?>
-</td>
-                                            </tr>
-                                        <?php } ?>
-                                    </table>
-                                <?php }?>
+                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                                                           type="text" name="pline"
+                                                                                           value="<?php echo $_smarty_tpl->tpl_vars['produs']->value['pline'];?>
+">
+                                                    </td>
+                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                                                           type="text" name="goale"
+                                                                                           value="<?php echo $_smarty_tpl->tpl_vars['produs']->value['goale'];?>
+">
+                                                    </td>
+                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                                                           type="text" name="defecte"
+                                                                                           value="<?php echo $_smarty_tpl->tpl_vars['produs']->value['defecte'];?>
+">
+                                                    </td>
+                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                                                           type="text" name="pret"
+                                                                                           value="<?php echo $_smarty_tpl->tpl_vars['produs']->value['pret'];?>
+">
+                                                    </td>
+                                                    <td>
+                                                        <button type="submit" class="btn btn-mini btn-primary"
+                                                                name="update">Update
+                                                        </button>
+                                                        <button type="submit" class="btn btn-mini btn-danger"
+                                                                name="sterge" style="margin-top: 10px;">Sterge
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </table>
+                                    <?php }?>
+                                </form>
                             </div>
                         </div>
                     </div>
