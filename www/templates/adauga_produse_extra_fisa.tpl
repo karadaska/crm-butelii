@@ -86,7 +86,7 @@
                                                         <img title="edit" src="../images/edit.png">
                                                     </a>
                                                 </td>
-                                                <td>{$produs['1']['nume_produs']}</td>
+                                                <td>{$produse_extra[$produs['tip_produs_id']]['nume_produs']}</td>
                                                 <td style="text-align: center;">
                                                     {$produs['cantitate']}
                                                 </td>

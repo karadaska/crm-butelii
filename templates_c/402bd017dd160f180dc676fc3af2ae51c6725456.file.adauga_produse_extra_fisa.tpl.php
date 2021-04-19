@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:32:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:43:53
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618831935,
+      1 => 1618832632,
       2 => 'file',
     ),
   ),
@@ -139,7 +139,7 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
                                                         <img title="edit" src="../images/edit.png">
                                                     </a>
                                                 </td>
-                                                <td><?php echo $_smarty_tpl->tpl_vars['produs']->value['1']['nume_produs'];?>
+                                                <td><?php echo $_smarty_tpl->tpl_vars['produse_extra']->value[$_smarty_tpl->tpl_vars['produs']->value['tip_produs_id']]['nume_produs'];?>
 </td>
                                                 <td style="text-align: center;">
                                                     <?php echo $_smarty_tpl->tpl_vars['produs']->value['cantitate'];?>
