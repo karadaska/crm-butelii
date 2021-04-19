@@ -91,45 +91,42 @@
                                     {if count($produse_extra) > 0}
                                         <table class="table table-bordered" style="margin-top: 10px;width: 600px;">
                                             <tr>
+                                                <th class="span1" style="text-align: center;">#</th>
                                                 <th class="span2">Produs</th>
                                                 <th class="span1">Pline</th>
                                                 <th class="span1">Goale</th>
                                                 <th class="span1">Defecte</th>
                                                 <th class="span1">Pret</th>
-                                                <th class="span1"></th>
                                             </tr>
                                             {foreach from=$produse_extra item=produs}
                                                 <tr>
+                                                    <td style="text-align: center;">
+                                                        <a href="edit_produse_extra.php?id={$produs['tip_produs_id']}">
+                                                            <img title="edit" src="../images/edit.png">
+                                                        </a>
+                                                    </td>
                                                     <td>{$produs['nume_produs']}</td>
-                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                    <td style="text-align: center;">
+                                                        <input style="width: 80px;text-align: right;"
                                                                                            type="text" name="pline"
                                                                                            value="{$produs['pline']}">
                                                     </td>
-                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                    <td style="text-align: center;"><input style="width: 80px;text-align: right;"
                                                                                            type="text" name="goale"
                                                                                            value="{$produs['goale']}">
                                                     </td>
-                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                    <td style="text-align: center;"><input style="width: 80px;text-align: right;"
                                                                                            type="text" name="defecte"
                                                                                            value="{$produs['defecte']}">
                                                     </td>
-                                                    <td style="text-align: center;"><input style="width: 80px;"
+                                                    <td style="text-align: center;"><input style="width: 80px;text-align: right;"
                                                                                            type="text" name="pret"
                                                                                            value="{$produs['pret']}">
-                                                    </td>
-                                                    <td>
-                                                        <button type="submit" class="btn btn-mini btn-primary"
-                                                                name="update">Update
-                                                        </button>
-                                                        <button type="submit" class="btn btn-mini btn-danger"
-                                                                name="sterge" style="margin-top: 10px;">Sterge
-                                                        </button>
                                                     </td>
                                                 </tr>
                                             {/foreach}
                                         </table>
                                     {/if}
-                                </form>
                             </div>
                         </div>
                     </div>

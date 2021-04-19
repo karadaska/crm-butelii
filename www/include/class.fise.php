@@ -66,16 +66,18 @@ class Fise
                 myExec($query);
             }
         } else {
-            $query = "UPDATE detalii_fisa_extra_intoarcere_produse 
-                      SET cantitate = '" . $cantitate . "'
-                      WHERE fisa_id =   '" . $fisa_id . "'
-                      AND client_id =   '" . $client_id . "'
-                      AND tip_produs_id =   '" . $tip_produs_id . "'
-                      AND stare_produs =   '" . $stare_produs . "'
-                      AND pret =   '" . $pret . "'
-                      AND sters = 0
-            ";
-            myExec($query);
+            header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
+
+//            $query = "UPDATE detalii_fisa_extra_intoarcere_produse
+//                      SET cantitate = '" . $cantitate . "'
+//                      WHERE fisa_id =   '" . $fisa_id . "'
+//                      AND client_id =   '" . $client_id . "'
+//                      AND tip_produs_id =   '" . $tip_produs_id . "'
+//                      AND stare_produs =   '" . $stare_produs . "'
+//                      AND pret =   '" . $pret . "'
+//                      AND sters = 0
+//            ";
+//            myExec($query);
         }
 
         header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
