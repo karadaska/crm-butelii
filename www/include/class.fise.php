@@ -86,6 +86,7 @@ class Fise
 
     public static function GetProdusExtraByClientIdAndFisa($tip_produs_id, $stare_produs, $client_id, $fisa_id)
     {
+        $ret = array();
 
         $query = "SELECT b.tip, c.nume, a.cantitate, a.pret
                 FROM
@@ -94,12 +95,17 @@ class Fise
                     LEFT JOIN stare_produs as c on a.stare_produs = c.id
                 WHERE
                     a.tip_produs_id = '" . $tip_produs_id . "'
-                    AND a.stare_produs = '" . $stare_produs . "' 
+                     AND a.stare_produs = '" . $stare_produs . "'
                     AND a.client_id = '" . $client_id . "' 
                     AND a.fisa_id = '" . $fisa_id . "'
                     AND a.sters = 0
                   ";
         $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
 
         header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
 

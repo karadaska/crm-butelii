@@ -11,7 +11,8 @@ $template = 'edit_produs_extra.tpl';
 
 $modifica = getRequestParameter('modifica', '');
 
-$id = getRequestParameter('id', 0);
+$client_id = getRequestParameter('client_id', 0);
+$fisa_id = getRequestParameter('fisa_id', 0);
 $tip_produs_id = getRequestParameter('tip_produs_id', 0);
 $stare_produs = getRequestParameter('stare_produs', 0);
 $pret_produs = getRequestParameter('pret_produs', 0);
@@ -25,7 +26,7 @@ $smarty->assign('produs_extra', $produs_extra);
 
 if ($modifica) {
 
-        header('Location: /edit_produs_extra.php?id=' . $id);
+    header('Location: /edit_produs_extra.php?id=' . $id);
 }
 
 $smarty->display($template);
