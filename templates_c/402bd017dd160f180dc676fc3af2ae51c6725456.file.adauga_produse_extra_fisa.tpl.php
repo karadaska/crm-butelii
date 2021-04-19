@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 10:56:56
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:11:12
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618818819,
+      1 => 1618830670,
       2 => 'file',
     ),
   ),
@@ -25,9 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'client_id' => 0,
     'lista_tip_stoc' => 0,
     'tip' => 0,
-    'lista_stari_produse' => 0,
-    'stare' => 0,
-    'stare_produs' => 0,
     'produse_extra' => 0,
     'produs' => 0,
     'totaltime' => 0,
@@ -90,30 +87,6 @@ $_smarty_tpl->tpl_vars['tip']->_loop = true;
                                                 </select></td>
                                         </tr>
                                         <tr>
-                                            <th style="text-align: left;vertical-align: middle;width: 120px;">Stare
-                                                Produs:
-                                            </th>
-                                            <td>
-                                                <select name="stare_produs">
-                                                    <?php  $_smarty_tpl->tpl_vars['stare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['stare']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['lista_stari_produse']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['stare']->key => $_smarty_tpl->tpl_vars['stare']->value) {
-$_smarty_tpl->tpl_vars['stare']->_loop = true;
-?>
-                                                        <?php if (($_smarty_tpl->tpl_vars['stare']->value['id']!=4)) {?>
-                                                            <option value=<?php echo $_smarty_tpl->tpl_vars['stare']->value['id'];?>
-
-                                                                    <?php if ($_smarty_tpl->tpl_vars['stare']->value['id']==$_smarty_tpl->tpl_vars['stare_produs']->value['id']) {?> selected=<?php echo $_smarty_tpl->tpl_vars['stare']->value['id'];?>
-<?php }?>>
-                                                                <?php echo $_smarty_tpl->tpl_vars['stare']->value['nume'];?>
-
-                                                            </option>
-                                                        <?php }?>
-                                                    <?php } ?>
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
                                             <th style="text-align: left;vertical-align: middle;width: 120px;">
                                                 Cantitate:
                                             </th>
@@ -144,55 +117,42 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                         </tr>
                                     </table>
                                 </form>
-                                    <?php if (count($_smarty_tpl->tpl_vars['produse_extra']->value)>0) {?>
-                                        <table class="table table-bordered" style="margin-top: 10px;width: 600px;">
-                                            <tr>
-                                                <th class="span1" style="text-align: center;">#</th>
-                                                <th class="span2">Produs</th>
-                                                <th class="span1">Pline</th>
-                                                <th class="span1">Goale</th>
-                                                <th class="span1">Defecte</th>
-                                                <th class="span1">Pret</th>
-                                            </tr>
-                                            <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
+                                <?php if (count($_smarty_tpl->tpl_vars['produse_extra']->value)>0) {?>
+                                    <table class="table table-bordered" style="margin-top: 10px;width: 600px;">
+                                        <tr>
+                                            <th class="span1" style="text-align: center;">#</th>
+                                            <th class="span2">Produs</th>
+                                            <th class="span1">Cantitate</th>
+                                            <th class="span1">Pret</th>
+                                        </tr>
+                                        <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['produse_extra']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['produs']->key => $_smarty_tpl->tpl_vars['produs']->value) {
 $_smarty_tpl->tpl_vars['produs']->_loop = true;
 ?>
-                                                <tr>
-                                                    <td style="text-align: center;">
-                                                        <a href="edit_produs_extra.php?id=<?php echo $_smarty_tpl->tpl_vars['produs']->value['tip_produs_id'];?>
+                                            <tr>
+                                                <td style="text-align: center;">
+                                                    <a href="edit_produs_extra.php?id=<?php echo $_smarty_tpl->tpl_vars['produs']->value['tip_produs_id'];?>
+&stare_produs=<?php echo $_smarty_tpl->tpl_vars['produs']->value['stare_produs'];?>
 ">
-                                                            <img title="edit" src="../images/edit.png">
-                                                        </a>
-                                                    </td>
-                                                    <td><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
+                                                        <img title="edit" src="../images/edit.png">
+                                                    </a>
+                                                </td>
+                                                <td><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
 </td>
-                                                    <td style="text-align: center;">
-                                                        <input style="width: 80px;text-align: right;"
-                                                                                           type="text" name="pline"
-                                                                                           value="<?php echo $_smarty_tpl->tpl_vars['produs']->value['pline'];?>
-">
-                                                    </td>
-                                                    <td style="text-align: center;"><input style="width: 80px;text-align: right;"
-                                                                                           type="text" name="goale"
-                                                                                           value="<?php echo $_smarty_tpl->tpl_vars['produs']->value['goale'];?>
-">
-                                                    </td>
-                                                    <td style="text-align: center;"><input style="width: 80px;text-align: right;"
-                                                                                           type="text" name="defecte"
-                                                                                           value="<?php echo $_smarty_tpl->tpl_vars['produs']->value['defecte'];?>
-">
-                                                    </td>
-                                                    <td style="text-align: center;"><input style="width: 80px;text-align: right;"
-                                                                                           type="text" name="pret"
-                                                                                           value="<?php echo $_smarty_tpl->tpl_vars['produs']->value['pret'];?>
-">
-                                                    </td>
-                                                </tr>
-                                            <?php } ?>
-                                        </table>
-                                    <?php }?>
+                                                <td style="text-align: center;">
+                                                    <?php echo $_smarty_tpl->tpl_vars['produs']->value['cantitate'];?>
+
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    <?php echo $_smarty_tpl->tpl_vars['produs']->value['pret'];?>
+
+                                                </td>
+
+                                            </tr>
+                                        <?php } ?>
+                                    </table>
+                                <?php }?>
                             </div>
                         </div>
                     </div>

@@ -41,23 +41,6 @@
                                                 </select></td>
                                         </tr>
                                         <tr>
-                                            <th style="text-align: left;vertical-align: middle;width: 120px;">Stare
-                                                Produs:
-                                            </th>
-                                            <td>
-                                                <select name="stare_produs">
-                                                    {foreach from=$lista_stari_produse item=stare}
-                                                        {if ($stare['id'] !=4)}
-                                                            <option value={$stare['id']}
-                                                                    {if $stare['id'] == $stare_produs['id']} selected={$stare['id']}{/if}>
-                                                                {$stare['nume']}
-                                                            </option>
-                                                        {/if}
-                                                    {/foreach}
-                                                </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
                                             <th style="text-align: left;vertical-align: middle;width: 120px;">
                                                 Cantitate:
                                             </th>
@@ -88,45 +71,33 @@
                                         </tr>
                                     </table>
                                 </form>
-                                    {if count($produse_extra) > 0}
-                                        <table class="table table-bordered" style="margin-top: 10px;width: 600px;">
+                                {if count($produse_extra) > 0}
+                                    <table class="table table-bordered" style="margin-top: 10px;width: 600px;">
+                                        <tr>
+                                            <th class="span1" style="text-align: center;">#</th>
+                                            <th class="span2">Produs</th>
+                                            <th class="span1">Cantitate</th>
+                                            <th class="span1">Pret</th>
+                                        </tr>
+                                        {foreach from=$produse_extra item=produs}
                                             <tr>
-                                                <th class="span1" style="text-align: center;">#</th>
-                                                <th class="span2">Produs</th>
-                                                <th class="span1">Pline</th>
-                                                <th class="span1">Goale</th>
-                                                <th class="span1">Defecte</th>
-                                                <th class="span1">Pret</th>
+                                                <td style="text-align: center;">
+                                                    <a href="edit_produs_extra.php?id={$produs['tip_produs_id']}&stare_produs={$produs['stare_produs']}">
+                                                        <img title="edit" src="../images/edit.png">
+                                                    </a>
+                                                </td>
+                                                <td>{$produs['nume_produs']}</td>
+                                                <td style="text-align: center;">
+                                                    {$produs['cantitate']}
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    {$produs['pret']}
+                                                </td>
+
                                             </tr>
-                                            {foreach from=$produse_extra item=produs}
-                                                <tr>
-                                                    <td style="text-align: center;">
-                                                        <a href="edit_produs_extra.php?id={$produs['tip_produs_id']}">
-                                                            <img title="edit" src="../images/edit.png">
-                                                        </a>
-                                                    </td>
-                                                    <td>{$produs['nume_produs']}</td>
-                                                    <td style="text-align: center;">
-                                                        <input style="width: 80px;text-align: right;"
-                                                                                           type="text" name="pline"
-                                                                                           value="{$produs['pline']}">
-                                                    </td>
-                                                    <td style="text-align: center;"><input style="width: 80px;text-align: right;"
-                                                                                           type="text" name="goale"
-                                                                                           value="{$produs['goale']}">
-                                                    </td>
-                                                    <td style="text-align: center;"><input style="width: 80px;text-align: right;"
-                                                                                           type="text" name="defecte"
-                                                                                           value="{$produs['defecte']}">
-                                                    </td>
-                                                    <td style="text-align: center;"><input style="width: 80px;text-align: right;"
-                                                                                           type="text" name="pret"
-                                                                                           value="{$produs['pret']}">
-                                                    </td>
-                                                </tr>
-                                            {/foreach}
-                                        </table>
-                                    {/if}
+                                        {/foreach}
+                                    </table>
+                                {/if}
                             </div>
                         </div>
                     </div>

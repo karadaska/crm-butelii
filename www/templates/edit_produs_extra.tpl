@@ -28,11 +28,6 @@
                                                 <th>ssss</th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;text-align: left">STARE PRODUS</th>
-                                                <th style="text-align: left;">dsads
-                                                </th>
-                                            </tr>
-                                            <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">CANTITATE</th>
                                                 <th style="text-align: left;">
                                                    <input type="text" name="cantitate" value="">

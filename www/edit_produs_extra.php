@@ -20,7 +20,7 @@ $pret_produs = getRequestParameter('pret_produs', 0);
 $lista_produse = Produse::getTipProdus();
 $smarty->assign('lista_produse', $lista_produse);
 
-$produs_extra = Fise::GetProdusExtraByClientIdAndFisa($tip_produs_id, $stare_produs, $client_id, $fisa_id);
+$produs_extra = Fise::GetProdusExtraByClientIdAndFisa($tip_produs_id, $client_id, $fisa_id);
 $smarty->assign('produs_extra', $produs_extra);
 
 
