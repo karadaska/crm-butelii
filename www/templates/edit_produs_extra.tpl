@@ -44,7 +44,7 @@
                                                             class="btn btn-info">
                                                         Modifica
                                                     </button>
-                                                    <button type="submit" name="sterge" value="sterge"
+                                                    <button onclick="return confirm('Sigur ?');" type="submit" name="sterge" value="sterge"
                                                             class="btn btn-danger">
                                                         Sterge
                                                     </button>
