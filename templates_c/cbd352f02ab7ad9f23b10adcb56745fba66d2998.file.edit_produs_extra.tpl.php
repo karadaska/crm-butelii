@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:53:54
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 15:10:20
          compiled from "/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1782988185607d37e85ebab4-68004022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cbd352f02ab7ad9f23b10adcb56745fba66d2998' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl',
-      1 => 1618833230,
+      1 => 1618834190,
       2 => 'file',
     ),
   ),
@@ -22,10 +22,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'title' => 0,
     'fisa_id' => 0,
     'client_id' => 0,
-    'adaugat' => 0,
-    'client' => 0,
     'id' => 0,
+    'adaugat' => 0,
     'produs_extra' => 0,
+    'client' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -54,12 +54,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <div class="widget">
                             <div>
                                 <div style="float: left">
-                                    <form class="form-horizontal" id="form_edit_client" action="/edit_client.php"
+                                    <form class="form-horizontal" action="/edit_produs_extra.php?id=<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+&id_client=<?php echo $_smarty_tpl->tpl_vars['client_id']->value;?>
+&fisa_id=<?php echo $_smarty_tpl->tpl_vars['fisa_id']->value;?>
+"
                                           method="post">
                                         <input type="hidden" name="adaugat" value="<?php echo $_smarty_tpl->tpl_vars['adaugat']->value;?>
 " id="adaugat"/>
-                                        <input type="hidden" name="id" id="id" value="<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
-"/>
                                         <table class="table table-bordered" style="width: 400px;">
                                             <tr style="text-align: left;">
                                                 <th style="width: 150px;vertical-align: middle;text-align: left">TIP PRODUS</th>

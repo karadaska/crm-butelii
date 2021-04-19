@@ -18,10 +18,9 @@
                         <div class="widget">
                             <div>
                                 <div style="float: left">
-                                    <form class="form-horizontal" id="form_edit_client" action="/edit_client.php"
+                                    <form class="form-horizontal" action="/edit_produs_extra.php?id={$id}&id_client={$client_id}&fisa_id={$fisa_id}"
                                           method="post">
                                         <input type="hidden" name="adaugat" value="{$adaugat}" id="adaugat"/>
-                                        <input type="hidden" name="id" id="id" value="{$client['id']}"/>
                                         <table class="table table-bordered" style="width: 400px;">
                                             <tr style="text-align: left;">
                                                 <th style="width: 150px;vertical-align: middle;text-align: left">TIP PRODUS</th>

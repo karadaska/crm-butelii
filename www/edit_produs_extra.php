@@ -29,7 +29,6 @@ $smarty->assign('produs_extra', $produs_extra);
 
 if ($modifica) {
 
-    header('Location: /edit_produs_extra.php?id=' . $id);
 }
 
 $smarty->display($template);

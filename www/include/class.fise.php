@@ -120,47 +120,22 @@ class Fise
 
     }
 
-//    public static function GetProdusExtraByClientIdAndFisa($tip_produs_id, $client_id, $fisa_id)
-//    {
-//        $ret = array();
-//
-//        $query = "SELECT a.tip_produs_id, b.tip, c.nume, a.cantitate, a.pret
-//                FROM
-//                    detalii_fisa_extra_intoarcere_produse as a
-//                    LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
-//                    LEFT JOIN stare_produs as c on a.stare_produs = c.id
-//                WHERE
-//                    a.tip_produs_id = '" . $tip_produs_id . "'
-//                    AND a.client_id = '" . $client_id . "'
-//                    AND a.fisa_id = '" . $fisa_id . "'
-//                    AND a.sters = 0
-//                  ";
-//        $result = myQuery($query);
-//        if ($result) {
-//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-//            foreach ($a as $item) {
-//                if (!isset($ret[$item['tip_produs_id']])) {
-//                    $ret[$item['tip_produs_id']] = array(
-//                        'nume_produs' => $item['tip'],
-//                        'tip_produs_id' => $item['tip_produs_id'],
-//                        'pret' => $item['pret'],
-//                        'pline' => 0,
-//                        'goale' => 0,
-//                        'defecte' => 0
-//                    );
-//                }
-////                if ($item['stare_produs'] == 1) {
-////                    $ret[$item['tip_produs_id']]['pline'] += $item['cantitate'];
-////                } else if ($item['stare_produs'] == 2) {
-////                    $ret[$item['tip_produs_id']]['goale'] += $item['cantitate'];
-////                } else if ($item['stare_produs'] == 3) {
-////                    $ret[$item['tip_produs_id']]['defecte'] += $item['cantitate'];
-////                }
-//            }
-//        }
-//        return $ret;
-//
-//    }
+    public static function UpdateProdusExtra($tip_produs_id, $client_id, $fisa_id)
+    {
+        $cantitate = getRequestParameter('cantitate', 0);
+        $pret = getRequestParameter('pret', 0);
+
+        $query = "UPDATE detalii_fisa_extra_intoarcere_produse SET 
+                                              cantitate = '" . $cantitate . "',
+                                              pret = '" . $pret . "'
+                                              WHERE client_id= '" . $client_id . "'
+                                              AND fisa_id = '" . $fisa_id . "'
+                                              AND tip_produs_id = '" . $tip_produs_id . "'
+                                              AND stare_produs = 1
+                                                ";
+        myExec($query);
+
+    }
 
 
     public static function getObservatieSecundaraDinFisaTraseuByClientIdAndFisaId($client_id, $fisa_id)
