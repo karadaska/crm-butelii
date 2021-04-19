@@ -9,6 +9,8 @@ if (!Utilizatori::hasRights(1, 6)) {
 $smarty->assign('name', 'Edit produs');
 $template = 'edit_produs_extra.tpl';
 
+$pret = getRequestParameter('pret', '');
+$cantitate = getRequestParameter('cantitate', '');
 $modifica = getRequestParameter('modifica', '');
 
 $client_id = getRequestParameter('id_client', 0);
@@ -28,7 +30,8 @@ $produs_extra = Fise::GetProdusExtraByClientIdAndFisa($id, $client_id, $fisa_id)
 $smarty->assign('produs_extra', $produs_extra);
 
 if ($modifica) {
-
+    Fise::UpdateProdusExtra($id, $client_id, $fisa_id);
+    header('Location: /edit_produs_extra.php?id=' . $id .'&id_client=' . $client_id .'&fisa_id=' . $fisa_id);
 }
 
 $smarty->display($template);
