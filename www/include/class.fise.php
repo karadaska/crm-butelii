@@ -167,6 +167,7 @@ class Fise
                   WHERE tip_produs_id = '" . $tip_produs_id . "' 
                   AND fisa_id = '" . $fisa_id . "'
                   AND sters = 0
+                  AND stare_produs = 1
                   ";
 
         $result = myQuery($query);
