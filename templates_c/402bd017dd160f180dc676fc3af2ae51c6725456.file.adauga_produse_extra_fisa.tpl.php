@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:11:12
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:17:18
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618830670,
+      1 => 1618831034,
       2 => 'file',
     ),
   ),
@@ -133,7 +133,8 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
                                             <tr>
                                                 <td style="text-align: center;">
                                                     <a href="edit_produs_extra.php?id=<?php echo $_smarty_tpl->tpl_vars['produs']->value['tip_produs_id'];?>
-&stare_produs=<?php echo $_smarty_tpl->tpl_vars['produs']->value['stare_produs'];?>
+&id_client=<?php echo $_smarty_tpl->tpl_vars['client_id']->value;?>
+&fisa_id=<?php echo $_smarty_tpl->tpl_vars['fisa_id']->value;?>
 ">
                                                         <img title="edit" src="../images/edit.png">
                                                     </a>

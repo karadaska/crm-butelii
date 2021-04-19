@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 13:50:08
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:15:16
          compiled from "/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1782988185607d37e85ebab4-68004022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cbd352f02ab7ad9f23b10adcb56745fba66d2998' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl',
-      1 => 1618821981,
+      1 => 1618830040,
       2 => 'file',
     ),
   ),
@@ -58,21 +58,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                             <tr style="text-align: left;">
                                                 <th style="width: 150px;vertical-align: middle;text-align: left">TIP PRODUS</th>
                                                 <th>ssss</th>
-                                            </tr>
-                                            <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;text-align: left">PLINE</th>
-                                                <th style="text-align: left;"><input type="text" name="pline" value="">
-                                                </th>
-                                            </tr>
-                                            <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;text-align: left">GOALE</th>
-                                                <th style="text-align: left;"><input type="text" name="goale" value="">
-                                                </th>
-                                            </tr>
-                                            <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;text-align: left">DEFECTE</th>
-                                                <th style="text-align: left;"><input type="text" name="defecte" value="">
-                                                </th>
                                             </tr>
                                             <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">CANTITATE</th>
