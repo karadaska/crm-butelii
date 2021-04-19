@@ -44,8 +44,9 @@
                                                             class="btn btn-info">
                                                         Modifica
                                                     </button>
-                                                    <button type="button" class="btn btn-danger"
-                                                            onclick="clickOnStergeClient({$client['id']})">Sterge client
+                                                    <button type="submit" name="sterge" value="sterge"
+                                                            class="btn btn-danger">
+                                                        Sterge
                                                     </button>
                                                 </th>
                                             </tr>

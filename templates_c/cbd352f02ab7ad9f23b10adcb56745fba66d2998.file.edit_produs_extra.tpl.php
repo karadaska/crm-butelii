@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 15:10:20
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 15:37:07
          compiled from "/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1782988185607d37e85ebab4-68004022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cbd352f02ab7ad9f23b10adcb56745fba66d2998' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl',
-      1 => 1618834190,
+      1 => 1618835819,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'id' => 0,
     'adaugat' => 0,
     'produs_extra' => 0,
-    'client' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -87,9 +86,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                             class="btn btn-info">
                                                         Modifica
                                                     </button>
-                                                    <button type="button" class="btn btn-danger"
-                                                            onclick="clickOnStergeClient(<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
-)">Sterge client
+                                                    <button type="submit" name="sterge" value="sterge"
+                                                            class="btn btn-danger">
+                                                        Sterge
                                                     </button>
                                                 </th>
                                             </tr>
