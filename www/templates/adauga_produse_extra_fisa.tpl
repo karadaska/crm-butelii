@@ -101,7 +101,7 @@
                                             {foreach from=$produse_extra item=produs}
                                                 <tr>
                                                     <td style="text-align: center;">
-                                                        <a href="edit_produse_extra.php?id={$produs['tip_produs_id']}">
+                                                        <a href="edit_produs_extra.php?id={$produs['tip_produs_id']}">
                                                             <img title="edit" src="../images/edit.png">
                                                         </a>
                                                     </td>

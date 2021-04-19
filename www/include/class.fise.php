@@ -84,6 +84,27 @@ class Fise
 
     }
 
+    public static function GetProdusExtraByClientIdAndFisa($tip_produs_id, $stare_produs, $client_id, $fisa_id)
+    {
+
+        $query = "SELECT b.tip, c.nume, a.cantitate, a.pret
+                FROM
+                    detalii_fisa_extra_intoarcere_produse as a
+                    LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                    LEFT JOIN stare_produs as c on a.stare_produs = c.id
+                WHERE
+                    a.tip_produs_id = '" . $tip_produs_id . "'
+                    AND a.stare_produs = '" . $stare_produs . "' 
+                    AND a.client_id = '" . $client_id . "' 
+                    AND a.fisa_id = '" . $fisa_id . "'
+                    AND a.sters = 0
+                  ";
+        $result = myQuery($query);
+
+        header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
+
+    }
+
     public static function getObservatieSecundaraDinFisaTraseuByClientIdAndFisaId($client_id, $fisa_id)
     {
         $ret = array();
