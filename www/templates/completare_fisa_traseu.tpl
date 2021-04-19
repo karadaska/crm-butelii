@@ -634,16 +634,16 @@
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
                                         <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR
-                                            9 {($produs_extra_ar_8['cantitate_extra'] > 0)? '+ EXTRA' : ''}
+                                            9 {($produs_extra_ar_9['cantitate_extra'] > 0)? '+ EXTRA' : ''}
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_9'] + $produs_extra_ar_8['cantitate_extra']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_9'] + $produs_extra_ar_9['cantitate_extra']}</td>
                                     </tr>
                                     <tr class="info">
                                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_ar_9'] + $produs_extra_ar_8['cantitate_extra']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_ar_9'] + $produs_extra_ar_9['pret_extra']}</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total Comision</td>
