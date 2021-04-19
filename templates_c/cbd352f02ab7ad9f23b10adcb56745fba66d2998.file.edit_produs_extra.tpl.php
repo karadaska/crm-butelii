@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:15:16
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:40:24
          compiled from "/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1782988185607d37e85ebab4-68004022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cbd352f02ab7ad9f23b10adcb56745fba66d2998' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl',
-      1 => 1618830040,
+      1 => 1618832422,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'title' => 0,
     'adaugat' => 0,
     'client' => 0,
+    'id' => 0,
+    'produs_extra' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -57,18 +59,21 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                         <table class="table table-bordered" style="width: 400px;">
                                             <tr style="text-align: left;">
                                                 <th style="width: 150px;vertical-align: middle;text-align: left">TIP PRODUS</th>
-                                                <th>ssss</th>
+                                                <th><?php echo $_smarty_tpl->tpl_vars['produs_extra']->value[$_smarty_tpl->tpl_vars['id']->value]['nume_produs'];?>
+</th>
                                             </tr>
                                             <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">CANTITATE</th>
                                                 <th style="text-align: left;">
-                                                   <input type="text" name="cantitate" value="">
+                                                   <input style="text-align: right;width: 100%;" type="text" name="cantitate" value="<?php echo $_smarty_tpl->tpl_vars['produs_extra']->value[$_smarty_tpl->tpl_vars['id']->value]['pline']['cantitate'];?>
+">
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">PRET</th>
                                                 <th style="text-align: left;">
-                                                    <input type="text" name="cantitate" value="">
+                                                    <input style="text-align: right;width: 100%;" type="text" name="pret" value="<?php echo $_smarty_tpl->tpl_vars['produs_extra']->value[$_smarty_tpl->tpl_vars['id']->value]['pline']['pret'];?>
+">
                                                 </th>
                                             </tr>
                                             <tr>

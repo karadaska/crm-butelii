@@ -86,14 +86,13 @@
                                                         <img title="edit" src="../images/edit.png">
                                                     </a>
                                                 </td>
-                                                <td>{$produs['nume_produs']}</td>
+                                                <td>{$produs['1']['nume_produs']}</td>
                                                 <td style="text-align: center;">
                                                     {$produs['cantitate']}
                                                 </td>
                                                 <td style="text-align: center;">
                                                     {$produs['pret']}
                                                 </td>
-
                                             </tr>
                                         {/foreach}
                                     </table>

@@ -11,18 +11,17 @@ $template = 'edit_produs_extra.tpl';
 
 $modifica = getRequestParameter('modifica', '');
 
-$client_id = getRequestParameter('client_id', 0);
+$client_id = getRequestParameter('id_client', 0);
 $fisa_id = getRequestParameter('fisa_id', 0);
-$tip_produs_id = getRequestParameter('tip_produs_id', 0);
+$id = getRequestParameter('id', 0);
+$smarty->assign('id', $id);
+
 $stare_produs = getRequestParameter('stare_produs', 0);
 $pret_produs = getRequestParameter('pret_produs', 0);
 
-$lista_produse = Produse::getTipProdus();
-$smarty->assign('lista_produse', $lista_produse);
 
-$produs_extra = Fise::GetProdusExtraByClientIdAndFisa($tip_produs_id, $client_id, $fisa_id);
+$produs_extra = Fise::GetProdusExtraByClientIdAndFisa($id, $client_id, $fisa_id);
 $smarty->assign('produs_extra', $produs_extra);
-
 
 if ($modifica) {
 

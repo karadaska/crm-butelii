@@ -80,7 +80,7 @@ class Fise
     {
         $ret = array();
 
-        $query = "SELECT b.tip, c.nume, a.cantitate, a.pret, a.tip_produs_id, a.stare_produs
+        $query = "SELECT b.tip as nume_produs, c.nume, a.cantitate, a.pret, a.tip_produs_id, a.stare_produs
                 FROM
                     detalii_fisa_extra_intoarcere_produse as a
                     LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
@@ -98,17 +98,13 @@ class Fise
             foreach ($a as $item) {
                 if (!isset($ret[$item['tip_produs_id']])) {
                     $ret[$item['tip_produs_id']] = array(
+                        'nume_produs' => $item['nume_produs'],
                         'pline' => array(
                             'cantitate' => 0,
                             'pret' => 0,
                         ),
                         'goale' => array(
                             'cantitate' => 0,
-                            'pret' => 0,
-                        ),
-                        'defecte' => array(
-                            'cantitate' => 0,
-                            'pret' => 0,
                         ),
                     );
                 }
@@ -116,11 +112,7 @@ class Fise
                     $ret[$item['tip_produs_id']]['pline']['cantitate'] = $item['cantitate'];
                     $ret[$item['tip_produs_id']]['pline']['pret'] = $item['pret'];
                 } elseif ($item['stare_produs'] == 2) {
-                    $ret[$item['tip_produs_id']]['pline']['cantitate'] = $item['cantitate'];
-                    $ret[$item['tip_produs_id']]['pline']['pret'] = $item['pret'];
-                } elseif ($item['stare_produs'] == 3) {
-                    $ret[$item['tip_produs_id']]['pline']['cantitate'] = $item['cantitate'];
-                    $ret[$item['tip_produs_id']]['pline']['pret'] = $item['pret'];
+                    $ret[$item['tip_produs_id']]['goale']['cantitate'] = $item['cantitate'];
                 }
             }
         }

@@ -25,18 +25,18 @@
                                         <table class="table table-bordered" style="width: 400px;">
                                             <tr style="text-align: left;">
                                                 <th style="width: 150px;vertical-align: middle;text-align: left">TIP PRODUS</th>
-                                                <th>ssss</th>
+                                                <th>{$produs_extra[$id]['nume_produs']}</th>
                                             </tr>
                                             <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">CANTITATE</th>
                                                 <th style="text-align: left;">
-                                                   <input type="text" name="cantitate" value="">
+                                                   <input style="text-align: right;width: 100%;" type="text" name="cantitate" value="{$produs_extra[$id]['pline']['cantitate']}">
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">PRET</th>
                                                 <th style="text-align: left;">
-                                                    <input type="text" name="cantitate" value="">
+                                                    <input style="text-align: right;width: 100%;" type="text" name="pret" value="{$produs_extra[$id]['pline']['pret']}">
                                                 </th>
                                             </tr>
                                             <tr>
