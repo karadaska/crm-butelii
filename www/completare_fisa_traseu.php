@@ -77,10 +77,6 @@ $smarty->assign('traseu_by_fisa_generata_id', $traseu_by_fisa_generata_id);
 $fisa = Stocuri::getFisaGenerataById($id);
 $smarty->assign('fisa', $fisa);
 
-$client = 1231;
-$smarty->assign('client', $client);
-
-
 $get_tip_alimentare = ParcAuto::getTipALimentare();
 $smarty->assign('get_tip_alimentare', $get_tip_alimentare);
 
@@ -101,12 +97,13 @@ $smarty->assign('extract_data_fisa', $extract_data_fisa);
 $luna_curenta = date('n');
 $smarty->assign('luna_curenta', $luna_curenta);
 
+$to_add = array();
 //foreach ($lista_asignari_clienti_by_fisa_generata as $client) {
 //    $produse_extra = Fise::getProduseExtraByFisaIdAndClientId($id, $client['client_id']);
 //    $smarty->assign('produse_extra', $produse_extra);
 //}
+$produs_extra = Fise::GetProdusExtraByClientIdAndFisa();
 
-$to_add = array();
 $to_add_obs = array();
 $to_add_obssecond = array();
 if (isset($_POST['adauga'])) {

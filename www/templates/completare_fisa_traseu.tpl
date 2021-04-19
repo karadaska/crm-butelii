@@ -581,8 +581,7 @@
                             <div>
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
-                                        <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG
-                                        </td>
+                                        <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
@@ -686,24 +685,6 @@
                             </div>
                         {/if}
                     </div>
-                    <table class="table table-bordered" style="width: 560px;">
-                        <tr>
-                            <th>CLIENT</th>
-                            <th>PRODUS</th>
-                            <th>PLINE</th>
-                            <th>DEFECTE</th>
-                            <th>GOALE</th>
-                        </tr>
-                        {foreach from=$produse_extra item=produs}
-                            <tr>
-                                <td>{$produs['pline']}</td>
-                                <td>4</td>
-                                <td>5</td>
-                                <td>6</td>
-                                <td>7</td>
-                            </tr>
-                        {/foreach}
-                    </table>
                     <div style="margin-top: 100px;"></div>
                 </div>
             </div>
