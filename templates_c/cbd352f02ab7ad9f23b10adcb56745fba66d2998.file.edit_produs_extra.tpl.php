@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:40:24
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:53:54
          compiled from "/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1782988185607d37e85ebab4-68004022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cbd352f02ab7ad9f23b10adcb56745fba66d2998' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl',
-      1 => 1618832422,
+      1 => 1618833230,
       2 => 'file',
     ),
   ),
@@ -20,6 +20,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'title' => 0,
+    'fisa_id' => 0,
+    'client_id' => 0,
     'adaugat' => 0,
     'client' => 0,
     'id' => 0,
@@ -40,7 +42,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-people"></i> Edit produs</h1>
-                    <button type="button" onclick="location.href='/clienti.php'" name="inapoi"
+                    <button type="button" onclick="location.href='/adauga_produse_extra_fisa.php?fisa_id=<?php echo $_smarty_tpl->tpl_vars['fisa_id']->value;?>
+&id_client=<?php echo $_smarty_tpl->tpl_vars['client_id']->value;?>
+'" name="inapoi"
                             value="inapoi" class="btn btn-small btn-info">
                         Produse extra
                     </button>

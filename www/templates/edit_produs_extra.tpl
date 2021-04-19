@@ -8,7 +8,7 @@
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-people"></i> Edit produs</h1>
-                    <button type="button" onclick="location.href='/clienti.php'" name="inapoi"
+                    <button type="button" onclick="location.href='/adauga_produse_extra_fisa.php?fisa_id={$fisa_id}&id_client={$client_id}'" name="inapoi"
                             value="inapoi" class="btn btn-small btn-info">
                         Produse extra
                     </button>

@@ -12,7 +12,11 @@ $template = 'edit_produs_extra.tpl';
 $modifica = getRequestParameter('modifica', '');
 
 $client_id = getRequestParameter('id_client', 0);
+$smarty->assign('client_id', $client_id);
+
 $fisa_id = getRequestParameter('fisa_id', 0);
+$smarty->assign('fisa_id', $fisa_id);
+
 $id = getRequestParameter('id', 0);
 $smarty->assign('id', $id);
 
