@@ -47,9 +47,6 @@ $smarty->assign('lista_produse', $lista_produse);
 $lista_stari_produse = Produse::getStareProdus();
 $smarty->assign('lista_stari_produse', $lista_stari_produse);
 
-//$plecare_marfa_by_fisa_id = Stocuri::getPlecareMarfaByFisaId($id);
-//$smarty->assign('plecare_marfa_by_fisa_id', $plecare_marfa_by_fisa_id);
-
 $cantitati_plecare = Fise::getPlecareMarfaByFisaIdMiscariFise($id);
 $smarty->assign('cantitati_plecare', $cantitati_plecare);
 
@@ -97,13 +94,16 @@ $smarty->assign('extract_data_fisa', $extract_data_fisa);
 $luna_curenta = date('n');
 $smarty->assign('luna_curenta', $luna_curenta);
 
-$to_add = array();
-//foreach ($lista_asignari_clienti_by_fisa_generata as $client) {
-//    $produse_extra = Fise::getProduseExtraByFisaIdAndClientId($id, $client['client_id']);
-//    $smarty->assign('produse_extra', $produse_extra);
-//}
-$produs_extra = Fise::GetProdusExtraByClientIdAndFisa();
+$produs_extra_bg = Fise::GetProdusExtraByProdusIdAndFisa(1,$fisa['id']);
+$smarty->assign('produs_extra_bg', $produs_extra_bg);
 
+$produs_extra_ar_9 = Fise::GetProdusExtraByProdusIdAndFisa(4,$fisa['id']);
+$smarty->assign('produs_extra_ar_9', $produs_extra_ar_9);
+
+$produs_extra_ar_8 = Fise::GetProdusExtraByProdusIdAndFisa(3,$fisa['id']);
+$smarty->assign('produs_extra_ar_8', $produs_extra_ar_8);
+
+$to_add = array();
 $to_add_obs = array();
 $to_add_obssecond = array();
 if (isset($_POST['adauga'])) {

@@ -581,15 +581,15 @@
                             <div>
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
-                                        <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG</td>
+                                        <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG {($produs_extra_bg['cantitate_extra'] > 0)? '+ EXTRA' : ''}</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_bg']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_bg'] + $produs_extra_bg['cantitate_extra']}</td>
                                     </tr>
                                     <tr class="info">
                                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg'] + $produs_extra_bg['pret_extra']}</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total Comision</td>
@@ -607,16 +607,16 @@
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
                                         <td style="text-align: center;font-weight: 900;color: red;" colspan="2">AR
-                                            8
+                                            8 {($produs_extra_ar_8['cantitate_extra'] > 0)? '+ EXTRA' : ''}
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_8']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_8'] + $produs_extra_ar_8['cantitate_extra']}</td>
                                     </tr>
                                     <tr class="info">
                                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_ar_8']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_ar_8'] + $produs_extra_ar_8['pret_extra']}</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total Comision</td>
@@ -634,16 +634,16 @@
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
                                         <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR
-                                            9
+                                            9 {($produs_extra_ar_8['cantitate_extra'] > 0)? '+ EXTRA' : ''}
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_9']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_9'] + $produs_extra_ar_8['cantitate_extra']}</td>
                                     </tr>
                                     <tr class="info">
                                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_ar_9']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_ar_9'] + $produs_extra_ar_8['cantitate_extra']}</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total Comision</td>
@@ -656,7 +656,7 @@
                                 </table>
                             </div>
                         {/if}
-                        {$total_afisare = $fisa['grand_total_vandute_bg'] + $fisa['grand_total_vandute_ar_9'] + $fisa['grand_total_vandute_ar_9'] +  $fisa['grand_defecte_bg'] + $fisa['grand_defecte_ar_8'] + $fisa['grand_defecte_ar_9']}
+                        {$total_afisare = $fisa['grand_total_vandute_bg'] + $produs_extra_bg['cantitate_extra'] +  $fisa['grand_total_vandute_ar_8'] + $produs_extra_ar_8['cantitate_extra'] + $fisa['grand_total_vandute_ar_9'] + $produs_extra_ar_9['cantitate_extra'] +  $fisa['grand_defecte_bg'] + $fisa['grand_defecte_ar_8'] + $fisa['grand_defecte_ar_9']}
                         {if ($total_afisare != 0)}
                             <div style="margin-left: 10px;">
                                 <table class="table table-bordered table-striped" style="width: 180px;">
@@ -667,11 +667,11 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">BG + AR</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_bg'] + $fisa['grand_total_vandute_ar_8'] + $fisa['grand_total_vandute_ar_9']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_bg'] + $fisa['grand_total_vandute_ar_8'] + $fisa['grand_total_vandute_ar_9']  + $produs_extra_ar_8['cantitate_extra'] + $produs_extra_ar_9['cantitate_extra'] +$produs_extra_bg['cantitate_extra']}</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg'] + $fisa['grand_valoare_ar_8'] + $fisa['grand_valoare_ar_9']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg'] + $fisa['grand_valoare_ar_8'] + $fisa['grand_valoare_ar_9']  + $produs_extra_ar_8['pret_extra'] + $produs_extra_ar_9['pret_extra'] +$produs_extra_bg['pret_extra']}</td>
                                     </tr>
                                     <tr class="info">
                                         <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>

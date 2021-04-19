@@ -120,44 +120,59 @@ class Fise
 
     }
 
+//    public static function GetProdusExtraByProdusIdAndFisa($tip_produs_id, $fisa_id)
+//    {
+//        $ret = array();
+//
+//        $query = "SELECT b.tip as nume_produs, c.nume, a.cantitate, a.pret, a.tip_produs_id, a.stare_produs
+//                FROM
+//                    detalii_fisa_extra_intoarcere_produse as a
+//                    LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+//                    LEFT JOIN stare_produs as c on a.stare_produs = c.id
+//                WHERE
+//                    a.tip_produs_id = '" . $tip_produs_id . "'
+//                    AND a.fisa_id = '" . $fisa_id . "'
+//                    AND a.sters = 0
+//                  ";
+//        $result = myQuery($query);
+//
+//        if ($result) {
+//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+//            foreach ($a as $item) {
+//                if (!isset($ret[$item['tip_produs_id']])) {
+//                    $ret[$item['tip_produs_id']] = array(
+//                        'nume_produs' => $item['nume_produs'],
+//                        'pline' => array(
+//                            'cantitate' => 0,
+//                            'pret' => 0,
+//                        ),
+//                    );
+//                }
+//                if ($item['stare_produs'] == 1) {
+//                    $ret[$item['tip_produs_id']]['pline']['cantitate'] += $item['cantitate'];
+//                    $ret[$item['tip_produs_id']]['pline']['pret'] +=$item['pret'];
+//                }
+//            }
+//        }
+//        return $ret;
+//
+//    }
+
     public static function GetProdusExtraByProdusIdAndFisa($tip_produs_id, $fisa_id)
     {
         $ret = array();
 
-        $query = "SELECT b.tip as nume_produs, c.nume, a.cantitate, a.pret, a.tip_produs_id, a.stare_produs
-                FROM
-                    detalii_fisa_extra_intoarcere_produse as a
-                    LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
-                    LEFT JOIN stare_produs as c on a.stare_produs = c.id
-                WHERE
-                    a.tip_produs_id = '" . $tip_produs_id . "'                    
-                    AND a.fisa_id = '" . $fisa_id . "'
-                    AND a.sters = 0
+        $query = "SELECT SUM(cantitate) as cantitate_extra, SUM(pret) as pret_extra 
+                  FROM detalii_fisa_extra_intoarcere_produse
+                  WHERE tip_produs_id = '" . $tip_produs_id . "' 
+                  AND fisa_id = '" . $fisa_id . "'
+                  AND sters = 0
                   ";
+
         $result = myQuery($query);
 
         if ($result) {
-            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($a as $item) {
-                if (!isset($ret[$item['tip_produs_id']])) {
-                    $ret[$item['tip_produs_id']] = array(
-                        'nume_produs' => $item['nume_produs'],
-                        'pline' => array(
-                            'cantitate' => 0,
-                            'pret' => 0,
-                        ),
-                        'goale' => array(
-                            'cantitate' => 0,
-                        ),
-                    );
-                }
-                if ($item['stare_produs'] == 1) {
-                    $ret[$item['tip_produs_id']]['pline']['cantitate'] += $item['cantitate'];
-                    $ret[$item['tip_produs_id']]['pline']['pret'] +=$item['pret'];
-                } elseif ($item['stare_produs'] == 2) {
-                    $ret[$item['tip_produs_id']]['goale']['cantitate'] = $item['cantitate'];
-                }
-            }
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
         }
         return $ret;
 
