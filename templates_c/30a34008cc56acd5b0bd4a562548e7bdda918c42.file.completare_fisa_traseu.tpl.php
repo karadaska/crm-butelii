@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 22:54:02
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 23:25:31
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1618862039,
+      1 => 1618863930,
       2 => 'file',
     ),
   ),
@@ -54,6 +54,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'valoare_cantitate' => 0,
     'valoare_defecte' => 0,
     'valoare_goale' => 0,
+    'client_produse_extra' => 0,
     'luna_curenta' => 0,
     'extract_data_fisa' => 0,
     'produs_extra_bg' => 0,
@@ -752,7 +753,9 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                 <tr>
                                                     <?php if (($_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_8']>0||$_smarty_tpl->tpl_vars['client']->value['total_valoare_bg']>0||$_smarty_tpl->tpl_vars['client']->value['total_valoare_ar_9']>0)) {?>
                                                         <th style="text-align: left;" colspan="7">
-                                                            TOTAL:
+                                                            <?php $_smarty_tpl->tpl_vars['client_produse_extra'] = new Smarty_variable(Fise::GetProdusExtraByClientIdAndFisa(1,$_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['fisa']->value['id']), null, 0);?>
+                                                            TOTAL: <?php echo $_smarty_tpl->tpl_vars['client_produse_extra']->value['1']['nume_produs'];?>
+
                                                             <span style="color:red;"><?php ob_start();?><?php echo ('BG = ').($_smarty_tpl->tpl_vars['client']->value['total_valoare_bg']);?>
 <?php $_tmp2=ob_get_clean();?><?php echo $_smarty_tpl->tpl_vars['client']->value['total_valoare_bg']>0 ? $_tmp2 : '';?>
 </span>

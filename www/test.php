@@ -26,6 +26,6 @@ $data_stop = '2021-03-31';
 //    'an' => 2020,
 //    'perioada_id' => 5
 //));
-//$b = Fise::GetProdusExtraByClientIdAndFisa(1, 1332, 1452);
-$b = Fise::GetProdusExtraByProdusIdAndFisa(1, 1452);
+$b = Fise::GetProdusExtraByClientIdAndFisa(1, 1332, 1452);
+//$b = Fise::GetProdusExtraByProdusIdAndFisa(1, 1452);
 echo json_encode($b);
