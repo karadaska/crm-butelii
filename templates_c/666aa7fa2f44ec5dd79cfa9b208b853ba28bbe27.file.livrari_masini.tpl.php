@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-16 16:37:51
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-20 22:12:07
          compiled from "/var/www/html/fofoweb/www/templates/livrari_masini.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11988036646040940f14d4e2-58340311%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '666aa7fa2f44ec5dd79cfa9b208b853ba28bbe27' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_masini.tpl',
-      1 => 1618580269,
+      1 => 1618945925,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'produse' => 0,
     'nr' => 0,
     'livrare' => 0,
+    'cantitate' => 0,
     'total_livrare' => 0,
     'livrare_produse' => 0,
     'grand_total_km' => 0,
@@ -169,8 +170,23 @@ $_smarty_tpl->tpl_vars['livrare']->_loop = true;
 </td>
                                                 <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['livrare']->value['km']['km_traseu']>0 ? $_smarty_tpl->tpl_vars['livrare']->value['km']['km_traseu'] : '-';?>
 </td>
-                                                <td>
-
+                                                <td class="span2">
+                                                    <table class="table table-bordered">
+                                                        <?php  $_smarty_tpl->tpl_vars['cantitate'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cantitate']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['livrare']->value['cantitati']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['cantitate']->key => $_smarty_tpl->tpl_vars['cantitate']->value) {
+$_smarty_tpl->tpl_vars['cantitate']->_loop = true;
+?>
+                                                        <tr>
+                                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['data'];?>
+</td>
+                                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['cantitate'];?>
+</td>
+                                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['pret'];?>
+</td>
+                                                        </tr>
+                                                        <?php } ?>
+                                                    </table>
                                                 </td>
                                                 <td style="text-align: right">
                                                     <?php $_smarty_tpl->tpl_vars['total_livrare'] = new Smarty_variable($_smarty_tpl->tpl_vars['livrare']->value['total_produse']['1']['cantitate']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['3']['cantitate']+$_smarty_tpl->tpl_vars['livrare']->value['total_produse']['4']['cantitate'], null, 0);?>
@@ -206,7 +222,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                             <th style="text-align: right;">TOTAL:</th>
                                             <th style="text-align: right;color: red;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['grand_total_km']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_km']->value : '-';?>
 </th>
-                                            <td></td>
+                                            <th></th>
                                             <th style="text-align: right;color: red;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['grand_cantitati']->value>0 ? $_smarty_tpl->tpl_vars['grand_cantitati']->value : '-';?>
 </th>
                                             <th style="text-align: right;color: red;vertical-align: middle;"><?php echo $_smarty_tpl->tpl_vars['grand_valoare']->value>0 ? $_smarty_tpl->tpl_vars['grand_valoare']->value : '-';?>

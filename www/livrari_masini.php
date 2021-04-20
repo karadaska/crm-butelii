@@ -12,7 +12,7 @@ $form_submit = getRequestParameter('form_submit', 0);
 $masina_id = getRequestParameter('masina_id', 0);
 $smarty->assign('masina_id', $masina_id);
 
-$data_start = getRequestParameter('data_start',date('Y-m-01'));
+$data_start = getRequestParameter('data_start', date('Y-m-01'));
 $smarty->assign('data_start', $data_start);
 
 $data_stop = getRequestParameter('data_stop', date('Y-m-t'));
