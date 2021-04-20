@@ -566,7 +566,7 @@ class ParcAuto
                     ))
                 );
                 foreach ($ret['produse_sofer'] as $tip_produs_id => $item_tip_produs) {
-                    $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'],$item['masina_id'], array(
+                    $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiBySoferIdAndTraseuId($item['sofer_id'], $item['traseu_id'], $item['masina_id'], array(
                         'tip_produs_id' => $tip_produs_id,
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
@@ -582,6 +582,41 @@ class ParcAuto
         }
         return $ret;
     }
+
+    public static function getCantitatiByTraseuAndSoferAndMasina($traseu_id, $sofer_id, $masina_id, $opts = array())
+    {
+        $ret = array();
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $query = "SELECT  b.data_intrare, b.cantitate, b.pret
+                                FROM fise_generate AS a
+                                LEFT JOIN detalii_fisa_intoarcere_produse as b on a.id = b.fisa_id
+                                WHERE a.data_intrare >= '" . $data_start . "'
+                                AND a.data_intrare <= '" . $data_stop . "'
+                                AND a.traseu_id = '" . $traseu_id . "'
+                                AND a.sofer_id = '" . $sofer_id . "'
+                                AND a.masina_id = '" . $masina_id . "'
+                                AND a.sters = 0
+                                AND b.sters = 0";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
+
     public static function getRaportLivrariMasini($masina_id, $opts = array())
     {
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
@@ -618,7 +653,6 @@ class ParcAuto
             'data_start' => $data_start,
             'data_stop' => $data_stop
         ));
-
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
@@ -629,10 +663,15 @@ class ParcAuto
                     'nume_traseu' => $item['nume_traseu'],
                     'total_produse' => array(),
 
-                    'km' => self::getTotalKmByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'],$item['sofer_id'], array(
-                    'data_start' => $data_start,
-                    'data_stop' => $data_stop
-                ))
+                    'km' => self::getTotalKmByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    )),
+
+                    'cantitati' => self::getCantitatiByTraseuAndSoferAndMasina($item['traseu_id'], $item['sofer_id'], $item['masina_id'], array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ))
                 );
                 foreach ($ret['produse_masina'] as $tip_produs_id => $item_tip_produs) {
                     $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
@@ -700,15 +739,15 @@ class ParcAuto
                     'total_produse' => array(),
 
                     'km' => self::getTotalKmByTraseuId(array(
-                        'traseu_id'=> $item['traseu_id'],
-                        'masina_id'=> $item['masina_id'],
-                        'sofer_id'=> $item['sofer_id'],
+                        'traseu_id' => $item['traseu_id'],
+                        'masina_id' => $item['masina_id'],
+                        'sofer_id' => $item['sofer_id'],
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ))
                 );
                 foreach ($ret['produse_traseu'] as $tip_produs_id => $item_tip_produs) {
-                    $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'],$item['sofer_id'], array(
+                    $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
                         'tip_produs_id' => $tip_produs_id,
                         'data_start' => $data_start,
                         'data_stop' => $data_stop

@@ -5,7 +5,7 @@ header('content-type: application/json');
 $zi_curenta = date('Y-m-d');
 $traseu_id = 1;
 $data_start = '2021-01-01';
-$data_stop = '2021-03-31';
+$data_stop = '2021-01-31';
 //$depozit_id = 0;
 //$sofer_id = 0;
 //$masina_id = 0;
@@ -26,6 +26,15 @@ $data_stop = '2021-03-31';
 //    'an' => 2020,
 //    'perioada_id' => 5
 //));
-$b = Fise::GetProdusExtraByClientIdAndFisa(1, 1332, 1452);
+//$b = Fise::GetProdusExtraByClientIdAndFisa(1, 1332, 1452);
 //$b = Fise::GetProdusExtraByProdusIdAndFisa(1, 1452);
+$b = ParcAuto::getRaportLivrariMasini(26,
+    array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+    ));
+//$b = ParcAuto::getCantitatiByTraseuAndSoferAndMasina(4,23,26, array(
+//    'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//));
 echo json_encode($b);
