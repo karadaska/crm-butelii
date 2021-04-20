@@ -100,6 +100,7 @@
                                                     <table class="table table-bordered">
                                                         {foreach from=$livrare['cantitati'] item=cantitate}
                                                         <tr>
+                                                            <td style="text-align: center;"><a target="_blank" href="completare_fisa_traseu.php?id={$cantitate['fisa_id']}">{$cantitate['fisa_id']}</a></td>
                                                             <td style="text-align: center;">{$cantitate['data']}</td>
                                                             <td style="text-align: center;">{$cantitate['cantitate']}</td>
                                                             <td style="text-align: center;">{$cantitate['pret']}</td>

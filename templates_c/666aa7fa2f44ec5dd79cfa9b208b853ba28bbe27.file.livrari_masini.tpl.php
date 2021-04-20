@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-20 22:12:07
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-20 22:17:38
          compiled from "/var/www/html/fofoweb/www/templates/livrari_masini.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11988036646040940f14d4e2-58340311%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '666aa7fa2f44ec5dd79cfa9b208b853ba28bbe27' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_masini.tpl',
-      1 => 1618945925,
+      1 => 1618946254,
       2 => 'file',
     ),
   ),
@@ -178,6 +178,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['cantitate']->key => $_smarty_tpl->tpl
 $_smarty_tpl->tpl_vars['cantitate']->_loop = true;
 ?>
                                                         <tr>
+                                                            <td style="text-align: center;"><a target="_blank" href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['cantitate']->value['fisa_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['fisa_id'];?>
+</a></td>
                                                             <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['data'];?>
 </td>
                                                             <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['cantitate'];?>

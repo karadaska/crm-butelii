@@ -597,7 +597,7 @@ class ParcAuto
             $data_stop = date('Y-m-t');
         }
 
-        $query = "SELECT  b.data_intrare as data, b.cantitate, b.pret
+        $query = "SELECT  b.fisa_id, b.data_intrare as data, b.cantitate, b.pret
                                 FROM fise_generate AS a
                                 LEFT JOIN detalii_fisa_intoarcere_produse as b on a.id = b.fisa_id
                                 WHERE a.data_intrare >= '" . $data_start . "'
