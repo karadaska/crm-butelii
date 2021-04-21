@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#toggle_alimentari').on('click', function () {
-        $('.alimentare_ascunsa').toggle();
+    $('#toggle_cantitate').on('click', function () {
+        $('.ascunde_cantitate').toggle();
     });
 });

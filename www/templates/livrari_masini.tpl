@@ -100,7 +100,7 @@
                                                     <table class="table table-bordered">
                                                         <tr>
                                                             {if count($livrare['cantitati']) > 3}
-                                                                <td><i id="toggle_alimentari" class="icon16 i-list"
+                                                                <td><i id="toggle_cantitate" class="icon16 i-list"
                                                                        style="cursor: pointer;"></i></td>
                                                             {/if}
                                                             <th>Fisa</th>
@@ -110,12 +110,7 @@
                                                         </tr>
                                                         {$nr = 1}
                                                         {foreach from=$livrare['cantitati'] item=cantitate}
-                                                            {if ($nr > 3)}
-                                                                {$ascuns = 'style="display:none"'}
-                                                                {else}
-                                                                {$ascuns = ''}
-                                                            {/if}
-                                                            <tr {$ascuns}>
+                                                            <tr {($nr > 3) ? 'class="ascunde_cantitate"' : ''}>
                                                                 <td>{$nr++}</td>
                                                                 <td style="text-align: center;"><a target="_blank"
                                                                                                    href="completare_fisa_traseu.php?id={$cantitate['fisa_id']}">{$cantitate['fisa_id']}</a>

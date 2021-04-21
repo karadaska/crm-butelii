@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-09 14:10:12
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-21 12:51:47
          compiled from "/var/www/html/fofoweb/www/templates/header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9354496860227ba4d189a4-43711041%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '531fa363fd35debb80638b0c1f799e756e70e424' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/header.tpl',
-      1 => 1591006822,
+      1 => 1618998671,
       2 => 'file',
     ),
   ),
@@ -15,14 +15,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60227ba4d206d4_97736115',
   'variables' => 
   array (
     'title' => 0,
     'name' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60227ba4d206d4_97736115',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60227ba4d206d4_97736115')) {function content_60227ba4d206d4_97736115($_smarty_tpl) {?><!DOCTYPE html>
 <html lang="ro" xml:lang="ro">
@@ -67,7 +67,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- app stylesheets -->
     <link href="css/app.css" rel="stylesheet" />
-
     <!-- Custom stylesheets ( Put your own changes here ) -->
     <link href="css/custom.css" rel="stylesheet" />
 

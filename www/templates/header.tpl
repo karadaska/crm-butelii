@@ -39,7 +39,6 @@
 
     <!-- app stylesheets -->
     <link href="css/app.css" rel="stylesheet" />
-
     <!-- Custom stylesheets ( Put your own changes here ) -->
     <link href="css/custom.css" rel="stylesheet" />
 
