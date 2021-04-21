@@ -186,8 +186,9 @@ class Stocuri
         $query = "SELECT a.*, b.tip as  nume_produs, a.cantitate
                   from fisa_total_plecare as a 
                   left join tip_produs as b on a.tip_produs_id = b.id
-                  where fisa_id = '" . $id . "'
-                  and a.sters = 0
+                  WHERE fisa_id = '" . $id . "'
+                  AND a.sters = 0
+                  AND b.sters = 0
                  ";
         $result = myQuery($query);
 
