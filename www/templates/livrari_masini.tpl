@@ -111,7 +111,7 @@
                                                         {$nr = 1}
                                                         {foreach from=$livrare['cantitati'] item=cantitate}
                                                             <tr {($nr > 3) ? 'class="ascunde_cantitate"' : ''}>
-                                                                <td>{$nr++}</td>
+                                                                <td style="text-align: center;">{$nr++}</td>
                                                                 <td style="text-align: center;"><a target="_blank"
                                                                                                    href="completare_fisa_traseu.php?id={$cantitate['fisa_id']}">{$cantitate['fisa_id']}</a>
                                                                 </td>
