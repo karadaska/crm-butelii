@@ -98,13 +98,32 @@
                                                 <td style="text-align: right;">{($livrare['km']['km_traseu'] > 0) ? $livrare['km']['km_traseu'] : '-'}</td>
                                                 <td class="span2">
                                                     <table class="table table-bordered">
-                                                        {foreach from=$livrare['cantitati'] item=cantitate}
                                                         <tr>
-                                                            <td style="text-align: center;"><a target="_blank" href="completare_fisa_traseu.php?id={$cantitate['fisa_id']}">{$cantitate['fisa_id']}</a></td>
-                                                            <td style="text-align: center;">{$cantitate['data']}</td>
-                                                            <td style="text-align: center;">{$cantitate['cantitate']}</td>
-                                                            <td style="text-align: center;">{$cantitate['pret']}</td>
+                                                            {if count($livrare['cantitati']) > 3}
+                                                                <td><i id="toggle_alimentari" class="icon16 i-list"
+                                                                       style="cursor: pointer;"></i></td>
+                                                            {/if}
+                                                            <th>Fisa</th>
+                                                            <th style="text-align: center;">Data</th>
+                                                            <th>Cant</th>
+                                                            <th>Pret</th>
                                                         </tr>
+                                                        {$nr = 1}
+                                                        {foreach from=$livrare['cantitati'] item=cantitate}
+                                                            {if ($nr > 3)}
+                                                                {$ascuns = 'style="display:none"'}
+                                                                {else}
+                                                                {$ascuns = ''}
+                                                            {/if}
+                                                            <tr {$ascuns}>
+                                                                <td>{$nr++}</td>
+                                                                <td style="text-align: center;"><a target="_blank"
+                                                                                                   href="completare_fisa_traseu.php?id={$cantitate['fisa_id']}">{$cantitate['fisa_id']}</a>
+                                                                </td>
+                                                                <td style="text-align: center;">{$cantitate['data']}</td>
+                                                                <td style="text-align: center;">{$cantitate['cantitate']}</td>
+                                                                <td style="text-align: center;">{$cantitate['pret']}</td>
+                                                            </tr>
                                                         {/foreach}
                                                     </table>
                                                 </td>
@@ -153,5 +172,84 @@
 </div>
 <div style="margin-top: 100px;"></div>
 
-<script src="/js/pagini/raport_livrari_soferi.js"></script>
+<script src="/js/pagini/raport_livrari_masini.js"></script>
+{*<fieldset>*}
+{*<legend><b>Alimentari card</b>&nbsp;*}
+{*<? if ($sf_user->hasCredential('r21')) { ?>*}
+{*<?= link_to('Export alimentari', 'parcauto/exportalimentari?id=' . $vehicul->getId(), 'class="btn btn-primary btn-mini"') ?>&nbsp;*}
+{*<?= link_to('Adauga alimentare', 'parcauto/addalimentare?id=' . $vehicul->getId(), 'class="btn btn-info btn-mini"') ?>*}
+{*<? }; ?>*}
+{*</legend>*}
+{*<table class="table table-striped table-bordered" width="100%">*}
+{*<tr>*}
+{*<th style="width: 30px;">*}
+{*<? if (count($alimentari) > 5) { ?>*}
+{*<i id="toggle_alimentari" class="icon16 i-list" style="cursor: pointer;"></i>*}
+{*<? } ?>*}
+{*</th>*}
+{*<th width="170">*}
+{*Data*}
+{*</th>*}
+{*<th>*}
+{*Cantitate*}
+{*</th>*}
+{*<th width="200">*}
+{*Pret*}
+{*</th>*}
+{*</tr>*}
+{*<?*}
+{*$total_cantitate = 0;*}
+{*$total_cost = 0;*}
+{*$data_luna_curenta = date("m");*}
+{*$nr_randuri = 0;*}
+{*foreach ($alimentari as $row) {*}
+{*$nr_randuri++;*}
+{*if ($row->getData("m") != $data_luna_curenta) {*}
+{*if ($total_cantitate > 0) {*}
+{*?>*}
+{*<tr <? if ($nr_randuri > 5) {*}
+{*echo 'class="alimentare_ascunsa"';*}
+{*} ?>>*}
+{*<td align="right" colspan="2">Total luna (<?= $data_luna_curenta ?>):</td>*}
+{*<td align="right"><b><?= $total_cantitate ?> litri</b></td>*}
+{*<td align="right"><b><?= $total_cost ?> lei</b></td>*}
+{*</tr>*}
+{*<?*}
+{*}*}
+{*$data_luna_curenta = $row->getData("m");*}
+{*$total_cantitate = 0;*}
+{*$total_cost = 0;*}
+{*}*}
+{*$total_cantitate += $row->getCantitate();*}
+{*$total_cost += $row->getCost();*}
+{*?>*}
+{*<tr <? if ($nr_randuri > 5) {*}
+{*echo 'class="alimentare_ascunsa"';*}
+{*} ?> >*}
+{*<td width="20">*}
+{*<?= link_to('<img src="/images/edit.png">', 'parcauto/editalimentare?id=' . $row->getId(), ' title="edit"') ?>*}
+{*</td>*}
+{*<td>*}
+{*<?= $row->getData("d-m-Y") ?>*}
+{*</td>*}
+{*<td align="right">*}
+{*<?= $row->getCantitate() ?>*}
+{*</td>*}
+{*<td align="right">*}
+{*<?= $row->getCost() ?>*}
+{*</td>*}
+{*</tr>*}
+{*<?*}
+{*}*}
+{*if (count($alimentari)) { ?>*}
+{*<tr <? if ($nr_randuri > 5) {*}
+{*echo 'class="alimentare_ascunsa"';*}
+{*} ?>>*}
+{*<td align="right" colspan="2">Total luna (<?= $data_luna_curenta ?>):</td>*}
+{*<td align="right"><b><?= $total_cantitate ?> litri</b></td>*}
+{*<td align="right"><b><?= $total_cost ?> lei</b></td>*}
+{*</tr>*}
+{*<? } ?>*}
+{*</table>*}
+{*</fieldset>*}
 

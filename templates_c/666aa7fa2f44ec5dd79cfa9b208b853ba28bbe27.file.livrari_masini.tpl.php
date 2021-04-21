@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-20 22:17:38
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-21 12:20:09
          compiled from "/var/www/html/fofoweb/www/templates/livrari_masini.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11988036646040940f14d4e2-58340311%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '666aa7fa2f44ec5dd79cfa9b208b853ba28bbe27' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_masini.tpl',
-      1 => 1618946254,
+      1 => 1618996807,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'produse' => 0,
     'nr' => 0,
     'livrare' => 0,
+    'ascuns' => 0,
     'cantitate' => 0,
     'total_livrare' => 0,
     'livrare_produse' => 0,
@@ -172,22 +173,43 @@ $_smarty_tpl->tpl_vars['livrare']->_loop = true;
 </td>
                                                 <td class="span2">
                                                     <table class="table table-bordered">
+                                                        <tr>
+                                                            <?php if (count($_smarty_tpl->tpl_vars['livrare']->value['cantitati'])>3) {?>
+                                                                <td><i id="toggle_alimentari" class="icon16 i-list"
+                                                                       style="cursor: pointer;"></i></td>
+                                                            <?php }?>
+                                                            <th>Fisa</th>
+                                                            <th style="text-align: center;">Data</th>
+                                                            <th>Cant</th>
+                                                            <th>Pret</th>
+                                                        </tr>
+                                                        <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
                                                         <?php  $_smarty_tpl->tpl_vars['cantitate'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cantitate']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['livrare']->value['cantitati']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['cantitate']->key => $_smarty_tpl->tpl_vars['cantitate']->value) {
 $_smarty_tpl->tpl_vars['cantitate']->_loop = true;
 ?>
-                                                        <tr>
-                                                            <td style="text-align: center;"><a target="_blank" href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['cantitate']->value['fisa_id'];?>
+                                                            <?php if (($_smarty_tpl->tpl_vars['nr']->value>3)) {?>
+                                                                <?php $_smarty_tpl->tpl_vars['ascuns'] = new Smarty_variable('style="display:none"', null, 0);?>
+                                                                <?php } else { ?>
+                                                                <?php $_smarty_tpl->tpl_vars['ascuns'] = new Smarty_variable('', null, 0);?>
+                                                            <?php }?>
+                                                            <tr <?php echo $_smarty_tpl->tpl_vars['ascuns']->value;?>
+>
+                                                                <td><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
+</td>
+                                                                <td style="text-align: center;"><a target="_blank"
+                                                                                                   href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['cantitate']->value['fisa_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['fisa_id'];?>
-</a></td>
-                                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['data'];?>
+</a>
+                                                                </td>
+                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['data'];?>
 </td>
-                                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['cantitate'];?>
+                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['cantitate'];?>
 </td>
-                                                            <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['pret'];?>
+                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['pret'];?>
 </td>
-                                                        </tr>
+                                                            </tr>
                                                         <?php } ?>
                                                     </table>
                                                 </td>
@@ -253,6 +275,85 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
 </div>
 <div style="margin-top: 100px;"></div>
 
-<script src="/js/pagini/raport_livrari_soferi.js"></script>
+<script src="/js/pagini/raport_livrari_masini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?php }} ?>

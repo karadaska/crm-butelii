@@ -1,8 +1,13 @@
-.index_input_sosire{
-    min-height: 10px!important;
+.index_input_sosire {
+    min-height: 10px !important;
     line-height: 16px;
 }
+
 .table .table_miscari, .table th {
     padding: 1px;
 
+}
+
+.alimentare_ascunsa {
+    display: none!important;
 }

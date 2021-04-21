@@ -553,17 +553,20 @@
                                                 <tr>
                                                     {if ($client['total_valoare_ar_8'] > 0 || $client['total_valoare_bg'] > 0 || $client['total_valoare_ar_9'] > 0)}
                                                         <th style="text-align: left;" colspan="7">
-                                                            {assign var=client_produse_extra value=Fise::GetProdusExtraByClientIdAndFisa(1, $client['client_id'],$fisa['id'])}
-                                                            TOTAL: {$client_produse_extra['1']['nume_produs']}
                                                             <span style="color:red;">{($client['total_valoare_bg'] > 0) ? {'BG = '|cat:$client['total_valoare_bg']} : ''}</span>
                                                             {(($client['total_valoare_bg'] > 0) && ($client['total_valoare_ar_8'] > 0 || $client['total_valoare_ar_9'] > 0))? ';' : ''}
                                                             <span style="color:red;">{($client['total_valoare_ar_9'] > 0) ? {'AR 9 = '|cat:$client['total_valoare_ar_9']} : ''}</span>
                                                             {($client['total_valoare_bg'] > 0 && $client['total_valoare_ar_9'] > 0 && $client['total_valoare_ar_8'] > 0)? ';' : ''}
                                                             <span style="color:red;">{($client['total_valoare_ar_8'] > 0) ? {'AR 8 = '|cat:$client['total_valoare_ar_8']} : ''}</span>
-
                                                         </th>
                                                     {/if}
                                                 </tr>
+                                                {assign var=client_produse_extra value=Fise::GetProduseExtraByClientIdAndFisa($client['client_id'],$fisa['id'])}
+                                               {foreach from=$client_produse_extra item=produs_extra}
+                                                <tr>
+                                                    <th style="text-align: left;"><span style="color: red;">EXTRA:</span> {$produs_extra['nume_produs']} : {$produs_extra['pline']['cantitate']}</th>
+                                                </tr>
+                                                {/foreach}
                                             </table>
                                         </td>
                                     </tr>
