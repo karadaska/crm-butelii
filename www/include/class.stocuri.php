@@ -163,7 +163,9 @@ class Stocuri
                                                 LEFT JOIN detalii_fisa_intoarcere_produse as b on a.id = b.fisa_id
                                                 LEFT JOIN tip_produs as c on b.tip_produs_id = c.id
                                                 WHERE a.id = '" . $fisa_id . "'
-                                                AND b.client_id = '" . $client_id . "'          
+                                                AND b.client_id = '" . $client_id . "'
+                                                AND a.sters = 0
+                                                AND b.sters = 0          
                                                 ";
         $result = myQuery($produse_by_client_id_fisa_intoarcere);
 
