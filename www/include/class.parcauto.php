@@ -597,7 +597,7 @@ class ParcAuto
             $data_stop = date('Y-m-t');
         }
 
-        $query = "SELECT  b.fisa_id, b.data_intrare as data, b.cantitate, b.pret
+        $query = "SELECT  b.fisa_id, b.data_intrare as data
                                 FROM fise_generate AS a
                                 LEFT JOIN detalii_fisa_intoarcere_produse as b on a.id = b.fisa_id
                                 WHERE a.data_intrare >= '" . $data_start . "'
@@ -668,7 +668,10 @@ class ParcAuto
                         'data_stop' => $data_stop
                     )),
 
-                    'cantitati' => self::getCantitatiByTraseuAndSoferAndMasina($item['traseu_id'], $item['sofer_id'], $item['masina_id'], array(
+                    'fise_by_masina' => Fise::getFiseLivrariMasini(array(
+                        'masina_id' => $item['masina_id'],
+                        'traseu_id' => $item['traseu_id'],
+                        'sofer_id' => $item['sofer_id'],
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ))

@@ -162,44 +162,6 @@ class Fise
 
     }
 
-//    public static function GetProdusExtraByProdusIdAndFisa($tip_produs_id, $fisa_id)
-//    {
-//        $ret = array();
-//
-//        $query = "SELECT b.tip as nume_produs, c.nume, a.cantitate, a.pret, a.tip_produs_id, a.stare_produs
-//                FROM
-//                    detalii_fisa_extra_intoarcere_produse as a
-//                    LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
-//                    LEFT JOIN stare_produs as c on a.stare_produs = c.id
-//                WHERE
-//                    a.tip_produs_id = '" . $tip_produs_id . "'
-//                    AND a.fisa_id = '" . $fisa_id . "'
-//                    AND a.sters = 0
-//                  ";
-//        $result = myQuery($query);
-//
-//        if ($result) {
-//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-//            foreach ($a as $item) {
-//                if (!isset($ret[$item['tip_produs_id']])) {
-//                    $ret[$item['tip_produs_id']] = array(
-//                        'nume_produs' => $item['nume_produs'],
-//                        'pline' => array(
-//                            'cantitate' => 0,
-//                            'pret' => 0,
-//                        ),
-//                    );
-//                }
-//                if ($item['stare_produs'] == 1) {
-//                    $ret[$item['tip_produs_id']]['pline']['cantitate'] += $item['cantitate'];
-//                    $ret[$item['tip_produs_id']]['pline']['pret'] +=$item['pret'];
-//                }
-//            }
-//        }
-//        return $ret;
-//
-//    }
-
     public static function GetProdusExtraByProdusIdAndFisa($tip_produs_id, $fisa_id)
     {
         $ret = array();
@@ -250,8 +212,6 @@ class Fise
 
     }
 
-
-
     public static function getObservatieSecundaraDinFisaTraseuByClientIdAndFisaId($client_id, $fisa_id)
     {
         $ret = array();
@@ -268,7 +228,6 @@ class Fise
         }
         return $ret;
     }
-
 
     public static function getAsignariClientiByFisaGenerataIdPrintEditFisa($fisa_id, $opts = array())
     {
@@ -390,29 +349,6 @@ class Fise
         return $ret;
     }
 
-//    public static function getRandamentAnualDinFiseByClientId($client_id, $opts = array())
-//    {
-//        $an = isset($opts['an']) ? $opts['an'] : 0;
-//
-//        if ($an == 0) {
-//            $an = date('Y');
-//        }
-//
-//        $ret = array();
-//        $query = "SELECT an, perioada_id, SUM(randament ) AS randament_lunar, suma_target
-//                FROM randament_clienti
-//                WHERE client_id = '" . $client_id . "'
-//                AND an = '" . $an . "'
-//                GROUP BY perioada_id ASC
-//               ";
-//
-//        $result = myQuery($query);
-//        if ($result) {
-//            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
-//        }
-//        return $ret;
-//    }
-
     public static function getRandamentAnualDinFiseByClientId($client_id, $opts = array())
     {
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
@@ -442,4 +378,96 @@ class Fise
         return $ret;
     }
 
+    public static function getFiseLivrariMasini($opts = array())
+    {
+        $masina_id = isset($opts['masina_id']) ? $opts['masina_id'] : 0;
+        $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
+        $sofer_id = isset($opts['sofer_id']) ? $opts['sofer_id'] : 0;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        $ret = array();
+
+        $query = "SELECT a.id, a.data_intrare AS `data`, SUM(b.cantitate) as suma_cantitati 
+                  FROM fise_generate AS a
+                  LEFT JOIN detalii_fisa_intoarcere_produse as b on a.id = b.fisa_id
+                  WHERE a.masina_id = '" . $masina_id . "'
+                  AND a.traseu_id = '" . $traseu_id . "'
+                  AND a.sofer_id = '" . $sofer_id . "'
+                  AND a.data_intrare >= '" . $data_start . "'
+                  AND a.data_intrare <= '" . $data_stop . "'
+                  AND a.sters = 0
+                  AND b.sters = 0
+                  GROUP BY b.fisa_id
+                  ";
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+
 }
+
+
+//    public static function GetProdusExtraByProdusIdAndFisa($tip_produs_id, $fisa_id)
+//    {
+//        $ret = array();
+//
+//        $query = "SELECT b.tip as nume_produs, c.nume, a.cantitate, a.pret, a.tip_produs_id, a.stare_produs
+//                FROM
+//                    detalii_fisa_extra_intoarcere_produse as a
+//                    LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+//                    LEFT JOIN stare_produs as c on a.stare_produs = c.id
+//                WHERE
+//                    a.tip_produs_id = '" . $tip_produs_id . "'
+//                    AND a.fisa_id = '" . $fisa_id . "'
+//                    AND a.sters = 0
+//                  ";
+//        $result = myQuery($query);
+//
+//        if ($result) {
+//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+//            foreach ($a as $item) {
+//                if (!isset($ret[$item['tip_produs_id']])) {
+//                    $ret[$item['tip_produs_id']] = array(
+//                        'nume_produs' => $item['nume_produs'],
+//                        'pline' => array(
+//                            'cantitate' => 0,
+//                            'pret' => 0,
+//                        ),
+//                    );
+//                }
+//                if ($item['stare_produs'] == 1) {
+//                    $ret[$item['tip_produs_id']]['pline']['cantitate'] += $item['cantitate'];
+//                    $ret[$item['tip_produs_id']]['pline']['pret'] +=$item['pret'];
+//                }
+//            }
+//        }
+//        return $ret;
+//
+//    }
+
+//    public static function getRandamentAnualDinFiseByClientId($client_id, $opts = array())
+//    {
+//        $an = isset($opts['an']) ? $opts['an'] : 0;
+//
+//        if ($an == 0) {
+//            $an = date('Y');
+//        }
+//
+//        $ret = array();
+//        $query = "SELECT an, perioada_id, SUM(randament ) AS randament_lunar, suma_target
+//                FROM randament_clienti
+//                WHERE client_id = '" . $client_id . "'
+//                AND an = '" . $an . "'
+//                GROUP BY perioada_id ASC
+//               ";
+//
+//        $result = myQuery($query);
+//        if ($result) {
+//            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+//        }
+//        return $ret;
+//    }

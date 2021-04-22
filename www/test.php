@@ -3,7 +3,9 @@ require_once 'etc/config.php';
 header('content-type: application/json');
 
 $zi_curenta = date('Y-m-d');
-$traseu_id = 1;
+$traseu_id = 2;
+$sofer_id = 22;
+$masina_id = 30;
 $data_start = '2021-01-01';
 $data_stop = '2021-01-31';
 //$depozit_id = 0;
@@ -28,13 +30,27 @@ $data_stop = '2021-01-31';
 //));
 //$b = Fise::GetProdusExtraByClientIdAndFisa(1, 1332, 1452);
 //$b = Fise::GetProdusExtraByProdusIdAndFisa(1, 1452);
-$b = ParcAuto::getRaportLivrariMasini(26,
-    array(
-        'data_start' => $data_start,
-        'data_stop' => $data_stop
-    ));
+//$b = ParcAuto::getRaportLivrariMasini(26,
+//    array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//    ));
 //$b = ParcAuto::getCantitatiByTraseuAndSoferAndMasina(4,23,26, array(
 //    'data_start' => $data_start,
 //        'data_stop' => $data_stop
 //));
+
+//$b = Fise::getFiseLivrariMasini(array(
+//    'masina_id' => 30,
+//    'traseu_id' => 2,
+//    'sofer_id' => 22,
+//    'data_start' => '2021-01-01',
+//    'data_stop' => '2021-01-31'
+//));
+
+$b = ParcAuto::getRaportLivrariMasini(30, array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+));
+
 echo json_encode($b);

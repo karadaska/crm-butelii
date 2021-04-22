@@ -99,25 +99,24 @@
                                                 <td class="span2">
                                                     <table class="table table-bordered">
                                                         <tr>
-                                                            {if count($livrare['cantitati']) > 3}
-                                                                <td><i id="toggle_cantitate" class="icon16 i-list"
-                                                                       style="cursor: pointer;"></i></td>
-                                                            {/if}
+                                                            <td></td>
+                                                            {*{if count($livrare['fise_by_masina']) > 3}*}
+                                                                {*<td><i id="toggle_cantitate" class="icon16 i-list"*}
+                                                                       {*style="cursor: pointer;"></i>*}
+                                                                {*</td>*}
+                                                            {*{/if}*}
                                                             <th>Fisa</th>
                                                             <th style="text-align: center;">Data</th>
                                                             <th>Cant</th>
-                                                            <th>Pret</th>
                                                         </tr>
                                                         {$nr = 1}
-                                                        {foreach from=$livrare['cantitati'] item=cantitate}
+                                                        {foreach from=$livrare['fise_by_masina'] item=cantitate}
                                                             <tr {($nr > 3) ? 'class="ascunde_cantitate"' : ''}>
                                                                 <td style="text-align: center;">{$nr++}</td>
-                                                                <td style="text-align: center;"><a target="_blank"
-                                                                                                   href="completare_fisa_traseu.php?id={$cantitate['fisa_id']}">{$cantitate['fisa_id']}</a>
+                                                                <td style="text-align: center;"><a target="_blank" href="completare_fisa_traseu.php?id={$cantitate['id']}">{$cantitate['id']}</a>
                                                                 </td>
                                                                 <td style="text-align: center;">{$cantitate['data']}</td>
-                                                                <td style="text-align: center;">{$cantitate['cantitate']}</td>
-                                                                <td style="text-align: center;">{$cantitate['pret']}</td>
+                                                                <td style="text-align: center;">{$cantitate['suma_cantitati']}</td>
                                                             </tr>
                                                         {/foreach}
                                                     </table>
