@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-22 22:57:37
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-22 23:11:27
          compiled from "/var/www/html/fofoweb/www/templates/fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:41291163760227fca5e0d02-36086469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6a816e77c26a3e44e8901f8e5bf303b562bf874' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/fisa_traseu.tpl',
-      1 => 1619121452,
+      1 => 1619122278,
       2 => 'file',
     ),
   ),
@@ -41,9 +41,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fisa' => 0,
     'marfa_plecare' => 0,
     'suma_bg' => 0,
-    'suma_ar9' => 0,
-    'suma_ar8' => 0,
     'cantitati_fisa' => 0,
+    'suma_ar9' => 0,
+    'suma_ar_9' => 0,
+    'suma_ar8' => 0,
+    'suma_ar_8' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -226,33 +228,48 @@ $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = true;
                                                                     <?php $_smarty_tpl->tpl_vars['suma_bg'] = new Smarty_variable(Fise::getTotalCantitatiBgByFisa($_smarty_tpl->tpl_vars['fisa']->value['id']), null, 0);?>
                                                                     <?php $_smarty_tpl->tpl_vars['suma_ar9'] = new Smarty_variable(Fise::getTotalCantitatiAr9ByFisa($_smarty_tpl->tpl_vars['fisa']->value['id']), null, 0);?>
                                                                     <?php $_smarty_tpl->tpl_vars['suma_ar8'] = new Smarty_variable(Fise::getTotalCantitatiAr8ByFisa($_smarty_tpl->tpl_vars['fisa']->value['id']), null, 0);?>
+                                                                    <?php $_smarty_tpl->tpl_vars['cantitati_fisa'] = new Smarty_variable(Stocuri::getFisaGenerataById($_smarty_tpl->tpl_vars['fisa']->value['id']), null, 0);?>
                                                                     <td>
                                                                         <table class="table table-bordered">
                                                                             <?php if (($_smarty_tpl->tpl_vars['suma_bg']->value['suma_bg']>0)) {?>
                                                                                 <tr>
                                                                                     <td>BG</td>
-                                                                                    <td><?php echo $_smarty_tpl->tpl_vars['suma_bg']->value['suma_bg'];?>
+                                                                                    <?php if (($_smarty_tpl->tpl_vars['cantitati_fisa']->value['grand_total_vandute_bg']!=$_smarty_tpl->tpl_vars['suma_bg']->value['suma_bg'])) {?>
+                                                                                    <td style="color: red;"><?php echo $_smarty_tpl->tpl_vars['suma_bg']->value['suma_bg'];?>
 </td>
+                                                                                    <?php } else { ?>
+                                                                                        <td><?php echo $_smarty_tpl->tpl_vars['suma_bg']->value['suma_bg'];?>
+</td>
+                                                                                    <?php }?>
                                                                                 </tr>
                                                                             <?php }?>
                                                                             <?php if (($_smarty_tpl->tpl_vars['suma_ar9']->value['suma_ar_9']>0)) {?>
                                                                                 <tr>
                                                                                     <td>AR 9:</td>
-                                                                                    <td><?php echo $_smarty_tpl->tpl_vars['suma_ar9']->value['suma_ar_9'];?>
+                                                                                    <?php if (($_smarty_tpl->tpl_vars['cantitati_fisa']->value['grand_total_vandute_ar_9']!=$_smarty_tpl->tpl_vars['suma_ar_9']->value['suma_ar_9'])) {?>
+                                                                                        <td style="color: red;"><?php echo $_smarty_tpl->tpl_vars['suma_ar9']->value['suma_ar_9'];?>
 </td>
+                                                                                    <?php } else { ?>
+                                                                                        <td><?php echo $_smarty_tpl->tpl_vars['suma_ar9']->value['suma_ar_9'];?>
+</td>
+                                                                                    <?php }?>
                                                                                 </tr>
                                                                             <?php }?>
                                                                             <?php if (($_smarty_tpl->tpl_vars['suma_ar8']->value['suma_ar_8']>0)) {?>
                                                                                 <tr>
                                                                                     <td>AR 8:</td>
-                                                                                    <td><?php echo $_smarty_tpl->tpl_vars['suma_ar8']->value['suma_ar_8'];?>
+                                                                                    <?php if (($_smarty_tpl->tpl_vars['cantitati_fisa']->value['grand_total_vandute_ar_8']!=$_smarty_tpl->tpl_vars['suma_ar_8']->value['suma_ar_8'])) {?>
+                                                                                        <td style="color: red;"><?php echo $_smarty_tpl->tpl_vars['suma_ar8']->value['suma_ar_8'];?>
 </td>
+                                                                                    <?php } else { ?>
+                                                                                        <td><?php echo $_smarty_tpl->tpl_vars['suma_ar8']->value['suma_ar_8'];?>
+</td>
+                                                                                    <?php }?>
                                                                                 </tr>
                                                                             <?php }?>
                                                                         </table>
                                                                     </td>
                                                                     <td>
-                                                                        <?php $_smarty_tpl->tpl_vars['cantitati_fisa'] = new Smarty_variable(Stocuri::getFisaGenerataById($_smarty_tpl->tpl_vars['fisa']->value['id']), null, 0);?>
                                                                         <table class="table table-bordered">
                                                                             <?php if (($_smarty_tpl->tpl_vars['cantitati_fisa']->value['grand_total_vandute_bg']>0)) {?>
                                                                                 <tr>

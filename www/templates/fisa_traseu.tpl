@@ -113,30 +113,42 @@
                                                                     {assign var=suma_bg value=Fise::getTotalCantitatiBgByFisa($fisa['id'])}
                                                                     {assign var=suma_ar9 value=Fise::getTotalCantitatiAr9ByFisa($fisa['id'])}
                                                                     {assign var=suma_ar8 value=Fise::getTotalCantitatiAr8ByFisa($fisa['id'])}
+                                                                    {assign var=cantitati_fisa value=Stocuri::getFisaGenerataById($fisa['id'])}
                                                                     <td>
                                                                         <table class="table table-bordered">
                                                                             {if ($suma_bg['suma_bg'] > 0)}
                                                                                 <tr>
                                                                                     <td>BG</td>
-                                                                                    <td>{$suma_bg['suma_bg']}</td>
+                                                                                    {if ($cantitati_fisa['grand_total_vandute_bg'] != $suma_bg['suma_bg'])}
+                                                                                    <td style="color: red;">{$suma_bg['suma_bg']}</td>
+                                                                                    {else}
+                                                                                        <td>{$suma_bg['suma_bg']}</td>
+                                                                                    {/if}
                                                                                 </tr>
                                                                             {/if}
                                                                             {if ($suma_ar9['suma_ar_9'] > 0)}
                                                                                 <tr>
                                                                                     <td>AR 9:</td>
-                                                                                    <td>{$suma_ar9['suma_ar_9']}</td>
+                                                                                    {if ($cantitati_fisa['grand_total_vandute_ar_9'] != $suma_ar_9['suma_ar_9'])}
+                                                                                        <td style="color: red;">{$suma_ar9['suma_ar_9']}</td>
+                                                                                    {else}
+                                                                                        <td>{$suma_ar9['suma_ar_9']}</td>
+                                                                                    {/if}
                                                                                 </tr>
                                                                             {/if}
                                                                             {if ($suma_ar8['suma_ar_8'] >0)}
                                                                                 <tr>
                                                                                     <td>AR 8:</td>
-                                                                                    <td>{$suma_ar8['suma_ar_8']}</td>
+                                                                                    {if ($cantitati_fisa['grand_total_vandute_ar_8'] != $suma_ar_8['suma_ar_8'])}
+                                                                                        <td style="color: red;">{$suma_ar8['suma_ar_8']}</td>
+                                                                                    {else}
+                                                                                        <td>{$suma_ar8['suma_ar_8']}</td>
+                                                                                    {/if}
                                                                                 </tr>
                                                                             {/if}
                                                                         </table>
                                                                     </td>
                                                                     <td>
-                                                                        {assign var=cantitati_fisa value=Stocuri::getFisaGenerataById($fisa['id'])}
                                                                         <table class="table table-bordered">
                                                                             {if ($cantitati_fisa['grand_total_vandute_bg'] > 0)}
                                                                                 <tr>
