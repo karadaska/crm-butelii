@@ -309,6 +309,52 @@ class Fise
         return $ret;
     }
 
+    public static function getTotalCantitatiBgByFisa($id)
+    {
+        $ret = array();
+        $query = "SELECT SUM(cantitate) as suma_bg from detalii_fisa_intoarcere_produse
+                where fisa_id = '" . $id . "'
+                and tip_produs_id = 1
+                and sters = 0";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getTotalCantitatiAr9ByFisa($id)
+    {
+        $ret = array();
+        $query = "SELECT SUM(cantitate) as suma_ar_9 from detalii_fisa_intoarcere_produse
+                where fisa_id = '" . $id . "'
+                and tip_produs_id = 4
+                and sters = 0";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getTotalCantitatiAr8ByFisa($id)
+    {
+        $ret = array();
+        $query = "SELECT SUM(cantitate) as suma_ar_8 from detalii_fisa_intoarcere_produse
+                where fisa_id = '" . $id . "'
+                and tip_produs_id = 3
+                and sters = 0";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+
     public static function getAniRandamentDinFiseByClientId($client_id)
     {
         $ret = array();

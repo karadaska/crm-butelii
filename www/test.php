@@ -48,9 +48,9 @@ $data_stop = '2021-01-31';
 //    'data_stop' => '2021-01-31'
 //));
 
-$b = ParcAuto::getRaportLivrariMasini(30, array(
-        'data_start' => $data_start,
-        'data_stop' => $data_stop
-));
-
+//$b = ParcAuto::getRaportLivrariMasini(30, array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//));
+$b = Stocuri::getFisaGenerataById(360);
 echo json_encode($b);

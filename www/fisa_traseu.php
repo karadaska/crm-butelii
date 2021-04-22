@@ -36,7 +36,13 @@ $lista_fise = Stocuri::getFise(array(
     'luna_id' => $luna_id
 ));
 
+
+
 $smarty->assign('lista_fise',$lista_fise);
+
+$fisa_test = Stocuri::getFisaGenerataById($fisa_id);
+$smarty->assign('fisa_test', $fisa_test);
+
 
 $lista_depozite = Depozite::getDepozite();
 $smarty->assign('lista_depozite',$lista_depozite);
