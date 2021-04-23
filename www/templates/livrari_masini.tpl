@@ -111,13 +111,20 @@
                                                         </tr>
                                                         {$nr = 1}
                                                         {foreach from=$livrare['fise_by_masina'] item=cantitate}
-                                                            <tr {($nr > 3) ? 'class="ascunde_cantitate"' : ''}>
+                                                            <tr>
                                                                 <td style="text-align: center;">{$nr++}</td>
                                                                 <td style="text-align: center;"><a target="_blank" href="completare_fisa_traseu.php?id={$cantitate['id']}">{$cantitate['id']}</a>
                                                                 </td>
                                                                 <td style="text-align: center;">{$cantitate['data']}</td>
                                                                 <td style="text-align: center;">{$cantitate['suma_cantitati']}</td>
                                                             </tr>
+                                                            {*<tr {($nr > 3) ? 'class="ascunde_cantitate"' : ''}>*}
+                                                                {*<td style="text-align: center;">{$nr++}</td>*}
+                                                                {*<td style="text-align: center;"><a target="_blank" href="completare_fisa_traseu.php?id={$cantitate['id']}">{$cantitate['id']}</a>*}
+                                                                {*</td>*}
+                                                                {*<td style="text-align: center;">{$cantitate['data']}</td>*}
+                                                                {*<td style="text-align: center;">{$cantitate['suma_cantitati']}</td>*}
+                                                            {*</tr>*}
                                                         {/foreach}
                                                     </table>
                                                 </td>
