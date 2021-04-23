@@ -80,7 +80,6 @@
                                                                 <th>KM</th>
                                                                 <th>Data</th>
                                                                 <th>Cant.</th>
-                                                                {*<th>FISE</th>*}
                                                                 <th>&nbsp;</th>
                                                             </tr>
                                                             </thead>
@@ -94,24 +93,40 @@
                                                                     <td>{$fisa['nume_sofer']}</td>
                                                                     <td style="text-align: center;">{$fisa['numar_masina']}</td>
                                                                     <td style="text-align: left;">
-                                                                        {foreach from=$fisa['incarcatura_masina_plecare'] item=marfa_plecare}
-                                                                            {$marfa_plecare['nume_produs']} : {$marfa_plecare['cantitate']}
-                                                                            <br/>
-                                                                        {/foreach}
+                                                                        {if (count($fisa['incarcatura_masina_plecare']) > 0)}
+                                                                        <table class="table table-bordered">
+                                                                            <tr>
+                                                                                <th>Produs</th>
+                                                                                <th>Cantitate</th>
+                                                                            </tr>
+                                                                            {foreach from=$fisa['incarcatura_masina_plecare'] item=marfa_plecare}
+                                                                            <tr>
+                                                                                <td style="text-align: center;">{$marfa_plecare['nume_produs']}</td>
+                                                                                <td style="text-align: center;">{$marfa_plecare['cantitate']}</td>
+                                                                            </tr>
+                                                                            {/foreach}
+                                                                        </table>
+                                                                            {else}
+                                                                            <div style="text-align: center;">-</div>
+                                                                        {/if}
+                                                                        {*{foreach from=$fisa['incarcatura_masina_plecare'] item=marfa_plecare}*}
+                                                                            {*{$marfa_plecare['nume_produs']} : {$marfa_plecare['cantitate']}*}
+                                                                            {*<br/>*}
+                                                                        {*{/foreach}*}
                                                                     </td>
                                                                     <td>
-                                                                            <table class="table table-bordered">
+                                                                        <table class="table table-bordered">
+                                                                            <tr>
+                                                                                <th>Produs</th>
+                                                                                <th>Vandute</th>
+                                                                            </tr>
+                                                                            {foreach from=$fisa['total_cantitati'] item = cantitate}
                                                                                 <tr>
-                                                                                    <th>Produs</th>
-                                                                                    <th>Vandute</th>
+                                                                                    <td style="text-align: center;">{$cantitate['nume_produs']}</td>
+                                                                                    <td style="text-align: center;">{$cantitate['pline']}</td>
                                                                                 </tr>
-                                                                                {foreach from=$fisa['total_cantitati'] item = cantitate}
-                                                                                    <tr>
-                                                                                        <td style="text-align: center;">{$cantitate['nume_produs']}</td>
-                                                                                        <td style="text-align: center;">{$cantitate['pline']}</td>
-                                                                                    </tr>
-                                                                                {/foreach}
-                                                                            </table>
+                                                                            {/foreach}
+                                                                        </table>
                                                                     </td>
                                                                     <td style="text-align: center;">
                                                                         {($fisa['km_fisa']['km_parcursi'] != '') ? $fisa['km_fisa']['km_parcursi'] :'0'}
