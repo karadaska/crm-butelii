@@ -79,8 +79,8 @@
                                                                 <th>INCARCATURA SOSIRE</th>
                                                                 <th>KM</th>
                                                                 <th>Data</th>
-                                                                <th>TEST</th>
-                                                                <th>FISE</th>
+                                                                {*<th>TEST</th>*}
+                                                                {*<th>FISE</th>*}
                                                                 <th>&nbsp;</th>
                                                             </tr>
                                                             </thead>
@@ -110,67 +110,67 @@
                                                                         km
                                                                     </td>
                                                                     <td style="text-align: center;">{$fisa['data_intrare']}</td>
-                                                                    {assign var=suma_bg value=Fise::getTotalCantitatiBgByFisa($fisa['id'])}
-                                                                    {assign var=suma_ar9 value=Fise::getTotalCantitatiAr9ByFisa($fisa['id'])}
-                                                                    {assign var=suma_ar8 value=Fise::getTotalCantitatiAr8ByFisa($fisa['id'])}
-                                                                    {assign var=cantitati_fisa value=Stocuri::getFisaGenerataById($fisa['id'])}
-                                                                    <td>
-                                                                        <table class="table table-bordered">
-                                                                            {if ($suma_bg['suma_bg'] > 0)}
-                                                                                <tr>
-                                                                                    <td>BG</td>
-                                                                                    {if ($cantitati_fisa['grand_total_vandute_bg'] != $suma_bg['suma_bg'])}
-                                                                                    <td style="color: red;">{$suma_bg['suma_bg']}</td>
-                                                                                    {else}
-                                                                                        <td>{$suma_bg['suma_bg']}</td>
-                                                                                    {/if}
-                                                                                </tr>
-                                                                            {/if}
-                                                                            {if ($suma_ar9['suma_ar_9'] > 0)}
-                                                                                <tr>
-                                                                                    <td>AR 9:</td>
-                                                                                    {if ($cantitati_fisa['grand_total_vandute_ar_9'] != $suma_ar_9['suma_ar_9'])}
-                                                                                        <td style="color: red;">{$suma_ar9['suma_ar_9']}</td>
-                                                                                    {else}
-                                                                                        <td>{$suma_ar9['suma_ar_9']}</td>
-                                                                                    {/if}
-                                                                                </tr>
-                                                                            {/if}
-                                                                            {if ($suma_ar8['suma_ar_8'] >0)}
-                                                                                <tr>
-                                                                                    <td>AR 8:</td>
-                                                                                    {if ($cantitati_fisa['grand_total_vandute_ar_8'] != $suma_ar_8['suma_ar_8'])}
-                                                                                        <td style="color: red;">{$suma_ar8['suma_ar_8']}</td>
-                                                                                    {else}
-                                                                                        <td>{$suma_ar8['suma_ar_8']}</td>
-                                                                                    {/if}
-                                                                                </tr>
-                                                                            {/if}
-                                                                        </table>
-                                                                    </td>
-                                                                    <td>
-                                                                        <table class="table table-bordered">
-                                                                            {if ($cantitati_fisa['grand_total_vandute_bg'] > 0)}
-                                                                                <tr>
-                                                                                    <td>BG</td>
-                                                                                    <td>{$cantitati_fisa['grand_total_vandute_bg']}</td>
-                                                                                </tr>
-                                                                            {/if}
-                                                                            {if ($cantitati_fisa['grand_total_vandute_ar_9'] > 0)}
-                                                                                <tr>
-                                                                                    <td>AR 9:</td>
-                                                                                    <td>{$cantitati_fisa['grand_total_vandute_ar_9']}</td>
-                                                                                </tr>
-                                                                            {/if}
-                                                                            {if ($cantitati_fisa['grand_total_vandute_ar_8'] > 0)}
-                                                                                <tr>
-                                                                                    <td>AR 8:</td>
-                                                                                    <td>{$cantitati_fisa['grand_total_vandute_ar_8']}</td>
-                                                                                </tr>
-                                                                            {/if}
+                                                                    {*{assign var=suma_bg value=Fise::getTotalCantitatiBgByFisa($fisa['id'])}*}
+                                                                    {*{assign var=suma_ar9 value=Fise::getTotalCantitatiAr9ByFisa($fisa['id'])}*}
+                                                                    {*{assign var=suma_ar8 value=Fise::getTotalCantitatiAr8ByFisa($fisa['id'])}*}
+                                                                    {*{assign var=cantitati_fisa value=Stocuri::getFisaGenerataById($fisa['id'])}*}
+                                                                    {*<td>*}
+                                                                        {*<table class="table table-bordered">*}
+                                                                            {*{if ($suma_bg['suma_bg'] > 0)}*}
+                                                                                {*<tr>*}
+                                                                                    {*<td>BG</td>*}
+                                                                                    {*{if ($cantitati_fisa['grand_total_vandute_bg'] != $suma_bg['suma_bg'])}*}
+                                                                                    {*<td style="color: red;">{$suma_bg['suma_bg']}</td>*}
+                                                                                    {*{else}*}
+                                                                                        {*<td>{$suma_bg['suma_bg']}</td>*}
+                                                                                    {*{/if}*}
+                                                                                {*</tr>*}
+                                                                            {*{/if}*}
+                                                                            {*{if ($suma_ar9['suma_ar_9'] > 0)}*}
+                                                                                {*<tr>*}
+                                                                                    {*<td>AR 9:</td>*}
+                                                                                    {*{if ($cantitati_fisa['grand_total_vandute_ar_9'] != $suma_ar_9['suma_ar_9'])}*}
+                                                                                        {*<td style="color: red;">{$suma_ar9['suma_ar_9']}</td>*}
+                                                                                    {*{else}*}
+                                                                                        {*<td>{$suma_ar9['suma_ar_9']}</td>*}
+                                                                                    {*{/if}*}
+                                                                                {*</tr>*}
+                                                                            {*{/if}*}
+                                                                            {*{if ($suma_ar8['suma_ar_8'] >0)}*}
+                                                                                {*<tr>*}
+                                                                                    {*<td>AR 8:</td>*}
+                                                                                    {*{if ($cantitati_fisa['grand_total_vandute_ar_8'] != $suma_ar_8['suma_ar_8'])}*}
+                                                                                        {*<td style="color: red;">{$suma_ar8['suma_ar_8']}</td>*}
+                                                                                    {*{else}*}
+                                                                                        {*<td>{$suma_ar8['suma_ar_8']}</td>*}
+                                                                                    {*{/if}*}
+                                                                                {*</tr>*}
+                                                                            {*{/if}*}
+                                                                        {*</table>*}
+                                                                    {*</td>*}
+                                                                    {*<td>*}
+                                                                        {*<table class="table table-bordered">*}
+                                                                            {*{if ($cantitati_fisa['grand_total_vandute_bg'] > 0)}*}
+                                                                                {*<tr>*}
+                                                                                    {*<td>BG</td>*}
+                                                                                    {*<td>{$cantitati_fisa['grand_total_vandute_bg']}</td>*}
+                                                                                {*</tr>*}
+                                                                            {*{/if}*}
+                                                                            {*{if ($cantitati_fisa['grand_total_vandute_ar_9'] > 0)}*}
+                                                                                {*<tr>*}
+                                                                                    {*<td>AR 9:</td>*}
+                                                                                    {*<td>{$cantitati_fisa['grand_total_vandute_ar_9']}</td>*}
+                                                                                {*</tr>*}
+                                                                            {*{/if}*}
+                                                                            {*{if ($cantitati_fisa['grand_total_vandute_ar_8'] > 0)}*}
+                                                                                {*<tr>*}
+                                                                                    {*<td>AR 8:</td>*}
+                                                                                    {*<td>{$cantitati_fisa['grand_total_vandute_ar_8']}</td>*}
+                                                                                {*</tr>*}
+                                                                            {*{/if}*}
 
-                                                                        </table>
-                                                                    </td>
+                                                                        {*</table>*}
+                                                                    {*</td>*}
                                                                     <td style="text-align: center;vertical-align: top;"
                                                                         class="span3">
                                                                         <a href="edit_fisa_traseu.php?id={$fisa['id']}"
