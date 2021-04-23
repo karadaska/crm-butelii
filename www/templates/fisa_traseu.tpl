@@ -100,24 +100,18 @@
                                                                         {/foreach}
                                                                     </td>
                                                                     <td>
-                                                                        <table class="table table-bordered">
-                                                                            <tr>
-                                                                                <th>Produs</th>
-                                                                                <th>Vandute</th>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>BG</td>
-                                                                                <td style="text-align: center;">{$fisa['total_cantitati']['bg_11']}</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>AR 9 </td>
-                                                                                <td style="text-align: center;">{$fisa['total_cantitati']['ar9']}</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>AR 8 </td>
-                                                                                <td style="text-align: center;">{$fisa['total_cantitati']['ar8']}</td>
-                                                                            </tr>
-                                                                        </table>
+                                                                            <table class="table table-bordered">
+                                                                                <tr>
+                                                                                    <th>Produs</th>
+                                                                                    <th>Vandute</th>
+                                                                                </tr>
+                                                                                {foreach from=$fisa['total_cantitati'] item = cantitate}
+                                                                                    <tr>
+                                                                                        <td style="text-align: center;">{$cantitate['nume_produs']}</td>
+                                                                                        <td style="text-align: center;">{$cantitate['pline']}</td>
+                                                                                    </tr>
+                                                                                {/foreach}
+                                                                            </table>
                                                                     </td>
                                                                     <td style="text-align: center;">
                                                                         {($fisa['km_fisa']['km_parcursi'] != '') ? $fisa['km_fisa']['km_parcursi'] :'0'}

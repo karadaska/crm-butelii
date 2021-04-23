@@ -469,30 +469,27 @@ class Fise
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-//                if (!isset($ret[$item['tip_produs_id']])) {
-//                    $ret[$item['tip_produs_id']] = array(
-//                        'tip_produs_id' => $item['tip_produs_id'],
-//                        'nume_produs' => $item['nume_produs'],
+                if (!isset($ret[$item['tip_produs_id']])) {
+                    $ret[$item['tip_produs_id']] = array(
+                        'tip_produs_id' => $item['tip_produs_id'],
+                        'nume_produs' => $item['nume_produs'],
 //                        'pline' => 0,
-//                    );
-//                }
+                    );
+                }
                 if ($item['cantitate'] > 0) {
-//                    $ret[$item['tip_produs_id']]['pline'] += $item['cantitate'];
+                    $ret[$item['tip_produs_id']]['pline'] += $item['cantitate'];
 //                    $ret['total_vandute'] += $item['cantitate'];
 
                     if ($item['tip_produs_id'] == 1) {
-                        $ret['bg_11'] += $item['cantitate'];
+//                        $ret['bg_11'] += $item['cantitate'];
                     }
-//                    if ($item['tip_produs_id'] == 2) {
-//                        $ret['bg_9'] += $item['cantitate'];
-//                    }
 
                     if ($item['tip_produs_id'] == 3) {
-                        $ret['ar8'] += $item['cantitate'];
+//                        $ret['ar8'] += $item['cantitate'];
                     }
 
                     if ($item['tip_produs_id'] == 4) {
-                        $ret['ar9'] += $item['cantitate'];
+//                        $ret['ar9'] += $item['cantitate'];
                     }
 
                 }

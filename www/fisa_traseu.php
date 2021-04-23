@@ -38,13 +38,6 @@ $lista_fise = Stocuri::getFise(array(
 
 $smarty->assign('lista_fise', $lista_fise);
 
-//pre($lista_fise);
-
-//foreach ($lista_fise as $fisa) {
-//    $total_cantitati_fisa = Fise::getTotalCantitatiByFisaId($fisa['id']);
-//    $smarty->assign('total_cantitati_fisa', $total_cantitati_fisa);
-//}
-
 $lista_depozite = Depozite::getDepozite();
 $smarty->assign('lista_depozite', $lista_depozite);
 

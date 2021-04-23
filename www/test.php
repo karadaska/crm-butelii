@@ -54,7 +54,7 @@ $data_stop = '2021-01-31';
 //));
 //$b = Stocuri::getFisaGenerataById(360);
 //$b = Stocuri::getIncarcaturaMasinaSosireByFisaId(1644);
-//$b = Fise::getTotalCantitatiByFisaId(1644);
+$b = Fise::getTotalCantitatiByFisaId(1648);
 //$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(1648,1566);
 //$b = Stocuri::getIncarcaturaMasinaSosireByFisaIdCompleteazaFisa(1644);
 echo json_encode($b);
