@@ -76,7 +76,7 @@
                                                                 <th>SOFER</th>
                                                                 <th>MASINA</th>
                                                                 <th>INCARCATURA PLECARE</th>
-                                                                <th>INCARCATURA SOSIRE</th>
+                                                                <th>TOTAL VANDUTE</th>
                                                                 <th>KM</th>
                                                                 <th>Data</th>
                                                                 <th>Cant.</th>
