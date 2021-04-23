@@ -564,7 +564,7 @@
                                                 {assign var=client_produse_extra value=Fise::GetProduseExtraByClientIdAndFisa($client['client_id'],$fisa['id'])}
                                                {foreach from=$client_produse_extra item=produs_extra}
                                                 <tr>
-                                                    <th style="text-align: left;"><span style="color: red;">EXTRA:</span> {$produs_extra['nume_produs']} : {$produs_extra['pline']['cantitate']}</th>
+                                                    <th style="text-align: left;" colspan="7"><span style="color: red;">EXTRA:</span> {$produs_extra['nume_produs']}  = {$produs_extra['pline']['cantitate']}</th>
                                                 </tr>
                                                 {/foreach}
                                             </table>
