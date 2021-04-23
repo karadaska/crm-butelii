@@ -94,39 +94,41 @@
                                                                     <td style="text-align: center;">{$fisa['numar_masina']}</td>
                                                                     <td style="text-align: left;">
                                                                         {if (count($fisa['incarcatura_masina_plecare']) > 0)}
-                                                                        <table class="table table-bordered">
-                                                                            <tr>
-                                                                                <th>Produs</th>
-                                                                                <th>Cantitate</th>
-                                                                            </tr>
-                                                                            {foreach from=$fisa['incarcatura_masina_plecare'] item=marfa_plecare}
-                                                                            <tr>
-                                                                                <td style="text-align: center;">{$marfa_plecare['nume_produs']}</td>
-                                                                                <td style="text-align: center;">{$marfa_plecare['cantitate']}</td>
-                                                                            </tr>
-                                                                            {/foreach}
-                                                                        </table>
-                                                                            {else}
+                                                                            <table class="table table-bordered">
+                                                                                <tr>
+                                                                                    <th>Produs</th>
+                                                                                    <th>Cantitate</th>
+                                                                                </tr>
+                                                                                {foreach from=$fisa['incarcatura_masina_plecare'] item=marfa_plecare}
+                                                                                    <tr>
+                                                                                        <td style="text-align: center;">{$marfa_plecare['nume_produs']}</td>
+                                                                                        <td style="text-align: center;">{$marfa_plecare['cantitate']}</td>
+                                                                                    </tr>
+                                                                                {/foreach}
+                                                                            </table>
+                                                                        {else}
                                                                             <div style="text-align: center;">-</div>
                                                                         {/if}
                                                                         {*{foreach from=$fisa['incarcatura_masina_plecare'] item=marfa_plecare}*}
-                                                                            {*{$marfa_plecare['nume_produs']} : {$marfa_plecare['cantitate']}*}
-                                                                            {*<br/>*}
+                                                                        {*{$marfa_plecare['nume_produs']} : {$marfa_plecare['cantitate']}*}
+                                                                        {*<br/>*}
                                                                         {*{/foreach}*}
                                                                     </td>
                                                                     <td>
-                                                                        <table class="table table-bordered">
-                                                                            <tr>
-                                                                                <th>Produs</th>
-                                                                                <th>Vandute</th>
-                                                                            </tr>
-                                                                            {foreach from=$fisa['total_cantitati'] item = cantitate}
+                                                                        {if (count($fisa['total_cantitati']) > 0)}
+                                                                            <table class="table table-bordered">
                                                                                 <tr>
-                                                                                    <td style="text-align: center;">{$cantitate['nume_produs']}</td>
-                                                                                    <td style="text-align: center;">{$cantitate['pline']}</td>
+                                                                                    <th>Produs</th>
+                                                                                    <th>Vandute</th>
                                                                                 </tr>
-                                                                            {/foreach}
-                                                                        </table>
+                                                                                {foreach from=$fisa['total_cantitati'] item = cantitate}
+                                                                                    <tr>
+                                                                                        <td style="text-align: center;">{$cantitate['nume_produs']}</td>
+                                                                                        <td style="text-align: center;">{$cantitate['pline']}</td>
+                                                                                    </tr>
+                                                                                {/foreach}
+                                                                            </table>
+                                                                        {/if}
                                                                     </td>
                                                                     <td style="text-align: center;">
                                                                         {($fisa['km_fisa']['km_parcursi'] != '') ? $fisa['km_fisa']['km_parcursi'] :'0'}
