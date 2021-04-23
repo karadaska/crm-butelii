@@ -283,7 +283,7 @@ class Stocuri
                         'nume_produs' => $item['nume_produs'],
                         'pline' => 0,
                         'goale' => 0,
-                        'defecte' => 0,
+//                        'defecte' => 0,
                     );
 
                 }
@@ -291,9 +291,11 @@ class Stocuri
                     $ret[$item['tip_produs_id']]['pline'] += $item['cantitate'];
                 } else if ($item['stare_produs'] == 2) {
                     $ret[$item['tip_produs_id']]['goale'] += $item['cantitate'];
-                } else if ($item['stare_produs'] == 3) {
-                    $ret[$item['tip_produs_id']]['defecte'] += $item['cantitate'];
                 }
+
+//                else if ($item['stare_produs'] == 3) {
+//                    $ret[$item['tip_produs_id']]['defecte'] += $item['cantitate'];
+//                }
             }
         }
         return $ret;
@@ -636,7 +638,7 @@ class Stocuri
         }
 
         $ret = array();
-        $query = "SELECT a .id,a.data_intrare, b . nume as nume_depozit, c . numar as numar_masina, d . nume as nume_sofer, e . nume as nume_traseu 
+        $query = "SELECT a .id, a.data_intrare, b . nume as nume_depozit, c . numar as numar_masina, d . nume as nume_sofer, e . nume as nume_traseu 
                   from fise_generate as a
                   left join depozite as b on a . depozit_id = b . id
                   left join masini as c on a . masina_id = c . id
@@ -688,6 +690,7 @@ class Stocuri
                     'incarcatura_masina_plecare' => Stocuri::getIncarcaturaMasinaPlecareByFisaId($item['id']),
                     'incarcatura_masina_sosire' => Stocuri::getIncarcaturaMasinaSosireByFisaId($item['id']),
                     'km_fisa' => self::getKmByFisaId($item['id']),
+                    'total_cantitati' => Fise::getTotalCantitatiByFisaId($item['id']),
                 );
 
                 array_push($ret, $r);

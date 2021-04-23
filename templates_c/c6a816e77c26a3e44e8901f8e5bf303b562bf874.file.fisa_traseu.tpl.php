@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-23 11:23:35
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-23 14:24:14
          compiled from "/var/www/html/fofoweb/www/templates/fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:41291163760227fca5e0d02-36086469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6a816e77c26a3e44e8901f8e5bf303b562bf874' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/fisa_traseu.tpl',
-      1 => 1619166209,
+      1 => 1619177051,
       2 => 'file',
     ),
   ),
@@ -163,7 +163,7 @@ $_smarty_tpl->tpl_vars['luna']->_loop = true;
                                                                 <th>INCARCATURA SOSIRE</th>
                                                                 <th>KM</th>
                                                                 <th>Data</th>
-                                                                
+                                                                <th>Cant.</th>
                                                                 
                                                                 <th>&nbsp;</th>
                                                             </tr>
@@ -200,17 +200,27 @@ $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = true;
                                                                         <?php } ?>
                                                                     </td>
                                                                     <td>
-                                                                        <?php  $_smarty_tpl->tpl_vars['marfa_plecare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['fisa']->value['incarcatura_masina_sosire']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['marfa_plecare']->key => $_smarty_tpl->tpl_vars['marfa_plecare']->value) {
-$_smarty_tpl->tpl_vars['marfa_plecare']->_loop = true;
-?>
-                                                                            <?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['nume_produs'];?>
- : [Pline:<?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['pline'];?>
-, Goale: <?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['goale'];?>
-]
-                                                                            <br/>
-                                                                        <?php } ?>
+                                                                        <table class="table table-bordered">
+                                                                            <tr>
+                                                                                <th>Produs</th>
+                                                                                <th>Vandute</th>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>BG</td>
+                                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['total_cantitati']['bg_11'];?>
+</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>AR 9 </td>
+                                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['total_cantitati']['ar9'];?>
+</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>AR 8 </td>
+                                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['total_cantitati']['ar8'];?>
+</td>
+                                                                            </tr>
+                                                                        </table>
                                                                     </td>
                                                                     <td style="text-align: center;">
                                                                         <?php echo $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_parcursi']!='' ? $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_parcursi'] : '0';?>
@@ -219,67 +229,6 @@ $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = true;
                                                                     </td>
                                                                     <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['data_intrare'];?>
 </td>
-                                                                    
-                                                                    
-                                                                    
-                                                                    
-                                                                    
-                                                                        
-                                                                            
-                                                                                
-                                                                                    
-                                                                                    
-                                                                                    
-                                                                                    
-                                                                                        
-                                                                                    
-                                                                                
-                                                                            
-                                                                            
-                                                                                
-                                                                                    
-                                                                                    
-                                                                                        
-                                                                                    
-                                                                                        
-                                                                                    
-                                                                                
-                                                                            
-                                                                            
-                                                                                
-                                                                                    
-                                                                                    
-                                                                                        
-                                                                                    
-                                                                                        
-                                                                                    
-                                                                                
-                                                                            
-                                                                        
-                                                                    
-                                                                    
-                                                                        
-                                                                            
-                                                                                
-                                                                                    
-                                                                                    
-                                                                                
-                                                                            
-                                                                            
-                                                                                
-                                                                                    
-                                                                                    
-                                                                                
-                                                                            
-                                                                            
-                                                                                
-                                                                                    
-                                                                                    
-                                                                                
-                                                                            
-
-                                                                        
-                                                                    
                                                                     <td style="text-align: center;vertical-align: top;"
                                                                         class="span3">
                                                                         <a href="edit_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['fisa']->value['id'];?>

@@ -309,6 +309,8 @@ class Fise
         return $ret;
     }
 
+//    le-am facut de test
+
     public static function getTotalCantitatiBgByFisa($id)
     {
         $ret = array();
@@ -449,6 +451,55 @@ class Fise
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getTotalCantitatiByFisaId($id)
+    {
+        $ret = array();
+        $query = "SELECT a.*, b.tip as  nume_produs
+                  FROM detalii_fisa_intoarcere_produse as a 
+                  LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                  WHERE fisa_id = '" . $id . "'
+                  AND a.sters = 0
+                 ";
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+//                if (!isset($ret[$item['tip_produs_id']])) {
+//                    $ret[$item['tip_produs_id']] = array(
+//                        'tip_produs_id' => $item['tip_produs_id'],
+//                        'nume_produs' => $item['nume_produs'],
+//                        'pline' => 0,
+//                    );
+//                }
+                if ($item['cantitate'] > 0) {
+//                    $ret[$item['tip_produs_id']]['pline'] += $item['cantitate'];
+//                    $ret['total_vandute'] += $item['cantitate'];
+
+                    if ($item['tip_produs_id'] == 1) {
+                        $ret['bg_11'] += $item['cantitate'];
+                    }
+//                    if ($item['tip_produs_id'] == 2) {
+//                        $ret['bg_9'] += $item['cantitate'];
+//                    }
+
+                    if ($item['tip_produs_id'] == 3) {
+                        $ret['ar8'] += $item['cantitate'];
+                    }
+
+                    if ($item['tip_produs_id'] == 4) {
+                        $ret['ar9'] += $item['cantitate'];
+                    }
+
+                }
+
+            }
+
+
         }
         return $ret;
     }

@@ -40,17 +40,21 @@ $data_stop = '2021-01-31';
 //        'data_stop' => $data_stop
 //));
 
-$b = Fise::getFiseLivrariMasini(array(
-    'masina_id' => 29,
-    'traseu_id' => 4,
-    'sofer_id' => 22,
-    'data_start' => '2021-01-01',
-    'data_stop' => '2021-01-31'
-));
+//$b = Fise::getFiseLivrariMasini(array(
+//    'masina_id' => 29,
+//    'traseu_id' => 4,
+//    'sofer_id' => 22,
+//    'data_start' => '2021-01-01',
+//    'data_stop' => '2021-01-31'
+//));
 
 //$b = ParcAuto::getRaportLivrariMasini(30, array(
 //        'data_start' => $data_start,
 //        'data_stop' => $data_stop
 //));
 //$b = Stocuri::getFisaGenerataById(360);
+//$b = Stocuri::getIncarcaturaMasinaSosireByFisaId(1644);
+//$b = Fise::getTotalCantitatiByFisaId(1644);
+//$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(1648,1566);
+//$b = Stocuri::getIncarcaturaMasinaSosireByFisaIdCompleteazaFisa(1644);
 echo json_encode($b);

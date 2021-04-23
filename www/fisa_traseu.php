@@ -9,16 +9,16 @@ $smarty->assign('fisa_id', $fisa_id);
 
 $form_submit = getRequestParameter('form_submit', 0);
 
-$depozit_id = getRequestParameter('depozit_id', 0 );
+$depozit_id = getRequestParameter('depozit_id', 0);
 $smarty->assign('depozit_id', $depozit_id);
 
-$traseu_id = getRequestParameter('traseu_id', 0 );
+$traseu_id = getRequestParameter('traseu_id', 0);
 $smarty->assign('traseu_id', $traseu_id);
 
-$sofer_id = getRequestParameter('sofer_id', 0 );
+$sofer_id = getRequestParameter('sofer_id', 0);
 $smarty->assign('sofer_id', $sofer_id);
 
-$masina_id = getRequestParameter('masina_id', 0 );
+$masina_id = getRequestParameter('masina_id', 0);
 $smarty->assign('masina_id', $masina_id);
 
 $luna_id = getRequestParameter('luna_id', date('n'));
@@ -28,7 +28,7 @@ $an = getRequestParameter('an', date('Y'));
 $smarty->assign('an', $an);
 
 $lista_fise = Stocuri::getFise(array(
-    'an'=>$an,
+    'an' => $an,
     'depozit_id' => $depozit_id,
     'traseu_id' => $traseu_id,
     'sofer_id' => $sofer_id,
@@ -36,16 +36,17 @@ $lista_fise = Stocuri::getFise(array(
     'luna_id' => $luna_id
 ));
 
+$smarty->assign('lista_fise', $lista_fise);
 
+//pre($lista_fise);
 
-$smarty->assign('lista_fise',$lista_fise);
-
-$fisa_test = Stocuri::getFisaGenerataById($fisa_id);
-$smarty->assign('fisa_test', $fisa_test);
-
+//foreach ($lista_fise as $fisa) {
+//    $total_cantitati_fisa = Fise::getTotalCantitatiByFisaId($fisa['id']);
+//    $smarty->assign('total_cantitati_fisa', $total_cantitati_fisa);
+//}
 
 $lista_depozite = Depozite::getDepozite();
-$smarty->assign('lista_depozite',$lista_depozite);
+$smarty->assign('lista_depozite', $lista_depozite);
 
 $lista_trasee = Trasee::getTrasee();
 $smarty->assign('lista_trasee', $lista_trasee);
