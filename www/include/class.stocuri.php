@@ -172,7 +172,22 @@ class Stocuri
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-                $ret[$item['tip_produs_id']] = $item;
+                if (!isset($ret[$item['tip_produs_id']])) {
+                    $ret[$item['tip_produs_id']] = array(
+                        'fisa_id' => $item['fisa_id'],
+                        'client_id' => $item['client_id'],
+                        'tip_produs_id' => $item['tip_produs_id'],
+                        'nume_produs' => $item['nume_produs'],
+                        'cantitate' => $item['cantitate'],
+                        'defecte' => $item['defecte'],
+                        'pret' => $item['pret'],
+                        'comision' => $item['comision'],
+                        'pret_contract' => $item['pret_contract'],
+                        'extra' => Fise::GetProdusExtraByClientIdProdusIdAndFisaAnd($item['client_id'], $item['tip_produs_id'],$item['fisa_id'])
+                    );
+                }
+
+//                $ret[$item['tip_produs_id']] = $item;
             }
         }
         return $ret;

@@ -162,6 +162,29 @@ class Fise
 
     }
 
+
+    public static function GetProdusExtraByClientIdProdusIdAndFisaAnd($client_id, $tip_produs_id, $fisa_id)
+    {
+        $ret = array();
+
+        $query = "SELECT cantitate as cantitate_extra, pret as pret_extra 
+                  FROM detalii_fisa_extra_intoarcere_produse
+                  WHERE client_id = '" . $client_id . "' 
+                  AND tip_produs_id = '" . $tip_produs_id . "' 
+                  AND fisa_id = '" . $fisa_id . "'
+                  AND sters = 0
+                  AND stare_produs = 1
+                  ";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
     public static function GetProdusExtraByProdusIdAndFisa($tip_produs_id, $fisa_id)
     {
         $ret = array();

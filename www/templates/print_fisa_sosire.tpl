@@ -144,7 +144,7 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_comision_bg']}</td>
+                        <td style="text-align: center;font-weight: 500;">{($print_fisa['grand_comision_bg'] > 0) ? $print_fisa['grand_comision_bg'] : '-'}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL DEFECTE</td>
@@ -171,11 +171,14 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_comision_ar_8']}</td>
+                        <td style="text-align: center;font-weight: 500;">{($print_fisa['grand_comision_ar_8'] > 0) ? $print_fisa['grand_comision_ar_8'] : '-'}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL DEFECTE</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_defecte_ar_8']}</td>
+                        <td style="text-align: center;font-weight: 500;">
+
+                            {($print_fisa['grand_defecte_ar_8'] > 0) ? $print_fisa['grand_defecte_ar_8'] : '-'}
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -198,11 +201,11 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_comision_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 500;">{($print_fisa['grand_comision_ar_9'] > 0) ? $print_fisa['grand_comision_ar_9'] : '-'}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL DEFECTE</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_defecte_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 500;"> {($print_fisa['grand_defecte_ar_9'] > 0) ? $print_fisa['grand_defecte_ar_9'] : '-'}</td>
                     </tr>
                 </table>
             </div>
@@ -230,7 +233,10 @@
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">DEF. BG + AR</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_defecte_bg'] + $print_fisa['grand_defecte_ar_8'] + $print_fisa['grand_defecte_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 500;">
+                            {$total_defecte = $print_fisa['grand_defecte_bg'] + $print_fisa['grand_defecte_ar_8'] + $print_fisa['grand_defecte_ar_9']}
+                            {($total_defecte > 0 )? $total_defecte : '-'}
+                        </td>
                     </tr>
                 </table>
             </div>
