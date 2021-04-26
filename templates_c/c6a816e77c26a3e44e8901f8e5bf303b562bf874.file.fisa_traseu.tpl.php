@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-23 14:41:00
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-26 09:01:10
          compiled from "/var/www/html/fofoweb/www/templates/fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:41291163760227fca5e0d02-36086469%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c6a816e77c26a3e44e8901f8e5bf303b562bf874' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/fisa_traseu.tpl',
-      1 => 1619178057,
+      1 => 1619178189,
       2 => 'file',
     ),
   ),
@@ -189,51 +189,53 @@ $_smarty_tpl->tpl_vars['fisa']->_loop = true;
 </td>
                                                                     <td style="text-align: left;">
                                                                         <?php if ((count($_smarty_tpl->tpl_vars['fisa']->value['incarcatura_masina_plecare'])>0)) {?>
-                                                                        <table class="table table-bordered">
-                                                                            <tr>
-                                                                                <th>Produs</th>
-                                                                                <th>Cantitate</th>
-                                                                            </tr>
-                                                                            <?php  $_smarty_tpl->tpl_vars['marfa_plecare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = false;
+                                                                            <table class="table table-bordered">
+                                                                                <tr>
+                                                                                    <th>Produs</th>
+                                                                                    <th>Cantitate</th>
+                                                                                </tr>
+                                                                                <?php  $_smarty_tpl->tpl_vars['marfa_plecare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['fisa']->value['incarcatura_masina_plecare']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['marfa_plecare']->key => $_smarty_tpl->tpl_vars['marfa_plecare']->value) {
 $_smarty_tpl->tpl_vars['marfa_plecare']->_loop = true;
 ?>
-                                                                            <tr>
-                                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['nume_produs'];?>
+                                                                                    <tr>
+                                                                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['nume_produs'];?>
 </td>
-                                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['cantitate'];?>
+                                                                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['marfa_plecare']->value['cantitate'];?>
 </td>
-                                                                            </tr>
-                                                                            <?php } ?>
-                                                                        </table>
-                                                                            <?php } else { ?>
+                                                                                    </tr>
+                                                                                <?php } ?>
+                                                                            </table>
+                                                                        <?php } else { ?>
                                                                             <div style="text-align: center;">-</div>
                                                                         <?php }?>
                                                                         
-                                                                            
-                                                                            
+                                                                        
+                                                                        
                                                                         
                                                                     </td>
                                                                     <td>
-                                                                        <table class="table table-bordered">
-                                                                            <tr>
-                                                                                <th>Produs</th>
-                                                                                <th>Vandute</th>
-                                                                            </tr>
-                                                                            <?php  $_smarty_tpl->tpl_vars['cantitate'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cantitate']->_loop = false;
+                                                                        <?php if ((count($_smarty_tpl->tpl_vars['fisa']->value['total_cantitati'])>0)) {?>
+                                                                            <table class="table table-bordered">
+                                                                                <tr>
+                                                                                    <th>Produs</th>
+                                                                                    <th>Vandute</th>
+                                                                                </tr>
+                                                                                <?php  $_smarty_tpl->tpl_vars['cantitate'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['cantitate']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['fisa']->value['total_cantitati']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['cantitate']->key => $_smarty_tpl->tpl_vars['cantitate']->value) {
 $_smarty_tpl->tpl_vars['cantitate']->_loop = true;
 ?>
-                                                                                <tr>
-                                                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['nume_produs'];?>
+                                                                                    <tr>
+                                                                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['nume_produs'];?>
 </td>
-                                                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['pline'];?>
+                                                                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['pline'];?>
 </td>
-                                                                                </tr>
-                                                                            <?php } ?>
-                                                                        </table>
+                                                                                    </tr>
+                                                                                <?php } ?>
+                                                                            </table>
+                                                                        <?php }?>
                                                                     </td>
                                                                     <td style="text-align: center;">
                                                                         <?php echo $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_parcursi']!='' ? $_smarty_tpl->tpl_vars['fisa']->value['km_fisa']['km_parcursi'] : '0';?>

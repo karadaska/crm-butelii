@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-08 11:06:21
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-26 09:48:05
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1617869179,
+      1 => 1619419664,
       2 => 'file',
     ),
   ),
@@ -142,6 +142,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                             <th colspan="2">TOTAL VAL. INCASATA</th>
                                             <th colspan="2">TOTAL COMISION</th>
                                             <th colspan="2">VALOARE BUCATI BG/AR</th>
+                                            <th colspan="2">VALOARE BUCATI BG/AR</th>
                                         </tr>
                                         <tr>
                                             <td style="text-align: center">BG 11</td>
@@ -152,7 +153,9 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                             <td style="text-align: center;">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
-                                            <td style="text-align: center">BG + AR</td>
+                                            <td style="text-align: center">BG&AR</td>
+                                            <td style="text-align: center">BG 11</td>
+                                            <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
@@ -270,6 +273,58 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                                                            href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
+<br/>
+                                                                            Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_9']['numar_produs_by_pret'];?>
+
+                                                                        </a>
+                                                                    </td>
+                                                                <?php } ?>
+                                                            </tr>
+                                                        </table>
+                                                    <?php } else { ?>
+                                                        <span style="text-align: center;">-</span>
+                                                    <?php }?>
+                                                </td>
+                                                <td>
+
+                                                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11'])>0) {?>
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
+$_smarty_tpl->tpl_vars['lista']->_loop = true;
+?>
+                                                                    <td style="text-align: center;">
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+">
+                                                                            Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret_unitar'];?>
+ <br/>
+                                                                            Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_bg_11']['numar_produs_by_pret'];?>
+
+                                                                        </a>
+                                                                    </td>
+                                                                <?php } ?>
+                                                            </tr>
+                                                        </table>
+                                                    <?php } else { ?>
+                                                        <span style="text-align: center;">-</span>
+                                                    <?php }?></td>
+                                                <td>
+                                                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9'])>0) {?>
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
+$_smarty_tpl->tpl_vars['lista']->_loop = true;
+?>
+                                                                    <td style="text-align: center;">
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+">
+                                                                            Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret_unitar'];?>
 <br/>
                                                                             Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_9']['numar_produs_by_pret'];?>
 
@@ -409,6 +464,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                             <th colspan="3">TOTAL VAL. INCASATA</th>
                                             <th colspan="3">TOTAL COMISION</th>
                                             <th colspan="3">VALOARE BUCATI BG/AR</th>
+                                            <th colspan="3">VALOARE BUCATI BG/AR</th>
                                         </tr>
                                         <tr>
                                             <td style="text-align: center">BG 11</td>
@@ -433,7 +489,9 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
-
+                                            <td style="text-align: center">BG 11</td>
+                                            <td style="text-align: center">AR 8</td>
+                                            <td style="text-align: center">AR 9</td>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -584,6 +642,85 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
 <?php $_tmp1=ob_get_clean();?><?php echo $_tmp1;?>
 ">
                                                                             Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret'];?>
+ <br/>
+                                                                            Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_9']['numar_produs_by_pret'];?>
+
+                                                                        </a>
+                                                                    </td>
+                                                                <?php } ?>
+                                                            </tr>
+                                                        </table>
+                                                    <?php } else { ?>
+                                                        <span style="text-align: center;">-</span>
+                                                    <?php }?>
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11'])>0) {?>
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['client']->value['lista_preturi_bg_11']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
+$_smarty_tpl->tpl_vars['lista']->_loop = true;
+?>
+                                                                    <td style="text-align: center;">
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+">
+                                                                            Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret_unitar'];?>
+ <br/>
+                                                                            Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_bg_11']['numar_produs_by_pret'];?>
+
+                                                                        </a>
+                                                                    </td>
+                                                                <?php } ?>
+                                                            </tr>
+                                                        </table>
+                                                    <?php } else { ?>
+                                                        <span style="text-align: center;">-</span>
+                                                    <?php }?>
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_8'])>0) {?>
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_8']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
+$_smarty_tpl->tpl_vars['lista']->_loop = true;
+?>
+                                                                    <td style="text-align: center;">
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+">
+                                                                            Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret_unitar'];?>
+ <br/>
+                                                                            Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_8']['numar_produs_by_pret'];?>
+
+                                                                        </a>
+                                                                    </td>
+                                                                <?php } ?>
+                                                            </tr>
+                                                        </table>
+                                                    <?php } else { ?>
+                                                        <span style="text-align: center;">-</span>
+                                                    <?php }?>
+                                                </td>
+                                                <td style="text-align: center;border-right:double">
+                                                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9'])>0) {?>
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                <?php  $_smarty_tpl->tpl_vars['lista'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['lista']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['client']->value['lista_preturi_ar_9']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['lista']->key => $_smarty_tpl->tpl_vars['lista']->value) {
+$_smarty_tpl->tpl_vars['lista']->_loop = true;
+?>
+                                                                    <td style="text-align: center;">
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id=<?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['client']->value['client_id'];?>
+<?php $_tmp2=ob_get_clean();?><?php echo $_tmp2;?>
+">
+                                                                            Pret: <?php echo $_smarty_tpl->tpl_vars['lista']->value['pret_unitar'];?>
  <br/>
                                                                             Cant: <?php echo $_smarty_tpl->tpl_vars['lista']->value['total_cantitati_ar_9']['numar_produs_by_pret'];?>
 

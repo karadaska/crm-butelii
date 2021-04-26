@@ -77,6 +77,7 @@
                                             <th colspan="2">TOTAL VAL. INCASATA</th>
                                             <th colspan="2">TOTAL COMISION</th>
                                             <th colspan="2">VALOARE BUCATI BG/AR</th>
+                                            <th colspan="2">VALOARE BUCATI BG/AR</th>
                                         </tr>
                                         <tr>
                                             <td style="text-align: center">BG 11</td>
@@ -88,6 +89,8 @@
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG&AR</td>
+                                            <td style="text-align: center">BG 11</td>
+                                            <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 9</td>
                                             <td style="text-align: center">BG 11</td>
@@ -168,6 +171,44 @@
                                                                         <a target="_blank"
                                                                            href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
                                                                             Pret: {$lista['pret']}<br/>
+                                                                            Cant: {$lista['total_cantitati_ar_9']['numar_produs_by_pret']}
+                                                                        </a>
+                                                                    </td>
+                                                                {/foreach}
+                                                            </tr>
+                                                        </table>
+                                                    {else}
+                                                        <span style="text-align: center;">-</span>
+                                                    {/if}
+                                                </td>
+                                                <td>
+
+                                                    {if count($client['lista_preturi_bg_11']) > 0}
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                {foreach from=$client['lista_preturi_bg_11'] item=lista}
+                                                                    <td style="text-align: center;">
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
+                                                                            Pret: {$lista['pret_unitar']} <br/>
+                                                                            Cant: {$lista['total_cantitati_bg_11']['numar_produs_by_pret']}
+                                                                        </a>
+                                                                    </td>
+                                                                {/foreach}
+                                                            </tr>
+                                                        </table>
+                                                    {else}
+                                                        <span style="text-align: center;">-</span>
+                                                    {/if}</td>
+                                                <td>
+                                                    {if count($client['lista_preturi_ar_9']) > 0}
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                {foreach from=$client['lista_preturi_ar_9'] item=lista}
+                                                                    <td style="text-align: center;">
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
+                                                                            Pret: {$lista['pret_unitar']}<br/>
                                                                             Cant: {$lista['total_cantitati_ar_9']['numar_produs_by_pret']}
                                                                         </a>
                                                                     </td>
@@ -284,6 +325,7 @@
                                             <th colspan="3">TOTAL VAL. INCASATA</th>
                                             <th colspan="3">TOTAL COMISION</th>
                                             <th colspan="3">VALOARE BUCATI BG/AR</th>
+                                            <th colspan="3">VALOARE BUCATI BG/AR</th>
                                         </tr>
                                         <tr>
                                             <td style="text-align: center">BG 11</td>
@@ -308,7 +350,9 @@
                                             <td style="text-align: center">BG 11</td>
                                             <td style="text-align: center">AR 8</td>
                                             <td style="text-align: center">AR 9</td>
-
+                                            <td style="text-align: center">BG 11</td>
+                                            <td style="text-align: center">AR 8</td>
+                                            <td style="text-align: center">AR 9</td>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -408,6 +452,63 @@
                                                                         <a target="_blank"
                                                                            href="istoric_client_fisa_traseu.php?id={{$client['client_id']}}">
                                                                             Pret: {$lista['pret']} <br/>
+                                                                            Cant: {$lista['total_cantitati_ar_9']['numar_produs_by_pret']}
+                                                                        </a>
+                                                                    </td>
+                                                                {/foreach}
+                                                            </tr>
+                                                        </table>
+                                                    {else}
+                                                        <span style="text-align: center;">-</span>
+                                                    {/if}
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    {if count($client['lista_preturi_bg_11']) >0}
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                {foreach from=$client['lista_preturi_bg_11'] item=lista}
+                                                                    <td style="text-align: center;">
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
+                                                                            Pret: {$lista['pret_unitar']} <br/>
+                                                                            Cant: {$lista['total_cantitati_bg_11']['numar_produs_by_pret']}
+                                                                        </a>
+                                                                    </td>
+                                                                {/foreach}
+                                                            </tr>
+                                                        </table>
+                                                    {else}
+                                                        <span style="text-align: center;">-</span>
+                                                    {/if}
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    {if count($client['lista_preturi_ar_8']) >0}
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                {foreach from=$client['lista_preturi_ar_8'] item=lista}
+                                                                    <td style="text-align: center;">
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id={$client['client_id']}">
+                                                                            Pret: {$lista['pret_unitar']} <br/>
+                                                                            Cant: {$lista['total_cantitati_ar_8']['numar_produs_by_pret']}
+                                                                        </a>
+                                                                    </td>
+                                                                {/foreach}
+                                                            </tr>
+                                                        </table>
+                                                    {else}
+                                                        <span style="text-align: center;">-</span>
+                                                    {/if}
+                                                </td>
+                                                <td style="text-align: center;border-right:double">
+                                                    {if count($client['lista_preturi_ar_9']) >0}
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                {foreach from=$client['lista_preturi_ar_9'] item=lista}
+                                                                    <td style="text-align: center;">
+                                                                        <a target="_blank"
+                                                                           href="istoric_client_fisa_traseu.php?id={{$client['client_id']}}">
+                                                                            Pret: {$lista['pret_unitar']} <br/>
                                                                             Cant: {$lista['total_cantitati_ar_9']['numar_produs_by_pret']}
                                                                         </a>
                                                                     </td>

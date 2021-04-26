@@ -1571,7 +1571,7 @@ class Clienti
             $data_stop = date('Y-m-t');
         }
 
-        $query = "SELECT a.pret, a.client_id
+        $query = "SELECT a.pret, a.pret_contract, a.client_id, a.comision
                   FROM detalii_fisa_intoarcere_produse as a
                   left join fise_generate as b on a.fisa_id = b.id
                   WHERE a.client_id = '" . $client_id . "' 
@@ -1590,6 +1590,7 @@ class Clienti
             foreach ($a as $item) {
                 $r = array(
                     'pret' => $item['pret'],
+                    'pret_unitar' => $item['pret_contract'] - $item['comision'],
                     'client_id' => $item['client_id'],
                     'total_cantitati_bg_11' => self::getCantitatiBg11ByPretClient($item['client_id'], $traseu_id, $item['pret'], array(
                         'data_start' => $data_start,
@@ -1616,7 +1617,7 @@ class Clienti
             $data_stop = date('Y-m-t');
         }
 
-        $query = "SELECT a.pret, a.client_id
+        $query = "SELECT a.pret, a.client_id, a.pret_contract, a.comision
                   FROM detalii_fisa_intoarcere_produse as a
                   left join fise_generate as b on a.fisa_id = b.id
                   WHERE a.client_id = '" . $client_id . "' 
@@ -1634,6 +1635,7 @@ class Clienti
             foreach ($a as $item) {
                 $r = array(
                     'pret' => $item['pret'],
+                    'pret_unitar' => $item['pret_contract'] - $item['pret_comision'],
                     'client_id' => $item['client_id'],
                     'total_cantitati_ar_8' => self::getCantitatiAr8ByPretClient($item['client_id'], $traseu_id, $item['pret'], array(
                         'data_start' => $data_start,
@@ -1660,7 +1662,7 @@ class Clienti
             $data_stop = date('Y-m-t');
         }
 
-        $query = "SELECT a.pret, a.client_id
+        $query = "SELECT a.pret, a.client_id, a.pret_contract, a.comision
                   FROM detalii_fisa_intoarcere_produse as a
                   left join fise_generate as b on a.fisa_id = b.id
                   WHERE a.client_id = '" . $client_id . "' 
@@ -1678,6 +1680,7 @@ class Clienti
             foreach ($a as $item) {
                 $r = array(
                     'pret' => $item['pret'],
+                    'pret_unitar' => $item['pret_contract'] - $item['comision'],
                     'client_id' => $item['client_id'],
                     'total_cantitati_ar_9' => self::getCantitatiAr9ByPretClient($item['client_id'], $traseu_id, $item['pret'], array(
                         'data_start' => $data_start,
