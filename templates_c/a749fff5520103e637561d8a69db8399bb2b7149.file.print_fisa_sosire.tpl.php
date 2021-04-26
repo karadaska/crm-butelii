@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-03-22 13:57:11
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-26 12:52:31
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1616403388,
+      1 => 1619430748,
       2 => 'file',
     ),
   ),
@@ -27,6 +27,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'client' => 0,
     'realizat' => 0,
     'client_observatie' => 0,
+    'produs_extra_bg' => 0,
+    'produs_extra_ar_8' => 0,
+    'produs_extra_ar_9' => 0,
     'total_afisare' => 0,
   ),
   'has_nocache_code' => false,
@@ -72,9 +75,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         table {
             font-size: 16px;
         }
+
         td {
             font-weight: normal;
         }
+
         @page {
             size: auto;
             margin: 0;
@@ -179,7 +184,7 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
         <?php } ?>
     </table>
     <div style="display: inline-flex;margin-top: 20px;">
-        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']!=0)) {?>
+        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']!=0||$_smarty_tpl->tpl_vars['produs_extra_bg']->value['cantitate_extra']>0)) {?>
             <div>
                 <table border="1" style="width: 200px;">
                     <tr>
@@ -187,12 +192,12 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg'];?>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']+$_smarty_tpl->tpl_vars['produs_extra_bg']->value['cantitate_extra'];?>
 </td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_bg'];?>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_bg']+($_smarty_tpl->tpl_vars['produs_extra_bg']->value['cantitate_extra']*$_smarty_tpl->tpl_vars['produs_extra_bg']->value['pret_extra']);?>
 </td>
                     </tr>
                     <tr>
@@ -208,7 +213,7 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
                 </table>
             </div>
         <?php }?>
-        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8']!=0)) {?>
+        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8']!=0||$_smarty_tpl->tpl_vars['produs_extra_ar_8']->value['cantitate_extra']>0)) {?>
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 200px;">
                     <tr>
@@ -218,12 +223,12 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8'];?>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8']+$_smarty_tpl->tpl_vars['produs_extra_ar_8']->value['cantitate_extra'];?>
 </td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_8'];?>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_8']+($_smarty_tpl->tpl_vars['produs_extra_ar_8']->value['cantitate_extra']*$_smarty_tpl->tpl_vars['produs_extra_ar_8']->value['pret_extra']);?>
 </td>
                     </tr>
                     <tr>
@@ -239,8 +244,8 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
                 </table>
             </div>
         <?php }?>
-        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9']!=0)) {?>
-            <div style="margin-left: 10px;">
+        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9']!=0||$_smarty_tpl->tpl_vars['produs_extra_ar_8']->value['cantitate_extra']>0)) {?>
+            <div style="margin-left: 5px;">
                 <table border="1" style="width: 200px;">
                     <tr>
                         <td style="text-align: center;font-weight: 600;" colspan="2">AR
@@ -249,12 +254,12 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9'];?>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']+$_smarty_tpl->tpl_vars['produs_extra_ar_9']->value['cantitate_extra'];?>
 </td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_9'];?>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_9']+($_smarty_tpl->tpl_vars['produs_extra_ar_9']->value['cantitate_extra']*$_smarty_tpl->tpl_vars['produs_extra_ar_9']->value['pret_extra']);?>
 </td>
                     </tr>
                     <tr>
@@ -272,7 +277,7 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
         <?php }?>
         <?php $_smarty_tpl->tpl_vars['total_afisare'] = new Smarty_variable($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9'], null, 0);?>
         <?php if (($_smarty_tpl->tpl_vars['total_afisare']->value!=0)) {?>
-            <div style="margin-left: 10px;">
+            <div style="margin-left: 5px;">
                 <table border="1" style="width: 200px;">
                     <tr>
                         <td style="text-align: center;font-weight: 900;" colspan="2">

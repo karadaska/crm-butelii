@@ -39,9 +39,11 @@
         table {
             font-size: 16px;
         }
+
         td {
             font-weight: normal;
         }
+
         @page {
             size: auto;
             margin: 0;
@@ -126,7 +128,7 @@
         {/foreach}
     </table>
     <div style="display: inline-flex;margin-top: 20px;">
-        {if ($print_fisa['grand_total_vandute_bg'] != 0 || $print_fisa['grand_defecte_bg'] != 0)}
+        {if ($print_fisa['grand_total_vandute_bg'] != 0 || $print_fisa['grand_defecte_bg'] != 0 || $produs_extra_bg['cantitate_extra'] > 0)}
             <div>
                 <table border="1" style="width: 200px;">
                     <tr>
@@ -134,11 +136,11 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_bg']}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_bg']  + $produs_extra_bg['cantitate_extra']}</td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_bg']}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_bg'] + ($produs_extra_bg['cantitate_extra'] * $produs_extra_bg['pret_extra'])}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
@@ -151,7 +153,7 @@
                 </table>
             </div>
         {/if}
-        {if ($print_fisa['grand_total_vandute_ar_8'] != 0 || $print_fisa['grand_defecte_ar_8'] != 0)}
+        {if ($print_fisa['grand_total_vandute_ar_8'] != 0 || $print_fisa['grand_defecte_ar_8'] != 0 || $produs_extra_ar_8['cantitate_extra'] > 0)}
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 200px;">
                     <tr>
@@ -161,11 +163,11 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_ar_8']}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_ar_8'] + $produs_extra_ar_8['cantitate_extra']}</td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_ar_8']}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_ar_8'] + ($produs_extra_ar_8['cantitate_extra'] * $produs_extra_ar_8['pret_extra'])}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
@@ -178,8 +180,8 @@
                 </table>
             </div>
         {/if}
-        {if ($print_fisa['grand_total_vandute_ar_9'] != 0 || $print_fisa['grand_defecte_ar_9'] != 0)}
-            <div style="margin-left: 10px;">
+        {if ($print_fisa['grand_total_vandute_ar_9'] != 0 || $print_fisa['grand_defecte_ar_9'] != 0 || $produs_extra_ar_9['cantitate_extra'] > 0)}
+            <div style="margin-left: 5px;">
                 <table border="1" style="width: 200px;">
                     <tr>
                         <td style="text-align: center;font-weight: 600;" colspan="2">AR
@@ -188,11 +190,11 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_ar_9'] + $produs_extra_ar_9['cantitate_extra']}</td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_ar_9'] + ($produs_extra_ar_9['cantitate_extra'] * $produs_extra_ar_9['pret_extra'])}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
@@ -207,7 +209,7 @@
         {/if}
         {$total_afisare = $print_fisa['grand_total_vandute_bg'] + $print_fisa['grand_total_vandute_ar_9'] + $print_fisa['grand_total_vandute_ar_9'] +  $print_fisa['grand_defecte_bg'] + $print_fisa['grand_defecte_ar_8'] + $print_fisa['grand_defecte_ar_9']}
         {if ($total_afisare != 0)}
-            <div style="margin-left: 10px;">
+            <div style="margin-left: 5px;">
                 <table border="1" style="width: 200px;">
                     <tr>
                         <td style="text-align: center;font-weight: 900;" colspan="2">
