@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-26 13:26:34
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-26 14:50:52
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1619432792,
+      1 => 1619437848,
       2 => 'file',
     ),
   ),
@@ -158,8 +158,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['realizat']->key => $_smarty_tpl->tpl_
 $_smarty_tpl->tpl_vars['realizat']->_loop = true;
 ?>
                                 <tr>
-                                    <td><?php echo $_smarty_tpl->tpl_vars['realizat']->value['nume_produs'];?>
-:</td>
+                                    <td><?php echo $_smarty_tpl->tpl_vars['realizat']->value['tip_produs_id']['extra']['cantitate_extra'];?>
+ <?php echo $_smarty_tpl->tpl_vars['realizat']->value['cantitate']>0||$_smarty_tpl->tpl_vars['realizat']->value['defecte']>0||$_smarty_tpl->tpl_vars['realizat']->value['defecte']>0 ? $_smarty_tpl->tpl_vars['realizat']->value['nume_produs'] : '-';?>
+ </td>
                                     <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['realizat']->value['cantitate']>0 ? $_smarty_tpl->tpl_vars['realizat']->value['cantitate'] : '-';?>
 </td>
                                     <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['realizat']->value['defecte']>0 ? $_smarty_tpl->tpl_vars['realizat']->value['defecte'] : '-';?>
