@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-26 12:52:31
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-26 13:01:17
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1619430748,
+      1 => 1619431265,
       2 => 'file',
     ),
   ),
@@ -217,9 +217,9 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 200px;">
                     <tr>
-                        <td style="text-align: center;font-weight: 500;" colspan="2">AR
+                        <th style="text-align: center;font-weight: 900;" colspan="2">AR
                             8
-                        </td>
+                        </th>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
@@ -244,7 +244,7 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
                 </table>
             </div>
         <?php }?>
-        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9']!=0||$_smarty_tpl->tpl_vars['produs_extra_ar_8']->value['cantitate_extra']>0)) {?>
+        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9']!=0||$_smarty_tpl->tpl_vars['produs_extra_ar_9']->value['cantitate_extra']>0)) {?>
             <div style="margin-left: 5px;">
                 <table border="1" style="width: 200px;">
                     <tr>

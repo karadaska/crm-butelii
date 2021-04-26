@@ -157,9 +157,9 @@
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 200px;">
                     <tr>
-                        <td style="text-align: center;font-weight: 500;" colspan="2">AR
+                        <th style="text-align: center;font-weight: 900;" colspan="2">AR
                             8
-                        </td>
+                        </th>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
