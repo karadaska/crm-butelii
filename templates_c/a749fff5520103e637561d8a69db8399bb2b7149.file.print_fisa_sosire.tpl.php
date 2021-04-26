@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-26 13:01:17
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-26 13:03:22
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1619431265,
+      1 => 1619431401,
       2 => 'file',
     ),
   ),
@@ -286,7 +286,7 @@ $_smarty_tpl->tpl_vars['realizat']->_loop = true;
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">BG + AR</td>
-                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9'];?>
+                        <td style="text-align: center;font-weight: 500;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']+$_smarty_tpl->tpl_vars['produs_extra_ar_9']->value['cantitate_extra']+$_smarty_tpl->tpl_vars['produs_extra_ar_8']->value['cantitate_extra']+$_smarty_tpl->tpl_vars['produs_extra_bg']->value['cantitate_extra'];?>
 </td>
                     </tr>
                     <tr>

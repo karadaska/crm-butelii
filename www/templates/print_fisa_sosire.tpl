@@ -218,7 +218,7 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">BG + AR</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_bg'] + $print_fisa['grand_total_vandute_ar_8'] + $print_fisa['grand_total_vandute_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_bg'] + $print_fisa['grand_total_vandute_ar_8'] + $print_fisa['grand_total_vandute_ar_9'] + $produs_extra_ar_9['cantitate_extra'] + $produs_extra_ar_8['cantitate_extra'] + $produs_extra_bg['cantitate_extra']}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">VAL. BG + AR</td>

@@ -685,7 +685,7 @@
                             </div>
                         {/if}
                         {if ($fisa['grand_total_vandute_ar_9'] != 0 || $fisa['grand_defecte_ar_9'] != 0)}
-                            <div style="margin-left: 10px;">
+                            <div style="margin-left: 5px;">
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
                                         <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR
@@ -712,7 +712,7 @@
                             </div>
                         {/if}
                         {if ($produs_extra_ar_9['cantitate_extra'] > 0)}
-                            <div style="margin-left: 10px;">
+                            <div style="margin-left: 5px;">
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
                                         <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR9 EXTRA
@@ -739,7 +739,7 @@
                         {/if}
                         {$total_afisare = $fisa['grand_total_vandute_bg'] + $produs_extra_bg['cantitate_extra'] +  $fisa['grand_total_vandute_ar_8'] + $produs_extra_ar_8['cantitate_extra'] + $fisa['grand_total_vandute_ar_9'] + $produs_extra_ar_9['cantitate_extra'] +  $fisa['grand_defecte_bg'] + $fisa['grand_defecte_ar_8'] + $fisa['grand_defecte_ar_9']}
                         {if ($total_afisare > 0)}
-                            <div style="margin-left: 10px;">
+                            <div style="margin-left: 5px;">
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
                                         <td style="text-align: center;font-weight: 900;color: red;" colspan="2">
