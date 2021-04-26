@@ -585,15 +585,15 @@
                             <div>
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
-                                        <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG {($produs_extra_bg['cantitate_extra'] > 0)? '+ EXTRA' : ''}</td>
+                                        <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_bg'] + $produs_extra_bg['cantitate_extra']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_bg']}</td>
                                     </tr>
                                     <tr class="info">
                                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg'] + $produs_extra_bg['pret_extra']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg']}</td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total Comision</td>
@@ -606,12 +606,37 @@
                                 </table>
                             </div>
                         {/if}
+                        {if ($produs_extra_bg['cantitate_extra'] > 0)}
+                            <div style="margin-left: 5px;">
+                                <table class="table table-bordered table-striped" style="width: 180px;">
+                                    <tr class="info">
+                                        <td style="text-align: center;font-weight: 900;color: red;" colspan="2">BG EXTRA</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                                        <td style="text-align: center;font-weight: 900;">{$produs_extra_bg['cantitate_extra']}</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                                        <td style="text-align: center;font-weight: 900;">{$produs_extra_bg['pret_extra'] * $produs_extra_bg['cantitate_extra']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                                        <td style="text-align: center;font-weight: 900;">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                                        <td style="text-align: center;font-weight: 900;">-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        {/if}
                         {if ($fisa['grand_total_vandute_ar_8'] != 0 || $fisa['grand_defecte_ar_8'] != 0)}
-                            <div style="margin-left: 10px;">
+                            <div style="margin-left: 5px;">
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
                                         <td style="text-align: center;font-weight: 900;color: red;" colspan="2">AR
-                                            8 {($produs_extra_ar_8['cantitate_extra'] > 0)? '+ EXTRA' : ''}
+                                            8
                                         </td>
                                     </tr>
                                     <tr>
@@ -629,6 +654,32 @@
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total Defecte</td>
                                         <td style="text-align: center;font-weight: 900;">{$fisa['grand_defecte_ar_8']}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        {/if}
+                        {if ($produs_extra_ar_8['cantitate_extra'] > 0)}
+                            <div style="margin-left: 5px;">
+                                <table class="table table-bordered table-striped" style="width: 180px;">
+                                    <tr class="info">
+                                        <td style="text-align: center;font-weight: 900;color: red;" colspan="2">AR8 EXTRA
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                                        <td style="text-align: center;font-weight: 900;">{$produs_extra_ar_8['cantitate_extra']}</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                                        <td style="text-align: center;font-weight: 900;">{$produs_extra_ar_8['pret_extra'] * $produs_extra_ar_8['cantitate_extra']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                                        <td style="text-align: center;font-weight: 900;">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                                        <td style="text-align: center;font-weight: 900;">-</td>
                                     </tr>
                                 </table>
                             </div>
@@ -660,13 +711,39 @@
                                 </table>
                             </div>
                         {/if}
+                        {if ($produs_extra_ar_9['cantitate_extra'] > 0)}
+                            <div style="margin-left: 10px;">
+                                <table class="table table-bordered table-striped" style="width: 180px;">
+                                    <tr class="info">
+                                        <td style="text-align: center;font-weight: 900;;color: red;" colspan="2">AR9 EXTRA
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">Total cantitati</td>
+                                        <td style="text-align: center;font-weight: 900;">{$produs_extra_ar_9['cantitate_extra']}</td>
+                                    </tr>
+                                    <tr class="info">
+                                        <td style="text-align: left;font-weight: 900;">Total Valoare</td>
+                                        <td style="text-align: center;font-weight: 900;">{$produs_extra_ar_9['pret_extra'] * $produs_extra_ar_9['cantitate_extra']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">Total Comision</td>
+                                        <td style="text-align: center;font-weight: 900;">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left;font-weight: 900;">Total Defecte</td>
+                                        <td style="text-align: center;font-weight: 900;">-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        {/if}
                         {$total_afisare = $fisa['grand_total_vandute_bg'] + $produs_extra_bg['cantitate_extra'] +  $fisa['grand_total_vandute_ar_8'] + $produs_extra_ar_8['cantitate_extra'] + $fisa['grand_total_vandute_ar_9'] + $produs_extra_ar_9['cantitate_extra'] +  $fisa['grand_defecte_bg'] + $fisa['grand_defecte_ar_8'] + $fisa['grand_defecte_ar_9']}
                         {if ($total_afisare > 0)}
                             <div style="margin-left: 10px;">
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
                                         <td style="text-align: center;font-weight: 900;color: red;" colspan="2">
-                                            TOTAL {($produs_extra_ar_8['cantitate_extra'] > 0 || $produs_extra_ar_9['cantitate_extra'] > 0 ||$produs_extra_bg['cantitate_extra'] > 0)? '+ EXTRA' : ''}
+                                            TOTAL
                                         </td>
                                     </tr>
                                     <tr>
