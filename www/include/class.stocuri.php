@@ -183,10 +183,8 @@ class Stocuri
                         'pret' => $item['pret'],
                         'comision' => $item['comision'],
                         'pret_contract' => $item['pret_contract'],
-                        'extra' => Fise::GetProdusExtraByClientIdProdusIdAndFisaAnd($item['client_id'], $item['tip_produs_id'],$item['fisa_id'])
                     );
                 }
-
 //                $ret[$item['tip_produs_id']] = $item;
             }
         }
@@ -754,7 +752,6 @@ class Stocuri
             $ret['grand_comision_ar_8'] = 0;
             $ret['grand_comision_ar_9'] = 0;
 
-
             $ret['grand_defecte_bg'] = 0;
             $ret['grand_defecte_ar_8'] = 0;
             $ret['grand_defecte_ar_9'] = 0;
@@ -765,17 +762,20 @@ class Stocuri
             $ret['clienti'] = Clienti::getAsignariClientiByFisaGenerataId($id, $opt = array());
             foreach ($ret['clienti'] as $num => $client) {
                 $ret['clienti'][$num]['realizat'] = Stocuri::getRealizatClientByFisaId($id, $client['client_id']);
+                $ret['clienti'][$num]['extra'] = Fise::GetProdusExtraByClientIdProdusIdAndFisaAnd($client['client_id'], $id);
 
                 $ret['clienti'][$num]['total_vandute_bg'] = 0;
+                $ret['clienti'][$num]['total_vandute_bg_extra'] = $ret['clienti'][$num]['extra'][1]['cantitate_extra'];
                 $ret['clienti'][$num]['total_defecte_bg'] = 0;
                 $ret['clienti'][$num]['total_valoare_bg'] = 0;
 
                 $ret['clienti'][$num]['total_vandute_ar_8'] = 0;
+                $ret['clienti'][$num]['total_vandute_ar_8_extra'] = $ret['clienti'][$num]['extra'][3]['cantitate_extra'];
                 $ret['clienti'][$num]['total_defecte_ar_8'] = 0;
                 $ret['clienti'][$num]['total_valoare_ar_8'] = 0;
 
-
                 $ret['clienti'][$num]['total_vandute_ar_9'] = 0;
+                $ret['clienti'][$num]['total_vandute_ar_9_extra'] = $ret['clienti'][$num]['extra'][4]['cantitate_extra'];
                 $ret['clienti'][$num]['total_defecte_ar_9'] = 0;
                 $ret['clienti'][$num]['total_valoare_ar_9'] = 0;
 
@@ -785,14 +785,11 @@ class Stocuri
                         $ret['clienti'][$num]['total_vandute_bg'] += $item_realizat['cantitate'];
                         $ret['clienti'][$num]['total_valoare_bg'] += $item_realizat['cantitate'] * ($item_realizat['pret'] - $item_realizat['comision']);
                         $ret['clienti'][$num]['total_defecte_bg'] += $item_realizat['defecte'];
-                        $ret['clienti'][$num]['total_vandute_bg_extra'] += $item_realizat['extra']['cantitate_extra'];
-
 
                     } elseif ($item_realizat['tip_produs_id'] == 3) {
                         $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'];
                         $ret['clienti'][$num]['total_valoare_ar_8'] += $item_realizat['cantitate'] * ($item_realizat['pret'] - $item_realizat['comision']);
                         $ret['clienti'][$num]['total_defecte_ar_8'] += $item_realizat['defecte'];
-                        $ret['clienti'][$num]['total_vandute_ar_8_extra'] += $item_realizat['extra']['cantitate_extra'];
 
                     } elseif ($item_realizat['tip_produs_id'] == 4) {
                         $ret['clienti'][$num]['total_vandute_ar_9'] += $item_realizat['cantitate'];
@@ -808,7 +805,7 @@ class Stocuri
                         $ret['grand_valoare_bg'] += $ret['clienti'][$num]['total_valoare_bg'];
                         $ret['grand_defecte_bg'] += $item_realizat['defecte'];
                         $ret['grand_comision_bg'] += $item_realizat['cantitate'] * $item_realizat['comision'];
-                        $ret['grand_total_vandute_bg_extra'] += $item_realizat['extra']['cantitate_extra'];
+                        $ret['grand_total_vandute_bg_extra'] += $ret['clienti'][$num]['total_vandute_bg_extra'];
 
 
                     } elseif ($item_realizat['tip_produs_id'] == 3) {
@@ -816,7 +813,7 @@ class Stocuri
                         $ret['grand_valoare_ar_8'] += $ret['clienti'][$num]['total_valoare_ar_8'];
                         $ret['grand_defecte_ar_8'] += $item_realizat['defecte'];
                         $ret['grand_comision_ar_8'] += $item_realizat['cantitate'] * $item_realizat['comision'];
-                        $ret['grand_total_vandute_ar_8_extra'] += $item_realizat['extra']['cantitate_extra'];
+                        $ret['grand_total_vandute_ar_8_extra'] += $ret['clienti'][$num]['total_vandute_ar_8_extra'];
 
 
                     } elseif ($item_realizat['tip_produs_id'] == 4) {
@@ -824,7 +821,7 @@ class Stocuri
                         $ret['grand_valoare_ar_9'] += $ret['clienti'][$num]['total_valoare_ar_9'];
                         $ret['grand_defecte_ar_9'] += $item_realizat['defecte'];
                         $ret['grand_comision_ar_9'] += $item_realizat['cantitate'] * $item_realizat['comision'];
-                        $ret['grand_total_vandute_ar_9_extra'] += $item_realizat['extra']['cantitate_extra'];
+                        $ret['grand_total_vandute_ar_9_extra'] += $ret['clienti'][$num]['total_vandute_ar_9_extra'];
 
                     }
                 }

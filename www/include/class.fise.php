@@ -163,14 +163,13 @@ class Fise
     }
 
 
-    public static function GetProdusExtraByClientIdProdusIdAndFisaAnd($client_id, $tip_produs_id, $fisa_id)
+    public static function GetProdusExtraByClientIdProdusIdAndFisaAnd($client_id, $fisa_id)
     {
         $ret = array();
 
-        $query = "SELECT cantitate as cantitate_extra, pret as pret_extra 
+        $query = "SELECT tip_produs_id, cantitate as cantitate_extra, pret as pret_extra
                   FROM detalii_fisa_extra_intoarcere_produse
                   WHERE client_id = '" . $client_id . "' 
-                  AND tip_produs_id = '" . $tip_produs_id . "' 
                   AND fisa_id = '" . $fisa_id . "'
                   AND sters = 0
                   AND stare_produs = 1
@@ -178,9 +177,16 @@ class Fise
 
         $result = myQuery($query);
 
+//        if ($result) {
+//            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+//        }
         if ($result) {
-            $ret = $result->fetch(PDO::FETCH_ASSOC);
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['tip_produs_id']] = $item;
+            }
         }
+
         return $ret;
 
     }
