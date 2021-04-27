@@ -793,7 +793,7 @@ class Stocuri
 
                 $ret['grand_valoare_bg_extra'] +=$ret['clienti'][$num]['total_valoare_bg_extra'];
                 $ret['grand_valoare_ar_8_extra'] +=$ret['clienti'][$num]['total_valoare_ar_8_extra'];
-                $ret['total_valoare_ar_9_extra'] +=$ret['clienti'][$num]['total_valoare_ar_9_extra'];
+                $ret['grand_valoare_ar_9_extra'] +=$ret['clienti'][$num]['total_valoare_ar_9_extra'];
 
                 foreach ($ret['clienti'][$num]['realizat'] as $item_realizat) {
 //                    Total per client
