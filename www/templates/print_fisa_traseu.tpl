@@ -191,20 +191,20 @@
                 <td style="text-align: center;">{($client['vandute_bg'] > 0 ) ? ($client['realizat']['1']['pret']) : '-'}</td>
                 <td style="text-align: center;">{($client['vandute_bg'] > 0) ? $client['realizat']['1']['comision'] : '-'}</td>
                 <td style="text-align: center;border-right: double;">
-                    {($client['vandute_bg'] > 0) ? ($client['vandute_bg'] * ($client['realizat']['1']['pret'] - $client['realizat']['1']['comision'] )) : '-'}
+                    {($client['vandute_bg'] > 0 || $client['vandute_bg_extra'] > 0) ? ($client['vandute_bg'] * ($client['realizat']['1']['pret'] - $client['realizat']['1']['comision'])) + $client['valoare_bg_extra'] : '-'}
                 </td>
                 <td style="text-align: center;">{($client['vandute_ar_9'] > 0 || $client['vandute_ar_9_extra'] > 0) ? ($client['vandute_ar_9'] + $client['vandute_ar_9_extra']) : '-'}</td>
                 <td style="text-align: center;">{($client['vandute_ar_9'] > 0) ? $client['realizat']['4']['pret']  : '-'}</td>
                 <td style="text-align: center;">{($client['vandute_ar_9'] > 0) ? $client['realizat']['4']['comision']: '-'}</td>
                 <td style="text-align: center;border-right: double;">
-                    {($client['vandute_ar_9'] > 0) ? ($client['vandute_ar_9'] * ($client['realizat']['4']['pret'] - $client['realizat']['4']['comision'])):'-'}
+                    {($client['vandute_ar_9'] > 0 || $client['vandute_ar_9_extra'] > 0) ? ($client['vandute_ar_9'] * ($client['realizat']['4']['pret'] - $client['realizat']['4']['comision'])) + $client['valoare_ar_9_extra'] :'-'}
                 </td>
                 {if $print_fisa['depozit_id'] == 2}
-                    <td style="text-align: center;">{($client['vandute_ar_8'] > 0 || $client['vandute_ar_8_extra'] > 0) ? $client['vandute_ar_8_extra'] + $client['vandute_ar_8_extra'] : '-'}</td>
+                    <td style="text-align: center;">{($client['vandute_ar_8'] > 0 || $client['vandute_ar_8_extra'] > 0) ? ($client['vandute_ar_8_extra'] + $client['vandute_ar_8_extra']) : '-'}</td>
                     <td style="text-align: center;">{($client['vandute_ar_8'] > 0) ? $client['realizat']['3']['pret'] + $client['valoare_ar_8_extra'] : '-'}</td>
                     <td style="text-align: center;">{($client['vandute_ar_8'] > 0)? $client['realizat']['3']['comision']:'-'}</td>
                     <td style="text-align: center;border-right: double;">
-                        {($client['vandute_ar_8'] > 0) ? ($client['vandute_ar_8'] * ($client['realizat']['3']['pret'] - $client['realizat']['3']['comision'])) :'-'}
+                        {($client['vandute_ar_8'] > 0 || $client['vandute_ar_8_extra'] > 0) ? ($client['vandute_ar_8'] * ($client['realizat']['3']['pret'] - $client['realizat']['3']['comision'])) + $client['valoare_ar_8_extra'] :'-'}
                     </td>
                 {/if}
                 {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
@@ -213,17 +213,17 @@
                 </td>
                 <td>{$client_observatie['observatie_extra']}</td>
             </tr>
-            {$total_bg_11 = $total_bg_11 + $client['realizat']['1']['cantitate'] + $client['vandute_bg_extra']}
+            {$total_bg_11 = $total_bg_11 + $client['vandute_bg'] + $client['vandute_bg_extra']}
             {$total_bg_11_comision = $total_bg_11_comision + $client['realizat']['1']['cantitate'] *  $client['realizat']['1']['comision']}
-            {$total_bg_11_unitar = $total_bg_11_unitar + ($client['realizat']['1']['cantitate'] * ($client['realizat']['1']['pret'] - $client['realizat']['1']['comision']))}
+            {$total_bg_11_unitar = $total_bg_11_unitar + ($client['vandute_bg'] * ($client['realizat']['1']['pret'] - $client['realizat']['1']['comision'])) + $client['valoare_bg_extra']}
 
-            {$total_ar_8 = $total_ar_8 + $client['realizat']['3']['cantitate'] + $client['vandute_ar_8_extra']}
-            {$total_ar_8_comision = $total_ar_8_comision + $client['realizat']['3']['cantitate'] * $client['realizat']['3']['comision']}
-            {$total_ar_8_unitar = $total_ar_8_unitar + $client['realizat']['3']['cantitate'] * ($client['realizat']['3']['pret'] - $client['realizat']['3']['comision'])}
+            {$total_ar_8 = $total_ar_8 + $client['vandute_ar_8'] + $client['vandute_ar_8_extra']}
+            {$total_ar_8_comision = $total_ar_8_comision + $client['vandute_ar_8'] * $client['realizat']['3']['comision']}
+            {$total_ar_8_unitar = $total_ar_8_unitar + $client['vandute_ar_8'] * ($client['realizat']['3']['pret'] - $client['realizat']['3']['comision']) + $client['valoare_ar_8_extra']}
 
             {$total_ar_9 = $total_ar_9 + $client['realizat']['4']['cantitate'] + $client['vandute_ar_9_extra']}
-            {$total_ar_9_comision = $total_ar_9_comision + ($client['realizat']['4']['cantitate'] *  $client['realizat']['4']['comision'])}
-            {$total_ar_9_unitar = $total_ar_9_unitar + $client['realizat']['4']['cantitate'] * ($client['realizat']['4']['pret'] - $client['realizat']['4']['comision'])}
+            {$total_ar_9_comision = $total_ar_9_comision + ($client['vandute_ar_9_extra'] *  $client['realizat']['4']['comision'])}
+            {$total_ar_9_unitar = $total_ar_9_unitar + $client['vandute_ar_9'] * ($client['realizat']['4']['pret'] - $client['realizat']['4']['comision']) + $client['valoare_ar_9_extra']}
         {/foreach}
         <tr style="background-color: lemonchiffon;">
             {if $print_fisa['depozit_id'] == 1}

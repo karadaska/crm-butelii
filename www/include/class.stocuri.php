@@ -194,7 +194,6 @@ class Stocuri
 
     public static function getPlecareMarfaByFisaId($id)
     {
-
         $ret = array();
         $query = "SELECT a.*, b.tip as  nume_produs, a.cantitate
                   from fisa_total_plecare as a 
