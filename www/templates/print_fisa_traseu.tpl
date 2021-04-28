@@ -260,7 +260,7 @@
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_bg']}</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_bg'] + $print_fisa['grand_valoare_bg_extra']}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Total Comision</td>
@@ -287,7 +287,7 @@
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_ar_8']}</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_ar_8'] + $print_fisa['grand_valoare_ar_8_extra']}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Total Comision</td>
@@ -314,7 +314,7 @@
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
-                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_ar_9'] + $print_fisa['grand_valoare_ar_9_extra']}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Total Comision</td>
@@ -344,7 +344,9 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_bg'] + $print_fisa['grand_valoare_ar_8'] + $print_fisa['grand_valoare_ar_9'] + $print_fisa['grand_valoare_ar_9_extra'] + $print_fisa['grand_valoare_ar_8_extra'] + $print_fisa['grand_valoare_bg_extra']}</td>
+                        <td style="text-align: center;font-weight: 900;">
+                            {$print_fisa['grand_valoare_bg'] + $print_fisa['grand_valoare_ar_8'] + $print_fisa['grand_valoare_ar_9'] + $print_fisa['grand_valoare_ar_9_extra'] + $print_fisa['grand_valoare_ar_8_extra'] + $print_fisa['grand_valoare_bg_extra']}
+                        </td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
