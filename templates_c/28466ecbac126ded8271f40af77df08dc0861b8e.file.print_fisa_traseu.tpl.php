@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-28 10:18:17
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-28 10:25:26
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:93953769760363ba43e8b40-06532767%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '28466ecbac126ded8271f40af77df08dc0861b8e' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl',
-      1 => 1619594270,
+      1 => 1619594725,
       2 => 'file',
     ),
   ),
@@ -251,35 +251,35 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 <?php $_tmp6=ob_get_clean();?><?php echo $_smarty_tpl->tpl_vars['client']->value['target']['4']['target']>0 ? $_tmp6 : '-';?>
 
                 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_bg']>0||$_smarty_tpl->tpl_vars['client']->value['vandute_bg_extra']>0 ? ($_smarty_tpl->tpl_vars['client']->value['realizat']['1']['cantitate']+$_smarty_tpl->tpl_vars['client']->value['vandute_bg_extra']) : '-';?>
+                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_bg']>0||$_smarty_tpl->tpl_vars['client']->value['vandute_bg_extra']>0 ? ($_smarty_tpl->tpl_vars['client']->value['vandute_bg']>0+$_smarty_tpl->tpl_vars['client']->value['vandute_bg_extra']) : '-';?>
 </td>
                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_bg']>0 ? ($_smarty_tpl->tpl_vars['client']->value['realizat']['1']['pret']) : '-';?>
 </td>
                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_bg']>0 ? $_smarty_tpl->tpl_vars['client']->value['realizat']['1']['comision'] : '-';?>
 </td>
                 <td style="text-align: center;border-right: double;">
-                    <?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_bg']>0 ? ($_smarty_tpl->tpl_vars['client']->value['realizat']['1']['cantitate']*($_smarty_tpl->tpl_vars['client']->value['realizat']['1']['pret']-$_smarty_tpl->tpl_vars['client']->value['realizat']['1']['comision'])) : '-';?>
+                    <?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_bg']>0 ? ($_smarty_tpl->tpl_vars['client']->value['vandute_bg']*($_smarty_tpl->tpl_vars['client']->value['realizat']['1']['pret']-$_smarty_tpl->tpl_vars['client']->value['realizat']['1']['comision'])) : '-';?>
 
                 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']>0||$_smarty_tpl->tpl_vars['client']->value['vandute_ar_9_extra']>0 ? $_smarty_tpl->tpl_vars['client']->value['realizat']['4']['cantitate']+$_smarty_tpl->tpl_vars['client']->value['vandute_ar_9_extra'] : '-';?>
+                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']>0||$_smarty_tpl->tpl_vars['client']->value['vandute_ar_9_extra']>0 ? $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9_extra']+$_smarty_tpl->tpl_vars['client']->value['vandute_ar_9_extra'] : '-';?>
 </td>
-                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']>0 ? $_smarty_tpl->tpl_vars['client']->value['realizat']['4']['pret']+$_smarty_tpl->tpl_vars['client']->value['valoare_ar_9_extra'] : '-';?>
+                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']>0 ? $_smarty_tpl->tpl_vars['client']->value['realizat']['4']['pret'] : '-';?>
 </td>
                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']>0 ? $_smarty_tpl->tpl_vars['client']->value['realizat']['4']['comision'] : '-';?>
 </td>
                 <td style="text-align: center;border-right: double;">
-                    <?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']>0 ? ($_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']>0*($_smarty_tpl->tpl_vars['client']->value['realizat']['4']['pret']-$_smarty_tpl->tpl_vars['client']->value['realizat']['4']['comision'])) : '-';?>
+                    <?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']>0 ? ($_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']*($_smarty_tpl->tpl_vars['client']->value['realizat']['4']['pret']-$_smarty_tpl->tpl_vars['client']->value['realizat']['4']['comision'])) : '-';?>
 
                 </td>
                 <?php if ($_smarty_tpl->tpl_vars['print_fisa']->value['depozit_id']==2) {?>
-                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']>0||$_smarty_tpl->tpl_vars['client']->value['vandute_ar_8_extra']>0 ? $_smarty_tpl->tpl_vars['client']->value['realizat']['3']['cantitate']+$_smarty_tpl->tpl_vars['client']->value['vandute_ar_8_extra'] : '-';?>
+                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']>0||$_smarty_tpl->tpl_vars['client']->value['vandute_ar_8_extra']>0 ? $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8_extra']+$_smarty_tpl->tpl_vars['client']->value['vandute_ar_8_extra'] : '-';?>
 </td>
                     <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']>0||$_smarty_tpl->tpl_vars['client']->value['valoare_ar_8_extra']>0 ? $_smarty_tpl->tpl_vars['client']->value['realizat']['3']['pret']+$_smarty_tpl->tpl_vars['client']->value['valoare_ar_8_extra'] : '-';?>
 </td>
                     <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']>0 ? $_smarty_tpl->tpl_vars['client']->value['realizat']['3']['comision'] : '-';?>
 </td>
                     <td style="text-align: center;border-right: double;">
-                        <?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']>0 ? ($_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']>0*($_smarty_tpl->tpl_vars['client']->value['realizat']['3']['pret']-$_smarty_tpl->tpl_vars['client']->value['realizat']['3']['comision'])) : '-';?>
+                        <?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']>0 ? ($_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']*($_smarty_tpl->tpl_vars['client']->value['realizat']['3']['pret']-$_smarty_tpl->tpl_vars['client']->value['realizat']['3']['comision'])) : '-';?>
 
                     </td>
                 <?php }?>
