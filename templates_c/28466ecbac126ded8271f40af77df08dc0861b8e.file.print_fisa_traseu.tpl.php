@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-28 22:08:03
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-28 22:18:03
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:93953769760363ba43e8b40-06532767%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '28466ecbac126ded8271f40af77df08dc0861b8e' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl',
-      1 => 1619636881,
+      1 => 1619637482,
       2 => 'file',
     ),
   ),
@@ -343,7 +343,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg'];?>
+                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_bg_extra'];?>
 </td>
                     </tr>
                     <tr class="info">
@@ -374,7 +374,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8'];?>
+                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_8_extra'];?>
 </td>
                     </tr>
                     <tr class="info">
@@ -405,7 +405,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9'];?>
+                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_9_extra'];?>
 </td>
                     </tr>
                     <tr class="info">
@@ -426,7 +426,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                 </table>
             </div>
         <?php }?>
-        <?php $_smarty_tpl->tpl_vars['total_afisare'] = new Smarty_variable($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9'], null, 0);?>
+        <?php $_smarty_tpl->tpl_vars['total_afisare'] = new Smarty_variable($_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_9_extra']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_8_extra']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_bg_extra'], null, 0);?>
         <?php if (($_smarty_tpl->tpl_vars['total_afisare']->value!=0)) {?>
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 180px;">
@@ -437,12 +437,12 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9'];?>
+                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_9_extra']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_8_extra']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_bg_extra'];?>
 </td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_9'];?>
+                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_bg']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_8']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_9']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_9_extra']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_ar_8_extra']+$_smarty_tpl->tpl_vars['print_fisa']->value['grand_valoare_bg_extra'];?>
 </td>
                     </tr>
                     <tr class="info">

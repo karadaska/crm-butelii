@@ -256,7 +256,7 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_bg']}</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_vandute_bg'] + $print_fisa['grand_vandute_bg_extra']}</td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
@@ -283,7 +283,7 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_ar_8']}</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_vandute_ar_8'] + $print_fisa['grand_vandute_ar_8_extra']}</td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
@@ -310,7 +310,7 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_vandute_ar_9'] + $print_fisa['grand_vandute_ar_9_extra']}</td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>
@@ -327,7 +327,9 @@
                 </table>
             </div>
         {/if}
-        {$total_afisare = $print_fisa['grand_total_vandute_bg'] + $print_fisa['grand_total_vandute_ar_9'] + $print_fisa['grand_total_vandute_ar_9'] +  $print_fisa['grand_defecte_bg'] + $print_fisa['grand_defecte_ar_8'] + $print_fisa['grand_defecte_ar_9']}
+        {$total_afisare = $print_fisa['grand_vandute_bg'] + $print_fisa['grand_vandute_ar_9'] + $print_fisa['grand_vandute_ar_9']
+        +  $print_fisa['grand_defecte_bg'] + $print_fisa['grand_defecte_ar_8']
+        + $print_fisa['grand_defecte_ar_9'] + $print_fisa['grand_vandute_ar_9_extra'] + $print_fisa['grand_vandute_ar_8_extra']  + $print_fisa['grand_vandute_bg_extra']}
         {if ($total_afisare != 0)}
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 180px;">
@@ -338,11 +340,11 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_total_vandute_bg'] + $print_fisa['grand_total_vandute_ar_8'] + $print_fisa['grand_total_vandute_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_vandute_bg'] + $print_fisa['grand_vandute_ar_8'] + $print_fisa['grand_vandute_ar_9'] + $print_fisa['grand_vandute_ar_9_extra'] + $print_fisa['grand_vandute_ar_8_extra'] + $print_fisa['grand_vandute_bg_extra']}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
-                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_bg'] + $print_fisa['grand_valoare_ar_8'] + $print_fisa['grand_valoare_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 900;">{$print_fisa['grand_valoare_bg'] + $print_fisa['grand_valoare_ar_8'] + $print_fisa['grand_valoare_ar_9'] + $print_fisa['grand_valoare_ar_9_extra'] + $print_fisa['grand_valoare_ar_8_extra'] + $print_fisa['grand_valoare_bg_extra']}</td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
