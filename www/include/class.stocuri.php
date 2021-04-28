@@ -862,13 +862,13 @@ class Stocuri
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
-            $ret['grand_total_vandute_bg'] = 0;
-            $ret['grand_total_vandute_ar_8'] = 0;
-            $ret['grand_total_vandute_ar_9'] = 0;
+            $ret['grand_vandute_bg'] = 0;
+            $ret['grand_vandute_ar_8'] = 0;
+            $ret['grand_vandute_ar_9'] = 0;
 
-            $ret['grand_total_vandute_bg_extra'] = 0;
-            $ret['grand_total_vandute_ar_8_extra'] = 0;
-            $ret['grand_total_vandute_ar_9_extra'] = 0;
+            $ret['grand_vandute_bg_extra'] = 0;
+            $ret['grand_vandute_ar_8_extra'] = 0;
+            $ret['grand_vandute_ar_9_extra'] = 0;
 
             $ret['grand_valoare_bg'] = 0;
             $ret['grand_valoare_ar_8'] = 0;
@@ -886,82 +886,83 @@ class Stocuri
             $ret['grand_comision_ar_8'] = 0;
             $ret['grand_comision_ar_9'] = 0;
 
-
             $ret['grand_defecte_bg'] = 0;
             $ret['grand_defecte_ar_8'] = 0;
             $ret['grand_defecte_ar_9'] = 0;
 
-//            $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
-//            $ret['incarcatura_masina_intoarcere'] = self::getIntoarcereCantitateMarfaByFisaId($id);
-//            $ret['miscari_fisa'] = self::getMiscariByFisaId($id);
             $ret['clienti'] = Fise::getAsignariClientiByFisaGenerataIdPrintEditFisa($id, $opt = array());
             foreach ($ret['clienti'] as $num => $client) {
                 $ret['clienti'][$num]['realizat'] = Stocuri::getRealizatClientByFisaId($id, $client['client_id']);
                 $ret['clienti'][$num]['extra'] = Fise::GetProdusExtraByClientIdProdusIdAndFisaAnd($client['client_id'], $id);
 
-                $ret['clienti'][$num]['total_vandute_bg'] = 0;
-                $ret['clienti'][$num]['total_vandute_bg_extra'] = $ret['clienti'][$num]['extra'][1]['cantitate_extra'];
-                $ret['clienti'][$num]['total_defecte_bg'] = 0;
-                $ret['clienti'][$num]['total_valoare_bg'] = 0;
-                $ret['clienti'][$num]['total_valoare_bg_extra'] = ($ret['clienti'][$num]['extra'][1]['cantitate_extra'] * $ret['clienti'][$num]['extra'][1]['pret_extra']) ;
+                $ret['clienti'][$num]['vandute_bg'] = 0;
+                $ret['clienti'][$num]['vandute_bg_extra'] = $ret['clienti'][$num]['extra'][1]['cantitate_extra'];
+                $ret['clienti'][$num]['valoare_bg'] = 0;
+                $ret['clienti'][$num]['valoare_bg_extra'] = $ret['clienti'][$num]['extra'][1]['pret_extra'];
+                $ret['clienti'][$num]['defecte_bg'] = 0;
 
-                $ret['clienti'][$num]['total_vandute_ar_8'] = 0;
-                $ret['clienti'][$num]['total_vandute_ar_8_extra'] = $ret['clienti'][$num]['extra'][3]['cantitate_extra'];
-                $ret['clienti'][$num]['total_defecte_ar_8'] = 0;
-                $ret['clienti'][$num]['total_valoare_ar_8'] = 0;
-                $ret['clienti'][$num]['total_valoare_ar_8_extra'] = ($ret['clienti'][$num]['extra'][3]['cantitate_extra'] * $ret['clienti'][$num]['extra'][3]['pret_extra']);
+//                $ret['clienti'][$num]['total_valoare_bg_extra'] = ($ret['clienti'][$num]['extra'][1]['cantitate_extra'] * $ret['clienti'][$num]['extra'][1]['pret_extra']) ;
 
-                $ret['clienti'][$num]['total_vandute_ar_9'] = 0;
-                $ret['clienti'][$num]['total_vandute_ar_9_extra'] = $ret['clienti'][$num]['extra'][4]['cantitate_extra'];
-                $ret['clienti'][$num]['total_defecte_ar_9'] = 0;
-                $ret['clienti'][$num]['total_valoare_ar_9'] = 0;
-                $ret['clienti'][$num]['total_valoare_ar_9_extra'] = ($ret['clienti'][$num]['extra'][4]['cantitate_extra'] * $ret['clienti'][$num]['extra'][4]['pret_extra']);
+                $ret['clienti'][$num]['vandute_ar_8'] = 0;
+                $ret['clienti'][$num]['vandute_ar_8_extra'] = $ret['clienti'][$num]['extra'][3]['cantitate_extra'];
+                $ret['clienti'][$num]['valoare_ar_8'] = 0;
+                $ret['clienti'][$num]['valoare_ar_8_extra'] = $ret['clienti'][$num]['extra'][3]['pret_extra'];
+                $ret['clienti'][$num]['defecte_ar_8'] = 0;
 
-                $ret['grand_total_vandute_bg_extra'] += $ret['clienti'][$num]['total_vandute_bg_extra'];
-                $ret['grand_total_vandute_ar_8_extra'] +=  $ret['clienti'][$num]['total_vandute_ar_8_extra'];
-                $ret['grand_total_vandute_ar_9_extra'] +=  $ret['clienti'][$num]['total_vandute_ar_9_extra'];
+//                $ret['clienti'][$num]['total_valoare_ar_8_extra'] = ($ret['clienti'][$num]['extra'][3]['cantitate_extra'] * $ret['clienti'][$num]['extra'][3]['pret_extra']);
+
+                $ret['clienti'][$num]['vandute_ar_9'] = 0;
+                $ret['clienti'][$num]['vandute_ar_9_extra'] = $ret['clienti'][$num]['extra'][4]['cantitate_extra'];
+                $ret['clienti'][$num]['valoare_ar_9'] = 0;
+                $ret['clienti'][$num]['valoare_ar_9_extra'] = $ret['clienti'][$num]['extra'][4]['pret_extra'];
+                $ret['clienti'][$num]['defecte_ar_9'] = 0;
+//                $ret['clienti'][$num]['total_valoare_ar_9_extra'] = ($ret['clienti'][$num]['extra'][4]['cantitate_extra'] * $ret['clienti'][$num]['extra'][4]['pret_extra']);
+
+                $ret['grand_vandute_bg_extra'] += $ret['clienti'][$num]['vandute_bg_extra'];
+                $ret['grand_vandute_ar_8_extra'] +=  $ret['clienti'][$num]['vandute_ar_8_extra'];
+                $ret['grand_vandute_ar_9_extra'] +=  $ret['clienti'][$num]['vandute_ar_9_extra'];
 
 
-                $ret['grand_valoare_bg_extra'] +=$ret['clienti'][$num]['total_valoare_bg_extra'];
-                $ret['grand_valoare_ar_8_extra'] +=$ret['clienti'][$num]['total_valoare_ar_8_extra'];
-                $ret['grand_valoare_ar_9_extra'] +=$ret['clienti'][$num]['total_valoare_ar_9_extra'];
+                $ret['grand_valoare_bg_extra'] +=$ret['clienti'][$num]['valoare_bg_extra'];
+                $ret['grand_valoare_ar_8_extra'] +=$ret['clienti'][$num]['valoare_ar_8_extra'];
+                $ret['grand_valoare_ar_9_extra'] +=$ret['clienti'][$num]['valoare_ar_9_extra'];
 
                 foreach ($ret['clienti'][$num]['realizat'] as $item_realizat) {
 //                    Total per client
                     if ($item_realizat['tip_produs_id'] == 1) {
-                        $ret['clienti'][$num]['total_vandute_bg'] += $item_realizat['cantitate'];
-                        $ret['clienti'][$num]['total_valoare_bg'] += $item_realizat['cantitate'] * ($item_realizat['pret'] - $item_realizat['comision']);
-                        $ret['clienti'][$num]['total_defecte_bg'] += $item_realizat['defecte'];
+                        $ret['clienti'][$num]['vandute_bg'] += $item_realizat['cantitate'];
+                        $ret['clienti'][$num]['valoare_bg'] += $item_realizat['cantitate'] * ($item_realizat['pret'] - $item_realizat['comision']);
+                        $ret['clienti'][$num]['defecte_bg'] += $item_realizat['defecte'];
 
                     } elseif ($item_realizat['tip_produs_id'] == 3) {
-                        $ret['clienti'][$num]['total_vandute_ar_8'] += $item_realizat['cantitate'];
-                        $ret['clienti'][$num]['total_valoare_ar_8'] += $item_realizat['cantitate'] * ($item_realizat['pret'] - $item_realizat['comision']);
-                        $ret['clienti'][$num]['total_defecte_ar_8'] += $item_realizat['defecte'];
+                        $ret['clienti'][$num]['vandute_ar_8'] += $item_realizat['cantitate'];
+                        $ret['clienti'][$num]['valoare_ar_8'] += $item_realizat['cantitate'] * ($item_realizat['pret'] - $item_realizat['comision']);
+                        $ret['clienti'][$num]['defecte_ar_8'] += $item_realizat['defecte'];
 
                     } elseif ($item_realizat['tip_produs_id'] == 4) {
-                        $ret['clienti'][$num]['total_vandute_ar_9'] += $item_realizat['cantitate'];
-                        $ret['clienti'][$num]['total_valoare_ar_9'] += $item_realizat['cantitate'] * ($item_realizat['pret'] - $item_realizat['comision']);
-                        $ret['clienti'][$num]['total_defecte_ar_9'] += $item_realizat['defecte'];
+                        $ret['clienti'][$num]['vandute_ar_9'] += $item_realizat['cantitate'];
+                        $ret['clienti'][$num]['valoare_ar_9'] += $item_realizat['cantitate'] * ($item_realizat['pret'] - $item_realizat['comision']);
+                        $ret['clienti'][$num]['defecte_ar_9'] += $item_realizat['defecte'];
 
                     }
 
 //                    Grand total
                     if ($item_realizat['tip_produs_id'] == 1) {
-                        $ret['grand_total_vandute_bg'] += $item_realizat['cantitate'];
-                        $ret['grand_valoare_bg'] += $ret['clienti'][$num]['total_valoare_bg'];
+                        $ret['grand_vandute_bg'] += $item_realizat['cantitate'];
+                        $ret['grand_valoare_bg'] += $ret['clienti'][$num]['valoare_bg'];
                         $ret['grand_defecte_bg'] += $item_realizat['defecte'];
                         $ret['grand_comision_bg'] += $item_realizat['cantitate'] * $item_realizat['comision'];
 
                     } elseif ($item_realizat['tip_produs_id'] == 3) {
-                        $ret['grand_total_vandute_ar_8'] += $item_realizat['cantitate'];
-                        $ret['grand_valoare_ar_8'] += $ret['clienti'][$num]['total_valoare_ar_8'];
+                        $ret['grand_vandute_ar_8'] += $item_realizat['cantitate'];
+                        $ret['grand_valoare_ar_8'] += $ret['clienti'][$num]['valoare_ar_8'];
                         $ret['grand_defecte_ar_8'] += $item_realizat['defecte'];
                         $ret['grand_comision_ar_8'] += $item_realizat['cantitate'] * $item_realizat['comision'];
 
 
                     } elseif ($item_realizat['tip_produs_id'] == 4) {
-                        $ret['grand_total_vandute_ar_9'] += $item_realizat['cantitate'];
-                        $ret['grand_valoare_ar_9'] += $ret['clienti'][$num]['total_valoare_ar_9'];
+                        $ret['grand_vandute_ar_9'] += $item_realizat['cantitate'];
+                        $ret['grand_valoare_ar_9'] += $ret['clienti'][$num]['valoare_ar_9'];
                         $ret['grand_defecte_ar_9'] += $item_realizat['defecte'];
                         $ret['grand_comision_ar_9'] += $item_realizat['cantitate'] * $item_realizat['comision'];
                     }

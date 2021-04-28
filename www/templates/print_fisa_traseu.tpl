@@ -187,8 +187,8 @@
                     {($client['realizat']['4']['pret'] >0 ) ? {'PRET: '|cat:$client['realizat']['4']['pret']} :'-'}
                     <br/>{($client['target']['4']['target'] > 0) ? {'STOC: '|cat:$client['target']['4']['target']} : '-'}
                 </td>
-                <td style="text-align: center;">{($client['realizat']['1']['cantitate'] > 0 || $client['total_vandute_bg_extra'] > 0) ? $client['realizat']['1']['cantitate'] +  $client['total_vandute_bg_extra'] : '-'}</td>
-                <td style="text-align: center;">{($client['realizat']['1']['cantitate'] > 0 || $client['total_valoare_bg_extra'] > 0) ? $client['realizat']['1']['pret'] + $client['total_valoare_bg_extra'] : '-'}</td>
+                <td style="text-align: center;">{($client['realizat']['1']['cantitate'] > 0 || $client['total_vandute_bg_extra'] > 0) ? ($client['realizat']['1']['cantitate'] +  $client['total_vandute_bg_extra']) : '-'}</td>
+                <td style="text-align: center;">{($client['realizat']['1']['cantitate'] > 0 || $client['total_valoare_bg_extra'] > 0) ? ($client['realizat']['1']['pret'] + $client['total_valoare_bg_extra']) : '-'}</td>
                 <td style="text-align: center;">{($client['realizat']['1']['cantitate'] > 0) ? $client['realizat']['1']['comision'] : '-'}</td>
                 <td style="text-align: center;border-right: double;">
                     {($client['realizat']['1']['cantitate'] > 0) ? ($client['realizat']['1']['cantitate'] * ($client['realizat']['1']['pret'] - $client['realizat']['1']['comision'] )) : '-'}
