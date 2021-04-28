@@ -900,7 +900,6 @@ class Stocuri
                 $ret['clienti'][$num]['valoare_bg'] = 0;
                 $ret['clienti'][$num]['valoare_bg_extra'] = $ret['clienti'][$num]['extra'][1]['pret_extra'];
                 $ret['clienti'][$num]['defecte_bg'] = 0;
-
 //                $ret['clienti'][$num]['total_valoare_bg_extra'] = ($ret['clienti'][$num]['extra'][1]['cantitate_extra'] * $ret['clienti'][$num]['extra'][1]['pret_extra']) ;
 
                 $ret['clienti'][$num]['vandute_ar_8'] = 0;
