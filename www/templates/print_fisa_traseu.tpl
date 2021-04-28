@@ -197,7 +197,6 @@
                 <td style="text-align: center;">{($client['vandute_ar_9'] > 0) ? $client['realizat']['4']['pret']  : '-'}</td>
                 <td style="text-align: center;">{($client['vandute_ar_9'] > 0) ? $client['realizat']['4']['comision']: '-'}</td>
                 <td style="text-align: center;border-right: double;">
-                    dasdasdas
                     {($client['vandute_ar_9'] > 0) ? ($client['vandute_ar_9'] * ($client['realizat']['4']['pret'] - $client['realizat']['4']['comision'])):'-'}
                 </td>
                 {if $print_fisa['depozit_id'] == 2}
