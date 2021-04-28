@@ -111,7 +111,7 @@
                                     <td style="text-align: right;">{($realizat['defecte'] > 0) ? $realizat['defecte'] : '-'}</td>
                                 </tr>
                             {/foreach}
-                        </table>s
+                        </table>
                     {else}
                         <div style="text-align: center;">-</div>
                     {/if}
