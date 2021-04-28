@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-28 22:38:01
+<?php /* Smarty version Smarty-3.1.15, created on 2021-04-28 22:43:04
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:93953769760363ba43e8b40-06532767%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '28466ecbac126ded8271f40af77df08dc0861b8e' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl',
-      1 => 1619638675,
+      1 => 1619638984,
       2 => 'file',
     ),
   ),
@@ -334,7 +334,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
         </tr>
     </table>
     <div style="display: inline-flex;margin-top: 20px;">
-        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']!=0)) {?>
+        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_bg']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_bg']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_bg_extra']!=0)) {?>
             <div>
                 <table border="1" style="width: 180px;">
                     <tr>
@@ -364,7 +364,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                 </table>
             </div>
         <?php }?>
-        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8']!=0)) {?>
+        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_8']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_8']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_8_extra']!=0)) {?>
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 180px;">
                     <tr>
@@ -395,7 +395,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                 </table>
             </div>
         <?php }?>
-        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9']!=0)) {?>
+        <?php if (($_smarty_tpl->tpl_vars['print_fisa']->value['grand_total_vandute_ar_9']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_defecte_ar_9']!=0||$_smarty_tpl->tpl_vars['print_fisa']->value['grand_vandute_ar_9_extra']!=0)) {?>
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 180px;">
                     <tr>

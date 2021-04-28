@@ -247,7 +247,7 @@
         </tr>
     </table>
     <div style="display: inline-flex;margin-top: 20px;">
-        {if ($print_fisa['grand_total_vandute_bg'] != 0 || $print_fisa['grand_defecte_bg'] != 0)}
+        {if ($print_fisa['grand_total_vandute_bg'] != 0 || $print_fisa['grand_defecte_bg'] != 0 || $print_fisa['grand_vandute_bg_extra'] != 0)}
             <div>
                 <table border="1" style="width: 180px;">
                     <tr>
@@ -273,7 +273,7 @@
                 </table>
             </div>
         {/if}
-        {if ($print_fisa['grand_total_vandute_ar_8'] != 0 || $print_fisa['grand_defecte_ar_8'] != 0)}
+        {if ($print_fisa['grand_total_vandute_ar_8'] != 0 || $print_fisa['grand_defecte_ar_8'] != 0 || $print_fisa['grand_vandute_ar_8_extra'] != 0)}
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 180px;">
                     <tr>
@@ -300,7 +300,7 @@
                 </table>
             </div>
         {/if}
-        {if ($print_fisa['grand_total_vandute_ar_9'] != 0 || $print_fisa['grand_defecte_ar_9'] != 0)}
+        {if ($print_fisa['grand_total_vandute_ar_9'] != 0 || $print_fisa['grand_defecte_ar_9'] != 0 || $print_fisa['grand_vandute_ar_9_extra'] != 0)}
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 180px;">
                     <tr>
