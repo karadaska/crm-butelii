@@ -107,7 +107,8 @@
                             {foreach from=$client['realizat'] item= realizat}
                                 <tr>
                                     <td>
-                                        {($realizat['cantitate'] > 0 || $realizat['defecte'] > 0 || $print_fisa['grand_total_vandute_bg_extra'] >0 ) ? $realizat['nume_produs'] : '-'}
+                                        {*{($realizat['cantitate'] > 0 || $realizat['defecte'] > 0 || $print_fisa['grand_total_vandute_bg_extra'] >0 ) ? $realizat['nume_produs'] : '-'}*}
+                                        {$realizat['nume_produs']}
                                     </td>
                                     <td style="text-align: right;">{($realizat['cantitate'] > 0 ) ? $realizat['cantitate'] : '-'}</td>
                                     <td style="text-align: right;">{($realizat['defecte'] > 0) ? $realizat['defecte'] : '-'}</td>

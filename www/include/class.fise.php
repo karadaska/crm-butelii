@@ -2,6 +2,7 @@
 
 class Fise
 {
+
     public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
     {
         $ret = array();
