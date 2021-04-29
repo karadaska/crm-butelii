@@ -752,7 +752,7 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Val. BG + AR</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg'] + $fisa['grand_valoare_ar_8'] + $fisa['grand_valoare_ar_9']  + $produs_extra_ar_8['pret_extra'] + $produs_extra_ar_9['pret_extra'] +$produs_extra_bg['pret_extra']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_valoare_bg'] + $fisa['grand_valoare_ar_8'] + $fisa['grand_valoare_ar_9']  + $fisa['grand_valoare_bg_extra'] + $fisa['grand_valoare_ar_8_extra'] + $fisa['grand_valoare_ar_9_extra']}</td>
                                     </tr>
                                     <tr class="info">
                                         <td style="text-align: left;font-weight: 900;">Com. BG + AR</td>
