@@ -896,24 +896,20 @@ class Stocuri
                 $ret['clienti'][$num]['vandute_bg'] = 0;
                 $ret['clienti'][$num]['vandute_bg_extra'] = $ret['clienti'][$num]['extra'][1]['cantitate_extra'];
                 $ret['clienti'][$num]['valoare_bg'] = 0;
-                $ret['clienti'][$num]['valoare_bg_extra'] = $ret['clienti'][$num]['extra'][1]['pret_extra'];
+                $ret['clienti'][$num]['valoare_bg_extra'] = $ret['clienti'][$num]['extra'][1]['cantitate_extra'] * $ret['clienti'][$num]['extra'][1]['pret_extra'];
                 $ret['clienti'][$num]['defecte_bg'] = 0;
-//                $ret['clienti'][$num]['total_valoare_bg_extra'] = ($ret['clienti'][$num]['extra'][1]['cantitate_extra'] * $ret['clienti'][$num]['extra'][1]['pret_extra']) ;
 
                 $ret['clienti'][$num]['vandute_ar_8'] = 0;
                 $ret['clienti'][$num]['vandute_ar_8_extra'] = $ret['clienti'][$num]['extra'][3]['cantitate_extra'];
                 $ret['clienti'][$num]['valoare_ar_8'] = 0;
-                $ret['clienti'][$num]['valoare_ar_8_extra'] = $ret['clienti'][$num]['extra'][3]['pret_extra'];
+                $ret['clienti'][$num]['valoare_ar_8_extra'] = $ret['clienti'][$num]['extra'][3]['cantitate_extra'] * $ret['clienti'][$num]['extra'][3]['pret_extra'];
                 $ret['clienti'][$num]['defecte_ar_8'] = 0;
-
-//                $ret['clienti'][$num]['total_valoare_ar_8_extra'] = ($ret['clienti'][$num]['extra'][3]['cantitate_extra'] * $ret['clienti'][$num]['extra'][3]['pret_extra']);
 
                 $ret['clienti'][$num]['vandute_ar_9'] = 0;
                 $ret['clienti'][$num]['vandute_ar_9_extra'] = $ret['clienti'][$num]['extra'][4]['cantitate_extra'];
                 $ret['clienti'][$num]['valoare_ar_9'] = 0;
-                $ret['clienti'][$num]['valoare_ar_9_extra'] = $ret['clienti'][$num]['extra'][4]['pret_extra'];
+                $ret['clienti'][$num]['valoare_ar_9_extra'] = $ret['clienti'][$num]['extra'][4]['cantitate_extra'] * $ret['clienti'][$num]['extra'][4]['pret_extra'];
                 $ret['clienti'][$num]['defecte_ar_9'] = 0;
-//                $ret['clienti'][$num]['total_valoare_ar_9_extra'] = ($ret['clienti'][$num]['extra'][4]['cantitate_extra'] * $ret['clienti'][$num]['extra'][4]['pret_extra']);
 
                 $ret['grand_vandute_bg_extra'] += $ret['clienti'][$num]['vandute_bg_extra'];
                 $ret['grand_vandute_ar_8_extra'] +=  $ret['clienti'][$num]['vandute_ar_8_extra'];
