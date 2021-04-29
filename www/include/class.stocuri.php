@@ -761,7 +761,6 @@ class Stocuri
 
             $ret['incarcatura_masina_plecare'] = self::getPlecareMarfaByFisaId($id);
             $ret['incarcatura_masina_intoarcere'] = self::getIntoarcereCantitateMarfaByFisaId($id);
-//            $ret['miscari_fisa'] = self::getMiscariByFisaId($id);
             $ret['clienti'] = Clienti::getAsignariClientiByFisaGenerataId($id, $opt = array());
             foreach ($ret['clienti'] as $num => $client) {
                 $ret['clienti'][$num]['realizat'] = Stocuri::getRealizatClientByFisaId($id, $client['client_id']);
