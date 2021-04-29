@@ -97,7 +97,7 @@
                 <td style="text-align: center;">{$nr++}</td>
                 <td>{strtoupper($client['nume_client'])}</td>
                 <td>
-                    {if (count($client['realizat']) > 0)}
+                    {if ($client['realizat'][1]['cantitate'] > 0 || $client['realizat'][3]['cantitate']> 0 || $client['realizat'][4]['cantitate'] > 0 || count($client['extra']) > 0 || $client['total_defecte_ar_9'] > 0 || $client['total_defecte_ar_8'] > 0 || $client['total_defecte_bg'] > 0)}
                         <table border="1" style="width: 100%">
                             <tr>
                                 <td style="text-align: center;width: 150px;">PRODUS</td>
@@ -106,7 +106,9 @@
                             </tr>
                             {foreach from=$client['realizat'] item= realizat}
                                 <tr>
-                                    <td>{$realizat['tip_produs_id']['extra']['cantitate_extra']} {($realizat['cantitate'] > 0 || $realizat['defecte'] > 0 || $realizat['defecte'] > 0) ? $realizat['nume_produs'] : '-'} </td>
+                                    <td>
+                                        {($realizat['cantitate'] > 0 || $realizat['defecte'] > 0 || $print_fisa['grand_total_vandute_bg_extra'] >0 ) ? $realizat['nume_produs'] : '-'}
+                                    </td>
                                     <td style="text-align: right;">{($realizat['cantitate'] > 0 ) ? $realizat['cantitate'] : '-'}</td>
                                     <td style="text-align: right;">{($realizat['defecte'] > 0) ? $realizat['defecte'] : '-'}</td>
                                 </tr>
