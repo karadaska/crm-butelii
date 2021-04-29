@@ -13,6 +13,7 @@ class Fise
                   WHERE a.fisa_id = '" . $fisa_id . "'
                   AND a.client_id = '" . $client_id . "'
                   AND a.sters = 0
+                  ORDER BY b.id ASC
                   ";
 
         $result = myQuery($query);
