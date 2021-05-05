@@ -3,6 +3,37 @@
 class Fise
 {
 
+    public static function getProduseVanduteByFisaId($id)
+    {
+
+        $ret = array();
+        $query = "SELECT DISTINCT (tip_produs_id) AS tip_produs_id, c.tip
+                FROM detalii_fisa_extra_intoarcere_produse as a
+                LEFT JOIN tip_produs as c on a.tip_produs_id = c.id
+                WHERE a.fisa_id = '" . $id . "'
+                AND a.sters = 0 
+                AND a.cantitate > 0               
+                UNION ALL                                
+                SELECT tip_produs_id AS tip_produs_id, d.tip FROM detalii_fisa_intoarcere_produse as b
+                LEFT JOIN tip_produs as d on b.tip_produs_id = d.id
+                WHERE b.fisa_id = '" . $id . "'
+                AND b.sters = 0
+                AND b.cantitate > 0
+                ORDER BY tip_produs_id ASC
+        ";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['tip_produs_id']] = $item;
+            }
+
+        }
+        return $ret;
+    }
+
     public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
     {
         $ret = array();

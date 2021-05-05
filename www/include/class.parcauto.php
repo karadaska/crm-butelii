@@ -653,6 +653,7 @@ class ParcAuto
             'data_start' => $data_start,
             'data_stop' => $data_stop
         ));
+
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
