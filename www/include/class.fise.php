@@ -7,20 +7,34 @@ class Fise
     {
 
         $ret = array();
-        $query = "SELECT DISTINCT (tip_produs_id) AS tip_produs_id, c.tip
-                FROM detalii_fisa_extra_intoarcere_produse as a
-                LEFT JOIN tip_produs as c on a.tip_produs_id = c.id
-                WHERE a.fisa_id = '" . $id . "'
-                AND a.sters = 0 
-                AND a.cantitate > 0               
-                UNION ALL                                
-                SELECT tip_produs_id AS tip_produs_id, d.tip FROM detalii_fisa_intoarcere_produse as b
-                LEFT JOIN tip_produs as d on b.tip_produs_id = d.id
-                WHERE b.fisa_id = '" . $id . "'
-                AND b.sters = 0
-                AND b.cantitate > 0
-                ORDER BY tip_produs_id ASC
-        ";
+        $query = "SELECT * from (SELECT DISTINCT
+	                    (tip_produs_id) AS tip_produs_id,
+	                    c.tip AS nume_produs
+                        FROM
+                            detalii_fisa_extra_intoarcere_produse AS a
+                        LEFT JOIN tip_produs AS c ON a.tip_produs_id = c.id
+                        WHERE
+                            a.fisa_id = '" . $id . "'
+                        AND a.sters = 0
+                        AND a.cantitate > 0
+                        UNION ALL
+                            SELECT
+                                tip_produs_id AS tip_produs_id,
+                                d.tip AS nume_produs
+                            FROM
+                                detalii_fisa_intoarcere_produse AS b
+                            LEFT JOIN tip_produs AS d ON b.tip_produs_id = d.id
+                            WHERE
+                                b.fisa_id = '" . $id . "'
+                            AND b.sters = 0
+                            AND b.cantitate > 0
+                            ORDER BY
+                                tip_produs_id ASC
+                        ) as test
+                            GROUP BY
+                                test.tip_produs_id
+                                ";
+
 
         $result = myQuery($query);
 

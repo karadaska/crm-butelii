@@ -23,11 +23,21 @@ $smarty->assign('produs_extra_ar_9', $produs_extra_ar_9);
 $produs_extra_ar_8 = Fise::GetProdusExtraByProdusIdAndFisa(3,$id);
 $smarty->assign('produs_extra_ar_8', $produs_extra_ar_8);
 
-$print_fisa = Stocuri::getFisaGenerataById($id);
+//$print_fisa = Stocuri::getFisaGenerataById($id);
+//$smarty->assign('print_fisa',$print_fisa);
+
+$print_fisa = Printare::PrintFisaSosire($id);
 $smarty->assign('print_fisa',$print_fisa);
 
-//$print = Printare::PrintFisaSosire($id);
-//$smarty->assign('print',$print);
+//$txt = Fise::getProduseVanduteByFisaId(1655);
+//$txt = Fise::GetProdusExtraByClientIdProdusIdAndFisaAnd(2584, 1655);
+
+//
+//foreach ($print_fisa['produse'] as $produs){
+//    foreach ($produs as $prod){
+//        pre($produs['nume_produs']) .'<br/>' ;
+//    }
+//}
 
 $cantitati_produse_clienti_by_fisa_id = Stocuri::getCantitatiProduseClientiByFisaId($id);
 $smarty->assign('cantitati_produse_clienti_by_fisa_id', $cantitati_produse_clienti_by_fisa_id);
