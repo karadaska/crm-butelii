@@ -97,7 +97,6 @@
                 <td style="text-align: center;">{$nr++}</td>
                 <td>{strtoupper($client['nume_client'])}</td>
                 <td style="text-align: left">
-                    {*{if ($client['realizat'][1]['cantitate'] > 0 || $client['realizat'][3]['cantitate']> 0 || $client['realizat'][4]['cantitate'] > 0 || count($client['extra']) > 0 || $client['total_defecte_ar_9'] > 0 || $client['total_defecte_ar_8'] > 0 || $client['total_defecte_bg'] > 0)}*}
                     <table border="1" style="width: 100%">
                         <tr>
                             <td></td>
@@ -137,54 +136,6 @@
                             </td>
                         </tr>
                     </table>
-                        {*<table border="1" style="width: 100%">*}
-                            {*<tr>*}
-                                {*<td colspan="2" style="text-align: center;">BG</td>*}
-                                {*<td colspan="2" style="text-align: center;">AR 9</td>*}
-                                {*<td colspan="2" style="text-align: center;">AR 8</td>*}
-                            {*</tr>*}
-                            {*<tr>*}
-                                {*<td style="text-align: center;">Pline</td>*}
-                                {*<td style="text-align: center;">Defecte</td>*}
-                                {*<td style="text-align: center;">Pline</td>*}
-                                {*<td style="text-align: center;">Defecte</td>*}
-                                {*<td style="text-align: center;">Pline</td>*}
-                                {*<td style="text-align: center;">Defecte</td>*}
-                            {*</tr>*}
-                            {*<tr>*}
-                                {*<td style="text-align: right;">1</td>*}
-                                {*<td style="text-align: right;">2</td>*}
-                                {*<td style="text-align: right;">3</td>*}
-                                {*<td style="text-align: right;">4</td>*}
-                                {*<td style="text-align: right;">5</td>*}
-                                {*<td style="text-align: right;">6</td>*}
-                            {*</tr>*}
-                        {*</table>*}
-                            {*<tr>*}
-                                {*<td>Pline</td>*}
-                                {*<td>Defecte</td>*}
-                            {*</tr>*}
-                            {*{foreach from=$print_fisa['produse'] item=produs}*}
-                                {*<tr>*}
-                                    {*<td>{$produs['nume_produs']}</td>*}
-                                    {*<td></td>*}
-                                    {*<td></td>*}
-                                {*</tr>*}
-                            {*{/foreach}*}
-                            {*{foreach from=$client['realizat'] item= realizat}*}
-                            {*<tr>*}
-                            {*<td>*}
-                            {*{($realizat['cantitate'] > 0 || $realizat['defecte'] > 0 || $print_fisa['grand_total_vandute_bg_extra'] >0 ) ? $realizat['nume_produs'] : '-'}*}
-                            {*{$realizat['nume_produs']}*}
-                            {*</td>*}
-                            {*<td style="text-align: right;">{($realizat['cantitate'] > 0 ) ? $realizat['cantitate'] : '-'}</td>*}
-                            {*<td style="text-align: right;">{($realizat['defecte'] > 0) ? $realizat['defecte'] : '-'}</td>*}
-                            {*</tr>*}
-                            {*{/foreach}*}
-
-                    {*{else}*}
-                        {*<div style="text-align: center;">-</div>*}
-                    {*{/if}*}
                 </td>
                 <td style="text-align: center;">
                     {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
