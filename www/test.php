@@ -111,8 +111,9 @@ $data_stop = '2021-01-31';
 //$b = Stocuri::getRealizatClientByFisaId(1654, 1332);
 //$b = Stocuri::getFisaGenerataById(1654);
 //$b = Stocuri::getFisaGenerataByIdPrintFisaTraseu(1654);
-//$b = Printare::PrintFisaSosire(1655);
-$b = Fise::getProduseVanduteByFisaId(1655);
+$b = Printare::PrintFisaSosire(1655);
+//$b = Fise::getProduseVanduteByFisaId(1655);
+//$b =Fise::getCantitatiBgByFisaIdAndClientIdAndTipProdusId(1655, 2563,1);
 //$b = Fise::GetProdusExtraByClientIdProdusIdAndFisaAnd(2584, 1655);
 
 echo json_encode($b);

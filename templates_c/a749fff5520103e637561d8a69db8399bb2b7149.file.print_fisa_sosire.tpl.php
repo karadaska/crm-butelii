@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-06 22:00:23
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-10 14:49:05
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1620327622,
+      1 => 1620647331,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'newDate' => 0,
     'nr' => 0,
     'client' => 0,
-    'produs' => 0,
     'client_observatie' => 0,
     'produs_extra_bg' => 0,
     'produs_extra_ar_8' => 0,
@@ -144,32 +143,86 @@ $_smarty_tpl->tpl_vars["client"]->_loop = true;
 </td>
                 <td><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_client']);?>
 </td>
-                <td>
+                <td style="text-align: left">
                     
-                        <table border="1" style="width: 100%">
-                            <tr>
-                                <td style="text-align: center;width: 150px;">PRODUS</td>
-                                <td style="text-align: center;">VANDUTE</td>
-                                <td style="text-align: center;">DEFECTE</td>
-                            </tr>
-                            <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['client']->value['produse']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['produs']->key => $_smarty_tpl->tpl_vars['produs']->value) {
-$_smarty_tpl->tpl_vars['produs']->_loop = true;
-?>
-                                <?php  $_smarty_tpl->tpl_vars['prod'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['prod']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['produs']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['prod']->key => $_smarty_tpl->tpl_vars['prod']->value) {
-$_smarty_tpl->tpl_vars['prod']->_loop = true;
-?>
+                    <table border="1" style="width: 100%">
+                        <tr>
+                            <td></td>
+                            <td><span style="float: left;">Pline</span><span style="float: right">Defecte</span></td>
+                        </tr>
+                        <tr>
+                            <td>BG</td>
+                            <td>
+                                <table border="1" style="width: 100%">
                                     <tr>
-                                        <td><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
+                                        <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_bg']+$_smarty_tpl->tpl_vars['client']->value['vandute_bg_extra'];?>
 </td>
-                                        <td></td>
-                                        <td></td>
+                                        <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['defecte_bg'];?>
+</td>
                                     </tr>
-                                <?php } ?>
-                            <?php } ?>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AR 9</td>
+                            <td>
+                                <table border="1" style="width: 100%">
+                                    <tr>
+                                        <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']+$_smarty_tpl->tpl_vars['client']->value['vandute_ar_9_extra'];?>
+</td>
+                                        <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9'];?>
+</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AR 8</td>
+                            <td>
+                                <table border="1" style="width: 100%">
+                                    <tr>
+                                        <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']+$_smarty_tpl->tpl_vars['client']->value['vandute_ar_8_extra'];?>
+</td>
+                                        <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8'];?>
+</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                        
+                            
+                                
+                                
+                                
+                            
+                            
+                                
+                                
+                                
+                                
+                                
+                                
+                            
+                            
+                                
+                                
+                                
+                                
+                                
+                                
+                            
+                        
+                            
+                                
+                                
+                            
+                            
+                                
+                                    
+                                    
+                                    
+                                
                             
                             
                             
@@ -180,7 +233,8 @@ $_smarty_tpl->tpl_vars['prod']->_loop = true;
                             
                             
                             
-                        </table>
+                            
+
                     
                         
                     

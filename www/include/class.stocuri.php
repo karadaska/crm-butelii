@@ -185,7 +185,6 @@ class Stocuri
                         'pret_contract' => $item['pret_contract'],
                     );
                 }
-//                $ret[$item['tip_produs_id']] = $item;
             }
         }
         return $ret;
@@ -453,33 +452,6 @@ class Stocuri
         return $ret;
     }
 
-//Trebuie refacuta la completare fisa
-//    public static function getIntoarcereMarfaByFisaIdAndprodusId($id, $produs_id)
-//    {
-//        $ret = array();
-//        $query = "SELECT
-//                        a.tip_produs_id,
-//                        a.fisa_id,
-//                        b.tip AS nume_produs,
-//                        ( SELECT cantitate FROM fisa_total_plecare WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 1 AND sters = 0) AS pline_plecare,
-//                        ( SELECT cantitate FROM fisa_total_intoarcere WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 1 ) AS pline_intoarcere,
-//                        ( SELECT cantitate FROM fisa_total_intoarcere WHERE tip_produs_id = a.tip_produs_id AND fisa_id = a.fisa_id AND stare_produs = 3 ) AS defecte_intoarcere
-//                        FROM fisa_total_intoarcere AS a
-//                        LEFT JOIN tip_produs AS b ON a.tip_produs_id = b.id
-//                        WHERE  a.fisa_id = '" . $id . "'
-//                        and a.tip_produs_id = '" . $produs_id . "'
-//                        and a.sters = 0
-//                        and b.sters = 0
-//                        ";
-//
-//        $result = myQuery($query);
-//
-//        if ($result) {
-//            $ret = $result->fetch(PDO::FETCH_ASSOC);
-//        }
-//        return $ret;
-//    }
-
     public static function getIntoarcereMarfaByFisaIdAndprodusId($id, $tip_produs_id)
     {
         $ret = array();
@@ -495,9 +467,6 @@ class Stocuri
         $result = myQuery($query);
 
         if ($result) {
-//            $ret['totaluri'] = array(
-//                'total_goale' => 0,
-//            );
 
 //            $ret['marfa_plecare'] = self::getPlecareMarfaByFisaIdAndprodusId($id, $tip_produs_id);
             $ret['marfa_sosire'] = array();

@@ -3,49 +3,84 @@
 class Fise
 {
 
+    public static function getCantitatiBgByFisaIdAndClientIdAndTipProdusId($fisa_id, $client_id, $tip_produs_id)
+    {
+        $ret = array();
+        $query = "SELECT a.*
+                  FROM detalii_fisa_intoarcere_produse as a                                     
+                  WHERE a.fisa_id = '" . $fisa_id . "'
+                  AND a.client_id = '" . $client_id . "'
+                  AND a.tip_produs_id = '" . $tip_produs_id . "'
+                  AND a.sters = 0
+                 ";
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                if (!isset($ret[$item['tip_produs_id']])) {
+                    $ret[$item['tip_produs_id']] = array(
+                        'vandute' => $item['cantitate'],
+                        'defecte' => $item['defecte'],
+                        'extra' => $item['defecte']
+                    );
+
+                }
+            }
+        }
+        return $ret;
+    }
+
     public static function getProduseVanduteByFisaId($id)
     {
 
         $ret = array();
-        $query = "SELECT * from (SELECT DISTINCT
-	                    (tip_produs_id) AS tip_produs_id,
-	                    c.tip AS nume_produs
-                        FROM
-                            detalii_fisa_extra_intoarcere_produse AS a
-                        LEFT JOIN tip_produs AS c ON a.tip_produs_id = c.id
-                        WHERE
-                            a.fisa_id = '" . $id . "'
-                        AND a.sters = 0
-                        AND a.cantitate > 0
-                        UNION ALL
-                            SELECT
-                                tip_produs_id AS tip_produs_id,
-                                d.tip AS nume_produs
-                            FROM
-                                detalii_fisa_intoarcere_produse AS b
-                            LEFT JOIN tip_produs AS d ON b.tip_produs_id = d.id
-                            WHERE
-                                b.fisa_id = '" . $id . "'
-                            AND b.sters = 0
-                            AND b.cantitate > 0
-                            ORDER BY
-                                tip_produs_id ASC
-                        ) as test
-                            GROUP BY
-                                test.tip_produs_id
-                                ";
-
+        $query = "SELECT * from (SELECT DISTINCT (tip_produs_id) AS tip_produs_id, c.tip AS nume_produs     
+                  FROM  detalii_fisa_extra_intoarcere_produse AS a
+                  LEFT JOIN tip_produs AS c ON a.tip_produs_id = c.id
+                  WHERE a.fisa_id = '" . $id . "'
+                  AND a.sters = 0
+                  AND a.cantitate > 0
+                  UNION ALL 
+                  SELECT tip_produs_id AS tip_produs_id,
+                  d.tip AS nume_produs
+                  FROM detalii_fisa_intoarcere_produse AS b
+                  LEFT JOIN tip_produs AS d ON b.tip_produs_id = d.id
+                  WHERE b.fisa_id = '" . $id . "'
+                  AND b.sters = 0
+                  AND b.cantitate > 0
+                  ORDER BY tip_produs_id ASC) as test
+                  GROUP BY test.tip_produs_id";
 
         $result = myQuery($query);
 
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-                $ret[$item['tip_produs_id']] = $item;
+                if (!isset($ret[$item['tip_produs_id']])) {
+                    $ret[$item['tip_produs_id']] = array(
+                        'fisa_id' => $id,
+                        'tip_produs_id' => $item['tip_produs_id'],
+                        'nume_produs' => $item['nume_produs'],
+                        'cantitate' => $item['cantitate'],
+                        'cantitate_extra' => 'extra',
+                        'defecte' => $item['defecte']
+                        );
+                }
             }
-
         }
         return $ret;
+
+//        $result = myQuery($query);
+//
+//        if ($result) {
+//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+//            foreach ($a as $item) {
+//                $ret[$item['nume_produs']] = $item;
+//            }
+//
+//        }
+//        return $ret;
     }
 
     public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
@@ -384,8 +419,6 @@ class Fise
         }
         return $ret;
     }
-
-//    le-am facut de test
 
     public static function getTotalCantitatiBgByFisa($id)
     {

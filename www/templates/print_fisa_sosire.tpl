@@ -96,23 +96,81 @@
             <tr>
                 <td style="text-align: center;">{$nr++}</td>
                 <td>{strtoupper($client['nume_client'])}</td>
-                <td>
+                <td style="text-align: left">
                     {*{if ($client['realizat'][1]['cantitate'] > 0 || $client['realizat'][3]['cantitate']> 0 || $client['realizat'][4]['cantitate'] > 0 || count($client['extra']) > 0 || $client['total_defecte_ar_9'] > 0 || $client['total_defecte_ar_8'] > 0 || $client['total_defecte_bg'] > 0)}*}
-                        <table border="1" style="width: 100%">
-                            <tr>
-                                <td style="text-align: center;width: 150px;">PRODUS</td>
-                                <td style="text-align: center;">VANDUTE</td>
-                                <td style="text-align: center;">DEFECTE</td>
-                            </tr>
-                            {foreach from=$client['produse'] item=produs}
-                                {foreach from=$produs item=prod}
+                    <table border="1" style="width: 100%">
+                        <tr>
+                            <td></td>
+                            <td><span style="float: left;">Pline</span><span style="float: right">Defecte</span></td>
+                        </tr>
+                        <tr>
+                            <td>BG</td>
+                            <td>
+                                <table border="1" style="width: 100%">
                                     <tr>
-                                        <td>{$produs['nume_produs']}</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td style="text-align: right;">{$client['vandute_bg'] + $client['vandute_bg_extra']}</td>
+                                        <td style="text-align: right;">{$client['defecte_bg']}</td>
                                     </tr>
-                                {/foreach}
-                            {/foreach}
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AR 9</td>
+                            <td>
+                                <table border="1" style="width: 100%">
+                                    <tr>
+                                        <td style="text-align: right;">{$client['vandute_ar_9'] + $client['vandute_ar_9_extra']}</td>
+                                        <td style="text-align: right;">{$client['vandute_ar_9']}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AR 8</td>
+                            <td>
+                                <table border="1" style="width: 100%">
+                                    <tr>
+                                        <td style="text-align: right;">{$client['vandute_ar_8'] + $client['vandute_ar_8_extra']}</td>
+                                        <td style="text-align: right;">{$client['vandute_ar_8']}</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                        {*<table border="1" style="width: 100%">*}
+                            {*<tr>*}
+                                {*<td colspan="2" style="text-align: center;">BG</td>*}
+                                {*<td colspan="2" style="text-align: center;">AR 9</td>*}
+                                {*<td colspan="2" style="text-align: center;">AR 8</td>*}
+                            {*</tr>*}
+                            {*<tr>*}
+                                {*<td style="text-align: center;">Pline</td>*}
+                                {*<td style="text-align: center;">Defecte</td>*}
+                                {*<td style="text-align: center;">Pline</td>*}
+                                {*<td style="text-align: center;">Defecte</td>*}
+                                {*<td style="text-align: center;">Pline</td>*}
+                                {*<td style="text-align: center;">Defecte</td>*}
+                            {*</tr>*}
+                            {*<tr>*}
+                                {*<td style="text-align: right;">1</td>*}
+                                {*<td style="text-align: right;">2</td>*}
+                                {*<td style="text-align: right;">3</td>*}
+                                {*<td style="text-align: right;">4</td>*}
+                                {*<td style="text-align: right;">5</td>*}
+                                {*<td style="text-align: right;">6</td>*}
+                            {*</tr>*}
+                        {*</table>*}
+                            {*<tr>*}
+                                {*<td>Pline</td>*}
+                                {*<td>Defecte</td>*}
+                            {*</tr>*}
+                            {*{foreach from=$print_fisa['produse'] item=produs}*}
+                                {*<tr>*}
+                                    {*<td>{$produs['nume_produs']}</td>*}
+                                    {*<td></td>*}
+                                    {*<td></td>*}
+                                {*</tr>*}
+                            {*{/foreach}*}
                             {*{foreach from=$client['realizat'] item= realizat}*}
                             {*<tr>*}
                             {*<td>*}
@@ -123,7 +181,7 @@
                             {*<td style="text-align: right;">{($realizat['defecte'] > 0) ? $realizat['defecte'] : '-'}</td>*}
                             {*</tr>*}
                             {*{/foreach}*}
-                        </table>
+
                     {*{else}*}
                         {*<div style="text-align: center;">-</div>*}
                     {*{/if}*}
