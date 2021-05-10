@@ -197,11 +197,11 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_ar_8'] + $produs_extra_ar_8['cantitate_extra']}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_ar_8'] + $print_fisa['grand_vandute_ar_8_extra']}</td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_ar_8'] + ($produs_extra_ar_8['cantitate_extra'] * $produs_extra_ar_8['pret_extra'])}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_ar_8'] + $print_fisa['grand_valoare_ar_8_extra']}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
