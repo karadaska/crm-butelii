@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-10 15:06:54
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-10 22:09:21
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1620648413,
+      1 => 1620673760,
       2 => 'file',
     ),
   ),
@@ -155,13 +155,13 @@ $_smarty_tpl->tpl_vars["client"]->_loop = true;
                         <?php }?>
                         <?php if ($_smarty_tpl->tpl_vars['client']->value['vandute_bg']>0||$_smarty_tpl->tpl_vars['client']->value['vandute_bg_extra']>0||$_smarty_tpl->tpl_vars['client']->value['defecte_bg']) {?>
                             <tr>
-                                <td>BG</td>
+                                <td style="width: 80px;">BG</td>
                                 <td>
                                     <table border="1" style="width: 100%">
                                         <tr>
-                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_bg']+$_smarty_tpl->tpl_vars['client']->value['vandute_bg_extra'];?>
+                                            <td style="text-align: left;width: 50%"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_bg']+$_smarty_tpl->tpl_vars['client']->value['vandute_bg_extra'];?>
 </td>
-                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['defecte_bg'];?>
+                                            <td style="text-align: right;width: 50%"><?php echo $_smarty_tpl->tpl_vars['client']->value['defecte_bg'];?>
 </td>
                                         </tr>
                                     </table>
@@ -170,13 +170,13 @@ $_smarty_tpl->tpl_vars["client"]->_loop = true;
                         <?php }?>
                         <?php if ($_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']>0||$_smarty_tpl->tpl_vars['client']->value['vandute_ar_9_extra']>0||$_smarty_tpl->tpl_vars['client']->value['defecte_ar_9']) {?>
                             <tr>
-                                <td>AR 9</td>
+                                <td style="width: 80px;">AR 9</td>
                                 <td>
                                     <table border="1" style="width: 100%">
                                         <tr>
-                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']+$_smarty_tpl->tpl_vars['client']->value['vandute_ar_9_extra'];?>
+                                            <td style="text-align: left;width: 50%""><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']+$_smarty_tpl->tpl_vars['client']->value['vandute_ar_9_extra'];?>
 </td>
-                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['defecte_ar_9'];?>
+                                            <td style="text-align: right;width: 50%""><?php echo $_smarty_tpl->tpl_vars['client']->value['defecte_ar_9'];?>
 </td>
                                         </tr>
                                     </table>
@@ -185,13 +185,13 @@ $_smarty_tpl->tpl_vars["client"]->_loop = true;
                         <?php }?>
                         <?php if ($_smarty_tpl->tpl_vars['client']->value['vandute_ar_9']>0||$_smarty_tpl->tpl_vars['client']->value['vandute_ar_9_extra']>0||$_smarty_tpl->tpl_vars['client']->value['defecte_ar_9']) {?>
                             <tr>
-                                <td>AR 8</td>
+                                <td style="width: 80px;">AR 8</td>
                                 <td>
                                     <table border="1" style="width: 100%">
                                         <tr>
-                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']+$_smarty_tpl->tpl_vars['client']->value['vandute_ar_8_extra'];?>
+                                            <td style="text-align: left;width: 50%""><?php echo $_smarty_tpl->tpl_vars['client']->value['vandute_ar_8']+$_smarty_tpl->tpl_vars['client']->value['vandute_ar_8_extra'];?>
 </td>
-                                            <td style="text-align: right;"><?php echo $_smarty_tpl->tpl_vars['client']->value['defecte_ar_8'];?>
+                                            <td style="text-align: right;width: 50%""><?php echo $_smarty_tpl->tpl_vars['client']->value['defecte_ar_8'];?>
 </td>
                                         </tr>
                                     </table>
