@@ -170,11 +170,11 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_bg']  + $produs_extra_bg['cantitate_extra']}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_bg'] + $print_fisa['grand_vandute_bg_extra']}</td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_bg'] + ($produs_extra_bg['cantitate_extra'] * $produs_extra_bg['pret_extra'])}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_bg'] + $print_fisa['grand_valoare_bg_extra']}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
@@ -227,11 +227,11 @@
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL CANTITATI</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_ar_9'] + $produs_extra_ar_9['cantitate_extra']}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_total_vandute_ar_9'] + $print_fisa['grand_vandute_ar_9_extra']}</td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">TOTAL VALOARE</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_ar_9'] + ($produs_extra_ar_9['cantitate_extra'] * $produs_extra_ar_9['pret_extra'])}</td>
+                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_valoare_ar_9'] + $print_fisa['grand_valoare_ar_9_extra']}</td>
                     </tr>
                     <tr>
                         <td style="text-align: left;font-weight: 500;">TOTAL COMISION</td>
