@@ -162,7 +162,7 @@
         {/foreach}
     </table>
     <div style="display: inline-flex;margin-top: 20px;">
-        {if ($print_fisa['grand_total_vandute_bg'] != 0 || $print_fisa['grand_defecte_bg'] != 0 || $produs_extra_bg['cantitate_extra'] > 0)}
+        {if ($print_fisa['grand_total_vandute_bg'] != 0 || $print_fisa['grand_defecte_bg'] != 0 || $print_fisa['grand_vandute_bg_extra'] > 0)}
             <div>
                 <table border="1" style="width: 200px;">
                     <tr>
@@ -187,7 +187,7 @@
                 </table>
             </div>
         {/if}
-        {if ($print_fisa['grand_total_vandute_ar_8'] != 0 || $print_fisa['grand_defecte_ar_8'] != 0 || $produs_extra_ar_8['cantitate_extra'] > 0)}
+        {if ($print_fisa['grand_total_vandute_ar_8'] != 0 || $print_fisa['grand_defecte_ar_8'] != 0 || $print_fisa['grand_vandute_ar_8_extra'] > 0)}
             <div style="margin-left: 10px;">
                 <table border="1" style="width: 200px;">
                     <tr>
@@ -216,7 +216,7 @@
                 </table>
             </div>
         {/if}
-        {if ($print_fisa['grand_total_vandute_ar_9'] != 0 || $print_fisa['grand_defecte_ar_9'] != 0 || $produs_extra_ar_9['cantitate_extra'] > 0)}
+        {if ($print_fisa['grand_total_vandute_ar_9'] != 0 || $print_fisa['grand_defecte_ar_9'] != 0 || $print_fisa['grand_vandute_ar_9_extra'] > 0)}
             <div style="margin-left: 5px;">
                 <table border="1" style="width: 200px;">
                     <tr>
@@ -262,7 +262,10 @@
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">COM. BG + AR</td>
-                        <td style="text-align: center;font-weight: 500;">{$print_fisa['grand_comision_bg'] + $print_fisa['grand_comision_ar_8'] + $print_fisa['grand_comision_ar_9']}</td>
+                        <td style="text-align: center;font-weight: 500;">
+                            {$total_comision =$print_fisa['grand_comision_bg'] + $print_fisa['grand_comision_ar_8'] + $print_fisa['grand_comision_ar_9']}
+                            {($total_comision > 0) ? $total_comision : '-'}
+                        </td>
                     </tr>
                     <tr class="info">
                         <td style="text-align: left;font-weight: 500;">DEF. BG + AR</td>
