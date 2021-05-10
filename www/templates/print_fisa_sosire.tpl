@@ -102,39 +102,45 @@
                             <td></td>
                             <td><span style="float: left;">Pline</span><span style="float: right">Defecte</span></td>
                         </tr>
-                        <tr>
-                            <td>BG</td>
-                            <td>
-                                <table border="1" style="width: 100%">
-                                    <tr>
-                                        <td style="text-align: right;">{$client['vandute_bg'] + $client['vandute_bg_extra']}</td>
-                                        <td style="text-align: right;">{$client['defecte_bg']}</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>AR 9</td>
-                            <td>
-                                <table border="1" style="width: 100%">
-                                    <tr>
-                                        <td style="text-align: right;">{$client['vandute_ar_9'] + $client['vandute_ar_9_extra']}</td>
-                                        <td style="text-align: right;">{$client['vandute_ar_9']}</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>AR 8</td>
-                            <td>
-                                <table border="1" style="width: 100%">
-                                    <tr>
-                                        <td style="text-align: right;">{$client['vandute_ar_8'] + $client['vandute_ar_8_extra']}</td>
-                                        <td style="text-align: right;">{$client['vandute_ar_8']}</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
+                        {if $client['vandute_bg'] > 0 || $client['vandute_bg_extra'] > 0 || $client['defecte_bg']}
+                            <tr>
+                                <td>BG</td>
+                                <td>
+                                    <table border="1" style="width: 100%">
+                                        <tr>
+                                            <td style="text-align: right;">{$client['vandute_bg'] + $client['vandute_bg_extra']}</td>
+                                            <td style="text-align: right;">{$client['defecte_bg']}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        {/if}
+                        {if $client['vandute_ar_9'] > 0 || $client['vandute_ar_9_extra'] > 0 || $client['defecte_ar_9']}
+                            <tr>
+                                <td>AR 9</td>
+                                <td>
+                                    <table border="1" style="width: 100%">
+                                        <tr>
+                                            <td style="text-align: right;">{$client['vandute_ar_9'] + $client['vandute_ar_9_extra']}</td>
+                                            <td style="text-align: right;">{$client['defecte_ar_9']}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        {/if}
+                        {if $client['vandute_ar_9'] > 0 || $client['vandute_ar_9_extra'] > 0 || $client['defecte_ar_9']}
+                            <tr>
+                                <td>AR 8</td>
+                                <td>
+                                    <table border="1" style="width: 100%">
+                                        <tr>
+                                            <td style="text-align: right;">{$client['vandute_ar_8'] + $client['vandute_ar_8_extra']}</td>
+                                            <td style="text-align: right;">{$client['defecte_ar_8']}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        {/if}
                     </table>
                 </td>
                 <td style="text-align: center;">
