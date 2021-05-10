@@ -151,11 +151,11 @@
                     </table>
                 </td>
                 <td style="text-align: center;">
-                    {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
+                    {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$print_fisa['id'])}
                     {($client_observatie['nume_observatie'] !='') ? $client_observatie['nume_observatie'] : '-'}
                 </td>
                 <td style="text-align: center;">
-                    {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$client['fisa_generata_id'])}
+                    {assign var=client_observatie value=Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($client['client_id'],$print_fisa['id'])}
                     {($client_observatie['observatie_extra'] !='') ? $client_observatie['observatie_extra'] :'-'}
                 </td>
             </tr>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-10 23:34:49
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-10 23:40:44
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1798341706602914428f6da4-92444764%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a749fff5520103e637561d8a69db8399bb2b7149' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_sosire.tpl',
-      1 => 1620678886,
+      1 => 1620679242,
       2 => 'file',
     ),
   ),
@@ -202,12 +202,12 @@ $_smarty_tpl->tpl_vars["client"]->_loop = true;
                     </table>
                 </td>
                 <td style="text-align: center;">
-                    <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['client']->value['fisa_generata_id']), null, 0);?>
+                    <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['print_fisa']->value['id']), null, 0);?>
                     <?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['nume_observatie']!='' ? $_smarty_tpl->tpl_vars['client_observatie']->value['nume_observatie'] : '-';?>
 
                 </td>
                 <td style="text-align: center;">
-                    <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['client']->value['fisa_generata_id']), null, 0);?>
+                    <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Trasee::getObservatieDinFisaTraseuByClientIdAndFisaId($_smarty_tpl->tpl_vars['client']->value['client_id'],$_smarty_tpl->tpl_vars['print_fisa']->value['id']), null, 0);?>
                     <?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['observatie_extra']!='' ? $_smarty_tpl->tpl_vars['client_observatie']->value['observatie_extra'] : '-';?>
 
                 </td>
