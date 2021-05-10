@@ -26,7 +26,6 @@ $smarty->assign('id', $id);
 $stare_produs = getRequestParameter('stare_produs', 0);
 $pret_produs = getRequestParameter('pret_produs', 0);
 
-
 $produs_extra = Fise::GetProdusExtraByClientIdAndFisa($id, $client_id, $fisa_id);
 $smarty->assign('produs_extra', $produs_extra);
 

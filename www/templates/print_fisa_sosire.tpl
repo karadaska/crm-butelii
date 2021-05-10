@@ -112,8 +112,8 @@
                                 <td>
                                     <table border="1" style="width: 100%">
                                         <tr>
-                                            <td style="text-align: left;width: 50%">{$client['vandute_bg'] + $client['vandute_bg_extra']}</td>
-                                            <td style="text-align: right;width: 50%">{$client['defecte_bg']}</td>
+                                            <td style="text-align: left;width: 50%">{($client['vandute_bg'] + $client['vandute_bg_extra'] > 0) ? ($client['vandute_bg'] + $client['vandute_bg_extra']) : '-'}</td>
+                                            <td style="text-align: right;width: 50%">{($client['defecte_bg'] > 0) ? $client['defecte_bg'] : '-'}</td>
                                         </tr>
                                     </table>
                                 </td>
@@ -132,7 +132,7 @@
                                 </td>
                             </tr>
                         {/if}
-                        {if $client['vandute_ar_9'] > 0 || $client['vandute_ar_9_extra'] > 0 || $client['defecte_ar_9']}
+                        {if $client['vandute_ar_8'] > 0 || $client['vandute_ar_8_extra'] > 0 || $client['defecte_ar_8']}
                             <tr>
                                 <td style="width: 80px;">AR 8</td>
                                 <td>

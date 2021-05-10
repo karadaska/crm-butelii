@@ -259,9 +259,6 @@ class Fise
 
         $result = myQuery($query);
 
-//        if ($result) {
-//            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
-//        }
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
@@ -304,8 +301,7 @@ class Fise
                                               pret = '" . $pret . "'
                                               WHERE client_id= '" . $client_id . "'
                                               AND fisa_id = '" . $fisa_id . "'
-                                              AND tip_produs_id = '" . $tip_produs_id . "'
-                                              AND stare_produs = 1
+                                              AND tip_produs_id = '" . $tip_produs_id . "'                                             
                                                 ";
         myExec($query);
 
