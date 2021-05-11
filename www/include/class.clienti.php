@@ -137,10 +137,6 @@ class Clienti
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
         $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
 
-//        if ($perioada_id <= 9) {
-//            $perioada_id = '0' . $perioada_id;
-//        }
-
         $ret = array();
 
         $query = "SELECT
@@ -167,14 +163,32 @@ class Clienti
 
     public static function getRandamentByClientIdDinRandamentClienti($client_id, $opts = array())
     {
-
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
         $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
 
-//        if ($perioada_id <= 9) {
-//            $perioada_id = '0' . $perioada_id;
-//        }
+        $ret = array();
 
+        $query = "SELECT a.perioada_id as luna_randament, a.randament as randament_lunar
+                    FROM randament_clienti as a
+                    LEFT JOIN lunile_anului as b on a.perioada_id = b.id	
+                    WHERE a.client_id = '".$client_id."'
+                    AND a.an = '".$an."' 
+                    AND a.perioada_id ='".$perioada_id."' 
+                    ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $ret;
+    }
+
+    public static function getRandamentByClientIdDinRandamentClienti2($client_id, $opts = array())
+    {
+
+        $an = isset($opts['an']) ? $opts['an'] : date('Y');
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
         $ret = array();
 
         $query = "SELECT

@@ -11,10 +11,16 @@ $template_page = "randament_client.tpl";
 $id = getRequestParameter('id', 0);
 $smarty->assign('id', $id);
 
+$perioada_id = getRequestParameter('perioada_id', date('n'));
+$smarty->assign('perioada_id', $perioada_id);
+
 $data_start = date('Y-m-d');
 
 $nume_client = Clienti::getNumeClientById($id);
 $smarty->assign('nume_client', $nume_client);
+
+$lista_perioade = Calendar::getPerioada();
+$smarty->assign('lista_perioade', $lista_perioade);
 
 $an = getRequestParameter('an', date('Y'));
 $smarty->assign('an', $an);
@@ -25,11 +31,20 @@ $smarty->assign('lista_clienti', $lista_clienti);
 $target_client = Target::getSumaTargetClient($id);
 $smarty->assign('target_client', $target_client);
 
-$randament_client = Fise::getRandamentAnualDinFiseByClientId($id, array(
-    'an' => $an
-));
 
-$smarty->assign('randament_client', $randament_client);
+if (($an >= 2021 || ($an == 2020 && $perioada_id >= 11))) {
+    $randament_client = Fise::getRandamentAnualDinFiseByClientId($id, array(
+        'an' => $an
+    ));
+
+    $smarty->assign('randament_client', $randament_client);
+}else{
+    $randament_client = Clienti::getRandamentByClientIdDinRandamentClienti($id, array(
+        'an' => $an,
+        'perioada_id' => $perioada_id
+    ));
+    $smarty->assign('randament_client', $randament_client);
+}
 
 $smarty->display($template_page);
 

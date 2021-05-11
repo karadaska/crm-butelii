@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-12 14:21:07
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-11 15:01:20
          compiled from "/var/www/html/fofoweb/www/templates/randament_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20520424996062d8c3b89b35-52836680%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '81da881fd66938363c9707192f3b5f1e9f533e5d' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_client.tpl',
-      1 => 1618226465,
+      1 => 1620734474,
       2 => 'file',
     ),
   ),
@@ -25,6 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a' => 0,
     'an' => 0,
     'ani' => 0,
+    'lista_perioade' => 0,
+    'perioada' => 0,
+    'perioada_id' => 0,
     'randament_client' => 0,
     'nr' => 0,
     'randament' => 0,
@@ -66,6 +69,24 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
 ">
                         </select>
                         <input type="hidden" name="id_an" value="<?php echo $_smarty_tpl->tpl_vars['ani']->value['an'];?>
+">
+                    </div>
+                    <div style="float: left;margin-right: 10px;">
+                        <select name="perioada_id" style="width: 180px;">
+                            <?php  $_smarty_tpl->tpl_vars['perioada'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['perioada']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['lista_perioade']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['perioada']->key => $_smarty_tpl->tpl_vars['perioada']->value) {
+$_smarty_tpl->tpl_vars['perioada']->_loop = true;
+?>
+                                <option value=<?php echo $_smarty_tpl->tpl_vars['perioada']->value['id'];?>
+
+                                        <?php if ($_smarty_tpl->tpl_vars['perioada']->value['id']==$_smarty_tpl->tpl_vars['perioada_id']->value) {?> selected="selected" <?php }?>>
+                                    <?php echo $_smarty_tpl->tpl_vars['perioada']->value['nume'];?>
+
+                                </option>
+                            <?php } ?>
+                        </select>
+                        <input type="hidden" name="perioada_select" value="<?php echo $_smarty_tpl->tpl_vars['perioada_id']->value;?>
 ">
                     </div>
                 </form>
