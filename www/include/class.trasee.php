@@ -277,33 +277,19 @@ class Trasee
 
 
         $ret = array();
-//        $query = "SELECT a.client_id, a.traseu_id, a.ordine,
-//                  b.nume as nume_client, c.nume as nume_localitate, b.telefon from
-//                  asignari_clienti_trasee as a
-//                  left join clienti as b on a.client_id = b.id
-//                  left join localitati as c on b.localitate_id = c.id
-//                  WHERE a.traseu_id = '" . $traseu_id . "'
-//                  AND a.data_start LIKE '%" . $an . "%'
-//                  AND a.data_stop > '" . $an . "-" . $perioada_id . "-%'
-//                  AND b.stare_id !=2
-//                  ORDER BY a.ordine ASC
-//                  ";
-
-
         $query = "SELECT a.client_id, a.traseu_id,a.ordine, b.nume AS nume_client,
                     c.nume AS nume_localitate, b.telefon, a.data_start, a.data_stop 
-                FROM asignari_clienti_trasee AS a
-                LEFT JOIN clienti AS b ON a.client_id = b.id
-                LEFT JOIN localitati AS c ON b.localitate_id = c.id 
-                WHERE a.traseu_id = 10 
-                AND (( a.data_start <= '" . $perioada_inceput . "' AND ( a.data_stop = '0000-00-00' OR a.data_stop > '" . $perioada_inceput . "' ) ) 
-                OR ( a.data_start >= '" . $perioada_inceput . "' AND ( a.data_stop = '0000-00-00' OR a.data_stop <= '" . $perioada_sfarsit . "' )) ) 
-                AND b.stare_id != 2 
-                ORDER BY
-                a.ordine ASC";
+                    FROM asignari_clienti_trasee AS a
+                    LEFT JOIN clienti AS b ON a.client_id = b.id
+                    LEFT JOIN localitati AS c ON b.localitate_id = c.id 
+                    WHERE a.traseu_id = 10 
+                    AND (( a.data_start <= '" . $perioada_inceput . "' AND ( a.data_stop = '0000-00-00' OR a.data_stop > '" . $perioada_inceput . "' ) ) 
+                    OR ( a.data_start >= '" . $perioada_inceput . "' AND ( a.data_stop = '0000-00-00' OR a.data_stop <= '" . $perioada_sfarsit . "' )) ) 
+                    AND b.stare_id != 2 
+                    ORDER BY
+                    a.ordine ASC";
 
         $result = myQuery($query);
-//        debug($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }

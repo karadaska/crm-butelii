@@ -504,6 +504,7 @@ class Fise
                 FROM
                     detalii_fisa_intoarcere_produse AS a
                     WHERE	a.client_id = '" . $client_id . "'
+                    AND a.sters = 0
                ";
 
         if ($an > 0) {
