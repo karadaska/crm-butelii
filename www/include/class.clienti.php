@@ -171,9 +171,9 @@ class Clienti
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
         $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
 
-        if ($perioada_id <= 9) {
-            $perioada_id = '0' . $perioada_id;
-        }
+//        if ($perioada_id <= 9) {
+//            $perioada_id = '0' . $perioada_id;
+//        }
 
         $ret = array();
 
@@ -187,7 +187,6 @@ class Clienti
                      ";
 
         if ($perioada_id > 0) {
-//            $query .= " AND a.perioada_id LIKE '%" . $perioada_id . "%'";
             $query .= " AND a.perioada_id = " . $perioada_id;
         }
 

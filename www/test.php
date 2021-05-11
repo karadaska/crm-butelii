@@ -120,4 +120,9 @@ $data_stop = '2021-01-31';
 //    'perioada_sfarsit' =>'2020-11-31'
 //
 //));
+$b = Clienti::getRandamentByClientIdDinRandamentClienti(1332, array(
+    'an' => 2020,
+    'perioada_id' => 1
+));
+
 echo json_encode($b);

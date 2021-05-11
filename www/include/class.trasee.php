@@ -282,7 +282,7 @@ class Trasee
                     FROM asignari_clienti_trasee AS a
                     LEFT JOIN clienti AS b ON a.client_id = b.id
                     LEFT JOIN localitati AS c ON b.localitate_id = c.id 
-                    WHERE a.traseu_id = 10 
+                    WHERE a.traseu_id = '".$traseu_id."' 
                     AND (( a.data_start <= '" . $perioada_inceput . "' AND ( a.data_stop = '0000-00-00' OR a.data_stop > '" . $perioada_inceput . "' ) ) 
                     OR ( a.data_start >= '" . $perioada_inceput . "' AND ( a.data_stop = '0000-00-00' OR a.data_stop <= '" . $perioada_sfarsit . "' )) ) 
                     AND b.stare_id != 2 
