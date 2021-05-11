@@ -70,17 +70,6 @@ class Fise
             }
         }
         return $ret;
-
-//        $result = myQuery($query);
-//
-//        if ($result) {
-//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-//            foreach ($a as $item) {
-//                $ret[$item['nume_produs']] = $item;
-//            }
-//
-//        }
-//        return $ret;
     }
 
     public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
