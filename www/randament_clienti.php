@@ -29,7 +29,18 @@ $lista_trasee = Trasee::getTraseeNew(array(
 ));
 $smarty->assign('lista_trasee', $lista_trasee);
 
-$lista_clienti = Trasee::getAsignareClientiTraseuByClientid($traseu_id);
+if ($perioada_id < 10) {
+    $perioada_id = '0' . $perioada_id;
+}
+
+$perioada_inceput = $an . '-' . $perioada_id . '-' . '01';
+$perioada_sfarsit = $an . '-' . $perioada_id . '-' . '11';
+
+
+$lista_clienti = Trasee::getAsignareClientiTraseuByClientid($traseu_id, array(
+    'perioada_inceput' => $perioada_inceput,
+    'perioada_sfarsit' => $perioada_sfarsit
+));
 $smarty->assign('lista_clienti', $lista_clienti);
 
 $lista_perioade = Calendar::getPerioada();

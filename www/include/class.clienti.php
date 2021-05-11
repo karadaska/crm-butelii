@@ -137,14 +137,6 @@ class Clienti
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
         $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
 
-//        if ($an == 0) {
-//            $an = date('Y');
-//        }
-//
-//        if ($perioada_id == 0) {
-//            $perioada_id = date('n');
-//        }
-
         if ($perioada_id <= 9) {
             $perioada_id = '0' . $perioada_id;
         }
@@ -164,13 +156,8 @@ class Clienti
                     AND a.sters = 0
                      ";
 
-//        if ($perioada_id > 0) {
-//            $query .= " AND a.data_intrare LIKE '" . $an . "-%" . $perioada_id . "-%' ";
-//        }
-//        $randament = array();
         $result = myQuery($query);
         if ($result) {
-//            $ret['randament'] = 12;
             $ret = $result->fetch(PDO::FETCH_ASSOC);
         }
 
