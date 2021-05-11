@@ -2,6 +2,33 @@
 
 class Clienti
 {
+    public static function getCantitatiExtraByClientIdAndTraseuId($client_id, $traseu_id, $opts = array())
+    {
+
+        $an = isset($opts['an']) ? $opts['an'] : 0;
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
+
+        $ret = array();
+        $query = "SELECT
+                        SUM(a.cantitate) as cantitati_extra
+                        FROM detalii_fisa_extra_intoarcere_produse as a
+                        LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                        WHERE a.client_id = '" . $client_id . "'
+                        AND a.stare_produs = 1
+                        AND b.traseu_id = '" . $traseu_id . "'
+                       AND b.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return $ret;
+
+    }
+
+
+
     public static function getOrdineByClientIdAndTraseuId($client_id, $traseu_id)
     {
         $ret = array();

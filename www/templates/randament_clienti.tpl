@@ -85,7 +85,7 @@
                                                     {$valoare_randament = $randament{'_'|cat:$client['client_id']}['randament_client']}
                                                     {$procent = ($randament{'_'|cat:$client['client_id']}['randament_client'] * 100) / 5}
                                                 {else}
-                                                    {$valoare_randament = $randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client']}
+                                                    {$valoare_randament = $randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client'] + ($randamentextra{'_'|cat:$client['client_id']}['cantitati_extra'])}
                                                     {$procent = ($randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client'] * 100) / 5}
                                                 {/if}
                                                 <input style="text-align: right" {$conditie_update}
@@ -94,7 +94,6 @@
                                                        name="randament_{$client['client_id']}_{$client['traseu_id']}">
                                             </th>
                                             <th>
-                                                {*{number_format($randamentclientdinfisa{'_'|cat:$client['client_id']}['randament_client'] / ($randament{'_'|cat:$client['client_id']}['suma_target'] * 4), 2)} %*}
                                                 {$procent} %
                                             </th>
                                         </tr>

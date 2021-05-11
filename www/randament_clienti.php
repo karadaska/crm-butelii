@@ -67,6 +67,13 @@ foreach ($lista_clienti as $client) {
         ));
         $smarty->assign('randamentclientdinfisa_' . $client['client_id'], $randamentclientdinfisa);
 
+        $randamentextra = Clienti::getCantitatiExtraByClientIdAndTraseuId($client['client_id'], $id_traseu, array(
+            'an' => $an,
+            'perioada_id' => $perioada_id
+        ));
+
+        $smarty->assign('randamentextra_' . $client['client_id'], $randamentextra);
+
     } else {
         foreach ($lista_clienti as $client2) {
             $randament = Clienti::getRandamentByClientIdDinRandamentClienti2($client2['client_id'], array(

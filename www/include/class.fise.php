@@ -233,7 +233,6 @@ class Fise
 
     }
 
-
     public static function GetProdusExtraByClientIdProdusIdAndFisaAnd($client_id, $fisa_id)
     {
         $ret = array();
@@ -451,45 +450,6 @@ class Fise
     }
 
 
-//    public static function getAniRandamentDinFiseByClientId($client_id)
-//    {
-//        $ret = array();
-//        $query = "SELECT date_format(a.data_intrare,'%Y') AS ani_randament, date_format(a.data_intrare,'%m') AS luni_randament
-//                  FROM detalii_fisa_intoarcere_produse AS a
-//                  WHERE a.client_id = '" . $client_id . "'
-//                  GROUP BY ani_randament
-//                  ORDER BY a.data_intrare ASC";
-//
-//        $result = myQuery($query);
-//        if ($result) {
-//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-//            foreach ($a as $item) {
-//                $ret[$item['ani_randament']] = array(
-//                    $item['luni_randament'] => 3
-//                );
-//            }
-//        }
-//        return $ret;
-//    }
-
-//    public static function getLuniRandamentDinFiseByClientId($client_id)
-//    {
-//        $ret = array();
-//        $query = "SELECT date_format(a.data_intrare,'%m') AS ani_randament
-//                  FROM detalii_fisa_intoarcere_produse AS a
-//                  WHERE a.client_id = '" . $client_id . "'
-//                  GROUP BY ani_randament
-//                  ORDER BY a.data_intrare ASC";
-//
-//        $result = myQuery($query);
-//        if ($result) {
-//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-//            foreach ($a as $item) {
-//                $ret[$item['luni_randament']] = array();
-//            }
-//        }
-//        return $ret;
-//    }
 
     public static function getRandamentAnualDinFiseByClientId($client_id, $opts = array())
     {
@@ -596,9 +556,7 @@ class Fise
         return $ret;
     }
 
-
 }
-
 
 //    public static function GetProdusExtraByProdusIdAndFisa($tip_produs_id, $fisa_id)
 //    {
@@ -657,6 +615,49 @@ class Fise
 //        $result = myQuery($query);
 //        if ($result) {
 //            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+//        }
+//        return $ret;
+//    }
+
+
+
+
+//    public static function getAniRandamentDinFiseByClientId($client_id)
+//    {
+//        $ret = array();
+//        $query = "SELECT date_format(a.data_intrare,'%Y') AS ani_randament, date_format(a.data_intrare,'%m') AS luni_randament
+//                  FROM detalii_fisa_intoarcere_produse AS a
+//                  WHERE a.client_id = '" . $client_id . "'
+//                  GROUP BY ani_randament
+//                  ORDER BY a.data_intrare ASC";
+//
+//        $result = myQuery($query);
+//        if ($result) {
+//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+//            foreach ($a as $item) {
+//                $ret[$item['ani_randament']] = array(
+//                    $item['luni_randament'] => 3
+//                );
+//            }
+//        }
+//        return $ret;
+//    }
+
+//    public static function getLuniRandamentDinFiseByClientId($client_id)
+//    {
+//        $ret = array();
+//        $query = "SELECT date_format(a.data_intrare,'%m') AS ani_randament
+//                  FROM detalii_fisa_intoarcere_produse AS a
+//                  WHERE a.client_id = '" . $client_id . "'
+//                  GROUP BY ani_randament
+//                  ORDER BY a.data_intrare ASC";
+//
+//        $result = myQuery($query);
+//        if ($result) {
+//            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+//            foreach ($a as $item) {
+//                $ret[$item['luni_randament']] = array();
+//            }
 //        }
 //        return $ret;
 //    }
