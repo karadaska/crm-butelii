@@ -31,14 +31,13 @@ $smarty->assign('lista_clienti', $lista_clienti);
 $target_client = Target::getSumaTargetClient($id);
 $smarty->assign('target_client', $target_client);
 
-
 if (($an >= 2021 || ($an == 2020 && $perioada_id >= 11))) {
     $randament_client = Fise::getRandamentAnualDinFiseByClientId($id, array(
         'an' => $an
     ));
 
     $smarty->assign('randament_client', $randament_client);
-}else{
+} else {
     $randament_client = Clienti::getRandamentByClientIdDinRandamentClienti($id, array(
         'an' => $an,
         'perioada_id' => $perioada_id

@@ -69,7 +69,7 @@ foreach ($lista_clienti as $client) {
 
     } else {
         foreach ($lista_clienti as $client2) {
-            $randament = Clienti::getRandamentByClientIdDinRandamentClienti($client2['client_id'], array(
+            $randament = Clienti::getRandamentByClientIdDinRandamentClienti2($client2['client_id'], array(
                 'an' => $an,
                 'perioada_id' => $perioada_id
             ));
