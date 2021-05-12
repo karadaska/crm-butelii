@@ -126,35 +126,39 @@
                                 <td>{$livrare['nume_traseu']}</td>
                                 <td style="text-align: right;">{($livrare['km']['km_traseu'] > 0) ? $livrare['km']['km_traseu'] : '-'}</td>
                                 <td style="text-align: right">
-                                    {$total_livrare = $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] }
-                                    {($total_livrare > 0) ? $total_livrare : '-'}
+                                    {$total_livrare = $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] + $livrare['total_produse_extra']['1']['cantitate'] + $livrare['total_produse_extra']['3']['cantitate'] +  $livrare['total_produse_extra']['4']['cantitate']}
+                                    {($total_livrare > 0) ? $total_livrare :'-'}
                                 </td>
                                 <td style="text-align: right">
-                                    {$livrare_produse = $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare']}
-                                    {($livrare_produse > 0) ? $livrare_produse :'-'}
+                                    {$livrare_produse = $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] + $livrare['total_produse_extra']['1']['valoare'] + $livrare['total_produse_extra']['3']['valoare'] +  $livrare['total_produse_extra']['4']['valoare']}
+                                    {($livrare_produse > 0) ? $livrare_produse : '-'}
                                 </td>
                                 {foreach from = $livrari_masini['produse_masina'] item= produse}
+                                    {$total_produse = $livrare['total_produse_extra'][$produse['tip_produs_id']]['cantitate'] + $livrare['total_produse'][$produse['tip_produs_id']]['cantitate']}
+                                    {$total_valoare = $livrare['total_produse_extra'][$produse['tip_produs_id']]['valoare'] + $livrare['total_produse'][$produse['tip_produs_id']]['valoare']}
                                     <td style="text-align: right;">
-                                        {($livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] > 0) ? $livrare['total_produse'][$produse['tip_produs_id']]['cantitate'] : '-'}
+                                        {($total_produse > 0 ) ? $total_produse : '-'}
                                     </td>
                                     <td style="text-align: right;">
-                                        {($livrare['total_produse'][$produse['tip_produs_id']]['valoare'] > 0) ? $livrare['total_produse'][$produse['tip_produs_id']]['valoare'] : '-'}
+                                        {($total_valoare > 0) ? $total_valoare : '-'}
                                     </td>
                                 {/foreach}
                             </tr>
                             {$grand_total_km = $grand_total_km + $livrare['km']['km_traseu']}
-                            {$grand_cantitati = $grand_cantitati + $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] }
-                            {$grand_valoare = $grand_valoare + $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] }
+                            {$grand_cantitati = $grand_cantitati + $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] + $livrare['total_produse_extra']['1']['cantitate'] + $livrare['total_produse_extra']['3']['cantitate'] +  $livrare['total_produse_extra']['4']['cantitate']}
+                            {$grand_valoare = $grand_valoare + $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] +$livrare['total_produse_extra']['1']['valoare'] + $livrare['total_produse_extra']['3']['valoare'] +  $livrare['total_produse_extra']['4']['valoare']}
                         {/foreach}
                         <tr>
-                            <td colspan="3" style="text-align: right;"></td>
-                            <td style="text-align: right;font-weight: 900;">TOTAL:</td>
+                            <th colspan="3" style="text-align: right;"></th>
+                            <th style="text-align: right;">TOTAL:</th>
                             <th style="text-align: right;vertical-align: middle;">{($grand_total_km > 0) ? $grand_total_km :'-'}</th>
                             <th style="text-align: right;vertical-align: middle;">{($grand_cantitati > 0) ? $grand_cantitati : '-'}</th>
                             <th style="text-align: right;vertical-align: middle;">{($grand_valoare > 0) ? $grand_valoare : '-'}</th>
                             {foreach from = $livrari_masini['produse_masina'] item= produse}
-                                <th style="text-align: right;vertical-align: middle;">{($livrari_masini['grand'][$produse['tip_produs_id']]['cantitate'] > 0) ? $livrari_masini['grand'][$produse['tip_produs_id']]['cantitate'] : '-'}</th>
-                                <th style="text-align: right;vertical-align: middle;">{($livrari_masini['grand'][$produse['tip_produs_id']]['valoare'] > 0) ? $livrari_masini['grand'][$produse['tip_produs_id']]['valoare'] : '-'}</th>
+                                {$grand_total_cantitati = $livrari_masini['grand_extra'][$produse['tip_produs_id']]['cantitate'] + $livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}
+                                {$grand_total_valoare = $livrari_masini['grand_extra'][$produse['tip_produs_id']]['valoare'] + $livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}
+                                <th style="text-align: right;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</th>
+                                <th style="text-align: right;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</th>
                             {/foreach}
                         </tr>
                         </tbody>
