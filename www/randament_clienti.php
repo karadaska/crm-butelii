@@ -29,10 +29,6 @@ $lista_trasee = Trasee::getTraseeNew(array(
 ));
 $smarty->assign('lista_trasee', $lista_trasee);
 
-//if ($perioada_id < 10) {
-//    $perioada_id = '0' . $perioada_id;
-//}
-
 $perioada_inceput = $an . '-' . $perioada_id . '-' . '01';
 $perioada_sfarsit = $an . '-' . $perioada_id . '-' . '11';
 
@@ -60,6 +56,7 @@ if (isset($_POST['update'])) {
 }
 
 foreach ($lista_clienti as $client) {
+
     if (($an >= 2021 || ($an == 2020 && $perioada_id >= 11))) {
         $randamentclientdinfisa = Clienti::getRandamentByClientIdDinFise($client['client_id'], array(
             'an' => $an,
@@ -67,7 +64,7 @@ foreach ($lista_clienti as $client) {
         ));
         $smarty->assign('randamentclientdinfisa_' . $client['client_id'], $randamentclientdinfisa);
 
-        $randamentextra = Clienti::getCantitatiExtraByClientIdAndTraseuId($client['client_id'], $id_traseu, array(
+        $randamentextra = Clienti::getCantitatiExtraByClientIdAndTraseuId($client['client_id'], $traseu_id, array(
             'an' => $an,
             'perioada_id' => $perioada_id
         ));

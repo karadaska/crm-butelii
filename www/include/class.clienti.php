@@ -5,8 +5,8 @@ class Clienti
     public static function getCantitatiExtraByClientIdAndTraseuId($client_id, $traseu_id, $opts = array())
     {
 
-        $an = isset($opts['an']) ? $opts['an'] : 0;
-        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
+        $an = isset($opts['an']) ? $opts['an'] : date('Y');
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
 
         if ($perioada_id < 10) {
             $perioada_id = '0' . $perioada_id;
@@ -23,7 +23,6 @@ class Clienti
                        AND b.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'";
 
         $result = myQuery($query);
-        debug($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
         }
