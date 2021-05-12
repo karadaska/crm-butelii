@@ -20,7 +20,10 @@ class Clienti
                         WHERE a.client_id = '" . $client_id . "'
                         AND a.stare_produs = 1
                         AND b.traseu_id = '" . $traseu_id . "'
-                       AND b.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'";
+                       AND b.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'
+                       AND a.sters = 0
+                       AND b.sters = 0
+                       ";
 
         $result = myQuery($query);
         if ($result) {
