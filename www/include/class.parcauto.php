@@ -563,6 +563,40 @@ class ParcAuto
 
     }
 
+    public static function getTotalCantitatiExtraByMasinaIdProdusId($masina_id = 0, $tip_produs_id, $opts = array())
+    {
+        $ret = null;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
+                                FROM detalii_fisa_extra_intoarcere_produse  as a
+                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                                WHERE b.masina_id = '" . $masina_id . "'                                
+                                AND a.tip_produs_id = '" . $tip_produs_id . "'                                
+                                AND b.data_intrare >= '" . $data_start . "'
+                                AND b.data_intrare <= '" . $data_stop . "'
+                                AND a.stare_produs = 1
+                                AND a.sters = 0
+                                AND b.sters = 0
+                                ";
+
+        $result = myQuery($target_by_client_id);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
     public static function getTotalCantitatiByTraseuIdAndProdusId($traseu_id = 0, $tip_produs_id, $opts = array())
     {
         $ret = null;
@@ -839,7 +873,18 @@ class ParcAuto
                         'data_stop' => $data_stop
                     ));
 
+                    $r['total_produse_extra'][$tip_produs_id] = self::getTotalCantitatiExtraByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
+                        'tip_produs_id' => $tip_produs_id,
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ));
+
                     $ret['grand'][$tip_produs_id] = self::getTotalCantitatiByMasinaIdProdusId($item['masina_id'], $tip_produs_id, array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ));
+
+                    $ret['grand_extra'][$tip_produs_id] = self::getTotalCantitatiExtraByMasinaIdProdusId($item['masina_id'], $tip_produs_id, array(
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ));

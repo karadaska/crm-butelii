@@ -162,9 +162,14 @@ $data_stop = '2021-05-31';
 //        'data_stop' => $data_stop
 //));
 
-$b = ParcAuto::getRaportLivrariSoferi(23, array(
+$b = ParcAuto::getRaportLivrariMasini(27, array(
     'data_start' => $data_start,
     'data_stop' => $data_stop
 ));
+
+//$b = ParcAuto::getRaportLivrariSoferi(23, array(
+//    'data_start' => $data_start,
+//    'data_stop' => $data_stop
+//));
 
 echo json_encode($b);
