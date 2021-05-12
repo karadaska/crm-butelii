@@ -63,8 +63,8 @@ class Produse
 
     public static function getProduseVanduteByTraseuId($traseu_id, $opts = array())
     {
-        $data_start = isset($opt['data_start']) ? $opts['data_start'] : 0;
-        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+        $data_start = isset($opt['data_start']) ? $opts['data_start'] : date('Y-m-01');
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : date('Y-m-t');
 
         $ret = array();
 //        $query = " SELECT c.tip as nume_produs, a.tip_produs_id
@@ -79,20 +79,24 @@ class Produse
 //                    GROUP BY a.tip_produs_id
 //        ";
 
-        $query = "SELECT * from (SELECT DISTINCT (tip_produs_id) AS tip_produs_id, c.tip AS nume_produs     
+        $query = "SELECT * from (SELECT DISTINCT (tip_produs_id) AS tip_produs_id, c.tip AS nume_produs
                   FROM  detalii_fisa_extra_intoarcere_produse AS a
                   LEFT JOIN tip_produs AS c ON a.tip_produs_id = c.id
                   LEFT JOIN fise_generate as e on a.fisa_id = e.id
                   WHERE e.traseu_id = '" . $traseu_id . "'
+                  AND e.data_intrare >='" . $data_start . "'
+                  AND e.data_intrare <='" . $data_stop . "'
                   AND a.sters = 0
                   AND a.cantitate > 0
-                  UNION ALL 
+                  UNION ALL
                   SELECT tip_produs_id AS tip_produs_id,
                   d.tip AS nume_produs
                   FROM detalii_fisa_intoarcere_produse AS b
                   LEFT JOIN tip_produs AS d ON b.tip_produs_id = d.id
                   LEFT JOIN fise_generate as e on b.fisa_id = e.id
                   WHERE e.traseu_id = '" . $traseu_id . "'
+                  AND e.data_intrare >='" . $data_start . "'
+                  AND e.data_intrare <='" . $data_stop . "'
                   AND b.sters = 0
                   AND b.cantitate > 0
                   ORDER BY tip_produs_id ASC) as test
