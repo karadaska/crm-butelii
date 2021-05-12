@@ -127,7 +127,7 @@
                                                 {$grand_total_cantitati = $livrari_trasee['grand_extra'][$produse['tip_produs_id']]['cantitate'] + $livrari_trasee['grand'][$produse['tip_produs_id']]['cantitate']}
                                                {$grand_total_valoare = $livrari_trasee['grand_extra'][$produse['tip_produs_id']]['valoare'] + $livrari_trasee['grand'][$produse['tip_produs_id']]['valoare']}
                                                 <th style="text-align: right;color: red;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</th>
-                                                <th style="text-align: right;color: red;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</th>
+                                                <th style="text-align: right;color: red;">{($grand_total_valoare > 0) ? $livrari_trasee['grand_extra'][$produse['tip_produs_id']]['valoare'] : '-'}</th>
                                             {/foreach}
                                         </tr>
                                         </tbody>
