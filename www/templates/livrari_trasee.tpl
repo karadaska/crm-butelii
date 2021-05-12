@@ -99,7 +99,7 @@
                                                     {($total_bg > 0) ? $total_bg :'-'}
                                                 </td>
                                                 <td style="text-align: right">
-                                                    {$total_valoare_bg = $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] }
+                                                    {$total_valoare_bg = $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] + $livrare['total_produse_extra']['1']['valoare'] + $livrare['total_produse_extra']['3']['valoare'] +  $livrare['total_produse_extra']['4']['valoare']}
                                                     {($total_valoare_bg > 0) ? $total_valoare_bg : '-'}
                                                 </td>
                                                 {foreach from = $livrari_trasee['produse_traseu'] item= produse}
