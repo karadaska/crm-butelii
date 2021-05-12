@@ -32,20 +32,17 @@ $target_client = Target::getSumaTargetClient($id);
 $smarty->assign('target_client', $target_client);
 
 if (($an >= 2021 || ($an == 2020 && $perioada_id >= 11))) {
-//    $randament_client = Fise::getRandamentAnualDinFiseByClientId($id, array(
-//        'an' => $an
-//    ));
-//
-//    $smarty->assign('randament_client', $randament_client);
+    $randament_client = Fise::getRandamentAnualDinFiseByClientId($id, array(
+        'an' => $an
+    ));
 
-
+    $smarty->assign('randament_client', $randament_client);
 
     $randamentextra = Clienti::getCantitatiExtraByClientId($id, array(
         'an' => $an,
         'perioada_id' => $perioada_id
     ));
-
-    $smarty->assign('randamentextra_' . $client['client_id'], $randamentextra);
+    $smarty->assign('randamentextra', $randamentextra);
 
 } else {
     $randament_client = Clienti::getRandamentByClientIdDinRandamentClienti($id, array(

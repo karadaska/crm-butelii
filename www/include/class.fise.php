@@ -449,7 +449,7 @@ class Fise
         return $ret;
     }
 
-    public static function getRandamentLunarDinFiseByClientId($client_id, $opts = array())
+    public static function getRandamentLunarDinFiseByClientIdAndPerioada($client_id, $opts = array())
     {
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
         $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('Y');
@@ -473,8 +473,10 @@ class Fise
     public static function getRandamentAnualDinFiseByClientId($client_id, $opts = array())
     {
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('Y');
 
         $ret = array();
+//        Returneaza randament pe luni
         $query = "SELECT
                     a.client_id,                    
                     date_format(a.data_intrare,'%Y') AS ani_randament,
