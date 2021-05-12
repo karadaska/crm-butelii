@@ -157,9 +157,14 @@ $data_stop = '2021-05-31';
 //    'data_stop' => $data_stop
 //));
 
-$b = ParcAuto::getTotalCantitatiExtraByTraseuIdAndProdusId(26, 3, array(
-        'data_start' => $data_start,
-        'data_stop' => $data_stop
+//$b = ParcAuto::getTotalCantitatiExtraByTraseuIdAndProdusId(26, 3, array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//));
+
+$b = ParcAuto::getRaportLivrariSoferi(23, array(
+    'data_start' => $data_start,
+    'data_stop' => $data_stop
 ));
 
 echo json_encode($b);
