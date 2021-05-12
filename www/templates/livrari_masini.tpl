@@ -111,12 +111,13 @@
                                                         </tr>
                                                         {$nr = 1}
                                                         {foreach from=$livrare['fise_by_masina'] item=cantitate}
+                                                            {assign var=cantitati_extra value=Fise::getCantitatiExtraByFisaId($cantitate['id'])}
                                                             <tr>
                                                                 <td style="text-align: center;">{$nr++}</td>
                                                                 <td style="text-align: center;"><a target="_blank" href="completare_fisa_traseu.php?id={$cantitate['id']}">{$cantitate['id']}</a>
                                                                 </td>
                                                                 <td style="text-align: center;">{$cantitate['data']}</td>
-                                                                <td style="text-align: center;">{$cantitate['suma_cantitati']}</td>
+                                                                <td style="text-align: center;">{$cantitate['suma_cantitati'] + $cantitati_extra['cantitate_extra']}</td>
                                                             </tr>
                                                             {*<tr {($nr > 3) ? 'class="ascunde_cantitate"' : ''}>*}
                                                                 {*<td style="text-align: center;">{$nr++}</td>*}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-12 15:33:24
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-12 15:52:36
          compiled from "/var/www/html/fofoweb/www/templates/livrari_masini.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:11988036646040940f14d4e2-58340311%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '666aa7fa2f44ec5dd79cfa9b208b853ba28bbe27' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_masini.tpl',
-      1 => 1620822802,
+      1 => 1620823953,
       2 => 'file',
     ),
   ),
@@ -30,6 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'nr' => 0,
     'livrare' => 0,
     'cantitate' => 0,
+    'cantitati_extra' => 0,
     'total_livrare' => 0,
     'livrare_produse' => 0,
     'total_produse' => 0,
@@ -193,6 +194,7 @@ $_smarty_tpl->tpl_vars['livrare']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['cantitate']->key => $_smarty_tpl->tpl_vars['cantitate']->value) {
 $_smarty_tpl->tpl_vars['cantitate']->_loop = true;
 ?>
+                                                            <?php $_smarty_tpl->tpl_vars['cantitati_extra'] = new Smarty_variable(Fise::getCantitatiExtraByFisaId($_smarty_tpl->tpl_vars['cantitate']->value['id']), null, 0);?>
                                                             <tr>
                                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
@@ -202,7 +204,7 @@ $_smarty_tpl->tpl_vars['cantitate']->_loop = true;
                                                                 </td>
                                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['data'];?>
 </td>
-                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['suma_cantitati'];?>
+                                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['cantitate']->value['suma_cantitati']+$_smarty_tpl->tpl_vars['cantitati_extra']->value['cantitate_extra'];?>
 </td>
                                                             </tr>
                                                             
