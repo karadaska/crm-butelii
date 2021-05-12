@@ -3,6 +3,33 @@
 class Fise
 {
 
+    public static function getCantitatiExtraByFisaId($fisa_id)
+    {
+        $ret = array();
+
+        $query = "SELECT
+                SUM( a.cantitate ) AS cantitate_extra
+                FROM
+                detalii_fisa_extra_intoarcere_produse AS a
+                LEFT JOIN fise_generate AS b ON a.fisa_id = b.id 
+                WHERE
+                a.fisa_id = '" . $fisa_id . "'	                
+                AND a.sters = 0
+                AND b.sters = 0
+                AND a.stare_produs = 1
+                  ";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return $ret;
+
+    }
+
+
     public static function getCantitatiBgByFisaIdAndClientIdAndTipProdusId($fisa_id, $client_id, $tip_produs_id)
     {
         $ret = array();
@@ -506,6 +533,7 @@ class Fise
         }
         return $ret;
     }
+
 
     public static function getFiseLivrariMasini($opts = array())
     {

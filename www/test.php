@@ -172,4 +172,7 @@ $b = ParcAuto::getRaportLivrariMasini(27, array(
 //    'data_stop' => $data_stop
 //));
 
+$b = Fise::getCantitatiExtraByFisaId(1803);
+
+
 echo json_encode($b);
