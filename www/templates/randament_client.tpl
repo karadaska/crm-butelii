@@ -43,22 +43,15 @@
                                    class="table table-striped table-bordered table-hover" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: left;">LUNA</th>
                                     <th style="text-align: left;">RANDAMENT</th>
                                     <th style="text-align: left;">PROCENT</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {$nr = 1}
                                 {foreach from=$randament_client item=randament}
                                     <tr>
-                                        <th></th>
                                         <th>{$randament['randament_lunar']}</th>
-                                        <th></th>
-                                        {*{assign var=luna value=Calendar::getNumePerioadaById($randament['luna_randament'])}*}
-                                        {*<td>{$luna['nume']}</td>*}
-                                        {*<td>{$randament['randament_lunar']}</td>*}
-                                        {*<td>{number_format(($randament['randament_lunar']* 100) / 5, 2) } %</td>*}
+                                        <td>{number_format(($randament['randament_lunar']* 100) / 5, 2) } %</td>
                                     </tr>
                                 {/foreach}
                                 </tbody>
@@ -71,3 +64,6 @@
 </div>
 <div style="margin-top: 100px;"></div>
 <script src="/js/pagini/randament_clienti.js"></script>
+{*{assign var=luna value=Calendar::getNumePerioadaById($randament['luna_randament'])}*}
+{*<td>{$luna['nume']}</td>*}
+{*<td>{$randament['randament_lunar']}</td>*}

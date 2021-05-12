@@ -33,14 +33,18 @@ class Clienti
         $an = isset($opts['an']) ? $opts['an'] : 0;
         $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
 
+        if ($perioada_id < 10) {
+            $perioada_id = '0' . $perioada_id;
+        }
+
         $ret = array();
         $query = "SELECT
                         SUM(a.cantitate) as cantitati_extra
                         FROM detalii_fisa_extra_intoarcere_produse as a
                         LEFT JOIN fise_generate as b on a.fisa_id = b.id
                         WHERE a.client_id = '" . $client_id . "'
-                        AND a.stare_produs = 1
-                       AND b.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'";
+                        AND a.stare_produs = 1                       
+                        AND b.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'";
 
         $result = myQuery($query);
         if ($result) {

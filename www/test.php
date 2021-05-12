@@ -125,13 +125,13 @@ $data_stop = '2021-01-31';
 //    'perioada_id' => 1
 //));
 
-//$b = Clienti::getCantitatiExtraByClientIdAndTraseuId(1332, 1, array(
-//    'an' => 2021,
-//    'perioada_id' => 5
-//));
-$b = Fise::getRandamentLunarDinFiseByClientIdAndPerioada(1332, array(
+$b = Clienti::getCantitatiExtraByClientId(1332, array(
     'an' => 2021,
-    'perioada_id' => 05
+    'perioada_id' => 5
 ));
+//$b = Fise::getRandamentLunarDinFiseByClientIdAndPerioada(1332, array(
+//    'an' => 2021,
+//    'perioada_id' => 05
+//));
 
 echo json_encode($b);
