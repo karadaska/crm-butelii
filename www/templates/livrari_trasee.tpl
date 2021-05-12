@@ -104,12 +104,12 @@
                                                 </td>
                                                 {foreach from = $livrari_trasee['produse_traseu'] item= produse}
                                                     {$total_produse = $livrare['total_produse_extra'][$produse['tip_produs_id']]['cantitate'] + $livrare['total_produse'][$produse['tip_produs_id']]['cantitate']}
+                                                    {$total_valoare = $livrare['total_produse_extra'][$produse['tip_produs_id']]['valoare'] + $livrare['total_produse'][$produse['tip_produs_id']]['valoare']}
                                                     <td style="text-align: right;">
                                                         {($total_produse > 0 ) ? $total_produse : '-'}
                                                     </td>
                                                     <td style="text-align: right;">
-                                                        {($livrare['total_produse'][$produse['tip_produs_id']]['valoare'] > 0) ? $livrare['total_produse'][$produse['tip_produs_id']]['valoare'] : '-'}
-                                                        {*{($livrare['total_produse'][$produse['tip_produs_id']]['valoare'] > 0) ? $livrare['total_produse'][$produse['tip_produs_id']]['valoare'] : '-'}*}
+                                                        {($total_valoare > 0) ? $total_valoare : '-'}
                                                     </td>
                                                 {/foreach}
                                             </tr>
