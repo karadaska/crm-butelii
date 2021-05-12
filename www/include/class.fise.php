@@ -65,7 +65,7 @@ class Fise
                         'cantitate' => $item['cantitate'],
                         'cantitate_extra' => 'extra',
                         'defecte' => $item['defecte']
-                        );
+                    );
                 }
             }
         }
@@ -449,7 +449,26 @@ class Fise
         return $ret;
     }
 
+    public static function getRandamentLunarDinFiseByClientId($client_id, $opts = array())
+    {
+        $an = isset($opts['an']) ? $opts['an'] : date('Y');
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('Y');
 
+        $ret = array();
+        $query = "SELECT
+                  SUM(a.cantitate) as randament_lunar
+                  FROM
+                  detalii_fisa_intoarcere_produse as a
+                  LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                  WHERE a.client_id = '" . $client_id . "''
+                  AND b.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
 
     public static function getRandamentAnualDinFiseByClientId($client_id, $opts = array())
     {
@@ -618,8 +637,6 @@ class Fise
 //        }
 //        return $ret;
 //    }
-
-
 
 
 //    public static function getAniRandamentDinFiseByClientId($client_id)
