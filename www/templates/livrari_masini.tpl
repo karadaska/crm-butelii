@@ -162,7 +162,7 @@
                                                 {$grand_total_cantitati = $livrari_masini['grand_extra'][$produse['tip_produs_id']]['cantitate'] + $livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}
                                                 {$grand_total_valoare = $livrari_masini['grand_extra'][$produse['tip_produs_id']]['valoare'] + $livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}
                                                 <th style="text-align: right;color: red;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</th>
-                                                <th style="text-align: right;color: red;">{($grand_total_valoare > 0) ? $livrari_masini['grand_extra'][$produse['tip_produs_id']]['valoare'] : '-'}</th>
+                                                <th style="text-align: right;color: red;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</th>
                                             {/foreach}
                                         </tr>
                                         </tbody>
