@@ -8,6 +8,10 @@ class Clienti
         $an = isset($opts['an']) ? $opts['an'] : 0;
         $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
 
+        if ($perioada_id < 10) {
+            $perioada_id = '0' . $perioada_id;
+        }
+
         $ret = array();
         $query = "SELECT
                         SUM(a.cantitate) as cantitati_extra
@@ -19,6 +23,7 @@ class Clienti
                        AND b.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'";
 
         $result = myQuery($query);
+        debug($query);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
         }
@@ -161,6 +166,10 @@ class Clienti
 
         $an = isset($opts['an']) ? $opts['an'] : date('Y');
         $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
+
+        if ($perioada_id < 10) {
+            $perioada_id = '0' . $perioada_id;
+        }
 
         $ret = array();
 

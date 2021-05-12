@@ -29,9 +29,9 @@ $lista_trasee = Trasee::getTraseeNew(array(
 ));
 $smarty->assign('lista_trasee', $lista_trasee);
 
-if ($perioada_id < 10) {
-    $perioada_id = '0' . $perioada_id;
-}
+//if ($perioada_id < 10) {
+//    $perioada_id = '0' . $perioada_id;
+//}
 
 $perioada_inceput = $an . '-' . $perioada_id . '-' . '01';
 $perioada_sfarsit = $an . '-' . $perioada_id . '-' . '11';
@@ -73,7 +73,6 @@ foreach ($lista_clienti as $client) {
         ));
 
         $smarty->assign('randamentextra_' . $client['client_id'], $randamentextra);
-
     } else {
         foreach ($lista_clienti as $client2) {
             $randament = Clienti::getRandamentByClientIdDinRandamentClienti2($client2['client_id'], array(
