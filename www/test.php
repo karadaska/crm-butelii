@@ -145,16 +145,21 @@ $data_stop = '2021-05-31';
 //    'data_stop' => $data_stop
 //));
 
-$b = ParcAuto::getRaportLivrariTrasee(26,
-    array(
-        'data_start' => $data_start,
-        'data_stop' => $data_stop
-    ));
+//$b = ParcAuto::getRaportLivrariTrasee(26,
+//    array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//    ));
 
 //$b = ParcAuto::getTotalCantitatiExtraByMasinaIdAndTraseuIdAndSoferId(27, 26, 23, array(
 //    'tip_produs_id' => 3,
 //    'data_start' => $data_start,
 //    'data_stop' => $data_stop
 //));
+
+$b = ParcAuto::getTotalCantitatiExtraByTraseuIdAndProdusId(26, 3, array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+));
 
 echo json_encode($b);
