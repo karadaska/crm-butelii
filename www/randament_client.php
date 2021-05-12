@@ -51,7 +51,6 @@ if (($an >= 2021 || ($an == 2020 && $perioada_id >= 11))) {
         'perioada_id' => 5
     ));
     $smarty->assign('randamentextra', $randamentextra);
-    debug($randamentextra);
 
 } else {
     $randament_client = Clienti::getRandamentByClientIdDinRandamentClienti($id, array(

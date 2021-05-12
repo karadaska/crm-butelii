@@ -49,9 +49,10 @@
                                 </thead>
                                 <tbody>
                                 {foreach from=$randament_client item=randament}
+                                    {$randament_total = $randament['randament_lunar'] + $randamentextra['cantitati_extra']}
                                     <tr>
-                                        <th>{$randament['randament_lunar']}</th>
-                                        <td>{number_format(($randament['randament_lunar']* 100) / 5, 2) } %</td>
+                                        <th>{$randament_total}</th>
+                                        <td>{number_format(($randament_total* 100) / 5, 2) } %</td>
                                     </tr>
                                 {/foreach}
                                 </tbody>
