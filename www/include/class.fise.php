@@ -451,21 +451,26 @@ class Fise
 
     public static function getRandamentLunarDinFiseByClientIdAndPerioada($client_id, $opts = array())
     {
-        $an = isset($opts['an']) ? $opts['an'] : date('Y');
-        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('Y');
+        $an = isset($opts['an']) ? $opts['an'] : 0;
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : 0;
+
+        if ($perioada_id < 10) {
+            $perioada_id = '0' . $perioada_id;
+        }
+
 
         $ret = array();
         $query = "SELECT
                   SUM(a.cantitate) as randament_lunar
-                  FROM
-                  detalii_fisa_intoarcere_produse as a
+                  FROM detalii_fisa_intoarcere_produse as a
                   LEFT JOIN fise_generate as b on a.fisa_id = b.id
-                  WHERE a.client_id = '" . $client_id . "''
-                  AND b.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'";
-
+                  WHERE a.client_id = '" . $client_id . "'
+                  AND a.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'
+                  ";
         $result = myQuery($query);
+//        debug($query);
         if ($result) {
-            $ret = $result->fetch(PDO::FETCH_ASSOC);
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }
         return $ret;
     }

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-11 15:01:20
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-12 09:58:00
          compiled from "/var/www/html/fofoweb/www/templates/randament_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:20520424996062d8c3b89b35-52836680%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '81da881fd66938363c9707192f3b5f1e9f533e5d' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/randament_client.tpl',
-      1 => 1620734474,
+      1 => 1620802678,
       2 => 'file',
     ),
   ),
@@ -29,9 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'perioada' => 0,
     'perioada_id' => 0,
     'randament_client' => 0,
-    'nr' => 0,
     'randament' => 0,
-    'luna' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -99,7 +97,6 @@ $_smarty_tpl->tpl_vars['perioada']->_loop = true;
                                    class="table table-striped table-bordered table-hover" id="dataTable">
                                 <thead>
                                 <tr>
-                                    <th style="text-align: center;" class="span1">#</th>
                                     <th style="text-align: left;">LUNA</th>
                                     <th style="text-align: left;">RANDAMENT</th>
                                     <th style="text-align: left;">PROCENT</th>
@@ -113,15 +110,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['randament']->key => $_smarty_tpl->tpl
 $_smarty_tpl->tpl_vars['randament']->_loop = true;
 ?>
                                     <tr>
-                                        <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
+                                        <th></th>
+                                        <th><?php echo $_smarty_tpl->tpl_vars['randament']->value['randament_lunar'];?>
 </th>
-                                        <?php $_smarty_tpl->tpl_vars['luna'] = new Smarty_variable(Calendar::getNumePerioadaById($_smarty_tpl->tpl_vars['randament']->value['luna_randament']), null, 0);?>
-                                        <td><?php echo $_smarty_tpl->tpl_vars['luna']->value['nume'];?>
-</td>
-                                        <td><?php echo $_smarty_tpl->tpl_vars['randament']->value['randament_lunar'];?>
-</td>
-                                        <td><?php echo number_format(($_smarty_tpl->tpl_vars['randament']->value['randament_lunar']*100)/5,2);?>
- %</td>
+                                        <th></th>
+                                        
+                                        
+                                        
+                                        
                                     </tr>
                                 <?php } ?>
                                 </tbody>
