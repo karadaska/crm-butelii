@@ -125,10 +125,10 @@ $data_stop = '2021-01-31';
 //    'perioada_id' => 1
 //));
 
-$b = Clienti::getCantitatiExtraByClientIdAndTraseuId(1332, 1, array(
-    'an' => 2021,
-    'perioada_id' => 5
-));
+//$b = Clienti::getCantitatiExtraByClientIdAndTraseuId(1332, 1, array(
+//    'an' => 2021,
+//    'perioada_id' => 5
+//));
 
 
 //$b = Clienti::getCantitatiExtraByClientId(1332, array(

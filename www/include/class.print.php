@@ -30,7 +30,7 @@ class Printare
     {
         $ret = array();
 
-        $query = "SELECT a.id, b.nume as nume_traseu, a.traseu_id, c.numar, d.nume as nume_sofer
+        $query = "SELECT a.id, b.nume as nume_traseu, a.traseu_id, c.numar, d.nume as nume_sofer, a.data_intrare
                   FROM fise_generate as a
                   LEFT JOIN trasee as b on a.traseu_id = b.id
                   LEFT JOIN masini as c on a.masina_id = c.id
