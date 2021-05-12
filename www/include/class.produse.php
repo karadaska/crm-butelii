@@ -67,17 +67,38 @@ class Produse
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
 
         $ret = array();
-        $query = " SELECT c.tip as nume_produs, a.tip_produs_id
-                    from detalii_fisa_intoarcere_produse as a
-                    LEFT JOIN fise_generate as b on a.fisa_id = b.id
-                    LEFT JOIN tip_produs as c on a.tip_produs_id = c.id
-                    WHERE b.traseu_id = '" . $traseu_id . "'
-                    AND a.data_intrare >= '" . $data_start . "'
-                    AND a.data_intrare <= '" . $data_stop . "'
-                    AND a.sters = 0
-                    AND a.cantitate > 0
-                    GROUP BY a.tip_produs_id
-        ";
+//        $query = " SELECT c.tip as nume_produs, a.tip_produs_id
+//                    from detalii_fisa_intoarcere_produse as a
+//                    LEFT JOIN fise_generate as b on a.fisa_id = b.id
+//                    LEFT JOIN tip_produs as c on a.tip_produs_id = c.id
+//                    WHERE b.traseu_id = '" . $traseu_id . "'
+//                    AND a.data_intrare >= '" . $data_start . "'
+//                    AND a.data_intrare <= '" . $data_stop . "'
+//                    AND a.sters = 0
+//                    AND a.cantitate > 0
+//                    GROUP BY a.tip_produs_id
+//        ";
+
+        $query = "SELECT * from (SELECT DISTINCT (tip_produs_id) AS tip_produs_id, c.tip AS nume_produs     
+                  FROM  detalii_fisa_extra_intoarcere_produse AS a
+                  LEFT JOIN tip_produs AS c ON a.tip_produs_id = c.id
+                  LEFT JOIN fise_generate as e on a.fisa_id = e.id
+                  WHERE e.traseu_id = '" . $traseu_id . "'
+                  AND a.sters = 0
+                  AND a.cantitate > 0
+                  UNION ALL 
+                  SELECT tip_produs_id AS tip_produs_id,
+                  d.tip AS nume_produs
+                  FROM detalii_fisa_intoarcere_produse AS b
+                  LEFT JOIN tip_produs AS d ON b.tip_produs_id = d.id
+                  LEFT JOIN fise_generate as e on b.fisa_id = e.id
+                  WHERE e.traseu_id = '" . $traseu_id . "'
+                  AND b.sters = 0
+                  AND b.cantitate > 0
+                  ORDER BY tip_produs_id ASC) as test
+                  GROUP BY test.tip_produs_id";
+
+
 
         $result = myQuery($query);
         if ($result) {

@@ -57,8 +57,8 @@ $zi_curenta = date('Y-m-d');
 $traseu_id = 2;
 $sofer_id = 22;
 $masina_id = 30;
-$data_start = '2021-01-01';
-$data_stop = '2021-01-31';
+$data_start = '2021-05-01';
+$data_stop = '2021-05-31';
 //$depozit_id = 0;
 //$sofer_id = 0;
 //$masina_id = 0;
@@ -139,5 +139,10 @@ $data_stop = '2021-01-31';
 //    'an' => 2021,
 //    'perioada_id' => 05
 //));
+
+$b = Produse::getProduseVanduteByTraseuId(1, array(
+    'data_start' => $data_start,
+    'data_stop' => $data_stop
+));
 
 echo json_encode($b);
