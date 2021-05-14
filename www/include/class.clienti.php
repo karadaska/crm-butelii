@@ -2185,6 +2185,7 @@ class Clienti
 				AND a.exclus = 0
 				AND f.depozit_id = '".$depozit_id."'
 				AND a.data_stop LIKE '%".$an."%'
+				GROUP BY a.id
 				ORDER By a.nume ASC
 				";
         $result = myQuery($query);
