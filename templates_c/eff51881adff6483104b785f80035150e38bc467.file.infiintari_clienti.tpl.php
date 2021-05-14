@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 12:17:27
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 12:23:35
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1620983846,
+      1 => 1620984213,
       2 => 'file',
     ),
   ),
@@ -25,6 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a' => 0,
     'clienti_depozit_start' => 0,
     'clienti_depozit_stop' => 0,
+    'clienti_depozit_fara_data' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -76,18 +77,22 @@ for ($_smarty_tpl->tpl_vars['a']->value = 2016, $_smarty_tpl->tpl_vars['a']->ite
 $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1;$_smarty_tpl->tpl_vars['a']->last = $_smarty_tpl->tpl_vars['a']->iteration == $_smarty_tpl->tpl_vars['a']->total;?>
                                                                 <?php $_smarty_tpl->tpl_vars['clienti_depozit_start'] = new Smarty_variable(Depozite::getClientiByDepozitIdAndDataStart($_smarty_tpl->tpl_vars['depozit']->value['depozit_id'],$_smarty_tpl->tpl_vars['a']->value), null, 0);?>
                                                                 <?php $_smarty_tpl->tpl_vars['clienti_depozit_stop'] = new Smarty_variable(Depozite::getClientiByDepozitIdAndDataStop($_smarty_tpl->tpl_vars['depozit']->value['depozit_id'],$_smarty_tpl->tpl_vars['a']->value), null, 0);?>
+                                                                <?php $_smarty_tpl->tpl_vars['clienti_depozit_fara_data'] = new Smarty_variable(Depozite::getClientiByDepozitIdFaraDataContract($_smarty_tpl->tpl_vars['depozit']->value['depozit_id']), null, 0);?>
                                                                 <tr>
                                                                     <th><?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 </th>
-                                                                    <th>Data infiintare : <?php echo $_smarty_tpl->tpl_vars['clienti_depozit_start']->value['numar_clienti'];?>
+                                                                    <th>Infiintare : <?php echo $_smarty_tpl->tpl_vars['clienti_depozit_start']->value['numar_clienti'];?>
 </th>
-                                                                    <th>Data incetare: <?php echo $_smarty_tpl->tpl_vars['clienti_depozit_stop']->value['numar_clienti'];?>
+                                                                    <th>Incetare: <?php echo $_smarty_tpl->tpl_vars['clienti_depozit_stop']->value['numar_clienti'];?>
 </th>
                                                                 </tr>
                                                             <?php }} ?>
                                                         </table>
                                                     </td>
-
+                                                </tr>
+                                                <tr>
+                                                    <th>Fara data contract: <?php echo $_smarty_tpl->tpl_vars['clienti_depozit_fara_data']->value['numar_clienti'];?>
+</th>
                                                 </tr>
                                                 </tbody>
                                             </table>

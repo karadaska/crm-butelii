@@ -35,15 +35,18 @@
                                                             {for $a=2016 to date("Y")}
                                                                 {assign var=clienti_depozit_start value=Depozite::getClientiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_stop value=Depozite::getClientiByDepozitIdAndDataStop($depozit['depozit_id'], $a)}
+                                                                {assign var=clienti_depozit_fara_data value=Depozite::getClientiByDepozitIdFaraDataContract($depozit['depozit_id'])}
                                                                 <tr>
                                                                     <th>{$a}</th>
-                                                                    <th>Data infiintare : {$clienti_depozit_start['numar_clienti']}</th>
-                                                                    <th>Data incetare: {$clienti_depozit_stop['numar_clienti']}</th>
+                                                                    <th>Infiintare : {$clienti_depozit_start['numar_clienti']}</th>
+                                                                    <th>Incetare: {$clienti_depozit_stop['numar_clienti']}</th>
                                                                 </tr>
                                                             {/for}
                                                         </table>
                                                     </td>
-
+                                                </tr>
+                                                <tr>
+                                                    <th>Fara data contract: {$clienti_depozit_fara_data['numar_clienti']}</th>
                                                 </tr>
                                                 </tbody>
                                             </table>
