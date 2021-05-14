@@ -79,6 +79,15 @@
                                                 </div>
                                             </a>
                                         </li>
+                                        <li>
+                                            <a href="/infiintari_clienti.php">
+                                                <div class="item">
+                                                    <div class="icon"><i class="i-cool"></i></div>
+                                                    <span class="percent"></span>
+                                                    <span class="txt">Infiintari_clienti </span>
+                                                </div>
+                                            </a>
+                                        </li>
                                         {*<li>*}
                                             {*<a href="/filtreaza_observatii.php">*}
                                                 {*<div class="item">*}

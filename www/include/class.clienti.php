@@ -2090,6 +2090,45 @@ class Clienti
         return $ret;
     }
 
+    public static function getClientiByDepozitidAndAn()
+    {
+        $ret = array();
+        $query = "SELECT * from depozite";
+        $result = myQuery($query);
+
+        $ret['depozite'] = array();
+        $a = $result->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($a as $item) {
+            $ret['depozite'][$item['id']] = array(
+                'depozit_id' => $item['id'],
+                'nume' => $item['nume'],
+                'produse' => Depozite::getTipProduseByDepozitId($item['id'])
+            );
+        }
+
+        return $ret;
+    }
+
+
+    public static function getCountClientiByAnAndDepozitId()
+    {
+        $ret = array();
+        $query = "SELECT * from depozite";
+        $result = myQuery($query);
+
+        $ret['depozite'] = array();
+        $a = $result->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($a as $item) {
+            $ret['depozite'][$item['id']] = array(
+                'depozit_id' => $item['id'],
+                'nume' => $item['nume'],
+            );
+        }
+
+        return $ret;
+    }
+
+
     public static function getDiferentePreturiByClientIdAndTraseuId2($client_id, $traseu_id)
     {
 

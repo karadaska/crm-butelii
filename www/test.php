@@ -71,10 +71,12 @@ $data_stop = '2021-05-31';
 //    'data_start' =>$data_start,
 //    'data_stop' =>$data_stop
 //));
+//
+//$b = Test::getRaportLivrariClienti(26, array(
+//    'data_start' =>$data_start,
+//    'data_stop' =>$data_stop
+//));
 
-$b = Test::getRaportLivrariClienti(26, array(
-    'data_start' =>$data_start,
-    'data_stop' =>$data_stop
-));
+$b = Depozite::getClientiByDepozitIdAndData(1, '%2020%');
 
 echo json_encode($b);
