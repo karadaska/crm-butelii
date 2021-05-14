@@ -38,15 +38,15 @@
                                                                 {assign var=clienti_depozit_fara_data value=Depozite::getClientiByDepozitIdFaraDataContract($depozit['depozit_id'])}
                                                                 <tr>
                                                                     <th>{$a}</th>
-                                                                    <th><a target="_blank" href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Infiintare : {$clienti_depozit_start['numar_clienti']}</a></th>
-                                                                    <th><a target="_blank" href="clienti_desfiintati_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Incetare: {$clienti_depozit_stop['numar_clienti']}</a></th>
+                                                                    <th><a target="_blank" href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Infiintare : {count($clienti_depozit_start)}</a></th>
+                                                                    <th><a target="_blank" href="clienti_desfiintati_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Incetare: {count($clienti_depozit_stop)}</a></th>
                                                                 </tr>
                                                             {/for}
                                                         </table>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Fara data contract: <a href="clienti_activi_fara_data_contract.php?depozit_id={$depozit['depozit_id']}">{$clienti_depozit_fara_data['numar_clienti']}</a></th>
+                                                    <th>Fara data contract: <a href="clienti_activi_fara_data_contract.php?depozit_id={$depozit['depozit_id']}">{count($clienti_depozit_fara_data)}</a></th>
                                                 </tr>
                                                 </tbody>
                                             </table>

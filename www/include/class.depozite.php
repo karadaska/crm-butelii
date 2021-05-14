@@ -77,7 +77,7 @@ class Depozite
     {
         $ret = array();
         $query = "SELECT
-                COUNT(a.id ) AS numar_clienti 
+                a.nume
                FROM
                 clienti AS a
                 LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id
@@ -87,11 +87,12 @@ class Depozite
                 AND f.depozit_id = '" . $depozit_id . "'
                 AND a.data_start LIKE ('%" . $data_start . "%')
                 AND a.exclus = 0
+                GROUP BY a.id
                 ";
         $result = myQuery($query);
 
         if ($result) {
-            $ret = $result->fetch(PDO::FETCH_ASSOC);
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }
         return $ret;
 
@@ -101,22 +102,21 @@ class Depozite
     {
         $ret = array();
         $query = "SELECT
-                COUNT(a.id ) AS numar_clienti 
+               a.nume
                FROM
                 clienti AS a
                 LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id
                 LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id 
-                WHERE
-                a.sters = 0 
+                WHERE a.sters = 0 
                 AND f.depozit_id = '" . $depozit_id . "'
                 AND a.data_stop LIKE ('%" . $data_start . "%')
                 AND a.exclus = 0
+                GROUP BY a.id
                 ";
         $result = myQuery($query);
 
         if ($result) {
-            debug($query);
-            $ret = $result->fetch(PDO::FETCH_ASSOC);
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }
         return $ret;
 
@@ -126,7 +126,7 @@ class Depozite
     {
         $ret = array();
         $query = "SELECT
-                COUNT(a.id ) AS numar_clienti 
+                a.nume
                FROM
                 clienti AS a
                 LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id
@@ -137,12 +137,13 @@ class Depozite
                 AND a.data_start LIKE ('0000-00-00')
                 AND a.data_stop LIKE ('0000-00-00')
                 AND a.exclus = 0
+                GROUP BY a.id
                 ";
         $result = myQuery($query);
 
         if ($result) {
             debug($query);
-            $ret = $result->fetch(PDO::FETCH_ASSOC);
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }
         return $ret;
 
