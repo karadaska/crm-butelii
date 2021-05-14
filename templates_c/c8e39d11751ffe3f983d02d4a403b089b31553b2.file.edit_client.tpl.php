@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-02 10:35:29
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 15:58:57
          compiled from "/var/www/html/fofoweb/www/templates/edit_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9248587256024dd62ec9005-45001616%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c8e39d11751ffe3f983d02d4a403b089b31553b2' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_client.tpl',
-      1 => 1617348928,
+      1 => 1620997120,
       2 => 'file',
     ),
   ),
@@ -320,6 +320,21 @@ $_smarty_tpl->tpl_vars['culoare']->_loop = true;
                                                            name="longitudine"
                                                            value="<?php echo $_smarty_tpl->tpl_vars['client']->value['longitudine'];?>
 ">
+                                                </th>
+                                            </tr>
+                                            
+                                                
+                                                
+                                                
+                                                                                    
+                                                        
+                                                    
+                                            
+
+                                            <tr style="text-align: left;">
+                                                <th style="vertical-align: middle;text-align: left">Ignore</th>
+                                                <th style="text-align: left;">
+                                                   <input type="checkbox" name="exclus" value="1" <?php if ($_smarty_tpl->tpl_vars['client']->value['exclus']==1) {?> checked="checked" <?php }?>>
                                                 </th>
                                             </tr>
                                             <tr>

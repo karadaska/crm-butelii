@@ -57,6 +57,7 @@ $smarty->assign('observatii_by_client_id', $observatii_by_client_id);
 
 if ($modifica) {
     $nume = getRequestParameter0('nume', '');
+    $exclus = getRequestParameter0('exclus', '');
     $traseu_id = getRequestParameter('traseu_id', '');
     $judet_id = getRequestParameter('judet_id', '');
     $localitate_id = getRequestParameter('localitate_id', '');
@@ -76,13 +77,15 @@ if ($modifica) {
     $latitudine = getRequestParameter('latitudine', '');
     $longitudine = getRequestParameter('longitudine', '');
 
+    debug($exclus);
+
     if ($modifica and $nume != '') {
         $data_intrare = date('Y-m-d');
         $query = "UPDATE clienti SET nume = '" . $nume . "', judet_id = '" . $judet_id . "',
         localitate_id = '" . $localitate_id . "',adresa = '" . $adresa . "', stare_id ='" . $stare_id . "',
         telefon = '" . $telefon . "',telefon_2 = '" . $telefon_2 . "',cnp = '" . $cnp . "',ci='" . $ci . "',contract = '" . $contract . "',
         titular = '" . $titular . "',rastel = '" . $rastel_id . "', culoare_id = '" . $culoare_id . "', 
-        data_start = '" . $data_start . "',data_stop = '" . $data_stop . "', latitudine = '" . $latitudine . "', longitudine = '" . $longitudine . "'
+        data_start = '" . $data_start . "',data_stop = '" . $data_stop . "', latitudine = '" . $latitudine . "', longitudine = '" . $longitudine . "', exclus= '" . $exclus . "'
         where id='" . $id . "'";
 
         myExec($query);

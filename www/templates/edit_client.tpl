@@ -212,6 +212,21 @@
                                                            value="{$client['longitudine']}">
                                                 </th>
                                             </tr>
+                                            {*<th colspan="2" style="text-align: left; vertical-align: middle;">*}
+                                                {*<?php*}
+                                                {*$checked = $si_consumat == 1 ? ' checked="checked"' : '';*}
+                                                {*?>*}
+                                                                                    {*<input type="checkbox" id="si_consumat" name="si_consumat" value="1" <?= $checked; ?>/><label*}
+                                                        {*for="si_consumat" style="display: inline; margin-left: 10px;">afi&#351;eaz&#259;*}
+                                                    {*&#351;i bugetul consumat</label>*}
+                                            {*</th>*}
+
+                                            <tr style="text-align: left;">
+                                                <th style="vertical-align: middle;text-align: left">Ignore</th>
+                                                <th style="text-align: left;">
+                                                   <input type="checkbox" name="exclus" value="1" {if $client['exclus'] == 1 } checked="checked" {/if}>
+                                                </th>
+                                            </tr>
                                             <tr>
                                                 <th colspan="2" style="text-align: right;">
                                                     <button type="submit" name="modifica" value="modifica"
