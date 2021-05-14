@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 12:23:35
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 21:16:29
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1620984213,
+      1 => 1621016188,
       2 => 'file',
     ),
   ),
@@ -81,8 +81,10 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
                                                                 <tr>
                                                                     <th><?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 </th>
-                                                                    <th>Infiintare : <?php echo $_smarty_tpl->tpl_vars['clienti_depozit_start']->value['numar_clienti'];?>
-</th>
+                                                                    <th><a href="clienti_activi_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+&an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+">Infiintare : <?php echo $_smarty_tpl->tpl_vars['clienti_depozit_start']->value['numar_clienti'];?>
+</a></th>
                                                                     <th>Incetare: <?php echo $_smarty_tpl->tpl_vars['clienti_depozit_stop']->value['numar_clienti'];?>
 </th>
                                                                 </tr>
