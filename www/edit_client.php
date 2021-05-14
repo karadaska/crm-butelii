@@ -77,8 +77,6 @@ if ($modifica) {
     $latitudine = getRequestParameter('latitudine', '');
     $longitudine = getRequestParameter('longitudine', '');
 
-    debug($exclus);
-
     if ($modifica and $nume != '') {
         $data_intrare = date('Y-m-d');
         $query = "UPDATE clienti SET nume = '" . $nume . "', judet_id = '" . $judet_id . "',
