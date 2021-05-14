@@ -2144,10 +2144,11 @@ class Clienti
                 LEFT JOIN localitati AS d ON a.localitate_id = d.id 
                 LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id 
                 LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id	               
-                WHERE a.sters = 0
+                WHERE a.sters = 0                
 				AND a.exclus = 0
 				AND f.depozit_id = '".$depozit_id."'
 				AND a.data_start LIKE '0000-00-00'
+				GROUP BY a.id
 				ORDER BY a.nume ASC
 				";
         $result = myQuery($query);
