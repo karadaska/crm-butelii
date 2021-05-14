@@ -38,7 +38,7 @@
                                                                 {assign var=clienti_depozit_fara_data value=Depozite::getClientiByDepozitIdFaraDataContract($depozit['depozit_id'])}
                                                                 <tr>
                                                                     <th>{$a}</th>
-                                                                    <th><a href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Infiintare : {$clienti_depozit_start['numar_clienti']}</a></th>
+                                                                    <th><a target="_blank" href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Infiintare : {$clienti_depozit_start['numar_clienti']}</a></th>
                                                                     <th>Incetare: {$clienti_depozit_stop['numar_clienti']}</th>
                                                                 </tr>
                                                             {/for}
