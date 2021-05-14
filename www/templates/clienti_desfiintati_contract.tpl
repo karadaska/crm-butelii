@@ -39,7 +39,7 @@
                                                                 <tr>
                                                                     <th>{$a}</th>
                                                                     <th><a target="_blank" href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Infiintare : {$clienti_depozit_start['numar_clienti']}</a></th>
-                                                                    <th><a target="_blank" href="clienti_desfiintati_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Incetare: {$clienti_depozit_stop['numar_clienti']}</a></th>
+                                                                    <th>Incetare: {$clienti_depozit_stop['numar_clienti']}</th>
                                                                 </tr>
                                                             {/for}
                                                         </table>

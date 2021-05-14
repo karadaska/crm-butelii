@@ -2090,7 +2090,7 @@ class Clienti
         return $ret;
     }
 
-    public static function getClientiByDepozitidAndAn($depozit_id, $an)
+    public static function getClientiActiviByDepozitidAndAn($depozit_id, $an)
     {
         $ret = array();
         $query = "SELECT
@@ -2110,9 +2110,9 @@ class Clienti
                 LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id 
                 LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id	               
                 WHERE a.sters = 0
-								AND a.exclus = 0
-								AND f.depozit_id = '".$depozit_id."'
-								AND a.data_start LIKE '%".$an."%'";
+				AND a.exclus = 0
+				AND f.depozit_id = '".$depozit_id."'
+				AND a.data_start LIKE '%".$an."%'";
         $result = myQuery($query);
 
         if ($result) {
@@ -2122,6 +2122,37 @@ class Clienti
         return $ret;
     }
 
+    public static function getClientiDesfiintatiByDepozitidAndAn($depozit_id, $an)
+    {
+        $ret = array();
+        $query = "SELECT
+                a.id,
+                a.nume as nume_client,
+                a.telefon,
+                a.telefon_2,
+                b.nume AS nume_stare,
+                c.nume AS nume_judet,
+                d.nume AS nume_localitate,
+                a.data_start AS data_contract                
+                FROM
+                clienti AS a
+                LEFT JOIN clienti_stari AS b ON a.stare_id = b.id
+                LEFT JOIN judete AS c ON a.judet_id = c.id
+                LEFT JOIN localitati AS d ON a.localitate_id = d.id 
+                LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id 
+                LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id	               
+                WHERE a.sters = 0
+				AND a.exclus = 0
+				AND f.depozit_id = '".$depozit_id."'
+				AND a.data_stop LIKE '%".$an."%'";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+
+        }
+        return $ret;
+    }
 
     public static function getCountClientiByAnAndDepozitId()
     {

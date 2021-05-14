@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 21:20:04
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 21:34:22
          compiled from "/var/www/html/fofoweb/www/templates/clienti_activi_contract.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:955641252609ebbbc9aaed4-16912106%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a39c986a309691655d63a3aeb067fb1d79f9a992' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_activi_contract.tpl',
-      1 => 1621016401,
+      1 => 1621017261,
       2 => 'file',
     ),
   ),
@@ -38,7 +38,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Clienti</h1>
+                    <h1><i class="icon20 i-menu-6"></i> Clienti <a href="infiintari_clienti.php"
+                                                                   class="btn btn-mini btn-warning">Inapoi</a></h1>
                 </div>
             </div>
             <div class="row-fluid">
@@ -50,10 +51,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 <thead>
                                 <tr>
                                     <th style="text-align: center;">#</th>
-                                    <th style="text-align: left;">Clienti</th>
-                                    <th style="text-align: left;">Localitate</th>
-                                    <th style="text-align: left;">Judet</th>
-                                    <th style="text-align: left;">Telefon</th>
+                                    <th style="text-align: left;">CLIENTI</th>
+                                    <th style="text-align: center;">LOCALITATE</th>
+                                    <th style="text-align: center;">JUDET</th>
+                                    <th style="text-align: center;">TELEFON</th>
+                                    <th style="text-align: center;">DATA INFIINTARE</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -66,15 +68,19 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                     <tr>
                                         <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
 </td>
-                                        <td><a target="_blank" href="../edit_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
+                                        <td><a target="_blank"
+                                               href="../edit_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_client'];?>
-</a></td>
-                                        <td><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
+</a>
+                                        </td>
+                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_localitate'];?>
 </td>
-                                        <td><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_judet'];?>
+                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_judet'];?>
 </td>
-                                        <td><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
+                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
  <br/><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon_2'];?>
+</td>
+                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['data_contract'];?>
 </td>
                                     </tr>
                                 <?php } ?>
