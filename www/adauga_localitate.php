@@ -14,7 +14,7 @@ $smarty->assign('zona_id', $zona_id);
 if ($adauga) {
     $nume = getRequestParameter('nume', '');
 
-    $sql = "SELECT id FROM localitati WHERE `nume`='" . $nume . "' LIMIT 1";
+    $sql = "SELECT id FROM localitati WHERE `nume`='" . $nume . "' and sters = 0 LIMIT 1";
     $result        = myQuery($sql);
 
     $ret           = $result->fetch(PDO::FETCH_ASSOC);
