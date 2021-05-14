@@ -2,19 +2,173 @@
 
 class Test
 {
-
-    public static function getCantitatiSunaTraseu($opt = array()){
+    public static function getInfoProdusPentruRaportLivrariByClientAndProdus($client_id = 0, $tip_produs_id)
+    {
         $ret = array();
-        $query = "SELECT a.traseu_id, a.tip_produs_id, a.target, a.goale  from suna_traseu as a where a.sters=0";
+        $target_by_client_id = "SELECT a.tip_produs_id, a.target, a.pret as pret_contract, a.comision, a.client  
+        FROM clienti_target as a
+        WHERE a . client_id = '" . $client_id . "'
+        AND a . tip_produs_id = '" . $tip_produs_id . "'
+        AND a . sters = 0       
+        ORDER BY a.tip_produs_id ASC
+        ";
+
+        $result = myQuery($target_by_client_id);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+//            foreach ($a as $item) {
+//                $ret[$item['tip_produs_id']] = $item;
+//            }
+        }
+        return $ret;
+    }
+
+    public static function getTotalCantitatiDinFiseByProdusId($client_id, $traseu_id, $tip_produs_id, $opts = array())
+    {
+        $ret = null;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : date('Y-m-01');
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : date('Y-m-t');
+
+        $target_by_client_id = "SELECT SUM(a.cantitate) as total_cantitate, SUM(a.cantitate * a.pret) as total_valoare, 
+                                a.pret_contract as pret_contract_client, a.comision
+                                FROM detalii_fisa_intoarcere_produse  as a
+                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                                WHERE a.client_id = '" . $client_id . "'                                
+                                AND b.traseu_id = '" . $traseu_id . "'                                
+                                AND a.tip_produs_id = '" . $tip_produs_id . "'                                 
+                                AND a.data_intrare >= '" . $data_start . "'
+                                AND a.data_intrare <= '" . $data_stop . "'
+                                AND a.sters = 0";
+
+        $result = myQuery($target_by_client_id);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
+    public static function getProduseVanduteByTraseuId($traseu_id, $opts = array())
+    {
+        $data_start = isset($opt['data_start']) ? $opts['data_start'] : date('Y-m-01');
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : date('Y-m-t');
+
+        $ret = array();
+
+        $query = "SELECT * from (SELECT DISTINCT (tip_produs_id) AS tip_produs_id, c.tip AS nume_produs, a.client_id
+                  FROM detalii_fisa_extra_intoarcere_produse AS a
+                  LEFT JOIN tip_produs AS c ON a.tip_produs_id = c.id
+                  LEFT JOIN fise_generate as e on a.fisa_id = e.id
+                  WHERE e.traseu_id = '" . $traseu_id . "'
+                  AND e.data_intrare >='" . $data_start . "'
+                  AND e.data_intrare <='" . $data_stop . "'
+                  AND a.sters = 0
+                  AND a.cantitate > 0
+                  UNION ALL
+                  SELECT tip_produs_id AS tip_produs_id,
+                  d.tip AS nume_produs, b.client_id
+                  FROM detalii_fisa_intoarcere_produse AS b
+                  LEFT JOIN tip_produs AS d ON b.tip_produs_id = d.id
+                  LEFT JOIN fise_generate as e on b.fisa_id = e.id
+                  WHERE e.traseu_id = '" . $traseu_id . "'
+                  AND e.data_intrare >='" . $data_start . "'
+                  AND e.data_intrare <='" . $data_stop . "'
+                  AND b.sters = 0
+                  AND b.cantitate > 0
+                  ORDER BY tip_produs_id ASC) as test
+                  GROUP BY test.tip_produs_id";
+
 
         $result = myQuery($query);
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
-                $ret[$item['client_id']] = $item;
-                $ret['istoric_suna_traseu'] = Target::getIstoricSunaClient(array(
-                    'client_id' => $item['client_id']
-                ));
+                $ret[$item['tip_produs_id']] = array(
+                    'nume_produs' => $item['nume_produs'],
+                    'client_id' => $item['client_id'],
+                    'target' => self::getInfoProdusPentruRaportLivrariByClientAndProdus($item['client_id'], $item['tip_produs_id']),
+//                    'cantitati_vandute' => self::getTotalCantitatiDinFiseByProdusId($item['client_id'], $traseu_id, $item['tip_produs_id'])
+                );
+            }
+
+        }
+        return $ret;
+    }
+
+    public static function getRaportLivrariClienti($traseu_id, $opts = array())
+    {
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : date('Y-m-01');
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : date('Y-m-t');
+
+
+        $ret = array(
+            'livrare_clienti' => array()
+        );
+
+        $query = "SELECT  d.nume as nume_localitate, a.client_id, c.nume as nume_client,c.telefon, c.telefon_2 
+                  FROM clienti_asignati_fise_generate as a
+                  LEFT JOIN fise_generate as b on a.fisa_generata_id = b.id
+                  LEFT JOIN clienti as c on a.client_id = c.id
+                  LEFT JOIN localitati as d on c.localitate_id = d.id
+                  LEFT JOIN ordine_clienti as e on a.client_id = e.client_id
+                  WHERE b.traseu_id = '" . $traseu_id . "'
+                  AND b.data_intrare >= '" . $data_start . "'
+                  AND b.data_intrare <= '" . $data_stop . "'
+                  AND a.sters = 0
+                  GROUP BY a.client_id
+                  ORDER BY e.ordine ASC              
+                    ";
+
+        $result = myQuery($query);
+        $ret['produse_traseu'] = self::getProduseVanduteByTraseuId($traseu_id, array(
+            'data_start' => $data_start,
+            'data_stop' => $data_stop
+        ));
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $r = array(
+                    'client_id' => $item['client_id'],
+                    'nume_client' => $item['nume_client'],
+                    'nume_localitate' => $item['nume_localitate'],
+                    'telefon' => $item['telefon'],
+                    'telefon_2' => $item['telefon_2'],
+//                    'detalii_produse_client' => self::getProduseVanduteByTraseuId($traseu_id, array(
+//                        'data_start' => $data_start,
+//                        'data_stop' => $data_stop
+//                    )),
+//                    'target' => Target::getTargetClientPentruRaportLivrari($item['client_id'])
+//                    'total_produse' => array(
+//                        'bg_11' => Clienti::getTotalCantitatiBGDinFise($item['client_id'], $traseu_id, array(
+//                            'data_start' => $data_start,
+//                            'data_stop' => $data_stop
+//                        )),
+//                        'ar_8' => Clienti::getTotalCantitatiAr8DinFise($item['client_id'], $traseu_id, array(
+//                            'data_start' => $data_start,
+//                            'data_stop' => $data_stop
+//                        )),
+//                        'ar_9' => Clienti::getTotalCantitatiAr9DinFise($item['client_id'], $traseu_id, array(
+//                            'data_start' => $data_start,
+//                            'data_stop' => $data_stop
+//                        )),
+//                    ),
+//                    'lista_preturi_bg_11' => Clienti::getPreturiBG11CuComisionByClientId($item['client_id'], $traseu_id, array(
+//                        'data_start' => $data_start,
+//                        'data_stop' => $data_stop
+//                    )),
+//                    'lista_preturi_ar_9' => Clienti::getPreturiAR9CuComisionByClientId($item['client_id'], $traseu_id, array(
+//                        'data_start' => $data_start,
+//                        'data_stop' => $data_stop
+//                    )),
+//                    'lista_preturi_ar_8' => Clienti::getPreturiAR8CuComisionByClientId($item['client_id'], $traseu_id, array(
+//                        'data_start' => $data_start,
+//                        'data_stop' => $data_stop
+//                    ))
+                );
+
+                array_push($ret['livrare_clienti'], $r);
+
             }
         }
         return $ret;
@@ -139,9 +293,9 @@ class Test
         $stare_id = isset($opts['stare_id']) ? $opts['stare_id'] : 0;
         $localitate_id = isset($opts['localitate_id']) ? $opts['localitate_id'] : 0;
         $zona_id = isset($opts['zona_id']) ? $opts['zona_id'] : 0;
-        $data_start= isset($opts['data_start']) ? $opts['data_start'] : 0;
-        $data_stop= isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-        $observatie_id= isset($opts['observatie_id']) ? $opts['observatie_id'] : 0;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+        $observatie_id = isset($opts['observatie_id']) ? $opts['observatie_id'] : 0;
 
         $ret = array();
 
@@ -179,8 +333,8 @@ class Test
                 $client['target'] = Target::getTargetClient($client['id']);
                 $client['istoric_suna_traseu'] = Target::getIstoricSunaClient(array(
                     'client_id' => $client['id'],
-                    'data_start'=> $data_start,
-                    'data_stop'=> $data_stop,
+                    'data_start' => $data_start,
+                    'data_stop' => $data_stop,
                     'observatie_id' => $observatie_id
                 ));
 //                $client['istoric_suna_traseu'] = Target::getIstoricSunaClient($client['id'], $data_start,$data_stop);
@@ -218,8 +372,8 @@ class Test
         $stare_id = isset($opts['stare_id']) ? $opts['stare_id'] : 0;
         $localitate_id = isset($opts['localitate_id']) ? $opts['localitate_id'] : 0;
         $zona_id = isset($opts['zona_id']) ? $opts['zona_id'] : 0;
-        $data_start= isset($opts['data_start']) ? $opts['data_start'] : 0;
-        $data_stop= isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
 
         $ret = array();
 
@@ -256,7 +410,7 @@ class Test
                 $client['traseu'] = Trasee::getTraseuByClientId($client['id']);
                 $client['depozit'] = Depozite::getDepozitByClientId($client['id']);
                 $client['target'] = Target::getTargetClient($client['id']);
-                $client['istoric_suna_traseu'] = Target::getIstoricSunaClient($client['id'],$data_start,$data_stop);
+                $client['istoric_suna_traseu'] = Target::getIstoricSunaClient($client['id'], $data_start, $data_stop);
                 $client['observatii_client'] = self::getObsByClientById($client['id']);
                 $client['asignare_client_traseu'] = Asignari::getAsignareTraseuByClientId($client['id']);
 
@@ -288,8 +442,8 @@ class Test
     {
         $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
         $stare_id = isset($opts['stare_id']) ? $opts['stare_id'] : 0;
-        $data_start= isset($opts['data_start']) ? $opts['data_start'] : 0;
-        $data_stop= isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
 
         $ret = array();
 
@@ -475,7 +629,7 @@ class Test
         $ret = array();
         $query = "SELECT a.*, b.nume as nume_user from observatii_client as a
                   left join users as b on a.user_id = b.id
-                  where a.client_id = '".$client_id."' 
+                  where a.client_id = '" . $client_id . "' 
                   and a.sters = 0";
         $result = myQuery($query);
 
@@ -490,7 +644,7 @@ class Test
         $ret = array();
         $query = "SELECT a.*, b.nume as nume_user from observatii_client as a
                   left join users as b on a.user_id = b.id
-                  where a.client_id = '".$client_id."' 
+                  where a.client_id = '" . $client_id . "' 
                   and a.sters = 0
                   Order by a.id DESC
                   LIMIT 1
@@ -572,7 +726,7 @@ class Test
         $ret = array();
         $query = "select a.* 
                  from clienti as a
-                 where a.id = '".$client_id."'
+                 where a.id = '" . $client_id . "'
                  and a.sters = 0 LIMIT 1";
         $result = myQuery($query);
         if ($result) {
@@ -616,7 +770,8 @@ class Test
         return $ret;
     }
 
-    public static function getProduseByClientId($client_id){
+    public static function getProduseByClientId($client_id)
+    {
         $ret = array();
         $target_by_client_id = "SELECT a.*, c . tip as nume_produs,
         a.target    
@@ -662,7 +817,7 @@ class Test
             $tmp = $result->fetchAll(PDO::FETCH_ASSOC);
 
             foreach ($tmp as $client) {
-                $client['traseu'] = Trasee::getClientiTraseuByClientIdAndTraseuId($client['id'],$traseu_id);
+                $client['traseu'] = Trasee::getClientiTraseuByClientIdAndTraseuId($client['id'], $traseu_id);
                 $client['target'] = Target::getTargetClient($client['id']);
 
                 // filtrare...

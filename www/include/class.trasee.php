@@ -111,6 +111,22 @@ class Trasee
         }
         return $ret;
     }
+    public static function getCantitatiSunaTraseu($opt = array()){
+        $ret = array();
+        $query = "SELECT a.traseu_id, a.tip_produs_id, a.target, a.goale  from suna_traseu as a where a.sters=0";
+
+        $result = myQuery($query);
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['client_id']] = $item;
+                $ret['istoric_suna_traseu'] = Target::getIstoricSunaClient(array(
+                    'client_id' => $item['client_id']
+                ));
+            }
+        }
+        return $ret;
+    }
 
     public static function getNumarObservatiiApelClientiByTraseuId($opts = array())
     {

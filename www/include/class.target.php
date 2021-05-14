@@ -110,7 +110,7 @@ class Target
     public static function getTargetClientPentruRaportLivrari($client_id = 0)
     {
         $ret = array();
-        $target_by_client_id = "SELECT a.target, a.tip_produs_id    
+        $target_by_client_id = "SELECT a.tip_produs_id, a.target, a.pret as pret_contract, a.comision  
         from clienti_target as a
         where a . client_id = '" . $client_id . "'
         and a . sters = 0       

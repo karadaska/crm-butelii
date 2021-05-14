@@ -67,112 +67,14 @@ $data_stop = '2021-05-31';
 
 //CLIENTI -----------------------------------------------------------
 
-
-//$b = Clienti::getRandamentByClientIdDinFiseNew(1348, array(
-//    'an' => 2021,
-//    'perioada_id' => 4
-//));
-//$b = Calendar::getNumePerioadaById(1);
-//$b = Clienti::getOrdineByClientIdAndTraseuId(1332, 1);
-
-//$b = Clienti::getRandamentByClientIdDinRandamentClienti(1332, array(
-//    'an' => 2020,
-//    'perioada_id' => 5
-//));
-//$b = Fise::GetProdusExtraByClientIdAndFisa(1, 1332, 1452);
-//$b = Fise::GetProdusExtraByProdusIdAndFisa(1, 1452);
-//$b = ParcAuto::getRaportLivrariMasini(26,
-//    array(
-//        'data_start' => $data_start,
-//        'data_stop' => $data_stop
-//    ));
-//$b = ParcAuto::getCantitatiByTraseuAndSoferAndMasina(4,23,26, array(
-//    'data_start' => $data_start,
-//        'data_stop' => $data_stop
+//$b = Test::getProduseVanduteByTraseuId(26, array(
+//    'data_start' =>$data_start,
+//    'data_stop' =>$data_stop
 //));
 
-//$b = Fise::getFiseLivrariMasini(array(
-//    'masina_id' => 29,
-//    'traseu_id' => 4,
-//    'sofer_id' => 22,
-//    'data_start' => '2021-01-01',
-//    'data_stop' => '2021-01-31'
-//));
-
-//$b = ParcAuto::getRaportLivrariMasini(30, array(
-//        'data_start' => $data_start,
-//        'data_stop' => $data_stop
-//));
-//$b = Stocuri::getFisaGenerataById(360);
-//$b = Stocuri::getIncarcaturaMasinaSosireByFisaId(1644);
-//$b = Fise::getTotalCantitatiByFisaId(1648);
-//$b = Stocuri::getCantitatiVanduteLaSosireByFisaIdAndClientId(1648,1566);
-//$b = Stocuri::getIncarcaturaMasinaSosireByFisaIdCompleteazaFisa(1644);
-//$b = Stocuri::getRealizatClientByFisaId(1654, 1332);
-//$b = Stocuri::getFisaGenerataById(1654);
-//$b = Stocuri::getFisaGenerataByIdPrintFisaTraseu(1654);
-//$b = Printare::PrintFisaSosire(1656);
-//$b = Fise::getProduseVanduteByFisaId(1655);
-//$b =Fise::getCantitatiBgByFisaIdAndClientIdAndTipProdusId(1655, 2563,1);
-//$b = Fise::GetProdusExtraByClientIdProdusIdAndFisaAnd(2584, 1655);
-//$b = Trasee::getAsignareClientiTraseuByClientid(10, array(
-//    'perioada_inceput' => '2020-11-01',
-//    'perioada_sfarsit' =>'2020-11-31'
-//
-//));
-//$b = Clienti::getRandamentByClientIdDinRandamentClienti(1332, array(
-//    'an' => 2020,
-//    'perioada_id' => 1
-//));
-
-//$b = Clienti::getCantitatiExtraByClientIdAndTraseuId(1332, 1, array(
-//    'an' => 2021,
-//    'perioada_id' => 5
-//));
-
-
-//$b = Clienti::getCantitatiExtraByClientId(1332, array(
-//    'an' => 2021,
-//    'perioada_id' => 5
-//));
-//$b = Fise::getRandamentLunarDinFiseByClientIdAndPerioada(1332, array(
-//    'an' => 2021,
-//    'perioada_id' => 05
-//));
-
-//$b = Produse::getProduseVanduteByTraseuId(1, array(
-//    'data_start' => $data_start,
-//    'data_stop' => $data_stop
-//));
-
-//$b = ParcAuto::getRaportLivrariTrasee(26,
-//    array(
-//        'data_start' => $data_start,
-//        'data_stop' => $data_stop
-//    ));
-
-//$b = ParcAuto::getTotalCantitatiExtraByMasinaIdAndTraseuIdAndSoferId(27, 26, 23, array(
-//    'tip_produs_id' => 3,
-//    'data_start' => $data_start,
-//    'data_stop' => $data_stop
-//));
-
-//$b = ParcAuto::getTotalCantitatiExtraByTraseuIdAndProdusId(26, 3, array(
-//        'data_start' => $data_start,
-//        'data_stop' => $data_stop
-//));
-
-$b = ParcAuto::getRaportLivrariMasini(27, array(
-    'data_start' => $data_start,
-    'data_stop' => $data_stop
+$b = Test::getRaportLivrariClienti(26, array(
+    'data_start' =>$data_start,
+    'data_stop' =>$data_stop
 ));
-
-//$b = ParcAuto::getRaportLivrariSoferi(23, array(
-//    'data_start' => $data_start,
-//    'data_stop' => $data_stop
-//));
-
-$b = Fise::getCantitatiExtraByFisaId(1803);
-
 
 echo json_encode($b);
