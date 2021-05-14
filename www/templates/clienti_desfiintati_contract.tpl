@@ -7,55 +7,49 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
+                    <h1><i class="icon20 i-menu-6"></i> Clienti Activi <a href="infiintari_clienti.php"
+                                                                          class="btn btn-mini btn-warning">Inapoi</a></h1>
                 </div>
             </div>
             <div class="row-fluid">
                 <div class="span12">
                     <div class="widget">
-                        <div class="widget-title">
-                            <div class="icon"><i class="icon20 i-table"></i></div>
-                            <h4>Numar clienti by An</h4>
-                        </div>
                         <div class="widget-content">
-                            <table class="table table-bordered table-striped table-hover">
+                            <table cellpadding="0" cellspacing="0" border="0"
+                                   class="table table-striped table-bordered table-hover" id="dataTable">
+                                <thead>
                                 <tr>
-                                    {foreach from=$lista_clienti['depozite'] item=depozit}
-                                        <td>
-                                            <table class="table table-bordered table-striped table-hover">
-                                                <thead>
-                                                <tr>
-                                                    <th colspan="3">{$depozit['nume']}</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
-
-                                                        <table class="table-bordered table">
-                                                            {for $a=2016 to date("Y")}
-                                                                {assign var=clienti_depozit_start value=Depozite::getClientiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
-                                                                {assign var=clienti_depozit_stop value=Depozite::getClientiByDepozitIdAndDataStop($depozit['depozit_id'], $a)}
-                                                                {assign var=clienti_depozit_fara_data value=Depozite::getClientiByDepozitIdFaraDataContract($depozit['depozit_id'])}
-                                                                <tr>
-                                                                    <th>{$a}</th>
-                                                                    <th><a target="_blank" href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Infiintare : {$clienti_depozit_start['numar_clienti']}</a></th>
-                                                                    <th>Incetare: {$clienti_depozit_stop['numar_clienti']}</th>
-                                                                </tr>
-                                                            {/for}
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Fara data contract: <a href="">{$clienti_depozit_fara_data['numar_clienti']}</th>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    {/foreach}
+                                    <th style="text-align: center;">#</th>
+                                    <th style="text-align: left;">CLIENTI</th>
+                                    <th style="text-align: center;">LOCALITATE</th>
+                                    <th style="text-align: center;">JUDET</th>
+                                    <th style="text-align: center;">TELEFON</th>
+                                    <th style="text-align: center;">DATA INFIINTARE</th>
+                                    <th style="text-align: center;">DATA DESFIINTARE</th>
                                 </tr>
+                                </thead>
+                                <tbody>
+                                {$nr = 1}
+                                {foreach from=$lista_clienti item=client}
+                                    <tr>
+                                        <td style="text-align: center;">{$nr++}</td>
+                                        <td><a target="_blank"
+                                               href="../edit_client.php?id={$client['id']}">{strtoupper($client['nume_client'])}</a>
+                                        </td>
+                                        <td style="text-align: center;">{strtoupper($client['nume_localitate'])}</td>
+                                        <td style="text-align: center;">{strtoupper($client['nume_judet'])}</td>
+                                        <td style="text-align: center;">{$client['telefon']} <br/>{$client['telefon_2']}</td>
+                                        <td style="text-align: center;">{$client['data_contract']}</td>
+                                        <td style="text-align: center;">{$client['data_finish_contract']}</td>
+                                    </tr>
+                                {/foreach}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
     </section>
 </div>
+<script src="js/pagini/edit_sofer.js"></script>
+{include file="footer.tpl"}

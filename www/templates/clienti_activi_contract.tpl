@@ -7,7 +7,7 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Clienti <a href="infiintari_clienti.php"
+                    <h1><i class="icon20 i-menu-6"></i> Clienti Activi <a href="infiintari_clienti.php"
                                                                    class="btn btn-mini btn-warning">Inapoi</a></h1>
                 </div>
             </div>
@@ -33,10 +33,10 @@
                                     <tr>
                                         <td style="text-align: center;">{$nr++}</td>
                                         <td><a target="_blank"
-                                               href="../edit_client.php?id={$client['id']}">{$client['nume_client']}</a>
+                                               href="../edit_client.php?id={$client['id']}">{strtoupper($client['nume_client'])}</a>
                                         </td>
-                                        <td style="text-align: center;">{$client['nume_localitate']}</td>
-                                        <td style="text-align: center;">{$client['nume_judet']}</td>
+                                        <td style="text-align: center;">{strtoupper($client['nume_localitate'])}</td>
+                                        <td style="text-align: center;">{strtoupper($client['nume_judet'])}</td>
                                         <td style="text-align: center;">{$client['telefon']} <br/>{$client['telefon_2']}</td>
                                         <td style="text-align: center;">{$client['data_contract']}</td>
                                     </tr>

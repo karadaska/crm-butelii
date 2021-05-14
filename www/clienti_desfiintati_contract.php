@@ -2,13 +2,13 @@
 $menu_curent = 9;
 require_once('etc/config.php');
 
-$smarty->assign('name', 'Pagina Clienti Activi');
+$smarty->assign('name', 'Clienti Desfiintati');
 if (!Utilizatori::hasRights(1)) {
     web_redirect('/eroare_faradrept.php');
 }
 
-$smarty->assign('nume', 'Clienti activi cu data contract');
-$template_page = "clienti_activi_contract.tpl";
+$smarty->assign('nume', 'Clienti desfiintati');
+$template_page = "clienti_desfiintati_contract.tpl";
 
 $depozit_id= getRequestParameter('depozit_id', '');
 $an= getRequestParameter('an', '');

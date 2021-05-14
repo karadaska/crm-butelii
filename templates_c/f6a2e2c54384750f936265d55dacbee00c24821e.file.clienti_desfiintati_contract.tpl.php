@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 21:42:11
-         compiled from "/var/www/html/fofoweb/www/templates/clienti_activi_contract.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:955641252609ebbbc9aaed4-16912106%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 21:46:57
+         compiled from "/var/www/html/fofoweb/www/templates/clienti_desfiintati_contract.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:554778833609ec4c0948f05-69942715%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'a39c986a309691655d63a3aeb067fb1d79f9a992' => 
+    'f6a2e2c54384750f936265d55dacbee00c24821e' => 
     array (
-      0 => '/var/www/html/fofoweb/www/templates/clienti_activi_contract.tpl',
-      1 => 1621017731,
+      0 => '/var/www/html/fofoweb/www/templates/clienti_desfiintati_contract.tpl',
+      1 => 1621018016,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '955641252609ebbbc9aaed4-16912106',
+  'nocache_hash' => '554778833609ec4c0948f05-69942715',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_609ebbbca1af77_49135908',
+  'unifunc' => 'content_609ec4c09adc53_16150080',
   'variables' => 
   array (
     'title' => 0,
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_609ebbbca1af77_49135908')) {function content_609ebbbca1af77_49135908($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
+<?php if ($_valid && !is_callable('content_609ec4c09adc53_16150080')) {function content_609ec4c09adc53_16150080($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("top.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -39,7 +39,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Clienti Activi <a href="infiintari_clienti.php"
-                                                                   class="btn btn-mini btn-warning">Inapoi</a></h1>
+                                                                          class="btn btn-mini btn-warning">Inapoi</a></h1>
                 </div>
             </div>
             <div class="row-fluid">
@@ -56,6 +56,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <th style="text-align: center;">JUDET</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: center;">DATA INFIINTARE</th>
+                                    <th style="text-align: center;">DATA DESFIINTARE</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -81,6 +82,8 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
  <br/><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon_2'];?>
 </td>
                                         <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['data_contract'];?>
+</td>
+                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['data_finish_contract'];?>
 </td>
                                     </tr>
                                 <?php } ?>
