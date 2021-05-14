@@ -2135,7 +2135,8 @@ class Clienti
                 b.nume AS nume_stare,
                 c.nume AS nume_judet,
                 d.nume AS nume_localitate,
-                a.data_start AS data_contract                
+                a.data_start AS data_contract,
+                a.data_stop as data_stop_contract                
                 FROM
                 clienti AS a
                 LEFT JOIN clienti_stari AS b ON a.stare_id = b.id

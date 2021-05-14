@@ -46,7 +46,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Fara data contract: <a href="">{$clienti_depozit_fara_data['numar_clienti']}</th>
+                                                    <th>Fara data contract: <a href="clienti_activi_fara_data_contract.php?depozit_id={$depozit['depozit_id']}">{$clienti_depozit_fara_data['numar_clienti']}</a></th>
                                                 </tr>
                                                 </tbody>
                                             </table>

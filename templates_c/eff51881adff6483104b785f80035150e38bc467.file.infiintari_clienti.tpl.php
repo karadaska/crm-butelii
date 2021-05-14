@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 21:29:39
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 21:59:28
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1621016977,
+      1 => 1621018767,
       2 => 'file',
     ),
   ),
@@ -95,8 +95,9 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Fara data contract: <a href=""><?php echo $_smarty_tpl->tpl_vars['clienti_depozit_fara_data']->value['numar_clienti'];?>
-</th>
+                                                    <th>Fara data contract: <a href="clienti_activi_fara_data_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['clienti_depozit_fara_data']->value['numar_clienti'];?>
+</a></th>
                                                 </tr>
                                                 </tbody>
                                             </table>
