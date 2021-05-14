@@ -933,7 +933,8 @@ class Clienti
                 a.telefon_2,
                 b.nume AS nume_stare,
                 c.nume AS nume_judet,
-                d.nume AS nume_localitate,	
+                d.nume AS nume_localitate,
+                a.data_start AS data_contract,	
                 (SELECT nume from observatii_client where a.id = client_id ORDER BY id DESC LIMIT 1) as nume_observatie
                 FROM
                 clienti AS a
@@ -944,7 +945,6 @@ class Clienti
                 LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id	
                 LEFT JOIN observatii_client AS g ON a.id = g.client_id	
                 WHERE a.sters = 0
-                
 		";
 
         if ($localitate_id > 0) {
