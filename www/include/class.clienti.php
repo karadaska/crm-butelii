@@ -933,7 +933,8 @@ class Clienti
                 a.telefon_2,
                 b.nume AS nume_stare,
                 c.nume AS nume_judet,
-                d.nume AS nume_localitate,               	
+                d.nume AS nume_localitate,
+                a.data_start as data_contract,               	
                 (SELECT nume from observatii_client where a.id = client_id ORDER BY id DESC LIMIT 1) as nume_observatie
                 FROM
                 clienti AS a

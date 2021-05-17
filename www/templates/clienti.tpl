@@ -90,6 +90,7 @@
                                     <th style="text-align: center;">STARE</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: left;" class="span1">OBSERVATII</th>
+                                    <th style="text-align: center;" class="span1">Data Contract</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -156,6 +157,9 @@
                                             {*{foreach from=$client['observatii_client'] item = observatie_client}*}
                                                 {*{$observatie_client['nume']}*}
                                             {*{/foreach}*}
+                                        </td>
+                                        <td style="text-align: center;">
+                                            {$client['data_contract']}
                                         </td>
                                     </tr>
                                 {/foreach}

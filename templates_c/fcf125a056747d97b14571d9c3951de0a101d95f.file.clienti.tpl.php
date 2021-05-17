@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 12:37:48
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-17 14:38:46
          compiled from "/var/www/html/fofoweb/www/templates/clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2258838906024d92f57e424-09898508%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fcf125a056747d97b14571d9c3951de0a101d95f' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti.tpl',
-      1 => 1620985067,
+      1 => 1621251522,
       2 => 'file',
     ),
   ),
@@ -169,7 +169,7 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                     <th style="text-align: center;">STARE</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: left;" class="span1">OBSERVATII</th>
-                                    <th style="text-align: left;" class="span1">Data contract</th>
+                                    <th style="text-align: center;" class="span1">Data Contract</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -262,8 +262,10 @@ $_smarty_tpl->tpl_vars['asignare_traseu']->_loop = true;
                                                 
                                             
                                         </td>
-                                        <td><?php echo $_smarty_tpl->tpl_vars['client']->value['data_contract'];?>
-</td>
+                                        <td style="text-align: center;">
+                                            <?php echo $_smarty_tpl->tpl_vars['client']->value['data_contract'];?>
+
+                                        </td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
