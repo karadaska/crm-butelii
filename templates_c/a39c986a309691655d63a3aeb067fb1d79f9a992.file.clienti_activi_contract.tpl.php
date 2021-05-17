@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 21:42:11
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-17 14:08:54
          compiled from "/var/www/html/fofoweb/www/templates/clienti_activi_contract.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:955641252609ebbbc9aaed4-16912106%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a39c986a309691655d63a3aeb067fb1d79f9a992' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_activi_contract.tpl',
-      1 => 1621017731,
+      1 => 1621249733,
       2 => 'file',
     ),
   ),
@@ -92,7 +92,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
             </div>
     </section>
 </div>
-<script src="js/pagini/edit_sofer.js"></script>
+<script src="js/pagini/infiintari_clienti.js"></script>
 <?php echo $_smarty_tpl->getSubTemplate ("footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 <?php }} ?>

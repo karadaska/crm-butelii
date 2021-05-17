@@ -51,5 +51,5 @@
             </div>
     </section>
 </div>
-<script src="js/pagini/edit_sofer.js"></script>
+<script src="js/pagini/infiintari_clienti.js"></script>
 {include file="footer.tpl"}
