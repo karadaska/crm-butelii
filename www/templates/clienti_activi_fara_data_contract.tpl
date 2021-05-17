@@ -7,7 +7,7 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Clienti Activi <a href="infiintari_clienti.php"
+                    <h1><i class="icon20 i-menu-6"></i> Clienti Activi fara data setata la contract<a href="infiintari_clienti.php"
                                                                           class="btn btn-mini btn-warning">Inapoi</a></h1>
                 </div>
             </div>

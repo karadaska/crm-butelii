@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 22:01:31
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-14 22:36:50
          compiled from "/var/www/html/fofoweb/www/templates/clienti_activi_fara_data_contract.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:640465383609ec894471b97-65134349%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5ddd8cd9d2e82b75512397782e81f673fe325b2a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_activi_fara_data_contract.tpl',
-      1 => 1621018890,
+      1 => 1621021009,
       2 => 'file',
     ),
   ),
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Clienti Activi <a href="infiintari_clienti.php"
+                    <h1><i class="icon20 i-menu-6"></i> Clienti Activi fara data setata la contract<a href="infiintari_clienti.php"
                                                                           class="btn btn-mini btn-warning">Inapoi</a></h1>
                 </div>
             </div>

@@ -32,7 +32,7 @@
                                                     <td>
 
                                                         <table class="table-bordered table">
-                                                            {for $a=2016 to date("Y")}
+                                                            {for $a=2014 to date("Y")}
                                                                 {assign var=clienti_depozit_start value=Depozite::getClientiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_stop value=Depozite::getClientiByDepozitIdAndDataStop($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_fara_data value=Depozite::getClientiByDepozitIdFaraDataContract($depozit['depozit_id'])}
