@@ -37,6 +37,7 @@
                                                                 {assign var=clienti_depozit_start value=Depozite::getClientiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_stop value=Depozite::getClientiByDepozitIdAndDataStop($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_fara_data value=Depozite::getClientiByDepozitIdFaraDataContract($depozit['depozit_id'])}
+                                                                {assign var=clienti_stersi value=Clienti::getClientiStersiByDepozitidAndAn($depozit['depozit_id'], $a)}
                                                                 <tr>
                                                                     <th>{$a}</th>
                                                                     <th><a target="_blank"
@@ -52,7 +53,7 @@
                                                                            href="clienti_neasignati.php?depozit_id={$depozit['depozit_id']}&an={$a}">Neasignati: {count($clienti_depozit_stop)}</a>
                                                                     </th>
                                                                     <th><a target="_blank"
-                                                                           href="clienti_stersi.php?depozit_id={$depozit['depozit_id']}&an={$a}">Stersi: {count($clienti_depozit_stop)}</a>
+                                                                           href="clienti_stersi.php?depozit_id={$depozit['depozit_id']}&an={$a}">Stersi: {count($clienti_stersi)}</a>
                                                                     </th>
                                                                 </tr>
                                                             {/for}
