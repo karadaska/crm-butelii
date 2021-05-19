@@ -2217,6 +2217,7 @@ class Clienti
                 LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id 
                 LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id	               
                 WHERE a.sters = 0
+                AND a.stare_id = 2
 				AND a.exclus = 0
 				AND f.depozit_id = '".$depozit_id."'
 				AND a.data_stop LIKE '%".$an."%'
