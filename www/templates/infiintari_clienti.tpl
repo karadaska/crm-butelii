@@ -42,7 +42,6 @@
                                                                 {assign var=clienti_activi value=Depozite::getClientiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_stop value=Depozite::getClientiByDepozitIdAndDataStop($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_fara_data value=Depozite::getClientiByDepozitIdFaraDataContract($depozit['depozit_id'])}
-                                                                {assign var=clienti_stersi value=Clienti::getClientiStersiByDepozitidAndAn($depozit['depozit_id'], $a)}
                                                                 <tr>
                                                                     <th>{$a}</th>
                                                                     <th><a target="_blank"
@@ -53,9 +52,6 @@
                                                                             : {count($clienti_infiintati)}</a></th>
                                                                     <th><a target="_blank"
                                                                            href="clienti_desfiintati_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Desfiintati: {count($clienti_depozit_stop)}</a>
-                                                                    </th>
-                                                                    <th><a target="_blank"
-                                                                           href="clienti_stersi.php?depozit_id={$depozit['depozit_id']}&an={$a}">Stersi: {count($clienti_stersi)}</a>
                                                                     </th>
                                                                 </tr>
                                                             {/for}
@@ -91,7 +87,6 @@
                                 *Clienti Fara Data Contract: clienti care nu sunt stersi si au stare client: activ, desfiintat,
                                 necunoscut, iar data incheierii contractului este "0000-00-00" si data desfiintarii
                                 contractului este "0000-00-00"<br/>
-                                *Clienti Stersi: clienti care sunt stersi.
                             </div>
                         </div>
                     </div>

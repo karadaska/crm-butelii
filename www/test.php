@@ -77,6 +77,7 @@ $data_stop = '2021-05-31';
 //    'data_stop' =>$data_stop
 //));
 
-$b = Depozite::getClientiByDepozitIdAndDataStop(2, '%2018%');
+//$b = Depozite::getClientiByDepozitIdAndDataStop(2, '%2018%');
 
+$b = Test::getCountClientiByAnAndDepozitId2();
 echo json_encode($b);

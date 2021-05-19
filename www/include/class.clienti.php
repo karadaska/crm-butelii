@@ -2090,6 +2090,30 @@ class Clienti
         return $ret;
     }
 
+    public static function getClientiByDepozitIdAndAn($depozit_id, $data_start)
+    {
+        $ret = array();
+        $query = "SELECT
+                a.nume
+               FROM
+                clienti AS a
+                LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id
+                LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id 
+                WHERE a.sters = 0 and (a.stare_id  = 1 or stare_id = 3) 
+                AND f.depozit_id = '" . $depozit_id . "'
+                AND a.data_start LIKE ('%" . $data_start . "%')
+                AND a.exclus = 0
+                GROUP BY a.id
+                ";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
     public static function getClientiActiviByDepozitidAndAn($depozit_id, $an)
     {
         $ret = array();
@@ -2295,9 +2319,8 @@ class Clienti
                 LEFT JOIN localitati AS d ON a.localitate_id = d.id 
                 LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id 
                 LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id	               
-                LEFT JOIN clienti_stari AS g ON a.stare_id = g.id               
-                WHERE a.sters = 0
-                AND a.stare_id = 2
+                LEFT JOIN clienti_stari AS g ON a.stare_id = g.id             
+                WHERE a.stare_id = 2
 				AND a.exclus = 0
 				AND f.depozit_id = '".$depozit_id."'
 				AND a.data_stop LIKE '%".$an."%'
@@ -2311,6 +2334,80 @@ class Clienti
 
         }
         return $ret;
+    }
+
+    public static function getClientiActiviInfiintatiByDepozitIdAndAn($depozit_id, $an)
+    {
+        $ret = array();
+        $query = "SELECT
+                a.nume
+               FROM
+                clienti AS a
+                LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id
+                LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id 
+                WHERE a.sters = 0 
+                AND f.depozit_id = '" . $depozit_id . "'
+                AND a.data_start LIKE ('%" . $an . "%')
+                AND a.exclus = 0
+                GROUP BY a.id
+                ";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
+    public static function getClientiActiviInfiintatiByDepozitIdAndDataStart($depozit_id, $data_start)
+    {
+        $ret = array();
+        $query = "SELECT
+                a.nume
+               FROM
+                clienti AS a
+                LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id
+                LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id 
+                WHERE a.sters = 0 
+                AND f.depozit_id = '" . $depozit_id . "'
+                AND a.data_start LIKE ('%" . $data_start . "%')
+                AND a.exclus = 0
+                GROUP BY a.id
+                ";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
+    public static function getClientiByDepozitIdFaraDataContract($depozit_id)
+    {
+        $ret = array();
+        $query = "SELECT
+                a.nume
+               FROM
+                clienti AS a
+                LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id
+                LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id 
+                WHERE
+                a.sters = 0 
+                AND f.depozit_id = '" . $depozit_id . "'
+                AND a.data_start LIKE ('0000-00-00')
+                AND a.data_stop LIKE ('0000-00-00')
+                AND a.exclus = 0
+                GROUP BY a.id
+                ";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
     }
 
     public static function getCountClientiByAnAndDepozitId()
@@ -2330,6 +2427,8 @@ class Clienti
 
         return $ret;
     }
+
+
 
     public static function getClientiActiviByAnAndDepozitId()
     {

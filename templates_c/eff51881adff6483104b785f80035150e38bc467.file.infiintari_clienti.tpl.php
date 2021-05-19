@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:14:55
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 21:46:56
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1621430094,
+      1 => 1621450015,
       2 => 'file',
     ),
   ),
@@ -27,7 +27,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'clienti_activi' => 0,
     'clienti_infiintati' => 0,
     'clienti_depozit_stop' => 0,
-    'clienti_stersi' => 0,
     'clienti_depozit_fara_data' => 0,
   ),
   'has_nocache_code' => false,
@@ -88,7 +87,6 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
                                                                 <?php $_smarty_tpl->tpl_vars['clienti_activi'] = new Smarty_variable(Depozite::getClientiByDepozitIdAndDataStart($_smarty_tpl->tpl_vars['depozit']->value['depozit_id'],$_smarty_tpl->tpl_vars['a']->value), null, 0);?>
                                                                 <?php $_smarty_tpl->tpl_vars['clienti_depozit_stop'] = new Smarty_variable(Depozite::getClientiByDepozitIdAndDataStop($_smarty_tpl->tpl_vars['depozit']->value['depozit_id'],$_smarty_tpl->tpl_vars['a']->value), null, 0);?>
                                                                 <?php $_smarty_tpl->tpl_vars['clienti_depozit_fara_data'] = new Smarty_variable(Depozite::getClientiByDepozitIdFaraDataContract($_smarty_tpl->tpl_vars['depozit']->value['depozit_id']), null, 0);?>
-                                                                <?php $_smarty_tpl->tpl_vars['clienti_stersi'] = new Smarty_variable(Clienti::getClientiStersiByDepozitidAndAn($_smarty_tpl->tpl_vars['depozit']->value['depozit_id'],$_smarty_tpl->tpl_vars['a']->value), null, 0);?>
                                                                 <tr>
                                                                     <th><?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 </th>
@@ -108,12 +106,6 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
                                                                            href="clienti_desfiintati_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 ">Desfiintati: <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_stop']->value);?>
-</a>
-                                                                    </th>
-                                                                    <th><a target="_blank"
-                                                                           href="clienti_stersi.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
-&an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
-">Stersi: <?php echo count($_smarty_tpl->tpl_vars['clienti_stersi']->value);?>
 </a>
                                                                     </th>
                                                                 </tr>
@@ -149,10 +141,9 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
                                 <br/>
                                 *Clienti Neasignati: clienti care nu sunt stersi si au stare client: activ,
                                 desfiintat, decunoscut. <br/>
-                                *Clienti Fara Data Contract: clienti care nu sunt stersi si au stare client: activ,
+                                *Clienti Fara Data Contract: clienti care nu sunt stersi si au stare client: activ, desfiintat,
                                 necunoscut, iar data incheierii contractului este "0000-00-00" si data desfiintarii
                                 contractului este "0000-00-00"<br/>
-                                *Clienti Stersi: clienti care sunt stersi.
                             </div>
                         </div>
                     </div>

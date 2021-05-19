@@ -163,7 +163,6 @@ class Depozite
         $result = myQuery($query);
 
         if ($result) {
-            debug($query);
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }
         return $ret;
