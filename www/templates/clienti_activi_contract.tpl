@@ -22,8 +22,8 @@
                                     <th style="text-align: center;">#</th>
                                     <th style="text-align: left;">CLIENTI</th>
                                     <th style="text-align: center;">LOCALITATE</th>
-                                    <th style="text-align: center;">STARE</th>
                                     <th style="text-align: center;">JUDET</th>
+                                    <th style="text-align: center;">STARE</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: center;">DATA INCHEIERE CONTRACT</th>
                                     <th style="text-align: center;">DATA DESFIINTARE</th>

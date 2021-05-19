@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:29:36
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:36:26
          compiled from "/var/www/html/fofoweb/www/templates/clienti_activi_contract.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:955641252609ebbbc9aaed4-16912106%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a39c986a309691655d63a3aeb067fb1d79f9a992' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_activi_contract.tpl',
-      1 => 1621430902,
+      1 => 1621431385,
       2 => 'file',
     ),
   ),
@@ -53,8 +53,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <th style="text-align: center;">#</th>
                                     <th style="text-align: left;">CLIENTI</th>
                                     <th style="text-align: center;">LOCALITATE</th>
-                                    <th style="text-align: center;">STARE</th>
                                     <th style="text-align: center;">JUDET</th>
+                                    <th style="text-align: center;">STARE</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: center;">DATA INCHEIERE CONTRACT</th>
                                     <th style="text-align: center;">DATA DESFIINTARE</th>
