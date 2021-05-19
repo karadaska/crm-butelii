@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 14:38:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 14:40:18
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1621424297,
+      1 => 1621424417,
       2 => 'file',
     ),
   ),
@@ -81,50 +81,65 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
                                                                 <tr>
                                                                     <th><?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 </th>
-                                                                    <th><a target="_blank" href="clienti_activi_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+                                                                    <th><a target="_blank"
+                                                                           href="clienti_activi_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
-">Activi : <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_start']->value);?>
+">Activi
+                                                                            : <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_start']->value);?>
 </a></th>
-                                                                    <th><a target="_blank" href="clienti_desfiintati_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+                                                                    <th><a target="_blank"
+                                                                           href="clienti_desfiintati_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
-">Incetare: <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_stop']->value);?>
-</a></th>
-                                                                    <th><a target="_blank" href="clienti_neasignati.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+">Desfiintati: <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_stop']->value);?>
+</a>
+                                                                    </th>
+                                                                    <th><a target="_blank"
+                                                                           href="clienti_neasignati.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 ">Neasignati: <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_stop']->value);?>
-</a></th>
-                                                                    <th><a target="_blank" href="clienti_stersi.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+</a>
+                                                                    </th>
+                                                                    <th><a target="_blank"
+                                                                           href="clienti_stersi.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 ">Stersi: <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_stop']->value);?>
-</a></th>
+</a>
+                                                                    </th>
                                                                 </tr>
                                                             <?php }} ?>
                                                         </table>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Fara data contract: <a href="clienti_activi_fara_data_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+                                                    <th>Fara data contract: <a
+                                                                href="clienti_activi_fara_data_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 "><?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_fara_data']->value);?>
-</a></th>
+</a>
+                                                    </th>
                                                 </tr>
                                                 </tbody>
                                             </table>
                                         </td>
                                     <?php } ?>
                                 </tr>
-                                <div>
-                                    *Clienti Activi: clienti care nu sunt stersi si au stare client: activ sau necunoscut. <br/>
-                                    *Clienti Desfiintati: clienti care nu sunt stersi si au stare client: desfiintat. <br/>
-                                    *Clienti Neasignati: clienti care nu sunt stersi si au stare client: activ, desfiintat, decunoscut. <br/>
-                                    *Clienti Fara Data Contract: clienti care nu sunt stersi si au stare client: activ, necunoscut, iar data incheierii contractului este "0000-00-00" si data desfiintarii contractului este "0000-00-00"<br/>
-                                    *Clienti Stersi: clienti care sunt stersi.
-                                </div>
-                        </div>
 
+                            </table>
+                            <div>
+                                *Clienti Activi: clienti care nu sunt stersi si au stare client: activ sau
+                                necunoscut. <br/>
+                                *Clienti Desfiintati: clienti care nu sunt stersi si au stare client: desfiintat.
+                                <br/>
+                                *Clienti Neasignati: clienti care nu sunt stersi si au stare client: activ,
+                                desfiintat, decunoscut. <br/>
+                                *Clienti Fara Data Contract: clienti care nu sunt stersi si au stare client: activ,
+                                necunoscut, iar data incheierii contractului este "0000-00-00" si data desfiintarii
+                                contractului este "0000-00-00"<br/>
+                                *Clienti Stersi: clienti care sunt stersi.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
     </section>
 </div>
 <?php }} ?>
