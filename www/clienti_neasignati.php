@@ -2,7 +2,7 @@
 $menu_curent = 9;
 require_once('etc/config.php');
 
-$smarty->assign('name', 'Pagina Clienti Activi');
+$smarty->assign('name', 'Clienti Neasignati');
 if (!Utilizatori::hasRights(1)) {
     web_redirect('/eroare_faradrept.php');
 }
