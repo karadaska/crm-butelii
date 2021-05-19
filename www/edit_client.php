@@ -78,12 +78,17 @@ if ($modifica) {
     $longitudine = getRequestParameter('longitudine', '');
 
     if ($modifica and $nume != '') {
+
+        if ($stare_id == 2) {
+            $data_stop = date('Y-m-d');
+        }
+
         $data_intrare = date('Y-m-d');
         $query = "UPDATE clienti SET nume = '" . $nume . "', judet_id = '" . $judet_id . "',
         localitate_id = '" . $localitate_id . "',adresa = '" . $adresa . "', stare_id ='" . $stare_id . "',
-        telefon = '" . $telefon . "',telefon_2 = '" . $telefon_2 . "',cnp = '" . $cnp . "',ci='" . $ci . "',contract = '" . $contract . "',
+        telefon = '" . $telefon . "', telefon_2 = '" . $telefon_2 . "',cnp = '" . $cnp . "', ci='" . $ci . "',contract = '" . $contract . "',
         titular = '" . $titular . "',rastel = '" . $rastel_id . "', culoare_id = '" . $culoare_id . "', 
-        data_start = '" . $data_start . "',data_stop = '" . $data_stop . "', latitudine = '" . $latitudine . "', longitudine = '" . $longitudine . "', exclus= '" . $exclus . "'
+        data_start = '" . $data_start . "', data_stop = '" . $data_stop . "', latitudine = '" . $latitudine . "', longitudine = '" . $longitudine . "', exclus= '" . $exclus . "'
         where id='" . $id . "'";
 
         myExec($query);

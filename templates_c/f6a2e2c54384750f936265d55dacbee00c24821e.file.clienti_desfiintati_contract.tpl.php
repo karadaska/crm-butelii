@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-17 14:09:28
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 12:45:38
          compiled from "/var/www/html/fofoweb/www/templates/clienti_desfiintati_contract.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:554778833609ec4c0948f05-69942715%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f6a2e2c54384750f936265d55dacbee00c24821e' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_desfiintati_contract.tpl',
-      1 => 1621249766,
+      1 => 1621253295,
       2 => 'file',
     ),
   ),
