@@ -43,7 +43,7 @@
                                                                            href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Activi
                                                                             : {count($clienti_depozit_start)}</a></th>
                                                                     <th><a target="_blank"
-                                                                           href="clienti_activi_infiintati.php?depozit_id={$depozit['depozit_id']}&an={$a}">Infiintati
+                                                                           href="clienti_infiintati.php?depozit_id={$depozit['depozit_id']}&an={$a}">Infiintati
                                                                             : {count($clienti_activi_infiintati)}</a></th>
                                                                     <th><a target="_blank"
                                                                            href="clienti_desfiintati_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Desfiintati: {count($clienti_depozit_stop)}</a>
@@ -72,6 +72,8 @@
                             </table>
                             <div>
                                 *Clienti Activi: clienti care nu sunt stersi si au stare client: activ sau
+                                necunoscut. <br/>
+                                *Clienti Infiintati: clienti care nu sunt stersi si au stare client: activ, desfiintat,
                                 necunoscut. <br/>
                                 *Clienti Desfiintati: clienti care nu sunt stersi si au stare client: desfiintat.
                                 <br/>

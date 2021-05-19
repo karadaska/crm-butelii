@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 15:31:43
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 15:37:59
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1621427502,
+      1 => 1621427878,
       2 => 'file',
     ),
   ),
@@ -90,7 +90,7 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
                                                                             : <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_start']->value);?>
 </a></th>
                                                                     <th><a target="_blank"
-                                                                           href="clienti_activi_infiintati.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+                                                                           href="clienti_infiintati.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 ">Infiintati
                                                                             : <?php echo count($_smarty_tpl->tpl_vars['clienti_activi_infiintati']->value);?>
@@ -133,6 +133,8 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
                             </table>
                             <div>
                                 *Clienti Activi: clienti care nu sunt stersi si au stare client: activ sau
+                                necunoscut. <br/>
+                                *Clienti Infiintati: clienti care nu sunt stersi si au stare client: activ, desfiintat,
                                 necunoscut. <br/>
                                 *Clienti Desfiintati: clienti care nu sunt stersi si au stare client: desfiintat.
                                 <br/>
