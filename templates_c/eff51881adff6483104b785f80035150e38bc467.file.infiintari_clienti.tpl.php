@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 15:52:38
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:13:01
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1621428758,
+      1 => 1621429980,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'title' => 0,
+    'clienti_neasignati' => 0,
     'lista_clienti' => 0,
     'depozit' => 0,
     'a' => 0,
-    'clienti_depozit_start' => 0,
+    'clienti_activi' => 0,
     'clienti_infiintati' => 0,
     'clienti_depozit_stop' => 0,
     'clienti_stersi' => 0,
@@ -50,7 +51,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                     <div class="widget">
                         <div class="widget-title">
                             <div class="icon"><i class="icon20 i-table"></i></div>
-                            <h4>Numar clienti by An</h4>
+                            <?php $_smarty_tpl->tpl_vars['clienti_neasignati'] = new Smarty_variable(Clienti::getClientiNeasignati(), null, 0);?>
+
+                            <h4>Clienti Neasignati: <a target="_blank"
+                                                       href="clienti_neasignati.php">
+                                    : <?php echo count($_smarty_tpl->tpl_vars['clienti_neasignati']->value);?>
+</a>
+                            </h4>
                         </div>
                         <div class="widget-content">
                             <table class="table table-bordered table-striped table-hover">
@@ -78,7 +85,7 @@ if ($_smarty_tpl->tpl_vars['a']->total > 0) {
 for ($_smarty_tpl->tpl_vars['a']->value = 2014, $_smarty_tpl->tpl_vars['a']->iteration = 1;$_smarty_tpl->tpl_vars['a']->iteration <= $_smarty_tpl->tpl_vars['a']->total;$_smarty_tpl->tpl_vars['a']->value += $_smarty_tpl->tpl_vars['a']->step, $_smarty_tpl->tpl_vars['a']->iteration++) {
 $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1;$_smarty_tpl->tpl_vars['a']->last = $_smarty_tpl->tpl_vars['a']->iteration == $_smarty_tpl->tpl_vars['a']->total;?>
                                                                 <?php $_smarty_tpl->tpl_vars['clienti_infiintati'] = new Smarty_variable(Depozite::getClientiActiviInfiintatiByDepozitIdAndDataStart($_smarty_tpl->tpl_vars['depozit']->value['depozit_id'],$_smarty_tpl->tpl_vars['a']->value), null, 0);?>
-                                                                <?php $_smarty_tpl->tpl_vars['clienti_depozit_start'] = new Smarty_variable(Depozite::getClientiByDepozitIdAndDataStart($_smarty_tpl->tpl_vars['depozit']->value['depozit_id'],$_smarty_tpl->tpl_vars['a']->value), null, 0);?>
+                                                                <?php $_smarty_tpl->tpl_vars['clienti_activi'] = new Smarty_variable(Depozite::getClientiByDepozitIdAndDataStart($_smarty_tpl->tpl_vars['depozit']->value['depozit_id'],$_smarty_tpl->tpl_vars['a']->value), null, 0);?>
                                                                 <?php $_smarty_tpl->tpl_vars['clienti_depozit_stop'] = new Smarty_variable(Depozite::getClientiByDepozitIdAndDataStop($_smarty_tpl->tpl_vars['depozit']->value['depozit_id'],$_smarty_tpl->tpl_vars['a']->value), null, 0);?>
                                                                 <?php $_smarty_tpl->tpl_vars['clienti_depozit_fara_data'] = new Smarty_variable(Depozite::getClientiByDepozitIdFaraDataContract($_smarty_tpl->tpl_vars['depozit']->value['depozit_id']), null, 0);?>
                                                                 <?php $_smarty_tpl->tpl_vars['clienti_stersi'] = new Smarty_variable(Clienti::getClientiStersiByDepozitidAndAn($_smarty_tpl->tpl_vars['depozit']->value['depozit_id'],$_smarty_tpl->tpl_vars['a']->value), null, 0);?>
@@ -89,7 +96,7 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
                                                                            href="clienti_activi_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 ">Activi
-                                                                            : <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_start']->value);?>
+                                                                            : <?php echo count($_smarty_tpl->tpl_vars['clienti_activi']->value);?>
 </a></th>
                                                                     <th><a target="_blank"
                                                                            href="clienti_infiintati.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
@@ -101,12 +108,6 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
                                                                            href="clienti_desfiintati_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 ">Desfiintati: <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_stop']->value);?>
-</a>
-                                                                    </th>
-                                                                    <th><a target="_blank"
-                                                                           href="clienti_neasignati.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
-&an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
-">Neasignati: <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_stop']->value);?>
 </a>
                                                                     </th>
                                                                     <th><a target="_blank"
@@ -126,7 +127,13 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
 "><?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_fara_data']->value);?>
 </a>
                                                     </th>
+
                                                 </tr>
+                                                
+                                                    
+                                                           
+                                                    
+                                                
                                                 </tbody>
                                             </table>
                                         </td>

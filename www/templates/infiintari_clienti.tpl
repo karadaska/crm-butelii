@@ -14,7 +14,12 @@
                     <div class="widget">
                         <div class="widget-title">
                             <div class="icon"><i class="icon20 i-table"></i></div>
-                            <h4>Numar clienti by An</h4>
+                            {assign var=clienti_neasignati value=Clienti::getClientiNeasignati()}
+
+                            <h4>Clienti Neasignati: <a target="_blank"
+                                                       href="clienti_neasignati.php">
+                                    : {count($clienti_neasignati)}</a>
+                            </h4>
                         </div>
                         <div class="widget-content">
                             <table class="table table-bordered table-striped table-hover">
@@ -34,7 +39,7 @@
                                                         <table class="table-bordered table">
                                                             {for $a=2014 to date("Y")}
                                                                 {assign var=clienti_infiintati value=Depozite::getClientiActiviInfiintatiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
-                                                                {assign var=clienti_depozit_start value=Depozite::getClientiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
+                                                                {assign var=clienti_activi value=Depozite::getClientiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_stop value=Depozite::getClientiByDepozitIdAndDataStop($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_fara_data value=Depozite::getClientiByDepozitIdFaraDataContract($depozit['depozit_id'])}
                                                                 {assign var=clienti_stersi value=Clienti::getClientiStersiByDepozitidAndAn($depozit['depozit_id'], $a)}
@@ -42,15 +47,12 @@
                                                                     <th>{$a}</th>
                                                                     <th><a target="_blank"
                                                                            href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Activi
-                                                                            : {count($clienti_depozit_start)}</a></th>
+                                                                            : {count($clienti_activi)}</a></th>
                                                                     <th><a target="_blank"
                                                                            href="clienti_infiintati.php?depozit_id={$depozit['depozit_id']}&an={$a}">Infiintati
                                                                             : {count($clienti_infiintati)}</a></th>
                                                                     <th><a target="_blank"
                                                                            href="clienti_desfiintati_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Desfiintati: {count($clienti_depozit_stop)}</a>
-                                                                    </th>
-                                                                    <th><a target="_blank"
-                                                                           href="clienti_neasignati.php?depozit_id={$depozit['depozit_id']}&an={$a}">Neasignati: {count($clienti_depozit_stop)}</a>
                                                                     </th>
                                                                     <th><a target="_blank"
                                                                            href="clienti_stersi.php?depozit_id={$depozit['depozit_id']}&an={$a}">Stersi: {count($clienti_stersi)}</a>
@@ -64,7 +66,13 @@
                                                     <th>Fara data contract: <a
                                                                 href="clienti_activi_fara_data_contract.php?depozit_id={$depozit['depozit_id']}">{count($clienti_depozit_fara_data)}</a>
                                                     </th>
+
                                                 </tr>
+                                                {*<tr>*}
+                                                    {*<th>Neasignati:<a target="_blank"*}
+                                                           {*href="clienti_neasignati.php?depozit_id={$depozit['depozit_id']}&an={$a}"> {count($clienti_depozit_stop)}</a>*}
+                                                    {*</th>*}
+                                                {*</tr>*}
                                                 </tbody>
                                             </table>
                                         </td>

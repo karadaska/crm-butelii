@@ -136,7 +136,6 @@ class Depozite
                 GROUP BY a.id
                 ";
         $result = myQuery($query);
-        debug($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }
