@@ -98,7 +98,7 @@ class Depozite
 
     }
 
-    public static function getClientiByDepozitIdAndDataStop($depozit_id, $data_start)
+    public static function getClientiByDepozitIdAndDataStop($depozit_id, $data_stop)
     {
         $ret = array();
         $query = "SELECT
@@ -109,12 +109,12 @@ class Depozite
                 LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id
                 WHERE a.stare_id = 2               
                 AND f.depozit_id = '" . $depozit_id . "'
-                AND a.data_stop LIKE ('%" . $data_start . "%')
+                AND a.data_stop LIKE ('%" . $data_stop . "%')
                 AND a.exclus = 0
                 GROUP BY a.id
                 ";
         $result = myQuery($query);
-
+        debug($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }
