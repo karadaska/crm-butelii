@@ -7,7 +7,7 @@ if (!Utilizatori::hasRights(1)) {
     web_redirect('/eroare_faradrept.php');
 }
 
-$smarty->assign('nume', 'Clienti activi cu data contract');
+$smarty->assign('nume', 'Clienti activi');
 $template_page = "clienti_activi_contract.tpl";
 
 $depozit_id= getRequestParameter('depozit_id', '');

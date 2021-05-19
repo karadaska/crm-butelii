@@ -33,7 +33,7 @@
 
                                                         <table class="table-bordered table">
                                                             {for $a=2014 to date("Y")}
-                                                                {assign var=clienti_activi_infiintati value=Depozite::getClientiActiviInfiintatiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
+                                                                {assign var=clienti_infiintati value=Depozite::getClientiActiviInfiintatiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_start value=Depozite::getClientiByDepozitIdAndDataStart($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_stop value=Depozite::getClientiByDepozitIdAndDataStop($depozit['depozit_id'], $a)}
                                                                 {assign var=clienti_depozit_fara_data value=Depozite::getClientiByDepozitIdFaraDataContract($depozit['depozit_id'])}
@@ -44,7 +44,7 @@
                                                                             : {count($clienti_depozit_start)}</a></th>
                                                                     <th><a target="_blank"
                                                                            href="clienti_infiintati.php?depozit_id={$depozit['depozit_id']}&an={$a}">Infiintati
-                                                                            : {count($clienti_activi_infiintati)}</a></th>
+                                                                            : {count($clienti_infiintati)}</a></th>
                                                                     <th><a target="_blank"
                                                                            href="clienti_desfiintati_contract.php?depozit_id={$depozit['depozit_id']}&an={$a}">Desfiintati: {count($clienti_depozit_stop)}</a>
                                                                     </th>
