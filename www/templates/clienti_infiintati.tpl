@@ -23,6 +23,7 @@
                                     <th style="text-align: left;">CLIENTI</th>
                                     <th style="text-align: center;">LOCALITATE</th>
                                     <th style="text-align: center;">JUDET</th>
+                                    <th style="text-align: center;">STARE</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: center;">DATA INCHEIERE CONTRACT</th>
                                     <th style="text-align: center;">DATA DESFIINTARE</th>
@@ -38,6 +39,7 @@
                                         </td>
                                         <td style="text-align: center;">{strtoupper($client['nume_localitate'])}</td>
                                         <td style="text-align: center;">{strtoupper($client['nume_judet'])}</td>
+                                        <td style="text-align: center;">{strtoupper($client['stare_client'])}</td>
                                         <td style="text-align: center;">{$client['telefon']} <br/>{$client['telefon_2']}</td>
                                         <td style="text-align: center;">{$client['data_contract']}</td>
                                         <td style="text-align: center;">{$client['data_desfiintare']}</td>

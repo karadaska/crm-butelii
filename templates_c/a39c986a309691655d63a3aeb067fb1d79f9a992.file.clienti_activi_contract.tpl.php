@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:23:08
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:29:36
          compiled from "/var/www/html/fofoweb/www/templates/clienti_activi_contract.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:955641252609ebbbc9aaed4-16912106%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a39c986a309691655d63a3aeb067fb1d79f9a992' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_activi_contract.tpl',
-      1 => 1621430587,
+      1 => 1621430902,
       2 => 'file',
     ),
   ),
@@ -53,6 +53,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <th style="text-align: center;">#</th>
                                     <th style="text-align: left;">CLIENTI</th>
                                     <th style="text-align: center;">LOCALITATE</th>
+                                    <th style="text-align: center;">STARE</th>
                                     <th style="text-align: center;">JUDET</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: center;">DATA INCHEIERE CONTRACT</th>
@@ -77,6 +78,8 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                         <td style="text-align: center;"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
 </td>
                                         <td style="text-align: center;"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_judet']);?>
+</td>
+                                        <td style="text-align: center;"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['stare_client']);?>
 </td>
                                         <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
  <br/><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon_2'];?>
