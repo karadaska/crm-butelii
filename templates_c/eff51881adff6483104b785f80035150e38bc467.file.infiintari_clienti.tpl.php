@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 12:43:52
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 14:19:23
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1621253295,
+      1 => 1621423062,
       2 => 'file',
     ),
   ),
@@ -83,11 +83,19 @@ $_smarty_tpl->tpl_vars['a']->first = $_smarty_tpl->tpl_vars['a']->iteration == 1
 </th>
                                                                     <th><a target="_blank" href="clienti_activi_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
-">Infiintare : <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_start']->value);?>
+">Activi : <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_start']->value);?>
 </a></th>
                                                                     <th><a target="_blank" href="clienti_desfiintati_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
 ">Incetare: <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_stop']->value);?>
+</a></th>
+                                                                    <th><a target="_blank" href="clienti_neasignati.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+&an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+">Neasignati: <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_stop']->value);?>
+</a></th>
+                                                                    <th><a target="_blank" href="clienti_stersi.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
+&an=<?php echo $_smarty_tpl->tpl_vars['a']->value;?>
+">Stersi: <?php echo count($_smarty_tpl->tpl_vars['clienti_depozit_stop']->value);?>
 </a></th>
                                                                 </tr>
                                                             <?php }} ?>

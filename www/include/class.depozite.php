@@ -82,8 +82,7 @@ class Depozite
                 clienti AS a
                 LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id
                 LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id 
-                WHERE
-                a.sters = 0 
+                WHERE a.sters = 0 and (a.stare_id  = 1 or stare_id = 3) 
                 AND f.depozit_id = '" . $depozit_id . "'
                 AND a.data_start LIKE ('%" . $data_start . "%')
                 AND a.exclus = 0
