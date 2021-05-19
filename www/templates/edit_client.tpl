@@ -181,14 +181,14 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;text-align: left">Data adaugarii</th>
+                                                <th style="vertical-align: middle;text-align: left">Incheiere contract</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" type="date" name="data_start"
                                                            value="{$client['data_start']}">
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;text-align: left">Data desfiintare</th>
+                                                <th style="vertical-align: middle;text-align: left">Desfiintare contract</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" type="date" name="data_stop"
                                                            value="{$client['data_stop']}">

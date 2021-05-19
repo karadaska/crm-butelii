@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 12:45:27
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 14:35:20
          compiled from "/var/www/html/fofoweb/www/templates/edit_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9248587256024dd62ec9005-45001616%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c8e39d11751ffe3f983d02d4a403b089b31553b2' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_client.tpl',
-      1 => 1621253295,
+      1 => 1621424118,
       2 => 'file',
     ),
   ),
@@ -287,7 +287,7 @@ $_smarty_tpl->tpl_vars['culoare']->_loop = true;
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;text-align: left">Data adaugarii</th>
+                                                <th style="vertical-align: middle;text-align: left">Incheiere contract</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" type="date" name="data_start"
                                                            value="<?php echo $_smarty_tpl->tpl_vars['client']->value['data_start'];?>
@@ -295,7 +295,7 @@ $_smarty_tpl->tpl_vars['culoare']->_loop = true;
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;text-align: left">Data desfiintare</th>
+                                                <th style="vertical-align: middle;text-align: left">Desfiintare contract</th>
                                                 <th style="text-align: left;">
                                                     <input autocomplete="off" type="date" name="data_stop"
                                                            value="<?php echo $_smarty_tpl->tpl_vars['client']->value['data_stop'];?>

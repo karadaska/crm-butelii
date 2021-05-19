@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-17 14:09:36
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 14:28:22
          compiled from "/var/www/html/fofoweb/www/templates/clienti_activi_fara_data_contract.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:640465383609ec894471b97-65134349%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5ddd8cd9d2e82b75512397782e81f673fe325b2a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_activi_fara_data_contract.tpl',
-      1 => 1621249715,
+      1 => 1621253295,
       2 => 'file',
     ),
   ),
