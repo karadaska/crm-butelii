@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 15:38:00
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:26:05
          compiled from "/var/www/html/fofoweb/www/templates/clienti_infiintati.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:35482443060a506a8a53f34-30116660%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5103b57598a851448aa8183c7c9c17e4a6eb0954' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_infiintati.tpl',
-      1 => 1621253295,
+      1 => 1621430706,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60a506a8aacbc1_90408861',
   'variables' => 
   array (
     'title' => 0,
@@ -23,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'client' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60a506a8aacbc1_90408861',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60a506a8aacbc1_90408861')) {function content_60a506a8aacbc1_90408861($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Clienti Activi <a href="infiintari_clienti.php"
+                    <h1><i class="icon20 i-menu-6"></i> Clienti INFIINTATI <a href="infiintari_clienti.php"
                                                                    class="btn btn-mini btn-warning">Inapoi</a></h1>
                 </div>
             </div>
@@ -55,7 +55,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <th style="text-align: center;">LOCALITATE</th>
                                     <th style="text-align: center;">JUDET</th>
                                     <th style="text-align: center;">TELEFON</th>
-                                    <th style="text-align: center;">DATA INFIINTARE</th>
+                                    <th style="text-align: center;">DATA INCHEIERE CONTRACT</th>
+                                    <th style="text-align: center;">DATA DESFIINTARE</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -81,6 +82,8 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
  <br/><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon_2'];?>
 </td>
                                         <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['data_contract'];?>
+</td>
+                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['data_desfiintare'];?>
 </td>
                                     </tr>
                                 <?php } ?>
