@@ -88,7 +88,7 @@
                                 <br/>
                                 *Clienti Neasignati: clienti care nu sunt stersi si au stare client: activ,
                                 desfiintat, decunoscut. <br/>
-                                *Clienti Fara Data Contract: clienti care nu sunt stersi si au stare client: activ,
+                                *Clienti Fara Data Contract: clienti care nu sunt stersi si au stare client: activ, desfiintat,
                                 necunoscut, iar data incheierii contractului este "0000-00-00" si data desfiintarii
                                 contractului este "0000-00-00"<br/>
                                 *Clienti Stersi: clienti care sunt stersi.
