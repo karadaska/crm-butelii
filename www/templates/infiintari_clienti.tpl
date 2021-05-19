@@ -18,7 +18,7 @@
 
                             <h4>Clienti Neasignati: <a target="_blank"
                                                        href="clienti_neasignati.php">
-                                    : {count($clienti_neasignati)}</a>
+                                     {count($clienti_neasignati)}</a>
                             </h4>
                         </div>
                         <div class="widget-content">

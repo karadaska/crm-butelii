@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:13:01
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:14:55
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1621429980,
+      1 => 1621430094,
       2 => 'file',
     ),
   ),
@@ -55,7 +55,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
                             <h4>Clienti Neasignati: <a target="_blank"
                                                        href="clienti_neasignati.php">
-                                    : <?php echo count($_smarty_tpl->tpl_vars['clienti_neasignati']->value);?>
+                                     <?php echo count($_smarty_tpl->tpl_vars['clienti_neasignati']->value);?>
 </a>
                             </h4>
                         </div>
