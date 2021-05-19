@@ -7,7 +7,7 @@
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Clienti Activi <a href="infiintari_clienti.php"
+                    <h1><i class="icon20 i-menu-6"></i> Clienti Desfiintati <a href="infiintari_clienti.php"
                                                                           class="btn btn-mini btn-warning">Inapoi</a></h1>
                 </div>
             </div>
@@ -23,6 +23,7 @@
                                     <th style="text-align: left;">CLIENTI</th>
                                     <th style="text-align: center;">LOCALITATE</th>
                                     <th style="text-align: center;">JUDET</th>
+                                    <th style="text-align: center;">STARE</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: center;">DATA INFIINTARE</th>
                                     <th style="text-align: center;">DATA DESFIINTARE</th>
@@ -38,6 +39,7 @@
                                         </td>
                                         <td style="text-align: center;">{strtoupper($client['nume_localitate'])}</td>
                                         <td style="text-align: center;">{strtoupper($client['nume_judet'])}</td>
+                                        <td style="text-align: center;">{$client['stare_client']}</td>
                                         <td style="text-align: center;">{$client['telefon']} <br/>{$client['telefon_2']}</td>
                                         <td style="text-align: center;">{$client['data_contract']}</td>
                                         <td style="text-align: center;">{$client['data_finish_contract']}</td>

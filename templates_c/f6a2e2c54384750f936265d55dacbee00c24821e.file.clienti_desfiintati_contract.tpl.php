@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 12:45:38
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:35:11
          compiled from "/var/www/html/fofoweb/www/templates/clienti_desfiintati_contract.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:554778833609ec4c0948f05-69942715%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f6a2e2c54384750f936265d55dacbee00c24821e' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_desfiintati_contract.tpl',
-      1 => 1621253295,
+      1 => 1621431310,
       2 => 'file',
     ),
   ),
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Clienti Activi <a href="infiintari_clienti.php"
+                    <h1><i class="icon20 i-menu-6"></i> Clienti Desfiintati <a href="infiintari_clienti.php"
                                                                           class="btn btn-mini btn-warning">Inapoi</a></h1>
                 </div>
             </div>
@@ -54,6 +54,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <th style="text-align: left;">CLIENTI</th>
                                     <th style="text-align: center;">LOCALITATE</th>
                                     <th style="text-align: center;">JUDET</th>
+                                    <th style="text-align: center;">STARE</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: center;">DATA INFIINTARE</th>
                                     <th style="text-align: center;">DATA DESFIINTARE</th>
@@ -77,6 +78,8 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                         <td style="text-align: center;"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_localitate']);?>
 </td>
                                         <td style="text-align: center;"><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume_judet']);?>
+</td>
+                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['stare_client'];?>
 </td>
                                         <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
  <br/><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon_2'];?>
