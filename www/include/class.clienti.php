@@ -2125,7 +2125,7 @@ class Clienti
         return $ret;
     }
 
-    public static function getClientiActiviInfiintatiByDepozitidAndAn($depozit_id, $an)
+    public static function getClientiInfiintatiByDepozitidAndAn($depozit_id, $an)
     {
         $ret = array();
         $query = "SELECT

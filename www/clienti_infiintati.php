@@ -13,7 +13,7 @@ $template_page = "clienti_infiintati.tpl";
 $depozit_id= getRequestParameter('depozit_id', '');
 $an= getRequestParameter('an', '');
 
-$lista_clienti = Clienti::getClientiActiviInfiintatiByDepozitidAndAn($depozit_id, $an);
+$lista_clienti = Clienti::getClientiInfiintatiByDepozitidAndAn($depozit_id, $an);
 $smarty->assign('lista_clienti', $lista_clienti);
 
 $smarty->display($template_page);
