@@ -6,7 +6,7 @@ if (!Utilizatori::hasRights(1, 4)) {
 }
 $data_start = date('Y-m-d');
 
-$smarty->assign('name', 'Numar Clienti By Perioada');
+$smarty->assign('name', 'Detalii clienti');
 $template_page = "infiintari_clienti.tpl";
 
 $pret_input= getRequestParameter('pret_input', $pret_input);
