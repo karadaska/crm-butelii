@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-19 16:30:45
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-21 14:26:40
          compiled from "/var/www/html/fofoweb/www/templates/clienti_infiintati.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:35482443060a506a8a53f34-30116660%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5103b57598a851448aa8183c7c9c17e4a6eb0954' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_infiintati.tpl',
-      1 => 1621431027,
+      1 => 1621538041,
       2 => 'file',
     ),
   ),

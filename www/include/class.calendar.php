@@ -49,6 +49,7 @@ class Calendar
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
             foreach ($a as $item) {
                 $ret[$item['an']] = array(
+                    'an'=>$item['an'],
                     'activi' => Clienti::getClientiByDepozitIdAndAn($depozit_id, $item['an']),
                     'infiintati' => Clienti::getClientiActiviInfiintatiByDepozitIdAndAn($depozit_id, $item['an']),
                     'desfiintati' => Clienti::getClientiDesfiintatiByDepozitidAndAn($depozit_id, $item['an']),

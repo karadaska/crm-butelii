@@ -67,17 +67,6 @@ $data_stop = '2021-05-31';
 
 //CLIENTI -----------------------------------------------------------
 
-//$b = Test::getProduseVanduteByTraseuId(26, array(
-//    'data_start' =>$data_start,
-//    'data_stop' =>$data_stop
-//));
-//
-//$b = Test::getRaportLivrariClienti(26, array(
-//    'data_start' =>$data_start,
-//    'data_stop' =>$data_stop
-//));
-
-//$b = Depozite::getClientiByDepozitIdAndDataStop(2, '%2018%');
-
-$b = Test::getCountClientiByAnAndDepozitId2();
+//$b = Test::getCountClientiByAnAndDepozitIdNew();
+$b = Calendar::getAniNew(array('depozit_id' => 1));
 echo json_encode($b);

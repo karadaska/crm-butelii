@@ -4,22 +4,38 @@ class Test
 {
 
 
-    public static function getCountClientiByAnAndDepozitId2()
+//    public static function getCountClientiByAnAndDepozitId2()
+//    {
+//        $ret = array();
+//        $query = "SELECT * from depozite";
+//        $result = myQuery($query);
+//
+//        $ret['depozite'] = array();
+//        $a = $result->fetchAll(PDO::FETCH_ASSOC);
+//        foreach ($a as $item) {
+//            $ret['depozite'][$item['id']] = array(
+//                'depozit_id' => $item['id'],
+//                'nume' => $item['nume'],
+//                'ani' => Calendar::getAniNew(array(
+//                    'depozit_id' =>$item['id']
+//                ))
+//            );
+//        }
+//
+//        return $ret;
+//    }
+
+    public static function getCountClientiByAnAndDepozitIdNew()
     {
         $ret = array();
         $query = "SELECT * from depozite";
         $result = myQuery($query);
 
-        $ret['depozite'] = array();
-        $ret['depozite']['neasignati'] = Clienti::getClientiNeasignati();
         $a = $result->fetchAll(PDO::FETCH_ASSOC);
         foreach ($a as $item) {
-            $ret['depozite'][$item['id']] = array(
+            $ret[$item['id']] = array(
                 'depozit_id' => $item['id'],
                 'nume' => $item['nume'],
-                'ani' => Calendar::getAniNew(array(
-                    'depozit_id' =>$item['id']
-                ))
             );
         }
 

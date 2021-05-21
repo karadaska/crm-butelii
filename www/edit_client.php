@@ -79,12 +79,6 @@ if ($modifica) {
 
     if ($modifica and $nume != '') {
 
-//        if ($stare_id == 2) {
-//            $data_stop = date('Y-m-d');
-//        } else {
-//            $data_stop = $data_stop;
-//        }
-
         $data_intrare = date('Y-m-d');
         $query = "UPDATE clienti SET nume = '" . $nume . "', judet_id = '" . $judet_id . "',
         localitate_id = '" . $localitate_id . "',adresa = '" . $adresa . "', stare_id ='" . $stare_id . "',
