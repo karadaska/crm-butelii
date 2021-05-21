@@ -27,11 +27,11 @@ $smarty->assign('lista_depozite', $lista_depozite);
 //$lista_depozite = Test::getCountClientiByAnAndDepozitId2();
 //$smarty->assign('lista_depozite', $lista_depozite);
 
-$lista_depozite = Test::getCountClientiByAnAndDepozitIdNew();
+$lista_depozite = Depozite::getDepoziteInfiintariClienti();
 $smarty->assign('lista_depozite', $lista_depozite);
 
 foreach ($lista_depozite as $depozit) {
-    $lista_ani = Calendar::getAniNew(array(
+    $lista_ani = Calendar::getAniNewInfiintariClienti(array(
         'depozit_id' => $depozit['depozit_id']
     ));
     $smarty->assign('lista_ani_' . $depozit['depozit_id'], $lista_ani);

@@ -3,6 +3,23 @@
 class Depozite
 {
 
+    public static function getDepoziteInfiintariClienti()
+    {
+        $ret = array();
+        $query = "SELECT * from depozite";
+        $result = myQuery($query);
+
+        $a = $result->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($a as $item) {
+            $ret[$item['id']] = array(
+                'depozit_id' => $item['id'],
+                'nume' => $item['nume'],
+            );
+        }
+
+        return $ret;
+    }
+
     public static function getDepozite()
     {
         $ret = array();

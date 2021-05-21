@@ -35,7 +35,7 @@ class Calendar
         return $ret;
     }
 
-    public static function getAniNew($opts = array())
+    public static function getAniNewInfiintariClienti($opts = array())
     {
         $depozit_id = isset($opts['depozit_id']) ? $opts['depozit_id'] : 0;
         $ret = array();
