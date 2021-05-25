@@ -63,7 +63,8 @@ class Calendar
                 } else {
                     $num += count($ret[$item['an']]['infiintati']) - count($ret[$item['an']]['desfiintati']);
                 }
-                $ret[$item['an']]['total'] = $num;
+
+                $ret[$item['an']]['total_clienti_an'] = $num;
                 $i++;
             }
 

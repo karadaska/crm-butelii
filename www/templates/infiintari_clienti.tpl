@@ -39,7 +39,7 @@
                                                         <td style="text-align: center;">Inca Activi: <a href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$ani['an']}">{count($ani['activi'])}</td>
                                                         <td style="text-align: center;">Infiintati: <a href="clienti_infiintati.php?depozit_id={$depozit['depozit_id']}&an={$ani['an']}">{count($ani['infiintati'])}</td>
                                                         <td style="text-align: center;">Desfiintati: <a href="clienti_desfiintati_contract.php?depozit_id={$depozit['depozit_id']}&an={$ani['an']}">{count($ani['desfiintati'])}</td>
-                                                        <td style="text-align: center;">Total: {$ani['total']}</td>
+                                                        <td style="text-align: center;">Total: {$ani['total_clienti_an']}</td>
                                                     </tr>
                                                 {/foreach}
                                                 <tr>

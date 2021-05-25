@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-25 15:25:42
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-25 15:32:13
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1621945477,
+      1 => 1621945930,
       2 => 'file',
     ),
   ),
@@ -91,7 +91,7 @@ $_smarty_tpl->tpl_vars['ani']->_loop = true;
 &an=<?php echo $_smarty_tpl->tpl_vars['ani']->value['an'];?>
 "><?php echo count($_smarty_tpl->tpl_vars['ani']->value['desfiintati']);?>
 </td>
-                                                        <td style="text-align: center;">Total: <?php echo $_smarty_tpl->tpl_vars['ani']->value['total'];?>
+                                                        <td style="text-align: center;">Total: <?php echo $_smarty_tpl->tpl_vars['ani']->value['total_clienti_an'];?>
 </td>
                                                     </tr>
                                                 <?php } ?>
