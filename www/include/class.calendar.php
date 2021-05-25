@@ -47,15 +47,26 @@ class Calendar
 
         if ($result) {
             $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            $i = 0;
+            $num = 0;
             foreach ($a as $item) {
                 $ret[$item['an']] = array(
-                    'an'=>$item['an'],
+                    'an' => $item['an'],
                     'activi' => Clienti::getClientiByDepozitIdAndAn($depozit_id, $item['an']),
                     'infiintati' => Clienti::getClientiActiviInfiintatiByDepozitIdAndAn($depozit_id, $item['an']),
                     'desfiintati' => Clienti::getClientiDesfiintatiByDepozitidAndAn($depozit_id, $item['an']),
-                    'fara_data_contract'=>Clienti::getClientiByDepozitIdFaraDataContract($depozit_id)
+                    'fara_data_contract' => Clienti::getClientiByDepozitIdFaraDataContract($depozit_id)
                 );
+
+                if ($i == 0) {
+                    $num = count($ret[$item['an']]['activi']);
+                } else {
+                    $num += count($ret[$item['an']]['infiintati']) - count($ret[$item['an']]['desfiintati']);
+                }
+                $ret[$item['an']]['total'] = $num;
+                $i++;
             }
+
         }
 
         return $ret;

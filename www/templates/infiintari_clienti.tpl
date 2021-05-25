@@ -36,7 +36,7 @@
                                                 {foreach from=$lista_ani{'_'|cat:$depozit['depozit_id']} item =ani}
                                                     <tr>
                                                         <td style="vertical-align: middle;width: 80px;text-align: center;font-weight: 600;">{$ani['an']}</td>
-                                                        <td style="text-align: center;">Activi: <a href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$ani['an']}">{count($ani['activi'])}</td>
+                                                        <td style="text-align: center;">Inca Activi: <a href="clienti_activi_contract.php?depozit_id={$depozit['depozit_id']}&an={$ani['an']}">{count($ani['activi'])}</td>
                                                         <td style="text-align: center;">Infiintati: <a href="clienti_infiintati.php?depozit_id={$depozit['depozit_id']}&an={$ani['an']}">{count($ani['infiintati'])}</td>
                                                         <td style="text-align: center;">Desfiintati: <a href="clienti_desfiintati_contract.php?depozit_id={$depozit['depozit_id']}&an={$ani['an']}">{count($ani['desfiintati'])}</td>
                                                     </tr>

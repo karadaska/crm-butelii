@@ -68,5 +68,5 @@ $data_stop = '2021-05-31';
 //CLIENTI -----------------------------------------------------------
 
 //$b = Test::getCountClientiByAnAndDepozitIdNew();
-$b = Calendar::getAniNewInfiintariClienti(array('depozit_id' => 1));
+$b = Calendar::getAniNewInfiintariClienti(array('depozit_id' => 2));
 echo json_encode($b);
