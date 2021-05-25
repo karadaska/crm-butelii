@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-25 14:57:57
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-25 15:25:42
          compiled from "/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115175099609e311f9dccb8-88234380%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'eff51881adff6483104b785f80035150e38bc467' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/infiintari_clienti.tpl',
-      1 => 1621943875,
+      1 => 1621945477,
       2 => 'file',
     ),
   ),
@@ -55,7 +55,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             </h4>
                         </div>
                         <div class="widget-content">
-                            <table class="table table-bordered table-striped table-hover">
+                            <table class="table table-bordered table-striped">
                                 <tr>
                                     <?php  $_smarty_tpl->tpl_vars['depozit'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['depozit']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_depozite']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -66,7 +66,7 @@ $_smarty_tpl->tpl_vars['depozit']->_loop = true;
                                             <table class="table table-bordered table-striped table-hover">
                                                 <thead>
                                                 <tr>
-                                                    <th colspan="4"><?php echo $_smarty_tpl->tpl_vars['depozit']->value['nume'];?>
+                                                    <th colspan="5"><?php echo $_smarty_tpl->tpl_vars['depozit']->value['nume'];?>
 </th>
                                                 </tr>
                                                 </thead>
@@ -91,50 +91,53 @@ $_smarty_tpl->tpl_vars['ani']->_loop = true;
 &an=<?php echo $_smarty_tpl->tpl_vars['ani']->value['an'];?>
 "><?php echo count($_smarty_tpl->tpl_vars['ani']->value['desfiintati']);?>
 </td>
+                                                        <td style="text-align: center;">Total: <?php echo $_smarty_tpl->tpl_vars['ani']->value['total'];?>
+</td>
                                                     </tr>
-
                                                 <?php } ?>
                                                 <tr>
                                                     <td style="text-align: center;" colspan="4">Fara data contract: <a href="clienti_activi_fara_data_contract.php?depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 "><?php echo count($_smarty_tpl->tpl_vars['ani']->value['fara_data_contract']);?>
 </td>
                                                 </tr>
-                                                    
-
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-                                                    
-
-                                                    
                                                 </tbody>
                                             </table>
                                         </td>
                                     <?php } ?>
                                 </tr>
                             </table>
+
+
+                            
+                                
+                                    
+                                        
+                                            
+                                                
+                                                
+                                                    
+                                                
+                                                
+                                                
+                                                
+                                                    
+                                                        
+                                                        
+                                                        
+                                                        
+                                                    
+
+                                                
+                                                
+                                                    
+                                                
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+
                             <div>
                                 *Clienti Activi: clienti care nu sunt stersi si au stare client: activ sau
                                 necunoscut. <br/>
@@ -150,76 +153,6 @@ $_smarty_tpl->tpl_vars['ani']->_loop = true;
                                 contractului este "0000-00-00"<br/>
                             </div>
                         </div>
-
-
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
                     </div>
                 </div>
             </div>
