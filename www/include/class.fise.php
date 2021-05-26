@@ -300,11 +300,12 @@ class Fise
 
     public static function StergeProdusExtra($tip_produs_id, $client_id, $fisa_id)
     {
-        $query = "UPDATE detalii_fisa_extra_intoarcere_produse SET 
+        $query = "UPDATE detalii_fisa_intoarcere_produse SET 
                                               sters = 1
                                               WHERE client_id= '" . $client_id . "'
                                               AND fisa_id = '" . $fisa_id . "'
                                               AND tip_produs_id = '" . $tip_produs_id . "'
+                                              AND produs_extra = 1 
                                               ";
         myExec($query);
 
