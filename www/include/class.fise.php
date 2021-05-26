@@ -285,12 +285,13 @@ class Fise
         $cantitate = getRequestParameter('cantitate', 0);
         $pret = getRequestParameter('pret', 0);
 
-        $query = "UPDATE detalii_fisa_extra_intoarcere_produse SET 
+        $query = "UPDATE detalii_fisa_intoarcere_produse SET 
                                               cantitate = '" . $cantitate . "',
                                               pret = '" . $pret . "'
                                               WHERE client_id= '" . $client_id . "'
                                               AND fisa_id = '" . $fisa_id . "'
-                                              AND tip_produs_id = '" . $tip_produs_id . "'                                             
+                                              AND tip_produs_id = '" . $tip_produs_id . "' 
+                                              AND produs_extra = 1                                            
                                                 ";
         myExec($query);
 
