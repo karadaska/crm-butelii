@@ -67,4 +67,6 @@ $data_stop = '2021-05-31';
 
 //CLIENTI -----------------------------------------------------------
 
+$b = Fise::getProduseExtraByFisaIdAndClientId(1818, 2612);
+
 echo json_encode($b);

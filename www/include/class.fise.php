@@ -102,14 +102,14 @@ class Fise
     public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
     {
         $ret = array();
-        $query = "SELECT a.tip_produs_id, b.tip, c.nume as stare, a.cantitate, a.stare_produs, d.nume as nume_client, pret
-                  FROM detalii_fisa_extra_intoarcere_produse as a
+        $query = "SELECT a.tip_produs_id, b.tip, a.cantitate, pret
+                  FROM detalii_fisa_intoarcere_produse as a
                   LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
-                  LEFT JOIN stare_produs as c on a.stare_produs = c.id
                   LEFT JOIN clienti as d on a.client_id = d.id
                   WHERE a.fisa_id = '" . $fisa_id . "'
                   AND a.client_id = '" . $client_id . "'
                   AND a.sters = 0
+                  AND a.produs_extra = 1
                   ORDER BY b.id ASC
                   ";
 
@@ -119,60 +119,17 @@ class Fise
             foreach ($a as $item) {
                 if (!isset($ret[$item['tip_produs_id']])) {
                     $ret[$item['tip_produs_id']] = array(
-                        'nume_client' => $item['nume_client'],
                         'nume_produs' => $item['tip'],
                         'tip_produs_id' => $item['tip_produs_id'],
                         'cantitate' => $item['cantitate'],
-                        'pret' => $item['pret'],
-                        'pline' => 0,
-                        'goale' => 0,
+                        'pret' => $item['pret']
                     );
-                }
-                if ($item['stare_produs'] == 1) {
-                    $ret[$item['tip_produs_id']]['pline'] = $item['cantitate'];
-                } else if ($item['stare_produs'] == 2) {
-                    $ret[$item['tip_produs_id']]['goale'] = $item['cantitate'];
                 }
             }
         }
         return $ret;
     }
 
-//    public static function AdaugaProduseExtraFisa($fisa_id, $client_id)
-//    {
-//        $tip_produs_id = getRequestParameter('tip_produs_id', '');
-//        $pline = 1;
-//        $goale = 2;
-//        $cantitate = getRequestParameter('cantitate', '');
-//        $pret = getRequestParameter('pret', '');
-//
-//        $query = "SELECT id from detalii_fisa_extra_intoarcere_produse
-//                  WHERE fisa_id = '" . $fisa_id . "'
-//                  AND client_id = '" . $client_id . "'
-//                  AND tip_produs_id = '" . $tip_produs_id . "'
-//                  AND stare_produs = '" . $pline . "'
-//                  AND sters = 0
-//                  ";
-//        $result = myQuery($query);
-//
-//        if ($result->rowCount() == 0) {
-//            if ($tip_produs_id > 0) {
-//                $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate, pret)
-//                     values
-//                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $pline . "','" . $cantitate . "','" . $pret . "')";
-//                myExec($query);
-//                $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate, pret)
-//                     values
-//                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $goale . "','" . $cantitate . "','" . $pret . "')";
-//                myExec($query);
-//            }
-//        } else {
-//            header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
-//        }
-//
-//        header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
-//
-//    }
 
     public static function AdaugaProduseExtraFisa($fisa_id, $client_id)
     {
@@ -616,24 +573,10 @@ class Fise
                     $ret[$item['tip_produs_id']] = array(
                         'tip_produs_id' => $item['tip_produs_id'],
                         'nume_produs' => $item['nume_produs'],
-//                        'pline' => 0,
                     );
                 }
                 if ($item['cantitate'] > 0) {
                     $ret[$item['tip_produs_id']]['pline'] += $item['cantitate'];
-//                    $ret['total_vandute'] += $item['cantitate'];
-
-                    if ($item['tip_produs_id'] == 1) {
-//                        $ret['bg_11'] += $item['cantitate'];
-                    }
-
-                    if ($item['tip_produs_id'] == 3) {
-//                        $ret['ar8'] += $item['cantitate'];
-                    }
-
-                    if ($item['tip_produs_id'] == 4) {
-//                        $ret['ar9'] += $item['cantitate'];
-                    }
 
                 }
 
@@ -747,3 +690,79 @@ class Fise
 //        }
 //        return $ret;
 //    }
+
+
+//    public static function AdaugaProduseExtraFisa($fisa_id, $client_id)
+//    {
+//        $tip_produs_id = getRequestParameter('tip_produs_id', '');
+//        $pline = 1;
+//        $goale = 2;
+//        $cantitate = getRequestParameter('cantitate', '');
+//        $pret = getRequestParameter('pret', '');
+//
+//        $query = "SELECT id from detalii_fisa_extra_intoarcere_produse
+//                  WHERE fisa_id = '" . $fisa_id . "'
+//                  AND client_id = '" . $client_id . "'
+//                  AND tip_produs_id = '" . $tip_produs_id . "'
+//                  AND stare_produs = '" . $pline . "'
+//                  AND sters = 0
+//                  ";
+//        $result = myQuery($query);
+//
+//        if ($result->rowCount() == 0) {
+//            if ($tip_produs_id > 0) {
+//                $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate, pret)
+//                     values
+//                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $pline . "','" . $cantitate . "','" . $pret . "')";
+//                myExec($query);
+//                $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate, pret)
+//                     values
+//                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $goale . "','" . $cantitate . "','" . $pret . "')";
+//                myExec($query);
+//            }
+//        } else {
+//            header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
+//        }
+//
+//        header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
+//
+//    }
+
+//public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
+//{
+//    $ret = array();
+//    $query = "SELECT a.tip_produs_id, b.tip, c.nume as stare, a.cantitate, a.stare_produs, d.nume as nume_client, pret
+//                  FROM detalii_fisa_extra_intoarcere_produse as a
+//                  LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+//                  LEFT JOIN stare_produs as c on a.stare_produs = c.id
+//                  LEFT JOIN clienti as d on a.client_id = d.id
+//                  WHERE a.fisa_id = '" . $fisa_id . "'
+//                  AND a.client_id = '" . $client_id . "'
+//                  AND a.sters = 0
+//                  ORDER BY b.id ASC
+//                  ";
+//
+//    $result = myQuery($query);
+//    if ($result) {
+//        $a = $result->fetchAll(PDO::FETCH_ASSOC);
+//        foreach ($a as $item) {
+//            if (!isset($ret[$item['tip_produs_id']])) {
+//                $ret[$item['tip_produs_id']] = array(
+//                    'nume_client' => $item['nume_client'],
+//                    'nume_produs' => $item['tip'],
+//                    'tip_produs_id' => $item['tip_produs_id'],
+//                    'cantitate' => $item['cantitate'],
+//                    'pret' => $item['pret'],
+//                    'pline' => 0,
+//                    'goale' => 0,
+//                );
+//            }
+//            if ($item['stare_produs'] == 1) {
+//                $ret[$item['tip_produs_id']]['pline'] = $item['cantitate'];
+//            } else if ($item['stare_produs'] == 2) {
+//                $ret[$item['tip_produs_id']]['goale'] = $item['cantitate'];
+//            }
+//        }
+//    }
+//    return $ret;
+//}
