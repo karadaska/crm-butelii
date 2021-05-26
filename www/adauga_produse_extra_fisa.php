@@ -9,7 +9,6 @@ $adauga = getRequestParameter('adauga_extra', '');
 $sterge = getRequestParameter('sterge', '');
 $update = getRequestParameter('update', '');
 
-
 $fisa_id = getRequestParameter('fisa_id', 0);
 $smarty->assign('fisa_id', $fisa_id);
 

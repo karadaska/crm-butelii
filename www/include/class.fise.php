@@ -177,7 +177,9 @@ class Fise
     public static function AdaugaProduseExtraFisa($fisa_id, $client_id)
     {
         $tip_produs_id = getRequestParameter('tip_produs_id', '');
+        $fisa_id = getRequestParameter('fisa_id', '');
 
+        $data_fisa = Fise::getDetaliiFisaDinEditFisaTraseu($fisa_id);
         $cantitate = getRequestParameter('cantitate', '');
         $pret = getRequestParameter('pret', '');
 
@@ -193,9 +195,9 @@ class Fise
         if ($result->rowCount() == 0) {
             if ($tip_produs_id > 0) {
                 $produs_extra = 1;
-                $query = "INSERT INTO detalii_fisa_intoarcere_produse(fisa_id, client_id, tip_produs_id, cantitate, pret, produs_extra)
+                $query = "INSERT INTO detalii_fisa_intoarcere_produse(fisa_id, client_id, tip_produs_id, cantitate, pret, data_intrare, produs_extra)
                      values
-                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $cantitate . "','" . $pret . "','" . $produs_extra . "')";
+                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $cantitate . "','" . $pret . "','" . $data_fisa['data_intrare'] . "','" . $produs_extra . "')";
                 myExec($query);
             }
         } else {
