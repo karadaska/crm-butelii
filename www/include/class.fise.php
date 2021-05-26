@@ -292,6 +292,7 @@ class Fise
                                               AND fisa_id = '" . $fisa_id . "'
                                               AND tip_produs_id = '" . $tip_produs_id . "' 
                                               AND produs_extra = 1                                            
+                                              AND sters = 0                                            
                                                 ";
         myExec($query);
 
