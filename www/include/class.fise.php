@@ -138,32 +138,64 @@ class Fise
         return $ret;
     }
 
+//    public static function AdaugaProduseExtraFisa($fisa_id, $client_id)
+//    {
+//        $tip_produs_id = getRequestParameter('tip_produs_id', '');
+//        $pline = 1;
+//        $goale = 2;
+//        $cantitate = getRequestParameter('cantitate', '');
+//        $pret = getRequestParameter('pret', '');
+//
+//        $query = "SELECT id from detalii_fisa_extra_intoarcere_produse
+//                  WHERE fisa_id = '" . $fisa_id . "'
+//                  AND client_id = '" . $client_id . "'
+//                  AND tip_produs_id = '" . $tip_produs_id . "'
+//                  AND stare_produs = '" . $pline . "'
+//                  AND sters = 0
+//                  ";
+//        $result = myQuery($query);
+//
+//        if ($result->rowCount() == 0) {
+//            if ($tip_produs_id > 0) {
+//                $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate, pret)
+//                     values
+//                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $pline . "','" . $cantitate . "','" . $pret . "')";
+//                myExec($query);
+//                $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate, pret)
+//                     values
+//                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $goale . "','" . $cantitate . "','" . $pret . "')";
+//                myExec($query);
+//            }
+//        } else {
+//            header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
+//        }
+//
+//        header('Location: /adauga_produse_extra_fisa.php?fisa_id=' . $fisa_id . '&id_client=' . $client_id);
+//
+//    }
+
     public static function AdaugaProduseExtraFisa($fisa_id, $client_id)
     {
         $tip_produs_id = getRequestParameter('tip_produs_id', '');
-        $pline = 1;
-        $goale = 2;
+
         $cantitate = getRequestParameter('cantitate', '');
         $pret = getRequestParameter('pret', '');
 
-        $query = "SELECT id from detalii_fisa_extra_intoarcere_produse
+        $query = "SELECT id from detalii_fisa_intoarcere_produse
                   WHERE fisa_id = '" . $fisa_id . "'
                   AND client_id = '" . $client_id . "'
-                  AND tip_produs_id = '" . $tip_produs_id . "'
-                  AND stare_produs = '" . $pline . "'
+                  AND tip_produs_id = '" . $tip_produs_id . "'                 
                   AND sters = 0
+                  AND produs_extra = 1
                   ";
         $result = myQuery($query);
 
         if ($result->rowCount() == 0) {
             if ($tip_produs_id > 0) {
-                $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate, pret)
+                $produs_extra = 1;
+                $query = "INSERT INTO detalii_fisa_intoarcere_produse(fisa_id, client_id, tip_produs_id, cantitate, pret, produs_extra)
                      values
-                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $pline . "','" . $cantitate . "','" . $pret . "')";
-                myExec($query);
-                $query = "INSERT INTO detalii_fisa_extra_intoarcere_produse(fisa_id, client_id, tip_produs_id, stare_produs, cantitate, pret)
-                     values
-                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $goale . "','" . $cantitate . "','" . $pret . "')";
+                    ('" . $fisa_id . "','" . $client_id . "','" . $tip_produs_id . "','" . $cantitate . "','" . $pret . "','" . $produs_extra . "')";
                 myExec($query);
             }
         } else {
