@@ -29,13 +29,13 @@
                                             <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">CANTITATE</th>
                                                 <th style="text-align: left;">
-                                                   <input style="text-align: right;width: 100%;" type="text" name="cantitate" value="{$produs_extra[$id]['pline']['cantitate']}">
+                                                   <input style="text-align: right;width: 100%;" type="text" name="cantitate" value="{$produs_extra[$id]['cantitate']}">
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">PRET</th>
                                                 <th style="text-align: left;">
-                                                    <input style="text-align: right;width: 100%;" type="text" name="pret" value="{$produs_extra[$id]['pline']['pret']}">
+                                                    <input style="text-align: right;width: 100%;" type="text" name="pret" value="{$produs_extra[$id]['pret']}">
                                                 </th>
                                             </tr>
                                             <tr>
