@@ -111,13 +111,12 @@
                                                         </tr>
                                                         {$nr = 1}
                                                         {foreach from=$livrare['fise_by_masina'] item=cantitate}
-                                                            {assign var=cantitati_extra value=Fise::getCantitatiExtraByFisaId($cantitate['id'])}
                                                             <tr>
                                                                 <td style="text-align: center;">{$nr++}</td>
                                                                 <td style="text-align: center;"><a target="_blank" href="completare_fisa_traseu.php?id={$cantitate['id']}">{$cantitate['id']}</a>
                                                                 </td>
                                                                 <td style="text-align: center;">{$cantitate['data']}</td>
-                                                                <td style="text-align: center;">{$cantitate['suma_cantitati'] + $cantitati_extra['cantitate_extra']}</td>
+                                                                <td style="text-align: center;">{$cantitate['suma_cantitati']}</td>
                                                             </tr>
                                                             {*<tr {($nr > 3) ? 'class="ascunde_cantitate"' : ''}>*}
                                                                 {*<td style="text-align: center;">{$nr++}</td>*}
@@ -130,16 +129,16 @@
                                                     </table>
                                                 </td>
                                                 <td style="text-align: right">
-                                                    {$total_livrare = $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] + $livrare['total_produse_extra']['1']['cantitate'] + $livrare['total_produse_extra']['3']['cantitate'] +  $livrare['total_produse_extra']['4']['cantitate']}
+                                                    {$total_livrare = $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate']}
                                                     {($total_livrare > 0) ? $total_livrare :'-'}
                                                 </td>
                                                 <td style="text-align: right">
-                                                    {$livrare_produse = $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] + $livrare['total_produse_extra']['1']['valoare'] + $livrare['total_produse_extra']['3']['valoare'] +  $livrare['total_produse_extra']['4']['valoare']}
+                                                    {$livrare_produse = $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare']}
                                                     {($livrare_produse > 0) ? $livrare_produse : '-'}
                                                 </td>
                                                 {foreach from = $livrari_masini['produse_masina'] item= produse}
-                                                    {$total_produse = $livrare['total_produse_extra'][$produse['tip_produs_id']]['cantitate'] + $livrare['total_produse'][$produse['tip_produs_id']]['cantitate']}
-                                                    {$total_valoare = $livrare['total_produse_extra'][$produse['tip_produs_id']]['valoare'] + $livrare['total_produse'][$produse['tip_produs_id']]['valoare']}
+                                                    {$total_produse = $livrare['total_produse'][$produse['tip_produs_id']]['cantitate']}
+                                                    {$total_valoare = $livrare['total_produse'][$produse['tip_produs_id']]['valoare']}
                                                     <td style="text-align: right;">
                                                         {($total_produse > 0 ) ? $total_produse : '-'}
                                                     </td>
@@ -149,8 +148,8 @@
                                                 {/foreach}
                                             </tr>
                                             {$grand_total_km = $grand_total_km + $livrare['km']['km_traseu']}
-                                            {$grand_cantitati = $grand_cantitati + $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate'] + $livrare['total_produse_extra']['1']['cantitate'] + $livrare['total_produse_extra']['3']['cantitate'] +  $livrare['total_produse_extra']['4']['cantitate']}
-                                            {$grand_valoare = $grand_valoare + $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare'] +$livrare['total_produse_extra']['1']['valoare'] + $livrare['total_produse_extra']['3']['valoare'] +  $livrare['total_produse_extra']['4']['valoare']}
+                                            {$grand_cantitati = $grand_cantitati + $livrare['total_produse']['1']['cantitate'] + $livrare['total_produse']['3']['cantitate'] +  $livrare['total_produse']['4']['cantitate']}
+                                            {$grand_valoare = $grand_valoare + $livrare['total_produse']['1']['valoare'] + $livrare['total_produse']['3']['valoare'] +  $livrare['total_produse']['4']['valoare']}
                                         {/foreach}
                                         <tr>
                                             <th colspan="3" style="text-align: right;"></th>
@@ -160,8 +159,8 @@
                                             <th style="text-align: right;color: red;vertical-align: middle;">{($grand_cantitati > 0) ? $grand_cantitati : '-'}</th>
                                             <th style="text-align: right;color: red;vertical-align: middle;">{($grand_valoare > 0) ? $grand_valoare : '-'}</th>
                                             {foreach from = $livrari_masini['produse_masina'] item= produse}
-                                                {$grand_total_cantitati = $livrari_masini['grand_extra'][$produse['tip_produs_id']]['cantitate'] + $livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}
-                                                {$grand_total_valoare = $livrari_masini['grand_extra'][$produse['tip_produs_id']]['valoare'] + $livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}
+                                                {$grand_total_cantitati = $livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}
+                                                {$grand_total_valoare = $livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}
                                                 <th style="text-align: right;color: red;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</th>
                                                 <th style="text-align: right;color: red;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</th>
                                             {/foreach}
@@ -179,83 +178,5 @@
 <div style="margin-top: 100px;"></div>
 
 <script src="/js/pagini/raport_livrari_masini.js"></script>
-{*<fieldset>*}
-{*<legend><b>Alimentari card</b>&nbsp;*}
-{*<? if ($sf_user->hasCredential('r21')) { ?>*}
-{*<?= link_to('Export alimentari', 'parcauto/exportalimentari?id=' . $vehicul->getId(), 'class="btn btn-primary btn-mini"') ?>&nbsp;*}
-{*<?= link_to('Adauga alimentare', 'parcauto/addalimentare?id=' . $vehicul->getId(), 'class="btn btn-info btn-mini"') ?>*}
-{*<? }; ?>*}
-{*</legend>*}
-{*<table class="table table-striped table-bordered" width="100%">*}
-{*<tr>*}
-{*<th style="width: 30px;">*}
-{*<? if (count($alimentari) > 5) { ?>*}
-{*<i id="toggle_alimentari" class="icon16 i-list" style="cursor: pointer;"></i>*}
-{*<? } ?>*}
-{*</th>*}
-{*<th width="170">*}
-{*Data*}
-{*</th>*}
-{*<th>*}
-{*Cantitate*}
-{*</th>*}
-{*<th width="200">*}
-{*Pret*}
-{*</th>*}
-{*</tr>*}
-{*<?*}
-{*$total_cantitate = 0;*}
-{*$total_cost = 0;*}
-{*$data_luna_curenta = date("m");*}
-{*$nr_randuri = 0;*}
-{*foreach ($alimentari as $row) {*}
-{*$nr_randuri++;*}
-{*if ($row->getData("m") != $data_luna_curenta) {*}
-{*if ($total_cantitate > 0) {*}
-{*?>*}
-{*<tr <? if ($nr_randuri > 5) {*}
-{*echo 'class="alimentare_ascunsa"';*}
-{*} ?>>*}
-{*<td align="right" colspan="2">Total luna (<?= $data_luna_curenta ?>):</td>*}
-{*<td align="right"><b><?= $total_cantitate ?> litri</b></td>*}
-{*<td align="right"><b><?= $total_cost ?> lei</b></td>*}
-{*</tr>*}
-{*<?*}
-{*}*}
-{*$data_luna_curenta = $row->getData("m");*}
-{*$total_cantitate = 0;*}
-{*$total_cost = 0;*}
-{*}*}
-{*$total_cantitate += $row->getCantitate();*}
-{*$total_cost += $row->getCost();*}
-{*?>*}
-{*<tr <? if ($nr_randuri > 5) {*}
-{*echo 'class="alimentare_ascunsa"';*}
-{*} ?> >*}
-{*<td width="20">*}
-{*<?= link_to('<img src="/images/edit.png">', 'parcauto/editalimentare?id=' . $row->getId(), ' title="edit"') ?>*}
-{*</td>*}
-{*<td>*}
-{*<?= $row->getData("d-m-Y") ?>*}
-{*</td>*}
-{*<td align="right">*}
-{*<?= $row->getCantitate() ?>*}
-{*</td>*}
-{*<td align="right">*}
-{*<?= $row->getCost() ?>*}
-{*</td>*}
-{*</tr>*}
-{*<?*}
-{*}*}
-{*if (count($alimentari)) { ?>*}
-{*<tr <? if ($nr_randuri > 5) {*}
-{*echo 'class="alimentare_ascunsa"';*}
-{*} ?>>*}
-{*<td align="right" colspan="2">Total luna (<?= $data_luna_curenta ?>):</td>*}
-{*<td align="right"><b><?= $total_cantitate ?> litri</b></td>*}
-{*<td align="right"><b><?= $total_cost ?> lei</b></td>*}
-{*</tr>*}
-{*<? } ?>*}
-{*</table>*}
-{*</fieldset>*}
+
 
