@@ -26,6 +26,9 @@ $pret = getRequestParameter('pret', 0);
 $lista_tip_stoc = Produse::getTipProdus();
 $smarty->assign('lista_tip_stoc', $lista_tip_stoc);
 
+$produse_by_client = Clienti::getProduseByClientId($client_id);
+$smarty->assign('produse_by_client', $produse_by_client);
+
 if ($adauga) {
     Fise::AdaugaProduseExtraFisa($fisa_id, $client_id);
 }

@@ -33,12 +33,18 @@
                                                 <select name="tip_produs_id" data-schimba="2">
                                                     <option value="0">--</option>
                                                     {foreach from=$lista_tip_stoc item=tip}
-                                                        <option value={$tip['id']}
-                                                                {if $tip['produs_tip_id']== $tip['id']}selected="selected"{/if}>
-                                                            {$tip['tip']}
-                                                        </option>
+                                                        {$gasit = 0}
+                                                        {foreach from=$produse_by_client item=produs}
+                                                            {if $produs['tip_produs_id'] == $tip['id']}
+                                                                {$gasit = 1}
+                                                            {/if}
+                                                        {/foreach}
+                                                        {if $gasit == 0 }
+                                                            <option value={$tip['id']}>{strtoupper({$tip['tip']})}</option>
+                                                        {/if}
                                                     {/foreach}
-                                                </select></td>
+                                                </select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th style="text-align: left;vertical-align: middle;width: 120px;">
