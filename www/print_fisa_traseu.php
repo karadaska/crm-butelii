@@ -28,7 +28,6 @@ $smarty->assign('data_traseu',$data_traseu);
 
 $smarty->assign('nume', 'Fisa traseu');
 $template_page = "print_fisa_traseu.tpl";
-//$txts = 0;
 
 $smarty->display($template_page);
 ?>
