@@ -227,9 +227,7 @@ class Fise
         return $ret;
 
     }
-
-
-
+//TO DO//trebuie stearsa
     public static function GetProdusExtraByProdusIdAndFisa($tip_produs_id, $fisa_id)
     {
         $ret = array();
