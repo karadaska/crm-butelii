@@ -424,7 +424,7 @@
                                                                 {/if}
                                                             {/foreach}
                                                         </select>
-                                                        {assign var=produse_extra value=Fise::getProduseExtraByFisaIdAndClientId($fisa['id'], $client['client_id'])}
+                                                        {assign var=produse_extra value=Produse::getProduseExtraByFisaIdAndClientId($fisa['id'], $client['client_id'])}
                                                         {if count($produse_extra) > 0}
                                                             <div style="float: right">
                                                                 <a target="_blank" class="btn btn-success btn-mini"
@@ -472,8 +472,6 @@
                                                     <th hidden>Pret contract</th>
                                                 </tr>
                                                 {foreach from=$client['target'] item = target_client}
-                                                    {assign var=produse_extra value=Fise::getProduseExtraByFisaIdAndClientId($fisa['id'],$client['client_id'])}
-                                                    {*{foreach from=$fisa['incarcatura_masina_plecare'] item = target_client}*}
                                                     {$realizat_produs = $client['realizat'][$target_client['tip_produs_id']]}
                                                     <tr>
                                                         <td style="vertical-align: middle;">{$target_client['nume_produs']}</td>
@@ -561,16 +559,15 @@
                                                             {(($client['total_valoare_bg'] > 0) && ($client['total_valoare_ar_8'] > 0 || $client['total_valoare_ar_9'] > 0))? ';' : ''}
                                                             <span style="color:red;">{($client['total_valoare_ar_9'] > 0) ? {'AR 9 = '|cat:$client['total_valoare_ar_9']} : ''}</span>
                                                             {($client['total_valoare_bg'] > 0 && $client['total_valoare_ar_9'] > 0 && $client['total_valoare_ar_8'] > 0)? ';' : ''}
-                                                            <span style="color:red;">{($client['total_valoare_ar_8'] > 0) ? {'AR 8 = '|cat:$client['total_valoare_ar_8']} : ''}</span>
+                                                            <span style="color:red;">{($client['total_valoare_ar_8'] > 0) ? {'AR 8 = '|cat:$client['total_valoare_ar_8']} : ''}</span> <br/>
                                                         </th>
                                                     {/if}
                                                 </tr>
-                                                {assign var=client_produse_extra value=Fise::GetProduseExtraByClientIdAndFisa($client['client_id'],$fisa['id'])}
+                                                {assign var=client_produse_extra value=Produse::getProduseExtraByFisaIdAndClientId($fisa['id'],$client['client_id'])}
                                                 {foreach from=$client_produse_extra item=produs_extra}
                                                     <tr>
                                                         <th style="text-align: left;" colspan="7"><span
-                                                                    style="color: red;">EXTRA:</span> {$produs_extra['nume_produs']}
-                                                            = {$produs_extra['pline']['cantitate'] * $produs_extra['pline']['pret']}
+                                                                    style="color: red;">EXTRA = {$produs_extra['nume_produs']} / Pret: {$produs_extra['pret']}</span>
                                                         </th>
                                                     </tr>
                                                 {/foreach}

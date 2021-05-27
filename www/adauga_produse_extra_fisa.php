@@ -32,7 +32,7 @@ if ($adauga) {
     Fise::AdaugaProduseExtraFisa($fisa_id, $client_id);
 }
 
-$produse_extra = Fise::getProduseExtraByFisaIdAndClientId($fisa_id, $client_id);
+$produse_extra = Produse::getProduseExtraByFisaIdAndClientId($fisa_id, $client_id);
 $smarty->assign('produse_extra', $produse_extra);
 
 $smarty->display($template_page);

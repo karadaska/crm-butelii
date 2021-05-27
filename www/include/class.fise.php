@@ -99,38 +99,6 @@ class Fise
         return $ret;
     }
 
-    public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
-    {
-        $ret = array();
-        $query = "SELECT a.tip_produs_id, b.tip, a.cantitate, pret
-                  FROM detalii_fisa_intoarcere_produse as a
-                  LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
-                  LEFT JOIN clienti as d on a.client_id = d.id
-                  WHERE a.fisa_id = '" . $fisa_id . "'
-                  AND a.client_id = '" . $client_id . "'
-                  AND a.sters = 0
-                  AND a.produs_extra = 1
-                  ORDER BY b.id ASC
-                  ";
-
-        $result = myQuery($query);
-        if ($result) {
-            $a = $result->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($a as $item) {
-                if (!isset($ret[$item['tip_produs_id']])) {
-                    $ret[$item['tip_produs_id']] = array(
-                        'nume_produs' => $item['tip'],
-                        'tip_produs_id' => $item['tip_produs_id'],
-                        'cantitate' => $item['cantitate'],
-                        'pret' => $item['pret']
-                    );
-                }
-            }
-        }
-        return $ret;
-    }
-
-
     public static function AdaugaProduseExtraFisa($fisa_id, $client_id)
     {
         $tip_produs_id = getRequestParameter('tip_produs_id', '');
@@ -191,7 +159,7 @@ class Fise
         return $ret;
 
     }
-
+//TO DO//trebuie stearsa
     public static function GetProduseExtraByClientIdAndFisa($client_id, $fisa_id)
     {
         $ret = array();
