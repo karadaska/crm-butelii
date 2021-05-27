@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-11 09:58:47
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-27 22:40:39
          compiled from "/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:93953769760363ba43e8b40-06532767%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '28466ecbac126ded8271f40af77df08dc0861b8e' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_fisa_traseu.tpl',
-      1 => 1620716326,
+      1 => 1622143200,
       2 => 'file',
     ),
   ),
@@ -80,23 +80,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             font-size: 16px;
         }
 
-        /*th
-
-
-
-
-
-
-               */
-
-        /*td
-
-
-
-
-
-
-               */
         @page {
             size: auto;
             margin: 0;

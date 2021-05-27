@@ -637,7 +637,7 @@
                                 </table>
                             </div>
                         {/if}
-                        {if ($fisa['grand_total_vandute_ar_9'] != 0 || $fisa['grand_defecte_ar_9'] != 0 || $fisa['grand_vandute_ar_9_extra'])}
+                        {if ($fisa['grand_vandute_ar_9'] != 0 || $fisa['grand_defecte_ar_9'] != 0 || $fisa['grand_vandute_ar_9_extra'])}
                             <div style="margin-left: 5px;">
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
@@ -647,7 +647,7 @@
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_total_vandute_ar_9'] + $fisa['grand_vandute_ar_9_extra']}</td>
+                                        <td style="text-align: center;font-weight: 900;">{$fisa['grand_vandute_ar_9'] + $fisa['grand_vandute_ar_9_extra']}</td>
                                     </tr>
                                     <tr class="info">
                                         <td style="text-align: left;font-weight: 900;">Total Valoare</td>

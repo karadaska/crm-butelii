@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-27 21:56:19
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-27 23:01:00
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1622141778,
+      1 => 1622145656,
       2 => 'file',
     ),
   ),
@@ -858,7 +858,7 @@ $_smarty_tpl->tpl_vars['produs_extra']->_loop = true;
                                 </table>
                             </div>
                         <?php }?>
-                        <?php if (($_smarty_tpl->tpl_vars['fisa']->value['grand_total_vandute_ar_9']!=0||$_smarty_tpl->tpl_vars['fisa']->value['grand_defecte_ar_9']!=0||$_smarty_tpl->tpl_vars['fisa']->value['grand_vandute_ar_9_extra'])) {?>
+                        <?php if (($_smarty_tpl->tpl_vars['fisa']->value['grand_vandute_ar_9']!=0||$_smarty_tpl->tpl_vars['fisa']->value['grand_defecte_ar_9']!=0||$_smarty_tpl->tpl_vars['fisa']->value['grand_vandute_ar_9_extra'])) {?>
                             <div style="margin-left: 5px;">
                                 <table class="table table-bordered table-striped" style="width: 180px;">
                                     <tr class="info">
@@ -869,7 +869,7 @@ $_smarty_tpl->tpl_vars['produs_extra']->_loop = true;
                                     </tr>
                                     <tr>
                                         <td style="text-align: left;font-weight: 900;">Total cantitati</td>
-                                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['grand_total_vandute_ar_9']+$_smarty_tpl->tpl_vars['fisa']->value['grand_vandute_ar_9_extra'];?>
+                                        <td style="text-align: center;font-weight: 900;"><?php echo $_smarty_tpl->tpl_vars['fisa']->value['grand_vandute_ar_9']+$_smarty_tpl->tpl_vars['fisa']->value['grand_vandute_ar_9_extra'];?>
 </td>
                                     </tr>
                                     <tr class="info">
