@@ -2,6 +2,31 @@
 
 class Produse
 {
+    public static function GetProdusExtraByClientIdProdusIdAndFisaId($client_id, $fisa_id)
+    {
+        $ret = array();
+
+        $query = "SELECT tip_produs_id, cantitate as cantitate_extra, pret as pret_extra
+                  FROM detalii_fisa_intoarcere_produse
+                  WHERE client_id = '" . $client_id . "' 
+                  AND fisa_id = '" . $fisa_id . "'
+                  AND sters = 0
+                  AND produs_extra = 1
+                  ";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $ret[$item['tip_produs_id']] = $item;
+            }
+        }
+
+        return $ret;
+
+    }
+
 
     public static function getProduseVanduteBySoferId($sofer_id, $opts = array())
     {

@@ -234,6 +234,7 @@ class Fise
 
     }
 
+//TO DO//trebuie stearsa
     public static function GetProdusExtraByClientIdProdusIdAndFisaAnd($client_id, $fisa_id)
     {
         $ret = array();
@@ -258,6 +259,8 @@ class Fise
         return $ret;
 
     }
+
+
 
     public static function GetProdusExtraByProdusIdAndFisa($tip_produs_id, $fisa_id)
     {

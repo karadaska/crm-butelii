@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-26 23:33:49
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-27 14:28:10
          compiled from "/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1782988185607d37e85ebab4-68004022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cbd352f02ab7ad9f23b10adcb56745fba66d2998' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_produs_extra.tpl',
-      1 => 1622061228,
+      1 => 1622111018,
       2 => 'file',
     ),
   ),

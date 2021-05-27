@@ -22,7 +22,6 @@ $tip_produs_id = getRequestParameter('tip_produs_id', 0);
 $cantitate = getRequestParameter('cantitate', 0);
 $pret = getRequestParameter('pret', 0);
 
-
 $lista_tip_stoc = Produse::getTipProdus();
 $smarty->assign('lista_tip_stoc', $lista_tip_stoc);
 
