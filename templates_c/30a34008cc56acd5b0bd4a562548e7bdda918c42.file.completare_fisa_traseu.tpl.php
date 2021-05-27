@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-05-27 23:01:00
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-27 23:10:11
          compiled from "/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:19409619136022e1a89e4906-33897539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '30a34008cc56acd5b0bd4a562548e7bdda918c42' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/completare_fisa_traseu.tpl',
-      1 => 1622145656,
+      1 => 1622146210,
       2 => 'file',
     ),
   ),
@@ -779,6 +779,7 @@ $_smarty_tpl->tpl_vars['produs_extra']->_loop = true;
                                                     <tr>
                                                         <th style="text-align: left;" colspan="7"><span
                                                                     style="color: red;">EXTRA = <?php echo $_smarty_tpl->tpl_vars['produs_extra']->value['nume_produs'];?>
+: <?php echo $_smarty_tpl->tpl_vars['produs_extra']->value['cantitate'];?>
  / Pret: <?php echo $_smarty_tpl->tpl_vars['produs_extra']->value['pret'];?>
 </span>
                                                         </th>

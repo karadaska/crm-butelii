@@ -567,7 +567,7 @@
                                                 {foreach from=$client_produse_extra item=produs_extra}
                                                     <tr>
                                                         <th style="text-align: left;" colspan="7"><span
-                                                                    style="color: red;">EXTRA = {$produs_extra['nume_produs']} / Pret: {$produs_extra['pret']}</span>
+                                                                    style="color: red;">EXTRA = {$produs_extra['nume_produs']}: {$produs_extra['cantitate']} / Pret: {$produs_extra['pret']}</span>
                                                         </th>
                                                     </tr>
                                                 {/foreach}
