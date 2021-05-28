@@ -57,8 +57,8 @@ $zi_curenta = date('Y-m-d');
 $traseu_id = 2;
 $sofer_id = 22;
 $masina_id = 30;
-$data_start = '2021-05-01';
-$data_stop = '2021-05-31';
+$data_start = '2021-05-12';
+$data_stop = '2021-05-12';
 //$depozit_id = 0;
 //$sofer_id = 0;
 //$masina_id = 0;
@@ -69,8 +69,13 @@ $data_stop = '2021-05-31';
 
 //$b = Fise::GetProdusExtraByProdusClientIdAndFisa(1, 2612,1818);
 //$b = Fise::getProduseExtraByFisaIdAndClientId(1818, 2612);
-$b = Stocuri::getFisaGenerataById(1818);
+//$b = Stocuri::getFisaGenerataById(1818);
 //$b = Produse::GetProdusExtraByClientIdProdusIdAndFisaId(2612, 1818);
 //$b = Produse::getProduseExtraByFisaIdAndClientId( 1818, 2612);
-$b =  Printare::PrintFisaSosire(1818);
+//$b =  Printare::PrintFisaSosire(1818);
+$b = ParcAuto::getRaportLivrariMasini(29,
+    array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+    ));
 echo json_encode($b);

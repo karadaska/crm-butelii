@@ -861,7 +861,7 @@ class ParcAuto
         }
 
         $ret = array(
-            'trasee' => array()
+            'masini' => array()
         );
 
         $query = "SELECT a.id, a.masina_id, a.sofer_id, b.nume as nume_sofer,
@@ -930,7 +930,7 @@ class ParcAuto
 //                        'data_stop' => $data_stop
 //                    ));
                 }
-                array_push($ret['trasee'], $r);
+                array_push($ret['masini'], $r);
             }
         }
         return $ret;
