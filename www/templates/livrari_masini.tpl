@@ -137,9 +137,6 @@
                                                     {($livrare_produse > 0) ? $livrare_produse : '-'}
                                                 </td>
                                                 {foreach from = $livrari_masini['produse_masina'] item= produse}
-                                                    {*{$total_produse = $livrari_masini['grand'][$produse['tip_produs_id']]['cantitate']}*}
-                                                    {*{$total_valoare = $livrari_masini['grand'][$produse['tip_produs_id']]['valoare']}*}
-
                                                     {$total_produse = $livrare['total_produse'][$produse['tip_produs_id']]['cantitate']}
                                                     {$total_valoare = $livrare['total_produse'][$produse['tip_produs_id']]['valoare']}
                                                     <td style="text-align: right;">
