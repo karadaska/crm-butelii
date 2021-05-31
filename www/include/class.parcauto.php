@@ -999,20 +999,20 @@ class ParcAuto
                     ));
 
 
-                    $r['total_produse_extra'][$tip_produs_id] = self::getTotalCantitatiExtraByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
-                        'tip_produs_id' => $tip_produs_id,
-                        'data_start' => $data_start,
-                        'data_stop' => $data_stop
-                    ));
+//                    $r['total_produse_extra'][$tip_produs_id] = self::getTotalCantitatiExtraByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
+//                        'tip_produs_id' => $tip_produs_id,
+//                        'data_start' => $data_start,
+//                        'data_stop' => $data_stop
+//                    ));
 
                     $ret['grand'][$tip_produs_id] = self::getTotalCantitatiByTraseuIdAndProdusId($item['traseu_id'], $tip_produs_id, array(
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ));
-                    $ret['grand_extra'][$tip_produs_id] = self::getTotalCantitatiExtraByTraseuIdAndProdusId($item['traseu_id'], $tip_produs_id, array(
-                        'data_start' => $data_start,
-                        'data_stop' => $data_stop
-                    ));
+//                    $ret['grand_extra'][$tip_produs_id] = self::getTotalCantitatiExtraByTraseuIdAndProdusId($item['traseu_id'], $tip_produs_id, array(
+//                        'data_start' => $data_start,
+//                        'data_stop' => $data_stop
+//                    ));
                 }
                 array_push($ret['trasee'], $r);
             }
