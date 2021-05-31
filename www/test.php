@@ -73,9 +73,5 @@ $data_stop = '2021-05-12';
 //$b = Produse::GetProdusExtraByClientIdProdusIdAndFisaId(2612, 1818);
 //$b = Produse::getProduseExtraByFisaIdAndClientId( 1818, 2612);
 //$b =  Printare::PrintFisaSosire(1818);
-$b = ParcAuto::getRaportLivrariMasini(29,
-    array(
-        'data_start' => $data_start,
-        'data_stop' => $data_stop
-    ));
+//+
 echo json_encode($b);
