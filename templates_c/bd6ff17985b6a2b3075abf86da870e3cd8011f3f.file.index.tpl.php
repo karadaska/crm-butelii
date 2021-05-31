@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-09 14:08:26
+<?php /* Smarty version Smarty-3.1.15, created on 2021-05-31 12:52:50
          compiled from "/var/www/html/fofoweb/www/templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:143770837160227b3ad82752-37659730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'bd6ff17985b6a2b3075abf86da870e3cd8011f3f' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/index.tpl',
-      1 => 1589180980,
+      1 => 1622454768,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60227b3adc01d5_78372261',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60227b3adc01d5_78372261',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60227b3adc01d5_78372261')) {function content_60227b3adc01d5_78372261($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header_login.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -37,7 +37,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <div class="page-header">
                     <h3 class="center">Autentificare...</h3>
                 </div>
-                <form id="login-form" class="form-horizontal" action="">
+                <form id="login-form" class="form-horizontal" action="" method="post">
                     <input type="hidden" id="no_refresh_chat" name="no_refresh_chat" value="1"/>
 
                     <div class="row-fluid">
