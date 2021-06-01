@@ -24,9 +24,11 @@ $smarty->assign('lista_trasee', $lista_trasee);
 $depozit_by_traseu = Depozite::getDepozitByTraseuId($traseu_id);
 $smarty->assign('depozit_by_traseu', $depozit_by_traseu);
 
-$lista_clienti = Clienti::getRaportLivrariClienti(1, array(
+
+$lista_clienti = Clienti::getRaportLivrariClienti($traseu_id, array(
     'data_start' => $data_start,
     'data_stop' => $data_stop
+
 ));
 $smarty->assign('lista_clienti', $lista_clienti);
 

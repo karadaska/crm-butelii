@@ -9,14 +9,14 @@
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Raport livrari clienti
                         <a target="_blank"
-                           href="/print_raport_livrari_clienti.php?id={$traseu_id}&data_start={$data_start}&data_stop={$data_stop}">
+                           href="/print_livrari_clienti.php?id={$traseu_id}&data_start={$data_start}&data_stop={$data_stop}">
                             <button class="i-print"></button>
                         </a>
                     </h1>
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/raport_livrari_clienti.php" method="post"
+                <form action="/livrari_clienti.php" method="post"
                       style="margin-bottom: 0">
                     <table class="table table-bordered">
                         <thead>
@@ -57,7 +57,7 @@
                             <div class="icon"><i class="icon20 i-table"></i></div>
                             <h4>List&#259; clien&#355i</h4>
                         </div>
-                        <form action="/raport_livrari_clienti.php"
+                        <form action="/livrari_clienti.php"
                               method="post"
                               style="margin-bottom: 0">
                             <div class="widget-content">
@@ -92,19 +92,19 @@
                                             <td>{$client['nume_localitate']}</td>
                                             <td>{$client['nume_client']}</td>
                                             <td>{$client['telefon']} </br>{$client['telefon_2']}</td>
-                                            <td>
-                                                <table class="table table-bordered">
-                                                    <td>
-                                                        <table class="table table-bordered">
-                                                            <tr>
-                                                                <td>43</td>
-                                                                <td>d</td>
-                                                                <td>d</td>
-                                                            </tr>
-                                                        </table>
-                                                    </td>
-                                                </table>
-                                            </td>
+                                            {*<td>*}
+                                                {*<table class="table table-bordered">*}
+                                                    {*<td>*}
+                                                        {*<table class="table table-bordered">*}
+                                                            {*<tr>*}
+                                                                {*<td>43</td>*}
+                                                                {*<td>d</td>*}
+                                                                {*<td>d</td>*}
+                                                            {*</tr>*}
+                                                        {*</table>*}
+                                                    {*</td>*}
+                                                {*</table>*}
+                                            {*</td>*}
                                         </tr>
                                     {/foreach}
                                 </table>

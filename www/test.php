@@ -59,6 +59,10 @@ $sofer_id = 22;
 $masina_id = 30;
 $data_start = '2021-05-12';
 $data_stop = '2021-05-12';
+
+$prima_zi_luna = date('Y-m-01');
+$ultima_zi_luna = date('Y-m-t');
+
 //$depozit_id = 0;
 //$sofer_id = 0;
 //$masina_id = 0;
@@ -80,8 +84,15 @@ $data_stop = '2021-05-12';
 //        'data_stop' => $data_stop
 //    ));
 //$b = Produse::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId()
+
 $b = Produse::getProduseVanduteByTraseuId(17, array(
-    'data_start' => $data_start,
-    'data_stop' => $data_stop
+    'data_start' => $prima_zi_luna,
+    'data_stop' => $ultima_zi_luna
 ));
+
+//$b = Clienti::getRaportLivrariClienti(17, array(
+//    'data_start' => $data_start,
+//    'data_stop' => $data_stop
+//));
+
 echo json_encode($b);
