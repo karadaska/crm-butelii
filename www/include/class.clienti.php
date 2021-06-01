@@ -1811,18 +1811,9 @@ class Clienti
     }
     public static function getRaportLivrariClienti($traseu_id, $opts = array())
     {
-        $data_start = isset($opt['data_start']) ? $opts['data_start'] : 0;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] :0;
 
-
-//        if ($data_start == 0) {
-//            $data_start = date('Y-m-01');
-//        }
-//
-//        if ($data_stop == 0) {
-//            $data_stop = date('Y-m-t');
-//        }
-            debug($data_start ." " . $data_stop);
 
         $ret = array(
             'livrare_clienti' => array()
