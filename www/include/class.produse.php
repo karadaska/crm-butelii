@@ -91,9 +91,8 @@ class Produse
 
     public static function getProduseVanduteByMasinaId($masina_id, $opts = array())
     {
-        $data_start = isset($opt['data_start']) ? $opts['data_start'] : 0;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-
 
         $ret = array();
         $query = " SELECT c.tip as nume_produs, a.tip_produs_id

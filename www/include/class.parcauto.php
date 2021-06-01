@@ -816,13 +816,6 @@ class ParcAuto
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
 
-        if ($data_start == 0) {
-            $data_start = date('Y-m-01');
-        }
-
-        if ($data_stop == 0) {
-            $data_stop = date('Y-m-t');
-        }
 
         $ret = array(
             'masini' => array()
@@ -893,16 +886,6 @@ class ParcAuto
     {
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-
-
-//
-//        if ($data_start == 0) {
-//            $data_start = date('Y-m-01');
-//        }
-//
-//        if ($data_stop == 0) {
-//            $data_stop = date('Y-m-t');
-//        }
 
         $ret = array(
             'trasee' => array()
