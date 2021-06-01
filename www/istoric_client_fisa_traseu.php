@@ -11,9 +11,6 @@ $template = 'istoric_client_fisa_traseu.tpl';
 
 $id = getRequestParameter('id', 0);
 
-//$target_by_client_id = Target::getTargetClient($id);
-//$smarty->assign('target_by_client_id', $target_by_client_id);
-
 $client = Clienti::getClientById($id);
 $smarty->assign('client', $client);
 
