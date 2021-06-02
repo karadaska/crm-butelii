@@ -99,9 +99,9 @@
                                                         <td>
                                                             <table class="table table-bordered">
                                                                 <tr>
-                                                                    <td>{$target_client['target']}</td>
-                                                                    <td>{$target_client['pret_contract']}</td>
-                                                                    <td>{$target_client['comision']}</td>
+                                                                    <td>{($target_client['target'] > 0 || $target_client['target'] !='') ?  $target_client['target'] : '-'}</td>
+                                                                    <td>{($target_client['pret_contract'] > 0 || $target_client['pret_contract'] !='') ?  $target_client['pret_contract'] : '-'}</td>
+                                                                    <td>{($target_client['comision'] > 0 || $target_client['comision'] !='') ?  $target_client['comision'] : '-'}</td>
                                                                 </tr>
                                                             </table>
                                                         </td>
