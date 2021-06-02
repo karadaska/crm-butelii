@@ -2527,7 +2527,7 @@ class Clienti
         $query = "SELECT a.observatie_id, b.nume as nume_observatie from apeluri_clienti as a
                   LEFT JOIN observatii as b on a.observatie_id = b.id
                   WHERE a.traseu_id = '" . $traseu_id . "'
-                  AND a.observatie_id IN (5, 6, 7, 16, 18, 19)
+                  AND a.observatie_id IN (5, 6, 7, 16, 18, 19, 252, 171, 247)
                   AND a.data_start = '" . $data_start . "'
                   ";
 
