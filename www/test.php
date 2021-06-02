@@ -85,14 +85,21 @@ $ultima_zi_luna = date('Y-m-t');
 //    ));
 //$b = Produse::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId()
 
-$b = Produse::getProduseVanduteByTraseuId(17, array(
-    'data_start' => $prima_zi_luna,
-    'data_stop' => $ultima_zi_luna
+//$b = Produse::getProduseVanduteByTraseuId(17, array(
+//    'data_start' => $prima_zi_luna,
+//    'data_stop' => $ultima_zi_luna
+//));
+
+$b = Clienti::getRaportLivrariClienti(17, array(
+    'data_start' => $data_start,
+    'data_stop' => $data_stop
 ));
 
-//$b = Clienti::getRaportLivrariClienti(17, array(
+//$b = ParcAuto::getRaportLivrariTrasee(17, array(
 //    'data_start' => $data_start,
 //    'data_stop' => $data_stop
 //));
+
+//$b = Target::getTargetByClientAndProdusIdPentruRaportLivrari(2612, 1);
 
 echo json_encode($b);

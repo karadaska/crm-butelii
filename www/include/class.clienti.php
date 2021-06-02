@@ -1847,7 +1847,32 @@ class Clienti
                     'traseu_id' => $item['traseu_id'],
                     'nume_localitate' => $item['nume_localitate'],
                     'telefon' => $item['telefon'],
-                    'telefon_2' => $item['telefon_2']
+                    'telefon_2' => $item['telefon_2'],
+                    'detalii_produse' => array(),
+                );
+
+                foreach ($ret['produse_traseu'] as $tip_produs_id => $item_tip_produs) {
+                    $r['detalii_produse'][$tip_produs_id] = Target::getTargetByClientAndProdusIdPentruRaportLivrari($item['client_id'],$tip_produs_id);
+
+//                    $r['total_produse'][$tip_produs_id] = Produse::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
+//                        'tip_produs_id' => $tip_produs_id,
+//                        'data_start' => $data_start,
+//                        'data_stop' => $data_stop
+//                    ));
+
+//                    $ret['grand'][$tip_produs_id] = self::getTotalCantitatiByTraseuIdAndProdusId($item['traseu_id'], $tip_produs_id, array(
+//                        'data_start' => $data_start,
+//                        'data_stop' => $data_stop
+//                    ));
+                }
+
+                array_push($ret['livrare_clienti'], $r);
+
+            }
+        }
+        return $ret;
+    }
+
 //                    'produse_client' => Produse::getProduseByClientIdLivrariClienti($item['client_id'],$item['traseu_id'], array(
 //                        'data_start' => $data_start,
 //                        'data_stop' => $data_stop
@@ -1887,14 +1912,7 @@ class Clienti
 //                        'data_start' => $data_start,
 //                        'data_stop' => $data_stop
 //                    ))
-                );
 
-                array_push($ret['livrare_clienti'], $r);
-
-            }
-        }
-        return $ret;
-    }
 
 
 
