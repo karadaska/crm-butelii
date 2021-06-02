@@ -1848,11 +1848,11 @@ class Clienti
                     'nume_localitate' => $item['nume_localitate'],
                     'telefon' => $item['telefon'],
                     'telefon_2' => $item['telefon_2'],
-                    'detalii_produse' => array(),
+                    'target_produse' => array(),
                 );
 
                 foreach ($ret['produse_traseu'] as $tip_produs_id => $item_tip_produs) {
-                    $r['detalii_produse'][$tip_produs_id] = Target::getTargetByClientAndProdusIdPentruRaportLivrari($item['client_id'],$tip_produs_id);
+                    $r['target_produse'][$tip_produs_id] = Target::getTargetByClientAndProdusIdPentruRaportLivrari($item['client_id'],$tip_produs_id);
 
 //                    $r['total_produse'][$tip_produs_id] = Produse::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
 //                        'tip_produs_id' => $tip_produs_id,

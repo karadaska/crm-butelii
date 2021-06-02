@@ -92,19 +92,23 @@
                                             <td>{$client['nume_localitate']}</td>
                                             <td>{$client['nume_client']}</td>
                                             <td>{$client['telefon']} </br>{$client['telefon_2']}</td>
-                                            {*<td>*}
-                                                {*<table class="table table-bordered">*}
-                                                    {*<td>*}
-                                                        {*<table class="table table-bordered">*}
-                                                            {*<tr>*}
-                                                                {*<td>43</td>*}
-                                                                {*<td>d</td>*}
-                                                                {*<td>d</td>*}
-                                                            {*</tr>*}
-                                                        {*</table>*}
-                                                    {*</td>*}
-                                                {*</table>*}
-                                            {*</td>*}
+                                            {foreach from=$client['target_produse'] item=target_client}
+                                            <td>
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <td>
+                                                            <table class="table table-bordered">
+                                                                <tr>
+                                                                    <td>{$target_client['target']}</td>
+                                                                    <td>{$target_client['pret_contract']}</td>
+                                                                    <td>{$target_client['comision']}</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            {/foreach}
                                         </tr>
                                     {/foreach}
                                 </table>
