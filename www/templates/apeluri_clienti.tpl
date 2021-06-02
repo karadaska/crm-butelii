@@ -92,7 +92,7 @@
                                                 {/if}
                                             </th>
                                             {if count($client['target']) > 0}
-                                            <th style="vertical-align: middle;text-align: left;">
+                                                <th style="vertical-align: middle;text-align: left;">
                                                     <table class="table table-bordered" style="width: 100%">
                                                         {foreach from=$client['target'] item = target_client}
                                                             <tr>
@@ -101,8 +101,8 @@
                                                             </tr>
                                                         {/foreach}
                                                     </table>
-                                            </th>
-                                                {else}
+                                                </th>
+                                            {else}
                                                 <td style="vertical-align: middle;text-align: center;">
                                                     <span style="color: red;">Nu are produse asignate!!</span>
                                                     <a href="/asigneaza_produse_client.php?id={$client['id']}"
@@ -136,6 +136,8 @@
                                                         {/if}
                                                     {/foreach}
                                                 </td>
+                                            {else}
+                                                <td>-</td>
                                             {/if}
                                             <th style="vertical-align: middle;width: 300px;padding-bottom: 10px;padding-top: 10px;">
                                                 {assign var=observatie_client value=Clienti::getObservatieApelClientiByClientId($client['id'],$traseu_id)}
@@ -165,7 +167,7 @@
                                                     </option>
                                                 </select>
                                             </th>
-                                        </td>
+                                        </tr>
                                     {/foreach}
                                     </tbody>
                                     {$conditie = ($total_bg_11 > 0) || ($total_ar_8 > 0) || ($total_ar_9 > 0) || ($total_obs['total_observatii'] > 0)}

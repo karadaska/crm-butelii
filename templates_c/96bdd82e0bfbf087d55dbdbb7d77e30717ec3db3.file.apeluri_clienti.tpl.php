@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-08 10:10:55
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-02 15:36:15
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:2062191012602cdf9787e0c0-40420550%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1617609909,
+      1 => 1622637372,
       2 => 'file',
     ),
   ),
@@ -179,7 +179,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                                 <?php }?>
                                             </th>
                                             <?php if (count($_smarty_tpl->tpl_vars['client']->value['target'])>0) {?>
-                                            <th style="vertical-align: middle;text-align: left;">
+                                                <th style="vertical-align: middle;text-align: left;">
                                                     <table class="table table-bordered" style="width: 100%">
                                                         <?php  $_smarty_tpl->tpl_vars['target_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target_client']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['target']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -194,8 +194,8 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                                                             </tr>
                                                         <?php } ?>
                                                     </table>
-                                            </th>
-                                                <?php } else { ?>
+                                                </th>
+                                            <?php } else { ?>
                                                 <td style="vertical-align: middle;text-align: center;">
                                                     <span style="color: red;">Nu are produse asignate!!</span>
                                                     <a href="/asigneaza_produse_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
@@ -238,6 +238,7 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                         <?php }?>
                                                     <?php } ?>
                                                 </td>
+                                           
                                             <?php }?>
                                             <th style="vertical-align: middle;width: 300px;padding-bottom: 10px;padding-top: 10px;">
                                                 <?php $_smarty_tpl->tpl_vars['observatie_client'] = new Smarty_variable(Clienti::getObservatieApelClientiByClientId($_smarty_tpl->tpl_vars['client']->value['id'],$_smarty_tpl->tpl_vars['traseu_id']->value), null, 0);?>
@@ -277,7 +278,7 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                     </option>
                                                 </select>
                                             </th>
-                                        </td>
+                                        </tr>
                                     <?php } ?>
                                     </tbody>
                                     <?php $_smarty_tpl->tpl_vars['conditie'] = new Smarty_variable(($_smarty_tpl->tpl_vars['total_bg_11']->value>0)||($_smarty_tpl->tpl_vars['total_ar_8']->value>0)||($_smarty_tpl->tpl_vars['total_ar_9']->value>0)||($_smarty_tpl->tpl_vars['total_obs']->value['total_observatii']>0), null, 0);?>
