@@ -104,8 +104,8 @@
                                     </thead>
                                     {foreach from=$lista_clienti['livrare_clienti'] item=client}
                                         <tr>
-                                            <td>{$client['nume_localitate']}</td>
-                                            <td>{$client['nume_client']}</td>
+                                            <td>{strtoupper($client['nume_localitate'])}</td>
+                                            <td>{strtoupper($client['nume_client'])}</td>
                                             <td>{$client['telefon']} </br>{$client['telefon_2']}</td>
                                             {foreach from=$client['target_produse'] item=target_client}
                                                 <td>
@@ -114,9 +114,9 @@
                                                             <td>
                                                                 <table class="table table-bordered">
                                                                     <tr>
-                                                                        <td>{($target_client['target'] > 0 || $target_client['target'] !='') ?  $target_client['target'] : '-'}</td>
-                                                                        <td>{($target_client['pret_contract'] > 0 || $target_client['pret_contract'] !='') ?  $target_client['pret_contract'] : '-'}</td>
-                                                                        <td>{($target_client['comision'] > 0 || $target_client['comision'] !='') ?  $target_client['comision'] : '-'}</td>
+                                                                        <td style="text-align: center;">{($target_client['target'] > 0 || $target_client['target'] !='') ?  $target_client['target'] : '-'}</td>
+                                                                        <td style="text-align: center;">{($target_client['pret_contract'] > 0 || $target_client['pret_contract'] !='') ?  $target_client['pret_contract'] : '-'}</td>
+                                                                        <td style="text-align: center;">{($target_client['comision'] > 0 || $target_client['comision'] !='') ?  $target_client['comision'] : '-'}</td>
                                                                     </tr>
                                                                 </table>
                                                             </td>
@@ -124,16 +124,16 @@
                                                     </table>
                                                 </td>
                                             {/foreach}
-                                            {foreach from=$client['target_produse'] item=target_client}
+                                            {foreach from=$client['total_produse_vandute'] item=produse}
                                                 <td>
                                                     <table class="table table-bordered">
                                                         <tr>
                                                             <td>
                                                                 <table class="table table-bordered">
                                                                     <tr>
-                                                                        <td>{($target_client['target'] > 0 || $target_client['target'] !='') ?  $target_client['target'] : '-'}</td>
-                                                                        <td>{($target_client['pret_contract'] > 0 || $target_client['pret_contract'] !='') ?  $target_client['pret_contract'] : '-'}</td>
-                                                                        <td>{($target_client['comision'] > 0 || $target_client['comision'] !='') ?  $target_client['comision'] : '-'}</td>
+                                                                        <td style="text-align: center;">{($produse['cantitate'] > 0 || $produse['cantitate'] !='') ?  $produse['cantitate'] : '-'}</td>
+                                                                        <td style="text-align: center;">{($produse['pret'] > 0 || $produse['pret'] !='') ?  $produse['pret'] : '-'}</td>
+                                                                        <td style="text-align: center;">{($produse['comision'] > 0 || $produse['comision'] !='') ?  $produse['comision'] : '-'}</td>
                                                                     </tr>
                                                                 </table>
                                                             </td>
