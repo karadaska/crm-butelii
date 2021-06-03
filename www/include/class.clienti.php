@@ -1863,7 +1863,7 @@ class Clienti
                         'data_stop' => $data_stop
                     ));
 
-                    $r['preturi_produse'][$tip_produs_id] = Produse::getPreturiProduseCuComisionByTipProdusIdAndClientAndTraseuId($item['traseu_id'], $item['client_id'], $tip_produs_id, array(
+                    $r['preturi_produse'][$tip_produs_id] = Produse::getPreturiProduseCuComisionByTipProdusIdAndClientAndTraseuId($tip_produs_id, $item['client_id'],$item['traseu_id'] , array(
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ));
