@@ -70,7 +70,8 @@
                                         <th rowspan="3">TELEFON</th>
                                         <th colspan="3">TARGET PRODUSE</th>
                                         <th colspan="3">TOTAL PRODUSE</th>
-                                        <th colspan="2">GRAND PRODUSE</th>
+                                        <th>GRAND PRODUSE</th>
+                                        <th colspan="3">PRET PRODUSE</th>
                                     </tr>
                                     <tr>
                                         {foreach from=$lista_clienti['produse_traseu'] item=produs}
@@ -113,6 +114,15 @@
                                                 </tr>
                                             </table>
                                         </th>
+                                        {foreach from=$lista_clienti['produse_traseu'] item=produs}
+                                            <th>
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <th colspan="3">{$produs['nume_produs']}</th>
+                                                    </tr>
+                                                </table>
+                                            </th>
+                                        {/foreach}
                                     </tr>
                                     </thead>
                                     {foreach from=$lista_clienti['livrare_clienti'] item=client}
@@ -121,7 +131,6 @@
                                             <td>{strtoupper($client['nume_client'])}</td>
                                             <td>{$client['telefon']} </br>{$client['telefon_2']}</td>
                                             {foreach from=$client['target_produse'] item=target_client}
-
                                                 <td>
                                                     <table class="table table-bordered">
                                                         <tr>
@@ -176,6 +185,16 @@
                                                     </tr>
                                                 </table>
                                             </td>
+                                            {foreach from=$client['target_produse'] item=target_client}
+                                                <td>
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            {/foreach}
                                         </tr>
                                     {/foreach}
                                 </table>

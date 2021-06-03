@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-03 14:46:52
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-03 15:02:46
          compiled from "/var/www/html/fofoweb/www/templates/livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25771684360b6814a0ceb95-18556120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18754cfe725db66ee66057f0896921f869b9239a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_clienti.tpl',
-      1 => 1622720810,
+      1 => 1622721764,
       2 => 'file',
     ),
   ),
@@ -124,7 +124,8 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                         <th rowspan="3">TELEFON</th>
                                         <th colspan="3">TARGET PRODUSE</th>
                                         <th colspan="3">TOTAL PRODUSE</th>
-                                        <th colspan="2">GRAND PRODUSE</th>
+                                        <th>GRAND PRODUSE</th>
+                                        <th colspan="3">PRET PRODUSE</th>
                                     </tr>
                                     <tr>
                                         <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
@@ -177,6 +178,20 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
                                                 </tr>
                                             </table>
                                         </th>
+                                        <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['lista_clienti']->value['produse_traseu']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['produs']->key => $_smarty_tpl->tpl_vars['produs']->value) {
+$_smarty_tpl->tpl_vars['produs']->_loop = true;
+?>
+                                            <th>
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <th colspan="3"><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
+</th>
+                                                    </tr>
+                                                </table>
+                                            </th>
+                                        <?php } ?>
                                     </tr>
                                     </thead>
                                     <?php  $_smarty_tpl->tpl_vars['client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['client']->_loop = false;
@@ -197,7 +212,6 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['target_client']->key => $_smarty_tpl->tpl_vars['target_client']->value) {
 $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 ?>
-
                                                 <td>
                                                     <table class="table table-bordered">
                                                         <tr>
@@ -265,6 +279,20 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                                     </tr>
                                                 </table>
                                             </td>
+                                            <?php  $_smarty_tpl->tpl_vars['target_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target_client']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['client']->value['target_produse']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['target_client']->key => $_smarty_tpl->tpl_vars['target_client']->value) {
+$_smarty_tpl->tpl_vars['target_client']->_loop = true;
+?>
+                                                <td>
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <td>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            <?php } ?>
                                         </tr>
                                     <?php } ?>
                                 </table>
