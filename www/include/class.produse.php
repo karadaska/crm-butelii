@@ -2,6 +2,90 @@
 
 class Produse
 {
+    public static function getPreturiProduseCuComisionByTipProdusIdAndClientAndTraseuId($tip_produs_id, $client_id, $traseu_id, $opts = array())
+    {
+        $ret = array();
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $query = "SELECT a.pret, a.pret_contract, a.client_id, a.tip_produs_id
+                  FROM detalii_fisa_intoarcere_produse as a
+                  left join fise_generate as b on a.fisa_id = b.id
+                  WHERE a.tip_produs_id = '" . $tip_produs_id . "' 
+                  AND a.client_id = '" . $client_id . "' 
+                  AND b.traseu_id = '" . $traseu_id . "'
+                  AND a.data_intrare >= '" . $data_start . "'
+                  AND a.data_intrare <= '" . $data_stop . "'
+                  and a.sters = 0
+                  and b.sters = 0              
+                  GROUP BY a.pret
+                  ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $r = array(
+                    'pret' => $item['pret'],
+                    'tip_produs_id' => $item['tip_produs_id'],
+                    'pret_unitar' => $item['pret_contract'] - $item['comision'],
+                    'client_id' => $item['client_id'],
+//                    'total_cantitati_by_produs' => Produse::getCantitatiProduseByPretAndProdusAndClientAndTraseu($item['pret'], $item['tip_produs_id'], $item['client_id'], $traseu_id, array(
+//                        'data_start' => $data_start,
+//                        'data_stop' => $data_stop,
+//                    )),
+                );
+                array_push($ret, $r);
+            }
+        }
+        return $ret;
+    }
+
+
+    public static function getCantitatiProduseByPretAndProdusAndClientAndTraseu($pret, $tip_produs_id, $client_id, $traseu_id, $opts = array())
+    {
+        $ret = null;
+
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $query = "SELECT SUM(a.cantitate) as numar_produs_by_pret
+                  FROM detalii_fisa_intoarcere_produse as a
+                  LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                  WHERE a.client_id = '" . $client_id . "'
+                  AND b.traseu_id =  '" . $traseu_id . "'
+                  AND a.pret = '" . $pret . "' 
+                  AND a.tip_produs_id = '" . $tip_produs_id . "' 
+                  AND a.data_intrare >= '" . $data_start . "'
+                  AND a.data_intrare <= '" . $data_stop . "'
+                  
+                  AND a.sters = 0                  
+                  ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return $ret;
+    }
+
     public static function getProduseExtraByFisaIdAndClientId($fisa_id, $client_id)
     {
         $ret = array();

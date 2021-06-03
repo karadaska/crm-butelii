@@ -1440,6 +1440,7 @@ class Clienti
         return $ret;
     }
 
+//    Trebuie scos
     public static function getCantitatiBg11ByPretClient($client_id, $traseu_id, $pret, $opts = array())
     {
         $ret = null;
@@ -1544,6 +1545,7 @@ class Clienti
 
         return $ret;
     }
+
 
     public static function getPreturiBG11CuComisionByClientId($client_id, $traseu_id, $opts = array())
     {
@@ -1851,6 +1853,7 @@ class Clienti
                     'telefon_2' => $item['telefon_2'],
                     'target_produse' => array(),
                     'total_produse_vandute' => array(),
+                    'preturi_produse' => array(),
                 );
 
                 foreach ($ret['produse_traseu'] as $tip_produs_id => $item_tip_produs) {
@@ -1860,16 +1863,10 @@ class Clienti
                         'data_stop' => $data_stop
                     ));
 
-//                    $r['total_produse'][$tip_produs_id] = Produse::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
-//                        'tip_produs_id' => $tip_produs_id,
-//                        'data_start' => $data_start,
-//                        'data_stop' => $data_stop
-//                    ));
-
-//                    $ret['grand'][$tip_produs_id] = self::getTotalCantitatiByTraseuIdAndProdusId($item['traseu_id'], $tip_produs_id, array(
-//                        'data_start' => $data_start,
-//                        'data_stop' => $data_stop
-//                    ));
+                    $r['preturi_produse'][$tip_produs_id] = Produse::getPreturiProduseCuComisionByTipProdusIdAndClientAndTraseuId($item['traseu_id'], $item['client_id'], $tip_produs_id, array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ));
                 }
 
                 array_push($ret['livrare_clienti'], $r);
