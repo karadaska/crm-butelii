@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-03 15:02:46
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-03 15:04:48
          compiled from "/var/www/html/fofoweb/www/templates/livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25771684360b6814a0ceb95-18556120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18754cfe725db66ee66057f0896921f869b9239a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_clienti.tpl',
-      1 => 1622721764,
+      1 => 1622721886,
       2 => 'file',
     ),
   ),
@@ -185,6 +185,9 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
 ?>
                                             <th>
                                                 <table class="table table-bordered">
+                                                    <tr>
+                                                        <th>&nbsp;</th>
+                                                    </tr>
                                                     <tr>
                                                         <th colspan="3"><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
 </th>

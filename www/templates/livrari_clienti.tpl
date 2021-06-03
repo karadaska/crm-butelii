@@ -118,6 +118,9 @@
                                             <th>
                                                 <table class="table table-bordered">
                                                     <tr>
+                                                        <th>&nbsp;</th>
+                                                    </tr>
+                                                    <tr>
                                                         <th colspan="3">{$produs['nume_produs']}</th>
                                                     </tr>
                                                 </table>
