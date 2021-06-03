@@ -68,7 +68,7 @@
                                         <th rowspan="3">LOCALITATE</th>
                                         <th rowspan="3">CLIENT</th>
                                         <th rowspan="3">TELEFON</th>
-                                        <th colspan="3">PRODUSE</th>
+                                        <th colspan="3">TARGET PRODUSE</th>
                                         <th colspan="3">TOTAL PRODUSE</th>
                                         <th colspan="2">GRAND PRODUSE</th>
                                     </tr>
@@ -109,6 +109,7 @@
                                                 <tr>
                                                     <th>BG + AR</th>
                                                     <th>VALOARE</th>
+                                                    <th>COMISION</th>
                                                 </tr>
                                             </table>
                                         </th>
@@ -120,6 +121,7 @@
                                             <td>{strtoupper($client['nume_client'])}</td>
                                             <td>{$client['telefon']} </br>{$client['telefon_2']}</td>
                                             {foreach from=$client['target_produse'] item=target_client}
+
                                                 <td>
                                                     <table class="table table-bordered">
                                                         <tr>
@@ -136,6 +138,9 @@
                                                     </table>
                                                 </td>
                                             {/foreach}
+                                            {$grand_bucati = 0}
+                                            {$grand_valoare = 0}
+                                            {$grand_comision = 0}
                                             {foreach from=$client['total_produse_vandute'] item=produse}
                                                 <td>
                                                     <table class="table table-bordered">
@@ -152,6 +157,9 @@
                                                         </tr>
                                                     </table>
                                                 </td>
+                                                {$grand_bucati = $grand_bucati + $produse['cantitate']}
+                                                {$grand_valoare = $grand_valoare + $produse['pret']}
+                                                {$grand_comision = $grand_comision + $produse['comision']}
                                             {/foreach}
                                             <td>
                                                 <table class="table table-bordered">
@@ -159,8 +167,9 @@
                                                         <td>
                                                             <table class="table table-bordered">
                                                                 <tr>
-                                                                    <td style="text-align: center;">s</td>
-                                                                    <td style="text-align: center;">3</td>
+                                                                    <td style="text-align: center;">{$grand_bucati}</td>
+                                                                    <td style="text-align: center;">{$grand_valoare}</td>
+                                                                    <td style="text-align: center;">{$grand_comision}</td>
                                                                 </tr>
                                                             </table>
                                                         </td>
