@@ -70,6 +70,7 @@
                                         <th rowspan="3">TELEFON</th>
                                         <th colspan="3">PRODUSE</th>
                                         <th colspan="3">TOTAL PRODUSE</th>
+                                        <th colspan="2">GRAND PRODUSE</th>
                                     </tr>
                                     <tr>
                                         {foreach from=$lista_clienti['produse_traseu'] item=produs}
@@ -100,6 +101,17 @@
                                                 </table>
                                             </th>
                                         {/foreach}
+                                        <th>
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th colspan="2">&nbsp;</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>BG + AR</th>
+                                                    <th>VALOARE</th>
+                                                </tr>
+                                            </table>
+                                        </th>
                                     </tr>
                                     </thead>
                                     {foreach from=$lista_clienti['livrare_clienti'] item=client}
@@ -141,6 +153,20 @@
                                                     </table>
                                                 </td>
                                             {/foreach}
+                                            <td>
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <td>
+                                                            <table class="table table-bordered">
+                                                                <tr>
+                                                                    <td style="text-align: center;">s</td>
+                                                                    <td style="text-align: center;">3</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
                                         </tr>
                                     {/foreach}
                                 </table>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-03 13:50:44
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-03 14:39:08
          compiled from "/var/www/html/fofoweb/www/templates/livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25771684360b6814a0ceb95-18556120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18754cfe725db66ee66057f0896921f869b9239a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_clienti.tpl',
-      1 => 1622717441,
+      1 => 1622720345,
       2 => 'file',
     ),
   ),
@@ -121,6 +121,7 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                         <th rowspan="3">TELEFON</th>
                                         <th colspan="3">PRODUSE</th>
                                         <th colspan="3">TOTAL PRODUSE</th>
+                                        <th colspan="2">GRAND PRODUSE</th>
                                     </tr>
                                     <tr>
                                         <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
@@ -161,6 +162,17 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
                                                 </table>
                                             </th>
                                         <?php } ?>
+                                        <th>
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th colspan="2">&nbsp;</th>
+                                                </tr>
+                                                <tr>
+                                                    <th>BG + AR</th>
+                                                    <th>VALOARE</th>
+                                                </tr>
+                                            </table>
+                                        </th>
                                     </tr>
                                     </thead>
                                     <?php  $_smarty_tpl->tpl_vars['client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['client']->_loop = false;
@@ -224,6 +236,20 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                                     </table>
                                                 </td>
                                             <?php } ?>
+                                            <td>
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <td>
+                                                            <table class="table table-bordered">
+                                                                <tr>
+                                                                    <td style="text-align: center;">s</td>
+                                                                    <td style="text-align: center;">3</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                 </table>
