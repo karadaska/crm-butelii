@@ -38,10 +38,10 @@ class Produse
                     'tip_produs_id' => $item['tip_produs_id'],
                     'pret_unitar' => $item['pret_contract'] - $item['comision'],
                     'client_id' => $item['client_id'],
-//                    'total_cantitati_by_produs' => Produse::getCantitatiProduseByPretAndProdusAndClientAndTraseu($item['pret'], $item['tip_produs_id'], $item['client_id'], $traseu_id, array(
-//                        'data_start' => $data_start,
-//                        'data_stop' => $data_stop,
-//                    )),
+                    'total_cantitati_by_pret_produs' => Produse::getCantitatiProduseByPretAndProdusAndClientAndTraseu($item['pret'], $item['tip_produs_id'], $item['client_id'], $traseu_id, array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop,
+                    )),
                 );
                 array_push($ret, $r);
             }
