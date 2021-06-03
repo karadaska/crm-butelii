@@ -1809,10 +1809,11 @@ class Clienti
         }
         return $ret;
     }
+
     public static function getRaportLivrariClienti($traseu_id, $opts = array())
     {
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
-        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] :0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
 
 
         $ret = array(
@@ -1849,10 +1850,15 @@ class Clienti
                     'telefon' => $item['telefon'],
                     'telefon_2' => $item['telefon_2'],
                     'target_produse' => array(),
+                    'total_produse_vandute' => array(),
                 );
 
                 foreach ($ret['produse_traseu'] as $tip_produs_id => $item_tip_produs) {
-                    $r['target_produse'][$tip_produs_id] = Target::getTargetByClientAndProdusIdPentruRaportLivrari($item['client_id'],$tip_produs_id);
+                    $r['target_produse'][$tip_produs_id] = Target::getTargetByClientAndProdusIdPentruRaportLivrari($item['client_id'], $tip_produs_id);
+                    $r['total_produse_vandute'][$tip_produs_id] = Produse::getTotalProduseVanduteByTraseuIdAndProdusId($item['traseu_id'], $item['client_id'], $tip_produs_id, array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ));
 
 //                    $r['total_produse'][$tip_produs_id] = Produse::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
 //                        'tip_produs_id' => $tip_produs_id,
@@ -1912,8 +1918,6 @@ class Clienti
 //                        'data_start' => $data_start,
 //                        'data_stop' => $data_stop
 //                    ))
-
-
 
 
 //    public static function getRaportLivrariClienti($traseu_id, $opts = array())
@@ -2248,8 +2252,8 @@ class Clienti
                 LEFT JOIN clienti_stari AS g ON a.stare_id = g.id	               
                 WHERE (a.sters = 0 and a.stare_id = 1 || a.stare_id = 3)
 				AND a.exclus = 0
-				AND f.depozit_id = '".$depozit_id."'
-				AND a.data_start LIKE '%".$an."%'
+				AND f.depozit_id = '" . $depozit_id . "'
+				AND a.data_start LIKE '%" . $an . "%'
 				GROUP BY a.id
 				ORDER BY a.nume ASC
 				";
@@ -2283,8 +2287,8 @@ class Clienti
                 LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id	               
                 WHERE a.sters = 1
 				AND a.exclus = 0
-				AND f.depozit_id = '".$depozit_id."'
-				AND a.data_start LIKE '%".$an."%'
+				AND f.depozit_id = '" . $depozit_id . "'
+				AND a.data_start LIKE '%" . $an . "%'
 				GROUP BY a.id
 				ORDER BY a.nume ASC
 				";
@@ -2355,8 +2359,8 @@ class Clienti
                 LEFT JOIN clienti_stari AS g ON a.stare_id = g.id	               
                 WHERE a.sters = 0
 				AND a.exclus = 0
-				AND f.depozit_id = '".$depozit_id."'
-				AND a.data_start LIKE '%".$an."%'
+				AND f.depozit_id = '" . $depozit_id . "'
+				AND a.data_start LIKE '%" . $an . "%'
 				GROUP BY a.id
 				ORDER BY a.nume ASC
 				";
@@ -2393,7 +2397,7 @@ class Clienti
                 LEFT JOIN clienti_stari AS g ON a.stare_id = g.id	               
                 WHERE a.sters = 0             
 				AND a.exclus = 0
-				AND f.depozit_id = '".$depozit_id."'
+				AND f.depozit_id = '" . $depozit_id . "'
 				AND a.data_start LIKE '0000-00-00'
 				AND a.data_stop LIKE '0000-00-00'
 				GROUP BY a.id
@@ -2432,8 +2436,8 @@ class Clienti
                 LEFT JOIN clienti_stari AS g ON a.stare_id = g.id             
                 WHERE a.stare_id = 2
 				AND a.exclus = 0
-				AND f.depozit_id = '".$depozit_id."'
-				AND a.data_stop LIKE '%".$an."%'
+				AND f.depozit_id = '" . $depozit_id . "'
+				AND a.data_stop LIKE '%" . $an . "%'
 				GROUP BY a.id
 				ORDER By a.nume ASC
 				";
@@ -2537,7 +2541,6 @@ class Clienti
 
         return $ret;
     }
-
 
 
     public static function getClientiActiviByAnAndDepozitId()

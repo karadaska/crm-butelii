@@ -155,6 +155,32 @@ class Produse
     }
 
 
+    public static function getTotalProduseVanduteByTraseuIdAndProdusId($traseu_id, $client_id, $tip_produs_id, $opts = array())
+    {
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        $ret = array();
+        $query = "SELECT SUM(a.cantitate) as cantitate, a.pret, a.comision 
+                    FROM detalii_fisa_intoarcere_produse as a
+                    LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                    LEFT JOIN tip_produs as c on a.tip_produs_id = c.id
+                    WHERE b.traseu_id = '" . $traseu_id . "'
+                    AND a.client_id = '" . $client_id . "'
+                    AND a.tip_produs_id = '" . $tip_produs_id . "'
+                    AND a.data_intrare >= '" . $data_start . "'
+                    AND a.data_intrare <= '" . $data_stop . "'
+                    AND a.sters = 0
+                    AND a.cantitate > 0
+                    GROUP BY a.tip_produs_id";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
     public static function getProduseVanduteByTraseuId($traseu_id, $opts = array())
     {
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;

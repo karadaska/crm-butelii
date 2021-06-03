@@ -69,6 +69,7 @@
                                         <th rowspan="3">CLIENT</th>
                                         <th rowspan="3">TELEFON</th>
                                         <th colspan="3">PRODUSE</th>
+                                        <th colspan="3">TOTAL PRODUSE</th>
                                     </tr>
                                     <tr>
                                         {foreach from=$lista_clienti['produse_traseu'] item=produs}
@@ -85,6 +86,20 @@
                                                 </table>
                                             </th>
                                         {/foreach}
+                                        {foreach from=$lista_clienti['produse_traseu'] item=produs}
+                                            <th>
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <th colspan="3">{$produs['nume_produs']}</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>BUC.</th>
+                                                        <th>PRET</th>
+                                                        <th>COM</th>
+                                                    </tr>
+                                                </table>
+                                            </th>
+                                        {/foreach}
                                     </tr>
                                     </thead>
                                     {foreach from=$lista_clienti['livrare_clienti'] item=client}
@@ -93,21 +108,38 @@
                                             <td>{$client['nume_client']}</td>
                                             <td>{$client['telefon']} </br>{$client['telefon_2']}</td>
                                             {foreach from=$client['target_produse'] item=target_client}
-                                            <td>
-                                                <table class="table table-bordered">
-                                                    <tr>
-                                                        <td>
-                                                            <table class="table table-bordered">
-                                                                <tr>
-                                                                    <td>{($target_client['target'] > 0 || $target_client['target'] !='') ?  $target_client['target'] : '-'}</td>
-                                                                    <td>{($target_client['pret_contract'] > 0 || $target_client['pret_contract'] !='') ?  $target_client['pret_contract'] : '-'}</td>
-                                                                    <td>{($target_client['comision'] > 0 || $target_client['comision'] !='') ?  $target_client['comision'] : '-'}</td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
+                                                <td>
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <td>
+                                                                <table class="table table-bordered">
+                                                                    <tr>
+                                                                        <td>{($target_client['target'] > 0 || $target_client['target'] !='') ?  $target_client['target'] : '-'}</td>
+                                                                        <td>{($target_client['pret_contract'] > 0 || $target_client['pret_contract'] !='') ?  $target_client['pret_contract'] : '-'}</td>
+                                                                        <td>{($target_client['comision'] > 0 || $target_client['comision'] !='') ?  $target_client['comision'] : '-'}</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            {/foreach}
+                                            {foreach from=$client['target_produse'] item=target_client}
+                                                <td>
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <td>
+                                                                <table class="table table-bordered">
+                                                                    <tr>
+                                                                        <td>{($target_client['target'] > 0 || $target_client['target'] !='') ?  $target_client['target'] : '-'}</td>
+                                                                        <td>{($target_client['pret_contract'] > 0 || $target_client['pret_contract'] !='') ?  $target_client['pret_contract'] : '-'}</td>
+                                                                        <td>{($target_client['comision'] > 0 || $target_client['comision'] !='') ?  $target_client['comision'] : '-'}</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
                                             {/foreach}
                                         </tr>
                                     {/foreach}
