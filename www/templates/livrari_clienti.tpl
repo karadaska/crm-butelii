@@ -188,11 +188,16 @@
                                                     </tr>
                                                 </table>
                                             </td>
-                                            {foreach from=$client['target_produse'] item=target_client}
+                                            {foreach from=$client['preturi_produse'] item=preturi}
                                                 <td>
                                                     <table class="table table-bordered">
                                                         <tr>
-                                                            <td>
+                                                            <td style="text-align: center;">
+                                                                {foreach from=$preturi item=pret}
+                                                                    {$pret['pret']}
+                                                                    <br/>
+                                                                    {$pret['total_cantitati_by_pret_produs']['numar_produs_by_pret']}
+                                                                {/foreach}
                                                             </td>
                                                         </tr>
                                                     </table>

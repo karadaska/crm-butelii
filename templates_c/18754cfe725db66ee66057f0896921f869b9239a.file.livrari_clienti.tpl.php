@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-03 15:04:48
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-04 14:55:30
          compiled from "/var/www/html/fofoweb/www/templates/livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25771684360b6814a0ceb95-18556120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18754cfe725db66ee66057f0896921f869b9239a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_clienti.tpl',
-      1 => 1622721886,
+      1 => 1622807728,
       2 => 'file',
     ),
   ),
@@ -33,6 +33,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'grand_bucati' => 0,
     'grand_valoare' => 0,
     'grand_comision' => 0,
+    'preturi' => 0,
+    'pret' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -282,15 +284,26 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                                     </tr>
                                                 </table>
                                             </td>
-                                            <?php  $_smarty_tpl->tpl_vars['target_client'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target_client']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['client']->value['target_produse']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['target_client']->key => $_smarty_tpl->tpl_vars['target_client']->value) {
-$_smarty_tpl->tpl_vars['target_client']->_loop = true;
+                                            <?php  $_smarty_tpl->tpl_vars['preturi'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['preturi']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['client']->value['preturi_produse']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['preturi']->key => $_smarty_tpl->tpl_vars['preturi']->value) {
+$_smarty_tpl->tpl_vars['preturi']->_loop = true;
 ?>
                                                 <td>
                                                     <table class="table table-bordered">
                                                         <tr>
-                                                            <td>
+                                                            <td style="text-align: center;">
+                                                                <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['preturi']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars['pret']->value) {
+$_smarty_tpl->tpl_vars['pret']->_loop = true;
+?>
+                                                                    <?php echo $_smarty_tpl->tpl_vars['pret']->value['pret'];?>
+
+                                                                    <br/>
+                                                                    <?php echo $_smarty_tpl->tpl_vars['pret']->value['total_cantitati_by_pret_produs']['numar_produs_by_pret'];?>
+
+                                                                <?php } ?>
                                                             </td>
                                                         </tr>
                                                     </table>
