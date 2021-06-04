@@ -189,19 +189,23 @@
                                                 </table>
                                             </td>
                                             {foreach from=$client['preturi_produse'] item=preturi}
-                                                <td>
-                                                    <table class="table table-bordered">
-                                                        <tr>
-                                                            <td style="text-align: center;">
+                                                {if count($client['preturi_produse'] > 0)}
+                                                    <td>
+                                                        <table class="table table-bordered">
+                                                            <tr>
                                                                 {foreach from=$preturi item=pret}
-                                                                    {$pret['pret']}
-                                                                    <br/>
-                                                                    {$pret['total_cantitati_by_pret_produs']['numar_produs_by_pret']}
+                                                                    {if ($pret['total_cantitati_by_pret_produs']['numar_produs_by_pret'] > 0)}
+                                                                        <td style="text-align: center;">
+                                                                            {$pret['pret']}
+                                                                            <br/>
+                                                                            {$pret['total_cantitati_by_pret_produs']['numar_produs_by_pret']}
+                                                                        </td>
+                                                                    {/if}
                                                                 {/foreach}
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                {/if}
                                             {/foreach}
                                         </tr>
                                     {/foreach}
