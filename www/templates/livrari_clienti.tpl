@@ -207,26 +207,6 @@
                                                         {/foreach}
                                                     </td>
                                                 {/foreach}
-                                                {*{foreach from=$client['preturi_produse'] item=preturi}*}
-                                                {*<td>*}
-                                                {*<table class="table table-bordered">*}
-                                                {*<tr>*}
-                                                {*{foreach from=$preturi item=pret}*}
-                                                {*{if ($pret['total_cantitati_by_pret_produs']['numar_produs_by_pret'] > 0)}*}
-                                                {*<td style="text-align: center;">*}
-                                                {*{count($pret['pret'])}*}
-                                                {*{$pret['pret']}*}
-                                                {*<br/>*}
-                                                {*{$pret['total_cantitati_by_pret_produs']['numar_produs_by_pret']}*}
-                                                {*</td>*}
-                                                {*{else}*}
-                                                {*<td style="display: none;">23323</td>*}
-                                                {*{/if}*}
-                                                {*{/foreach}*}
-                                                {*</tr>*}
-                                                {*</table>*}
-                                                {*</td>*}
-                                                {*{/foreach}*}
                                             </tr>
                                         {/foreach}
                                     </table>
