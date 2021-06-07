@@ -32,33 +32,25 @@ $lista_clienti = Clienti::getRaportLivrariClienti($traseu_id, array(
 ));
 $smarty->assign('lista_clienti', $lista_clienti);
 
+$preturi_by_bg_11 = Clienti::getPreturiByProdusId(1, $traseu_id,
+     array(
+        'data_start' => $data_start,
+        'data_stop' => $data_stop
+    ));
+$smarty->assign('preturi_by_bg_11', $preturi_by_bg_11);
 
-//foreach ($lista_clienti['livrare_clienti'] as $item){
-//    echo $item['nume_localitate'];
-//}
+$preturi_by_ar_8 = Clienti::getPreturiByProdusId(3, $traseu_id, array(
+    'data_start' => $data_start,
+    'data_stop' => $data_stop
+)
+);
+$smarty->assign('preturi_by_ar_8', $preturi_by_ar_8);
 
-//pre($lista_clienti);
-
-//
-//$preturi_by_bg_11 = Clienti::getPreturiByProdusId(1, $traseu_id,
-//     array(
-//        'data_start' => $data_start,
-//        'data_stop' => $data_stop
-//    ));
-//$smarty->assign('preturi_by_bg_11', $preturi_by_bg_11);
-//
-//$preturi_by_ar_8 = Clienti::getPreturiByProdusId(3, $traseu_id, array(
-//    'data_start' => $data_start,
-//    'data_stop' => $data_stop
-//)
-//);
-//$smarty->assign('preturi_by_ar_8', $preturi_by_ar_8);
-//
-//$preturi_by_ar_9 = Clienti::getPreturiByProdusId(4, $traseu_id, array(
-//    'data_start' => $data_start,
-//    'data_stop' => $data_stop
-//));
-//$smarty->assign('preturi_by_ar_9', $preturi_by_ar_9);
+$preturi_by_ar_9 = Clienti::getPreturiByProdusId(4, $traseu_id, array(
+    'data_start' => $data_start,
+    'data_stop' => $data_stop
+));
+$smarty->assign('preturi_by_ar_9', $preturi_by_ar_9);
 
 $smarty->display($template_page);
 

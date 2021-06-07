@@ -215,6 +215,60 @@
                         </div>
                     </div>
                 </div>
+                <div style="display: inline-flex">
+                    <div>
+                        {if count($preturi_by_bg_11) > 0}
+                            <table class="table table-bordered"
+                                   style="margin-top: 20px;width: 400px;">
+                                <tr>
+                                    <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
+                                </tr>
+                                <tr>
+                                    {foreach from=$preturi_by_bg_11 item=pret}
+                                        <td>
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th style="text-align: center;">{$pret['pret_bg_11']['pret']}
+                                                        <br/>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;">{$pret['pret_bg_11']['cantitate']['0']['total_cantitate']}</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    {/foreach}
+                                </tr>
+                            </table>
+                        {/if}
+                    </div>
+                    <div style="margin-left: 10px;w">
+                        {if count($preturi_by_ar_9) > 0}
+                            <table class="table table-bordered"
+                                   style="margin-top: 20px;width: 400px;">
+                                <tr>
+                                    <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
+                                </tr>
+                                <tr>
+                                    {foreach from=$preturi_by_ar_9 item=pret}
+                                        <td>
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th style="text-align: center;">{$pret['pret_ar_9']['pret']}
+                                                        <br/>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align: center;">{$pret['pret_ar_9']['cantitate']['0']['total_cantitate']}</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    {/foreach}
+                                </tr>
+                            </table>
+                        {/if}
+                    </div>
+                </div>
             {/if}
     </section>
 </div>

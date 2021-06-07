@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-07 22:58:30
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-07 23:00:00
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1623095908,
+      1 => 1623095999,
       2 => 'file',
     ),
   ),
@@ -357,7 +357,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                             </th>
                                             <th style="border-right:double;"><abbr title="Total bucati BG + AR "
                                                                                    style="color: red;"><?php echo $_smarty_tpl->tpl_vars['total_bg_ar']->value;?>
-</abbr>
+333</abbr>
                                             </th>
                                             <th>
                                                 <abbr title="Total valoare incasare BG 11"
@@ -797,7 +797,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                                        style="margin-top: 20px;width: 400px;">
                                                     <tr>
                                                         <th colspan="<?php echo count($_smarty_tpl->tpl_vars['preturi_by_bg_11']->value);?>
-">PRETURI BG 11 dsd</th>
+">PRETURI BG 11</th>
                                                     </tr>
                                                     <tr>
                                                         <?php  $_smarty_tpl->tpl_vars['pret'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['pret']->_loop = false;
