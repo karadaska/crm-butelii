@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-04 23:17:01
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-07 22:14:23
          compiled from "/var/www/html/fofoweb/www/templates/livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25771684360b6814a0ceb95-18556120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18754cfe725db66ee66057f0896921f869b9239a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_clienti.tpl',
-      1 => 1622837819,
+      1 => 1623093261,
       2 => 'file',
     ),
   ),
@@ -172,7 +172,7 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
                                             <th>
                                                 <table class="table table-bordered">
                                                     <tr>
-                                                        <th colspan="2">&nbsp;</th>
+                                                        <th colspan="3">&nbsp;</th>
                                                     </tr>
                                                     <tr>
                                                         <th>BG + AR</th>
@@ -285,12 +285,12 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                                         </tr>
                                                     </table>
                                                 </td>
+                                                <?php if (count($_smarty_tpl->tpl_vars['client']->value['preturi_produse']>0)) {?>
                                                 <?php  $_smarty_tpl->tpl_vars['preturi'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['preturi']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['client']->value['preturi_produse']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['preturi']->key => $_smarty_tpl->tpl_vars['preturi']->value) {
 $_smarty_tpl->tpl_vars['preturi']->_loop = true;
 ?>
-                                                    <?php if (count($_smarty_tpl->tpl_vars['client']->value['preturi_produse']>0)) {?>
                                                         <td>
                                                             <table class="table table-bordered">
                                                                 <tr>
@@ -312,8 +312,8 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                                                 </tr>
                                                             </table>
                                                         </td>
-                                                    <?php }?>
                                                 <?php } ?>
+                                                <?php }?>
                                             </tr>
                                         <?php } ?>
                                     </table>

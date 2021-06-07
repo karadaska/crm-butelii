@@ -106,7 +106,7 @@
                                             <th>
                                                 <table class="table table-bordered">
                                                     <tr>
-                                                        <th colspan="2">&nbsp;</th>
+                                                        <th colspan="3">&nbsp;</th>
                                                     </tr>
                                                     <tr>
                                                         <th>BG + AR</th>
@@ -189,8 +189,8 @@
                                                         </tr>
                                                     </table>
                                                 </td>
+                                                {if count($client['preturi_produse'] > 0)}
                                                 {foreach from=$client['preturi_produse'] item=preturi}
-                                                    {if count($client['preturi_produse'] > 0)}
                                                         <td>
                                                             <table class="table table-bordered">
                                                                 <tr>
@@ -206,8 +206,8 @@
                                                                 </tr>
                                                             </table>
                                                         </td>
-                                                    {/if}
                                                 {/foreach}
+                                                {/if}
                                             </tr>
                                         {/foreach}
                                     </table>
