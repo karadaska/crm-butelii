@@ -281,18 +281,20 @@
                                 </tr>
                                 <tr>
                                     {foreach from=$preturi_by_ar_8 item=pret}
-                                        <td>
-                                            <table class="table table-bordered">
-                                                <tr>
-                                                    <th style="text-align: center;">{$pret['pret_ar_8']['pret']}
-                                                        <br/>
-                                                    </th>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>
-                                                </tr>
-                                            </table>
-                                        </td>
+                                        {if ($pret['pret_ar_8']['cantitate']['0']['total_cantitate'] > 0)}
+                                            <td>
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <th style="text-align: center;">{$pret['pret_ar_8']['pret']}
+                                                            <br/>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        {/if}
                                     {/foreach}
                                 </tr>
                             </table>
