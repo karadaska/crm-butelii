@@ -106,7 +106,7 @@
                           method="post"
                           style="margin-bottom: 0">
                         <div class="widget-content">
-                            <table border="1">
+                            <table border="1" style="width: 100%;">
                                 <thead>
                                 <tr>
                                     <th rowspan="3">LOCALITATE</th>
@@ -120,7 +120,7 @@
                                 <tr>
                                     {foreach from=$lista_clienti['produse_traseu'] item=produs}
                                         <th>
-                                            <table border="1">
+                                            <table border="1" style="width: 100%;">
                                                 <tr>
                                                     <th colspan="3">{$produs['nume_produs']}</th>
                                                 </tr>
@@ -134,7 +134,7 @@
                                     {/foreach}
                                     {foreach from=$lista_clienti['produse_traseu'] item=produs}
                                         <th>
-                                            <table border="1">
+                                            <table border="1" style="width: 100%;">
                                                 <tr>
                                                     <th colspan="3">{$produs['nume_produs']}</th>
                                                 </tr>
@@ -147,7 +147,7 @@
                                         </th>
                                     {/foreach}
                                     <th>
-                                        <table border="1">
+                                        <table border="1" style="width: 100%;">
                                             <tr>
                                                 <th colspan="3">&nbsp;</th>
                                             </tr>
@@ -179,10 +179,10 @@
                                         <td>{$client['telefon']} </br>{$client['telefon_2']}</td>
                                         {foreach from=$client['target_produse'] item=target_client}
                                             <td>
-                                                <table border="1" >
+                                                <table border="1" style="width: 100%;">
                                                     <tr>
                                                         <td>
-                                                            <table border="1">
+                                                            <table border="1" style="width: 100%;">
                                                                 <tr>
                                                                     <td style="text-align: center;">{($target_client['target'] > 0 || $target_client['target'] !='') ?  $target_client['target'] : '-'}</td>
                                                                     <td style="text-align: center;">{($target_client['pret_contract'] > 0 || $target_client['pret_contract'] !='') ?  $target_client['pret_contract'] : '-'}</td>
@@ -199,10 +199,10 @@
                                         {$grand_comision = 0}
                                         {foreach from=$client['total_produse_vandute'] item=produse}
                                             <td>
-                                                <table border="1">
+                                                <table border="1" style="width: 100%;">
                                                     <tr>
                                                         <td>
-                                                            <table border="1">
+                                                            <table border="1" style="width: 100%;">
                                                                 <tr>
                                                                     <td style="text-align: center;">{($produse['cantitate'] > 0 || $produse['cantitate'] !='') ?  $produse['cantitate'] : '-'}</td>
                                                                     <td style="text-align: center;">{($produse['pret'] > 0 || $produse['pret'] !='') ?  $produse['pret'] : '-'}</td>
@@ -218,10 +218,10 @@
                                             {$grand_comision = $grand_comision + $produse['comision']}
                                         {/foreach}
                                         <td>
-                                            <table border="1">
+                                            <table border="1" style="width: 100%;">
                                                 <tr>
                                                     <td>
-                                                        <table border="1">
+                                                        <table border="1" style="width: 100%;">
                                                             <tr>
                                                                 <td style="text-align: center;">{$grand_bucati}</td>
                                                                 <td style="text-align: center;">{$grand_valoare}</td>
@@ -236,7 +236,7 @@
                                             <td>
                                                 {foreach from=$preturi item=pret}
                                                     {if ($pret['total_cantitati_by_pret_produs']['numar_produs_by_pret'] > 0)}
-                                                        <table border="1">
+                                                        <table border="1" style="width: 100%;">
                                                             <tr>
                                                                 <td style="text-align: center;">
                                                                     {$pret['pret']}
@@ -253,7 +253,7 @@
                                 {/foreach}
                                 <tr>
                                     <th colspan="5"></th>
-                                    <th style="text-align: right;vertical-align: middle;color:red;">TOTAL</th>
+                                    <th style="text-align: right;vertical-align: middle;">TOTAL</th>
                                     {$grand_total_cantitati = 0}
                                     {$grand_total_valoare = 0}
                                     {$grand_total_comision = 0}
@@ -269,21 +269,21 @@
                                         {$grand_valoare = $grand_valoare + $grand_total_valoare}
                                         {$grand_comision = $grand_comision + $grand_total_comision}
                                         <td>
-                                            <table border="1">
+                                            <table border="1" style="width: 100%;">
                                                 <tr>
-                                                    <th style="text-align: center;color: red;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</th>
-                                                    <th style="text-align: center;color: red;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</th>
-                                                    <th style="text-align: center;color: red;">{($grand_total_comision > 0) ? $grand_total_comision : '-'}</th>
+                                                    <th style="text-align: center;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</th>
+                                                    <th style="text-align: center;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</th>
+                                                    <th style="text-align: center;">{($grand_total_comision > 0) ? $grand_total_comision : '-'}</th>
                                                 </tr>
                                             </table>
                                         </td>
                                     {/foreach}
                                     <td>
-                                        <table border="1">
+                                        <table border="1" style="width: 100%;">
                                             <tr>
-                                                <th style="text-align: center;color: red;">{($grand_total_ar_bg > 0) ? $grand_total_ar_bg : '-'}</th>
-                                                <th style="text-align: center;color: red;">{($grand_valoare > 0) ? $grand_valoare : '-'}</th>
-                                                <th style="text-align: center;color: red;">{($grand_comision > 0) ? $grand_comision : '-'}</th>
+                                                <th style="text-align: center;">{($grand_total_ar_bg > 0) ? $grand_total_ar_bg : '-'}</th>
+                                                <th style="text-align: center;">{($grand_valoare > 0) ? $grand_valoare : '-'}</th>
+                                                <th style="text-align: center;">{($grand_comision > 0) ? $grand_comision : '-'}</th>
                                             </tr>
                                         </table>
                                     </td>
