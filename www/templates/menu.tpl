@@ -99,12 +99,12 @@
                                 <span class="txt">Raport apeluri clienti</span>
                             </a>
                         </li>
-                        <li {if $menu_curent==10}class="current"{/if}>
-                            <a href="/raport_livrari_clienti.php">
-                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
-                                <span class="txt">Raport livrari clienti</span>
-                            </a>
-                        </li>
+                        {*<li {if $menu_curent==10}class="current"{/if}>*}
+                            {*<a href="/raport_livrari_clienti.php">*}
+                                {*<span class="icon"><i class="icon20 i-stack-list"></i></span>*}
+                                {*<span class="txt">Raport livrari clienti</span>*}
+                            {*</a>*}
+                        {*</li>*}
                         <li {if $menu_curent==10}class="current"{/if}>
                             <a href="/livrari_clienti.php">
                                 <span class="icon"><i class="icon20 i-stack-list"></i></span>
