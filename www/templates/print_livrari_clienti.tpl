@@ -100,7 +100,6 @@
                 <div class="widget">
                     <div class="widget-title">
                         <div class="icon"><i class="icon20 i-table"></i></div>
-                        <h4>List&#259; clien&#355i</h4>
                     </div>
                     <form action="/livrari_clienti.php"
                           method="post"

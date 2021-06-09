@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 15:18:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 15:20:08
          compiled from "/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:44692461460c0a294a628e1-25430061%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '82208087dda068886a360b1fa14bfe49b76c0897' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl',
-      1 => 1623241097,
+      1 => 1623241206,
       2 => 'file',
     ),
   ),
@@ -157,7 +157,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <div class="widget">
                     <div class="widget-title">
                         <div class="icon"><i class="icon20 i-table"></i></div>
-                        <h4>List&#259; clien&#355i</h4>
                     </div>
                     <form action="/livrari_clienti.php"
                           method="post"
