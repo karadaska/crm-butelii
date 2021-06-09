@@ -63,7 +63,7 @@ class Produse
             $data_stop = date('Y-m-t');
         }
 
-        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
+        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare, SUM(a.comision) as comision
                                 FROM detalii_fisa_intoarcere_produse  as a
                                 LEFT JOIN fise_generate as b on a.fisa_id = b.id
                                 WHERE b.traseu_id = '" . $traseu_id . "'                                

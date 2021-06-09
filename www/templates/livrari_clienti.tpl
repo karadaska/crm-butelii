@@ -212,10 +212,20 @@
                                         <tr>
                                             <th colspan="5"></th>
                                             <th style="text-align: right;vertical-align: middle;color:red;">TOTAL</th>
+                                            {$grand_total_cantitati = 0}
+                                            {$grand_total_valoare = 0}
+                                            {$grand_total_comision = 0}
+                                            {$grand_total_ar_bg = 0}
+                                            {$grand_valoare = 0}
+                                            {$grand_comision = 0}
+
                                             {foreach from = $lista_clienti['produse_traseu'] item= produse}
                                                 {$grand_total_cantitati = $lista_clienti['grand'][$produse['tip_produs_id']]['cantitate']}
                                                 {$grand_total_valoare = $lista_clienti['grand'][$produse['tip_produs_id']]['valoare']}
                                                 {$grand_total_comision = $lista_clienti['grand'][$produse['tip_produs_id']]['comision']}
+                                                {$grand_total_ar_bg = $grand_total_ar_bg + $grand_total_cantitati}
+                                                {$grand_valoare = $grand_valoare + $grand_total_valoare}
+                                                {$grand_comision = $grand_comision + $grand_total_comision}
                                                 <td>
                                                     <table  class="table table-bordered">
                                                         <tr>
@@ -226,6 +236,16 @@
                                                     </table>
                                                 </td>
                                             {/foreach}
+                                            <td>
+                                                <table  class="table table-bordered">
+                                                    <tr>
+                                                        <th style="text-align: center;color: red;">{($grand_total_ar_bg > 0) ? $grand_total_ar_bg : '-'}</th>
+                                                        <th style="text-align: center;color: red;">{($grand_valoare > 0) ? $grand_valoare : '-'}</th>
+                                                        <th style="text-align: center;color: red;">{($grand_comision > 0) ? $grand_comision : '-'}</th>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td colspan="3"></td>
                                         </tr>
                                     </table>
                                 </div>
