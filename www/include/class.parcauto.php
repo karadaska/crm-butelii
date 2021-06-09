@@ -558,7 +558,9 @@ class ParcAuto
                                 AND a.tip_produs_id = '" . $tip_produs_id . "'                                
                                 AND a.data_intrare >= '" . $data_start . "'
                                 AND a.data_intrare <= '" . $data_stop . "'
-                                AND a.sters = 0";
+                                AND a.sters = 0
+                                AND a.cantitate > 0
+                                ";
 
         $result = myQuery($target_by_client_id);
         if ($result) {
@@ -623,7 +625,9 @@ class ParcAuto
                                 AND a.tip_produs_id = '" . $tip_produs_id . "'                                
                                 AND a.data_intrare >= '" . $data_start . "'
                                 AND a.data_intrare <= '" . $data_stop . "'
-                                AND a.sters = 0";
+                                AND a.sters = 0
+                                AND a.cantitate > 0
+                                ";
 
         $result = myQuery($target_by_client_id);
         if ($result) {
