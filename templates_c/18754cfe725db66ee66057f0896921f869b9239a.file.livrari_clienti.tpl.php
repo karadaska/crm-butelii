@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 16:00:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 22:45:02
          compiled from "/var/www/html/fofoweb/www/templates/livrari_clienti.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:25771684360b6814a0ceb95-18556120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:71572774560c117c05f66c8-62267771%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '18754cfe725db66ee66057f0896921f869b9239a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_clienti.tpl',
-      1 => 1623243616,
+      1 => 1623267901,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '25771684360b6814a0ceb95-18556120',
+  'nocache_hash' => '71572774560c117c05f66c8-62267771',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60b6814a12dd31_47785637',
+  'unifunc' => 'content_60c117c06f90a9_87600339',
   'variables' => 
   array (
     'title' => 0,
@@ -35,6 +35,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'grand_comision' => 0,
     'preturi' => 0,
     'pret' => 0,
+    'colspan' => 0,
     'grand_total_ar_bg' => 0,
     'grand_total_cantitati' => 0,
     'grand_total_valoare' => 0,
@@ -45,7 +46,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_60b6814a12dd31_47785637')) {function content_60b6814a12dd31_47785637($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
+<?php if ($_valid && !is_callable('content_60c117c06f90a9_87600339')) {function content_60c117c06f90a9_87600339($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
 <?php echo $_smarty_tpl->getSubTemplate ("top.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
@@ -325,7 +326,14 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                             </tr>
                                         <?php } ?>
                                         <tr>
-                                            <th colspan="5"></th>
+                                            <?php if ((count($_smarty_tpl->tpl_vars['lista_clienti']->value['produse_traseu'])==2)) {?>
+                                                <?php $_smarty_tpl->tpl_vars['colspan'] = new Smarty_variable(4, null, 0);?>
+                                            <?php } else { ?>
+                                                <?php $_smarty_tpl->tpl_vars['colspan'] = new Smarty_variable(5, null, 0);?>
+                                            <?php }?>
+
+                                            <th colspan="<?php echo $_smarty_tpl->tpl_vars['colspan']->value;?>
+"></th>
                                             <th style="text-align: right;vertical-align: middle;color:red;">TOTAL</th>
                                             <?php $_smarty_tpl->tpl_vars['grand_total_cantitati'] = new Smarty_variable(0, null, 0);?>
                                             <?php $_smarty_tpl->tpl_vars['grand_total_valoare'] = new Smarty_variable(0, null, 0);?>
@@ -346,7 +354,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                                 <?php $_smarty_tpl->tpl_vars['grand_valoare'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_valoare']->value+$_smarty_tpl->tpl_vars['grand_total_valoare']->value, null, 0);?>
                                                 <?php $_smarty_tpl->tpl_vars['grand_comision'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_comision']->value+$_smarty_tpl->tpl_vars['grand_total_comision']->value, null, 0);?>
                                                 <td>
-                                                    <table  class="table table-bordered">
+                                                    <table class="table table-bordered">
                                                         <tr>
                                                             <th style="text-align: center;color: red;"><?php echo $_smarty_tpl->tpl_vars['grand_total_cantitati']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_cantitati']->value : '-';?>
 </th>
@@ -359,7 +367,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                                 </td>
                                             <?php } ?>
                                             <td>
-                                                <table  class="table table-bordered">
+                                                <table class="table table-bordered">
                                                     <tr>
                                                         <th style="text-align: center;color: red;"><?php echo $_smarty_tpl->tpl_vars['grand_total_ar_bg']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_ar_bg']->value : '-';?>
 </th>

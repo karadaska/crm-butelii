@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 15:52:35
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 22:51:43
          compiled from "/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:44692461460c0a294a628e1-25430061%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:156686449460c1183c6ece99-01940403%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '82208087dda068886a360b1fa14bfe49b76c0897' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl',
-      1 => 1623241360,
+      1 => 1623268302,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '44692461460c0a294a628e1-25430061',
+  'nocache_hash' => '156686449460c1183c6ece99-01940403',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60c0a294bba966_53953505',
+  'unifunc' => 'content_60c1183c84b505_03313643',
   'variables' => 
   array (
     'id' => 0,
@@ -39,6 +39,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'grand_comision' => 0,
     'preturi' => 0,
     'pret' => 0,
+    'colspan' => 0,
     'grand_total_ar_bg' => 0,
     'grand_total_cantitati' => 0,
     'grand_total_valoare' => 0,
@@ -49,7 +50,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_60c0a294bba966_53953505')) {function content_60c0a294bba966_53953505($_smarty_tpl) {?><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<?php if ($_valid && !is_callable('content_60c1183c84b505_03313643')) {function content_60c1183c84b505_03313643($_smarty_tpl) {?><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/conditionizr.min.js"></script>
@@ -168,10 +169,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <th rowspan="3">LOCALITATE</th>
                                     <th rowspan="3">CLIENT</th>
                                     <th rowspan="3">TELEFON</th>
-                                    <th colspan="3">TARGET PRODUSE</th>
-                                    <th colspan="3">TOTAL PRODUSE</th>
+                                    <th colspan="<?php echo count($_smarty_tpl->tpl_vars['lista_clienti']->value['produse_traseu']);?>
+">TARGET PRODUSE</th>
+                                    <th colspan="<?php echo count($_smarty_tpl->tpl_vars['lista_clienti']->value['produse_traseu']);?>
+">TOTAL PRODUSE</th>
                                     <th>GRAND PRODUSE</th>
-                                    <th colspan="3">PRET PRODUSE</th>
+                                    <th colspan="<?php echo count($_smarty_tpl->tpl_vars['lista_clienti']->value['produse_traseu']);?>
+">PRET PRODUSE</th>
                                 </tr>
                                 <tr>
                                     <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
@@ -358,7 +362,13 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                     </tr>
                                 <?php } ?>
                                 <tr>
-                                    <th colspan="5"></th>
+                                    <?php if ((count($_smarty_tpl->tpl_vars['lista_clienti']->value['produse_traseu'])==2)) {?>
+                                        <?php $_smarty_tpl->tpl_vars['colspan'] = new Smarty_variable(4, null, 0);?>
+                                    <?php } else { ?>
+                                        <?php $_smarty_tpl->tpl_vars['colspan'] = new Smarty_variable(5, null, 0);?>
+                                    <?php }?>
+                                    <th colspan="<?php echo $_smarty_tpl->tpl_vars['colspan']->value;?>
+"></th>
                                     <th style="text-align: right;vertical-align: middle;">TOTAL</th>
                                     <?php $_smarty_tpl->tpl_vars['grand_total_cantitati'] = new Smarty_variable(0, null, 0);?>
                                     <?php $_smarty_tpl->tpl_vars['grand_total_valoare'] = new Smarty_variable(0, null, 0);?>

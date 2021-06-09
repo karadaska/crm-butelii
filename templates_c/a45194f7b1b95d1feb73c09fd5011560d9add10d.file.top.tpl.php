@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-02-09 14:10:12
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 22:34:19
          compiled from "/var/www/html/fofoweb/www/templates/top.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:212554264960227ba4d22966-75465796%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:152342264460c117bbf34530-77871260%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '212554264960227ba4d22966-75465796',
+  'nocache_hash' => '152342264460c117bbf34530-77871260',
   'function' => 
   array (
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60227ba4d25f66_56676436',
+  'unifunc' => 'content_60c117bbf397b5_01296908',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_60227ba4d25f66_56676436')) {function content_60227ba4d25f66_56676436($_smarty_tpl) {?><header id="header" class="navbar navbar-inverse navbar-fixed-top z_index_1000">
+<?php if ($_valid && !is_callable('content_60c117bbf397b5_01296908')) {function content_60c117bbf397b5_01296908($_smarty_tpl) {?><header id="header" class="navbar navbar-inverse navbar-fixed-top z_index_1000">
     <div class="navbar-inner">
         <div class="container-fluid">
             <a class="brand" href="/dashboard.php"><img src="images/logo.png" alt="crm admin"></a>

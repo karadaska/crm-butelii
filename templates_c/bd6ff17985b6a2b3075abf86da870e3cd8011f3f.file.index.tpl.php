@@ -1,37 +1,29 @@
-<<<<<<< HEAD
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-02 14:53:28
-=======
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-02 21:31:20
->>>>>>> extra
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 22:34:11
          compiled from "/var/www/html/fofoweb/www/templates/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:143770837160227b3ad82752-37659730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:64261860760c117b30d1928-43912834%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'bd6ff17985b6a2b3075abf86da870e3cd8011f3f' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/index.tpl',
-<<<<<<< HEAD
-      1 => 1622620208,
-=======
-      1 => 1622637594,
->>>>>>> extra
+      1 => 1623241360,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '143770837160227b3ad82752-37659730',
+  'nocache_hash' => '64261860760c117b30d1928-43912834',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60227b3adc01d5_78372261',
   'variables' => 
   array (
     'title' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60c117b310c3e0_84128583',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_60227b3adc01d5_78372261')) {function content_60227b3adc01d5_78372261($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header_login.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
+<?php if ($_valid && !is_callable('content_60c117b310c3e0_84128583')) {function content_60c117b310c3e0_84128583($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header_login.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
 <div class="container-fluid">
     <div id="login">

@@ -111,10 +111,10 @@
                                     <th rowspan="3">LOCALITATE</th>
                                     <th rowspan="3">CLIENT</th>
                                     <th rowspan="3">TELEFON</th>
-                                    <th colspan="3">TARGET PRODUSE</th>
-                                    <th colspan="3">TOTAL PRODUSE</th>
+                                    <th colspan="{count($lista_clienti['produse_traseu'])}">TARGET PRODUSE</th>
+                                    <th colspan="{count($lista_clienti['produse_traseu'])}">TOTAL PRODUSE</th>
                                     <th>GRAND PRODUSE</th>
-                                    <th colspan="3">PRET PRODUSE</th>
+                                    <th colspan="{count($lista_clienti['produse_traseu'])}">PRET PRODUSE</th>
                                 </tr>
                                 <tr>
                                     {foreach from=$lista_clienti['produse_traseu'] item=produs}
@@ -251,7 +251,12 @@
                                     </tr>
                                 {/foreach}
                                 <tr>
-                                    <th colspan="5"></th>
+                                    {if (count($lista_clienti['produse_traseu']) == 2)}
+                                        {$colspan = 4}
+                                    {else}
+                                        {$colspan = 5}
+                                    {/if}
+                                    <th colspan="{$colspan}"></th>
                                     <th style="text-align: right;vertical-align: middle;">TOTAL</th>
                                     {$grand_total_cantitati = 0}
                                     {$grand_total_valoare = 0}

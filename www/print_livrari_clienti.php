@@ -60,6 +60,9 @@ $preturi_by_ar_9 = Clienti::getPreturiByProdusId(4, $id, $opts = array(
 ));
 $smarty->assign('preturi_by_ar_9', $preturi_by_ar_9);
 
+
+
+
 $smarty->display($template_page);
 ?>
 

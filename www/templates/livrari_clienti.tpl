@@ -209,7 +209,13 @@
                                             </tr>
                                         {/foreach}
                                         <tr>
-                                            <th colspan="5"></th>
+                                            {if (count($lista_clienti['produse_traseu']) == 2)}
+                                                {$colspan = 4}
+                                            {else}
+                                                {$colspan = 5}
+                                            {/if}
+
+                                            <th colspan="{$colspan}"></th>
                                             <th style="text-align: right;vertical-align: middle;color:red;">TOTAL</th>
                                             {$grand_total_cantitati = 0}
                                             {$grand_total_valoare = 0}
@@ -226,7 +232,7 @@
                                                 {$grand_valoare = $grand_valoare + $grand_total_valoare}
                                                 {$grand_comision = $grand_comision + $grand_total_comision}
                                                 <td>
-                                                    <table  class="table table-bordered">
+                                                    <table class="table table-bordered">
                                                         <tr>
                                                             <th style="text-align: center;color: red;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</th>
                                                             <th style="text-align: center;color: red;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</th>
@@ -236,7 +242,7 @@
                                                 </td>
                                             {/foreach}
                                             <td>
-                                                <table  class="table table-bordered">
+                                                <table class="table table-bordered">
                                                     <tr>
                                                         <th style="text-align: center;color: red;">{($grand_total_ar_bg > 0) ? $grand_total_ar_bg : '-'}</th>
                                                         <th style="text-align: center;color: red;">{($grand_valoare > 0) ? $grand_valoare : '-'}</th>
