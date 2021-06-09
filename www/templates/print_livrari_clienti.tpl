@@ -307,7 +307,7 @@
                             {foreach from=$preturi_by_bg_11 item=pret}
                                 {if ($pret['pret_bg_11']['cantitate']['0']['total_cantitate'] > 0)}
                                     <td>
-                                        <table border="1">
+                                        <table border="1" style="width: 100%;">
                                             <tr>
                                                 <th style="text-align: center;">{$pret['pret_bg_11']['pret']}
                                                     <br/>
@@ -335,7 +335,7 @@
                             {foreach from=$preturi_by_ar_9 item=pret}
                                 {if ($pret['pret_ar_9']['cantitate']['0']['total_cantitate'] > 0)}
                                     <td>
-                                        <table border="1">
+                                        <table border="1" style="width: 100%;">
                                             <tr>
                                                 <th style="text-align: center;">{$pret['pret_ar_9']['pret']}
                                                     <br/>
@@ -363,7 +363,7 @@
                             {foreach from=$preturi_by_ar_8 item=pret}
                                 {if ($pret['pret_ar_8']['cantitate']['0']['total_cantitate'] > 0)}
                                     <td>
-                                        <table border="1">
+                                        <table border="1" style="width: 100%;">
                                             <tr>
                                                 <th style="text-align: center;">{$pret['pret_ar_8']['pret']}
                                                     <br/>

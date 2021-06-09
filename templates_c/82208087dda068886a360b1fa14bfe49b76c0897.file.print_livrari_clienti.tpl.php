@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 15:16:47
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 15:18:18
          compiled from "/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:44692461460c0a294a628e1-25430061%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '82208087dda068886a360b1fa14bfe49b76c0897' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl',
-      1 => 1623241005,
+      1 => 1623241097,
       2 => 'file',
     ),
   ),
@@ -429,7 +429,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
                                 <?php if (($_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['cantitate']['0']['total_cantitate']>0)) {?>
                                     <td>
-                                        <table border="1">
+                                        <table border="1" style="width: 100%;">
                                             <tr>
                                                 <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['pret'];?>
 
@@ -464,7 +464,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
                                 <?php if (($_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['cantitate']['0']['total_cantitate']>0)) {?>
                                     <td>
-                                        <table border="1">
+                                        <table border="1" style="width: 100%;">
                                             <tr>
                                                 <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['pret'];?>
 
@@ -499,7 +499,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
                                 <?php if (($_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['cantitate']['0']['total_cantitate']>0)) {?>
                                     <td>
-                                        <table border="1">
+                                        <table border="1" style="width: 100%;">
                                             <tr>
                                                 <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['pret'];?>
 
