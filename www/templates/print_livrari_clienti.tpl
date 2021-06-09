@@ -47,6 +47,7 @@
 
         td {
         }
+
         @page {
             size: auto;
             margin: 0;
@@ -119,7 +120,7 @@
                                 <tr>
                                     {foreach from=$lista_clienti['produse_traseu'] item=produs}
                                         <th>
-                                            <table class="table table-bordered">
+                                            <table border="1">
                                                 <tr>
                                                     <th colspan="3">{$produs['nume_produs']}</th>
                                                 </tr>
@@ -133,7 +134,7 @@
                                     {/foreach}
                                     {foreach from=$lista_clienti['produse_traseu'] item=produs}
                                         <th>
-                                            <table class="table table-bordered">
+                                            <table border="1">
                                                 <tr>
                                                     <th colspan="3">{$produs['nume_produs']}</th>
                                                 </tr>
@@ -146,7 +147,7 @@
                                         </th>
                                     {/foreach}
                                     <th>
-                                        <table class="table table-bordered">
+                                        <table border="1">
                                             <tr>
                                                 <th colspan="3">&nbsp;</th>
                                             </tr>
@@ -159,7 +160,7 @@
                                     </th>
                                     {foreach from=$lista_clienti['produse_traseu'] item=produs}
                                         <th>
-                                            <table class="table table-bordered">
+                                            <table border="1">
                                                 <tr>
                                                     <th>&nbsp</th>
                                                 </tr>
@@ -178,10 +179,10 @@
                                         <td>{$client['telefon']} </br>{$client['telefon_2']}</td>
                                         {foreach from=$client['target_produse'] item=target_client}
                                             <td>
-                                                <table class="table table-bordered">
+                                                <table border="1" >
                                                     <tr>
                                                         <td>
-                                                            <table class="table table-bordered">
+                                                            <table border="1">
                                                                 <tr>
                                                                     <td style="text-align: center;">{($target_client['target'] > 0 || $target_client['target'] !='') ?  $target_client['target'] : '-'}</td>
                                                                     <td style="text-align: center;">{($target_client['pret_contract'] > 0 || $target_client['pret_contract'] !='') ?  $target_client['pret_contract'] : '-'}</td>
@@ -198,10 +199,10 @@
                                         {$grand_comision = 0}
                                         {foreach from=$client['total_produse_vandute'] item=produse}
                                             <td>
-                                                <table class="table table-bordered">
+                                                <table border="1">
                                                     <tr>
                                                         <td>
-                                                            <table class="table table-bordered">
+                                                            <table border="1">
                                                                 <tr>
                                                                     <td style="text-align: center;">{($produse['cantitate'] > 0 || $produse['cantitate'] !='') ?  $produse['cantitate'] : '-'}</td>
                                                                     <td style="text-align: center;">{($produse['pret'] > 0 || $produse['pret'] !='') ?  $produse['pret'] : '-'}</td>
@@ -217,10 +218,10 @@
                                             {$grand_comision = $grand_comision + $produse['comision']}
                                         {/foreach}
                                         <td>
-                                            <table class="table table-bordered">
+                                            <table border="1">
                                                 <tr>
                                                     <td>
-                                                        <table class="table table-bordered">
+                                                        <table border="1">
                                                             <tr>
                                                                 <td style="text-align: center;">{$grand_bucati}</td>
                                                                 <td style="text-align: center;">{$grand_valoare}</td>
@@ -235,7 +236,7 @@
                                             <td>
                                                 {foreach from=$preturi item=pret}
                                                     {if ($pret['total_cantitati_by_pret_produs']['numar_produs_by_pret'] > 0)}
-                                                        <table class="table table-bordered">
+                                                        <table border="1">
                                                             <tr>
                                                                 <td style="text-align: center;">
                                                                     {$pret['pret']}
@@ -268,7 +269,7 @@
                                         {$grand_valoare = $grand_valoare + $grand_total_valoare}
                                         {$grand_comision = $grand_comision + $grand_total_comision}
                                         <td>
-                                            <table  class="table table-bordered">
+                                            <table border="1">
                                                 <tr>
                                                     <th style="text-align: center;color: red;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</th>
                                                     <th style="text-align: center;color: red;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</th>
@@ -278,7 +279,7 @@
                                         </td>
                                     {/foreach}
                                     <td>
-                                        <table  class="table table-bordered">
+                                        <table border="1">
                                             <tr>
                                                 <th style="text-align: center;color: red;">{($grand_total_ar_bg > 0) ? $grand_total_ar_bg : '-'}</th>
                                                 <th style="text-align: center;color: red;">{($grand_valoare > 0) ? $grand_valoare : '-'}</th>
@@ -297,7 +298,7 @@
         <div style="display: inline-flex">
             <div>
                 {if count($preturi_by_bg_11) > 0}
-                    <table class="table table-bordered"
+                    <table border="1"
                            style="margin-top: 20px;width: 400px;">
                         <tr>
                             <th colspan="{count($preturi_by_bg_11)}">PRETURI BG 11</th>
@@ -306,7 +307,7 @@
                             {foreach from=$preturi_by_bg_11 item=pret}
                                 {if ($pret['pret_bg_11']['cantitate']['0']['total_cantitate'] > 0)}
                                     <td>
-                                        <table class="table table-bordered">
+                                        <table border="1">
                                             <tr>
                                                 <th style="text-align: center;">{$pret['pret_bg_11']['pret']}
                                                     <br/>
@@ -325,7 +326,7 @@
             </div>
             <div style="margin-left: 10px;">
                 {if count($preturi_by_ar_9) > 0}
-                    <table class="table table-bordered"
+                    <table border="1"
                            style="margin-top: 20px;width: 400px;">
                         <tr>
                             <th colspan="{count($preturi_by_ar_9)}">PRETURI AR 9</th>
@@ -334,7 +335,7 @@
                             {foreach from=$preturi_by_ar_9 item=pret}
                                 {if ($pret['pret_ar_9']['cantitate']['0']['total_cantitate'] > 0)}
                                     <td>
-                                        <table class="table table-bordered">
+                                        <table border="1">
                                             <tr>
                                                 <th style="text-align: center;">{$pret['pret_ar_9']['pret']}
                                                     <br/>
@@ -353,7 +354,7 @@
             </div>
             <div style="margin-left: 10px;">
                 {if count($preturi_by_ar_8) > 0}
-                    <table class="table table-bordered"
+                    <table border="1"
                            style="margin-top: 20px;width: 400px;">
                         <tr>
                             <th colspan="{count($preturi_by_ar_8)}">PRETURI AR 8</th>
@@ -362,7 +363,7 @@
                             {foreach from=$preturi_by_ar_8 item=pret}
                                 {if ($pret['pret_ar_8']['cantitate']['0']['total_cantitate'] > 0)}
                                     <td>
-                                        <table class="table table-bordered">
+                                        <table border="1">
                                             <tr>
                                                 <th style="text-align: center;">{$pret['pret_ar_8']['pret']}
                                                     <br/>
