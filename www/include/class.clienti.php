@@ -1837,6 +1837,7 @@ class Clienti
                     ";
 
         $result = myQuery($query);
+        $ret['grand_produse'] = array();
         $ret['produse_traseu'] = Produse::getProduseVanduteByTraseuId($traseu_id, array(
             'data_start' => $data_start,
             'data_stop' => $data_stop
@@ -1864,6 +1865,10 @@ class Clienti
                     ));
 
                     $r['preturi_produse'][$tip_produs_id] = Produse::getPreturiProduseCuComisionByTipProdusIdAndClientAndTraseuId($tip_produs_id, $item['client_id'],$item['traseu_id'] , array(
+                        'data_start' => $data_start,
+                        'data_stop' => $data_stop
+                    ));
+                    $ret['grand'][$tip_produs_id] = Produse::getTotalCantitatiByProdusAndTraseuId($tip_produs_id, $item['traseu_id'], array(
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ));

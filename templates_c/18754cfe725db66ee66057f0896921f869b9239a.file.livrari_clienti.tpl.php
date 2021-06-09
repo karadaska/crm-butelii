@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-07 23:13:27
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 13:16:48
          compiled from "/var/www/html/fofoweb/www/templates/livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25771684360b6814a0ceb95-18556120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18754cfe725db66ee66057f0896921f869b9239a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_clienti.tpl',
-      1 => 1623096806,
+      1 => 1623233805,
       2 => 'file',
     ),
   ),
@@ -35,6 +35,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'grand_comision' => 0,
     'preturi' => 0,
     'pret' => 0,
+    'grand_total_cantitati' => 0,
+    'grand_total_valoare' => 0,
+    'grand_total_comision' => 0,
     'preturi_by_bg_11' => 0,
     'preturi_by_ar_9' => 0,
     'preturi_by_ar_8' => 0,
@@ -192,7 +195,7 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
                                                 <th>
                                                     <table class="table table-bordered">
                                                         <tr>
-                                                            <th>&nbsp;</th>
+                                                            <th>&nbsp</th>
                                                         </tr>
                                                         <tr>
                                                             <th colspan="3"><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
@@ -319,6 +322,31 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                                 <?php } ?>
                                             </tr>
                                         <?php } ?>
+                                        <tr>
+                                            <th colspan="5"></th>
+                                            <th style="text-align: right;vertical-align: middle;color:red;">TOTAL</th>
+                                            <?php  $_smarty_tpl->tpl_vars['produse'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produse']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['lista_clienti']->value['produse_traseu']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['produse']->key => $_smarty_tpl->tpl_vars['produse']->value) {
+$_smarty_tpl->tpl_vars['produse']->_loop = true;
+?>
+                                                <?php $_smarty_tpl->tpl_vars['grand_total_cantitati'] = new Smarty_variable($_smarty_tpl->tpl_vars['lista_clienti']->value['grand'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['cantitate'], null, 0);?>
+                                                <?php $_smarty_tpl->tpl_vars['grand_total_valoare'] = new Smarty_variable($_smarty_tpl->tpl_vars['lista_clienti']->value['grand'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['valoare'], null, 0);?>
+                                                <?php $_smarty_tpl->tpl_vars['grand_total_comision'] = new Smarty_variable($_smarty_tpl->tpl_vars['lista_clienti']->value['grand'][$_smarty_tpl->tpl_vars['produse']->value['tip_produs_id']]['comision'], null, 0);?>
+                                                <td>
+                                                    <table  class="table table-bordered">
+                                                        <tr>
+                                                            <th style="text-align: center;color: red;"><?php echo $_smarty_tpl->tpl_vars['grand_total_cantitati']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_cantitati']->value : '-';?>
+</th>
+                                                            <th style="text-align: center;color: red;"><?php echo $_smarty_tpl->tpl_vars['grand_total_valoare']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_valoare']->value : '-';?>
+</th>
+                                                            <th style="text-align: center;color: red;"><?php echo $_smarty_tpl->tpl_vars['grand_total_comision']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_comision']->value : '-';?>
+</th>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            <?php } ?>
+                                        </tr>
                                     </table>
                                 </div>
                             </form>
