@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 13:41:36
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 13:45:18
          compiled from "/var/www/html/fofoweb/www/templates/livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25771684360b6814a0ceb95-18556120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18754cfe725db66ee66057f0896921f869b9239a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_clienti.tpl',
-      1 => 1623235293,
+      1 => 1623235515,
       2 => 'file',
     ),
   ),
@@ -271,7 +271,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                                         </table>
                                                     </td>
                                                     <?php $_smarty_tpl->tpl_vars['grand_bucati'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_bucati']->value+$_smarty_tpl->tpl_vars['produse']->value['cantitate'], null, 0);?>
-                                                    <?php $_smarty_tpl->tpl_vars['grand_valoare'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_valoare']->value+$_smarty_tpl->tpl_vars['produse']->value['pret'], null, 0);?>
+                                                    <?php $_smarty_tpl->tpl_vars['grand_valoare'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_valoare']->value+($_smarty_tpl->tpl_vars['produse']->value['pret']*$_smarty_tpl->tpl_vars['produse']->value['cantitate']), null, 0);?>
                                                     <?php $_smarty_tpl->tpl_vars['grand_comision'] = new Smarty_variable($_smarty_tpl->tpl_vars['grand_comision']->value+$_smarty_tpl->tpl_vars['produse']->value['comision'], null, 0);?>
                                                 <?php } ?>
                                                 <td>

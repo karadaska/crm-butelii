@@ -171,7 +171,7 @@
                                                         </table>
                                                     </td>
                                                     {$grand_bucati = $grand_bucati + $produse['cantitate']}
-                                                    {$grand_valoare = $grand_valoare + $produse['pret']}
+                                                    {$grand_valoare = $grand_valoare + ($produse['pret'] * $produse['cantitate'])}
                                                     {$grand_comision = $grand_comision + $produse['comision']}
                                                 {/foreach}
                                                 <td>
