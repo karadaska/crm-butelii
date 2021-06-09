@@ -196,7 +196,6 @@
                                                                 <table class="table table-bordered">
                                                                     <tr>
                                                                         <td style="text-align: center;">
-                                                                            {count($pret['pret'])}
                                                                             {$pret['pret']}
                                                                             <br/>
                                                                             {$pret['total_cantitati_by_pret_produs']['numar_produs_by_pret']}

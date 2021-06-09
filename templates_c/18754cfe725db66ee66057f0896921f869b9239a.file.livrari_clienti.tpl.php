@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 13:45:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 13:46:40
          compiled from "/var/www/html/fofoweb/www/templates/livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25771684360b6814a0ceb95-18556120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18754cfe725db66ee66057f0896921f869b9239a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_clienti.tpl',
-      1 => 1623235515,
+      1 => 1623235596,
       2 => 'file',
     ),
   ),
@@ -307,8 +307,6 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                                                 <table class="table table-bordered">
                                                                     <tr>
                                                                         <td style="text-align: center;">
-                                                                            <?php echo count($_smarty_tpl->tpl_vars['pret']->value['pret']);?>
-
                                                                             <?php echo $_smarty_tpl->tpl_vars['pret']->value['pret'];?>
 
                                                                             <br/>
