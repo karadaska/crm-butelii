@@ -11,7 +11,7 @@
                 <div class="page-header">
                     <h3 class="center">Autentificare...</h3>
                 </div>
-                <form id="login-form" class="form-horizontal" action="">
+                <form id="login-form" class="form-horizontal" action="" method="post">
                     <input type="hidden" id="no_refresh_chat" name="no_refresh_chat" value="1"/>
 
                     <div class="row-fluid">

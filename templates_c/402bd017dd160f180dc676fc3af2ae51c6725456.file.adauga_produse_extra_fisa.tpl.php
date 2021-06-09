@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-04-19 14:43:53
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-03 15:48:33
          compiled from "/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1336478029607562d7bd9359-11954795%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '402bd017dd160f180dc676fc3af2ae51c6725456' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/adauga_produse_extra_fisa.tpl',
-      1 => 1618832632,
+      1 => 1622637594,
       2 => 'file',
     ),
   ),
@@ -24,9 +24,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fisa_id' => 0,
     'client_id' => 0,
     'lista_tip_stoc' => 0,
-    'tip' => 0,
-    'produse_extra' => 0,
+    'produse_by_client' => 0,
     'produs' => 0,
+    'tip' => 0,
+    'gasit' => 0,
+    'produse_extra' => 0,
     'totaltime' => 0,
   ),
   'has_nocache_code' => false,
@@ -77,14 +79,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 foreach ($_from as $_smarty_tpl->tpl_vars['tip']->key => $_smarty_tpl->tpl_vars['tip']->value) {
 $_smarty_tpl->tpl_vars['tip']->_loop = true;
 ?>
-                                                        <option value=<?php echo $_smarty_tpl->tpl_vars['tip']->value['id'];?>
-
-                                                                <?php if ($_smarty_tpl->tpl_vars['tip']->value['produs_tip_id']==$_smarty_tpl->tpl_vars['tip']->value['id']) {?>selected="selected"<?php }?>>
-                                                            <?php echo $_smarty_tpl->tpl_vars['tip']->value['tip'];?>
-
-                                                        </option>
+                                                        <?php $_smarty_tpl->tpl_vars['gasit'] = new Smarty_variable(0, null, 0);?>
+                                                        <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['produse_by_client']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['produs']->key => $_smarty_tpl->tpl_vars['produs']->value) {
+$_smarty_tpl->tpl_vars['produs']->_loop = true;
+?>
+                                                            <?php if ($_smarty_tpl->tpl_vars['produs']->value['tip_produs_id']==$_smarty_tpl->tpl_vars['tip']->value['id']) {?>
+                                                                <?php $_smarty_tpl->tpl_vars['gasit'] = new Smarty_variable(1, null, 0);?>
+                                                            <?php }?>
+                                                        <?php } ?>
+                                                        <?php if ($_smarty_tpl->tpl_vars['gasit']->value==0) {?>
+                                                            <option value=<?php echo $_smarty_tpl->tpl_vars['tip']->value['id'];?>
+><?php ob_start();?><?php echo $_smarty_tpl->tpl_vars['tip']->value['tip'];?>
+<?php $_tmp1=ob_get_clean();?><?php echo strtoupper($_tmp1);?>
+</option>
+                                                        <?php }?>
                                                     <?php } ?>
-                                                </select></td>
+                                                </select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th style="text-align: left;vertical-align: middle;width: 120px;">

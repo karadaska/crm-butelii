@@ -40,27 +40,6 @@
             font-size: 16px;
         }
 
-        /*th
-
-
-
-
-
-
-        {*/
-                                                                    /*font-weight: bold;*/
-                                                                    /*color: #000;*/
-                                                                /*}       */
-
-        /*td
-
-
-
-
-
-
-        {*/
-                                                                /*}       */
         @page {
             size: auto;
             margin: 0;

@@ -22,6 +22,7 @@ $lista_trasee = Trasee::getTrasee();
 $smarty->assign('lista_trasee', $lista_trasee);
 
 $livrari_trasee = ParcAuto::getRaportLivrariTrasee($traseu_id,
+
     array(
         'data_start' => $data_start,
         'data_stop' => $data_stop

@@ -13,6 +13,8 @@ $pret = getRequestParameter('pret', '');
 $cantitate = getRequestParameter('cantitate', '');
 $modifica = getRequestParameter('modifica', '');
 $sterge = getRequestParameter('sterge', '');
+$stare_produs = getRequestParameter('stare_produs', 0);
+$pret_produs = getRequestParameter('pret_produs', 0);
 
 $client_id = getRequestParameter('id_client', 0);
 $smarty->assign('client_id', $client_id);
@@ -23,10 +25,7 @@ $smarty->assign('fisa_id', $fisa_id);
 $id = getRequestParameter('id', 0);
 $smarty->assign('id', $id);
 
-$stare_produs = getRequestParameter('stare_produs', 0);
-$pret_produs = getRequestParameter('pret_produs', 0);
-
-$produs_extra = Fise::GetProdusExtraByClientIdAndFisa($id, $client_id, $fisa_id);
+$produs_extra = Fise::GetProdusExtraByProdusClientIdAndFisa($id, $client_id, $fisa_id);
 $smarty->assign('produs_extra', $produs_extra);
 
 if ($modifica) {

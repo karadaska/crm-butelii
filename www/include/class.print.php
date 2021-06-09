@@ -74,7 +74,7 @@ class Printare
             $ret['clienti'] = self::getAsignariClientiByFisaGenerataIdPrintFisaSosire($id, $opt = array());
             foreach ($ret['clienti'] as $num => $client) {
                 $ret['clienti'][$num]['realizat'] = Stocuri::getRealizatClientByFisaId($id, $client['client_id']);
-                $ret['clienti'][$num]['extra'] = Fise::GetProdusExtraByClientIdProdusIdAndFisaAnd($client['client_id'], $id);
+                $ret['clienti'][$num]['extra'] = Produse::GetProdusExtraByClientIdProdusIdAndFisaId($client['client_id'], $id);
                 $ret['clienti'][$num]['vandute_bg'] = 0;
                 $ret['clienti'][$num]['vandute_bg_extra'] = $ret['clienti'][$num]['extra'][1]['cantitate_extra'];
                 $ret['clienti'][$num]['valoare_bg'] = 0;

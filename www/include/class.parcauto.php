@@ -278,82 +278,87 @@ class ParcAuto
         return $ret;
 
     }
-    public static function getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($masina_id = 0, $traseu_id, $sofer_id, $opts = array())
-    {
-        $ret = null;
-        $tip_produs_id = isset($opts['tip_produs_id']) ? $opts['tip_produs_id'] : 0;
-        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
-        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
 
-        if ($data_start == 0) {
-            $data_start = date('Y-m-01');
-        }
+//TO DO trebuie stearsa
+//    public static function getTotalCantitatiExtraByMasinaIdAndTraseuIdAndSoferId($masina_id = 0, $traseu_id, $sofer_id, $opts = array())
+//    {
+//        $ret = null;
+//        $tip_produs_id = isset($opts['tip_produs_id']) ? $opts['tip_produs_id'] : 0;
+//        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+//
+//        if ($data_start == 0) {
+//            $data_start = date('Y-m-01');
+//        }
+//
+//        if ($data_stop == 0) {
+//            $data_stop = date('Y-m-t');
+//        }
+//
+//        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
+//                                FROM detalii_fisa_extra_intoarcere_produse  as a
+//                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+//                                WHERE b.masina_id = '" . $masina_id . "'
+//                                AND b.traseu_id = '" . $traseu_id . "'
+//                                AND b.sofer_id = '" . $sofer_id . "'
+//                                AND b.data_intrare >= '" . $data_start . "'
+//                                AND b.data_intrare <= '" . $data_stop . "'
+//                                AND a.sters = 0
+//                                AND b.sters = 0
+//                                AND a.stare_produs = 1
+//                                ";
+//
+//        if ($tip_produs_id > 0) {
+//            $target_by_client_id .= ' AND a.tip_produs_id = ' . $tip_produs_id . ' ';
+//        }
+//
+//        $result = myQuery($target_by_client_id);
+//        if ($result) {
+//            $ret = $result->fetch(PDO::FETCH_ASSOC);
+//        }
+//        return $ret;
+//
+//    }
 
-        if ($data_stop == 0) {
-            $data_stop = date('Y-m-t');
-        }
-
-        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
-                                FROM detalii_fisa_intoarcere_produse  as a
-                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
-                                WHERE b.masina_id = '" . $masina_id . "'                                
-                                AND b.traseu_id = '" . $traseu_id . "'                                
-                                AND b.sofer_id = '" . $sofer_id . "'                                
-                                AND a.data_intrare >= '" . $data_start . "'
-                                AND a.data_intrare <= '" . $data_stop . "'
-                                AND a.sters = 0";
-
-        if ($tip_produs_id > 0) {
-            $target_by_client_id .= ' AND a.tip_produs_id = ' . $tip_produs_id . ' ';
-        }
-
-        $result = myQuery($target_by_client_id);
-        if ($result) {
-            $ret = $result->fetch(PDO::FETCH_ASSOC);
-        }
-        return $ret;
-
-    }
-
-    public static function getTotalCantitatiExtraByMasinaIdAndTraseuIdAndSoferId($masina_id = 0, $traseu_id, $sofer_id, $opts = array())
-    {
-        $ret = null;
-        $tip_produs_id = isset($opts['tip_produs_id']) ? $opts['tip_produs_id'] : 0;
-        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
-        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-
-        if ($data_start == 0) {
-            $data_start = date('Y-m-01');
-        }
-
-        if ($data_stop == 0) {
-            $data_stop = date('Y-m-t');
-        }
-
-        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
-                                FROM detalii_fisa_extra_intoarcere_produse  as a
-                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
-                                WHERE b.masina_id = '" . $masina_id . "'                                
-                                AND b.traseu_id = '" . $traseu_id . "'                                
-                                AND b.sofer_id = '" . $sofer_id . "'                                
-                                AND b.data_intrare >= '" . $data_start . "'
-                                AND b.data_intrare <= '" . $data_stop . "'
-                                AND a.sters = 0
-                                AND b.sters = 0
-                                AND a.stare_produs = 1
-                                ";
-
-        if ($tip_produs_id > 0) {
-            $target_by_client_id .= ' AND a.tip_produs_id = ' . $tip_produs_id . ' ';
-        }
-
-        $result = myQuery($target_by_client_id);
-        if ($result) {
-            $ret = $result->fetch(PDO::FETCH_ASSOC);
-        }
-        return $ret;
-
-    }
+//    public static function getTotalCantitatiExtraByMasinaIdAndTraseuIdAndSoferId($masina_id = 0, $traseu_id, $sofer_id, $opts = array())
+//    {
+//        $ret = null;
+//        $tip_produs_id = isset($opts['tip_produs_id']) ? $opts['tip_produs_id'] : 0;
+//        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+//
+//        if ($data_start == 0) {
+//            $data_start = date('Y-m-01');
+//        }
+//
+//        if ($data_stop == 0) {
+//            $data_stop = date('Y-m-t');
+//        }
+//
+//        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
+//                                FROM detalii_fisa_extra_intoarcere_produse  as a
+//                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+//                                WHERE b.masina_id = '" . $masina_id . "'
+//                                AND b.traseu_id = '" . $traseu_id . "'
+//                                AND b.sofer_id = '" . $sofer_id . "'
+//                                AND b.data_intrare >= '" . $data_start . "'
+//                                AND b.data_intrare <= '" . $data_stop . "'
+//                                AND a.sters = 0
+//                                AND b.sters = 0
+//                                AND a.stare_produs = 1
+//                                ";
+//
+//        if ($tip_produs_id > 0) {
+//            $target_by_client_id .= ' AND a.tip_produs_id = ' . $tip_produs_id . ' ';
+//        }
+//
+//        $result = myQuery($target_by_client_id);
+//        if ($result) {
+//            $ret = $result->fetch(PDO::FETCH_ASSOC);
+//        }
+//        return $ret;
+//
+//    }
 
     public static function getTotalKmBySoferIdAndTraseuIdAndMasinaId($sofer_id = 0, $traseu_id, $masina_id, $opts = array())
     {
@@ -553,7 +558,9 @@ class ParcAuto
                                 AND a.tip_produs_id = '" . $tip_produs_id . "'                                
                                 AND a.data_intrare >= '" . $data_start . "'
                                 AND a.data_intrare <= '" . $data_stop . "'
-                                AND a.sters = 0";
+                                AND a.sters = 0
+                                AND a.cantitate > 0
+                                ";
 
         $result = myQuery($target_by_client_id);
         if ($result) {
@@ -618,40 +625,8 @@ class ParcAuto
                                 AND a.tip_produs_id = '" . $tip_produs_id . "'                                
                                 AND a.data_intrare >= '" . $data_start . "'
                                 AND a.data_intrare <= '" . $data_stop . "'
-                                AND a.sters = 0";
-
-        $result = myQuery($target_by_client_id);
-        if ($result) {
-            $ret = $result->fetch(PDO::FETCH_ASSOC);
-        }
-        return $ret;
-
-    }
-
-    public static function getTotalCantitatiExtraByTraseuIdAndProdusId($traseu_id = 0, $tip_produs_id, $opts = array())
-    {
-        $ret = null;
-        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
-        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-
-        if ($data_start == 0) {
-            $data_start = date('Y-m-01');
-        }
-
-        if ($data_stop == 0) {
-            $data_stop = date('Y-m-t');
-        }
-
-        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
-                                FROM detalii_fisa_extra_intoarcere_produse  as a
-                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
-                                WHERE b.traseu_id = '" . $traseu_id . "'                                
-                                AND a.tip_produs_id = '" . $tip_produs_id . "'                                
-                                AND b.data_intrare >= '" . $data_start . "'
-                                AND b.data_intrare <= '" . $data_stop . "'
-                                AND a.stare_produs = 1
                                 AND a.sters = 0
-                                AND b.sters = 0
+                                AND a.cantitate > 0
                                 ";
 
         $result = myQuery($target_by_client_id);
@@ -661,6 +636,40 @@ class ParcAuto
         return $ret;
 
     }
+
+//    public static function getTotalCantitatiExtraByTraseuIdAndProdusId($traseu_id = 0, $tip_produs_id, $opts = array())
+//    {
+//        $ret = null;
+//        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+//
+//        if ($data_start == 0) {
+//            $data_start = date('Y-m-01');
+//        }
+//
+//        if ($data_stop == 0) {
+//            $data_stop = date('Y-m-t');
+//        }
+//
+//        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
+//                                FROM detalii_fisa_extra_intoarcere_produse  as a
+//                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+//                                WHERE b.traseu_id = '" . $traseu_id . "'
+//                                AND a.tip_produs_id = '" . $tip_produs_id . "'
+//                                AND b.data_intrare >= '" . $data_start . "'
+//                                AND b.data_intrare <= '" . $data_stop . "'
+//                                AND a.stare_produs = 1
+//                                AND a.sters = 0
+//                                AND b.sters = 0
+//                                ";
+//
+//        $result = myQuery($target_by_client_id);
+//        if ($result) {
+//            $ret = $result->fetch(PDO::FETCH_ASSOC);
+//        }
+//        return $ret;
+//
+//    }
 
     public static function getTotalCantitatiBG11CuComisionByClientId($sofer_id, $traseu_id, $opts = array())
     {
@@ -811,16 +820,9 @@ class ParcAuto
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
 
-        if ($data_start == 0) {
-            $data_start = date('Y-m-01');
-        }
-
-        if ($data_stop == 0) {
-            $data_stop = date('Y-m-t');
-        }
 
         $ret = array(
-            'trasee' => array()
+            'masini' => array()
         );
 
         $query = "SELECT a.id, a.masina_id, a.sofer_id, b.nume as nume_sofer,
@@ -867,13 +869,7 @@ class ParcAuto
                     ))
                 );
                 foreach ($ret['produse_masina'] as $tip_produs_id => $item_tip_produs) {
-                    $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
-                        'tip_produs_id' => $tip_produs_id,
-                        'data_start' => $data_start,
-                        'data_stop' => $data_stop
-                    ));
-
-                    $r['total_produse_extra'][$tip_produs_id] = self::getTotalCantitatiExtraByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
+                    $r['total_produse'][$tip_produs_id] = Produse::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
                         'tip_produs_id' => $tip_produs_id,
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
@@ -883,13 +879,8 @@ class ParcAuto
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ));
-
-                    $ret['grand_extra'][$tip_produs_id] = self::getTotalCantitatiExtraByMasinaIdProdusId($item['masina_id'], $tip_produs_id, array(
-                        'data_start' => $data_start,
-                        'data_stop' => $data_stop
-                    ));
                 }
-                array_push($ret['trasee'], $r);
+                array_push($ret['masini'], $r);
             }
         }
         return $ret;
@@ -899,14 +890,6 @@ class ParcAuto
     {
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
-
-        if ($data_start == 0) {
-            $data_start = date('Y-m-01');
-        }
-
-        if ($data_stop == 0) {
-            $data_stop = date('Y-m-t');
-        }
 
         $ret = array(
             'trasee' => array()
@@ -927,6 +910,7 @@ class ParcAuto
                   ";
 
         $result = myQuery($query);
+
         $ret['produse_traseu'] = Produse::getProduseVanduteByTraseuId($traseu_id, array(
             'data_start' => $data_start,
             'data_stop' => $data_stop
@@ -951,24 +935,13 @@ class ParcAuto
                     ))
                 );
                 foreach ($ret['produse_traseu'] as $tip_produs_id => $item_tip_produs) {
-                    $r['total_produse'][$tip_produs_id] = self::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
-                        'tip_produs_id' => $tip_produs_id,
-                        'data_start' => $data_start,
-                        'data_stop' => $data_stop
-                    ));
-
-
-                    $r['total_produse_extra'][$tip_produs_id] = self::getTotalCantitatiExtraByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
+                    $r['total_produse'][$tip_produs_id] = Produse::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
                         'tip_produs_id' => $tip_produs_id,
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ));
 
                     $ret['grand'][$tip_produs_id] = self::getTotalCantitatiByTraseuIdAndProdusId($item['traseu_id'], $tip_produs_id, array(
-                        'data_start' => $data_start,
-                        'data_stop' => $data_stop
-                    ));
-                    $ret['grand_extra'][$tip_produs_id] = self::getTotalCantitatiExtraByTraseuIdAndProdusId($item['traseu_id'], $tip_produs_id, array(
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
                     ));

@@ -106,6 +106,12 @@
                             </a>
                         </li>
                         <li {if $menu_curent==10}class="current"{/if}>
+                            <a href="/livrari_clienti.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Livrari clienti</span>
+                            </a>
+                        </li>
+                        <li {if $menu_curent==10}class="current"{/if}>
                             <a href="/observatii_fisa_traseu.php">
                                 <span class="icon"><i class="icon20 i-stack-list"></i></span>
                                 <span class="txt">Observatii fisa traseu</span>

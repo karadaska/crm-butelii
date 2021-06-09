@@ -13,19 +13,6 @@ $template_page = "print_fisa_sosire.tpl";
 $id = getRequestParameter('id', 0);
 $smarty->assign('id',$id);
 
-//$produs_extra_bg = Fise::GetProdusExtraByProdusIdAndFisa(1,$id);
-//$smarty->assign('produs_extra_bg', $produs_extra_bg);
-//
-//$produs_extra_ar_9 = Fise::GetProdusExtraByProdusIdAndFisa(4,$id);
-//$smarty->assign('produs_extra_ar_9', $produs_extra_ar_9);
-//
-//$produs_extra_ar_8 = Fise::GetProdusExtraByProdusIdAndFisa(3,$id);
-//$smarty->assign('produs_extra_ar_8', $produs_extra_ar_8);
-
-//$print_fisa = Stocuri::getFisaGenerataById($id);
-//$smarty->assign('print_fisa',$print_fisa);
-
-
 $print_fisa = Printare::PrintFisaSosire($id);
 $smarty->assign('print_fisa',$print_fisa);
 

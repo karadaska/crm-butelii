@@ -128,6 +128,25 @@ class Target
         return $ret;
     }
 
+    public static function getTargetByClientAndProdusIdPentruRaportLivrari($client_id = 0, $tip_produs_id)
+    {
+        $ret = array();
+        $query = "SELECT a.tip_produs_id, a.target, a.pret as pret_contract, a.comision  
+        FROM clienti_target as a
+        WHERE a . client_id = '" . $client_id . "'
+        AND a . tip_produs_id = '" . $tip_produs_id . "'
+        AND a . sters = 0       
+        ORDER BY a.tip_produs_id ASC
+        ";
+
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
     public static function getSumaTargetClient($client_id = 0)
     {
         $ret = array();
