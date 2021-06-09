@@ -69,10 +69,10 @@
                                             <th rowspan="3">LOCALITATE</th>
                                             <th rowspan="3">CLIENT</th>
                                             <th rowspan="3">TELEFON</th>
-                                            <th colspan="3">TARGET PRODUSE</th>
-                                            <th colspan="3">TOTAL PRODUSE</th>
+                                            <th colspan="{count($lista_clienti['produse_traseu'])}">TARGET PRODUSE</th>
+                                            <th colspan="{count($lista_clienti['produse_traseu'])}">TOTAL PRODUSE</th>
                                             <th>GRAND PRODUSE</th>
-                                            <th colspan="3">PRET PRODUSE</th>
+                                            <th colspan="{count($lista_clienti['produse_traseu'])}">PRET PRODUSE</th>
                                         </tr>
                                         <tr>
                                             {foreach from=$lista_clienti['produse_traseu'] item=produs}

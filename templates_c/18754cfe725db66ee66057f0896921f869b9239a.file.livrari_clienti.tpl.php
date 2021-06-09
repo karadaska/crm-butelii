@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 13:46:40
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 16:00:18
          compiled from "/var/www/html/fofoweb/www/templates/livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25771684360b6814a0ceb95-18556120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18754cfe725db66ee66057f0896921f869b9239a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/livrari_clienti.tpl',
-      1 => 1623235596,
+      1 => 1623243616,
       2 => 'file',
     ),
   ),
@@ -132,10 +132,13 @@ $_smarty_tpl->tpl_vars['traseu']->_loop = true;
                                             <th rowspan="3">LOCALITATE</th>
                                             <th rowspan="3">CLIENT</th>
                                             <th rowspan="3">TELEFON</th>
-                                            <th colspan="3">TARGET PRODUSE</th>
-                                            <th colspan="3">TOTAL PRODUSE</th>
+                                            <th colspan="<?php echo count($_smarty_tpl->tpl_vars['lista_clienti']->value['produse_traseu']);?>
+">TARGET PRODUSE</th>
+                                            <th colspan="<?php echo count($_smarty_tpl->tpl_vars['lista_clienti']->value['produse_traseu']);?>
+">TOTAL PRODUSE</th>
                                             <th>GRAND PRODUSE</th>
-                                            <th colspan="3">PRET PRODUSE</th>
+                                            <th colspan="<?php echo count($_smarty_tpl->tpl_vars['lista_clienti']->value['produse_traseu']);?>
+">PRET PRODUSE</th>
                                         </tr>
                                         <tr>
                                             <?php  $_smarty_tpl->tpl_vars['produs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['produs']->_loop = false;
