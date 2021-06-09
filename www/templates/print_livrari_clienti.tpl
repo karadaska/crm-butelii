@@ -160,7 +160,7 @@
                                     </th>
                                     {foreach from=$lista_clienti['produse_traseu'] item=produs}
                                         <th>
-                                            <table border="1">
+                                            <table border="1" style="width: 100%;">
                                                 <tr>
                                                     <th>&nbsp</th>
                                                 </tr>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-07 23:00:00
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 15:15:53
          compiled from "/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:9666285766033b090f0d619-34436269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fa05bc7ed355745d3e202eb13754c302c3f9f430' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/raport_livrari_clienti.tpl',
-      1 => 1623095999,
+      1 => 1623096037,
       2 => 'file',
     ),
   ),
@@ -357,7 +357,7 @@ $_smarty_tpl->tpl_vars['lista']->_loop = true;
                                             </th>
                                             <th style="border-right:double;"><abbr title="Total bucati BG + AR "
                                                                                    style="color: red;"><?php echo $_smarty_tpl->tpl_vars['total_bg_ar']->value;?>
-333</abbr>
+</abbr>
                                             </th>
                                             <th>
                                                 <abbr title="Total valoare incasare BG 11"

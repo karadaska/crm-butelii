@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 15:15:13
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 15:16:47
          compiled from "/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:44692461460c0a294a628e1-25430061%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '82208087dda068886a360b1fa14bfe49b76c0897' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl',
-      1 => 1623240912,
+      1 => 1623241005,
       2 => 'file',
     ),
   ),
@@ -231,7 +231,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['produs']->key => $_smarty_tpl->tpl_va
 $_smarty_tpl->tpl_vars['produs']->_loop = true;
 ?>
                                         <th>
-                                            <table border="1">
+                                            <table border="1" style="width: 100%;">
                                                 <tr>
                                                     <th>&nbsp</th>
                                                 </tr>
@@ -360,7 +360,7 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                 <?php } ?>
                                 <tr>
                                     <th colspan="5"></th>
-                                    <th style="text-align: right;vertical-align: middle;color:red;">TOTAL</th>
+                                    <th style="text-align: right;vertical-align: middle;">TOTAL</th>
                                     <?php $_smarty_tpl->tpl_vars['grand_total_cantitati'] = new Smarty_variable(0, null, 0);?>
                                     <?php $_smarty_tpl->tpl_vars['grand_total_valoare'] = new Smarty_variable(0, null, 0);?>
                                     <?php $_smarty_tpl->tpl_vars['grand_total_comision'] = new Smarty_variable(0, null, 0);?>
