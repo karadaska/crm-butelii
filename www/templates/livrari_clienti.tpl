@@ -189,21 +189,38 @@
                                                         </tr>
                                                     </table>
                                                 </td>
+                                                {*{foreach from=$client['preturi_produse'] item=preturi}*}
+                                                {*<td>*}
+                                                {*{foreach from=$preturi item=pret}*}
+                                                {*{if ($pret['total_cantitati_by_pret_produs']['numar_produs_by_pret'] > 0)}*}
+                                                {*<table class="table table-bordered">*}
+                                                {*<tr>*}
+                                                {*<td style="text-align: center;">*}
+                                                {*{$pret['pret']}*}
+                                                {*<br/>*}
+                                                {*{$pret['total_cantitati_by_pret_produs']['numar_produs_by_pret']}*}
+                                                {*</td>*}
+                                                {*</tr>*}
+                                                {*</table>*}
+                                                {*{/if}*}
+                                                {*{/foreach}*}
+                                                {*</td>*}
+                                                {*{/foreach}*}
                                                 {foreach from=$client['preturi_produse'] item=preturi}
                                                     <td>
-                                                        {foreach from=$preturi item=pret}
-                                                            {if ($pret['total_cantitati_by_pret_produs']['numar_produs_by_pret'] > 0)}
-                                                                <table class="table table-bordered">
-                                                                    <tr>
+                                                        <table class="table table-bordered">
+                                                            <tr>
+                                                                {foreach from=$preturi item=pret}
+                                                                    {if ($pret['total_cantitati_by_pret_produs']['numar_produs_by_pret'] > 0)}
                                                                         <td style="text-align: center;">
                                                                             {$pret['pret']}
                                                                             <br/>
                                                                             {$pret['total_cantitati_by_pret_produs']['numar_produs_by_pret']}
                                                                         </td>
-                                                                    </tr>
-                                                                </table>
-                                                            {/if}
-                                                        {/foreach}
+                                                                    {/if}
+                                                                {/foreach}
+                                                            </tr>
+                                                        </table>
                                                     </td>
                                                 {/foreach}
                                             </tr>
