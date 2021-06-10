@@ -90,15 +90,17 @@ $ultima_zi_luna = date('Y-m-t');
 //    'data_stop' => $ultima_zi_luna
 //));
 
-$b = Clienti::getRaportLivrariClienti(17, array(
-    'data_start' => $data_start,
-    'data_stop' => $data_stop
-));
-
-//$b = ParcAuto::getRaportLivrariTrasee(17, array(
+//$b = Clienti::getRaportLivrariClienti(17, array(
 //    'data_start' => $data_start,
 //    'data_stop' => $data_stop
 //));
+
+//$b = Produse::getPreturiProduseCuComisionByTipProdusIdAndClientAndTraseuId(1, 1913 1
+//    array(
+//        'data_start' => $data_start,
+//        'data_stop' => $data_stop
+//    ));
+
 
 //$b = Target::getTargetByClientAndProdusIdPentruRaportLivrari(2612, 1);
 
