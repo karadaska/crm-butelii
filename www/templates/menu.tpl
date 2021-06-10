@@ -105,12 +105,7 @@
                                 {*<span class="txt">Raport livrari clienti</span>*}
                             {*</a>*}
                         {*</li>*}
-                        <li {if $menu_curent==10}class="current"{/if}>
-                            <a href="/livrari_clienti.php">
-                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
-                                <span class="txt">Livrari clienti</span>
-                            </a>
-                        </li>
+
                         <li {if $menu_curent==10}class="current"{/if}>
                             <a href="/observatii_fisa_traseu.php">
                                 <span class="icon"><i class="icon20 i-stack-list"></i></span>
@@ -121,6 +116,38 @@
                             <a href="/neconcordanta_preturi.php">
                                 <span class="icon"><i class="icon20 i-stack-list"></i></span>
                                 <span class="txt">Neconcordanta preturi</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li {if $menu_curent==7}class="current"{/if}>
+                    <a href="#">
+                        <span class="icon"><i class="icon20 i-car"></i></span>
+                        <span class="txt">Livrari</span>
+                    </a>
+                    <ul class="sub">
+                        <li {if $menu_curent==9}class="current"{/if}>
+                            <a href="/raport_livrari_soferi.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Livrari soferi</span>
+                            </a>
+                        </li>
+                        <li {if $menu_curent==9}class="current"{/if}>
+                            <a href="/livrari_masini.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Livrari masini</span>
+                            </a>
+                        </li>
+                        <li {if $menu_curent==9}class="current"{/if}>
+                            <a href="/livrari_trasee.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Livrari trasee</span>
+                            </a>
+                        </li>
+                        <li {if $menu_curent==10}class="current"{/if}>
+                            <a href="/livrari_clienti.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Livrari clienti</span>
                             </a>
                         </li>
                     </ul>
@@ -141,24 +168,6 @@
                             <a href="/soferi.php">
                                 <span class="icon"><i class="icon20 i-stack-list"></i></span>
                                 <span class="txt">Soferi</span>
-                            </a>
-                        </li>
-                        <li {if $menu_curent==9}class="current"{/if}>
-                            <a href="/raport_livrari_soferi.php">
-                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
-                                <span class="txt">Raport livrari soferi</span>
-                            </a>
-                        </li>
-                        <li {if $menu_curent==9}class="current"{/if}>
-                            <a href="/livrari_masini.php">
-                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
-                                <span class="txt">Raport livrari masini</span>
-                            </a>
-                        </li>
-                        <li {if $menu_curent==9}class="current"{/if}>
-                            <a href="/livrari_trasee.php">
-                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
-                                <span class="txt">Raport livrari trasee</span>
                             </a>
                         </li>
                     </ul>
