@@ -21,13 +21,12 @@ $smarty->assign('data_stop', $data_stop);
 $lista_depozite = Depozite::getDepozite();
 $smarty->assign('lista_depozite', $lista_depozite);
 
-$livrari_trasee = ParcAuto::getRaportLivrariTrasee($traseu_id,
-
+$livrari_depozite = ParcAuto::getRaportLivrariDepozite($depozit_id,
     array(
         'data_start' => $data_start,
         'data_stop' => $data_stop
     ));
-$smarty->assign('livrari_trasee', $livrari_trasee);
+$smarty->assign('livrari_depozite', $livrari_depozite);
 
 $smarty->display($template_page);
 

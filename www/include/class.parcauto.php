@@ -962,7 +962,7 @@ class ParcAuto
             'depozite' => array()
         );
 
-        $query = "SELECT a.id, a.masina_id, a.sofer_id, b.nume as nume_sofer,
+        $query = "SELECT a.id, a.depozit_id, a.masina_id, a.sofer_id, b.nume as nume_sofer,
                   c.nume as nume_traseu, d.numar, d.model, a.traseu_id 
                   FROM fise_generate as a
                   LEFT JOIN soferi as b on a.sofer_id = b.id
@@ -1002,7 +1002,7 @@ class ParcAuto
                     ))
                 );
                 foreach ($ret['produse_depozit'] as $tip_produs_id => $item_tip_produs) {
-                    $r['total_produse'][$tip_produs_id] = Produse::getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
+                    $r['total_produse'][$tip_produs_id] = Produse::getTotalCantitatiByDepozitIdAndMasinaIdAndTraseuIdAndSoferId($item['depozit_id'], $item['masina_id'], $item['traseu_id'], $item['sofer_id'], array(
                         'tip_produs_id' => $tip_produs_id,
                         'data_start' => $data_start,
                         'data_stop' => $data_stop
@@ -1013,7 +1013,7 @@ class ParcAuto
                         'data_stop' => $data_stop
                     ));
                 }
-                array_push($ret['trasee'], $r);
+                array_push($ret['depozite'], $r);
             }
         }
         return $ret;

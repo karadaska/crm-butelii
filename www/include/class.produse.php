@@ -269,6 +269,43 @@ class Produse
 
     }
 
+    public static function getTotalCantitatiByDepozitIdAndMasinaIdAndTraseuIdAndSoferId($depozit_id, $masina_id = 0, $traseu_id, $sofer_id, $opts = array())
+    {
+        $ret = null;
+        $tip_produs_id = isset($opts['tip_produs_id']) ? $opts['tip_produs_id'] : 0;
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-01');
+        }
+
+        if ($data_stop == 0) {
+            $data_stop = date('Y-m-t');
+        }
+
+        $target_by_client_id = "SELECT SUM(a.cantitate) as cantitate, SUM(a.cantitate * a.pret) as valoare
+                                FROM detalii_fisa_intoarcere_produse  as a
+                                LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                                WHERE b.depozit_id = '" . $depozit_id . "'                                
+                                AND b.masina_id = '" . $masina_id . "'                                
+                                AND b.traseu_id = '" . $traseu_id . "'                                
+                                AND b.sofer_id = '" . $sofer_id . "'                                
+                                AND a.data_intrare >= '" . $data_start . "'
+                                AND a.data_intrare <= '" . $data_stop . "'
+                                AND a.sters = 0";
+
+        if ($tip_produs_id > 0) {
+            $target_by_client_id .= ' AND a.tip_produs_id = ' . $tip_produs_id . ' ';
+        }
+
+        $result = myQuery($target_by_client_id);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
 
     public static function getTotalProduseVanduteByTraseuIdAndProdusId($traseu_id, $client_id, $tip_produs_id, $opts = array())
     {
