@@ -150,6 +150,12 @@
                                 <span class="txt">Livrari clienti</span>
                             </a>
                         </li>
+                        <li {if $menu_curent==10}class="current"{/if}>
+                            <a href="/livrari_depozite.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Livrari depozite</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li {if $menu_curent==7}class="current"{/if}>
