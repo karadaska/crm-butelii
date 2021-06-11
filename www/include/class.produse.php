@@ -291,6 +291,7 @@ class Produse
                                 AND a.data_intrare >= '" . $data_start . "'
                                 AND a.data_intrare <= '" . $data_stop . "'
                                 AND a.sters = 0
+                                AND b.sters = 0
                                 AND a.cantitate > 0
                                 ";
 
