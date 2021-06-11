@@ -156,6 +156,12 @@
                                 <span class="txt">Livrari depozite</span>
                             </a>
                         </li>
+                        <li {if $menu_curent==10}class="current"{/if}>
+                            <a href="/miscari_fise.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Miscari Fise</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li {if $menu_curent==7}class="current"{/if}>
