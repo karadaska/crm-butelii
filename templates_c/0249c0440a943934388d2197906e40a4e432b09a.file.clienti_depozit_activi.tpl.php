@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-14 09:22:58
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-14 09:28:28
          compiled from "/var/www/html/fofoweb/www/templates/clienti_depozit_activi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:183254387160c6f370b4bf74-11159478%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0249c0440a943934388d2197906e40a4e432b09a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_depozit_activi.tpl',
-      1 => 1623651776,
+      1 => 1623651958,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'title' => 0,
-    'lista_depozite' => 0,
     'depozit' => 0,
+    'lista_depozite' => 0,
     'depozit_id' => 0,
     'lista_clienti' => 0,
     'client' => 0,
@@ -43,6 +43,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Clien&#355i</h1>
+                    <th>
+                        <a target="_blank" href="/print_clienti_activi_depozit.php?id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['id'];?>
+"
+                           class="i-print"></a>
+                    </th>
                 </div>
             </div>
             <div class="row-fluid span12">

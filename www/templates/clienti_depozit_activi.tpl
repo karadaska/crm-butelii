@@ -8,6 +8,10 @@
             <div class="container-fluid">
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Clien&#355i</h1>
+                    <th>
+                        <a target="_blank" href="/print_clienti_activi_depozit.php?id={$depozit['id']}"
+                           class="i-print"></a>
+                    </th>
                 </div>
             </div>
             <div class="row-fluid span12">
