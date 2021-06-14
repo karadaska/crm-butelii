@@ -27,6 +27,12 @@
                                 <span class="txt">Clienti</span>
                             </a>
                         </li>
+                        <li {if $menu_curent==3}class="current"{/if}>
+                            <a href="/clienti_depozit_activi.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Clienti activi pe depozite</span>
+                            </a>
+                        </li>
                         <li {if $menu_curent==4}class="current"{/if}>
                             <a href="/depozite.php">
                                 <span class="icon"><i class="icon20 i-stack-list"></i></span>

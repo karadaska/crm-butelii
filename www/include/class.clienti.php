@@ -1011,6 +1011,54 @@ class Clienti
         return $ret;
     }
 
+    public static function getListaClientiDepozitActivi($opts = array())
+    {
+        $depozit_id = isset($opts['depozit_id']) ? $opts['depozit_id'] : 0;
+
+        $ret = array();
+
+        $query = "SELECT
+                a.id,
+                a.nume,
+                a.telefon,
+                a.telefon_2,
+                b.nume AS nume_stare,
+                c.nume AS nume_judet,
+                d.nume AS nume_localitate,
+                a.data_start as data_start,
+                a.data_stop as data_stop,
+                a.cnp,
+                a.ci          	
+                FROM
+                clienti AS a
+                LEFT JOIN clienti_stari AS b ON a.stare_id = b.id
+                LEFT JOIN judete AS c ON a.judet_id = c.id
+                LEFT JOIN localitati AS d ON a.localitate_id = d.id 
+                LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id 
+                LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id	
+                LEFT JOIN observatii_client AS g ON a.id = g.client_id	
+                WHERE a.sters = 0
+                AND a.data_stop LIKE '0000-00-00'
+		        ";
+
+        if ($depozit_id > 0) {
+            $query .= " AND f.depozit_id = " . $depozit_id;;
+        }
+
+        $query .= " GROUP BY a.id ORDER BY a.nume ASC ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $tmp = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($tmp as $client) {
+                $client['asignare_client_traseu'] = Asignari::getAsignareTraseuByClientId($client['id']);
+                array_push($ret, $client);
+
+            }
+        }
+        return $ret;
+    }
+
     public static function getAsignariClientiByFisaGenerataId($fisa_id, $opts = array())
     {
         $stare_id = isset($opts['stare_id']) ? $opts['stare_id'] : 0;
