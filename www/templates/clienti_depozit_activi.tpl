@@ -45,6 +45,7 @@
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: center;">CNP</th>
                                     <th style="text-align: center;">SERIA</th>
+                                    <th style="text-align: center;">STARE CLIENT</th>
                                     <th style="text-align: center;" class="span1">DATA START</th>
                                     <th style="text-align: center;" class="span1">DATA STOP</th>
                                 </tr>
@@ -77,6 +78,7 @@
                                         </td>
                                         <td style="text-align: center;">{$client['cnp']}</td>
                                         <td style="text-align: center;">{$client['ci']}</td>
+                                        <td style="text-align: center;">{$client['stare_client']}</td>
                                         <td style="text-align: center;">
                                             {$client['data_start']}
                                         </td>
