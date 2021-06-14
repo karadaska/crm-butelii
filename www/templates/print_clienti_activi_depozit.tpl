@@ -80,7 +80,59 @@
     {$date_stop = str_replace('-"', '.', $org_date_stop)}
     {$newDateSop = date("d.m.Y", strtotime($date_stop))}
 
-
+    <table cellpadding="0" cellspacing="0" border="1"
+           class="table table-striped table-bordered table-hover" id="dataTable">
+        <thead>
+        <tr>
+            <th style="text-align: left;">ZONA</th>
+            <th style="text-align: left;">LOCALITATE</th>
+            <th style="text-align: left;">NUME</th>
+            <th style="text-align: center;">TRASEU</th>
+            <th style="text-align: center;">TELEFON</th>
+            <th style="text-align: center;">CNP</th>
+            <th style="text-align: center;">SERIA</th>
+            <th style="text-align: center;" class="span1">DATA START</th>
+            <th style="text-align: center;" class="span1">DATA STOP</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach from=$lista_clienti item=client}
+            <tr>
+                <td>{strtoupper($client['nume_judet'])}</td>
+                <td>{strtoupper($client['nume_localitate'])}</td>
+                <td>
+                   {strtoupper($client['nume'])}
+                </td>
+                <td>
+                    {foreach from = $client['asignare_client_traseu'] item=asignare_traseu}
+                        {if {$asignare_traseu['nume']}}
+                            {$asignare_traseu['nume']}
+                            <br/>
+                        {else}
+                            &ndash;
+                        {/if}
+                    {/foreach}
+                </td>
+                <td style="text-align: center;">
+                    {if strlen({$client['telefon']} > 2)}
+                        Tel 1: {$client['telefon']}<br/>
+                    {/if}
+                    {if strlen({$client['telefon_2']} > 2)}
+                        Tel 2: {$client['telefon_2']}
+                    {/if}
+                </td>
+                <td style="text-align: center;">{$client['cnp']}</td>
+                <td style="text-align: center;">{$client['ci']}</td>
+                <td style="text-align: center;">
+                    {$client['data_start']}
+                </td>
+                <td style="text-align: center;">
+                    {$client['data_stop']}
+                </td>
+            </tr>
+        {/foreach}
+        </tbody>
+    </table>
 </section>
 </body>
 </html>
