@@ -1040,6 +1040,7 @@ class Clienti
                 LEFT JOIN observatii_client AS g ON a.id = g.client_id	
                 WHERE a.sters = 0
                 AND a.data_stop LIKE '0000-00-00'
+                AND a.stare_id != 2
 		        ";
 
         if ($depozit_id > 0) {

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-14 09:32:40
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-14 09:48:15
          compiled from "/var/www/html/fofoweb/www/templates/print_clienti_activi_depozit.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:120537803360c6f7d00c0db7-31312710%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7db21b2377ecaa00c576cfec69c925b9a1aa83c' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_clienti_activi_depozit.tpl',
-      1 => 1623652359,
+      1 => 1623653120,
       2 => 'file',
     ),
   ),
@@ -128,6 +128,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <th style="text-align: center;">TELEFON</th>
             <th style="text-align: center;">CNP</th>
             <th style="text-align: center;">SERIA</th>
+            <th style="text-align: center;">STARE</th>
             <th style="text-align: center;" class="span1">DATA START</th>
             <th style="text-align: center;" class="span1">DATA STOP</th>
         </tr>
@@ -178,6 +179,8 @@ $_smarty_tpl->tpl_vars['asignare_traseu']->_loop = true;
                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['cnp'];?>
 </td>
                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['ci'];?>
+</td>
+                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['stare_client'];?>
 </td>
                 <td style="text-align: center;">
                     <?php echo $_smarty_tpl->tpl_vars['client']->value['data_start'];?>
