@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-09 22:51:43
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-15 15:23:41
          compiled from "/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:156686449460c1183c6ece99-01940403%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '82208087dda068886a360b1fa14bfe49b76c0897' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl',
-      1 => 1623268302,
+      1 => 1623759819,
       2 => 'file',
     ),
   ),
@@ -190,9 +190,9 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
 </th>
                                                 </tr>
                                                 <tr>
-                                                    <th>STOC</th>
-                                                    <th>PRET</th>
-                                                    <th>COM</th>
+                                                    <td style="text-align: center;">STOC</td>
+                                                    <td style="text-align: center;">PRET</td>
+                                                    <td style="text-align: center;">COM</td>
                                                 </tr>
                                             </table>
                                         </th>
@@ -209,9 +209,9 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
 </th>
                                                 </tr>
                                                 <tr>
-                                                    <th>BUC.</th>
-                                                    <th>PRET</th>
-                                                    <th>COM</th>
+                                                    <td style="text-align: center;">BUC.</td>
+                                                    <td style="text-align: center;">PRET</td>
+                                                    <td style="text-align: center;">COM</td>
                                                 </tr>
                                             </table>
                                         </th>
@@ -222,9 +222,9 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
                                                 <th colspan="3">&nbsp;</th>
                                             </tr>
                                             <tr>
-                                                <th>BG + AR</th>
-                                                <th>VAL.</th>
-                                                <th>COM.</th>
+                                                <td style="text-align: center;">BG + AR</td>
+                                                <td style="text-align: center;">VAL.</td>
+                                                <td style="text-align: center;">COM.</td>
                                             </tr>
                                         </table>
                                     </th>
@@ -236,11 +236,11 @@ $_smarty_tpl->tpl_vars['produs']->_loop = true;
                                         <th>
                                             <table border="1" style="width: 100%;">
                                                 <tr>
-                                                    <th>&nbsp</th>
+                                                    <td>&nbsp</td>
                                                 </tr>
                                                 <tr>
-                                                    <th colspan="3"><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
-</th>
+                                                    <td colspan="3"><?php echo $_smarty_tpl->tpl_vars['produs']->value['nume_produs'];?>
+</td>
                                                 </tr>
                                             </table>
                                         </th>
@@ -266,10 +266,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['target_client']->key => $_smarty_tpl-
 $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 ?>
                                             <td>
-                                                <table border="1" style="width: 100%;">
+                                                <table border="" style="width: 100%;">
                                                     <tr>
                                                         <td>
-                                                            <table border="1" style="width: 100%;">
+                                                            <table border="0" style="width: 100%;">
                                                                 <tr>
                                                                     <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['target_client']->value['target']>0||$_smarty_tpl->tpl_vars['target_client']->value['target']!='' ? $_smarty_tpl->tpl_vars['target_client']->value['target'] : '-';?>
 </td>
@@ -296,7 +296,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                                 <table border="1" style="width: 100%;">
                                                     <tr>
                                                         <td>
-                                                            <table border="1" style="width: 100%;">
+                                                            <table border="0" style="width: 100%;">
                                                                 <tr>
                                                                     <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['produse']->value['cantitate']>0||$_smarty_tpl->tpl_vars['produse']->value['cantitate']!='' ? $_smarty_tpl->tpl_vars['produse']->value['cantitate'] : '-';?>
 </td>
@@ -318,7 +318,7 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                             <table border="1" style="width: 100%;">
                                                 <tr>
                                                     <td>
-                                                        <table border="1" style="width: 100%;">
+                                                        <table border="0" style="width: 100%;">
                                                             <tr>
                                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_bucati']->value;?>
 </td>
@@ -344,7 +344,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['pret']->key => $_smarty_tpl->tpl_vars
 $_smarty_tpl->tpl_vars['pret']->_loop = true;
 ?>
                                                     <?php if (($_smarty_tpl->tpl_vars['pret']->value['total_cantitati_by_pret_produs']['numar_produs_by_pret']>0)) {?>
-                                                        <table border="1" style="width: 100%;">
+                                                        <table border="0" style="width: 100%;">
                                                             <tr>
                                                                 <td style="text-align: center;">
                                                                     <?php echo $_smarty_tpl->tpl_vars['pret']->value['pret'];?>
@@ -391,12 +391,12 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                         <td>
                                             <table border="1" style="width: 100%;">
                                                 <tr>
-                                                    <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_cantitati']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_cantitati']->value : '-';?>
-</th>
-                                                    <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_valoare']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_valoare']->value : '-';?>
-</th>
-                                                    <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_comision']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_comision']->value : '-';?>
-</th>
+                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_cantitati']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_cantitati']->value : '-';?>
+</td>
+                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_valoare']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_valoare']->value : '-';?>
+</td>
+                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_comision']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_comision']->value : '-';?>
+</td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -404,12 +404,12 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                     <td>
                                         <table border="1" style="width: 100%;">
                                             <tr>
-                                                <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_ar_bg']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_ar_bg']->value : '-';?>
-</th>
-                                                <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_valoare']->value>0 ? $_smarty_tpl->tpl_vars['grand_valoare']->value : '-';?>
-</th>
-                                                <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_comision']->value>0 ? $_smarty_tpl->tpl_vars['grand_comision']->value : '-';?>
-</th>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_ar_bg']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_ar_bg']->value : '-';?>
+</td>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_valoare']->value>0 ? $_smarty_tpl->tpl_vars['grand_valoare']->value : '-';?>
+</td>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_comision']->value>0 ? $_smarty_tpl->tpl_vars['grand_comision']->value : '-';?>
+</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -440,10 +440,10 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                     <td>
                                         <table border="1" style="width: 100%;">
                                             <tr>
-                                                <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['pret'];?>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['pret'];?>
 
                                                     <br/>
-                                                </th>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_bg_11']['cantitate']['0']['total_cantitate'];?>
@@ -475,10 +475,10 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                     <td>
                                         <table border="1" style="width: 100%;">
                                             <tr>
-                                                <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['pret'];?>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['pret'];?>
 
                                                     <br/>
-                                                </th>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_9']['cantitate']['0']['total_cantitate'];?>
@@ -510,10 +510,10 @@ $_smarty_tpl->tpl_vars['pret']->_loop = true;
                                     <td>
                                         <table border="1" style="width: 100%;">
                                             <tr>
-                                                <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['pret'];?>
+                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['pret'];?>
 
                                                     <br/>
-                                                </th>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['pret']->value['pret_ar_8']['cantitate']['0']['total_cantitate'];?>

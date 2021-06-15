@@ -124,9 +124,9 @@
                                                     <th colspan="3">{$produs['nume_produs']}</th>
                                                 </tr>
                                                 <tr>
-                                                    <th>STOC</th>
-                                                    <th>PRET</th>
-                                                    <th>COM</th>
+                                                    <td style="text-align: center;">STOC</td>
+                                                    <td style="text-align: center;">PRET</td>
+                                                    <td style="text-align: center;">COM</td>
                                                 </tr>
                                             </table>
                                         </th>
@@ -138,9 +138,9 @@
                                                     <th colspan="3">{$produs['nume_produs']}</th>
                                                 </tr>
                                                 <tr>
-                                                    <th>BUC.</th>
-                                                    <th>PRET</th>
-                                                    <th>COM</th>
+                                                    <td style="text-align: center;">BUC.</td>
+                                                    <td style="text-align: center;">PRET</td>
+                                                    <td style="text-align: center;">COM</td>
                                                 </tr>
                                             </table>
                                         </th>
@@ -151,9 +151,9 @@
                                                 <th colspan="3">&nbsp;</th>
                                             </tr>
                                             <tr>
-                                                <th>BG + AR</th>
-                                                <th>VAL.</th>
-                                                <th>COM.</th>
+                                                <td style="text-align: center;">BG + AR</td>
+                                                <td style="text-align: center;">VAL.</td>
+                                                <td style="text-align: center;">COM.</td>
                                             </tr>
                                         </table>
                                     </th>
@@ -161,10 +161,10 @@
                                         <th>
                                             <table border="1" style="width: 100%;">
                                                 <tr>
-                                                    <th>&nbsp</th>
+                                                    <td>&nbsp</td>
                                                 </tr>
                                                 <tr>
-                                                    <th colspan="3">{$produs['nume_produs']}</th>
+                                                    <td colspan="3">{$produs['nume_produs']}</td>
                                                 </tr>
                                             </table>
                                         </th>
@@ -178,10 +178,10 @@
                                         <td>{$client['telefon']} </br>{$client['telefon_2']}</td>
                                         {foreach from=$client['target_produse'] item=target_client}
                                             <td>
-                                                <table border="1" style="width: 100%;">
+                                                <table border="" style="width: 100%;">
                                                     <tr>
                                                         <td>
-                                                            <table border="1" style="width: 100%;">
+                                                            <table border="0" style="width: 100%;">
                                                                 <tr>
                                                                     <td style="text-align: center;">{($target_client['target'] > 0 || $target_client['target'] !='') ?  $target_client['target'] : '-'}</td>
                                                                     <td style="text-align: center;">{($target_client['pret_contract'] > 0 || $target_client['pret_contract'] !='') ?  $target_client['pret_contract'] : '-'}</td>
@@ -201,7 +201,7 @@
                                                 <table border="1" style="width: 100%;">
                                                     <tr>
                                                         <td>
-                                                            <table border="1" style="width: 100%;">
+                                                            <table border="0" style="width: 100%;">
                                                                 <tr>
                                                                     <td style="text-align: center;">{($produse['cantitate'] > 0 || $produse['cantitate'] !='') ?  $produse['cantitate'] : '-'}</td>
                                                                     <td style="text-align: center;">{($produse['pret'] > 0 || $produse['pret'] !='') ?  $produse['pret'] : '-'}</td>
@@ -220,7 +220,7 @@
                                             <table border="1" style="width: 100%;">
                                                 <tr>
                                                     <td>
-                                                        <table border="1" style="width: 100%;">
+                                                        <table border="0" style="width: 100%;">
                                                             <tr>
                                                                 <td style="text-align: center;">{$grand_bucati}</td>
                                                                 <td style="text-align: center;">{$grand_valoare}</td>
@@ -235,7 +235,7 @@
                                             <td>
                                                 {foreach from=$preturi item=pret}
                                                     {if ($pret['total_cantitati_by_pret_produs']['numar_produs_by_pret'] > 0)}
-                                                        <table border="1" style="width: 100%;">
+                                                        <table border="0" style="width: 100%;">
                                                             <tr>
                                                                 <td style="text-align: center;">
                                                                     {$pret['pret']}
@@ -275,9 +275,9 @@
                                         <td>
                                             <table border="1" style="width: 100%;">
                                                 <tr>
-                                                    <th style="text-align: center;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</th>
-                                                    <th style="text-align: center;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</th>
-                                                    <th style="text-align: center;">{($grand_total_comision > 0) ? $grand_total_comision : '-'}</th>
+                                                    <td style="text-align: center;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</td>
+                                                    <td style="text-align: center;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</td>
+                                                    <td style="text-align: center;">{($grand_total_comision > 0) ? $grand_total_comision : '-'}</td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -285,9 +285,9 @@
                                     <td>
                                         <table border="1" style="width: 100%;">
                                             <tr>
-                                                <th style="text-align: center;">{($grand_total_ar_bg > 0) ? $grand_total_ar_bg : '-'}</th>
-                                                <th style="text-align: center;">{($grand_valoare > 0) ? $grand_valoare : '-'}</th>
-                                                <th style="text-align: center;">{($grand_comision > 0) ? $grand_comision : '-'}</th>
+                                                <td style="text-align: center;">{($grand_total_ar_bg > 0) ? $grand_total_ar_bg : '-'}</td>
+                                                <td style="text-align: center;">{($grand_valoare > 0) ? $grand_valoare : '-'}</td>
+                                                <td style="text-align: center;">{($grand_comision > 0) ? $grand_comision : '-'}</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -313,9 +313,9 @@
                                     <td>
                                         <table border="1" style="width: 100%;">
                                             <tr>
-                                                <th style="text-align: center;">{$pret['pret_bg_11']['pret']}
+                                                <td style="text-align: center;">{$pret['pret_bg_11']['pret']}
                                                     <br/>
-                                                </th>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center;">{$pret['pret_bg_11']['cantitate']['0']['total_cantitate']}</td>
@@ -341,9 +341,9 @@
                                     <td>
                                         <table border="1" style="width: 100%;">
                                             <tr>
-                                                <th style="text-align: center;">{$pret['pret_ar_9']['pret']}
+                                                <td style="text-align: center;">{$pret['pret_ar_9']['pret']}
                                                     <br/>
-                                                </th>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center;">{$pret['pret_ar_9']['cantitate']['0']['total_cantitate']}</td>
@@ -369,9 +369,9 @@
                                     <td>
                                         <table border="1" style="width: 100%;">
                                             <tr>
-                                                <th style="text-align: center;">{$pret['pret_ar_8']['pret']}
+                                                <td style="text-align: center;">{$pret['pret_ar_8']['pret']}
                                                     <br/>
-                                                </th>
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td style="text-align: center;">{$pret['pret_ar_8']['cantitate']['0']['total_cantitate']}</td>
