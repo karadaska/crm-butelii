@@ -275,9 +275,9 @@
                                         <td>
                                             <table border="1" style="width: 100%;">
                                                 <tr>
-                                                    <td style="text-align: center;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</td>
-                                                    <td style="text-align: center;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</td>
-                                                    <td style="text-align: center;">{($grand_total_comision > 0) ? $grand_total_comision : '-'}</td>
+                                                    <th style="text-align: center;">{($grand_total_cantitati > 0) ? $grand_total_cantitati : '-'}</th>
+                                                    <th style="text-align: center;">{($grand_total_valoare > 0) ? $grand_total_valoare : '-'}</th>
+                                                    <th style="text-align: center;">{($grand_total_comision > 0) ? $grand_total_comision : '-'}</th>
                                                 </tr>
                                             </table>
                                         </td>
@@ -285,9 +285,9 @@
                                     <td>
                                         <table border="1" style="width: 100%;">
                                             <tr>
-                                                <td style="text-align: center;">{($grand_total_ar_bg > 0) ? $grand_total_ar_bg : '-'}</td>
-                                                <td style="text-align: center;">{($grand_valoare > 0) ? $grand_valoare : '-'}</td>
-                                                <td style="text-align: center;">{($grand_comision > 0) ? $grand_comision : '-'}</td>
+                                                <th style="text-align: center;">{($grand_total_ar_bg > 0) ? $grand_total_ar_bg : '-'}</th>
+                                                <th style="text-align: center;">{($grand_valoare > 0) ? $grand_valoare : '-'}</th>
+                                                <th style="text-align: center;">{($grand_comision > 0) ? $grand_comision : '-'}</th>
                                             </tr>
                                         </table>
                                     </td>

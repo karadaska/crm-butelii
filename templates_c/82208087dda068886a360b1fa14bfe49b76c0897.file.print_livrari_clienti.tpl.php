@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-15 15:23:41
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-15 15:34:00
          compiled from "/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:156686449460c1183c6ece99-01940403%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '82208087dda068886a360b1fa14bfe49b76c0897' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_livrari_clienti.tpl',
-      1 => 1623759819,
+      1 => 1623760439,
       2 => 'file',
     ),
   ),
@@ -391,12 +391,12 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                         <td>
                                             <table border="1" style="width: 100%;">
                                                 <tr>
-                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_cantitati']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_cantitati']->value : '-';?>
-</td>
-                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_valoare']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_valoare']->value : '-';?>
-</td>
-                                                    <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_comision']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_comision']->value : '-';?>
-</td>
+                                                    <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_cantitati']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_cantitati']->value : '-';?>
+</th>
+                                                    <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_valoare']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_valoare']->value : '-';?>
+</th>
+                                                    <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_comision']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_comision']->value : '-';?>
+</th>
                                                 </tr>
                                             </table>
                                         </td>
@@ -404,12 +404,12 @@ $_smarty_tpl->tpl_vars['produse']->_loop = true;
                                     <td>
                                         <table border="1" style="width: 100%;">
                                             <tr>
-                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_ar_bg']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_ar_bg']->value : '-';?>
-</td>
-                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_valoare']->value>0 ? $_smarty_tpl->tpl_vars['grand_valoare']->value : '-';?>
-</td>
-                                                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_comision']->value>0 ? $_smarty_tpl->tpl_vars['grand_comision']->value : '-';?>
-</td>
+                                                <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_total_ar_bg']->value>0 ? $_smarty_tpl->tpl_vars['grand_total_ar_bg']->value : '-';?>
+</th>
+                                                <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_valoare']->value>0 ? $_smarty_tpl->tpl_vars['grand_valoare']->value : '-';?>
+</th>
+                                                <th style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['grand_comision']->value>0 ? $_smarty_tpl->tpl_vars['grand_comision']->value : '-';?>
+</th>
                                             </tr>
                                         </table>
                                     </td>
