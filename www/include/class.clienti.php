@@ -1264,11 +1264,13 @@ class Clienti
 
     public static function getUrgentaApelClientiByClientId($client_id, $traseu_id, $opts = array())
     {
-        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//
+//        if ($data == 0) {
+//            $data = date('Y-m-d');
+//        }
 
-        if ($data == 0) {
-            $data = date('Y-m-d');
-        }
+        $data = '2021-06-18';
 
         $ret = array();
         $query = "SELECT urgent 
