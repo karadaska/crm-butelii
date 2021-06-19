@@ -1341,12 +1341,13 @@ class Clienti
 
     public static function getClientiCuUrgenteApelClientiByTraseuId($traseu_id, $opts = array())
     {
-        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//
+//        if ($data_start == 0) {
+//            $data_start = date('Y-m-d');
+//        }
 
-        if ($data_start == 0) {
-            $data_start = date('Y-m-d');
-        }
-
+        $data_start = '2021-06-18';
         $ret = array();
         $query = "SELECT a.client_id, b.nume as nume_client, c.nume as nume_localitate,
                 if (a.urgent = 1, 'DA', 'NU') as urgent
