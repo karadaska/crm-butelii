@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-16 14:35:25
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-19 12:11:49
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:99499057960c8ff77e0e565-54212455%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1623843321,
+      1 => 1624089575,
       2 => 'file',
     ),
   ),
@@ -254,13 +254,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['observatie']->key => $_smarty_tpl->tp
 $_smarty_tpl->tpl_vars['observatie']->_loop = true;
 ?>
                                                         <?php if ($_smarty_tpl->tpl_vars['observatie']->value['tip_observatie']==1) {?>
-                                                            
-                                                                    
-                                                                
-                                                            
-                                                            <option value=<?php echo $_smarty_tpl->tpl_vars['observatie']->value['id'];?>
-
-                                                                    <?php if ($_smarty_tpl->tpl_vars['observatie_client']->value['observatie_id']==$_smarty_tpl->tpl_vars['observatie']->value['id']) {?> selected="selected"<?php }?>>
+                                                            <option value="<?php echo $_smarty_tpl->tpl_vars['observatie']->value['id'];?>
+"
+                                                                    <?php if ($_smarty_tpl->tpl_vars['observatie_client']->value['observatie_id']==$_smarty_tpl->tpl_vars['observatie']->value['id']) {?>selected="selected"<?php }?>>
                                                                 <?php echo $_smarty_tpl->tpl_vars['observatie']->value['nume'];?>
 
                                                             </option>
@@ -274,11 +270,11 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
 "
                                                         style="width: 250px;">
                                                     <option value="0"
-                                                            <?php if ($_smarty_tpl->tpl_vars['urgenta_client']->value['urgent']==0) {?> selected="selected"<?php }?>>
+                                                            <?php if ($_smarty_tpl->tpl_vars['urgenta_client']->value['urgent']==0) {?>selected="selected"<?php }?>>
                                                         NU
                                                     </option>
                                                     <option value="1"
-                                                            <?php if ($_smarty_tpl->tpl_vars['urgenta_client']->value['urgent']==1) {?> selected="selected"<?php }?>>
+                                                            <?php if ($_smarty_tpl->tpl_vars['urgenta_client']->value['urgent']==1) {?>selected="selected"<?php }?>>
                                                         DA
                                                     </option>
                                                 </select>

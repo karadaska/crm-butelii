@@ -4,7 +4,8 @@ require_once('etc/config.php');
 if (!Utilizatori::hasRights(1, 4)) {
     web_redirect('/eroare_faradrept.php');
 }
-$data_start = date('Y-m-d');
+//$data_start = date('Y-m-d');
+$data_start = date('2021-06-18');
 
 $smarty->assign('name', 'Actualizeaza produse la client');
 $template_page = "apeluri_clienti.tpl";

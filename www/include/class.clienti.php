@@ -1384,6 +1384,7 @@ class Clienti
             $data = date('Y-m-d');
         }
 
+        $data = '2021-06-18';
         $query = "SELECT b.goale from apeluri_clienti as a
                   LEFT JOIN apeluri_clienti_produse as  b on a.id = b.apel_id
                   WHERE a.client_id = '" . $client_id . "'
