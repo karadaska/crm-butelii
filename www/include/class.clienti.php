@@ -1237,11 +1237,13 @@ class Clienti
 
     public static function getObservatieApelClientiByClientId($client_id, $traseu_id, $opts = array())
     {
-        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//
+//        if ($data == 0) {
+//            $data = date('Y-m-d');
+//        }
 
-        if ($data == 0) {
-            $data = date('Y-m-d');
-        }
+        $data = '2021-06-18';
 
         $ret = array();
         $query = "SELECT a.observatie_id, b.nume as nume_observatie 
@@ -1286,11 +1288,13 @@ class Clienti
 
     public static function getNumeUrgentaApelClientiByClientId($client_id, $traseu_id, $opts = array())
     {
-        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//
+//        if ($data == 0) {
+//            $data = date('Y-m-d');
+//        }
 
-        if ($data == 0) {
-            $data = date('Y-m-d');
-        }
+        $data = '2021-06-18';
 
         $ret = array();
         $query = "SELECT  if (urgent = 1, 'DA','NU')as urgent
