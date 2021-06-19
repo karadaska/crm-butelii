@@ -20,7 +20,8 @@ $smarty->assign('nume_traseu',$nume_traseu);
 $nr = 1;
 $smarty->assign('nr',$nr);
 
-$data_traseu = date('Y-m-d');
+//$data_traseu = date('Y-m-d');
+$data_traseu = '2021-06-18';
 $smarty->assign('data_traseu',$data_traseu);
 
 $stare_id = getRequestParameter('stare_id', 0);
