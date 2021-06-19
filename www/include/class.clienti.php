@@ -346,10 +346,11 @@ class Clienti
         $time_start = microtime(true);
 
         $query = "SELECT b.id, a.traseu_id, b.nume as nume_client,
-                b.telefon, b.telefon_2, c.nume as nume_localitate from 
-                asignari_clienti_trasee as a
+                b.telefon, b.telefon_2, c.nume as nume_localitate, d.nume as culoare_butelii
+                FROM asignari_clienti_trasee as a
                 left join clienti as b on a.client_id = b.id
                 left join localitati as c on b.localitate_id = c.id
+                left join culori_butelii as d on b.culoare_id = d.id
                 where traseu_id = '" . $traseu_id . "'
                 and a.sters = 0
                 AND b.stare_id !=2

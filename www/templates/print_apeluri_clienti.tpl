@@ -87,6 +87,7 @@
             <th style="text-align: left;">CLIENT</th>
             <th style="text-align: center;">TELEFON</th>
             <th style="text-align: center;">PRODUS</th>
+            <th style="text-align: center;">CULOARE</th>
             <th style="text-align: center;">GOALE</th>
             <th style="text-align: center;">OBS</th>
             <th style="text-align: center;">URGENT</th>
@@ -130,6 +131,7 @@
                         {/foreach}
                     </table>
                 </td>
+                <td style="text-align: center;" class="span1">{$client['culoare_butelii']}</td>
                 <td style="text-align: center;">
                     {foreach from=$client['target'] item = target_client}
                         {assign var=cantitati_goale value=Clienti::getGoaleApelClientiByClientId($client['id'],$target_client['tip_produs_id'], $id)}
