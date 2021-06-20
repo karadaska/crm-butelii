@@ -1237,13 +1237,12 @@ class Clienti
 
     public static function getObservatieApelClientiByClientId($client_id, $traseu_id, $opts = array())
     {
-//        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
-//
-//        if ($data == 0) {
-//            $data = date('Y-m-d');
-//        }
+        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
 
-        $data = '2021-06-18';
+        if ($data == 0) {
+            $data = date('Y-m-d');
+        }
+
 
         $ret = array();
         $query = "SELECT a.observatie_id, b.nume as nume_observatie 
@@ -1264,13 +1263,11 @@ class Clienti
 
     public static function getUrgentaApelClientiByClientId($client_id, $traseu_id, $opts = array())
     {
-//        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
-//
-//        if ($data == 0) {
-//            $data = date('Y-m-d');
-//        }
+        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
 
-        $data = '2021-06-18';
+        if ($data == 0) {
+            $data = date('Y-m-d');
+        }
 
         $ret = array();
         $query = "SELECT urgent 
@@ -1290,13 +1287,11 @@ class Clienti
 
     public static function getNumeUrgentaApelClientiByClientId($client_id, $traseu_id, $opts = array())
     {
-//        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
-//
-//        if ($data == 0) {
-//            $data = date('Y-m-d');
-//        }
+        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
 
-        $data = '2021-06-18';
+        if ($data == 0) {
+            $data = date('Y-m-d');
+        }
 
         $ret = array();
         $query = "SELECT  if (urgent = 1, 'DA','NU')as urgent
@@ -1343,13 +1338,12 @@ class Clienti
 
     public static function getClientiCuUrgenteApelClientiByTraseuId($traseu_id, $opts = array())
     {
-//        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
-//
-//        if ($data_start == 0) {
-//            $data_start = date('Y-m-d');
-//        }
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
 
-        $data_start = '2021-06-18';
+        if ($data_start == 0) {
+            $data_start = date('Y-m-d');
+        }
+
         $ret = array();
         $query = "SELECT a.client_id, b.nume as nume_client, c.nume as nume_localitate,
                 if (a.urgent = 1, 'DA', 'NU') as urgent
@@ -1391,7 +1385,6 @@ class Clienti
             $data = date('Y-m-d');
         }
 
-        $data = '2021-06-18';
         $query = "SELECT b.goale from apeluri_clienti as a
                   LEFT JOIN apeluri_clienti_produse as  b on a.id = b.apel_id
                   WHERE a.client_id = '" . $client_id . "'
