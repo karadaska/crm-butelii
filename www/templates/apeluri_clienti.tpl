@@ -221,16 +221,17 @@
                                                 <table class="table">
                                                     {if ($total_obs['total_observatii'] > 0)}
                                                         <tr>
-                                                            <th colspan="2">CLIENTI FARA
+                                                            <th>CLIENTI FARA
                                                                 INFO: {$total_obs['total_observatii']}</th>
                                                         </tr>
                                                     {/if}
-                                                    {foreach from=$total_obs_pe_categorii item=obs}
                                                         <tr>
-                                                            <th style="text-align: right;color: red;">{$obs['nume_observatie']}</th>
-                                                            <th class="span2">{$obs['numar_observatie']['total_observatie']}</th>
+                                                            <th style="text-align: left;">
+                                                                {foreach from=$total_obs_pe_categorii item=obs}
+                                                                    <span style="color: red;">[{$obs['nume_observatie']} : {$obs['numar_observatie']['total_observatie']}], </span>
+                                                                {/foreach}
+                                                            </th>
                                                         </tr>
-                                                    {/foreach}
                                                 </table>
                                             </th>
                                         </tr>
