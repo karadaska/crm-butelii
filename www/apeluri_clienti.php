@@ -62,6 +62,11 @@ $clienti_cu_urgente = Clienti::getClientiCuUrgenteApelClientiByTraseuId($traseu_
 ));
 $smarty->assign('clienti_cu_urgente', $clienti_cu_urgente);
 
+$culori_traseu = Produse::getCuloriApeluriClientiByTraseuId($traseu_id, array(
+    'data_start' => $data_start
+));
+$smarty->assign('culori_traseu', $culori_traseu);
+
 
 $to_add = array();
 if (isset($_POST['update'])) {

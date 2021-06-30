@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-30 12:38:12
+<?php /* Smarty version Smarty-3.1.15, created on 2021-06-30 14:34:21
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:99499057960c8ff77e0e565-54212455%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1625045881,
+      1 => 1625052860,
       2 => 'file',
     ),
   ),
@@ -43,6 +43,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'conditie' => 0,
     'total_obs_pe_categorii' => 0,
     'obs' => 0,
+    'culori_traseu' => 0,
+    'culoare' => 0,
     'clienti_cu_observatii' => 0,
     'clienti_cu_urgente' => 0,
     'raspuns' => 0,
@@ -354,6 +356,19 @@ $_smarty_tpl->tpl_vars['obs']->_loop = true;
                                                                 <?php } ?>
                                                             </th>
                                                         </tr>
+                                                    <tr>
+                                                        <th style="text-align: left;">
+                                                            <?php  $_smarty_tpl->tpl_vars['culoare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['culoare']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['culori_traseu']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['culoare']->key => $_smarty_tpl->tpl_vars['culoare']->value) {
+$_smarty_tpl->tpl_vars['culoare']->_loop = true;
+?>
+                                                                <span style="color: red;">[<?php echo $_smarty_tpl->tpl_vars['culoare']->value['culoare'];?>
+ : <?php echo $_smarty_tpl->tpl_vars['culoare']->value['total_culori']['count_culoare'];?>
+], </span>
+                                                            <?php } ?>
+                                                        </th>
+                                                    </tr>
                                                 </table>
                                             </th>
                                         </tr>

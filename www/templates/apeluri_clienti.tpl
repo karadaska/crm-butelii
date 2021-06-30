@@ -232,6 +232,13 @@
                                                                 {/foreach}
                                                             </th>
                                                         </tr>
+                                                    <tr>
+                                                        <th style="text-align: left;">
+                                                            {foreach from=$culori_traseu item=culoare}
+                                                                <span style="color: red;">[{$culoare['culoare']} : {$culoare['total_culori']['count_culoare']}], </span>
+                                                            {/foreach}
+                                                        </th>
+                                                    </tr>
                                                 </table>
                                             </th>
                                         </tr>
