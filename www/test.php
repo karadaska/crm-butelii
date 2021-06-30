@@ -57,7 +57,7 @@ $zi_curenta = date('Y-m-d');
 $traseu_id = 2;
 $sofer_id = 22;
 $masina_id = 30;
-$data_start = '2021-05-12';
+$data_start = '2021-06-30';
 $data_stop = '2021-05-12';
 
 $prima_zi_luna = date('Y-m-01');
@@ -90,10 +90,10 @@ $ultima_zi_luna = date('Y-m-t');
 //    'data_stop' => $ultima_zi_luna
 //));
 
-$b = ParcAuto::getRaportLivrariDepozite(1, array(
-    'data_start' => $data_start,
-    'data_stop' => $data_stop
-));
+//$b = ParcAuto::getRaportLivrariDepozite(1, array(
+//    'data_start' => $data_start,
+//    'data_stop' => $data_stop
+//));
 
 //$b = Produse::getPreturiProduseCuComisionByTipProdusIdAndClientAndTraseuId(1, 1913 1
 //    array(
@@ -103,5 +103,10 @@ $b = ParcAuto::getRaportLivrariDepozite(1, array(
 
 
 //$b = Target::getTargetByClientAndProdusIdPentruRaportLivrari(2612, 1);
+
+$b = Produse::getCuloriApeluriClientiByTraseuId(2, array(
+            'data_start' => $data_start,
+
+));
 
 echo json_encode($b);

@@ -50,7 +50,8 @@ class Produse
     }
 
 
-    public static function getTotalCantitatiByProdusAndTraseuId($tip_produs_id, $traseu_id, $opts = array()){
+    public static function getTotalCantitatiByProdusAndTraseuId($tip_produs_id, $traseu_id, $opts = array())
+    {
         $ret = null;
         $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
         $data_stop = isset($opts['data_stop']) ? $opts['data_stop'] : 0;
@@ -77,6 +78,72 @@ class Produse
         $result = myQuery($target_by_client_id);
         if ($result) {
             $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getCountCuloriApeluriClientiByTraseuIdAndCuloareId($traseu_id, $culoare_id, $opts = array())
+    {
+        $ret = array();
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-d');
+        }
+
+        $query = "SELECT COUNT(c.culoare_id) as count_culoare
+                    FROM apeluri_clienti AS a
+                    LEFT JOIN apeluri_clienti_produse AS b ON a.id = b.apel_id
+                    LEFT JOIN clienti AS c ON a.client_id = c.id
+                    LEFT JOIN culori_butelii AS d ON c.culoare_id = d.id
+                    WHERE	a.traseu_id = '" . $traseu_id . "'
+                    AND a.data_start = '" . $data_start . "'
+                    AND c.culoare_id = '" . $culoare_id . "'
+                    AND a.sters = 0
+                    and b.goale > 0
+                                ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getCuloriApeluriClientiByTraseuId($traseu_id, $opts = array())
+    {
+        $ret = array();
+        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+
+        if ($data_start == 0) {
+            $data_start = date('Y-m-d');
+        }
+
+        $query = "SELECT a.client_id, d.id as id_culoare, d.nume as nume_culoare
+                                FROM apeluri_clienti AS a
+                                LEFT JOIN apeluri_clienti_produse AS b ON a.id = b.apel_id
+                                LEFT JOIN clienti AS c ON a.client_id = c.id
+                                LEFT JOIN culori_butelii AS d ON c.culoare_id = d.id
+                                WHERE	a.traseu_id = '" . $traseu_id . "'
+                                AND a.data_start = '" . $data_start . "'
+                                AND a.sters = 0
+                                AND b.goale > 0
+                                GROUP BY d.id
+                                ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $a = $result->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($a as $item) {
+                $r = array(
+                    'culoare_id' => $item['id_culoare'],
+                    'culoare' => $item['nume_culoare'],
+                    'total_culori' => self::getCountCuloriApeluriClientiByTraseuIdAndCuloareId($traseu_id, $item['id_culoare'], array(
+                        'data_start' => $data_start
+                    ))
+                );
+                array_push($ret, $r);
+            }
         }
         return $ret;
     }
@@ -232,6 +299,7 @@ class Produse
         }
         return $ret;
     }
+
     public static function getTotalCantitatiByMasinaIdAndTraseuIdAndSoferId($masina_id = 0, $traseu_id, $sofer_id, $opts = array())
     {
         $ret = null;
