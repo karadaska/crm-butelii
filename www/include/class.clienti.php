@@ -2161,6 +2161,36 @@ class Clienti
 
     }
 
+    public static function getClientiByCuloareId($culoare_id)
+    {
+        $ret = array();
+        $query = "SELECT
+                a.id,
+                a.nume as nume_client,
+                a.telefon,
+                a.telefon_2,
+                b.nume AS nume_stare,
+                c.nume AS nume_judet,
+                d.nume AS nume_localitate,               
+                g.nume as stare_client,
+				a.culoare_id
+                FROM
+                clienti AS a
+                LEFT JOIN clienti_stari AS b ON a.stare_id = b.id
+                LEFT JOIN judete AS c ON a.judet_id = c.id
+                LEFT JOIN localitati AS d ON a.localitate_id = d.id                             
+                LEFT JOIN clienti_stari AS g ON a.stare_id = g.id	            
+               	WHERE a.culoare_id = '" . $culoare_id . "'								
+				AND a.sters = 0";
+        $result = myQuery($query);
+
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+
+    }
+
     public static function getClientiActiviByDepozitidAndAn($depozit_id, $an)
     {
         $ret = array();

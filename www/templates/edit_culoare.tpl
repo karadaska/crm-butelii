@@ -29,11 +29,11 @@
                                     Modifica
                                 </button>
                             </th>
-                            <th>
-                                <button type="button" class="btn btn-danger"
-                                        onclick="clickOnStergeCuloare({$culoare_id['id']})">Sterge
-                                </button>
-                            </th>
+                            {*<th>*}
+                                {*<button type="button" class="btn btn-danger"*}
+                                        {*onclick="clickOnStergeCuloare({$culoare_id['id']})">Sterge*}
+                                {*</button>*}
+                            {*</th>*}
                         </tr>
                     </table>
                 </form>
