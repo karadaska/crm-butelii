@@ -40,7 +40,7 @@
                                         </td>
                                         <td class="span3">{$culoare['nume']}</td>
                                         <td>
-                                            <a href="clienti_asignati_culoare.php?id={$culoare['id']}">{count($culoare['asignari_culori'])}</a>
+                                            <a target="_blank" href="clienti_asignati_culoare.php?id={$culoare['id']}">{count($culoare['asignari_culori'])}</a>
                                         </td>
                                     </tr>
                                 {/foreach}
