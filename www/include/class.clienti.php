@@ -2173,13 +2173,14 @@ class Clienti
                 c.nume AS nume_judet,
                 d.nume AS nume_localitate,               
                 g.nume as stare_client,
-				a.culoare_id
+				h.nume as nume_culoare
                 FROM
                 clienti AS a
                 LEFT JOIN clienti_stari AS b ON a.stare_id = b.id
                 LEFT JOIN judete AS c ON a.judet_id = c.id
                 LEFT JOIN localitati AS d ON a.localitate_id = d.id                             
-                LEFT JOIN clienti_stari AS g ON a.stare_id = g.id	            
+                LEFT JOIN clienti_stari AS g ON a.stare_id = g.id	     
+                LEFT JOIN culori_butelii AS h ON a.culoare_id = h.id       
                	WHERE a.culoare_id = '" . $culoare_id . "'								
 				AND a.sters = 0";
         $result = myQuery($query);

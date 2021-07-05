@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-05 23:18:03
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-05 23:19:45
          compiled from "/var/www/html/fofoweb/www/templates/clienti_asignati_culoare.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:183574015760e366c80ef0a5-05826647%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '579e93f01ad8a2fbabcd8a82e6f6b39805e78ab3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_asignati_culoare.tpl',
-      1 => 1625516280,
+      1 => 1625516384,
       2 => 'file',
     ),
   ),
@@ -80,7 +80,7 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                         <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon'];?>
  <br/><?php echo $_smarty_tpl->tpl_vars['client']->value['telefon_2'];?>
 </td>
-                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['culoare_id'];?>
+                                        <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_culoare'];?>
 </td>
                                     </tr>
                                 <?php } ?>

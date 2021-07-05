@@ -38,7 +38,7 @@
                                         <td style="text-align: center;">{strtoupper($client['nume_localitate'])}</td>
                                         <td style="text-align: center;">{strtoupper($client['nume_judet'])}</td>
                                         <td style="text-align: center;">{$client['telefon']} <br/>{$client['telefon_2']}</td>
-                                        <td style="text-align: center;">{$client['culoare_id']}</td>
+                                        <td style="text-align: center;">{$client['nume_culoare']}</td>
                                     </tr>
                                 {/foreach}
                                 </tbody>
