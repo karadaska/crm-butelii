@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-14 09:47:42
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-05 15:46:55
          compiled from "/var/www/html/fofoweb/www/templates/clienti_depozit_activi.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:183254387160c6f370b4bf74-11159478%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0249c0440a943934388d2197906e40a4e432b09a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_depozit_activi.tpl',
-      1 => 1623653260,
+      1 => 1625489213,
       2 => 'file',
     ),
   ),
@@ -25,6 +25,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'depozit' => 0,
     'lista_clienti' => 0,
     'client' => 0,
+    'target_client' => 0,
+    'target' => 0,
     'asignare_traseu' => 0,
     'totaltime' => 0,
   ),
@@ -83,6 +85,7 @@ $_smarty_tpl->tpl_vars['depozit']->_loop = true;
                                     <th style="text-align: left;">ZONA</th>
                                     <th style="text-align: left;">LOCALITATE</th>
                                     <th style="text-align: left;">NUME</th>
+                                    <th style="text-align: left;">TARGET</th>
                                     <th style="text-align: center;">TRASEU</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: center;">CNP</th>
@@ -107,6 +110,18 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
                                             <a href="edit_client.php?id=<?php echo $_smarty_tpl->tpl_vars['client']->value['id'];?>
 "><?php echo strtoupper($_smarty_tpl->tpl_vars['client']->value['nume']);?>
 </a>
+                                        </td>
+                                        <td>
+                                            <?php $_smarty_tpl->tpl_vars['target_client'] = new Smarty_variable(Target::getTargetByClientId($_smarty_tpl->tpl_vars['client']->value['id']), null, 0);?>
+                                            <?php  $_smarty_tpl->tpl_vars['target'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['target']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['target_client']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['target']->key => $_smarty_tpl->tpl_vars['target']->value) {
+$_smarty_tpl->tpl_vars['target']->_loop = true;
+?>
+                                                <?php echo $_smarty_tpl->tpl_vars['target']->value['nume_produs'];?>
+ : <?php echo $_smarty_tpl->tpl_vars['target']->value['target'];?>
+ <br/>
+                                            <?php } ?>
                                         </td>
                                         <td>
                                             <?php  $_smarty_tpl->tpl_vars['asignare_traseu'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['asignare_traseu']->_loop = false;

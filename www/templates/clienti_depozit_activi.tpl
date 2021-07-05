@@ -41,6 +41,7 @@
                                     <th style="text-align: left;">ZONA</th>
                                     <th style="text-align: left;">LOCALITATE</th>
                                     <th style="text-align: left;">NUME</th>
+                                    <th style="text-align: left;">TARGET</th>
                                     <th style="text-align: center;">TRASEU</th>
                                     <th style="text-align: center;">TELEFON</th>
                                     <th style="text-align: center;">CNP</th>
@@ -57,6 +58,12 @@
                                         <td>{strtoupper($client['nume_localitate'])}</td>
                                         <td>
                                             <a href="edit_client.php?id={$client['id']}">{strtoupper($client['nume'])}</a>
+                                        </td>
+                                        <td>
+                                            {assign var=target_client value=Target::getTargetByClientId($client['id'])}
+                                            {foreach from = $target_client item = target}
+                                                {$target['nume_produs']} : {$target['target']} <br/>
+                                            {/foreach}
                                         </td>
                                         <td>
                                             {foreach from = $client['asignare_client_traseu'] item=asignare_traseu}
