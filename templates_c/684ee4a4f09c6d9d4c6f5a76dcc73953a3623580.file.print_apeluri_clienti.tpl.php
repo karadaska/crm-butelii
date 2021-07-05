@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-19 11:01:18
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-05 19:46:02
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:169583253660c8fffa648e29-98418448%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1624089677,
+      1 => 1625503560,
       2 => 'file',
     ),
   ),
@@ -38,6 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'conditie' => 0,
     'total_obs_pe_categorii' => 0,
     'obs' => 0,
+    'culori_traseu' => 0,
     'total_urgente' => 0,
     'clienti_cu_observatii' => 0,
     'clienti_cu_urgente' => 0,
@@ -297,18 +298,38 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 </td>
                             </tr>
                         <?php }?>
-                        <?php  $_smarty_tpl->tpl_vars['obs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['obs']->_loop = false;
+                        <tr>
+                            <td style="text-align: left;">
+                                <?php  $_smarty_tpl->tpl_vars['obs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['obs']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['total_obs_pe_categorii']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['obs']->key => $_smarty_tpl->tpl_vars['obs']->value) {
 $_smarty_tpl->tpl_vars['obs']->_loop = true;
 ?>
-                            <tr>
-                                <td style="text-align: right;width: 60%"><?php echo $_smarty_tpl->tpl_vars['obs']->value['nume_observatie'];?>
-</td>
-                                <td><?php echo $_smarty_tpl->tpl_vars['obs']->value['numar_observatie']['total_observatie'];?>
-</td>
-                            </tr>
-                        <?php } ?>
+                                    <span>[<?php echo $_smarty_tpl->tpl_vars['obs']->value['nume_observatie'];?>
+ : <?php echo $_smarty_tpl->tpl_vars['obs']->value['numar_observatie']['total_observatie'];?>
+], </span>
+                                <?php } ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">
+                                <?php  $_smarty_tpl->tpl_vars['culoare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['culoare']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['culori_traseu']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['culoare']->key => $_smarty_tpl->tpl_vars['culoare']->value) {
+$_smarty_tpl->tpl_vars['culoare']->_loop = true;
+?>
+                                    <span>[<?php echo $_smarty_tpl->tpl_vars['culoare']->value['culoare'];?>
+ : <?php echo $_smarty_tpl->tpl_vars['culoare']->value['total_culori']['count_culoare'];?>
+], </span>
+                                <?php } ?>
+                            </td>
+                        </tr>
+                        
+                            
+                                
+                                
+                            
+                        
                     </table>
                 </th>
                 <?php if (($_smarty_tpl->tpl_vars['total_urgente']->value['total_urgente']>0)) {?>

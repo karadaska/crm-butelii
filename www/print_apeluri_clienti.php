@@ -63,7 +63,10 @@ $total_obs_pe_categorii = Clienti::getTipObservatiiDinApeluri($id, array(
 ));
 $smarty->assign('total_obs_pe_categorii',$total_obs_pe_categorii);
 
-
+$culori_traseu = Produse::getCuloriApeluriClientiByTraseuId($id, array(
+    'data_start' => $data_start
+));
+$smarty->assign('culori_traseu', $culori_traseu);
 $smarty->display($template_page);
 ?>
 

@@ -219,12 +219,26 @@
                                     INFO: {$total_obs['total_observatii']}</td>
                             </tr>
                         {/if}
-                        {foreach from=$total_obs_pe_categorii item=obs}
-                            <tr>
-                                <td style="text-align: right;width: 60%">{$obs['nume_observatie']}</td>
-                                <td>{$obs['numar_observatie']['total_observatie']}</td>
-                            </tr>
-                        {/foreach}
+                        <tr>
+                            <td style="text-align: left;">
+                                {foreach from=$total_obs_pe_categorii item=obs}
+                                    <span>[{$obs['nume_observatie']} : {$obs['numar_observatie']['total_observatie']}], </span>
+                                {/foreach}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left;">
+                                {foreach from=$culori_traseu item=culoare}
+                                    <span>[{$culoare['culoare']} : {$culoare['total_culori']['count_culoare']}], </span>
+                                {/foreach}
+                            </td>
+                        </tr>
+                        {*{foreach from=$total_obs_pe_categorii item=obs}*}
+                            {*<tr>*}
+                                {*<td style="text-align: right;width: 60%">{$obs['nume_observatie']}</td>*}
+                                {*<td>{$obs['numar_observatie']['total_observatie']}</td>*}
+                            {*</tr>*}
+                        {*{/foreach}*}
                     </table>
                 </th>
                 {if ($total_urgente['total_urgente'] > 0)}
