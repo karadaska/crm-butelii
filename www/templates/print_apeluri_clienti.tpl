@@ -167,7 +167,7 @@
         {$conditie = ($total_bg_11 > 0) || ($total_ar_8 > 0) || ($total_ar_9 > 0) || ($total_obs['total_observatii'] > 0)}
         {if $conditie }
             <tr>
-                <td colspan="5"
+                <td colspan="4"
                     style="text-align: right;vertical-align: middle;">
                     TOTAL:
                 </td>
@@ -209,6 +209,13 @@
                                 </th>
                             </tr>
                         {/if}
+                        <tr>
+                            <td style="text-align: left;">
+                                {foreach from=$culori_traseu item=culoare}
+                                    <span>[{$culoare['culoare']} : {$culoare['total_culori']['count_culoare']}], </span>
+                                {/foreach}
+                            </td>
+                        </tr>
                     </table>
                 </th>
                 <th style="text-align: left;">
@@ -226,13 +233,7 @@
                                 {/foreach}
                             </td>
                         </tr>
-                        <tr>
-                            <td style="text-align: left;">
-                                {foreach from=$culori_traseu item=culoare}
-                                    <span>[{$culoare['culoare']} : {$culoare['total_culori']['count_culoare']}], </span>
-                                {/foreach}
-                            </td>
-                        </tr>
+
                         {*{foreach from=$total_obs_pe_categorii item=obs}*}
                             {*<tr>*}
                                 {*<td style="text-align: right;width: 60%">{$obs['nume_observatie']}</td>*}

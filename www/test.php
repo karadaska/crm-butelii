@@ -104,8 +104,8 @@ $ultima_zi_luna = date('Y-m-t');
 
 //$b = Target::getTargetByClientAndProdusIdPentruRaportLivrari(2612, 1);
 
-$b = Produse::getCuloriApeluriClientiByTraseuId(2, array(
-            'data_start' => $data_start,
+$b = Produse::getCuloriApeluriClientiByTraseuId(1, array(
+            'data_start' => $zi_curenta,
 
 ));
 

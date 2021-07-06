@@ -91,7 +91,7 @@ class Produse
             $data_start = date('Y-m-d');
         }
 
-        $query = "SELECT COUNT(c.culoare_id) as count_culoare
+        $query = "SELECT SUM(b.goale) as count_culoare
                     FROM apeluri_clienti AS a
                     LEFT JOIN apeluri_clienti_produse AS b ON a.id = b.apel_id
                     LEFT JOIN clienti AS c ON a.client_id = c.id
@@ -99,6 +99,7 @@ class Produse
                     WHERE	a.traseu_id = '" . $traseu_id . "'
                     AND a.data_start = '" . $data_start . "'
                     AND c.culoare_id = '" . $culoare_id . "'
+                    AND b.tip_produs_id = 1
                     AND a.sters = 0
                     and b.goale > 0
                                 ";
@@ -128,6 +129,7 @@ class Produse
                                 AND a.data_start = '" . $data_start . "'
                                 AND a.sters = 0
                                 AND b.goale > 0
+                                AND d.nume != ''
                                 GROUP BY d.id
                                 ";
 
