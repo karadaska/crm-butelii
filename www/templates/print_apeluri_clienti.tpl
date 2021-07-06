@@ -218,7 +218,7 @@
                         </tr>
                     </table>
                 </th>
-                <th style="text-align: left;">
+                <th style="text-align: left;" colspan="3">
                     <table border="1" style="width: 100%;margin-bottom: 18px;">
                         {if ($total_obs['total_observatii'] > 0)}
                             <tr>
@@ -233,13 +233,6 @@
                                 {/foreach}
                             </td>
                         </tr>
-
-                        {*{foreach from=$total_obs_pe_categorii item=obs}*}
-                            {*<tr>*}
-                                {*<td style="text-align: right;width: 60%">{$obs['nume_observatie']}</td>*}
-                                {*<td>{$obs['numar_observatie']['total_observatie']}</td>*}
-                            {*</tr>*}
-                        {*{/foreach}*}
                     </table>
                 </th>
                 {if ($total_urgente['total_urgente'] > 0)}

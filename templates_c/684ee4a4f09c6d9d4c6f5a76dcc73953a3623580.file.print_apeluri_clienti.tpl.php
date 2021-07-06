@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-06 15:47:15
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-06 15:50:19
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:169583253660c8fffa648e29-98418448%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1625575634,
+      1 => 1625575818,
       2 => 'file',
     ),
   ),
@@ -302,7 +302,7 @@ $_smarty_tpl->tpl_vars['culoare']->_loop = true;
                         </tr>
                     </table>
                 </th>
-                <th style="text-align: left;">
+                <th style="text-align: left;" colspan="3">
                     <table border="1" style="width: 100%;margin-bottom: 18px;">
                         <?php if (($_smarty_tpl->tpl_vars['total_obs']->value['total_observatii']>0)) {?>
                             <tr>
@@ -324,13 +324,6 @@ $_smarty_tpl->tpl_vars['obs']->_loop = true;
                                 <?php } ?>
                             </td>
                         </tr>
-
-                        
-                            
-                                
-                                
-                            
-                        
                     </table>
                 </th>
                 <?php if (($_smarty_tpl->tpl_vars['total_urgente']->value['total_urgente']>0)) {?>
