@@ -15,7 +15,7 @@ $template_page = "culori_butelii.tpl";
 $culori_butelii = Produse::getCuloriButelii();
 $smarty->assign('culori_butelii', $culori_butelii);
 
-$clienti_fara_culori = Clienti::getClientiFaraCuloareId();
+$clienti_fara_culori = Clienti::getClientiFaraCuloare();
 $smarty->assign('clienti_fara_culori', $clienti_fara_culori);
 
 $smarty->display($template_page);

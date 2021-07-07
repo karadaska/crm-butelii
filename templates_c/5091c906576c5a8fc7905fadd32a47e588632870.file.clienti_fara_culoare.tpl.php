@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-07 08:08:10
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-07 08:23:59
          compiled from "/var/www/html/fofoweb/www/templates/clienti_fara_culoare.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:182385707960e535b3e372c0-39689616%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5091c906576c5a8fc7905fadd32a47e588632870' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_fara_culoare.tpl',
-      1 => 1625634467,
+      1 => 1625635438,
       2 => 'file',
     ),
   ),
@@ -38,7 +38,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="wrapper">
             <div class="container-fluid">
                 <div id="heading" class="page-header">
-                    <h1><i class="icon20 i-menu-6"></i> Clienti Fara Culoare Setata<a href="culori_butelii.php"
+                    <h1><i class="icon20 i-menu-6"></i> Clienti By Culoare <a href="culori_butelii.php"
                                                                    class="btn btn-mini btn-warning">Inapoi</a></h1>
                 </div>
             </div>

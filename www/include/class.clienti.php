@@ -1442,7 +1442,7 @@ class Clienti
     public static function getClientiFaraCuloare()
     {
         $ret = array();
-        $query = "SELECT  a.id, a.nume as nume_client, b.nume as nume_localitate, a.telefon, a.telefon_2 
+        $query = "SELECT  a.id, a.nume as nume_client, b.nume as nume_localitate, a.telefon
                   FROM clienti as a
                   LEFT JOIN localitati as b on a.localitate_id = b.id
                   WHERE a.culoare_id = 0

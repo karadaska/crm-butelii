@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-07 08:03:45
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-07 08:23:44
          compiled from "/var/www/html/fofoweb/www/templates/culori_butelii.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:191200545860e338edb126d8-49758433%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '56b0cc2300c6a857fc7120ae6be088e1b2181b55' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/culori_butelii.tpl',
-      1 => 1625634223,
+      1 => 1625635421,
       2 => 'file',
     ),
   ),
