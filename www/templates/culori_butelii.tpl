@@ -45,6 +45,9 @@
                                     </tr>
                                 {/foreach}
                                 </tbody>
+                                <tr>
+                                    <td colspan="3"> <a href="clienti_fara_culoare.php">Clienti fara culoare setata: {count($clienti_fara_culori)}</a></td>
+                                </tr>
                             </table>
                         </div>
                     </div>

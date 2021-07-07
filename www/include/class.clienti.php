@@ -1439,6 +1439,21 @@ class Clienti
         return $ret;
     }
 
+    public static function getClientiFaraCuloare()
+    {
+        $ret = array();
+        $query = "SELECT  a.id, a.nume as nume_client, b.nume as nume_localitate, a.telefon, a.telefon_2 
+                  FROM clienti as a
+                  LEFT JOIN localitati as b on a.localitate_id = b.id
+                  WHERE a.culoare_id = 0
+                  AND a.sters = 0";
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
     public static function getClientiByTraseuId($traseu_id, $opts = array())
     {
         $stare_id = isset($opts['stare_id']) ? $opts['stare_id'] : 0;

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-05 23:08:38
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-07 08:03:45
          compiled from "/var/www/html/fofoweb/www/templates/culori_butelii.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:191200545860e338edb126d8-49758433%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '56b0cc2300c6a857fc7120ae6be088e1b2181b55' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/culori_butelii.tpl',
-      1 => 1625515717,
+      1 => 1625634223,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'title' => 0,
     'culori_butelii' => 0,
     'culoare' => 0,
+    'clienti_fara_culori' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -76,13 +77,17 @@ $_smarty_tpl->tpl_vars['culoare']->_loop = true;
                                         <td class="span3"><?php echo $_smarty_tpl->tpl_vars['culoare']->value['nume'];?>
 </td>
                                         <td>
-                                            <a href="clienti_asignati_culoare.php?id=<?php echo $_smarty_tpl->tpl_vars['culoare']->value['id'];?>
+                                            <a target="_blank" href="clienti_asignati_culoare.php?id=<?php echo $_smarty_tpl->tpl_vars['culoare']->value['id'];?>
 "><?php echo count($_smarty_tpl->tpl_vars['culoare']->value['asignari_culori']);?>
 </a>
                                         </td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
+                                <tr>
+                                    <td colspan="3"> <a href="clienti_fara_culoare.php">Clienti fara culoare setata: <?php echo count($_smarty_tpl->tpl_vars['clienti_fara_culori']->value);?>
+</a></td>
+                                </tr>
                             </table>
                         </div>
                     </div>
