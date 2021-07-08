@@ -489,14 +489,9 @@ class Fise
 
         $ret = array();
 
-        $query = "SELECT a.fisa_id, a.casa_marcat, a.valoare_z, c.nume as nume_depozit,
-                  d.nume as nume_traseu, e.numar as nume_masina, f.nume as nume_sofer  
+        $query = "SELECT a.fisa_id, a.casa_marcat, a.valoare_z, a.raport_z                 
                   FROM miscari_fise as a
-                  LEFT JOIN fise_generate as b on a.fisa_id = b.id
-                  LEFT JOIN depozite as c on b.depozit_id = c.id
-                  LEFT JOIN trasee as d on b.traseu_id = d.id
-                  LEFT JOIN masini as e on b.masina_id = e.id
-                  LEFT JOIN soferi as f on b.sofer_id = f.id
+                  LEFT JOIN fise_generate as b on a.fisa_id = b.id                 
                   WHERE a.sters = 0";
 
         if ($depozit_id > 0) {

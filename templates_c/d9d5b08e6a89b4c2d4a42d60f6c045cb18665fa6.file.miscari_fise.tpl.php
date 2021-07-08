@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-08 14:56:37
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-08 15:06:11
          compiled from "/var/www/html/fofoweb/www/templates/miscari_fise.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:72287392160c35a034ba0e8-74622492%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd9d5b08e6a89b4c2d4a42d60f6c045cb18665fa6' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/miscari_fise.tpl',
-      1 => 1625745395,
+      1 => 1625745969,
       2 => 'file',
     ),
   ),
@@ -163,9 +163,9 @@ $_smarty_tpl->tpl_vars['miscari']->_loop = true;
                             </td>
                             <td class="span2"><?php echo $_smarty_tpl->tpl_vars['miscari']->value['valoare_z'];?>
 </td>
-                            <td class="span2"><?php echo $_smarty_tpl->tpl_vars['miscari']->value['fisa_id'];?>
+                            <td class="span2"><?php echo $_smarty_tpl->tpl_vars['miscari']->value['casa_marcat'];?>
 </td>
-                            <td class="span2"><?php echo $_smarty_tpl->tpl_vars['miscari']->value['fisa_id'];?>
+                            <td class="span2"><?php echo $_smarty_tpl->tpl_vars['miscari']->value['raport_z'];?>
 </td>
                         </tr>
                     <?php } ?>

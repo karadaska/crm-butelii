@@ -88,8 +88,8 @@
                                         href="completare_fisa_traseu.php?id={$miscari['fisa_id']}">{$miscari['fisa_id']}</a>
                             </td>
                             <td class="span2">{$miscari['valoare_z']}</td>
-                            <td class="span2">{$miscari['fisa_id']}</td>
-                            <td class="span2">{$miscari['fisa_id']}</td>
+                            <td class="span2">{$miscari['casa_marcat']}</td>
+                            <td class="span2">{$miscari['raport_z']}</td>
                         </tr>
                     {/foreach}
                 </table>
