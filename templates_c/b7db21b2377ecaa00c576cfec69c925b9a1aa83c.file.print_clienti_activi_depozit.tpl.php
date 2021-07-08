@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-14 09:48:15
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-08 13:22:20
          compiled from "/var/www/html/fofoweb/www/templates/print_clienti_activi_depozit.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:120537803360c6f7d00c0db7-31312710%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7db21b2377ecaa00c576cfec69c925b9a1aa83c' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_clienti_activi_depozit.tpl',
-      1 => 1623653120,
+      1 => 1625739738,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_clienti' => 0,
     'client' => 0,
     'asignare_traseu' => 0,
+    'pret_bg' => 0,
+    'pret_ar_9' => 0,
+    'pret_ar_8' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -129,6 +132,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <th style="text-align: center;">CNP</th>
             <th style="text-align: center;">SERIA</th>
             <th style="text-align: center;">STARE</th>
+            <th style="text-align: center;">CONTRACT</th>
+            <th>PRET BG</th>
+            <th>PRET AR 9</th>
+            <th>PRET AR 8</th>
             <th style="text-align: center;" class="span1">DATA START</th>
             <th style="text-align: center;" class="span1">DATA STOP</th>
         </tr>
@@ -182,6 +189,23 @@ $_smarty_tpl->tpl_vars['asignare_traseu']->_loop = true;
 </td>
                 <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['stare_client'];?>
 </td>
+                <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['contract'];?>
+</td>
+                <td style="text-align: center;">
+                    <?php $_smarty_tpl->tpl_vars['pret_bg'] = new Smarty_variable(Target::getPretBgByClientId($_smarty_tpl->tpl_vars['client']->value['id']), null, 0);?>
+                    <?php echo $_smarty_tpl->tpl_vars['pret_bg']->value['pret'];?>
+
+                </td>
+                <td style="text-align: center;">
+                    <?php $_smarty_tpl->tpl_vars['pret_ar_9'] = new Smarty_variable(Target::getPretAr9ByClientId($_smarty_tpl->tpl_vars['client']->value['id']), null, 0);?>
+                    <?php echo $_smarty_tpl->tpl_vars['pret_ar_9']->value['pret'];?>
+
+                </td>
+                <td style="text-align: center;">
+                    <?php $_smarty_tpl->tpl_vars['pret_ar_8'] = new Smarty_variable(Target::getPretAr8ByClientId($_smarty_tpl->tpl_vars['client']->value['id']), null, 0);?>
+                    <?php echo $_smarty_tpl->tpl_vars['pret_ar_8']->value['pret'];?>
+
+                </td>
                 <td style="text-align: center;">
                     <?php echo $_smarty_tpl->tpl_vars['client']->value['data_start'];?>
 

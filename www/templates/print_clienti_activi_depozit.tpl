@@ -92,6 +92,10 @@
             <th style="text-align: center;">CNP</th>
             <th style="text-align: center;">SERIA</th>
             <th style="text-align: center;">STARE</th>
+            <th style="text-align: center;">CONTRACT</th>
+            <th>PRET BG</th>
+            <th>PRET AR 9</th>
+            <th>PRET AR 8</th>
             <th style="text-align: center;" class="span1">DATA START</th>
             <th style="text-align: center;" class="span1">DATA STOP</th>
         </tr>
@@ -125,6 +129,19 @@
                 <td style="text-align: center;">{$client['cnp']}</td>
                 <td style="text-align: center;">{$client['ci']}</td>
                 <td style="text-align: center;">{$client['stare_client']}</td>
+                <td style="text-align: center;">{$client['contract']}</td>
+                <td style="text-align: center;">
+                    {assign var=pret_bg value=Target::getPretBgByClientId($client['id'])}
+                    {$pret_bg['pret']}
+                </td>
+                <td style="text-align: center;">
+                    {assign var=pret_ar_9 value=Target::getPretAr9ByClientId($client['id'])}
+                    {$pret_ar_9['pret']}
+                </td>
+                <td style="text-align: center;">
+                    {assign var=pret_ar_8 value=Target::getPretAr8ByClientId($client['id'])}
+                    {$pret_ar_8['pret']}
+                </td>
                 <td style="text-align: center;">
                     {$client['data_start']}
                 </td>
