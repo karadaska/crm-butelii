@@ -59,6 +59,25 @@
                             {/foreach}
                         </select>
                     </div>
+                    <div style="float: left;margin-right: 10px;">
+                        <select name="an" style="width: 180px;" data-schimba="4">
+                            {for $a=2020 to date("Y")}
+                                <option value="{$a}" {if $a==$an} selected="selected" {/if}>{$a}</option>
+                            {/for}
+                            <input type="hidden" name="numar_an" value="{$an}">
+                        </select>
+                        <input type="hidden" name="id_an" value="{$ani['an']}">
+                    </div>
+                    <div style="float: left;margin-right: 10px;">
+                        <select name="perioada_id" style="width: 180px;">
+                            {foreach from=$lista_perioade item=perioada}
+                                <option value={$perioada['id']}
+                                        {if $perioada['id'] == $perioada_id} selected="selected" {/if}>
+                                    {$perioada['nume']}
+                                </option>
+                            {/foreach}
+                        </select>
+                    </div>
                 </form>
                 <table cellpadding="0" cellspacing="0" border="0"
                        class="table table-striped table-bordered table-hover" id="dataTable"
@@ -66,10 +85,6 @@
                     <thead>
                     <tr>
                         <th>Nr.</th>
-                        {*<th>Depozit</th>*}
-                        {*<th>Traseu</th>*}
-                        {*<th>Sofer</th>*}
-                        {*<th>Masina</th>*}
                         <th>Fisa Id</th>
                         <th>Valoare Z</th>
                         <th>NR. casa</th>
@@ -80,10 +95,6 @@
                     {foreach from=$miscari_fise item = miscari}
                         <tr>
                             <th class="span1"> {$nr++ }</th>
-                            {*<th></th>*}
-                            {*<th></th>*}
-                            {*<th></th>*}
-                            {*<th></th>*}
                             <td class="span2"><a
                                         href="completare_fisa_traseu.php?id={$miscari['fisa_id']}">{$miscari['fisa_id']}</a>
                             </td>

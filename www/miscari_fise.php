@@ -9,6 +9,14 @@ $smarty->assign('name', 'Raport miscari fise');
 $template_page = "miscari_fise.tpl";
 $form_submit = getRequestParameter('form_submit', 0);
 
+$id_an = getRequestParameter('id_an', '');
+
+$an = getRequestParameter('an', date('Y'));
+$smarty->assign('an', $an);
+
+$perioada_id = getRequestParameter('perioada_id', date('n'));
+$smarty->assign('perioada_id', $perioada_id);
+
 $depozit_id = getRequestParameter('depozit_id', '');
 $smarty->assign('depozit_id', $depozit_id);
 
@@ -33,13 +41,15 @@ $smarty->assign('lista_soferi', $lista_soferi);
 $lista_masini= ParcAuto::getListaMasini();
 $smarty->assign('lista_masini', $lista_masini);
 
-$lista_perioada= Calendar::getPerioada();
-$smarty->assign('lista_perioada', $lista_perioada);
-
-$lista_ani= Calendar::getAni();
+$lista_ani = Calendar::getAni();
 $smarty->assign('lista_ani', $lista_ani);
 
+$lista_perioade = Calendar::getPerioada();
+$smarty->assign('lista_perioade', $lista_perioade);
+
 $miscari_fise = Fise::getMiscariFise(array(
+    'an' => $an,
+    'perioada_id' => $perioada_id,
     'depozit_id' => $depozit_id,
     'traseu_id' => $traseu_id,
     'sofer_id' => $sofer_id,

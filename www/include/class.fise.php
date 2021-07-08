@@ -482,6 +482,14 @@ class Fise
 
     public static function getMiscariFise($opts = array())
     {
+
+        $an = isset($opts['an']) ? $opts['an'] : date('Y');
+        $perioada_id = isset($opts['perioada_id']) ? $opts['perioada_id'] : date('n');
+
+        if ($perioada_id < 10) {
+            $perioada_id = '0' . $perioada_id;
+        }
+
         $masina_id = isset($opts['masina_id']) ? $opts['masina_id'] : 0;
         $sofer_id = isset($opts['sofer_id']) ? $opts['sofer_id'] : 0;
         $depozit_id = isset($opts['depozit_id']) ? $opts['depozit_id'] : 0;
@@ -491,8 +499,10 @@ class Fise
 
         $query = "SELECT a.fisa_id, a.casa_marcat, a.valoare_z, a.raport_z                 
                   FROM miscari_fise as a
-                  LEFT JOIN fise_generate as b on a.fisa_id = b.id                 
-                  WHERE a.sters = 0";
+                  LEFT JOIN fise_generate as b on a.fisa_id = b.id    
+                  WHERE a.data_intrare LIKE '%" . $an . "%'
+                  AND a.data_intrare LIKE '" . $an . "-" . $perioada_id . "-%'             
+                  AND a.sters = 0";
 
         if ($depozit_id > 0) {
             $query .= " AND b.depozit_id = " . $depozit_id;;
