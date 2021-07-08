@@ -483,10 +483,9 @@ class Fise
     public static function getMiscariFise($opts = array())
     {
         $masina_id = isset($opts['masina_id']) ? $opts['masina_id'] : 0;
-        $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
         $sofer_id = isset($opts['sofer_id']) ? $opts['sofer_id'] : 0;
         $depozit_id = isset($opts['depozit_id']) ? $opts['depozit_id'] : 0;
-        $traseu_id = isset($opts['traseu_id']) ? $opts['$traseu_id'] : 0;
+        $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
 
         $ret = array();
 
@@ -500,10 +499,11 @@ class Fise
         }
 
         if ($traseu_id > 0) {
-            $query .= " AND f.traseu_id = " . $traseu_id;
+            $query .= " AND b.traseu_id = " . $traseu_id;;
         }
-        $query .= " ORDER BY a.fisa_id DESC LIMIT 10 ";
+        $query .= " ORDER BY a.fisa_id DESC";
 
+        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);

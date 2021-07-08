@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-07 15:51:15
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-08 14:33:51
          compiled from "/var/www/html/fofoweb/www/templates/miscari_fise.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:72287392160c35a034ba0e8-74622492%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd9d5b08e6a89b4c2d4a42d60f6c045cb18665fa6' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/miscari_fise.tpl',
-      1 => 1625662273,
+      1 => 1625743996,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'title' => 0,
     'lista_depozite' => 0,
     'depozit' => 0,
+    'depozit_id' => 0,
     'lista_trasee' => 0,
     'traseu' => 0,
     'traseu_id' => 0,
@@ -32,6 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'masina' => 0,
     'masina_id' => 0,
     'miscari_fise' => 0,
+    'nr' => 0,
     'miscari' => 0,
   ),
   'has_nocache_code' => false,
@@ -68,7 +70,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['depozit']->key => $_smarty_tpl->tpl_v
 $_smarty_tpl->tpl_vars['depozit']->_loop = true;
 ?>
                                 <option value=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['id'];?>
- <?php if ($_smarty_tpl->tpl_vars['depozit']->value['id']==$_smarty_tpl->tpl_vars['depozit']->value) {?> selected="selected"<?php }?>>
+
+                                        <?php if ($_smarty_tpl->tpl_vars['depozit']->value['id']==$_smarty_tpl->tpl_vars['depozit_id']->value) {?> selected="selected"<?php }?>>
                                     <?php echo $_smarty_tpl->tpl_vars['depozit']->value['nume'];?>
 
                                 </option>
@@ -129,18 +132,22 @@ $_smarty_tpl->tpl_vars['masina']->_loop = true;
                        style="margin-top: 50px;">
                     <thead>
                     <tr>
+                        <th>Nr.</th>
                         <th>Fisa Id</th>
                         <th>Valoare Z</th>
                         <th>NR. casa</th>
                         <th>Nr. raport Z</th>
                     </tr>
                     </thead>
+                    <?php $_smarty_tpl->tpl_vars['nr'] = new Smarty_variable(1, null, 0);?>
                     <?php  $_smarty_tpl->tpl_vars['miscari'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['miscari']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['miscari_fise']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['miscari']->key => $_smarty_tpl->tpl_vars['miscari']->value) {
 $_smarty_tpl->tpl_vars['miscari']->_loop = true;
 ?>
                         <tr>
+                            <th class="span1"> <?php echo $_smarty_tpl->tpl_vars['nr']->value++;?>
+</th>
                             <td class="span2"><a
                                         href="completare_fisa_traseu.php?id=<?php echo $_smarty_tpl->tpl_vars['miscari']->value['fisa_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['miscari']->value['fisa_id'];?>

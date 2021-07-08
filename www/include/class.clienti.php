@@ -970,13 +970,6 @@ class Clienti
         $query .= " GROUP BY a.id ORDER BY a.nume ASC ";
 
 
-//        $result = myQuery($query);
-//
-//        if ($result) {
-//            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
-//        }
-//        return $ret;
-
         $result = myQuery($query);
         if ($result) {
             $tmp = $result->fetchAll(PDO::FETCH_ASSOC);

@@ -9,6 +9,11 @@ $smarty->assign('name', 'Raport miscari fise');
 $template_page = "miscari_fise.tpl";
 $form_submit = getRequestParameter('form_submit', 0);
 
+$depozit_id = getRequestParameter('depozit_id', '');
+$smarty->assign('depozit_id', $depozit_id);
+
+$traseu_id = getRequestParameter('traseu_id', '');
+$smarty->assign('traseu_id', $traseu_id);
 
 $lista_depozite = Depozite::getDepozite();
 $smarty->assign('lista_depozite', $lista_depozite);
@@ -28,7 +33,10 @@ $smarty->assign('lista_perioada', $lista_perioada);
 $lista_ani= Calendar::getAni();
 $smarty->assign('lista_ani', $lista_ani);
 
-$miscari_fise = Fise::getMiscariFise();
+$miscari_fise = Fise::getMiscariFise(array(
+    'depozit_id' => $depozit_id,
+    'traseu_id' => $traseu_id
+));
 $smarty->assign('miscari_fise', $miscari_fise);
 
 

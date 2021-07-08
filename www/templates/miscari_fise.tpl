@@ -22,7 +22,8 @@
                         <select name="depozit_id">
                             <option value="0">Alege depozit</option>
                             {foreach from=$lista_depozite item=depozit}
-                                <option value={$depozit['id']} {if $depozit['id'] == $depozit} selected="selected"{/if}>
+                                <option value={$depozit['id']}
+                                        {if $depozit['id'] == $depozit_id} selected="selected"{/if}>
                                     {$depozit['nume']}
                                 </option>
                             {/foreach}
@@ -64,14 +65,17 @@
                        style="margin-top: 50px;">
                     <thead>
                     <tr>
+                        <th>Nr.</th>
                         <th>Fisa Id</th>
                         <th>Valoare Z</th>
                         <th>NR. casa</th>
                         <th>Nr. raport Z</th>
                     </tr>
                     </thead>
+                    {$nr= 1 }
                     {foreach from=$miscari_fise item = miscari}
                         <tr>
+                            <th class="span1"> {$nr++ }</th>
                             <td class="span2"><a
                                         href="completare_fisa_traseu.php?id={$miscari['fisa_id']}">{$miscari['fisa_id']}</a>
                             </td>
