@@ -66,10 +66,10 @@
                     <thead>
                     <tr>
                         <th>Nr.</th>
-                        <th>Depozit</th>
-                        <th>Traseu</th>
-                        <th>Sofer</th>
-                        <th>Masina</th>
+                        {*<th>Depozit</th>*}
+                        {*<th>Traseu</th>*}
+                        {*<th>Sofer</th>*}
+                        {*<th>Masina</th>*}
                         <th>Fisa Id</th>
                         <th>Valoare Z</th>
                         <th>NR. casa</th>
@@ -80,10 +80,10 @@
                     {foreach from=$miscari_fise item = miscari}
                         <tr>
                             <th class="span1"> {$nr++ }</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            {*<th></th>*}
+                            {*<th></th>*}
+                            {*<th></th>*}
+                            {*<th></th>*}
                             <td class="span2"><a
                                         href="completare_fisa_traseu.php?id={$miscari['fisa_id']}">{$miscari['fisa_id']}</a>
                             </td>
