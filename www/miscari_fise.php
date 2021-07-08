@@ -15,6 +15,12 @@ $smarty->assign('depozit_id', $depozit_id);
 $traseu_id = getRequestParameter('traseu_id', '');
 $smarty->assign('traseu_id', $traseu_id);
 
+$masina_id = getRequestParameter('masina_id', '');
+$smarty->assign('masina_id', $masina_id);
+
+$sofer_id = getRequestParameter('sofer_id', '');
+$smarty->assign('sofer_id', $sofer_id);
+
 $lista_depozite = Depozite::getDepozite();
 $smarty->assign('lista_depozite', $lista_depozite);
 
@@ -35,7 +41,9 @@ $smarty->assign('lista_ani', $lista_ani);
 
 $miscari_fise = Fise::getMiscariFise(array(
     'depozit_id' => $depozit_id,
-    'traseu_id' => $traseu_id
+    'traseu_id' => $traseu_id,
+    'sofer_id' => $sofer_id,
+    'masina_id' => $masina_id
 ));
 $smarty->assign('miscari_fise', $miscari_fise);
 

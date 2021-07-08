@@ -501,9 +501,17 @@ class Fise
         if ($traseu_id > 0) {
             $query .= " AND b.traseu_id = " . $traseu_id;;
         }
+
+        if ($masina_id > 0) {
+            $query .= " AND b.masina_id = " . $masina_id;;
+        }
+
+        if ($sofer_id > 0) {
+            $query .= " AND b.sofer_id = " . $sofer_id;;
+        }
+
         $query .= " ORDER BY a.fisa_id DESC";
 
-        debug($query);
         $result = myQuery($query);
         if ($result) {
             $ret = $result->fetchAll(PDO::FETCH_ASSOC);
