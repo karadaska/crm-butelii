@@ -264,6 +264,7 @@ class Clienti
                   AND a.tip_produs_id = '" . $tip_produs_id . "'
                   AND a.sters = 0
                   AND d.stare_id =1
+                  GROUP by d.id
                   ";
         $result = myQuery($query);
         if ($result) {
@@ -2101,28 +2102,50 @@ class Clienti
     {
         $ret = array();
 
-        $query = "SELECT COUNT(a.client_id) as numar_clienti
+//        $query = "SELECT COUNT(a.client_id) as numar_clienti
+//                  FROM clienti_target AS a
+//                  LEFT JOIN asignari_clienti_trasee AS b ON a.client_id = b.client_id
+//                  LEFT JOIN asignari_trasee_depozite AS c ON b.traseu_id = c.traseu_id
+//                  LEFT JOIN clienti AS d ON a.client_id = d.id
+//                  LEFT JOIN localitati AS e ON d.localitate_id = e.id
+//                  WHERE a.pret = '" . $pret . "'
+//                  AND c.depozit_id = '" . $depozit_id . "'
+//                  AND a.tip_produs_id = '" . $produs_id . "'
+//                  AND a.sters = 0
+//                  AND d.sters = 0
+//                  AND c.sters = 0
+//                  and d.stare_id = 1
+//
+//                 ";
+
+        $query = "SELECT *
                   FROM clienti_target AS a
                   LEFT JOIN asignari_clienti_trasee AS b ON a.client_id = b.client_id
                   LEFT JOIN asignari_trasee_depozite AS c ON b.traseu_id = c.traseu_id
                   LEFT JOIN clienti AS d ON a.client_id = d.id
                   LEFT JOIN localitati AS e ON d.localitate_id = e.id
-                  WHERE
-                  a.pret = '" . $pret . "'
+                  WHERE a.pret = '" . $pret . "'
                   AND c.depozit_id = '" . $depozit_id . "'
                   AND a.tip_produs_id = '" . $produs_id . "'
                   AND a.sters = 0
                   AND d.sters = 0
                   AND c.sters = 0
                   and d.stare_id = 1
+				  GROUP BY d.id
+                  
                  ";
 
         $result = myQuery($query);
 
+//        if ($result) {
+//            $a = $result->fetch(PDO::FETCH_ASSOC);
+//            $ret = $a['numar_clienti'];
+//        }
+
         if ($result) {
-            $a = $result->fetch(PDO::FETCH_ASSOC);
-            $ret = $a['numar_clienti'];
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
         }
+
         return $ret;
     }
 

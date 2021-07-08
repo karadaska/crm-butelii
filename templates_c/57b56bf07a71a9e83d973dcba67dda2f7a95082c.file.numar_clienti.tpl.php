@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-08 09:50:21
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-08 15:50:45
          compiled from "/var/www/html/fofoweb/www/templates/numar_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:157905942260e6a02dcf7e50-65662617%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '57b56bf07a71a9e83d973dcba67dda2f7a95082c' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/numar_clienti.tpl',
-      1 => 1613861751,
+      1 => 1625748644,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60e6a02de05396_70304090',
   'variables' => 
   array (
     'title' => 0,
@@ -25,8 +27,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'clienti' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60e6a02de05396_70304090',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60e6a02de05396_70304090')) {function content_60e6a02de05396_70304090($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -93,7 +93,7 @@ $_smarty_tpl->tpl_vars['clienti']->_loop = true;
                                                                                     href="clienti_by_pret.php?pret=<?php echo $_smarty_tpl->tpl_vars['pret']->value;?>
 &depozit_id=<?php echo $_smarty_tpl->tpl_vars['depozit']->value['depozit_id'];?>
 &tip_produs_id=<?php echo $_smarty_tpl->tpl_vars['produs']->value['tip_produs_id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['clienti']->value;?>
+"><?php echo count($_smarty_tpl->tpl_vars['clienti']->value);?>
 </a>
                                                                         </th>
                                                                         <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['pret']->value;?>

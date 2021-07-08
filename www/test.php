@@ -110,5 +110,6 @@ $ultima_zi_luna = date('Y-m-t');
 //));
 
 
-$b = Target::getPretAr9ByClientId(1802);
+
+$b= Clienti::getNumarClientiByPret(65, 1, 1);
 echo json_encode($b);
