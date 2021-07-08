@@ -9,11 +9,27 @@ $smarty->assign('name', 'Raport miscari fise');
 $template_page = "miscari_fise.tpl";
 $form_submit = getRequestParameter('form_submit', 0);
 
-$data_start = getRequestParameter('data_start',date('Y-m-01'));
-$smarty->assign('data_start', $data_start);
 
-$data_stop = getRequestParameter('data_stop', date('Y-m-t'));
-$smarty->assign('data_stop', $data_stop);
+$lista_depozite = Depozite::getDepozite();
+$smarty->assign('lista_depozite', $lista_depozite);
+
+$lista_trasee = Trasee::getTrasee();
+$smarty->assign('lista_trasee', $lista_trasee);
+
+$lista_soferi= ParcAuto::getSoferi();
+$smarty->assign('lista_soferi', $lista_soferi);
+
+$lista_masini= ParcAuto::getListaMasini();
+$smarty->assign('lista_masini', $lista_masini);
+
+$lista_perioada= Calendar::getPerioada();
+$smarty->assign('lista_perioada', $lista_perioada);
+
+$lista_ani= Calendar::getAni();
+$smarty->assign('lista_ani', $lista_ani);
+
+$miscari_fise = Fise::getMiscariFise();
+$smarty->assign('miscari_fise', $miscari_fise);
 
 
 $smarty->display($template_page);

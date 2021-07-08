@@ -3,6 +3,72 @@
 class Target
 {
 
+    public static function getPretBgByClientId($client_id)
+    {
+        $ret = array();
+        $target_by_client_id = "SELECT a.client_id,
+                                a.pret
+                                FROM clienti_target as a
+                                LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                                WHERE a.client_id = '" . $client_id . "'
+                                AND a.tip_produs_id = 1
+                                AND a.sters = 0
+                                AND b.sters = 0
+                                ORDER BY b.id
+        ";
+
+        $result = myQuery($target_by_client_id);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getPretAr9ByClientId($client_id)
+    {
+        $ret = array();
+        $target_by_client_id = "SELECT a.client_id,
+                                a.pret
+                                FROM clienti_target as a
+                                LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                                WHERE a.client_id = '" . $client_id . "'
+                                AND a.tip_produs_id = 4
+                                AND a.sters = 0
+                                AND b.sters = 0
+                                ORDER BY b.id
+        ";
+
+        $result = myQuery($target_by_client_id);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
+    public static function getPretAr8ByClientId($client_id)
+    {
+        $ret = array();
+        $target_by_client_id = "SELECT a.client_id,
+                                a.pret
+                                FROM clienti_target as a
+                                LEFT JOIN tip_produs as b on a.tip_produs_id = b.id
+                                WHERE a.client_id = '" . $client_id . "'
+                                AND a.tip_produs_id = 3
+                                AND a.sters = 0
+                                AND b.sters = 0
+                                ORDER BY b.id
+        ";
+
+        $result = myQuery($target_by_client_id);
+
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
+
     public static function getTargetByClientId($client_id)
     {
         $ret = array();

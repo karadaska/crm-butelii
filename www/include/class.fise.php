@@ -480,6 +480,36 @@ class Fise
         return $ret;
     }
 
+    public static function getMiscariFise($opts = array())
+    {
+        $masina_id = isset($opts['masina_id']) ? $opts['masina_id'] : 0;
+        $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
+        $sofer_id = isset($opts['sofer_id']) ? $opts['sofer_id'] : 0;
+        $depozit_id = isset($opts['depozit_id']) ? $opts['depozit_id'] : 0;
+        $traseu_id = isset($opts['traseu_id']) ? $opts['$traseu_id'] : 0;
+
+        $ret = array();
+
+        $query = "SELECT a.fisa_id, a.casa_marcat, a.valoare_z
+                  FROM miscari_fise as a
+                  LEFT JOIN fise_generate as b on a.fisa_id = b.id
+                  WHERE a.sters = 0";
+
+        if ($depozit_id > 0) {
+            $query .= " AND b.depozit_id = " . $depozit_id;;
+        }
+
+        if ($traseu_id > 0) {
+            $query .= " AND f.traseu_id = " . $traseu_id;
+        }
+        $query .= " ORDER BY a.fisa_id DESC LIMIT 10 ";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
 
     public static function getFiseLivrariMasini($opts = array())
     {

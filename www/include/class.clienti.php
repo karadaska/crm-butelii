@@ -1030,7 +1030,8 @@ class Clienti
                 a.data_stop as data_stop,
                 a.cnp,
                 a.ci,
-                b.nume as stare_client          	
+                b.nume as stare_client,
+                a.contract          	
                 FROM
                 clienti AS a
                 LEFT JOIN clienti_stari AS b ON a.stare_id = b.id
