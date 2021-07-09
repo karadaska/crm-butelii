@@ -12,6 +12,9 @@ $form_submit = getRequestParameter('form_submit', 0);
 
 $valoare_client_id = getRequestParameter('valoare_client_id', 0);
 
+$data_start = getRequestParameter('data_start', date('Y-m-d'));
+$smarty->assign('data_start', $data_start);
+
 $traseu_id = getRequestParameter('traseu_id', 1);
 $smarty->assign('traseu_id', $traseu_id);
 
@@ -67,7 +70,7 @@ $culori_traseu = Produse::getCuloriApeluriClientiByTraseuId($traseu_id, array(
 ));
 $smarty->assign('culori_traseu', $culori_traseu);
 
-
+debug($data_start);
 $to_add = array();
 if (isset($_POST['update'])) {
     foreach ($_POST as $key => $value) {
@@ -92,6 +95,7 @@ if (isset($_POST['update'])) {
     }
 
     $data_intrare = date('Y-m-d');
+
 
 
     foreach ($lista_clienti as $client) {

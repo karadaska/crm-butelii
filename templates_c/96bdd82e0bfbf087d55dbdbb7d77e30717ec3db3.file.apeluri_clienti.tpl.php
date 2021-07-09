@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-07 15:45:31
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-09 14:47:34
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:99499057960c8ff77e0e565-54212455%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1625661899,
+      1 => 1625831243,
       2 => 'file',
     ),
   ),
@@ -26,6 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'traseu' => 0,
     'lista_stari' => 0,
     'stare' => 0,
+    'data_start' => 0,
     'lista_clienti' => 0,
     'client' => 0,
     'nr' => 0,
@@ -75,7 +76,33 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/apeluri_clienti.php" method="post" id="form_actualizeaza_stoc"
+                
+                      
+                    
+                        
+                            
+                                
+                                        
+                                    
+                                
+                            
+                        
+                        
+                    
+                    
+                        
+                            
+                            
+                                
+                            
+                        
+                    
+                    
+                    
+                        
+                    
+                
+                <form action="/apeluri_clienti.php" method="post"
                       style="margin-bottom: 0">
                     <div style="float: left;margin-right: 10px;">
                         <select name="traseu_id" style="width: 180px;">
@@ -113,6 +140,15 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                     </div>
                     <input type="hidden" name="id_traseu" value="<?php echo $_smarty_tpl->tpl_vars['stare']->value['id'];?>
 ">
+                    <div style="float: left;">
+                        <input autocomplete="off" type="date" name="data_start" id="data_start"
+                               value="<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
+">
+                    </div>
+                    <button type="submit" name="aplica" value="aplica"
+                            class="btn btn-info">
+                        Aplica
+                    </button>
                 </form>
             </div>
             <div class="row-fluid">
@@ -213,7 +249,7 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['target_client']->key => $_smarty_tpl->tpl_vars['target_client']->value) {
 $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 ?>
-                                                        <?php $_smarty_tpl->tpl_vars['cantitati_goale'] = new Smarty_variable(Clienti::getGoaleApelClientiByClientId($_smarty_tpl->tpl_vars['client']->value['id'],$_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'],$_smarty_tpl->tpl_vars['traseu_id']->value), null, 0);?>
+                                                        <?php $_smarty_tpl->tpl_vars['cantitati_goale'] = new Smarty_variable(Clienti::getGoaleApelClientiByClientId($_smarty_tpl->tpl_vars['client']->value['id'],$_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'],$_smarty_tpl->tpl_vars['traseu_id']->value,$_smarty_tpl->tpl_vars['data_start']->value), null, 0);?>
                                                         <?php echo $_smarty_tpl->tpl_vars['target_client']->value['nume_produs'];?>
 
                                                         <?php if ($_smarty_tpl->tpl_vars['cantitati_goale']->value['goale']>0) {?>
@@ -244,7 +280,7 @@ _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
                                                 <td>-</td>
                                             <?php }?>
                                             <th style="vertical-align: middle;width: 300px;padding-bottom: 10px;padding-top: 10px;">
-                                                <?php $_smarty_tpl->tpl_vars['observatie_client'] = new Smarty_variable(Clienti::getObservatieApelClientiByClientId($_smarty_tpl->tpl_vars['client']->value['id'],$_smarty_tpl->tpl_vars['traseu_id']->value), null, 0);?>
+                                                <?php $_smarty_tpl->tpl_vars['observatie_client'] = new Smarty_variable(Clienti::getObservatieApelClientiByClientId($_smarty_tpl->tpl_vars['client']->value['id'],$_smarty_tpl->tpl_vars['traseu_id']->value,$_smarty_tpl->tpl_vars['data_start']->value), null, 0);?>
                                                 <select style="text-align: left;width: 250px;"
                                                         name="obs_<?php echo $_smarty_tpl->tpl_vars['target_client']->value['client_id'];?>
 _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
@@ -266,7 +302,7 @@ $_smarty_tpl->tpl_vars['observatie']->_loop = true;
                                                     <?php } ?>
                                                 </select>
                                                 <div style="margin-top: 5px;"></div>
-                                                <?php $_smarty_tpl->tpl_vars['urgenta_client'] = new Smarty_variable(Clienti::getUrgentaApelClientiByClientId($_smarty_tpl->tpl_vars['client']->value['id'],$_smarty_tpl->tpl_vars['traseu_id']->value), null, 0);?>
+                                                <?php $_smarty_tpl->tpl_vars['urgenta_client'] = new Smarty_variable(Clienti::getUrgentaApelClientiByClientId($_smarty_tpl->tpl_vars['client']->value['id'],$_smarty_tpl->tpl_vars['traseu_id']->value,$_smarty_tpl->tpl_vars['data_start']->value), null, 0);?>
                                                 <select name="urgent_<?php echo $_smarty_tpl->tpl_vars['target_client']->value['client_id'];?>
 _<?php echo $_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'];?>
 "

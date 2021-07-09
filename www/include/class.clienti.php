@@ -1230,12 +1230,12 @@ class Clienti
         return $ret;
     }
 
-    public static function getObservatieApelClientiByClientId($client_id, $traseu_id, $opts = array())
+    public static function getObservatieApelClientiByClientId($client_id, $traseu_id, $data_start, $opts = array())
     {
-        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
+//        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
 
-        if ($data == 0) {
-            $data = date('Y-m-d');
+        if ($data_start == 0) {
+            $data_start = date('Y-m-d');
         }
 
 
@@ -1244,7 +1244,7 @@ class Clienti
                   FROM apeluri_clienti as a
                   LEFT JOIN observatii as b on a.observatie_id = b.id
                   WHERE	a.client_id = '" . $client_id . "'
-                  AND a.data_start = '" . $data . "'
+                  AND a.data_start = '" . $data_start . "'
                   AND a.traseu_id = '" . $traseu_id . "'
                   LIMIT 1";
 
@@ -1256,19 +1256,18 @@ class Clienti
         return $ret;
     }
 
-    public static function getUrgentaApelClientiByClientId($client_id, $traseu_id, $opts = array())
+    public static function getUrgentaApelClientiByClientId($client_id, $traseu_id, $data_start, $opts = array())
     {
-        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
 
-        if ($data == 0) {
-            $data = date('Y-m-d');
+        if ($data_start == 0) {
+            $data_start = date('Y-m-d');
         }
 
         $ret = array();
         $query = "SELECT urgent 
                   FROM apeluri_clienti
                   WHERE	client_id = '" . $client_id . "'
-                  AND data_start = '" . $data . "'
+                  AND data_start = '" . $data_start . "'
                   AND traseu_id = '" . $traseu_id . "'
                   LIMIT 1";
 
@@ -1373,11 +1372,11 @@ class Clienti
     }
 
 //E folisita in pagina apel clienti
-    public static function getGoaleApelClientiByClientId($client_id = 0, $tip_produs_id, $traseu_id, $opts = array())
+    public static function getGoaleApelClientiByClientId($client_id = 0, $tip_produs_id, $traseu_id, $data_start, $opts = array())
     {
-        $data = isset($opts['data_start']) ? $opts['data_start'] : 0;
-        if ($data == 0) {
-            $data = date('Y-m-d');
+//        $data_start = isset($opts['data_start']) ? $opts['data_start'] : 0;
+        if ($data_start == 0) {
+            $data_start = date('Y-m-d');
         }
 
         $query = "SELECT b.goale from apeluri_clienti as a
@@ -1385,7 +1384,7 @@ class Clienti
                   WHERE a.client_id = '" . $client_id . "'
                   AND b.tip_produs_id = '" . $tip_produs_id . "'
                   AND a.traseu_id = '" . $traseu_id . "'
-                  AND a.data_start = '" . $data . "'
+                  AND a.data_start = '" . $data_start . "'
                   AND a.sters = 0 LIMIT 1";
 
         $result = myQuery($query);

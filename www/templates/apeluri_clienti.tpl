@@ -16,7 +16,33 @@
                 </div>
             </div>
             <div class="row-fluid span12">
-                <form action="/apeluri_clienti.php" method="post" id="form_actualizeaza_stoc"
+                {*<form action="/apeluri_clienti.php" method="post" id="form_actualizeaza_stoc"*}
+                      {*style="margin-bottom: 0">*}
+                    {*<div style="float: left;margin-right: 10px;">*}
+                        {*<select name="traseu_id" style="width: 180px;">*}
+                            {*{foreach from=$lista_trasee item=traseu}*}
+                                {*<option value={$traseu['id']}*}
+                                        {*{if $traseu['id'] == $traseu_id} selected="selected" {/if}>*}
+                                    {*{$traseu['nume']}*}
+                                {*</option>*}
+                            {*{/foreach}*}
+                        {*</select>*}
+                        {*<input type="hidden" name="id_traseu" value="{$traseu_id}">*}
+                    {*</div>*}
+                    {*<div style="float: left;">*}
+                        {*<select name="stare_id" style="width: 120px;">*}
+                            {*<option value="-1">-Toti-</option>*}
+                            {*{foreach from=$lista_stari key=tmp item=stare}*}
+                                {*<option value={$stare['id']} {if $stare['id'] == $stare_id} selected="selected"{/if}>{$stare['nume']}</option>*}
+                            {*{/foreach}*}
+                        {*</select>*}
+                    {*</div>*}
+                    {*<input type="hidden" name="id_traseu" value="{$stare['id']}">*}
+                    {*<div style="float: left;">*}
+                        {*<input type="date" name="perioada_id" value=""/>*}
+                    {*</div>*}
+                {*</form>*}
+                <form action="/apeluri_clienti.php" method="post"
                       style="margin-bottom: 0">
                     <div style="float: left;margin-right: 10px;">
                         <select name="traseu_id" style="width: 180px;">
@@ -38,6 +64,14 @@
                         </select>
                     </div>
                     <input type="hidden" name="id_traseu" value="{$stare['id']}">
+                    <div style="float: left;">
+                        <input autocomplete="off" type="date" name="data_start" id="data_start"
+                               value="{$data_start}">
+                    </div>
+                    <button type="submit" name="aplica" value="aplica"
+                            class="btn btn-info">
+                        Aplica
+                    </button>
                 </form>
             </div>
             <div class="row-fluid">
@@ -113,7 +147,7 @@
                                                 <td style="vertical-align: middle;text-align: right;color: red;background-color: gainsboro;"
                                                     class="span4">
                                                     {foreach from=$client['target'] item = target_client}
-                                                        {assign var=cantitati_goale value=Clienti::getGoaleApelClientiByClientId($client['id'],$target_client['tip_produs_id'],$traseu_id)}
+                                                        {assign var=cantitati_goale value=Clienti::getGoaleApelClientiByClientId($client['id'],$target_client['tip_produs_id'],$traseu_id, $data_start)}
                                                         {$target_client['nume_produs']}
                                                         {if $cantitati_goale['goale'] > 0}
                                                             {$valoare_goale_input = $cantitati_goale['goale']}
@@ -140,7 +174,7 @@
                                                 <td>-</td>
                                             {/if}
                                             <th style="vertical-align: middle;width: 300px;padding-bottom: 10px;padding-top: 10px;">
-                                                {assign var=observatie_client value=Clienti::getObservatieApelClientiByClientId($client['id'],$traseu_id)}
+                                                {assign var=observatie_client value=Clienti::getObservatieApelClientiByClientId($client['id'],$traseu_id ,$data_start)}
                                                 <select style="text-align: left;width: 250px;"
                                                         name="obs_{$target_client['client_id']}_{$target_client['tip_produs_id']}">
                                                     <option value="0">Obs</option>
@@ -154,7 +188,7 @@
                                                     {/foreach}
                                                 </select>
                                                 <div style="margin-top: 5px;"></div>
-                                                {assign var=urgenta_client value=Clienti::getUrgentaApelClientiByClientId($client['id'],$traseu_id)}
+                                                {assign var=urgenta_client value=Clienti::getUrgentaApelClientiByClientId($client['id'],$traseu_id, $data_start)}
                                                 <select name="urgent_{$target_client['client_id']}_{$target_client['tip_produs_id']}"
                                                         style="width: 250px;">
                                                     <option value="0"
