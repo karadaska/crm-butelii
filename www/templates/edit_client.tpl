@@ -170,6 +170,17 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
+                                                <th style="vertical-align: middle;text-align: left">Culoare</th>
+                                                <th style="text-align: left;">
+                                                    <select name="culoare_id">
+                                                        <option value="0">Selecteaza culoare</option>
+                                                        {foreach from=$culori_butelii key=tmp item=culoare}
+                                                            <option value={$culoare['id']} {if $culoare['id'] == $client['culoare_id']} selected="selected"{/if}>{$culoare['nume']}</option>
+                                                        {/foreach}
+                                                    </select>
+                                                </th>
+                                            </tr>
+                                            <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">Tip Afis</th>
                                                 <th style="text-align: left;">
                                                     <select name="tip_afis">
@@ -179,17 +190,6 @@
                                                                     {if $afis['id'] == $client['tip_afis']} selected="selected"{/if}>
                                                                 {$afis['tip']}
                                                             </option>
-                                                        {/foreach}
-                                                    </select>
-                                                </th>
-                                            </tr>
-                                            <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;text-align: left">Culoare</th>
-                                                <th style="text-align: left;">
-                                                    <select name="culoare_id">
-                                                        <option value="0">Selecteaza culoare</option>
-                                                        {foreach from=$culori_butelii key=tmp item=culoare}
-                                                            <option value={$culoare['id']} {if $culoare['id'] == $client['culoare_id']} selected="selected"{/if}>{$culoare['nume']}</option>
                                                         {/foreach}
                                                     </select>
                                                 </th>
