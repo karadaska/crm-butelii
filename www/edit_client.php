@@ -93,6 +93,8 @@ if ($modifica) {
 
         myExec($query);
 
+//        Insert tip rastel id
+
         $sql = "SELECT id FROM tip_rastel_clienti 
                 WHERE `client_id`='" . $id . "' 
                 and `tip_rastel_id`='" . $tip_rastel . "'                
@@ -122,6 +124,35 @@ if ($modifica) {
             myExec($insert_tip_rastel);
 
         }
+
+        //        Insert tip afis id
+
+        $sql = "SELECT id FROM tip_afis_clienti 
+                WHERE `client_id`='" . $id . "'
+                AND sters = 0 
+                LIMIT 1";
+        $result = myQuery($sql);
+
+        if ($result->rowCount() == 0) {
+            $insert_tip_afis = "insert into tip_afis_clienti (client_id, tip_afis_id, data_start)
+        values ('" . $id . "','" . $tip_afis . "', '" . $data_intrare . "');";
+            myExec($insert_tip_afis);
+
+        }
+        else{
+            $update_tip_afis_clienti = "UPDATE tip_afis_clienti SET
+                                        sters = 1,
+                                        data_stop = '" . $data_intrare . "'
+                                        WHERE client_id = '" . $id . "'
+                                        and sters = 0
+                                        ";
+            myExec($update_tip_afis_clienti);
+
+            $insert_tip_afis = "insert into tip_afis_clienti (client_id, tip_afis_id, data_start)
+        values ('" . $id . "','" . $tip_afis . "', '" . $data_intrare . "');";
+            myExec($insert_tip_afis);
+        }
+
 
         header('Location: /edit_client.php?id=' . $id);
     }
