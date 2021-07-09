@@ -522,6 +522,18 @@ class Produse
         return $ret;
     }
 
+    public static function getTipAfis()
+    {
+        $ret = array();
+        $query = "SELECT * FROM tip_afis where sters = 0";
+        $result = myQuery($query);
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
 
     public static function getCuloareById($id)
     {

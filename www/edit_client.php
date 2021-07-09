@@ -41,6 +41,9 @@ $smarty->assign('lista_stari', $lista_stari);
 $lista_tip_rastel = Produse::getRastel();
 $smarty->assign('lista_tip_rastel', $lista_tip_rastel);
 
+$lista_tip_afis = Produse::getTipAfis();
+$smarty->assign('lista_tip_afis', $lista_tip_afis);
+
 $lista_depozite = Depozite::getDepozite();
 $smarty->assign('lista_depozite', $lista_depozite);
 
@@ -64,6 +67,7 @@ if ($modifica) {
     $adresa = getRequestParameter('adresa', '');
     $stare_id = getRequestParameter('stare_id', '');
     $rastel_id = getRequestParameter('rastel_id', '');
+    $tip_afis = getRequestParameter('tip_afis', '');
     $tip_rastel = getRequestParameter('tip_rastel', '');
     $telefon = getRequestParameter('telefon', '');
     $telefon_2 = getRequestParameter('telefon_2', '');
@@ -84,7 +88,7 @@ if ($modifica) {
         localitate_id = '" . $localitate_id . "',adresa = '" . $adresa . "', stare_id ='" . $stare_id . "',
         telefon = '" . $telefon . "', telefon_2 = '" . $telefon_2 . "',cnp = '" . $cnp . "', ci='" . $ci . "',contract = '" . $contract . "',
         titular = '" . $titular . "',rastel = '" . $rastel_id . "', culoare_id = '" . $culoare_id . "', 
-        data_start = '" . $data_start . "', data_stop = '" . $data_stop . "', latitudine = '" . $latitudine . "', longitudine = '" . $longitudine . "', exclus= '" . $exclus . "'
+        data_start = '" . $data_start . "', data_stop = '" . $data_stop . "', latitudine = '" . $latitudine . "', longitudine = '" . $longitudine . "', exclus= '" . $exclus . "' , tip_afis= '" . $tip_afis . "'
         where id='" . $id . "'";
 
         myExec($query);

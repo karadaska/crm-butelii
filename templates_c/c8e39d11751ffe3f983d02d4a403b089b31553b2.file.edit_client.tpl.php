@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-06-30 12:45:54
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-09 12:20:36
          compiled from "/var/www/html/fofoweb/www/templates/edit_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:154063290360dc3d52ee1ce3-97733385%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c8e39d11751ffe3f983d02d4a403b089b31553b2' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_client.tpl',
-      1 => 1622026520,
+      1 => 1625822435,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_60dc3d53087de7_19336057',
   'variables' => 
   array (
     'title' => 0,
@@ -31,14 +33,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_tip_rastel' => 0,
     'tip_rastel' => 0,
     'rastel_by_client_id' => 0,
+    'lista_tip_afis' => 0,
+    'afis' => 0,
     'culori_butelii' => 0,
     'culoare' => 0,
     'observatii_by_client_id' => 0,
     'observatie' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_60dc3d53087de7_19336057',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_60dc3d53087de7_19336057')) {function content_60dc3d53087de7_19336057($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array('title'=>((string)$_smarty_tpl->tpl_vars['title']->value)), 0);?>
 
@@ -261,6 +263,26 @@ $_smarty_tpl->tpl_vars['tip_rastel']->_loop = true;
 
                                                                     <?php if ($_smarty_tpl->tpl_vars['tip_rastel']->value['id']==$_smarty_tpl->tpl_vars['rastel_by_client_id']->value['tip_rastel_id']) {?> selected="selected"<?php }?>>
                                                                 <?php echo $_smarty_tpl->tpl_vars['tip_rastel']->value['tip'];?>
+
+                                                            </option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </th>
+                                            </tr>
+                                            <tr style="text-align: left;">
+                                                <th style="vertical-align: middle;text-align: left">Tip Afis</th>
+                                                <th style="text-align: left;">
+                                                    <select name="tip_afis">
+                                                        <option value="0">Alege...</option>
+                                                        <?php  $_smarty_tpl->tpl_vars['afis'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['afis']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['lista_tip_afis']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['afis']->key => $_smarty_tpl->tpl_vars['afis']->value) {
+$_smarty_tpl->tpl_vars['afis']->_loop = true;
+?>
+                                                            <option value=<?php echo $_smarty_tpl->tpl_vars['afis']->value['id'];?>
+
+                                                                    <?php if ($_smarty_tpl->tpl_vars['afis']->value['id']==$_smarty_tpl->tpl_vars['client']->value['tip_afis']) {?> selected="selected"<?php }?>>
+                                                                <?php echo $_smarty_tpl->tpl_vars['afis']->value['tip'];?>
 
                                                             </option>
                                                         <?php } ?>

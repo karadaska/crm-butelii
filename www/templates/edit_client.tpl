@@ -170,6 +170,20 @@
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
+                                                <th style="vertical-align: middle;text-align: left">Tip Afis</th>
+                                                <th style="text-align: left;">
+                                                    <select name="tip_afis">
+                                                        <option value="0">Alege...</option>
+                                                        {foreach from=$lista_tip_afis item= afis}
+                                                            <option value={$afis['id']}
+                                                                    {if $afis['id'] == $client['tip_afis']} selected="selected"{/if}>
+                                                                {$afis['tip']}
+                                                            </option>
+                                                        {/foreach}
+                                                    </select>
+                                                </th>
+                                            </tr>
+                                            <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">Culoare</th>
                                                 <th style="text-align: left;">
                                                     <select name="culoare_id">
