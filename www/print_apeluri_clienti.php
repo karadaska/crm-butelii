@@ -11,7 +11,8 @@ $template_page = "print_apeluri_clienti.tpl";
 $id = getRequestParameter('id', 0);
 $smarty->assign('id',$id);
 
-$data_start = date("Y-m-d");
+$data_start = getRequestParameter('data_start', date('Y-m-d'));
+$smarty->assign('data_start', $data_start);
 
 $nume_traseu = Trasee::getTraseuById($id);
 $smarty->assign('nume_traseu',$nume_traseu);

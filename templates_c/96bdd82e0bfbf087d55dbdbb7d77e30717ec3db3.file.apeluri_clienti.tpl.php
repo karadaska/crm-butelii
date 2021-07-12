@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-09 14:47:34
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 13:17:23
          compiled from "/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:99499057960c8ff77e0e565-54212455%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96bdd82e0bfbf087d55dbdbb7d77e30717ec3db3' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/apeluri_clienti.tpl',
-      1 => 1625831243,
+      1 => 1626085040,
       2 => 'file',
     ),
   ),
@@ -22,11 +22,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'title' => 0,
     'traseu_id' => 0,
     'stare_id' => 0,
+    'data_start' => 0,
     'lista_trasee' => 0,
     'traseu' => 0,
     'lista_stari' => 0,
     'stare' => 0,
-    'data_start' => 0,
     'lista_clienti' => 0,
     'client' => 0,
     'nr' => 0,
@@ -69,6 +69,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
                         <a target="_blank" href="/print_apeluri_clienti.php?id=<?php echo $_smarty_tpl->tpl_vars['traseu_id']->value;?>
 &stare_id=<?php echo $_smarty_tpl->tpl_vars['stare_id']->value;?>
+&data_start=<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 ">
                             <button class="i-print"></button>
                         </a>
@@ -412,6 +413,9 @@ $_smarty_tpl->tpl_vars['culoare']->_loop = true;
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza produse"
                                        class="btn btn-info" name="update"/>
+                                <input type="hidden" name="data_intrare" value="<?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
+" />
+
                             </div>
                         </form>
                     </div>

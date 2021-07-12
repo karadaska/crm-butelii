@@ -74,7 +74,7 @@
             <td style="text-align: left;" class="span3">
                 <h3>
                     TRASEU: {strtoupper($nume_traseu['nume'])} <br/>
-                    DATA: {date('d-m-Y')}
+                    DATA: {$data_start}
                 </h3>
             </td>
         </tr>
@@ -134,7 +134,7 @@
                 <td style="text-align: center;" class="span1">{$client['culoare_butelii']}</td>
                 <td style="text-align: center;">
                     {foreach from=$client['target'] item = target_client}
-                        {assign var=cantitati_goale value=Clienti::getGoaleApelClientiByClientId($client['id'],$target_client['tip_produs_id'], $id)}
+                        {assign var=cantitati_goale value=Clienti::getGoaleApelClientiByClientId($client['id'],$target_client['tip_produs_id'], $id, $data_start)}
                         {*{$target_client['goale_la_client']} asdasds*}
                         {if $cantitati_goale['goale'] > 0}
                             {$valoare_goale_input = $cantitati_goale['goale']}
@@ -154,11 +154,11 @@
                     {/foreach}
                 </td>
                 <td style="width: 300px;">
-                    {assign var=client_observatie value=Clienti::getObservatieApelClientiByClientId($target_client['client_id'], $id)}
+                    {assign var=client_observatie value=Clienti::getObservatieApelClientiByClientId($target_client['client_id'], $id, $data_start)}
                     {$client_observatie['nume_observatie']}
                 </td>
                 <td style="text-align: center;">
-                    {assign var=client_urgenta value=Clienti::getNumeUrgentaApelClientiByClientId($target_client['client_id'],$id)}
+                    {assign var=client_urgenta value=Clienti::getNumeUrgentaApelClientiByClientId($target_client['client_id'],$id, $data_start)}
                     {$client_urgenta['urgent']}
                 </td>
             </tr>

@@ -4,7 +4,6 @@ require_once('etc/config.php');
 if (!Utilizatori::hasRights(1, 4)) {
     web_redirect('/eroare_faradrept.php');
 }
-$data_start = date('Y-m-d');
 
 $smarty->assign('name', 'Actualizeaza produse la client');
 $template_page = "apeluri_clienti.tpl";
@@ -70,7 +69,8 @@ $culori_traseu = Produse::getCuloriApeluriClientiByTraseuId($traseu_id, array(
 ));
 $smarty->assign('culori_traseu', $culori_traseu);
 
-debug($data_start);
+$data_intrare = getRequestParameter('data_intrare', $data_start);
+
 $to_add = array();
 if (isset($_POST['update'])) {
     foreach ($_POST as $key => $value) {
@@ -94,10 +94,6 @@ if (isset($_POST['update'])) {
         }
     }
 
-    $data_intrare = date('Y-m-d');
-
-
-
     foreach ($lista_clienti as $client) {
         foreach ($client['target'] as $item_target) {
             if (isset($to_add[$client['id']][$item_target['tip_produs_id']])) {
@@ -105,13 +101,15 @@ if (isset($_POST['update'])) {
 
                 $t_start_update_clienti_target = microtime(true);
 
-                $update_target_clienti = "UPDATE clienti_target set
+                if ($data_intrare == date('Y-m-d')) {
+                    $update_target_clienti = "UPDATE clienti_target set
                             goale_la_client  = '" . $a['goale'] . "'
                             where client_id = '" . $client['id'] . "'
                             and tip_produs_id = '" . $item_target['tip_produs_id'] . "'
                             ";
 
-                myExec($update_target_clienti);
+                    myExec($update_target_clienti);
+                }
 
 //                debug('1.update clienti target: ' . (microtime(true)- $t_start_update_clienti_target));
 
@@ -132,7 +130,6 @@ if (isset($_POST['update'])) {
                 $t_start_insert = microtime(true);
 
                 if ($select_id_apeluri_clienti->rowCount() == 0) {
-
                     $t_start_insert_cantitati_apeluri = microtime(true);
 
                     $insert_apeluri_clienti = "INSERT INTO apeluri_clienti
@@ -177,7 +174,7 @@ if (isset($_POST['update'])) {
                                         WHERE b.client_id = '" . $client['id'] . "'
                                         AND a.tip_produs_id = '" . $item_target['tip_produs_id'] . "'
                                         AND b.traseu_id = '" . $traseu_id . "'
-                                        AND b.data_start ='" . $data_start . "' ";
+                                        AND b.data_start ='" . $data_intrare . "' ";
 
                 $apel_id = myQuery($select_apel_id_clienti_produse);
 
@@ -217,7 +214,7 @@ if (isset($_POST['update'])) {
                     $update_goale_apeluri_clienti_produse = "UPDATE apeluri_clienti_produse set
                                goale = '" . $a['goale'] . "'
                               where apel_id = '" . $gasit_apel_id . "'
-                              and tip_produs_id = '" . $item_target['tip_produs_id'] . "'
+                              and tip_produs_id = '" . $item_target['tip_produs_id'] . "'                              
                          ";
                     myExec($update_goale_apeluri_clienti_produse);
 //                    debug('7. update in produse: ' . (microtime(true)- $t_start_id_update_produse) .'_________________________________');
@@ -225,7 +222,7 @@ if (isset($_POST['update'])) {
                 }
 
 
-                header('Location: /apeluri_clienti.php?traseu_id=' . $traseu_id . '&stare_id=' . $stare_id);
+                header('Location: /apeluri_clienti.php?traseu_id=' . $traseu_id . '&stare_id=' . $stare_id . '&data_start=' . $data_intrare);
             }
         }
     }

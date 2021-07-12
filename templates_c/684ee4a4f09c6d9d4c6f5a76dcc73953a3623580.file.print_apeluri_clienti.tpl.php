@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-06 15:50:19
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 13:19:00
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:169583253660c8fffa648e29-98418448%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1625575818,
+      1 => 1626085138,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'id' => 0,
     'stare_id' => 0,
     'nume_traseu' => 0,
+    'data_start' => 0,
     'lista_clienti' => 0,
     'nr' => 0,
     'client' => 0,
@@ -123,7 +124,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <h3>
                     TRASEU: <?php echo strtoupper($_smarty_tpl->tpl_vars['nume_traseu']->value['nume']);?>
  <br/>
-                    DATA: <?php echo date('d-m-Y');?>
+                    DATA: <?php echo $_smarty_tpl->tpl_vars['data_start']->value;?>
 
                 </h3>
             </td>
@@ -206,7 +207,7 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['target_client']->key => $_smarty_tpl->tpl_vars['target_client']->value) {
 $_smarty_tpl->tpl_vars['target_client']->_loop = true;
 ?>
-                        <?php $_smarty_tpl->tpl_vars['cantitati_goale'] = new Smarty_variable(Clienti::getGoaleApelClientiByClientId($_smarty_tpl->tpl_vars['client']->value['id'],$_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'],$_smarty_tpl->tpl_vars['id']->value), null, 0);?>
+                        <?php $_smarty_tpl->tpl_vars['cantitati_goale'] = new Smarty_variable(Clienti::getGoaleApelClientiByClientId($_smarty_tpl->tpl_vars['client']->value['id'],$_smarty_tpl->tpl_vars['target_client']->value['tip_produs_id'],$_smarty_tpl->tpl_vars['id']->value,$_smarty_tpl->tpl_vars['data_start']->value), null, 0);?>
                         
                         <?php if ($_smarty_tpl->tpl_vars['cantitati_goale']->value['goale']>0) {?>
                             <?php $_smarty_tpl->tpl_vars['valoare_goale_input'] = new Smarty_variable($_smarty_tpl->tpl_vars['cantitati_goale']->value['goale'], null, 0);?>
@@ -227,12 +228,12 @@ $_smarty_tpl->tpl_vars['target_client']->_loop = true;
                     <?php } ?>
                 </td>
                 <td style="width: 300px;">
-                    <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Clienti::getObservatieApelClientiByClientId($_smarty_tpl->tpl_vars['target_client']->value['client_id'],$_smarty_tpl->tpl_vars['id']->value), null, 0);?>
+                    <?php $_smarty_tpl->tpl_vars['client_observatie'] = new Smarty_variable(Clienti::getObservatieApelClientiByClientId($_smarty_tpl->tpl_vars['target_client']->value['client_id'],$_smarty_tpl->tpl_vars['id']->value,$_smarty_tpl->tpl_vars['data_start']->value), null, 0);?>
                     <?php echo $_smarty_tpl->tpl_vars['client_observatie']->value['nume_observatie'];?>
 
                 </td>
                 <td style="text-align: center;">
-                    <?php $_smarty_tpl->tpl_vars['client_urgenta'] = new Smarty_variable(Clienti::getNumeUrgentaApelClientiByClientId($_smarty_tpl->tpl_vars['target_client']->value['client_id'],$_smarty_tpl->tpl_vars['id']->value), null, 0);?>
+                    <?php $_smarty_tpl->tpl_vars['client_urgenta'] = new Smarty_variable(Clienti::getNumeUrgentaApelClientiByClientId($_smarty_tpl->tpl_vars['target_client']->value['client_id'],$_smarty_tpl->tpl_vars['id']->value,$_smarty_tpl->tpl_vars['data_start']->value), null, 0);?>
                     <?php echo $_smarty_tpl->tpl_vars['client_urgenta']->value['urgent'];?>
 
                 </td>

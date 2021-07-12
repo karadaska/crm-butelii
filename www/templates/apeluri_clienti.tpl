@@ -9,7 +9,7 @@
                 <div id="heading" class="page-header">
                     <h1><i class="icon20 i-menu-6"></i> Actualizare produse goale la client
 
-                        <a target="_blank" href="/print_apeluri_clienti.php?id={$traseu_id}&stare_id={$stare_id}">
+                        <a target="_blank" href="/print_apeluri_clienti.php?id={$traseu_id}&stare_id={$stare_id}&data_start={$data_start}">
                             <button class="i-print"></button>
                         </a>
                     </h1>
@@ -280,6 +280,8 @@
                                 </table>
                                 <input style="float: right;margin-top: 20px;" type="submit" value="Actualizeaza produse"
                                        class="btn btn-info" name="update"/>
+                                <input type="hidden" name="data_intrare" value="{$data_start}" />
+
                             </div>
                         </form>
                     </div>
