@@ -36,6 +36,14 @@
                             {/foreach}
                         </select>
                     </div>
+                    <div style="float: left;">
+                        <select name="afis_id" style="width: 120px;" data-schimba="4">
+                            <option value="-1">-Tip afis-</option>
+                            {foreach from=$lista_afis key=tmp item=afis}
+                                <option value={$afis['id']} {if $afis['id'] == $afis_id} selected="selected"{/if}>{$afis['tip']}</option>
+                            {/foreach}
+                        </select>
+                    </div>
                 </form>
             </div>
             <div class="row-fluid">
@@ -52,6 +60,7 @@
                                 <tr>
                                     <th style="text-align: left;">NUME</th>
                                     <th style="text-align: center;">STARE</th>
+                                    <th style="text-align: center;">TIP AFIS</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -61,6 +70,7 @@
                                             <a href="edit_client.php?id={$client['id']}">{strtoupper($client['nume'])}</a>
                                         </td>
                                         <td style="text-align: center;">{$client['nume_stare']}</td>
+                                        <td>{$client['tip_afis']}</td>
                                     </tr>
                                 {/foreach}
                                 </tbody>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-09 12:20:36
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 14:57:59
          compiled from "/var/www/html/fofoweb/www/templates/edit_client.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:154063290360dc3d52ee1ce3-97733385%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c8e39d11751ffe3f983d02d4a403b089b31553b2' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/edit_client.tpl',
-      1 => 1625822435,
+      1 => 1625825727,
       2 => 'file',
     ),
   ),
@@ -33,10 +33,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_tip_rastel' => 0,
     'tip_rastel' => 0,
     'rastel_by_client_id' => 0,
-    'lista_tip_afis' => 0,
-    'afis' => 0,
     'culori_butelii' => 0,
     'culoare' => 0,
+    'lista_tip_afis' => 0,
+    'afis' => 0,
     'observatii_by_client_id' => 0,
     'observatie' => 0,
   ),
@@ -270,6 +270,25 @@ $_smarty_tpl->tpl_vars['tip_rastel']->_loop = true;
                                                 </th>
                                             </tr>
                                             <tr style="text-align: left;">
+                                                <th style="vertical-align: middle;text-align: left">Culoare</th>
+                                                <th style="text-align: left;">
+                                                    <select name="culoare_id">
+                                                        <option value="0">Selecteaza culoare</option>
+                                                        <?php  $_smarty_tpl->tpl_vars['culoare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['culoare']->_loop = false;
+ $_smarty_tpl->tpl_vars['tmp'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['culori_butelii']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['culoare']->key => $_smarty_tpl->tpl_vars['culoare']->value) {
+$_smarty_tpl->tpl_vars['culoare']->_loop = true;
+ $_smarty_tpl->tpl_vars['tmp']->value = $_smarty_tpl->tpl_vars['culoare']->key;
+?>
+                                                            <option value=<?php echo $_smarty_tpl->tpl_vars['culoare']->value['id'];?>
+ <?php if ($_smarty_tpl->tpl_vars['culoare']->value['id']==$_smarty_tpl->tpl_vars['client']->value['culoare_id']) {?> selected="selected"<?php }?>><?php echo $_smarty_tpl->tpl_vars['culoare']->value['nume'];?>
+</option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </th>
+                                            </tr>
+                                            <tr style="text-align: left;">
                                                 <th style="vertical-align: middle;text-align: left">Tip Afis</th>
                                                 <th style="text-align: left;">
                                                     <select name="tip_afis">
@@ -285,25 +304,6 @@ $_smarty_tpl->tpl_vars['afis']->_loop = true;
                                                                 <?php echo $_smarty_tpl->tpl_vars['afis']->value['tip'];?>
 
                                                             </option>
-                                                        <?php } ?>
-                                                    </select>
-                                                </th>
-                                            </tr>
-                                            <tr style="text-align: left;">
-                                                <th style="vertical-align: middle;text-align: left">Culoare</th>
-                                                <th style="text-align: left;">
-                                                    <select name="culoare_id">
-                                                        <option value="0">Selecteaza culoare</option>
-                                                        <?php  $_smarty_tpl->tpl_vars['culoare'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['culoare']->_loop = false;
- $_smarty_tpl->tpl_vars['tmp'] = new Smarty_Variable;
- $_from = $_smarty_tpl->tpl_vars['culori_butelii']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['culoare']->key => $_smarty_tpl->tpl_vars['culoare']->value) {
-$_smarty_tpl->tpl_vars['culoare']->_loop = true;
- $_smarty_tpl->tpl_vars['tmp']->value = $_smarty_tpl->tpl_vars['culoare']->key;
-?>
-                                                            <option value=<?php echo $_smarty_tpl->tpl_vars['culoare']->value['id'];?>
- <?php if ($_smarty_tpl->tpl_vars['culoare']->value['id']==$_smarty_tpl->tpl_vars['client']->value['culoare_id']) {?> selected="selected"<?php }?>><?php echo $_smarty_tpl->tpl_vars['culoare']->value['nume'];?>
-</option>
                                                         <?php } ?>
                                                     </select>
                                                 </th>

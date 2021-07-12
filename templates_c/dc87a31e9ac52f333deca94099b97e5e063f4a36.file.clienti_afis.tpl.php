@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 14:48:33
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 14:57:46
          compiled from "/var/www/html/fofoweb/www/templates/clienti_afis.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:42167216960ec2a909fd319-94677730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dc87a31e9ac52f333deca94099b97e5e063f4a36' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_afis.tpl',
-      1 => 1626090504,
+      1 => 1626091063,
       2 => 'file',
     ),
   ),
@@ -29,6 +29,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'lista_stari' => 0,
     'stare' => 0,
     'stare_id' => 0,
+    'lista_afis' => 0,
+    'afis' => 0,
+    'afis_id' => 0,
     'lista_clienti' => 0,
     'client' => 0,
     'totaltime' => 0,
@@ -96,6 +99,22 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                             <?php } ?>
                         </select>
                     </div>
+                    <div style="float: left;">
+                        <select name="afis_id" style="width: 120px;" data-schimba="4">
+                            <option value="-1">-Tip afis-</option>
+                            <?php  $_smarty_tpl->tpl_vars['afis'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['afis']->_loop = false;
+ $_smarty_tpl->tpl_vars['tmp'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['lista_afis']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['afis']->key => $_smarty_tpl->tpl_vars['afis']->value) {
+$_smarty_tpl->tpl_vars['afis']->_loop = true;
+ $_smarty_tpl->tpl_vars['tmp']->value = $_smarty_tpl->tpl_vars['afis']->key;
+?>
+                                <option value=<?php echo $_smarty_tpl->tpl_vars['afis']->value['id'];?>
+ <?php if ($_smarty_tpl->tpl_vars['afis']->value['id']==$_smarty_tpl->tpl_vars['afis_id']->value) {?> selected="selected"<?php }?>><?php echo $_smarty_tpl->tpl_vars['afis']->value['tip'];?>
+</option>
+                            <?php } ?>
+                        </select>
+                    </div>
                 </form>
             </div>
             <div class="row-fluid">
@@ -112,6 +131,7 @@ $_smarty_tpl->tpl_vars['stare']->_loop = true;
                                 <tr>
                                     <th style="text-align: left;">NUME</th>
                                     <th style="text-align: center;">STARE</th>
+                                    <th style="text-align: center;">TIP AFIS</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -127,6 +147,8 @@ $_smarty_tpl->tpl_vars['client']->_loop = true;
 </a>
                                         </td>
                                         <td style="text-align: center;"><?php echo $_smarty_tpl->tpl_vars['client']->value['nume_stare'];?>
+</td>
+                                        <td><?php echo $_smarty_tpl->tpl_vars['client']->value['tip_afis'];?>
 </td>
                                     </tr>
                                 <?php } ?>

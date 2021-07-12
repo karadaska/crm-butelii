@@ -1011,20 +1011,21 @@ class Clienti
         $depozit_id = isset($opts['depozit_id']) ? $opts['depozit_id'] : 0;
         $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
         $stare_id = isset($opts['stare_id']) ? $opts['stare_id'] : 0;
-        $localitate_id = isset($opts['localitate_id']) ? $opts['localitate_id'] : 0;
-        $zona_id = isset($opts['zona_id']) ? $opts['zona_id'] : 0;
+        $tip_afis = isset($opts['tip_afis']) ? $opts['tip_afis'] : 0;
 
         $ret = array();
 
         $query = "SELECT
                 a.id,
                 a.nume,              
-                b.nume AS nume_stare
+                b.nume AS nume_stare,
+                c.tip as tip_afis
                 FROM
                 clienti AS a
                 LEFT JOIN clienti_stari AS b ON a.stare_id = b.id
                 LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id 
                 LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id	
+                LEFT JOIN tip_afis AS c ON a.tip_afis = c.id	
                 WHERE a.sters = 0
 		";
 
@@ -1039,6 +1040,10 @@ class Clienti
 
         if ($traseu_id > 0) {
             $query .= " AND e.traseu_id = " . $traseu_id;
+        }
+
+        if ($tip_afis > 0) {
+            $query .= " AND a.tip_afis = " . $tip_afis;
         }
         $query .= " GROUP BY a.id ORDER BY a.nume ASC ";
 

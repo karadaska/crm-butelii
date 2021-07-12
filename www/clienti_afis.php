@@ -16,8 +16,8 @@ $smarty->assign('targetByClientId',$targetByClientId);
 $depozit_id = getRequestParameter('depozit_id', '');
 $smarty->assign('depozit_id', $depozit_id);
 
-$localitate_id = getRequestParameter('localitate_id', '');
-$smarty->assign('localitate_id', $localitate_id);
+$afis_id = getRequestParameter('afis_id', '');
+$smarty->assign('afis_id', $afis_id);
 
 $traseu_id = getRequestParameter('traseu_id', '');
 $smarty->assign('traseu_id', $traseu_id);
@@ -31,13 +31,17 @@ $smarty->assign('zona_id', $zona_id);
 $lista_clienti = Clienti::getListaClientiTipAfis(array(
     'depozit_id' => $depozit_id,
     'traseu_id' => $traseu_id,
-    'stare_id' => $stare_id
+    'stare_id' => $stare_id,
+    'tip_afis' => $afis_id
 ));
 
 $smarty->assign('lista_clienti', $lista_clienti);
 
 $lista_trasee = Trasee::getTrasee();
 $smarty->assign('lista_trasee', $lista_trasee);
+
+$lista_afis = Produse::getTipAfis();
+$smarty->assign('lista_afis', $lista_afis);
 
 $lista_depozite = Depozite::getDepozite();
 $smarty->assign('lista_depozite',$lista_depozite);
