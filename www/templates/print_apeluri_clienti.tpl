@@ -284,7 +284,7 @@
                                         {if $raspuns['goale']  > 0}
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <td><span style="color: red;"> {$raspuns['nume_produs']}
+                                                    <td><span> {$raspuns['nume_produs']}:
                                                     </td>
                                                     <td><span style="font-weight: 600;">{$raspuns['goale']}
                                                     </td>

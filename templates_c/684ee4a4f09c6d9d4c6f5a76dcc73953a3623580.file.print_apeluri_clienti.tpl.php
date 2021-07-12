@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 13:19:00
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 14:20:04
          compiled from "/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:169583253660c8fffa648e29-98418448%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '684ee4a4f09c6d9d4c6f5a76dcc73953a3623580' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/print_apeluri_clienti.tpl',
-      1 => 1626085138,
+      1 => 1626088803,
       2 => 'file',
     ),
   ),
@@ -395,8 +395,8 @@ $_smarty_tpl->tpl_vars['raspuns']->_loop = true;
                                         <?php if ($_smarty_tpl->tpl_vars['raspuns']->value['goale']>0) {?>
                                             <table class="table table-bordered">
                                                 <tr>
-                                                    <td><span style="color: red;"> <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['nume_produs'];?>
-
+                                                    <td><span> <?php echo $_smarty_tpl->tpl_vars['raspuns']->value['nume_produs'];?>
+:
                                                     </td>
                                                     <td><span style="font-weight: 600;"><?php echo $_smarty_tpl->tpl_vars['raspuns']->value['goale'];?>
 
