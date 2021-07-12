@@ -20,24 +20,6 @@
                             {/foreach}
                         </select>
                     </div>
-                    {*<div style="float: left;margin-right: 10px;">*}
-                        {*<select name="zona_id" style="width: 150px;" data-schimba="2">*}
-                            {*<option value="0">Alege zona...</option>*}
-                            {*{foreach from=$lista_zone item=zona}*}
-                                {*<option value={$zona['id']} {if $zona['id'] == $zona_id} selected="selected"{/if}>*}
-                                    {*{strtoupper($zona['nume'])}</option>*}
-                            {*{/foreach}*}
-                        {*</select>*}
-                    {*</div>*}
-                    {*<div style="float: left;margin-right: 10px;" id="lista_localitati">*}
-                        {*<select name="localitate_id" id="localitate_id" style="width: 150px;" data-schimba="2">*}
-                            {*<option value="0">Alege localitate...</option>*}
-                            {*{foreach from=$lista_localitati item=localitate}*}
-                                {*<option value={$localitate['id']} {if $localitate['id'] == $localitate_id} selected="selected"{/if}>*}
-                                    {*{strtoupper($localitate['nume'])}</option>*}
-                            {*{/foreach}*}
-                        {*</select>*}
-                    {*</div>*}
                     <div style="float: left;margin-right: 10px;">
                         <select name="traseu_id" style="width: 150px;" data-schimba="3">
                             <option value="0">Alege traseu...</option>

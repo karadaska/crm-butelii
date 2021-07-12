@@ -1006,6 +1006,78 @@ class Clienti
         return $ret;
     }
 
+    public static function getListaClientiTipAfis($opts = array())
+    {
+        $depozit_id = isset($opts['depozit_id']) ? $opts['depozit_id'] : 0;
+        $traseu_id = isset($opts['traseu_id']) ? $opts['traseu_id'] : 0;
+        $stare_id = isset($opts['stare_id']) ? $opts['stare_id'] : 0;
+        $localitate_id = isset($opts['localitate_id']) ? $opts['localitate_id'] : 0;
+        $zona_id = isset($opts['zona_id']) ? $opts['zona_id'] : 0;
+
+        $ret = array();
+
+        $query = "SELECT
+                a.id,
+                a.nume,              
+                b.nume AS nume_stare
+                FROM
+                clienti AS a
+                LEFT JOIN clienti_stari AS b ON a.stare_id = b.id
+                LEFT JOIN asignari_clienti_trasee AS e ON a.id = e.client_id 
+                LEFT JOIN asignari_trasee_depozite AS f ON e.traseu_id = f.traseu_id	
+                WHERE a.sters = 0
+		";
+
+        if ($stare_id > 0) {
+            $query .= " AND a.stare_id = " . $stare_id;
+        }
+
+
+        if ($depozit_id > 0) {
+            $query .= " AND f.depozit_id = " . $depozit_id;;
+        }
+
+        if ($traseu_id > 0) {
+            $query .= " AND e.traseu_id = " . $traseu_id;
+        }
+        $query .= " GROUP BY a.id ORDER BY a.nume ASC ";
+
+
+        $result = myQuery($query);
+        if ($result) {
+            $tmp = $result->fetchAll(PDO::FETCH_ASSOC);
+//
+            foreach ($tmp as $client) {
+//                $client['depozit'] = Depozite::getDepozitByClientId($client['id']);
+//                $client['traseu'] = Trasee::getTraseuByClientId($client['id']);
+//                $client['observatii_client'] = self::getObsByClientById($client['id']);
+                $client['asignare_client_traseu'] = Asignari::getAsignareTraseuByClientId($client['id']);
+//
+//                // filtrare...
+//                $ok = true;
+//
+//                if ($traseu_id > 0 && $client['traseu'] and $client['traseu']['id'] != $traseu_id) {
+//                    $ok = false;
+//                } elseif ($traseu_id > 0 and !$client['traseu']) {
+//                    $ok = false;
+//                }
+//
+//                if ($depozit_id > 0 && $client['depozit'] and $client['depozit']['id'] != $depozit_id) {
+//                    $ok = false;
+//                } elseif ($depozit_id > 0 and !$client['depozit']) {
+//                    $ok = false;
+//                }
+//
+//                if ($ok) {
+//                    array_push($ret, $client);
+//                }
+                array_push($ret, $client);
+
+            }
+        }
+        return $ret;
+    }
+
     public static function getListaClientiDepozitActivi($opts = array())
     {
         $depozit_id = isset($opts['depozit_id']) ? $opts['depozit_id'] : 0;

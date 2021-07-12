@@ -28,10 +28,8 @@ $smarty->assign('stare_id', $stare_id);
 $zona_id = getRequestParameter('zona_id', '');
 $smarty->assign('zona_id', $zona_id);
 
-$lista_clienti = Clienti::getListaClientiIndex(array(
+$lista_clienti = Clienti::getListaClientiTipAfis(array(
     'depozit_id' => $depozit_id,
-//    'localitate_id' => $localitate_id,
-//    'zona_id' => $zona_id,
     'traseu_id' => $traseu_id,
     'stare_id' => $stare_id
 ));
@@ -46,12 +44,6 @@ $smarty->assign('lista_depozite',$lista_depozite);
 
 $lista_stari = Clienti::getStariClienti();
 $smarty->assign('lista_stari',$lista_stari);
-
-//$lista_localitati = Zone::getLocalitati();
-//$smarty->assign('lista_localitati',$lista_localitati);
-//
-//$lista_zone = Zone::getZone();
-//$smarty->assign('lista_zone',$lista_zone);
 
 $mtime = microtime();
 $mtime = explode(" ",$mtime);

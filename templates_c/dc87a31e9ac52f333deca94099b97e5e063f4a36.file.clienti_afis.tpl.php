@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 14:46:23
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 14:48:33
          compiled from "/var/www/html/fofoweb/www/templates/clienti_afis.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:42167216960ec2a909fd319-94677730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dc87a31e9ac52f333deca94099b97e5e063f4a36' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_afis.tpl',
-      1 => 1626090381,
+      1 => 1626090504,
       2 => 'file',
     ),
   ),
@@ -66,24 +66,6 @@ $_smarty_tpl->tpl_vars['depozit']->_loop = true;
                             <?php } ?>
                         </select>
                     </div>
-                    
-                        
-                            
-                            
-                                
-                                    
-                            
-                        
-                    
-                    
-                        
-                            
-                            
-                                
-                                    
-                            
-                        
-                    
                     <div style="float: left;margin-right: 10px;">
                         <select name="traseu_id" style="width: 150px;" data-schimba="3">
                             <option value="0">Alege traseu...</option>
