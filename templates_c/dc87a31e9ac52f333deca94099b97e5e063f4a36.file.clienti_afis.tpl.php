@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 14:57:46
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 15:28:08
          compiled from "/var/www/html/fofoweb/www/templates/clienti_afis.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:42167216960ec2a909fd319-94677730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dc87a31e9ac52f333deca94099b97e5e063f4a36' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/clienti_afis.tpl',
-      1 => 1626091063,
+      1 => 1626092885,
       2 => 'file',
     ),
   ),
@@ -56,7 +56,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <form action="/clienti_afis.php" method="POST" id="form_clienti" name="form_clienti" style="margin-bottom: 0">
                     <input type="hidden" name="form_submit" value="1" id="form_submit"/>
                     <div style="float: left;margin-right: 10px;">
-                        <select name="depozit_id" style="width: 150px;" data-schimba="1">
+                        <select name="depozit_id" style="width: 200px;" data-schimba="1">
                             <option value="0">Alege depozit...</option>
                             <?php  $_smarty_tpl->tpl_vars['depozit'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['depozit']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_depozite']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
@@ -70,7 +70,7 @@ $_smarty_tpl->tpl_vars['depozit']->_loop = true;
                         </select>
                     </div>
                     <div style="float: left;margin-right: 10px;">
-                        <select name="traseu_id" style="width: 150px;" data-schimba="3">
+                        <select name="traseu_id" style="width: 180px;" data-schimba="4">
                             <option value="0">Alege traseu...</option>
                             <?php  $_smarty_tpl->tpl_vars['traseu'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['traseu']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['lista_trasee']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}

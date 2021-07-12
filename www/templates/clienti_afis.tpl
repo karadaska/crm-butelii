@@ -13,7 +13,7 @@
                 <form action="/clienti_afis.php" method="POST" id="form_clienti" name="form_clienti" style="margin-bottom: 0">
                     <input type="hidden" name="form_submit" value="1" id="form_submit"/>
                     <div style="float: left;margin-right: 10px;">
-                        <select name="depozit_id" style="width: 150px;" data-schimba="1">
+                        <select name="depozit_id" style="width: 200px;" data-schimba="1">
                             <option value="0">Alege depozit...</option>
                             {foreach from=$lista_depozite item=depozit}
                                 <option value={$depozit['id']} {if $depozit['id'] == $depozit_id} selected="selected"{/if}>{$depozit['nume']}</option>
@@ -21,7 +21,7 @@
                         </select>
                     </div>
                     <div style="float: left;margin-right: 10px;">
-                        <select name="traseu_id" style="width: 150px;" data-schimba="3">
+                        <select name="traseu_id" style="width: 180px;" data-schimba="4">
                             <option value="0">Alege traseu...</option>
                             {foreach from=$lista_trasee item=traseu}
                                 <option value={$traseu['id']} {if $traseu['id'] == $traseu_id} selected="selected"{/if}>{$traseu['nume']}</option>
