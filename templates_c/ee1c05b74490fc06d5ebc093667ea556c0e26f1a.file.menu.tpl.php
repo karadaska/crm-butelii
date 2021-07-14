@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2021-07-12 14:41:43
+<?php /* Smarty version Smarty-3.1.15, created on 2021-07-14 11:50:49
          compiled from "/var/www/html/fofoweb/www/templates/menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:27901831660c117bbf3b532-26907394%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ee1c05b74490fc06d5ebc093667ea556c0e26f1a' => 
     array (
       0 => '/var/www/html/fofoweb/www/templates/menu.tpl',
-      1 => 1626090101,
+      1 => 1626252285,
       2 => 'file',
     ),
   ),
@@ -62,6 +62,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <a href="/clienti_afis.php">
                                 <span class="icon"><i class="icon20 i-stack-list"></i></span>
                                 <span class="txt">Clienti tip afis</span>
+                            </a>
+                        </li>
+                        <li <?php if ($_smarty_tpl->tpl_vars['menu_curent']->value==3) {?>class="current"<?php }?>>
+                            <a href="/actualizeaza_tip_afis.php">
+                                <span class="icon"><i class="icon20 i-stack-list"></i></span>
+                                <span class="txt">Actualizeaza tip afis</span>
                             </a>
                         </li>
                         <li <?php if ($_smarty_tpl->tpl_vars['menu_curent']->value==4) {?>class="current"<?php }?>>

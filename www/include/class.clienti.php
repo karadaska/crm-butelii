@@ -2703,17 +2703,17 @@ class Clienti
         return $ret;
     }
 
-//    public static function getTipAfisByClientId($client_id)
-//    {
-//        $ret = array();
-//        $query = "SELECT tip_rastel_id FROM tip_rastel_clienti WHERE client_id = '" . $client_id . "' and sters = 0 LIMIT 1";
-//
-//        $result = myQuery($query);
-//        if ($result) {
-//            $ret = $result->fetch(PDO::FETCH_ASSOC);
-//        }
-//        return $ret;
-//    }
+    public static function getTipAfisByClientId($client_id)
+    {
+        $ret = array();
+        $query = "SELECT tip_afis FROM clienti WHERE id = '" . $client_id . "' and sters = 0 LIMIT 1";
+
+        $result = myQuery($query);
+        if ($result) {
+            $ret = $result->fetch(PDO::FETCH_ASSOC);
+        }
+        return $ret;
+    }
 
 
     public static function getTipObservatiiDinApeluri($traseu_id, $opts = array())

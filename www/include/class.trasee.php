@@ -294,7 +294,7 @@ class Trasee
 
         $ret = array();
         $query = "SELECT a.client_id, a.traseu_id,a.ordine, b.nume AS nume_client,
-                    c.nume AS nume_localitate, b.telefon, a.data_start, a.data_stop 
+                    c.nume AS nume_localitate, b.telefon, a.data_start, a.data_stop, b.tip_afis 
                     FROM asignari_clienti_trasee AS a
                     LEFT JOIN clienti AS b ON a.client_id = b.id
                     LEFT JOIN localitati AS c ON b.localitate_id = c.id 
