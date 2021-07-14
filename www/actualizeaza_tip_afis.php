@@ -52,27 +52,41 @@ if (isset($_POST['update'])) {
                             and sters = 0
                             ";
             myExec($query);
+            $data_start = date('Y-m-d');
 
             $select_afis_clienti = "SELECT tip_afis_id from tip_afis_clienti
-                                      WHERE client_id = '" . $client['client_id'] . "' 
-                                      and sters = 0 LIMIT 1 ";
+                                    WHERE client_id = '" . $client['client_id'] . "'
+                                    AND data_stop = '0000-00-00' 
+                                    AND sters = 0 LIMIT 1 ";
 
             $select_id_afis_clienti = myQuery($select_afis_clienti);
             $ret = $select_id_afis_clienti->fetch(PDO::FETCH_ASSOC);
             $id_afis= $ret['id'];
 
             if ($select_id_afis_clienti->rowCount() == 1) {
-                $update = "UPDATE tip_afis_clienti set
-                            tip_afis_id  = '" . $a['afis'] . "'
-                            WHERE client_id = '" . $client['client_id'] . "'
-                            AND sters = 0
-                            ";
+                $update = "UPDATE tip_afis_clienti set sters = 1,
+                           data_stop = '".$data_start."' 
+                           WHERE client_id = '" . $client['client_id'] . "'                          
+                           ";
+
                 myExec($update);
-            } else {
 
                 $insert = "INSERT INTO tip_afis_clienti (client_id, tip_afis_id, data_start) 
-                          VALUES ('" . $client['client_id'] . "', '" . $client['afis'] . "', $data_start)";
+                          VALUES ('" . $client['client_id'] . "', '" . $a['afis'] . "', '" . $data_start . "')";
                 myExec($insert);
+//                $update = "UPDATE tip_afis_clienti set
+//                            tip_afis_id  = '" . $a['afis'] . "',
+//                            data_start = $data_start
+//                            WHERE client_id = '" . $client['client_id'] . "'
+//                            AND sters = 0
+//                            ";
+//                myExec($update);
+            } else {
+                if($a['afis'] > 0){
+                    $insert = "INSERT INTO tip_afis_clienti (client_id, tip_afis_id, data_start) 
+                          VALUES ('" . $client['client_id'] . "', '" . $a['afis'] . "', '" . $data_start . "')";
+                    myExec($insert);
+                }
             }
 
             header('Location: /actualizeaza_tip_afis.php?traseu_id=' . $traseu_id);
